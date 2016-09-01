@@ -1,0 +1,20 @@
+<apex:page standardController="Contact" extensions="ContactManagementController">
+<script type="text/javascript">
+	function openLink(url){
+		window.top.location = "{!URLFOR('../apex/Disable_portal_User')}"+"?"+url;
+	}
+</script>
+<apex:outputPanel rendered="{!canManageContact}">
+<apex:outputLabel style="text-align:left;">
+		<b style="width: 18%;{!IF($User.ContactId != '','color:#090948;','color: #4A4A56;')}">
+			Contact Management
+		</b>
+</apex:outputLabel>
+<apex:outputLink value="#" onClick="openLink('id={!contact.id}&op=1')" rendered="{!portalEnabled}">
+    Remove Portal Access
+</apex:outputLink>
+<apex:outputLink rendered="{!NOT(portalEnabled)}" onClick="openLink('id={!contact.id}&op=2')" value="#">
+    Enable Portal Access
+</apex:outputLink>
+</apex:outputPanel>
+</apex:page>

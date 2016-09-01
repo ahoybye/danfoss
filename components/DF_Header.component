@@ -1,0 +1,46 @@
+<apex:component layout="none">
+<script type="text/javascript">
+    function getSearchStringList(){
+        var searchString = document.getElementById("{!$Component.search_question_filter}").value;
+        var url = '/apex/QuestionAndAnswer?searchString='+searchString;
+        window.open(url, "_self");
+    }
+    function getMyFavourites(){
+        var url = '/apex/QuestionAndAnswer?myFav=true';
+        window.open(url, "_self");
+    }
+</script>
+    <div class="search" id="search">
+        <div class="container-bs">
+            <a href="/home/home.jsp" class="btn-back">
+                <span>Back to Salesforce</span>
+            </a>
+            <!-- Jan 27, 2016 Himshikha Agrawal - Modified for Global Search -->
+            <div class="controls">
+                <!--<apex:outputLabel for="search_question" value="Search" />
+                <apex:inputText id="search_question" label="Search">
+                    <c:Auto_Complete objectname="Question" autocomplete_textbox="{!$Component.search_question}" />
+                </apex:inputText>
+                <apex:inputHidden id="search_question_lkid" />-->
+                
+                <header style="padding: 0px">
+                    <apex:inputText id="search_question_filter" label="Search"/>
+                    <apex:commandButton onclick="javascript: getSearchStringList(); return false;" value="Search" id="searchButton" immediate="true"/>
+                </header>
+                
+            </div><!-- /.controls -->
+            
+        </div><!-- /.container-bs -->
+    </div><!-- /.search -->
+    <div class="container-bs" id="buttons">
+        <header>
+            <a href="QuestionAndAnswer"><img src="{!$Resource.logo_danfoss}" alt="Danfoss" class="logo" /></a>
+            <nav>
+                <apex:commandButton onClick="getSearchStringList();" value="Questions" id="questionsButton" immediate="true" rerender="search"/>
+                <apex:commandButton action="/apex/ViewAllCategories" value="Categories" id="categoriesButton" immediate="true"/>
+                <apex:commandButton action="/apex/QuestionAsk" value="Ask Question" id="askQButton" immediate="true"/>
+                <apex:commandButton onClick="getMyFavourites();" value="My Favorites" id="myFavButton" immediate="true" rerender="search"/>
+            </nav>
+        </header>
+    </div>
+</apex:component>

@@ -1,0 +1,11 @@
+<apex:page standardController="ccpt__Meeting__c" sidebar="false" showHeader="false" extensions="ccpt.AngularExtension">
+	<script>
+	var relatedId;
+	<apex:repeat value="{!meetingLookupMap}" var="lookup">
+		if('{!Meeting__c[lookup]}') {
+			relatedId = '{!Meeting__c[lookup]}';
+		}
+	</apex:repeat>
+	window.location.href='{!$Page.me}#/meeting/new/' + relatedId;
+	</script>
+</apex:page>

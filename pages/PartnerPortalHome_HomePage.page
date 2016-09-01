@@ -1,0 +1,19 @@
+<apex:page >
+   
+    
+ 
+       <script type="text/javascript">
+        window.onload = function(){
+        var referrer = document.referrer;
+        console.log('referrer  >>' + referrer);
+        //window.opener.location.href = referrer;
+        //console.log('>>>>'+ window.opener.location.href)
+        url = referrer.replace('home/home.jsp','apex/PartnerPortalHome'); 
+        window.top.location.href = url ;
+        
+        }
+        
+        
+        </script>
+ 
+</apex:page>

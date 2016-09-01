@@ -1,0 +1,33 @@
+<apex:page docType="html-5.0" language="en_US" showHeader="false" cache="true" sidebar="false" standardStylesheets="true" applyHtmlTag="false" applyBodyTag="false" controller="ViewAllCategoriesController">
+
+    <apex:composition template="DF_Template">
+        <apex:define name="body">
+
+            <apex:form >
+                <c:DF_Header />
+                <div class="container-bs">
+                        <table border="0" class="table align-middle">
+
+                            <apex:repeat var="qDataC" value="{!setCategoryName}">
+                            <tr>
+
+                                <td class="detail">
+                                    <div class="title">
+                                        <a href="/apex/QuestionAndAnswer?CategoryName={!qDataC}">{!mapCategoryNameToLabel[qDataC]}</a>
+                                    </div>
+
+                                </td>
+                                <td width="60">
+                                    <span class="count">{!mapCategoryNameToNoOfQues[qDataC]}</span>
+                                    <span class="name">question(s)</span>
+                                </td>
+
+                            </tr>
+                            </apex:repeat>
+                        </table>
+                        </div>
+
+            </apex:form>
+    </apex:define>
+    </apex:composition>
+</apex:page>

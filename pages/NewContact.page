@@ -1,0 +1,16 @@
+<apex:page standardController="Contact" extensions="NewContactExtension">
+<script>
+    addEventListener('load', function() {
+        if (window.sforce && "{!BusOrg}" != 'Climate and Energy') {
+            sforce.one.createRecord('Contact',"{!recTypeId}");
+        } 
+        else if(window.sforce && "{!BusOrg}" == 'Climate and Energy'){
+            sforce.one.navigateToURL("{!GoToCon}");
+        }
+        else{
+            location = "{!GoToCon}";
+        }
+
+    });
+    </script>
+</apex:page>

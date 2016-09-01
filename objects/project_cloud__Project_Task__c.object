@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>project_cloud__Completed_Task_Locked</fullName>
+        <active>true</active>
+        <description>Once a Project Task has been marked as completed, the input fields on the task cannot be changed. i.e the dates on the task as finalised</description>
+        <errorConditionFormula>NOT(ISCHANGED(project_cloud__IsComplete__c)) &amp;&amp; project_cloud__IsComplete__c &amp;&amp; 
+(
+ISCHANGED(project_cloud__Estimated_Hours__c) || 
+ISCHANGED(project_cloud__Completed_Percent__c) || 
+ISCHANGED(project_cloud__Autonomous_Start__c) || 
+ISCHANGED(project_cloud__Minimum_End__c) || 
+ISCHANGED(project_cloud__Hours_In_Day__c) || 
+ISCHANGED(project_cloud__Hours_Block__c)
+)</errorConditionFormula>
+        <errorMessage>This Project Task has been marked as Completed, dates can no longer be changed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Duration_Required</fullName>
+        <active>true</active>
+        <description>When the Project Units are &quot;Duration&quot; the Duration field is required</description>
+        <errorConditionFormula>/*Unless the Units value is &quot;Duration&quot; the Duration is required*/
+ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;) &amp;&amp; (ISBLANK(project_cloud__Duration__c) || project_cloud__Duration__c &lt; 0)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Duration__c</errorDisplayField>
+        <errorMessage>The Units for this Project Task require a Duration value to be defined</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Estimated_Hours_Required</fullName>
+        <active>true</active>
+        <description>When the Project Units are &quot;Calendar Allocations&quot; or &quot;Estimated Hours&quot; the Estimated Hours field is required</description>
+        <errorConditionFormula>/*Unless the Units value is &quot;Duration&quot; the Estimated Hours is required*/
+ISBLANK(project_cloud__Estimated_Hours__c) &amp;&amp; NOT(ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;))</errorConditionFormula>
+        <errorDisplayField>project_cloud__Estimated_Hours__c</errorDisplayField>
+        <errorMessage>The Units for this Project Task require an Estimated Hours value to be defined</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Health_Change_Requires_Reason</fullName>
+        <active>true</active>
+        <description>If the Health of a Project Task is changed, the reason field must be changed to explain why.</description>
+        <errorConditionFormula>ISCHANGED(project_cloud__Health__c)
+ &amp;&amp; (
+	NOT(ISCHANGED(project_cloud__Health_Reason__c)) ||
+	ISBLANK(project_cloud__Health_Reason__c)
+)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Health_Reason__c</errorDisplayField>
+        <errorMessage>When the Health is changed a reason must be given</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Hour_Valid_Blocks</fullName>
+        <active>true</active>
+        <description>Ensure that the hours entered are a multiple of Hours_Block__c value. This ensures time is entered in valid time blocks</description>
+        <errorConditionFormula>(
+project_cloud__Estimated_Hours__c &lt;= 0 ||
+MOD(project_cloud__Estimated_Hours__c, project_cloud__Hours_Block__c) != 0
+)
+/*This validation rule only applies to Estimated Hours and Calendar Allocation Project Tasks*/
+ &amp;&amp; NOT(ISPICKVAL(project_cloud__Units__c, &quot;Duration&quot;))</errorConditionFormula>
+        <errorDisplayField>project_cloud__Estimated_Hours__c</errorDisplayField>
+        <errorMessage>Estimated Hours must be a minimum of 1 and a whole number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Start_Date_Is_Working_Day</fullName>
+        <active>true</active>
+        <description>The start date of a project task cannot be a Non Working day</description>
+        <errorConditionFormula>(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 0 &amp;&amp; NOT(project_cloud__IsWorking_Sunday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 1 &amp;&amp; NOT(project_cloud__IsWorking_Monday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 2 &amp;&amp; NOT(project_cloud__IsWorking_Tuesday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 3 &amp;&amp; NOT(project_cloud__IsWorking_Wednesday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 4 &amp;&amp; NOT(project_cloud__IsWorking_Thursday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 5 &amp;&amp; NOT(project_cloud__IsWorking_Friday__c)) ||
+(MOD(project_cloud__Autonomous_Start__c - DATE(1900, 1, 7), 7) = 6 &amp;&amp; NOT(project_cloud__IsWorking_Saturday__c))</errorConditionFormula>
+        <errorDisplayField>project_cloud__Autonomous_Start__c</errorDisplayField>
+        <errorMessage>Cannot Start Before Date must be a Working Day</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Units_Cannot_Be_Changed</fullName>
+        <active>true</active>
+        <description>Once the Project Units have been defined they are not able to be changed. This is to prevent massive recalculations on all tasks when the value is changed</description>
+        <errorConditionFormula>(
+	ISPICKVAL(project_cloud__Units__c, &apos;&apos;) ||
+	ISCHANGED(project_cloud__Units__c)
+) &amp;&amp; (
+	/*Special Cases for when the migration helper updates the values*/ 
+	NOT(ISPICKVAL(PRIORVALUE(project_cloud__Units__c), &quot;Fixed Duration&quot;)) ||
+	NOT(ISPICKVAL(PRIORVALUE(project_cloud__Units__c), &quot;Fixed Work&quot;))
+)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Units__c</errorDisplayField>
+        <errorMessage>This value is set at the time of project creation and cannot be changed. If you wish to change units you will need to clone the project and set the units to what you require at the time of project creation.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Working_Days_Read_Only</fullName>
+        <active>true</active>
+        <description>The working days checkboxes are read only, once they are set when the project is created they cannot be modified.</description>
+        <errorConditionFormula>ISCHANGED(project_cloud__IsWorking_Monday__c) || 
+ISCHANGED(project_cloud__IsWorking_Tuesday__c) || 
+ISCHANGED(project_cloud__IsWorking_Wednesday__c) || 
+ISCHANGED(project_cloud__IsWorking_Thursday__c) || 
+ISCHANGED(project_cloud__IsWorking_Friday__c) || 
+ISCHANGED(project_cloud__IsWorking_Saturday__c) || 
+ISCHANGED(project_cloud__IsWorking_Sunday__c)</errorConditionFormula>
+        <errorMessage>The Working Days cannot be changed. Once set they are read only</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Working_Hours_Set</fullName>
+        <active>true</active>
+        <description>This validation rule prevents tasks being saved when there is no hours in day, hours block or working days defined. The length of a task cannot be calculated without these values</description>
+        <errorConditionFormula>NOT(project_cloud__Hours_In_Day__c &gt; 0) ||
+NOT(project_cloud__Hours_Block__c &gt; 0) ||
+(
+NOT(project_cloud__IsWorking_Monday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Tuesday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Wednesday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Thursday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Friday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Saturday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Sunday__c)
+)</errorConditionFormula>
+        <errorMessage>Hours In Day and Hours Block needs to be greater than 0, and at least one Working Day needs to be selected</errorMessage>
+    </validationRules>
+</CustomObject>

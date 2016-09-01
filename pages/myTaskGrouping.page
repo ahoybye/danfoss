@@ -1,0 +1,106 @@
+<apex:page >
+    
+    <!-- Demo version of a dashboard component which controls report visibility based on user attributes -->
+    <!-- To Do: javascript & custom settings for reports-->
+    
+<script type="text/javascript">
+    function pageOpen(id){
+        
+                if (window.sforce) {
+                    sforce.one.navigateToSObject(id);
+                } else {
+                     var url = '/' + id;
+                     window.parent.location.replace(url);
+                }
+        
+      
+    }
+</script>
+<div>
+   
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.DD_Sales_Engineer_1__c}');">  
+    <div style="display: inline-block; vertical-align: top">
+            <analytics:reportChart size="small" cacheResults="false" rendered="{!TEXT($User.Division__c)='Drives'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.DD_Sales_Engineer_1__c}" ></analytics:reportChart>
+    </div>
+</apex:outputLink>
+       </div>
+
+  <div> 
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.DD_Sales_Engineer_2__c}');">  
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false"  rendered="{!TEXT($User.Division__c)='Drives'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.DD_Sales_Engineer_2__c}" ></analytics:reportChart>
+    </div>  
+</apex:outputLink>    
+   </div> 
+    
+
+   
+          <div> 
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.DD_Sales_Engineer_3__c}');">  
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false"  rendered="{!TEXT($User.Division__c)='Drives'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.DD_Sales_Engineer_3__c}" ></analytics:reportChart>
+    </div>  
+</apex:outputLink>    
+   </div>  
+    
+    
+    
+    
+    <div>            
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.RCCC_Sales_Engineer_1__c}');">   
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false" rendered="{!TEXT($User.Division__c)='Cooling'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.RCCC_Sales_Engineer_1__c}" ></analytics:reportChart>
+    </div>
+</apex:outputLink> 
+ </div>
+    
+    
+    <div>
+   
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.RCCC_Sales_Engineer_2__c}');">
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false"  rendered="{!TEXT($User.Division__c)='Cooling'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.RCCC_Sales_Engineer_2__c}" ></analytics:reportChart>
+    </div>
+</apex:outputLink> 
+     </div>
+     
+        <div>
+   
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.RCCC_Sales_Engineer_3__c}');">
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false"  rendered="{!TEXT($User.Division__c)='Cooling'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.RCCC_Sales_Engineer_3__c}" ></analytics:reportChart>
+    </div>
+</apex:outputLink> 
+     </div>
+        
+        
+        
+    <div>
+
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.HS_Sales_Engineer_1__c}');">
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false"  rendered="{!TEXT($User.Division__c)='Heating'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.HS_Sales_Engineer_1__c}" ></analytics:reportChart>
+    </div>
+</apex:outputLink> 
+        
+    </div>
+    
+    <div>
+  
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.HS_Sales_Engineer_2__c}');">
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false"  rendered="{!TEXT($User.Division__c)='Heating'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.HS_Sales_Engineer_2__c}" ></analytics:reportChart>
+    </div>
+</apex:outputLink> 
+         </div>
+
+            <div>
+  
+<apex:outputLink onclick="pageOpen('{!$Setup.CE_Dashboard_Component__c.HS_Sales_Engineer_3__c}');">
+    <div style="display: inline-block; vertical-align: top">
+        <analytics:reportChart size="small" cacheResults="false"  rendered="{!TEXT($User.Division__c)='Heating'}" showRefreshButton="false" hideOnError="true" reportId="{!$Setup.CE_Dashboard_Component__c.HS_Sales_Engineer_3__c}" ></analytics:reportChart>
+    </div>
+</apex:outputLink> 
+         </div>
+        
+</apex:page>

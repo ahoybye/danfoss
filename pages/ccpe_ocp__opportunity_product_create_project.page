@@ -1,0 +1,35 @@
+<apex:page standardController="Opportunity" extensions="ccpe_ocp.OpportunityProductCreateProjectExtn">
+
+    <apex:sectionHeader title="Opportunity Product Create Project" subtitle="{!Opportunity.Name}" />
+
+    <apex:pageMessages id="messages" />
+
+    <apex:form id="form" rendered="{!NOT(ISBLANK(project))}">
+        <apex:pageBlock id="block">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!createProject}" value="Create Project" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Project Information" collapsible="false">
+                <apex:inputField value="{!project.Name}" />
+                <apex:inputField value="{!project.project_cloud__Units__c}" />
+                <apex:repeat value="{!$ObjectType.project_cloud__Project__c.FieldSets.project_cloud__New_Project}" var="f"> 
+                    <apex:inputField value="{!project[f]}" />
+                </apex:repeat>
+            </apex:pageBlockSection>
+            <apex:pageBlockTable id="table" var="row" value="{!rows}">
+                <apex:repeat var="f" value="{!$ObjectType.OpportunityLineItem.FieldSets.ccpe_ocp__Create_Project}">
+                    <apex:column headerValue="{!f.label}">
+                        <apex:outputField value="{!row.lineItem[f]}" />
+                    </apex:column>
+                </apex:repeat>
+                <apex:column headerValue="{!$ObjectType.project_cloud__Project_Task__c.fields.project_cloud__Autonomous_Start__c.label}">
+                    <apex:inputField value="{!row.dummy.project_cloud__Autonomous_Start__c}" required="false" />
+                </apex:column>
+                <apex:column headerValue="Project Template">
+                    <apex:inputField value="{!row.product.ccpe_ocp__Project__c}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

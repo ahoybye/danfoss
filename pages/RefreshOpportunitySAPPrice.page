@@ -1,0 +1,6 @@
+<apex:page standardController="Opportunity" Extensions="RefreshSAPPrice" action="{!autorun}" ShowHeader="true" id="page">
+<apex:form >
+<apex:pageMessages />
+<apex:commandButton value="Back" action="{!saveAndReturn}" /> 
+</apex:form>
+</apex:page>

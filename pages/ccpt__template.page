@@ -1,0 +1,93 @@
+<!-- 
+Provider of the main template for all core pages in productivity.  Provides navigation controls, search ability, and includes all common stylesheets / javascript.
+@author brentgorton
+@todo add support for notifications, improve search capabilities
+@apex TemplateExtension provides search capability via RemoteAction {@method TemplateExtension getMenuSearchResults}, also provides current page detection and display of nav items accordingly
+-->
+<apex:page sidebar="false" showHeader="false" controller="ccpt.AngularExtension" extensions="ccpt.BetaHelper,ccpt.MeetingRemoting,ccpt.ActionFormComponentController,ccpt.RelatedToComponentController,ccpt.NotepadRemoting,ccpt.DashboardRemoting,ccpt.JavascriptRemoting,ccpt.CatchupExtension,ccpt.ExternalTemplateExtension,ccpt.Webservices,ccpt.ChatterRemoting,ccpt.BoardRemoting,ccpt.TemplateRemoting,ccpt.PulseRemoting,ccpt.GroupingRemoting" standardStylesheets="false">
+	<html>
+		<head>
+			<title>Productivity Fox</title>
+			<base href="#/"></base>
+			<style>
+				.splash{
+					position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background: #3d3d3d; z-index: 5000;
+					display:none;
+					text-align:center;
+					vertical-align: middle;
+					-webkit-transition:0.3s linear all;
+					transition:0.3s linear all;
+				}
+
+				[ng-cloak].splash {
+					display: block !important;
+				}
+				[ng-cloak] {display: none;}
+			</style>
+		</head>
+		<body ng-class="[headerClass, (dragging ? 'dragging' : '')]" ng-app="productivity">
+			<div ng-cloak="true" class="splash">
+				<img src="{!URLFOR($Resource.productivity_frameworks, IF(isProjectCloudUser, '/img/CC-Logo-2016-white-box.png', '/img/prod-fox-transparent-compressed.png'))}" style="width: 150px; height: {{::$root.const.hasProjectCloud ? '122' : '155'}}px; position: fixed;top: 50%;left: 50%;margin-left: -75px;margin-top: -{{::$root.const.hasProjectCloud ? '61' : '75'}}px;" />
+			</div>
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/bootstrap/css/bootstrap.min.css')}" />
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/bootstrap/css/slider.css')}" />
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/bootstrap/css/colorpicker.css')}" />
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/productivity.css')}" />
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/font-awesome-4.3.0/css/font-awesome.min.css')}" />
+
+			<!--<link href='http://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css'></link>-->
+			<!--<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/icons.css')}" />-->
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/fonts/raleway/raleway.css')}" />
+			<!--<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/fonts/SalesforceSans/css/salesforce-sans.css')}" />-->
+			<!--<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/pen/reMarked.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/pen/pen.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/pen/markdown.js')}"></script>-->
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/angular.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/angular-animate.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/angular-sanitize.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/angular-touch.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/plugins/angular-ui-router.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/plugins/angular-ui-router-helper.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/ui-bootstrap-tpls-0.13.0.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/bootstrap/js/slider.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/bootstrap/js/colorpicker.js')}"></script>
+			<!--<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/adal/adal.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/adal/adal-angular.js')}"></script>-->
+			<script src="https://www.youtube.com/iframe_api"></script>
+			<script src="https://apis.google.com/js/client.js"></script>
+			<script src="{!URLFOR($Resource.localization_assets,'/js/ngLocale/angular-locale_' + locale + '.js')}"></script>
+			<script>
+				var CONST_RESOURCE_URL = '{!$Resource.productivity_frameworks}/v/d/';
+				var CONST_NAMESPACE = '{!fieldNamespace}';
+				var NAMESPACE = '{!fieldNamespace}';
+				var JS_NAMESPACE = '{!jsNamespace}';
+				var CONST_ACTION_SCHEMA = {!actionLookups};
+				var CONST_MEETING_SCHEMA = {!meetingLookups};
+				var CONST_BOARD_SCHEMA = {!boardLookups};
+				var CONST_CARD_SCHEMA = {!cardLookups};
+				var CONST_DEFAULT_USER = { id : '{!$User.Id}', name : "{!JSENCODE($User.FirstName)} {!JSENCODE($User.LastName)}" };
+				var GROUPING_PREFIX = '{!groupingPrefix}';
+				var BOARD_PREFIX = '{!boardPrefix}';
+				var COLUMN_PREFIX = '{!columnPrefix}';
+				var PERMISSIONS = JSON.parse('{!permissions}');
+				var CONST_BETA = {!isBeta};
+				var CONST_SETUP = {!hasSetup};
+				var CONST_PROJECT_CLOUD = {!isProjectCloudUser};
+				var OAUTH = '{!GETSESSIONID()}';
+				var LABELS = {!labels};
+				var CHATTER_ENABLED = {!isChatterEnabled};
+			</script>
+			<script>
+				<apex:insert name="setup"></apex:insert>
+			</script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/productivity.debug.js')}"></script>
+			<div class="content" ng-class="{ 'has-project-cloud' : $root.const.hasProjectCloud }">
+				<ccmenu name="{{ headerTitle }}" controls="headerActions" title-controls="headerTitleControls" filters="headerFilters" filter-value="headerFilterValue" search-value="headerSearchValue"></ccmenu>
+				<div class="ui-view view-content"></div>
+				<undo-delete deleted-id="deletedId" deleted-name="deletedName"></undo-delete>
+				<!--<global-search></global-search>-->
+			</div>
+			<toast></toast>
+		</body>
+	</html>
+</apex:page>

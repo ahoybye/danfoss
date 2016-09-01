@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__Cannot_Update_Closed_Incident</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( NOT(ISCHANGED(BMCServiceDesk__Is_New_Record__c)), NOT( BMCServiceDesk__state__c ) , NOT( PRIORVALUE( BMCServiceDesk__state__c ) ), NOT(ISNEW()) ,NOT( ISCHANGED( BMCServiceDesk__Total_Duration__c ) ), NOT( ISCHANGED( BMCServiceDesk__Feedback__c ) ), NOT( ISCHANGED( BMCServiceDesk__Compliments_and_Complaints__c ) ), NOT(ISCHANGED( BMCServiceDesk__Feedback_Last_Submitted__c)),NOT(ISCHANGED( BMCServiceDesk__FKBroadcast__c)),NOT(AND(ISCHANGED(BMCServiceDesk__dueDateTime__c),NOT(BMCServiceDesk__state__c), (LastModifiedDate  -  BMCServiceDesk__closeDateTime__c) &lt; 0.0003 , (LastModifiedDate  -  BMCServiceDesk__closeDateTime__c) &gt; -0.1 )))</errorConditionFormula>
+        <errorMessage>This incident is closed. Reopen the incident to modify it.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Check_OutageStartDate</fullName>
+        <active>true</active>
+        <description>Outage Start Date is required.</description>
+        <errorConditionFormula>And(NOT(OR(ISNULL(BMCServiceDesk__outageTo__c),ISBLANK(BMCServiceDesk__outageTo__c))),OR(ISNULL(BMCServiceDesk__outageFrom__c),ISBLANK(BMCServiceDesk__outageFrom__c)))</errorConditionFormula>
+        <errorMessage>Outage Start Date is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Check_OutageToDate</fullName>
+        <active>true</active>
+        <description>This rule is used to make sure that Outage End Date comes always after Outage Start Date.</description>
+        <errorConditionFormula>AND(NOT(OR(ISNULL(BMCServiceDesk__outageTo__c),ISBLANK(BMCServiceDesk__outageTo__c) ) ), BMCServiceDesk__outageTo__c &lt;= BMCServiceDesk__outageFrom__c )</errorConditionFormula>
+        <errorMessage>Outage End Date must be later than Outage Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Follow_up_date_required</fullName>
+        <active>true</active>
+        <description>IF Follow_up is checked. Follow_up_Date is required</description>
+        <errorConditionFormula>IF(BMCServiceDesk__followUp__c==TRUE,
+OR( ISBLANK(BMCServiceDesk__followUpDateTime__c) , ISNULL(BMCServiceDesk__followUpDateTime__c)) 
+,FALSE)</errorConditionFormula>
+        <errorMessage>Please enter the Follow Up Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Not_allow_Request_Definition_Change</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( NOT(ISBLANK( BMCServiceDesk__FKRequestDefinition__c )) ,      NOT(ISNULL(BMCServiceDesk__FKRequestDefinition__c )) , NOT(ISBLANK( PRIORVALUE(BMCServiceDesk__FKRequestDefinition__c) )),NOT(ISNULL(PRIORVALUE(BMCServiceDesk__FKRequestDefinition__c) )) ,(PRIORVALUE(BMCServiceDesk__FKRequestDefinition__c)  &lt;&gt; BMCServiceDesk__FKRequestDefinition__c))  ||  AND(NOT(ISBLANK( PRIORVALUE(BMCServiceDesk__FKRequestDefinition__c) )) ,      NOT(ISNULL(PRIORVALUE(BMCServiceDesk__FKRequestDefinition__c) )),NOT(ISBLANK( PRIORVALUE(BMCServiceDesk__FKRequestDetail__c) )) ,      NOT(ISNULL(PRIORVALUE(BMCServiceDesk__FKRequestDetail__c) )) ,OR(ISNULL(BMCServiceDesk__FKRequestDefinition__c ) , ISBLANK( BMCServiceDesk__FKRequestDefinition__c)) )</errorConditionFormula>
+        <errorDisplayField>BMCServiceDesk__FKRequestDefinition__c</errorDisplayField>
+        <errorMessage>You can not edit Request Definition.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Select_Category_or_template_or_req_def</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(BMCServiceDesk__contactType__c,&apos;&apos;),  ISBLANK( BMCServiceDesk__FKCategory__c ) , ISBLANK( BMCServiceDesk__FKRequestDefinition__c ) , ISBLANK( BMCServiceDesk__FKTemplate__c ) )</errorConditionFormula>
+        <errorMessage>To save the incident, select a value in any one of the following fields: Category, Template, or Request Definition.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Select_Either_User_Lead_or_Contact</fullName>
+        <active>false</active>
+        <description>Allow to select Either User, Lead or Contact. And the Client type changes accordingly.</description>
+        <errorConditionFormula>IF(((BMCServiceDesk__FKClient__c != NULL  &amp;&amp;  BMCServiceDesk__FKLead__c == NULL &amp;&amp; BMCServiceDesk__FKContact__c == NULL) ||
+			(BMCServiceDesk__FKClient__c == NULL  &amp;&amp;  BMCServiceDesk__FKLead__c != NULL &amp;&amp; BMCServiceDesk__FKContact__c == NULL) ||
+			(BMCServiceDesk__FKClient__c == NULL  &amp;&amp;  BMCServiceDesk__FKLead__c == NULL &amp;&amp; BMCServiceDesk__FKContact__c != NULL)) , 
+			false, true)</errorConditionFormula>
+        <errorMessage>To save the incident, select a value in any one of the following fields: Client ID, Contact or Lead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__dueDateMustBeAfterOpenedDate</fullName>
+        <active>true</active>
+        <description>Due date must come after Opened Date</description>
+        <errorConditionFormula>AND(NOT(OR(ISNULL(BMCServiceDesk__dueDateTime__c),ISBLANK(BMCServiceDesk__dueDateTime__c) ) ),NOT(ISCHANGED( BMCServiceDesk__openDateTime__c ) ), BMCServiceDesk__dueDateTime__c &lt; BMCServiceDesk__openDateTime__c  )</errorConditionFormula>
+        <errorMessage>The Due Date must be later than the Opened Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__followUpDateTimeValidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(OR(ISNULL(BMCServiceDesk__followUpDateTime__c),ISBLANK(BMCServiceDesk__followUpDateTime__c) ) ), BMCServiceDesk__followUpDateTime__c &lt; BMCServiceDesk__closeDateTime__c )</errorConditionFormula>
+        <errorMessage>The Follow Up Date must be later than the Close Date. Select a new Follow Up Date.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>project_cloud__Health_Change_Requires_Reason</fullName>
+        <active>true</active>
+        <description>If the Health of a Project Task is changed, the reason field must be changed to explain why.</description>
+        <errorConditionFormula>ISCHANGED(project_cloud__Health__c)
+ &amp;&amp; (
+	NOT(ISCHANGED(project_cloud__Health_Reason__c)) ||
+	ISBLANK(project_cloud__Health_Reason__c)
+)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Health_Reason__c</errorDisplayField>
+        <errorMessage>When the Health is changed a reason must be given</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Units_Cannot_Be_Changed</fullName>
+        <active>true</active>
+        <description>Once the Project Units have been defined they are not able to be changed. This is to prevent massive recalculations on all tasks when the value is changed</description>
+        <errorConditionFormula>(
+	ISPICKVAL(project_cloud__Units__c, &apos;&apos;) ||
+	ISCHANGED(project_cloud__Units__c)
+) &amp;&amp; (
+	/*Special Cases for when the migration helper updates the values*/ 
+	NOT(ISPICKVAL(PRIORVALUE(project_cloud__Units__c), &quot;Fixed Duration&quot;)) ||
+	NOT(ISPICKVAL(PRIORVALUE(project_cloud__Units__c), &quot;Fixed Work&quot;))
+)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Units__c</errorDisplayField>
+        <errorMessage>This value cannot be changed. Once set it is read only</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Working_Days_Read_Only</fullName>
+        <active>true</active>
+        <description>The working days checkboxes are read only, once they are set when the project is created they cannot be modified.</description>
+        <errorConditionFormula>ISCHANGED(project_cloud__IsWorking_Monday__c) || 
+ISCHANGED(project_cloud__IsWorking_Tuesday__c) || 
+ISCHANGED(project_cloud__IsWorking_Wednesday__c) || 
+ISCHANGED(project_cloud__IsWorking_Thursday__c) || 
+ISCHANGED(project_cloud__IsWorking_Friday__c) || 
+ISCHANGED(project_cloud__IsWorking_Saturday__c) || 
+ISCHANGED(project_cloud__IsWorking_Sunday__c)</errorConditionFormula>
+        <errorMessage>The Working Days cannot be changed. Once set they are read only</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Working_Days_Required</fullName>
+        <active>true</active>
+        <description>At least one working day needs to be selected or by definition the project will never be completed</description>
+        <errorConditionFormula>NOT(project_cloud__IsWorking_Monday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Tuesday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Wednesday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Thursday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Friday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Saturday__c) &amp;&amp;
+NOT(project_cloud__IsWorking_Sunday__c)</errorConditionFormula>
+        <errorMessage>Please select at least one Working Day</errorMessage>
+    </validationRules>
+</CustomObject>

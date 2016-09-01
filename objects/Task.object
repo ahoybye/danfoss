@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>Business_Area_Required_if_Type_DOW</fullName>
+        <active>true</active>
+        <description>Business Area and Comments Required if DOW is checked</description>
+        <errorConditionFormula>AND( 
+OR(
+ISNULL( Business_Area__c), 
+ ISBLANK(Description )),
+( Include_in_DOW__c ))</errorConditionFormula>
+        <errorMessage>Business Area and Comments required if &quot;Included in DOW&quot; is checked</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Comments_Required_if_Include_in_COW</fullName>
+        <active>true</active>
+        <description>Comments are required if Include in Weekly Report is checked</description>
+        <errorConditionFormula>AND( 
+ISBLANK(Description ), 
+( Include_in_Comatrol_Weekly__c  ))</errorConditionFormula>
+        <errorDisplayField>Description</errorDisplayField>
+        <errorMessage>Comments are required if Include in Comatrol Weekly is selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Comments_Required_if_Rejecting</fullName>
+        <active>true</active>
+        <description>Comments are required if rejecting a contract task</description>
+        <errorConditionFormula>AND( 
+ISBLANK(Description ), 
+ISPICKVAL(Status,&quot;Rejected&quot;))</errorConditionFormula>
+        <errorDisplayField>Description</errorDisplayField>
+        <errorMessage>Comments are required if you are rejecting a contract</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Prevent_Status_Change</fullName>
+        <active>true</active>
+        <description>Once a task for a Contract has been Approved or Rejected, do not allow changing the status</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Contract_Stage__c)), IsClosed = True, ISCHANGED(Status))</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>Status cannot be changed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Require_Expiration_Action</fullName>
+        <active>true</active>
+        <description>require extension end date when selected expiration action is Extend</description>
+        <errorConditionFormula>AND( NOT(ISNEW()),  ISPICKVAL( Contract_Expiration_Action__c , &apos;&apos;), CONTAINS( Contract_Stage__c, &apos;Expired&apos; ), ISPICKVAL(Status, &apos;Completed&apos;))</errorConditionFormula>
+        <errorDisplayField>Contract_Expiration_Action__c</errorDisplayField>
+        <errorMessage>You must select an Expiration Action</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Require_Extension_End_Date</fullName>
+        <active>true</active>
+        <description>require extension end date when selected expiration action is Extend</description>
+        <errorConditionFormula>AND( ISPICKVAL( Contract_Expiration_Action__c , &apos;Extend&apos;), ISNULL( Contract_Extension_End_Date__c ))</errorConditionFormula>
+        <errorDisplayField>Contract_Extension_End_Date__c</errorDisplayField>
+        <errorMessage>For extended contracts you must enter a date when the extension will end for further review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PS_allMID_required_if_DOW_True</fullName>
+        <active>true</active>
+        <description>Require user to select value from allMID pick list if the task is marked for DOW</description>
+        <errorConditionFormula>AND(
+ISPICKVAL($User.Business_Org__c, &apos;Integrated&apos;), 
+ISPICKVAL(allMID_relevant_information__c, &quot;&quot;), 
+( Include_in_DOW__c))</errorConditionFormula>
+        <errorDisplayField>allMID_relevant_information__c</errorDisplayField>
+        <errorMessage>Please select if this is allMID relevant</errorMessage>
+    </validationRules>
+</CustomObject>

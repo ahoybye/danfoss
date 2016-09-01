@@ -1,0 +1,11 @@
+<apex:page standardController="ccpe_ppm__Investment__c" showHeader="true" sidebar="true">
+    <apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+    <c:tree parentId="{!ccpe_ppm__Investment__c.Id}" parentName="{!ccpe_ppm__Investment__c.Name}" />
+	<apex:detail inlineEdit="true"/>
+	<script>
+		$(document).ready(function() {
+            $('.ccpe_ghostText').remove();
+            $('br', '#ccpe_Tree_Section').remove();
+		});
+	</script>
+</apex:page>

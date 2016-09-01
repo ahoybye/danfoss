@@ -1,0 +1,28 @@
+<apex:page standardController="ccpe_ppm__Portfolio__c" extensions="ccpe_ppm.PortfolioDocumentationExtension" readonly="true">
+
+	<apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+	<c:tree parentId="{!ccpe_ppm__Portfolio__c.Id}" parentName="{!ccpe_ppm__Portfolio__c.Name}" />
+
+	<apex:sectionHeader title="{!ccpe_ppm__Portfolio__c.Name}" subtitle="Documentation"/>
+
+	<apex:pageMessages />
+
+	<apex:pageBlock >
+		<apex:pageBlockTable id="documentationTable" var="line" value="{!documents}">
+			<apex:column headerValue="Document Name">
+				<apex:outputLink value="{!line.url}" target="_blank">
+					{!line.displayType}: {!line.title}
+				</apex:outputLink>
+			</apex:column>
+			<apex:column headerValue="Document Description" value="{!line.description}" />
+			<apex:column headerValue="Chatter Comment" value="{!line.comment}" />
+			<apex:column headerValue="Parent Object Type" value="{!line.parentType}" />
+			<apex:column headerValue="Related To">
+				<apex:outputLink value="/{!line.parent.Id}">
+					 {!line.parent['Name']}
+				</apex:outputLink>
+			</apex:column>
+		</apex:pageBlockTable>
+	</apex:pageBlock>
+
+</apex:page>

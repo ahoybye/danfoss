@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>ccpt__Access_Level_User_Only</fullName>
+        <active>true</active>
+        <description>When the attendee is a user an access level is required. If the attendee is a contact the access level must be blank.</description>
+        <errorConditionFormula>IF(ISBLANK(ccpt__User__c),
+	NOT(ISBLANK(ccpt__Access_Level__c)),
+/*ELSE*/
+	ISBLANK(ccpt__Access_Level__c)
+)</errorConditionFormula>
+        <errorDisplayField>ccpt__Access_Level__c</errorDisplayField>
+        <errorMessage>User attendees require an access level. Contact attendees must not have an access level defined.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpt__Attendee_Required</fullName>
+        <active>true</active>
+        <description>A Meeting Attendee requires a person t o be selected, either a Contact or User</description>
+        <errorConditionFormula>IF(ISBLANK(ccpt__User__c), 0, 1) + IF(ISBLANK(ccpt__Contact__c), 0, 1) != 1</errorConditionFormula>
+        <errorMessage>A Meeting Attendee requires a single User or Contact to be specified.</errorMessage>
+    </validationRules>
+</CustomObject>

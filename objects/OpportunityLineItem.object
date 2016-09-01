@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>CE_Opp_Product_Quantity_Positive_Only</fullName>
+        <active>true</active>
+        <description>Validates that the opportunity product quantity is not negative</description>
+        <errorConditionFormula>AND( OR( Opportunity.RecordType.DeveloperName = &apos;Project_Opportunity&apos;, Opportunity.RecordType.DeveloperName =&apos;CE_Opportunity&apos;), Quantity &lt; 0)</errorConditionFormula>
+        <errorDisplayField>Quantity</errorDisplayField>
+        <errorMessage>The Product Quantity should not be negative. Please enter a positive value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Opp_Sales_Price_Positive_Only</fullName>
+        <active>true</active>
+        <description>Validates that opportunity amount (Sales Price) is not negative</description>
+        <errorConditionFormula>AND( OR( Opportunity.RecordType.DeveloperName = &apos;Project_Opportunity&apos;, Opportunity.RecordType.DeveloperName =&apos;CE_Opportunity&apos;), UnitPrice &lt; 0)</errorConditionFormula>
+        <errorDisplayField>UnitPrice</errorDisplayField>
+        <errorMessage>The Sales Price should not be negative. Please enter a positive value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_Closed_No_Edit_Quantity</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  
+AND( Opportunity.RecordType.DeveloperName !=&apos;CE_Opportunity&apos;, 
+Opportunity.RecordType.DeveloperName !=&apos;Project_Opportunity&apos;, 
+Opportunity.RecordType.DeveloperName !=&apos;Shadow_Opportunity&apos;), 
+Opportunity.IsClosed = True,  
+OR( 
+ISCHANGED(Quantity), 
+ISCHANGED( UnitPrice )),
+NOT(OR( 
+$Profile.Name = &quot;System Administrator&quot;, 
+$Profile.Name = &quot;CRM_System Administrator PS&quot;, 
+$Profile.Name = &quot;CRM_VP Sales&quot;, 
+$Profile.Name = &quot;CRM_VP Sales Comatrol&quot;, 
+$Profile.Name = &quot;CRM_Super User Turolla&quot;, 
+$Profile.Name = &quot;CRM_Super User Comatrol&quot; 
+) 
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Quantity</errorDisplayField>
+        <errorMessage>It is not possible to edit the Quantity or Sales Price on a Closed Opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TBD_Product</fullName>
+        <active>true</active>
+        <description>Evaluates if a product containing TBD is on a Closed opportunity</description>
+        <errorConditionFormula>AND( 
+OR (Status__c = &quot;Closed Won&quot;, 
+(Status__c = &quot;Closed Lost&quot;)), 
+CONTAINS(Product2.Name, &quot;TBD&quot;) 
+)</errorConditionFormula>
+        <errorDisplayField>Product2Id</errorDisplayField>
+        <errorMessage>Cannot have a Product containing &quot;TBD&quot; when Opportunity is Closed Won or Closed Lost</errorMessage>
+    </validationRules>
+</CustomObject>

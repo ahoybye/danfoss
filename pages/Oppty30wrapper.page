@@ -1,0 +1,11 @@
+<apex:page showHeader="true" standardStylesheets="true" sidebar="false" applyHtmlTag="true" applyBodyTag="true" docType="html-5.0">
+	<apex:iframe src="/apex/Oppty30_Dashboard" scrolling="false" id="theIframe" html-style="margin:0px;"/>
+    <script>
+    	document.getElementById('theIframe').height = 1600;        
+    	
+    	window.onresize=function(){
+            	document.getElementById('theIframe').height = 1600;            	
+        };
+    	
+    </script>
+</apex:page>

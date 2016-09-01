@@ -1,0 +1,338 @@
+<apex:page sidebar="true" showHeader="true" controller="ImageBankCtrl" standardStylesheets="false" id="page1">
+
+<head>  
+  <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, '/js/jquery.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, '/js/jquery-ui.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, 'js/jquery.multi-select.js')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/multi-select.css')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/main.css')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/jquery-ui.css')}"/>
+    <style>
+        #phSearchForm {
+            display: none !important;
+        }
+    .panelTable td {
+      padding:0;
+      margin:0;
+    }
+  </style>
+</head>
+
+
+ 
+<script type="text/javascript">
+  $j = jQuery.noConflict();
+  this.imagePreview = function(){ 
+    xOffset = 10;
+    yOffset = 30;
+    $j("a.preview").hover(function(e){
+      this.t = this.title;
+      this.title = "";  
+      var c = (this.t !== "") ? "<br/>" + this.t : "";
+      $j("body").append("<p id='preview'><img src='"+ $j(this).attr('src') +"' alt='Image preview' / width='250px' >"+ c +"</p>");                
+      $j("#preview")
+      .css("top",(e.pageY - xOffset) + "px")
+      .css("left",(e.pageX + yOffset) + "px")
+      .fadeIn("fast");            
+    },
+    function(){
+      this.title = this.t;  
+      $j("#preview").remove();
+    }); 
+    $j("a.preview").mousemove(function(e){
+      $j("#preview")
+      .css("top",(e.pageY - xOffset) + "px")
+      .css("left",(e.pageX + yOffset) + "px");
+    });     
+  };
+
+  var titleString = '';
+  var selectedProducts = [];
+  var otherString = '';
+
+  $j(document).ready(function () {
+    prepareDialog();
+    $j("#product-select").multiSelect();
+    $j("input:file").change(function() {
+        $j("#filename").text($j(this).val().replace(/.*(\/|\\)/, ''));
+        if(hasText($j('#box'))&&hasText($j(this))){
+          $j(":button:contains('{!$Label.Submit}')").button('enable');
+        } else {
+          $j(":button:contains('{!$Label.Submit}')").button('disable');
+        }
+    });
+
+    $j('#box').on('keyup keydown change', function() {
+      if(hasText($j(this))&&hasText($j("input:file"))){
+        $j(":button:contains('{!$Label.Submit}')").button('enable');
+      } else {
+        $j(":button:contains('{!$Label.Submit}')").button('enable');
+      }
+    });
+  });
+
+
+  function prepareDialog(){
+    $j(function() {
+      $j( "#image-submit-confirm" ).dialog({
+        resizable: false,
+        height:"250px", 
+        width:"550px",
+        maxWidth:800,
+        autoOpen:false,
+        modal: true,
+        buttons: {
+          "{!$Label.Submit}": function() {
+            $j( this ).dialog( "close" );
+            $j( "#question-submit-post" ).dialog( "open" ); 
+            generateTaskJS();                       
+            return false;
+          },
+          "{!$Label.CancelButton}": function() {
+            $j( this ).dialog( "close" );
+            return false;
+          }
+        }
+      });
+      $j( "#question-submit-post" ).dialog({
+          resizable: false,
+          height:"250px", 
+          width:"550px",
+          maxWidth:800,
+          autoOpen:false,
+          modal: true,
+          
+        });
+      $j(":button:contains('{!$Label.Submit}')").button('enable');
+    });
+
+  }
+
+  function hasText(obj) {
+    return obj.val().replace(/^\s+|\s+$/g, '').length > 0;
+  }
+
+
+  function openImageConfirmBox(){
+    generateTitleString();
+    if(titleString !== '' || otherString !== '') {
+      $j('#titles').empty();
+      $j('#otherImages').empty();
+      $j('#titles').append('<ul class="productlist">'+titleString+'</ul>');
+      $j('#otherImages').append('<ul class="productlist">'+otherString+'</ul>');
+      $j( "#image-submit-confirm" ).dialog( "open");
+      imagePreview();
+    }
+  }     
+
+  function generateTitleString(){
+    titleString = '';
+    otherString = '';
+    selectedProducts = [];
+    $j('#product-select option:selected').each(function ( index ) {
+      selectedProducts.push({ 'id' : 'ExternalId', 'title' : $j(this).val() });
+      otherString += "<li>"+$j(this).val()+"</li>";
+    });
+    $j(':checkbox').each(function ( index ) {
+      if($j(this).is(':checked')) {
+        selectedProducts.push({ 'id' : $j(this).attr('id'), 'title' : $j(this).attr('title') });
+        titleString += "<li><a src='{!IF($Site.Prefix!=null,$Site.Prefix,'')}/sfc/servlet.shepherd/version/download/"+$j(this).attr('objId')+"' class='preview'>"+$j(this).attr('title')+"</a></li>";
+      }
+    });
+  }
+    
+
+  function generateTaskJS(){
+    var imageString = '';
+    var commentString = '';
+    for(var i=0;i<selectedProducts.length;i++){
+      imageString += selectedProducts[i].title+', ';
+    }
+    imageString = imageString.replace(/,\s?$/, '');
+    commentString = $j('#box').val();
+    $j('#imageString :input:first').val(imageString);
+    $j('#commentString :input:first').val(commentString);
+    generateTaskAF();
+    
+  }
+
+  function inputFile() {
+    $j( "input:file" ).click();
+  }
+
+  $j(function() {
+    $j( "button" )
+      .button()
+      .click(function( event ) {
+        event.preventDefault();
+      });
+  });
+
+</script> 
+
+
+<div  class="modal" id="question-submit-post" title="Thanks"> 
+    <br />
+    <div class="modalText">
+      <p>Thank you for your question!</p>
+    </div>
+    <br />
+</div>
+
+<apex:form id="form1"> 
+<div style="display: none;">
+<apex:inputFile value="{!attachment}" filename="{!filename}" contentType="{!contentType}"/>
+<div id="imageString">
+  <apex:inputTextArea value="{!imageString}" />
+</div>
+<div id="commentString">
+  <apex:inputTextArea value="{!commentBox}" />
+</div>
+</div>
+
+<div class="modal" id="image-submit-confirm" title="{!$Label.RequestTitle}"> 
+  <div style="margin: 0px 15px 10px 10px;line-height: 16px;">
+    {!$Label.ImageRequestInfo}
+  </div>
+  <div class="modalText">
+  <textarea  id="box" value="" placeholder="{!$Label.ImageRequestPlaceholder}"/>
+  </div>
+  <div>
+    <div style="padding-left:10px;display:inline-block;vertical-align: top;font-weight: bold;width:155px;">{!$Label.RequestedImages}</div>
+    <div style="display:inline-block;vertical-align: top;" id="titles"></div>
+  </div>
+  <div style="margin-top: 10px;">
+    <div style="padding-left:10px;display:inline-block;vertical-align: top;font-weight: bold;width:155px;">{!$Label.OtherImages}</div>
+    <div style="display:inline-block;vertical-align: top;width:350px" id="otherImages"></div>
+    <div style="margin: 15px 15px 0 10px;">
+    <p>{!$Label.ImageRequestUpload}</p>
+    <button type="button" id="fakeBrowse" onclick="inputFile();"><span>{!$Label.SelectFile}</span></button>
+    <label id="filename" readonly="true"/>
+    </div>
+  </div>
+  <br />
+</div>
+
+<div class="container bottommargin">
+  <div class="greeting">
+    <span class="name" style="float: left;">
+      <ol class="breadcrumb">
+        <li><a href="{!IF($Site.Prefix!=null,$Site.Prefix,'')}{!'/apex/MarketingToolbox?sfdc.tabName='&$CurrentPage.parameters.sfdc.tabName}">{!$Label.Marketing_Toolbox}</a></li>
+        <li>{!$Label.ImageBank}</li>
+      </ol>
+    </span> 
+    <div style="float: right;">
+      <a href="{!IF($Site.Prefix!=null,$Site.Prefix,'')}{!'/apex/MarketingToolbox?sfdc.tabName='&$CurrentPage.parameters.sfdc.tabName}">{!$Label.Back}</a>
+    </div>
+  </div>
+
+  <apex:pageMessages id="msgs"/>
+
+  <div class="pageSummary">
+    <p><apex:outputText value="{!portalBanner.Summary__c}" escape="false" /></p>
+  </div>
+
+  <div class="topBorder"></div>
+
+  <div>
+    <table class="imageTable">
+      <tbody>
+        <tr class ="imageRow firstRow">
+          <apex:variable value="{!1}" var="panelCount"/>
+          <apex:variable value="{!1}" var="rowCount"/>
+          <apex:repeat value="{!conWrapList}" var="conWrap">
+          <td class="imagePanel{!IF(panelCount==5,' imagePanelLast','')} imagePanelLarge'" height="260px">
+            <!-- <div style="position:relative;height: 100%;"> -->
+              <div class="{!IF(rowCount > 1, 'panelTopBorder','')}"></div>
+              <table height="100%">
+              <tr>
+              <td height="100px" style="text-align:center;">
+<!--               <div class="bottommargin center"> -->
+                <img src="{!IF($Site.Prefix!=null,$Site.Prefix,'')}/sfc/servlet.shepherd/version/download/{!conWrap.converid}" style="height: 90px;"/>
+              <!-- </div> -->
+              </td>
+              </tr>
+              <tr>
+              <td height="110px">
+              <div class="bottommargin">{!conWrap.description}</div>
+              </td>
+              </tr>
+              <tr>
+              <td>
+              <div class="title" style="padding-bottom: 3px;">
+                <table id="titleTable">
+                <tr>
+                <td>
+                <input type="checkbox" id="{!conWrap.extid}" objId="{!conWrap.converid}" title="{!conWrap.title}" />
+                </td>
+                <td>
+                <apex:outputText value="{!conWrap.title}" styleClass="productTitle"/>
+                </td>
+                </tr>
+                </table>
+              </div>
+              </td>
+              </tr>
+            </table>
+            <!-- </div> -->
+          </td>
+          <apex:outputText value="</tr><tr class='imageRow'>" escape="false" rendered="{!panelCount==5}" />
+          <apex:variable var="rowCount" value="{!IF(panelCount==5, rowCount +1, rowCount)}"/>
+          <apex:variable var="panelCount" value="{!IF(panelCount==5, 1, panelCount + 1)}"/>
+        </apex:repeat>
+                  <apex:repeat value="{!conWrapGraphicsList}" var="conWrap">
+            <td class="imagePanel{!IF(panelCount==5,' imagePanelLast','')} imagePanelSmall" height="160px">
+              <div class="{!IF(rowCount > 1, 'panelTopBorder','')}"></div>
+              <table height="100%">
+              <tr>
+              <td height="100px" style="text-align:center;">
+                <img src="{!IF($Site.Prefix!=null,$Site.Prefix,'')}/sfc/servlet.shepherd/version/download/{!conWrap.converid}" style="height: 90px;"/>
+              </td>
+              </tr>
+              <tr>
+              <td>
+                <table id="titleTable">
+                <tr>
+                <td>
+                <input type="checkbox" id="{!conWrap.extid}" objId="{!conWrap.converid}" title="{!conWrap.title}" />
+                </td>
+                <td>
+                <apex:outputText value="{!conWrap.title}" styleClass="productTitle"/>
+                </td>
+                </tr>
+                </table>
+              </td>
+              </tr>
+              </table>
+            </td>
+            <apex:outputText value="</tr><tr class='imageRow'>" escape="false" rendered="{!panelCount==5}" />
+            <apex:variable var="rowCount" value="{!IF(panelCount==5, rowCount +1, rowCount)}"/>
+            <apex:variable var="panelCount" value="{!IF(panelCount==5, 1, panelCount + 1)}"/>
+          </apex:repeat>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="panelTopBorder"></div>
+<div>
+  <!--<div class="otherOptions">
+    <div class="productTitle">{!$Label.ProductSelectText}</div>
+    <select multiple="multiple" id="product-select">
+      <apex:repeat value="{!productSelectList}" var="product">
+        <option value="{!product}">{!product}</option>
+      </apex:repeat>
+    </select>
+  </div>-->
+  <div class="submitLink">
+    <a class="btn-icon" href="#" onclick="openImageConfirmBox(); return false;">
+      <span>{!$Label.Submit}</span>
+    </a>    
+  </div>
+</div>
+</div>
+
+<apex:actionFunction name="generateTaskAF" action="{!generateCase}" >
+</apex:actionFunction>
+
+</apex:form>
+</apex:page>

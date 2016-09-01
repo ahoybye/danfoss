@@ -1,0 +1,29 @@
+<apex:page standardController="Account" extensions="TaskWithContactAccountActionExtension" docType="html-5.0">
+    <apex:form >
+        <apex:pageMessages id="msgs"/>
+        <apex:pageBlock title="Task for {!Account.Name} Contacts" rendered="{!t.Id = null}">
+            <apex:pageBlockSection columns="1">
+                <apex:inputText label="Subject" value="{!t.Subject}" html-placeholder="Task Subject..." html-autofocus="true"/>
+                <apex:input label="Date" value="{!duedate}" type="auto"/>
+            </apex:pageBlockSection>
+            <apex:pageblockTable value="{!Account.Contacts}" var="s">
+                <apex:column headerValue="Action">
+                    <apex:commandlink value="Create Task" action="{!CreateTask}">
+                        <apex:param name="vID" value="{!s.Id}" assignTo="{!t.WhoId}"/>
+                    </apex:commandlink>
+                </apex:column>
+                <apex:column value="{!s.name}" />
+            </apex:pageblockTable>
+        </apex:pageBlock>
+        <apex:outputPanel rendered="{!t.Id != null}">
+            <script>
+            var taskID = '{!t.Id}';
+            if (window.sforce) {
+                sforce.one.editRecord(taskID);
+            } else {
+                top.location = '/' + taskID + '/e';
+            }
+            </script>
+        </apex:outputPanel>               
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:component >
+    <apex:attribute name="setCon" description="The standard set controller" type="ApexPages.StandardSetController" required="true"/>
+    <apex:outputText >{!setCon.PageNumber * setCon.PageSize + 1 - setCon.PageSize}-{!IF(setCon.PageNumber * setCon.PageSize > setCon.ResultSize, setCon.ResultSize, setCon.PageNumber * setCon.PageSize)} of {!setCon.ResultSize}</apex:outputText>
+</apex:component>

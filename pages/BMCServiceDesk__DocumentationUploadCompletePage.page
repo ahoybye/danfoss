@@ -1,0 +1,18 @@
+<apex:page showHeader="false" standardStylesheets="false">
+    <script>
+    	var docid = '{!JSENCODE($CurrentPage.parameters.docid)}';
+        if(window.parent.SIIframeID!= undefined){
+           if(window.parent.location.pathname.indexOf('apex/CIExplorerLauncher')!=-1)
+                  window.parent.frames['SIIframeID'].contentWindow.refreshDocs();
+           else
+			      window.parent.SIIframeID.refreshDocs();
+        }else{
+              if(docid != null && docid != ''){
+        		window.parent.getImageID(docid);      
+              }else{
+              window.parent.refreshDocs();
+        }
+        }
+        window.parent.closePopup();
+    </script>
+</apex:page>

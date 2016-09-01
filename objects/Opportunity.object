@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>CE_Application_must_be_filled</fullName>
+        <active>false</active>
+        <description>CE Application shall have value in Qualification phase and forward- RC CC rule only</description>
+        <errorConditionFormula>AND( OR(  RecordType.DeveloperName = &apos;Project_Opportunity&apos;, RecordType.DeveloperName =&apos;CE_Opportunity&apos;),    !ISPICKVAL(CE_Phase__c, &apos;Identification&apos;),ISPICKVAL(  Main_Application__c ,&quot;&quot; ), 
+OR( Text(CE_Division__c)  = &apos;Commercial Compressors&apos;, Text(CE_Division__c)  = &apos;Refrigeration Controls&apos;))</errorConditionFormula>
+        <errorMessage>Fill in Main Application in RC CC Segmentation section.
+Remember to choose a Sub segment before selecting the Main Application.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Competitor_must_be_filled</fullName>
+        <active>false</active>
+        <description>CE Main competitor shall have value in Qualification phase and forward</description>
+        <errorConditionFormula>AND( OR(  RecordType.DeveloperName = &apos;Project_Opportunity&apos;, RecordType.DeveloperName =&apos;CE_Opportunity&apos;),    !ISPICKVAL(CE_Phase__c, &apos;Identification&apos;),ISPICKVAL( Competitor__c,&quot;&quot; ), 
+OR(  Text(CE_Division__c)  = &apos;Danfoss Drives&apos;,Text(CE_Division__c)  = &apos;Commercial Compressors&apos;, Text(CE_Division__c)  = &apos;Refrigeration Controls&apos;))</errorConditionFormula>
+        <errorMessage>Fill in Main Competitor</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Date_of_first_delivery_must_be_filled</fullName>
+        <active>true</active>
+        <description>CE Application shall have value in Qualification phase and forward- RC CC rule only</description>
+        <errorConditionFormula>AND( OR(  RecordType.DeveloperName = &apos;Project_Opportunity&apos;, RecordType.DeveloperName =&apos;CE_Opportunity&apos;), ISBLANK( Production_Start_Date__c ),  NOT(ISBLANK(TEXT(CE_Sales_model__c))), 
+ Text(CE_Division__c)  = &apos;Cooling&apos;)</errorConditionFormula>
+        <errorDisplayField>Production_Start_Date__c</errorDisplayField>
+        <errorMessage>Please fill in Date of first delivery</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Opp_Amount_Positive_Only</fullName>
+        <active>true</active>
+        <description>Validates that the opportunity amount is not negative</description>
+        <errorConditionFormula>AND( OR( RecordType.DeveloperName = &apos;Project_Opportunity&apos;, RecordType.DeveloperName =&apos;CE_Opportunity&apos;),  Amount &lt; 0)</errorConditionFormula>
+        <errorDisplayField>Amount</errorDisplayField>
+        <errorMessage>The Opportunity Amount should not be negative. Please enter a positive value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Opportunity_Competitor_2</fullName>
+        <active>true</active>
+        <description>The 2nd Competitor cannot be filled in if the Main Competitor fields is empty</description>
+        <errorConditionFormula>AND(
+ISPICKVAL( Competitor__c , &quot;&quot;),   
+!ISPICKVAL(X2nd_Competitor__c, &quot;&quot;)
+   )</errorConditionFormula>
+        <errorDisplayField>X2nd_Competitor__c</errorDisplayField>
+        <errorMessage>The 2nd Competitor cannot be filled in if the Main Competitor fields is empty.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Opportunity_Competitor_3</fullName>
+        <active>true</active>
+        <description>The 3rd Competitor cannot be filled in if the previous Competitor fields are empty</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(X2nd_Competitor__c, &quot;&quot;),   
+!ISPICKVAL(X3rd_Competitor__c, &quot;&quot;)
+   )</errorConditionFormula>
+        <errorDisplayField>X3rd_Competitor__c</errorDisplayField>
+        <errorMessage>The 3rd Competitor cannot be filled in if the previous Competitor fields are empty.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Opportunity_Competitor_4</fullName>
+        <active>true</active>
+        <description>The 4th Competitor cannot be filled in if the previous Competitor fields are empty</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(X3rd_Competitor__c, &quot;&quot;),   
+!ISPICKVAL(X4th_Competitor__c, &quot;&quot;)
+   )</errorConditionFormula>
+        <errorDisplayField>X4th_Competitor__c</errorDisplayField>
+        <errorMessage>The 4th Competitor cannot be filled in if the previous Competitor fields are empty.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Product_must_be_filled</fullName>
+        <active>false</active>
+        <description>CE Product shall have value in Qualification phase and forward</description>
+        <errorConditionFormula>AND( OR(  RecordType.DeveloperName = &apos;Project_Opportunity&apos;, RecordType.DeveloperName =&apos;CE_Opportunity&apos;),    !ISPICKVAL(CE_Phase__c, &apos;Identification&apos;),HasOpportunityLineItem = false, 
+OR(  Text(CE_Division__c)  = &apos;Danfoss Drives&apos;,Text(CE_Division__c)  = &apos;Commercial Compressors&apos;, Text(CE_Division__c)  = &apos;Refrigeration Controls&apos;, Text(CE_Division__c)  = &apos;Heating solutions&apos;, Text(CE_Division__c)  = &apos;District Energy&apos;))</errorConditionFormula>
+        <errorMessage>You need to enter a Product or a Product group before saving the Opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_ReasonRequired_CE_Statusc_isLost</fullName>
+        <active>true</active>
+        <description>CE_ReasonRequired_CE_Status__c_isLost</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(Reason__c, &apos;&apos;)
+,
+
+OR(
+(ISPICKVAL(CE_Status__c, &apos;Lost&apos;)),
+(ISPICKVAL(CE_Status__c, &apos;Won&apos;)),
+(ISPICKVAL(CE_Status__c, &apos;Stopped&apos;)),
+(ISPICKVAL(CE_Status__c, &apos;Stopped by us&apos;)),
+(ISPICKVAL(CE_Status__c, &apos;Stopped by customer&apos;)),
+(ISPICKVAL(CE_Status__c, &apos;Stopped by third party&apos;)),
+(ISPICKVAL(StageName, &apos;Closed-Won&apos;)),
+(ISPICKVAL(StageName, &apos;Closed-Lost&apos;))
+)
+  
+)</errorConditionFormula>
+        <errorMessage>You must set Reason when setting an Opportunity to Closed. 
+Press Cancel close the Opportunity using the Close Opportunity Button</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Region_Check</fullName>
+        <active>true</active>
+        <description>This rule checks the value in the Region field belongs to Country Picklist</description>
+        <errorConditionFormula>AND( OR( RecordType.DeveloperName = &apos;Project_Opportunity&apos;, RecordType.DeveloperName =&apos;CE_Opportunity&apos;), AND(NOT(ISBLANK( CERegion__c )),( CERegion__r.Country_Code_Name__c !=  TEXT(Country__c)) ))</errorConditionFormula>
+        <errorDisplayField>CERegion__c</errorDisplayField>
+        <errorMessage>Selected region must belong to the Country</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_SAP_SUB_ACCOUNT_REQUIRED</fullName>
+        <active>false</active>
+        <description>For a CE customer that is not a prospect, then the SAP SUB Account must be selected</description>
+        <errorConditionFormula>AND(
+ Account.RecordType.DeveloperName = &apos;Customer_CE&apos;,
+
+ Sub_Account__c =&apos;&apos;
+)</errorConditionFormula>
+        <errorDisplayField>Sub_Account__c</errorDisplayField>
+        <errorMessage>For a CE customer that is not a prospect, then the SAP Sub Account must be selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Segment_must_be_filled</fullName>
+        <active>true</active>
+        <description>CE Segment shall have value in Qualification phase and forward - Danfoss Drives only</description>
+        <errorConditionFormula>AND( OR(  RecordType.DeveloperName = &apos;Project_Opportunity&apos;, RecordType.DeveloperName =&apos;CE_Opportunity&apos;),NOT(ISBLANK(TEXT(CE_Sales_model__c))),ISPICKVAL( Segment__c,&quot;&quot; ), 
+OR(  Text(CE_Division__c)  = &apos;Drives&apos;))</errorConditionFormula>
+        <errorDisplayField>Segment__c</errorDisplayField>
+        <errorMessage>Please fill in Segment</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_prevent_users_from_changing_stage</fullName>
+        <active>false</active>
+        <errorConditionFormula>!CONTAINS( $Profile.Name,  &apos;System Administrator&apos;) &amp;&amp;
+CONTAINS( $Profile.Name,  &apos;(CE)&apos;) &amp;&amp; !ISNEW() &amp;&amp; ISCHANGED( StageName )</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>Use ”Close Opportunity” button to close Opportunity or the Status field to change the status.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Closed_Won_on_New_Entry</fullName>
+        <active>true</active>
+        <description>Cannot enter a closed won or closed lost opportunity on new record</description>
+        <errorConditionFormula>AND(ISNEW(),
+ISPICKVAL( StageName, &quot;Closed Won&quot;))</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>Opportunities cannot be added in the Closed Won / Closed Lost stage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_Closed_No_Edit_Comatrol</fullName>
+        <active>true</active>
+        <description>Does not allow users other than System Admin or VP Sales to edit a Closed opportunity</description>
+        <errorConditionFormula>AND( 
+    RecordType.DeveloperName =&apos;Comatrol_Closed_Opportunities&apos;,
+    PRIORVALUE( IsClosed ) = True, 
+    OR(
+        ISCHANGED(Name),
+        ISCHANGED(StageName),
+        ISCHANGED(CloseDate)
+        ),
+    NOT(
+       OR(
+           $Profile.Name = &quot;System Administrator&quot;,
+           $Profile.Name = &quot;CRM_VP Sales Comatrol&quot;,
+           $Profile.Name = &quot;CRM_Super User Comatrol&quot;
+       )
+    )
+)</errorConditionFormula>
+        <errorMessage>It is not possible to edit a Closed Opportunity. Only System Administrators, Authorized Super Users or VP Sales may edit a Closed Opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_Closed_No_Edit_PS</fullName>
+        <active>true</active>
+        <description>Does not allow users other than System Admin or VP Sales to edit a Closed opportunity</description>
+        <errorConditionFormula>AND( 
+    RecordType.DeveloperName =&apos;Closed_Opportunities&apos;,
+    IsClosed, 
+    OR(
+        ISCHANGED(Name),
+        ISCHANGED(StageName),
+        ISCHANGED(Amount),
+        ISCHANGED(CloseDate)
+        ),
+    NOT(
+       OR(
+           $Profile.Name = &quot;System Administrator&quot;,
+           $Profile.Name = &quot;CRM_System Administrator PS&quot;,
+           $Profile.Name = &quot;CRM_VP Sales&quot;
+       )
+    )
+)</errorConditionFormula>
+        <errorMessage>It is not possible to edit a Closed Opportunity. Only System Administrators, Authorized Super Users or VP Sales may edit a Closed Opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_Closed_No_Edit_Turolla</fullName>
+        <active>true</active>
+        <description>Does not allow users other than System Admin or VP Sales to edit a Closed opportunity</description>
+        <errorConditionFormula>AND( 
+    RecordType.DeveloperName =&apos;Turolla_Closed_Opportunities&apos;,
+    PRIORVALUE( IsClosed ) = True, 
+    OR(
+        ISCHANGED(Name),
+        ISCHANGED(StageName),
+        ISCHANGED(CloseDate)
+        ),
+    NOT(
+       OR(
+           $Profile.Name = &quot;System Administrator&quot;,
+           $Profile.Name = &quot;CRM_VP Sales Turolla&quot;,
+           $Profile.Name = &quot;CRM_Super User Turolla&quot;
+       )
+    )
+)</errorConditionFormula>
+        <errorMessage>It is not possible to edit a Closed Opportunity. Only System Administrators, Authorized Super Users or VP Sales may edit a Closed Opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_Won_Check_Quotes</fullName>
+        <active>true</active>
+        <description>Only allow to set Opportunity as Won if a single quote exists - or at least one quote have been marked as Accepted</description>
+        <errorConditionFormula>AND(Text(Account.Business_Org__c)=&apos;Climate and Energy&apos;, OR(Text( CE_Status__c )=&apos;Won&apos;, Text(StageName)=&apos;Closed-Won&apos;), No_of_Quotes__c &gt; 1, No_of_Accepted_Quotes__c&lt;1)</errorConditionFormula>
+        <errorMessage>You must have at least one quote with status=Accepted to marked this opportunity as Won.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_requires_product_to_close</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(OR(
+ISPICKVAL(StageName,&quot;Closed Won&quot;),
+ISPICKVAL(StageName,&quot;Closed Lost&quot;)),
+ HasOpportunityLineItem = false)</errorConditionFormula>
+        <errorMessage>To close an opportunity, it must have an associated product.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PS_Close_date_not_in_past</fullName>
+        <active>true</active>
+        <description>Restrict non-admins from creating or editing opportunities with a close date in the past</description>
+        <errorConditionFormula>AND( 
+AND( RecordType.DeveloperName !=&apos;CE_Opportunity&apos;, 
+RecordType.DeveloperName !=&apos;Project_Opportunity&apos;, 
+RecordType.DeveloperName !=&apos;Shadow_Opportunity&apos;, 
+RecordType.DeveloperName !=&apos;Closed_Opportunities&apos;), 
+CloseDate &lt; Today (), 
+NOT(OR( 
+$Profile.Name = &quot;System Administrator&quot;,
+$Profile.Name = &quot;System Administrator (CE)&quot;,
+$Profile.Name = &quot;API_only_user&quot;, 
+$Profile.Name = &quot;CRM_System Administrator PS&quot;, 
+$Profile.Name = &quot;CRM_VP Sales&quot;, 
+$Profile.Name = &quot;CRM_VP Sales Comatrol&quot;, 
+$Profile.Name = &quot;CRM_System Administrator Turolla&quot;, 
+$Profile.Name = &quot;CRM_System Administrator Comatrol&quot; 
+) 
+) 
+)</errorConditionFormula>
+        <errorDisplayField>CloseDate</errorDisplayField>
+        <errorMessage>Close date must not be in the past.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PS_Prevent_Close_Lost_on_Replacement</fullName>
+        <active>true</active>
+        <description>Cannot close lose a replacement opportunity.</description>
+        <errorConditionFormula>AND( ISPICKVAL(Type, &quot;Replacement Business&quot;), 
+ISPICKVAL (StageName, &quot;Closed Lost&quot;),
+ISPICKVAL ( Account.Business_Org__c , &quot;Integrated&quot;))</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>Cannot select Stage &quot;Closed Lost&quot; if Type = Replacement Business</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PS_Replacement_Closed_Won_2_Products</fullName>
+        <active>true</active>
+        <description>Cannot close won a replacement opportunity with less than 2 days</description>
+        <errorConditionFormula>AND( ISPICKVAL(Type, &quot;Replacement Business&quot;), 
+ISPICKVAL (StageName, &quot;Closed Won&quot;),
+LineItemCount__c &lt; 2,
+ISPICKVAL ( Account.Business_Org__c , &quot;Integrated&quot;))</errorConditionFormula>
+        <errorMessage>Closed Won Replacement Business requires at least 2 products</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prod_Start_Date_greater_than_Close_Date</fullName>
+        <active>true</active>
+        <description>Date of first delivery must be after the Close Date</description>
+        <errorConditionFormula>IF(
+Production_Start_Date__c &lt;= CloseDate,
+
+ True, False)</errorConditionFormula>
+        <errorDisplayField>Production_Start_Date__c</errorDisplayField>
+        <errorMessage>Date of first delivery must be after the Close Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Program_Withdrawal_only_with_Closed_Lost</fullName>
+        <active>true</active>
+        <description>Reason Program Withdrawal can only be used with Closed Lost</description>
+        <errorConditionFormula>AND( ISPICKVAL( Reason_Won_Lost__c , &quot;Program Withdrawal&quot;), 
+ISPICKVAL (StageName, &quot;Closed Won&quot;))</errorConditionFormula>
+        <errorDisplayField>StageName</errorDisplayField>
+        <errorMessage>Program Withdrawal is valid reason for Closed Lost, not Closed Won</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Reason_Required_if_Opp_Closed</fullName>
+        <active>true</active>
+        <description>Reason is required if the Opportunity is Closed Won or Closed Lost</description>
+        <errorConditionFormula>AND (
+  OR (
+     ISPICKVAL( StageName , &quot;Closed Won&quot;),
+     ISPICKVAL(StageName, &quot;Closed Lost&quot;)),
+  OR(ISPICKVAL( Reason_Won_Lost__c, &quot;&quot; ),
+ISPICKVAL ( Reason_Description__c ,&quot;&quot;))
+)</errorConditionFormula>
+        <errorDisplayField>Reason_Won_Lost__c</errorDisplayField>
+        <errorMessage>Reason Closed/Won and Reason Description are required if Opportunity Stage is Closed Won or Closed Lost</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Shadow_Opportunity_Validation</fullName>
+        <active>true</active>
+        <description>Shadow Opportunities may not be edited but users may change Phase/Status/Stage from &quot;Shadow Opportunity&quot; and then be able to work with the Oppty.</description>
+        <errorConditionFormula>(
+$Profile.Name &lt;&gt; &quot;API Only User (CE)&quot;
+)
+ &amp;&amp; 
+(
+or( text(CE_Phase__c) = &quot;Shadow Opportunity&quot;, text(CE_Status__c) = &quot;Shadow Opportunity&quot;, text(StageName) = &quot;Shadow Opportunity&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>CE_Phase__c</errorDisplayField>
+        <errorMessage>This is a Shadow Opportunity and cannot be modified - please change Phase, Status and Stage from &quot;Shadow Opportunity if you would like to work with this record.</errorMessage>
+    </validationRules>
+</CustomObject>

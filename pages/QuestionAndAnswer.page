@@ -1,0 +1,310 @@
+<apex:page docType="html-5.0" controller="QuestionAndAnswerController" showHeader="false" cache="true" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+    
+    <title>Questions and Answers</title>
+    <!-- Jan 27, 2016 Himshikha Agrawal - Modified for Global Search Functionality-->
+    <script>
+            //window.history.pushState("TEST", "Title", "/apex/QuestionAndAnswer");
+    </script>
+
+    <apex:composition template="DF_Template">
+        <apex:define name="body">
+            <apex:form >
+
+                <c:DF_Header />
+
+                <div class="container-bs">
+                    <!-- <h1 id="h-all-questions">All Questions</h1> -->
+                    <apex:outputPanel rendered="{!bolCatSelected}">
+                    <div class="subheader">
+                        <h1 style="font-size:20px">All Questions with Category {!CategoryNameSelected}</h1>
+                    </div>
+                    </apex:outputPanel>
+                    <apex:pagemessages />
+                    <apex:tabPanel switchtype="client" selectedTab="NewestTab" tabClass="myActiveTab" inactiveTabClass="myInactiveTab" headerAlignment="right">
+                        <apex:tab label="Newest" name="NewestTab" id="tabOne" title="The most recently asked Questions" rendered="{!NOT(showMyFav)}">
+                            <apex:outputPanel id="pb" rendered="{!!noResults}">
+                            <table border="0" class="table align-middle">
+                                <apex:repeat var="q" value="{!Questions}">
+                                <tr>
+                                    <!--<td width="60">
+                                        <span class="count">{!q.UpVotes}</span>
+                                        <span class="name">votes</span>
+                                    </td>-->
+                                    <td width="60" class="answers">
+                                        <span class="count">{!q.NumReplies}</span>
+                                        <span class="name">answers</span>
+                                    </td>
+                                    <td width="60">
+                                        <span class="count">{!q.NumSubscriptions}</span>
+                                        <span class="name">favorites</span>
+                                    </td>
+                                    <td class="detail">
+                                        <div class="title">
+                                            <!--<li data-hover="true">
+                                              <a id="QTitle">{!q.Title}</a>
+                                              <br/>
+                                              <a class="dropDown" href="/apex/QuestionView?id={!q.Id}">View</a>
+                                              <a class="dropDown" href="www.google.com">Edit</a>
+                                            </li>-->
+                                            <a href="/apex/QuestionView?id={!q.Id}">{!q.Title}</a>
+                                        </div>
+                                        <ul class="categories">
+                                            <apex:repeat var="dcs" value="{!q.DataCategorySelections}">
+                                            <li>{!dcs.DataCategoryName}</li>
+                                            </apex:repeat>
+                                        </ul>
+                                        <div>
+                                            <ul style="padding-left: 0px;margin-left: 0px;">
+                                                <apex:repeat var="dcs" value="{!IF(contains(mapKeyString,q.Id), mapQuesAnswer[q.Id], '')}">
+                                                    <a href="/apex/QuestionView?id={!q.Id}" escape="false">{!dcs}</a><br/>
+                                                </apex:repeat>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td align="right">
+                                        <a href="/{!q.CreatedById}">{!q.CreatedBy.Name}</a>
+                                        <span class="date"><apex:outputField value="{!q.CreatedDate}"/></span>
+                                    </td>
+                                </tr>
+                                </apex:repeat>
+                            </table>
+                            </apex:outputPanel>
+                            <apex:panelGrid columns="7" id="pg" styleClass="pagination" rendered="{!!noResults}">
+                                <apex:commandButton status="fetchStatus" reRender="pb,pg" value="<<" styleClass="start-end" action="{!setCon.first}" disabled="{!!setCon.hasPrevious}" title="First Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb,pg" value="<" action="{!setCon.previous}" disabled="{!!setCon.hasPrevious}" title="Previous Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb,pg" value=">" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb,pg" value=">>" styleClass="start-end" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page"/>
+                                <apex:outputText >{!(setCon.pageNumber * sizeCon)+1-sizeCon}-{!IF((setCon.pageNumber * sizeCon)>noOfRecordsCon, noOfRecordsCon,(setCon.pageNumber * sizeCon))} of {!noOfRecordsCon}</apex:outputText>
+                                <!--<apex:commandButton status="fetchStatus" reRender="pb,pg" styleClass="refresh" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+                                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                                </apex:outputPanel>-->
+                            </apex:panelGrid>
+                            <apex:outputText value="No results returned" rendered="{!noResults}" styleClass="detail"/>
+                        </apex:tab>
+                        <apex:tab label="Replies" name="RepliesTab" id="tabTwo" title="Questions sorted by most replies"  rendered="{!NOT(showMyFav)}">
+                            <apex:outputPanel id="pb2" rendered="{!!noResults}">
+                            <table border="0" class="table align-middle">
+                                <apex:repeat var="q" value="{!RepliesQuestions}">
+                                <tr>
+                                    <!--<td width="60">
+                                        <span class="count">{!q.UpVotes}</span>
+                                        <span class="name">votes</span>
+                                    </td>-->
+                                    <td width="60" class="answers">
+                                        <span class="count">{!q.NumReplies}</span>
+                                        <span class="name">answers</span>
+                                    </td>
+                                    <td width="60">
+                                        <span class="count">{!q.NumSubscriptions}</span>
+                                        <span class="name">favorites</span>
+                                    </td>
+                                    <td class="detail">
+                                        <div class="title">
+                                            <a href="/apex/QuestionView?id={!q.Id}">{!q.Title}</a>
+                                        </div>
+                                        <ul class="categories">
+                                            <apex:repeat var="dcs" value="{!q.DataCategorySelections}">
+                                            <li>{!dcs.DataCategoryName}</li>
+                                            </apex:repeat>
+                                        </ul>
+                                        <div>
+                                            <ul style="padding-left: 0px;margin-left: 0px;">
+                                                <apex:repeat var="dcs" value="{!IF(contains(mapKeyString,q.Id), mapQuesAnswer[q.Id], '')}">
+                                                    <a href="/apex/QuestionView?id={!q.Id}" escape="false">{!dcs}</a><br/>
+                                                </apex:repeat>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td align="right">
+                                        <a href="/{!q.CreatedById}">{!q.CreatedBy.Name}</a>
+                                        <span class="date"><apex:outputField value="{!q.CreatedDate}"/></span>
+                                    </td>
+                                </tr>
+                                </apex:repeat>
+                            </table>
+                            </apex:outputPanel>
+                            <apex:panelGrid columns="7" id="pg2" styleClass="pagination" rendered="{!!noResults}">
+                                <apex:commandButton status="fetchStatus" reRender="pb2,pg2" value="??" styleClass="start-end" action="{!setRepliesCon.first}" disabled="{!!setRepliesCon.hasPrevious}" title="First Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb2,pg2" value="?" action="{!setRepliesCon.previous}" disabled="{!!setRepliesCon.hasPrevious}" title="Previous Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb2,pg2" value="?" action="{!setRepliesCon.next}" disabled="{!!setRepliesCon.hasNext}" title="Next Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb2,pg2" value="??" styleClass="start-end" action="{!setRepliesCon.last}" disabled="{!!setRepliesCon.hasNext}" title="Last Page"/>
+                                <apex:outputText >{!(setRepliesCon.pageNumber * sizeRepliesCon)+1-sizeRepliesCon}-{!IF((setRepliesCon.pageNumber * sizeRepliesCon)>noOfRecordsRepliesCon, noOfRecordsRepliesCon,(setRepliesCon.pageNumber * sizeRepliesCon))} of {!noOfRecordsRepliesCon}</apex:outputText>
+                                <!--<apex:commandButton status="fetchStatus" reRender="pb2,pg2" styleClass="refresh" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+                                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                                    <apex:actionStatus id="fetchStatus2" startText="Fetching..." stopText=""/>
+                                </apex:outputPanel>-->
+                            </apex:panelGrid>
+                            <apex:outputText value="No results returned" rendered="{!noResults}" styleClass="detail"/>
+                        </apex:tab>
+                        <!-- <apex:tab label="Votes" name="VotesTab" id="tabThree" title="Questions with the most Votes" >
+                            <apex:outputPanel id="pb3" rendered="{!!noResults}">
+                            <table border="0" class="table align-middle">
+                                <apex:repeat var="q" value="{!VotesQuestions}">
+                                <tr>
+                                    <td width="60">
+                                        <span class="count">{!q.UpVotes}</span>
+                                        <span class="name">votes</span>
+                                    </td>
+                                    <td width="60" class="answers">
+                                        <span class="count">{!q.NumReplies}</span>
+                                        <span class="name">answers</span>
+                                    </td>
+                                    <td width="60">
+                                        <span class="count">{!q.NumSubscriptions}</span>
+                                        <span class="name">follows</span>
+                                    </td>
+                                    <td class="detail">
+                                        <div class="title">
+                                            <a href="/apex/QuestionView?id={!q.Id}">{!q.Title}</a>
+                                        </div>
+                                        <ul class="categories">
+                                            <apex:repeat var="dcs" value="{!q.DataCategorySelections}">
+                                            <li>{!dcs.DataCategoryName}</li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </td>
+                                    <td align="right">
+                                        <a href="/{!q.CreatedById}">{!q.CreatedBy.Name}</a>
+                                        <span class="date">{!q.CreatedDate}</span>
+                                    </td>
+                                </tr>
+                                </apex:repeat>
+                            </table>
+                            </apex:outputPanel>
+                            <apex:panelGrid columns="7" id="pg3" styleClass="pagination" rendered="{!!noResults}">
+                                <apex:commandButton status="fetchStatus" reRender="pb3,pg3" value="??" styleClass="start-end" action="{!setVotesCon.first}" disabled="{!!setVotesCon.hasPrevious}" title="First Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb3,pg3" value="?" action="{!setVotesCon.previous}" disabled="{!!setVotesCon.hasPrevious}" title="Previous Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb3,pg3" value="?" action="{!setVotesCon.next}" disabled="{!!setVotesCon.hasNext}" title="Next Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb3,pg3" value="??" styleClass="start-end" action="{!setVotesCon.last}" disabled="{!!setVotesCon.hasNext}" title="Last Page"/>
+                                <apex:outputText >{!(setVotesCon.pageNumber * sizeVotesCon)+1-sizeVotesCon}-{!IF((setVotesCon.pageNumber * sizeVotesCon)>noOfRecordsVotesCon, noOfRecordsVotesCon,(setVotesCon.pageNumber * sizeVotesCon))} of {!noOfRecordsVotesCon}</apex:outputText>
+
+                            </apex:panelGrid>
+                            <apex:outputText value="No results returned" rendered="{!noResults}" styleClass="detail"/>
+                        </apex:tab>-->
+                        <apex:tab label="Favorites" name="FavoritesTab" id="tabFour" title="Questions sorted by starred favorites"  rendered="{!NOT(showMyFav)}">
+                            <apex:outputPanel id="pb4" rendered="{!!noResults}">
+                            <table border="0" class="table align-middle">
+                                <apex:repeat var="q" value="{!SubsQuestions}">
+                                <tr>
+                                    <!--<td width="60">
+                                        <span class="count">{!q.UpVotes}</span>
+                                        <span class="name">votes</span>
+                                    </td>-->
+                                    <td width="60" class="answers">
+                                        <span class="count">{!q.NumReplies}</span>
+                                        <span class="name">answers</span>
+                                    </td>
+                                    <td width="60">
+                                        <span class="count">{!q.NumSubscriptions}</span>
+                                        <span class="name">favorites</span>
+                                    </td>
+                                    <td class="detail">
+                                        <div class="title">
+                                            <a href="/apex/QuestionView?id={!q.Id}">{!q.Title}</a>
+                                        </div>
+                                        <ul class="categories">
+                                            <apex:repeat var="dcs" value="{!q.DataCategorySelections}">
+                                            <li>{!dcs.DataCategoryName}</li>
+                                            </apex:repeat>
+                                        </ul>
+                                        <div>
+                                            <ul style="padding-left: 0px;margin-left: 0px;">
+                                                <apex:repeat var="dcs" value="{!IF(contains(mapKeyString,q.Id), mapQuesAnswer[q.Id], '')}">
+                                                    <a href="/apex/QuestionView?id={!q.Id}" escape="false">{!dcs}</a><br/>
+                                                </apex:repeat>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td align="right">
+                                        <a href="/{!q.CreatedById}">{!q.CreatedBy.Name}</a>
+                                        <span class="date"><apex:outputField value="{!q.CreatedDate}"/></span>
+                                    </td>
+                                </tr>
+                                </apex:repeat>
+                            </table>
+                            </apex:outputPanel>
+                            <apex:panelGrid columns="7" id="pg4" styleClass="pagination" rendered="{!!noResults}">
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value="<<" styleClass="start-end" action="{!setSubCon.first}" disabled="{!!setSubCon.hasPrevious}" title="First Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value="<" action="{!setSubCon.previous}" disabled="{!!setSubCon.hasPrevious}" title="Previous Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value=">" action="{!setSubCon.next}" disabled="{!!setSubCon.hasNext}" title="Next Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value=">>" styleClass="start-end" action="{!setSubCon.last}" disabled="{!!setSubCon.hasNext}" title="Last Page"/>
+                                <apex:outputText >{!(setSubCon.pageNumber * sizeSubCon)+1-sizeSubCon}-{!IF((setSubCon.pageNumber * sizeSubCon)>noOfRecordsSubCon, noOfRecordsSubCon,(setSubCon.pageNumber * sizeSubCon))} of {!noOfRecordsSubCon}</apex:outputText>
+                                <!--<apex:commandButton status="fetchStatus" reRender="pb4,pg4" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+                                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                                    <apex:actionStatus id="fetchStatus4" startText="Fetching..." stopText=""/>
+                                </apex:outputPanel>-->
+                            </apex:panelGrid>
+                            <apex:outputText value="No results returned" rendered="{!noResults}" styleClass="detail"/>
+                        </apex:tab>
+                        
+                        <apex:tab label="My Favorites" name="MyFavoritesTab" id="tabFive" title="My Favorited Question"  rendered="{!showMyFav}">  
+                            <apex:outputPanel id="pb5" rendered="{!!noResults}">
+                            <table border="0" class="table align-middle">
+                                <apex:repeat var="q" value="{!MyFavQuestions}">
+                                <tr>
+                                    <!--<td width="60">
+                                        <span class="count">{!q.UpVotes}</span>
+                                        <span class="name">votes</span>
+                                    </td>-->
+                                    <td width="60" class="answers">
+                                        <span class="count">{!q.NumReplies}</span>
+                                        <span class="name">answers</span>
+                                    </td>
+                                    <td width="60">
+                                        <span class="count">{!q.NumSubscriptions}</span>
+                                        <span class="name">favorites</span>
+                                    </td>
+                                    <td class="detail">
+                                        <div class="title">
+                                            <a href="/apex/QuestionView?id={!q.Id}">{!q.Title}</a>
+                                        </div>
+                                        <ul class="categories">
+                                            <apex:repeat var="dcs" value="{!q.DataCategorySelections}">
+                                            <li>{!dcs.DataCategoryName}</li>
+                                            </apex:repeat>
+                                        </ul>
+                                        <div>
+                                            <ul style="padding-left: 0px;margin-left: 0px;">
+                                                <apex:repeat var="dcs" value="{!IF(contains(mapKeyString,q.Id), mapQuesAnswer[q.Id], '')}">
+                                                    <a href="/apex/QuestionView?id={!q.Id}" escape="false">{!dcs}</a><br/>
+                                                </apex:repeat>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td align="right">
+                                        <a href="/{!q.CreatedById}">{!q.CreatedBy.Name}</a>
+                                        <span class="date"><apex:outputField value="{!q.CreatedDate}"/></span>
+                                    </td>
+                                </tr>
+                                </apex:repeat>
+                            </table>
+                            </apex:outputPanel>
+                            <apex:panelGrid columns="7" id="pg5" styleClass="pagination" rendered="{!!noResults}">
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value="<<" styleClass="start-end" action="{!setMyFavCon.first}" disabled="{!!setMyFavCon.hasPrevious}" title="First Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value="<" action="{!setMyFavCon.previous}" disabled="{!!setMyFavCon.hasPrevious}" title="Previous Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value=">" action="{!setMyFavCon.next}" disabled="{!!setMyFavCon.hasNext}" title="Next Page"/>
+                                <apex:commandButton status="fetchStatus" reRender="pb4,pg4" value=">>" styleClass="start-end" action="{!setMyFavCon.last}" disabled="{!!setMyFavCon.hasNext}" title="Last Page"/>
+                                <apex:outputText >{!(setMyFavCon.pageNumber * sizeMyFavCon)+1-sizeMyFavCon}-{!IF((setMyFavCon.pageNumber * sizeMyFavCon)>noOfRecordsMyFavCon, noOfRecordsMyFavCon,(setMyFavCon.pageNumber * sizeMyFavCon))} of {!noOfRecordsMyFavCon}</apex:outputText>
+                                <!--<apex:commandButton status="fetchStatus" reRender="pb4,pg4" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+                                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                                    <apex:actionStatus id="fetchStatus4" startText="Fetching..." stopText=""/>
+                                </apex:outputPanel>-->
+                            </apex:panelGrid>
+                            <apex:outputText value="No results returned" rendered="{!noResults}" styleClass="detail"/>
+                        </apex:tab>
+                        
+                        
+                    </apex:tabPanel>
+                    <!--Added by Rajeev A(Appirio) - [12/22/2015]: T-459875(Update QuestionAndAnswer Page)-->
+                    <!--<apex:actionFunction name="setNewestTab" action="{!setNewestTab}" rerender="pb,pg" immediate="true">
+                    </apex:actionFunction>
+                    <apex:actionFunction name="setRepliesTab" action="{!setRepliesTab}" reRender="pb2,pg2" immediate="true"/>
+                    <apex:actionFunction name="setVotesTab" action="{!setVotesTab}" rerender="pb3,pg3" immediate="true"/>
+                    <apex:actionFunction name="setSubscriptionsTab" action="{!setSubscriptionsTab}" rerender="pb4,pg4" immediate="true"/>-->
+                </div>
+            </apex:form>
+
+        </apex:define>
+    </apex:composition>
+</apex:page>

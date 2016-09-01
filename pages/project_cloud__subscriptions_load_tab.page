@@ -1,0 +1,283 @@
+<apex:page controller="project_cloud.SubscriptionsLoadGrid" extensions="project_cloud.SubscriptionsLoad,project_cloud.BetaHelper" docType="html-5.0">
+	<c:include_jquery noConflict="true" /> 
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.css')}" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.js')}" />
+	<apex:sectionHeader title="Resources Load" subtitle="Resources Load" />
+
+	<apex:pageMessages id="messages" />
+	<apex:outputPanel rendered="{!isBeta}">
+		<apex:outputPanel rendered="{!NOT(isBetaWithConfirm)}">
+			<script>
+				window.location.href = '{!$Page.resourcing}#/load';
+			</script>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{!isBetaWithConfirm}">
+		        <apex:pageMessage summary="Resourcing Beta" severity="warning" strength="3" escape="false">You have specified that you still wish to access the old resourcing pages.<br />To access the new resourcing pages, please click <a href='{!$Page.resourcing}#/load'>here</a></apex:pageMessage>
+		</apex:outputPanel>
+	</apex:outputPanel>
+	<style type="text/css">
+		.empty-column-content {
+			display: none;
+		}
+
+		.resource-load-green {
+			background-color: #a1f78d;/*green*/
+		}
+		.resource-load-yellow {
+			background-color: #ffd74b;/*yellow*/
+		}
+		.resource-load-red {
+			background-color: #fb8a8c;/*red*/
+		}
+		
+		.loadcell{
+			height: 100%;
+			position: relative;
+		}
+
+		.qtip-content ul {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.dateOnlyInput input {
+			width: auto;
+		}
+	</style>
+	<script>
+		var theGrid;
+		j$(document).ready(function(){
+			LoadSubscriptionGridRows(0, 100);
+		});
+		function htmlDecode(value){
+  			return j$('<div/>').html(value).text();
+		}
+		
+		function LoadSubscriptionGridRows(index, range){
+			Visualforce.remoting.Manager.invokeAction(
+				'{!$RemoteAction.SubscriptionsLoadGrid.getSubscriptionRows}',
+				index, range, j$('.filter').val(), j$('.startDate').val(),
+				function(result, event){
+					theGrid = j$('#grid').DataTable();
+					var rows = [];
+					if(event.status){
+						console.log(result);
+						if(result.index == 0 && result.columns != null){
+							for(var i = 1; i < result.columns.length; i++){
+								var th = result.columns[i].title + '';
+								th = htmlDecode(th);
+								j$('.table-header.col' + i).html(th);
+							}
+						}
+						for(var i = 0; i < result.rows.length; i++){
+							var row = CreateRow(result.rows[i]);
+							if(row != null){
+								rows[rows.length] = row;
+							}
+						}
+						theGrid.rows.add(rows).draw();
+						
+						if(result.hasMore){
+							LoadSubscriptionGridRows( (index + range), range);
+						}
+					}else{
+						alert('There was an issue trying to load Subscriptions Load, please refresh your page');
+					}
+				}
+			);
+		}
+		
+		function ResetFilter(){
+			theGrid.rows().remove().draw();
+			LoadSubscriptionGridRows(0,100);
+		}
+		
+		function CreateRow(row){
+			var rowObj = [];
+			for(var i = 0; i < row.values.length; i++){
+				rowObj[i] = htmlDecode(row.values[i]);
+			}
+			return rowObj;
+		}
+	</script>
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockButtons id="buttons" location="top">
+				<apex:actionRegion id="buttonsRegion">
+					<span class="dateInput dateOnlyInput">
+						<apex:input type="date" value="{!selectedGridStartDate}" id="start" styleClass="startDate"/>
+					</span>
+					<apex:selectList id="filterDay" value="{!selectedColumnInterval}" size="1" styleClass="filter">
+						<apex:selectOptions value="{!columnIntervals}" />
+					</apex:selectList>
+					<!-- <apex:commandButton id="changeColumns" value="Refresh Columns" action="{!changeColumns}" rerender="section, messages" status="tableStatus" />-->
+					<apex:commandButton value="Refresh Columns" onclick="ResetFilter(); return false;" rerender="" />
+				</apex:actionRegion>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="1" id="section">
+				<c:grid columns="{!gridColumns}" data="[]" />
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+	<script type="text/javascript">
+		//overwrite the saleforce function so the focus is not put on the hours input field
+		function setFocusOnLoad() {}
+
+		//used by the timezone parser
+		if(typeof Number.prototype.lpad === "undefined") {
+			Number.prototype.lpad = function(length) {
+				var str = "" + this;
+				while (str.length < length) {
+					str = '0' + str;
+				}
+			    return str;
+			}
+		}
+
+		//used by the timezone parser
+		if(typeof Date.prototype.toSFDCRemotingDateFormat === "undefined") {
+			Date.prototype.toSFDCRemotingDateFormat = function() {
+				//Apex Dates are all stored as GMT, hence no timezone offset being required
+				return DateUtil.formatDate(this, "E, d NNN yyyy") + " 00:00:00 GMT";
+			}
+		}
+
+		//used by the timezone parser
+		if(typeof Date.prototype.toSFDCRemotingDatetimeFormat === "undefined") {
+			Date.prototype.toSFDCRemotingDatetimeFormat = function() {
+				var offset = this.getTimezoneOffset();
+				// Note the reversed sign!
+				offset = (offset < 0? '+' : '-') +
+						parseInt(Math.abs(offset / 60)).lpad(2) +
+						Math.abs(offset % 60).lpad(2);
+				return DateUtil.formatDate(this, "E, d NNN yyyy HH:mm:ss") + " " + offset;
+			}
+		}
+
+		j$(document).ready(function($) {
+		
+			var columnInterval = 'WEEK'; //esc$("{!$Component.page.form.block.buttons.filterDay}");
+
+			//delegate creation of the tooltip until mouseover
+			$('html').on("mouseover", "td > div.tooltip-target", function(mouseoverEvent) {
+				var self = $(this);
+				var userId = self.prop("id").replace(/:cells:.+$/i, ":user");
+				userId = self.attr('data-userid'); //esc$(userId).children("a:first").prop("href");
+				//userId = userId.substring(userId.lastIndexOf("/")+1);
+				// Bind the qTip within the event handler
+				self.qtip({
+					overwrite: false, // Make sure the tooltip won't be overridden once created
+					content: function(qtipContentEvent, qtipApi) {
+						var columnNumber = parseInt(self.attr('data-columnid'));
+						var startDate = $($('#grid th')[columnNumber]).text()
+						//console.log();// self.prop("id").replace(/:[0-9]+:cells:([0-9]+):.+$/i, ":headers:$1:headerheader:sortDiv");
+						startDate = startDate.replace(/ - .+$/i, "");
+						startDate = DateUtil.getDateFromUserLocale(startDate);
+						console.log(startDate.toSFDCRemotingDateFormat());
+						Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.SubscriptionsLoad.getMouseoverDetails}', userId, startDate.toSFDCRemotingDateFormat(), columnInterval, function(loadCellDetail, remotingEvent) {
+							if (remotingEvent.status) {
+								var wrapper = $("<div/>");
+								var allocations = $("<ul/>");
+								var events = $("<ul/>");
+								if(loadCellDetail.hours > 0) {
+									var hours;
+									var appendBr = false;
+									if(loadCellDetail.subscriptions.length > 0) {
+										var subscriptions = $("<ul/>");
+										var subscription;
+										for(var i = 0, len = loadCellDetail.subscriptions.length; i < len; i++) {
+											subscription = loadCellDetail.subscriptions[i];
+											hours = subscription.hoursPerDay * subscription.range.numberOfWorkingDays;
+											hours = Math.round(hours * 100) / 100;
+											subscriptions.append($("<li>" + subscription.task.{!JSENCODE(ns)}Project_Phase__r.{!JSENCODE(ns)}Project__r.Name + ": " + subscription.task.Name + ": " + hours + " hours</li>"));
+											appendBr = true;
+										}
+										wrapper.append(subscriptions);
+										if(appendBr) {
+											wrapper.append("<br/>");
+											appendBr = false;
+										}
+									}
+									if(loadCellDetail.allocations.length > 0) {
+										var allocations = $("<ul/>");
+										var allocation;
+										for(var i = 0, len = loadCellDetail.allocations.length; i < len; i++) {
+											allocation = loadCellDetail.allocations[i];
+											allocations.append($("<li>" + allocation.{!JSENCODE(ns)}Project_Task__r.{!JSENCODE(ns)}Project_Phase__r.{!JSENCODE(ns)}Project__r.Name + ": " + allocation.{!JSENCODE(ns)}Project_Task__r.Name + ": " + allocation.{!JSENCODE(ns)}Hours__c + " hours</li>"));
+											appendBr = true;
+										}
+										wrapper.append(allocations);
+										if(appendBr) {
+											wrapper.append("<br/>");
+											appendBr = false;
+										}
+									}
+									if(loadCellDetail.tickets.length > 0) {
+										var tickets = $("<ul/>");
+										var ticket;
+										for(var i = 0, len = loadCellDetail.tickets.length; i < len; i++) {
+											ticket = loadCellDetail.tickets[i];
+											tickets.append($("<li>" + ticket.Name + ": " + ticket.{!JSENCODE(ns)}Ticket_Name__c + ": " + ticket.{!JSENCODE(ns)}Estimated_Hours__c + " hours</li>"));
+											appendBr = true;
+										}
+										wrapper.append(tickets);
+										if(appendBr) {
+											wrapper.append("<br/>");
+											appendBr = false;
+										}
+									}
+									if(loadCellDetail.events.length > 0) {
+										var events = $("<ul/>");
+										var event;
+										var title;
+										for(var i = 0, len = loadCellDetail.events.length; i < len; i++) {
+											event = loadCellDetail.events[i];
+											title = event.Subject;
+											if(typeof event.WhatId !== "undefined") {
+												title += " (" + event.What.Name + ")";
+											}
+											if(event.IsAllDayEvent) {
+												title += " All Day";
+											} else {
+												hours = event.DurationInMinutes / 60;
+												hours = Math.round(hours * 100) / 100;
+												title += hours + " hours";
+											}
+											events.append($("<li>" + title + "</li>"));
+										}
+										wrapper.append(events);
+									}
+									qtipApi.set('content.text', wrapper);
+								} else {
+									qtipApi.set('content.text', 'Nothing Resourced Today');
+								}
+							} else if (remotingEvent.type === 'exception') {
+								qtipApi.set('content.text', remotingEvent.message);
+							}
+						});
+						// Set the intital content as the loading icon
+						return '<apex:image value="/img/loading.gif" alt="Loading..." />';
+        			},
+					position: {
+						at: "bottom left",
+						viewport: $(window),
+						container: esc$("{!$Component.page.form}")
+					},
+					show: {
+						event: mouseoverEvent.type, // Use the same show event as the one that triggered the event handler
+						delay: 400,
+						ready: true // Show the tooltip as soon as it's bound, vital so it shows up the first time you hover!
+					},
+					hide: {
+						fixed: true,
+						delay: 300
+					},
+					style: {
+						classes: 'ui-tooltip-light ui-tooltip-rounded ui-tooltip-shadow'
+					}
+				}, mouseoverEvent); // Pass through the original event to qTip
+			});
+
+		});
+	</script>
+</apex:page>

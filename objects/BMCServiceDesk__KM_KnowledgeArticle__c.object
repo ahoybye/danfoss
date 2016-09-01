@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__Category_Is_Required</fullName>
+        <active>true</active>
+        <description>User cannot save a record without inserting category</description>
+        <errorConditionFormula>(ISBLANK(BMCServiceDesk__FKCategory__c ) || ISNULL(BMCServiceDesk__FKCategory__c )) &amp;&amp; (NOT(ISCHANGED( BMCServiceDesk__Used_by_Staff_Members_Count__c )))</errorConditionFormula>
+        <errorDisplayField>BMCServiceDesk__FKCategory__c</errorDisplayField>
+        <errorMessage>Please enter the Category.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__CheckedOut_Draft_KA_Status_Cannot_Change</fullName>
+        <active>true</active>
+        <description>The status of the draft version of a knowledge article cannot be changed.</description>
+        <errorConditionFormula>AND(ISCHANGED(BMCServiceDesk__Status__c),AND(Not(ISNULL(BMCServiceDesk__Original_Knowledge_Article__c)),Not(ISBLANK(BMCServiceDesk__Original_Knowledge_Article__c))))</errorConditionFormula>
+        <errorDisplayField>BMCServiceDesk__Status__c</errorDisplayField>
+        <errorMessage>You cannot change the status of the draft version of a knowledge article.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Review_date_must_be_a_future_date</fullName>
+        <active>true</active>
+        <description>Review date must be a future date.</description>
+        <errorConditionFormula>AND
+(
+     BMCServiceDesk__Review_Date__c  &lt;   NOW(), 
+     Not(ISCHANGED( BMCServiceDesk__View_Count__c ))   
+)</errorConditionFormula>
+        <errorDisplayField>BMCServiceDesk__Review_Date__c</errorDisplayField>
+        <errorMessage>Review date must be a future date.</errorMessage>
+    </validationRules>
+</CustomObject>

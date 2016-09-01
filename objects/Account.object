@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>Account_Currency_Code_Check_With_Sub_Acc</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Business_Org__c ,&apos;Climate and Energy&apos;), 
+NOT(ISBLANK(Master_Sub_Account__c)),
+NOT(CONTAINS(TEXT(Master_Sub_Account__r.Currency__c),&apos;CSD&apos;)),
+NOT(CONTAINS(TEXT(Master_Sub_Account__r.Currency__c),&apos;RMB&apos;)),
+TEXT(CurrencyIsoCode)  &lt;&gt;  LEFT(TEXT(Master_Sub_Account__r.Currency__c),3),
+ISCHANGED(CurrencyIsoCode)
+)</errorConditionFormula>
+        <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+        <errorMessage>Account currency code should be same as Sub Account&apos;s currency code</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CSC_CANNOT_ASSIGN_OWNERSHIP_OUTSIDE_CE</fullName>
+        <active>true</active>
+        <description>Validation rule to prevent assigning a Climate &amp; Energy account outside of Climate &amp; Energy Ownership</description>
+        <errorConditionFormula>AND
+(
+ RecordType.DeveloperName = &quot;Prospect_CE&quot;,
+ !ISPICKVAL(Owner.Business_Org__c, &quot;Climate and Energy&quot;)
+)</errorConditionFormula>
+        <errorMessage>A Climate and Energy Prospect cannot be owned by a user with Business Org not equal to Climate and Energy</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CSC_CER_PRIMARY_CONTACT_PRESENT</fullName>
+        <active>true</active>
+        <description>When choosing a CSC primary contact, User must be selected from the appropriate lookup field</description>
+        <errorConditionFormula>OR(
+
+AND(
+ ISPICKVAL(Primary_CSC_Contact__c, &quot;Drives Technical&quot;),
+  Danfoss_Contact_Technical__c=&quot;&quot;     
+)
+,
+AND(
+ ISPICKVAL(Primary_CSC_Contact__c, &quot;Drives Commercial&quot;),
+ CSC_Agent__c=&quot;&quot;     
+)
+,
+AND(
+ ISPICKVAL(Primary_CSC_Contact__c, &quot;Cooling Technical&quot;),
+ Cooling_Technical_Contact__c =&quot;&quot;     
+)
+,
+AND(
+ ISPICKVAL(Primary_CSC_Contact__c, &quot;Cooling Commercial&quot;),
+ Cooling_Commercial_Contact__c =&quot;&quot;     
+)
+,
+AND(
+ ISPICKVAL(Primary_CSC_Contact__c, &quot;Heating Technical&quot;),
+ Heating_Technical_Contact__c =&quot;&quot;     
+)
+,
+AND(
+ ISPICKVAL(Primary_CSC_Contact__c, &quot;Heating Commercial&quot;),
+ Heating_Commercial_Contact__c =&quot;&quot;     
+)
+
+
+
+
+)</errorConditionFormula>
+        <errorMessage>When choosing a CSC primary contact, User must be selected from the appropriate lookup field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Edit_Account_Name</fullName>
+        <active>true</active>
+        <description>Cannot edit the Account Name on a customer record type</description>
+        <errorConditionFormula>AND(NOT(CONTAINS( $User.ProfileId , &quot;00eC0000001OWnv&quot;)), 
+( RecordTypeId = &quot;012L000000008Zw&quot;),
+( ISCHANGED( Name ) )
+)</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Cannot edit the Account Name on a customer record type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_edit_Customer_Name_CE</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(CONTAINS( $Profile.Name, &quot;API&quot;)), 
+    NOT(CONTAINS( $Profile.Name, &quot;Administrator&quot;)),
+    (Master_Sub_Account__r.Name &lt;&gt; Name),
+( RecordType.DeveloperName = &quot;Customer_CE&quot;), 
+( ISCHANGED( Name ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Can only be edited via P08</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_country_required_when_local</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!ISBLANK(Fax_Local__c) &amp;&amp; ISPICKVAL(Fax_Country__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Fax_Country__c</errorDisplayField>
+        <errorMessage>Value is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_local_digits_only</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!REGEX(Fax_Local__c, &quot;\\d*&quot;)</errorConditionFormula>
+        <errorDisplayField>Fax_Local__c</errorDisplayField>
+        <errorMessage>Must contain only numbers</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_local_must_not_be_global</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>BEGINS(Fax_Local__c, &quot;00&quot;) &amp;&amp; !ISBLANK(Fax_Local__c)</errorConditionFormula>
+        <errorDisplayField>Fax_Local__c</errorDisplayField>
+        <errorMessage>00 prefix not allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PS_ECS_restricted_by_country</fullName>
+        <active>true</active>
+        <description>Allow ECS attribute only in countries where the program is available</description>
+        <errorConditionFormula>AND(
+includes(Channel_Attributes__c,&quot;ECS&quot;),
+AND(
+Country__r.Country_Code__c != (&apos;US&apos;),
+Country__r.Country_Code__c != (&apos;CA&apos;)
+)
+)</errorConditionFormula>
+        <errorDisplayField>Channel_Attributes__c</errorDisplayField>
+        <errorMessage>The ECS program is currently available in North America only, we will contact you as soon as it is available in your area.  Please select a different channel attribute.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_Format_International_Standard</fullName>
+        <active>false</active>
+        <description>Phone must be in the +(country code) format</description>
+        <errorConditionFormula>AND(RecordTypeId = &quot;012C0000000UKO9&quot;,
+(NOT(CONTAINS(Phone ,&quot;+&quot;)
+ )
+)
+)</errorConditionFormula>
+        <errorDisplayField>Phone</errorDisplayField>
+        <errorMessage>Phone must contain a &quot;+&quot; to prefix the number.  Example, +1 555-555-1212</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_country_required_when_local</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!ISBLANK(Phone_Local__c) &amp;&amp; ISPICKVAL(Country_Phone__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Country_Phone__c</errorDisplayField>
+        <errorMessage>Value is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_local_digits_only</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!REGEX(Phone_Local__c, &quot;\\d*&quot;)</errorConditionFormula>
+        <errorDisplayField>Phone_Local__c</errorDisplayField>
+        <errorMessage>Must contain only numbers</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_local_must_not_be_global</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>BEGINS(Phone_Local__c, &quot;00&quot;) &amp;&amp; !ISBLANK(Phone_Local__c)</errorConditionFormula>
+        <errorDisplayField>Phone_Local__c</errorDisplayField>
+        <errorMessage>00 prefix not allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required</fullName>
+        <active>false</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK( Reason_For_Becoming_a_Direct_Account__c), 
+ISBLANK( Supplier_Code_Vendor_Code__c) , 
+ISBLANK ( VAT_Reg_No__c ), 
+ISBLANK ( Products_Manufactured__c ), 
+ISPICKVAL ( Language__c, &quot;&quot; ), 
+ISBLANK ( Sales_Org__c ) 
+))</errorConditionFormula>
+        <errorDisplayField>SAP_Customer_Request__c</errorDisplayField>
+        <errorMessage>Reason for Becoming a Direct Account, Supplier Code/Vendor Code, VAT Reg No, Products Manufactured, Language and Sales Org are required if SAP Customer Number is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_Channel</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISPICKVAL ( Channel__c, &quot;&quot; ) 
+))</errorConditionFormula>
+        <errorDisplayField>Channel__c</errorDisplayField>
+        <errorMessage>Channel is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_Language</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISPICKVAL ( Language__c, &quot;&quot; )
+))</errorConditionFormula>
+        <errorDisplayField>Language__c</errorDisplayField>
+        <errorMessage>Language is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_MarketSeg</fullName>
+        <active>false</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( Market_Segment__c )
+))</errorConditionFormula>
+        <errorMessage>Market Segment is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_Phone</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( Phone)
+))</errorConditionFormula>
+        <errorDisplayField>Phone</errorDisplayField>
+        <errorMessage>Phone is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_Reason</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK( Reason_For_Becoming_a_Direct_Account__c) 
+))</errorConditionFormula>
+        <errorDisplayField>Reason_For_Becoming_a_Direct_Account__c</errorDisplayField>
+        <errorMessage>Reason for Becoming a Direct Account is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_SalesManager</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( Sales_Manager__c )
+))</errorConditionFormula>
+        <errorDisplayField>Sales_Manager__c</errorDisplayField>
+        <errorMessage>Sales Manager is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_SalesOrg</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( Sales_Org__c )
+))</errorConditionFormula>
+        <errorDisplayField>Sales_Org__c</errorDisplayField>
+        <errorMessage>Sales Org is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_ShippingCity</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( ShippingCity )
+))</errorConditionFormula>
+        <errorDisplayField>ShippingCity</errorDisplayField>
+        <errorMessage>Shipping City is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_ShippingCountry</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( ShippingCountry )
+))</errorConditionFormula>
+        <errorDisplayField>ShippingCountry</errorDisplayField>
+        <errorMessage>Shipping Country is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_ShippingPostalC</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( ShippingPostalCode )
+))</errorConditionFormula>
+        <errorDisplayField>ShippingPostalCode</errorDisplayField>
+        <errorMessage>Shipping Postal Code is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prospect_Fields_Required_ShippingStreet</fullName>
+        <active>true</active>
+        <description>Fields required if SAP Customer Request is &apos;true&apos;</description>
+        <errorConditionFormula>AND( SAP_Customer_Request__c , 
+OR( 
+ISBLANK ( ShippingStreet)
+))</errorConditionFormula>
+        <errorDisplayField>ShippingStreet</errorDisplayField>
+        <errorMessage>Shipping Street is required if SAP Customer Request is checked.</errorMessage>
+    </validationRules>
+</CustomObject>

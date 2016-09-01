@@ -1,0 +1,123 @@
+<apex:page sidebar="{!hideHeaderAndSideBar}" tabStyle="Task_Console__tab" showHeader="{!hideHeaderAndSideBar}" showChat="true" controller="BMCServiceDesk.TaskConsoleController" title="{!JSENCODE($Label.BMCServiceDesk__Task_Console)}" action="{!LoadActionAgentItem}" extensions="BMCServiceDesk.JSRemoteActions">
+	<apex:includeScript value="/support/console/25.0/integration.js"/>
+	<c:ConsoleComponent ConsoleObjectName="Task__c" />
+<head>
+	<link rel="stylesheet" href="{!$Resource.SDEFStyles}/taskConsole.css" type="text/css" />
+</head>
+
+<script type="text/javascript">
+   var wikiUrl='{!wikiUrl}';
+    var wikiUrlTaskConsoleList = '{!wikiUrlTaskConsoleList}';
+   var pkgNamespace='BMCServiceDesk__';
+	var AttRefGeneratorId = '';
+    Ext.ns("TaskConsolePage");
+   TaskConsolePage.Labels = { 
+        ComposeEmailPageHeader: '{!JSENCODE($Label.ComposeEmailPageHeader)}',
+        StdIncidentRelatedBroadcastsChanges: '{!JSENCODE($Label.StdIncidentRelatedBroadcastsChanges)}',
+        New: '{!JSENCODE($Label.New)}',
+        New_Task :  '{!JSENCODE($Label.New_Task)}',
+        TaskRecordPrefix:  '{!JSENCODE($Label.TaskRecordPrefix)}',
+        Save: '{!JSENCODE($Label.Save)}',
+        Email: '{!JSENCODE($Label.Email)}',
+        Actions: '{!JSENCODE($Label.Actions)}',	
+        TaskClose: '{!JSENCODE($Label.Close)}', 
+        TaskQuickClose: '{!JSENCODE($Label.IncidentQuickClose)}', 
+        Reopen: '{!JSENCODE($Label.Reopen)}', 
+        TaskForm: '{!JSENCODE($Label.TaskForm)}',
+        RelatedLists: '{!JSENCODE($Label.RelatedLists)}',
+        AgentTools: '{!JSENCODE($Label.AgentTools)}',
+        CIExpCIExplorer: '{!JSENCODE($Label.CIExpCIExplorer)}',
+        KnowledgeSearch: '{!JSENCODE($Label.KnowledgeSearch)}',
+        Undo: '{!JSENCODE($Label.CIExpReload)}',
+        Undo_Consolebtn_Tooltip: '{!JSENCODE($Label.CIExpReload)}',
+        Print: '{!JSENCODE($Label.Print)}',
+        PrintPDF: '{!JSENCODE($Label.PrintPDF)}',
+        AddNote: '{!JSENCODE($Label.Message1)}',
+        AttachFile: '{!JSENCODE($Label.AttachViewFiles)}',
+        CloseTask: '{!JSENCODE($Label.CloseTask)}',
+		labelcloseWindow : '{!JSENCODE($Label.closeWindow)}',
+		labelcloseWindowLabel : '{!JSENCODE($Label.closeWindowLabel)}',
+		Yes: '{!JSENCODE($Label.ExtjsMessageYes)}',
+		No: '<div style="height:16px" class="x-btn-default-small-focus">{!JSENCODE($Label.ExtjsMessageNo)}</div>',
+        Clone: '{!JSENCODE($Label.Clone)}',
+        Tsk: '{!JSENCODE($Label.Tsk)}',
+        NewAction: '{!JSENCODE($Label.New_Action)}',
+        ViewActionHistory: '{!JSENCODE($Label.ViewActionHistory)}',
+		ServiceTargets: '{!JSENCODE($Label.SLM_ServiceTargets)}',
+        ServiceTargetsOK: '{!JSENCODE($Label.ServiceTargetStatus_OK)}',
+        ServiceTargetsMissed: '{!JSENCODE($Label.ServiceTargetStatus_Missed)}',
+        ServiceTargetsWarning: '{!JSENCODE($Label.ServiceTargetStatus_Warning)}',
+		closeConfirmMsg: '{!JSENCODE($Label.Console_closeConfirmMsg)}',
+        ConfirmAction: '{!JSENCODE($Label.Confirm_Action)}',
+		SubmitForApprovalLabel:'{!JSENCODE($Label.SubmitForApproval)}',
+		LockRecord:'{!JSENCODE($Label.LockRecord)}', 
+        UnlockRecord: '{!JSENCODE($Label.UnlockRecord)}',
+         Locked:'{!JSENCODE($Label.Locked)}', 
+        Unlocked: '{!JSENCODE($Label.Unlocked)}',
+        LockedRecord:'{!JSENCODE($Label.LockedRecord)}', 
+        UnlockedRecord: '{!JSENCODE($Label.UnlockedRecord)}'
+    }
+
+	 // common label should be removed later on from the indiviual page label.
+	
+	Ext.ns("ConsoleCommonLabels");
+	ConsoleCommonLabels.Labels = {
+		labelcloseWindowLabel : '{!JSENCODE($Label.closeWindowLabel)}',
+		ConfirmAction: '{!JSENCODE($Label.Confirm_Action)}',
+		Yes: '{!JSENCODE($Label.ExtjsMessageYes)}',
+		No: '<div style="height:16px" class="x-btn-default-small-focus">{!JSENCODE($Label.ExtjsMessageNo)}</div>',
+		ServiceTargetsOK: '{!JSENCODE($Label.ServiceTargetStatus_OK)}'
+	}
+	
+      var isServiceCloudConsole = "{!JSENCODE($CurrentPage.parameters.isServiceCloudConsole)}";
+      var tabId = "{!JSENCODE($CurrentPage.parameters.tabId)}";
+    _RemotingActions.quickClose = '{!$RemoteAction.TaskConsoleController.quickClose}';
+    _RemotingActions.reopenTask = '{!$RemoteAction.TaskConsoleController.reopenTask}';
+    _RemotingActions.pasteResolution = '{!$RemoteAction.TaskConsoleController.pasteResolution}';
+    
+   	if('{!JSENCODE($CurrentPage.parameters.record_name)}'!='' && isServiceCloudConsole=='true')
+   	{
+       sforce.console.setTabTitle(TaskConsolePage.Labels.TaskRecordPrefix+'{!JSENCODE($CurrentPage.parameters.record_name)}');
+   	}
+   	function setAttRefGeneratorId(val)
+ 	{
+	 	AttRefGeneratorId = val;
+	 	var detailsFrameId = document.getElementById('detailsFrameId');
+	 	if(detailsFrameId != null)
+	 		detailsFrameId.contentWindow.AssignAttRefGeneratorId(val);
+ 	}
+</script>
+
+<script src="{!$Resource.SDEFCommonJS}/TaskConsole.js"  type="text/javascript" />
+<script src="{!$Resource.SDEFCommonJS}/ConsoleForm.js"  type="text/javascript" />
+<script>
+    LoadHandlerForActionItem();
+    LoadHandlerForAgentItem();
+    var ActionMenuItem = {!ActionMenuItem};
+    var AgentMenuItem ={!AgentMenuItem};
+    var orgNamespace  = '{!orgNamespace}';
+	var isRFHotkeysDisabled;
+    if('{!JSENCODE($CurrentPage.parameters.isRFConsoleDetailForm)}' =='true'){
+		isRFHotkeysDisabled=window.parent.isRFHotkeysDisabled;
+	}else{
+		isRFHotkeysDisabled={!isRFHotkeysDisabled};
+	}
+
+	var recordLock = '{!JSENCODE(recordLock)}';
+    var lockDuration = '{!JSENCODE(lockDuration)}'; 
+	var continueLockingRecord;
+	var readContinueMessage1 =  '{!JSENCODE($Label.RecordContinueLockingMsg1)}';	
+</script>
+ <div id="topbar" style="display:none"> 
+ <a class='errorIcon'><img src='{!$Resource.SDEFStyles}/SDEFbuttons/error24.png'/></a>
+ <div id="time" style='display:inline; float: left; margin-left: 10px; '></div>
+ <a href="#" class='closeIcon' onmouseover="this.className = 'closeIconHover';this.className = 'closeIconHover';" onmouseout="this.className = 'closeIcon';this.className = 'closeIcon';"  onclick='closebar()'></a>  
+ <a href="#"  class='continueLockMsg' onclick='continueLockingRecord()'>{!JSENCODE($Label.ContinueLocking)}</a>
+ </div>
+ 
+<div id="DetailFormDiv" style="height:100%">
+    <iframe id="detailsFrameId" name="detailsFrame"  onload="afterTaskDetailFrameLoad()" frameborder="0" scrolling="yes" src ="" style="width:100%;height:100%;border:none;"></iframe>
+    <iframe id="relatedListFrameId" name="relatedListFrame" onload="afterTaskRelatedListFrameLoad()" frameborder="0" scrolling="yes"  src ="" style="width:100%;height:100%;border:none;"></iframe>
+</div>
+
+</apex:page>

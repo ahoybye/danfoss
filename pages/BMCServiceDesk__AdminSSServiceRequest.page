@@ -1,0 +1,122 @@
+<apex:page standardStylesheets="false" showHeader="false" controller="BMCServiceDesk.AdminSelfServiceController" action="{!serviceRequestLoader}">
+    
+    <link rel="stylesheet" type="text/css" href="{!$Resource.ExtJS4_1_3}/resources/css/ext-all.css" id="ext-all-css"/> 
+    <link rel="stylesheet" type="text/css" href="{!$Resource.SDEFStyles}/AdminSSIncident.css" id="incidentCSS"/>
+    <link rel="Stylesheet" type="text/css" href="{!$Resource.SDEFStyles}/HelpStyles.css" />
+    <style>    
+    .x-window-header-text {
+        font-size: 12px;
+    }
+    </style>    
+    <script>
+        var selectedSRFieldSet;
+        var columnCount; 
+    </script>    
+    <apex:form id="form">
+        
+        <div id="toolbar"></div>
+        <div id="helpDiv" class="clshelpDiv"></div>
+        <apex:outputPanel id="mainOutputPanel" styleClass="ClsContainer">   
+        <div id="mainContainer" class="clsMainContainer">
+                <table>
+                    <tr>
+                        <td class="clsInputCheckBox"> 
+                            <apex:inputCheckBox id="serviceRequestCombine" value="{!selfServiceBean.IncidentandServiceRequestCombined}"  />
+                        </td><td>   
+                            <apex:outputLabel value="{!$Label.BMCServiceDesk__IncidentandServiceRequestCombined}" styleClass="clsInputCheckBoxLabel"/>
+                        </td>
+                    </tr>
+                    <tr><td class="clsTRHeight"></td><td></td></tr>
+                    <tr>
+                        <td class="clsInputCheckBox">
+                            <apex:inputCheckBox id="Enable_My_Cart" value="{!selfServiceBean.Enable_MyCart}"  />
+                        </td><td>
+                            <apex:outputLabel value="{!$Label.BMCServiceDesk__Enable_My_Cart}" styleClass="clsInputCheckBoxLabel"/> 
+                        </td>
+                    </tr>
+                    <tr><td class="clsTRHeight"></td><td></td></tr>
+                    <tr> 
+                        <td class="clsInputCheckBox">
+                             <apex:inputCheckbox id="Enable_SSPreview" value="{!enableSSPreview}"/>
+                        </td><td> 
+                            <apex:outputLabel value="{!$Label.BMCServiceDesk__Enable_Preview_of_Service_Request}" styleClass="clsInputCheckBoxLabel"/>  
+                        </td>
+                    </tr>
+                    <tr><td class="clsTRHeight"></td><td></td></tr>
+                    <tr>
+                        <td class="clsInputCheckBox" >
+                            <apex:inputCheckBox id="Enable_Editing_submitted_service_request" value="{!selfServiceBean.Enable_Editing_Of_Submitted_SR}" />
+                        </td><td>
+                            <apex:outputLabel value="{!$Label.BMCServiceDesk__EnableEditingSubmittedServiceRequest}"  styleClass="clsInputCheckBoxLabel"/>  
+                        </td>
+                    </tr>
+                    <tr><td class="clsTRHeight"></td><td></td></tr>
+                    <tr>
+                        <td colspan="2">
+                        <apex:outputLabel value="{!$Label.BMCServiceDesk__SSServiceRequestCategoryTreeSettingTitle}" />
+                        <apex:selectRadio value="{!selfServiceBean.Enable_Simplified_Category_Tree}" layout="pageDirection" styleClass="radioCls">                                 
+                            <apex:selectOption itemValue="False" itemlabel="{!$Label.BMCServiceDesk__SSServiceRequestCategoryTreeSettingOption1}"/>
+                            <apex:selectOption itemValue="True" itemlabel="{!$Label.BMCServiceDesk__SSServiceRequestCategoryTreeSettingOption2}"/>
+                        </apex:selectRadio>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel id="showAdditionalFeilds" rendered="{!isSSSwitchNewUI}"  styleClass="ClsContainer">
+            <div class="clsMainContainer">
+                    <table>
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__SelectIncidentFieldset)}"/>
+                            </td>
+                        </tr>
+                        <tr><td class="clsTRHeight"></td><td></td></tr>
+                        <tr>
+                            <td>
+                                <div id="SRFieldSetComboDiv"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table> 
+                        <tr><td class="clsTRHeight"></td><td></td></tr>
+                        <tr>
+                            <td>
+                                <apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__DisplayColumnForSR)}" styleClass="marginRight20Cls"/>
+                             </td>
+                             <td>   
+                                <div id="columnComboDiv"/>
+                            </td>
+                        </tr>
+                    </table>
+        </div>
+        </apex:outputPanel>
+    <apex:outputPanel id="comboStore">
+        <script>
+             selectedSRFieldSet = '{!JSENCODE(selectedSRFieldSet)}';
+             columnCount = '{!JSENCODE(columnCount)}';
+        </script>
+    </apex:outputPanel>    
+    <apex:actionFunction name="save" action="{!saveServiceRequest}"  rerender="" onComplete="showMessage('{!messageString}');">
+        <apex:param assignTo="{!selectedSRFieldSet}" name="selectedSRFieldSet" value=""/> 
+        <apex:param assignTo="{!columnCount}" name="columnCount" value=""/>
+    </apex:actionFunction>    
+    <apex:actionFunction name="resetHandler" action="{!serviceRequestLoader}"  rerender="mainOutputPanel,comboStore" 
+    onComplete="reloadSRFieldSetDataStore();reloadColumnStore();enableColumnCombo();"/>   
+    </apex:form>    
+    <script>
+                var savelabel               = '{!JSENCODE($Label.Save)}';
+                var refreshLabel            = '{!JSENCODE($Label.Refresh)}'; 
+                var SSSHeaderMsg            = '{!JSENCODE($Label.serviceRequestPortletHeader)}';
+    var newSSUI = '{!isSSSwitchNewUI}';
+        var wikiUrl='{!wikiUrl}';
+    var columnLabel = '{!JSENCODE($Label.Column)}'; 
+    var SRFieldSets=JSON.parse('{!SRFieldSets}');    
+    parent.addHelpOnPage(document.getElementById('helpDiv'),'SS_service_request_settings.htm',wikiUrl); 
+    
+    </script>
+     
+    <apex:includeScript value="{!$Resource.BMCServiceDesk__ExtJS4_1_3}/ext-all.js" id="ext-all-js"/>
+    <apex:includeScript value="{!$Resource.BMCServiceDesk__SDEFCommonJS}/AdminSSServiceRequest.js" id="incident-js"/>
+    <apex:includeScript value="{!$Resource.BMCServiceDesk__SDEFCommonJS}/WikiHelp.js"/>
+</apex:page>

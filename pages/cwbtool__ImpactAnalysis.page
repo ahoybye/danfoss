@@ -1,0 +1,423 @@
+<apex:page controller="cwbtool.ImpactAnalysisCtroller" sidebar="false" tabStyle="CWB_Tool__tab" showheader="true" action="{!unLoadLayoutJSON}" cache="false">
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap-multiselect.css')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/jquery.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-transition.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-dropdown.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/bootstrap-multiselect.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/jszip.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/jszip-load.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/jszip-deflate.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/jszip-inflate.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/jquery.xml2json.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/xml2json.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__googleAnalytics,'/googleAnalytics.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.cwbtool__cwb,'/cwb/JS/jquery.min.js')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/css/bootstrap2.css')}" />
+     <link rel="stylesheet" href="{!URLFOR($Resource.cwb,'/cwb/ionic/css/ionicons.min.css')}" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.googleAnalytics,'/jqueryTabCustomStyle2.css')}" />
+    
+    <!-- <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.2/d3.min.js" charset="utf-8"></script>
+    <script src="{!URLFOR($Resource.dashboard, 'nv.d3.js')}" charset="utf-8"></script>
+    <link rel="stylesheet" href="{!URLFOR($Resource.dashboard, 'nv.d3.css')}" />
+    <style>
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 1.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+        margin-left: 8% !important;
+        width: 80%;
+    }
+    
+    legend.scheduler-border {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width: auto;
+        padding: 0 10px;
+        border-bottom: none;
+    }
+    
+    .bodyDiv {
+        height: 400px;
+    }
+    
+    .Btn-group {
+        width: 60% !important;
+    }
+    
+    .frm {
+        margin: 15px;
+    }
+    
+    .modal {
+        outline: none;
+    }
+    
+    #tabs {
+        /* border: 1px solid #a6c9e2 !important;*/
+    }
+    
+    .ui-tabs-nav li {
+        box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    .card {
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+        background-color: #FFFFFF;
+        margin-bottom: 30px;
+        padding: 4px;
+    }
+    
+    .bodyDiv {
+        height: 100%;
+    }
+    
+    .nv-pieWrap {
+        height: 300px;
+    }
+    
+    svg {
+        /*display: block;
+            float: left;*/
+        height: 250px !important;
+        width: 2em50px !important;
+    }
+    
+    .ui-widget {
+        font-size: 1.0em;
+    }
+    
+    .dataCell,
+    #tabs,
+    #tabsd {
+        text-transform: capitalize;
+    }
+    .grey-text {
+        color:rgba(154, 148, 148, 0.91);
+    }
+    </style>
+    <script>
+    $(document).ready(function() {
+        $(".tabd").tabs();
+        $('.dataCell  a').attr('target', '_blank');
+    });
+    </script>
+    <div id='cwbtooljq' class="card1">
+        <div id="tabs" class='tabd' style='overflow1:hidden;float: left;font-family:1cursive !important;width:100%'>
+            <ul>
+                <li><a href="#analysissummarydiv" class='tablink'>Impact Analysis</a></li>
+                <apex:outputpanel layout="none"  rendered="{!!showAnalsisSummary}">
+                    <li><a href="#analysissummaryresult" class='tablink'>Impact Analysis Result</a></li>
+                </apex:outputpanel>
+            </ul>
+            <div id="analysissummarydiv">
+                <apex:outputpanel layout="none">
+                    <c:actionstatusNew />
+                     <apex:form id="form" styleclass="frm">
+                        <script>
+                        $(document).ready(function() {
+                            if ({!showAnalsisSummary}) {
+                                _ChartData(eval("{!JSENCODE(chartJSON)}"));
+                            }
+                            $(".tabd").tabs();
+                            multiselect();
+                        });
+
+                        function multiselect() {
+                            $('.objectClass').multiselect({
+                                buttonClass: 'Btn Btn-default',
+                                enableFiltering: true,
+                                filterBehavior: 'both',
+                                enableCaseInsensitiveFiltering: true,
+                                filterPlaceholder: 'Search...',
+                                includeSelectAllOption: true,
+                                selectAllText: 'Select All',
+                                selectAllValue: 'multiselect-all',
+                                maxHeight: 400,
+                                buttonWidth: '400px',
+                                nonSelectedText: 'You have not selected any component',
+                                disableIfEmpty: true,
+                                onChange: function(element, checked) {}
+                            });
+
+                        }
+                        </script>
+                        <apex:outputpanel layout="none" rendered="{!!showAnalsisSummary}">
+                            <div class="panel panel-default">
+                               <table border='0' class="table table-striped" style='margin-bottom:2px;'>
+                                    <thead>
+                                       <th>
+                                          <apex:outputPanel layout="none" rendered="{!allFileType.size>0}">
+                                          <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal" class='' data-action='Setting'>
+                                            <span class="ion-funnel" aria-hidden="true"/>
+                                          </a>
+                                         </apex:outputPanel>    
+                                            Object<i class="grey-text">(Selecte An Object To Analyze.)</i>
+                                         </th>
+                                        <th>Field </th>
+                                        
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td width='49%'>
+                                                <apex:selectList size="1" value="{!objectName}" multiselect="false" styleclass="multiselect objectClass">
+                                                    <apex:selectOptions value="{!lstObject}" />
+                                                    <apex:actionSupport event="onchange" onsubmit="showOverLay('Wait..');document.getElementById('chrt1').innerHtml='';" oncomplete="hideOverLay();" action="{!loadfields}" reRender="form,analysisdetail" />
+                                                </apex:selectList>
+                                            </td>
+                                            <td width='49%'>
+                                                <apex:selectList size="1" value="{!selectedField}" multiselect="false" styleclass="multiselect objectClass">
+                                                    <apex:selectOptions value="{!lstField}" />
+                                                </apex:selectList>
+                                            </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                                <apex:outputPanel layout="none" rendered="{!objectName!=null && objectName!=''}">
+                                    <span id="example21-toggle" class="Btn Btn-primary compType ga" style='margin-right:10px;' onclick='Startprocessing();' data-action='Search'>Search</span>
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!objImpactAnalysisModel!=null && isImpactFound}">
+                                    <a href='{!$PAGE.EXPORTTOPDF}' target='_blank'>
+                                        <span id="example21-toggle1" class="Btn Btn-default compType ga" style='margin-right:10px;'>Export To PDF</span>
+                                    </a>
+                                    <span id="example21-toggle" class="Btn Btn-default compType ga" style='margin-right:10px;' data-toggle="modal" data-target="#saveModal">Save Analysis</span>
+                                </apex:outputPanel>
+                            </div>
+                            
+                            <apex:actionFunction name="getAnalysisSummary" action="{!getAnalysisSummary}" rerender="form,analysisdetail" oncomplete="if({!isSelectedLengthError}){hideOverLay();}" />
+                            <apex:actionPoller action="{!checkAsyncRequest}" interval="5" rerender="form" rendered="{!NOT(ISNULL(AsyncResult))&&NOT(ISBLANK(AsyncResult))}" oncomplete="if({!!isErrorFound}){}else{ hideOverLay();}" />
+                            
+                           
+                            <apex:outputPanel rendered="{!isZipdetailFound}" layout="none">
+                                <apex:actionFunction name="receiveFile" action="{!receiveMetadataZipFile}" rerender="dummypanel" oncomplete="unzip();">
+                                    <apex:param name="filename" assignTo="{!strFileName}" value="" />
+                                    <apex:param name="fileExtension" assignTo="{!strFileType}" value="" />
+                                    <apex:param name="filedata" assignTo="{!strLayoutJsonDetail}" value="" />
+                                </apex:actionFunction>
+                                <apex:actionFunction name="receiveComplete" action="{!receiveComplete}" rerender="form" oncomplete="hideOverLay();if({!isCompleted && !isErrorFound}){downloadLayout();}" />
+                                <c:ImpactAnalysisReadZipFile name="unzip" oncomplete="if(more) receiveFile(path, data); else receiveComplete();">{!LayoutZipDetail}</c:ImpactAnalysisReadZipFile>
+                            </apex:outputPanel>
+                            
+                            <apex:outputpanel id="dummypanel">
+                                <apex:pagemessages rendered="{!isErrorFound}" />
+                            </apex:outputpanel>
+                            <apex:actionFunction name="showAnalysisSummaryAction" action="{!showAnalysisSummary}" rerender="form,analysisdetail" oncomplete="_ChartData({!chartJSON});" />
+                            <apex:actionFunction name="saveAnalysisSummary" action="{!saveAnalysisSummary}" rerender="form,analsisSummaryDiv" oncomplete="hideOverLay();">
+                                <apex:param name="filename" assignTo="{!strSummary}" value="" />
+                            </apex:actionFunction>
+                        </apex:outputpanel>
+                        <apex:outputpanel layout="none" rendered="{!showAnalsisSummary}">
+                            <div class="panel panel-default">
+                               <table border='0' class="table table-striped" style='margin-bottom:2px;'>
+                                  <tbody>
+                                        <tr>
+                                            <td width='49%'>
+                                               Object<i class="grey-text">(Selected Object To Analyze.)</i> :  {!objImpactAnalysisModel.strObject}
+                                            </td>
+                                            <td width='49%'>
+                                               Field: {!objImpactAnalysisModel.strSearchtext}
+                                            </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                           
+                        </apex:outputpanel>
+                        <script>
+                        var gaDetail = 'OrgName={!$Organization.Name}_Name={!$User.FirstName}';
+
+                        _saveAnalysisSummary = function() {
+                            showOverLay('Please Wait...');
+                            //showModalProgressBar(0,'');
+                            saveAnalysisSummary($('#analysissummary').val());
+                        }
+
+
+                        _ChartData = function(data) {
+                            var chart = nv.models.pieChart()
+                                .x(function(d) {
+                                    return d.label
+                                })
+                                .y(function(d) {
+                                    return d.value
+                                })
+                                //.labelType("percent")
+                                //.donut(donuttype)
+                                .showLabels(true)
+                                //.tooltips(true)
+                                .showLegend(true)
+                                .height(height);
+
+                            //.legendPosition("right");
+                            // chart.yAxis.tickFormat(d3.format(',.0f'));
+                            //debugger;
+                            chart.legend.vers('furious');
+                            var height = 350;
+                            var width = 350;
+                            d3.select('#chrt1')
+                                .datum(data)
+                                .transition().duration(500)
+                                .attr('width', width)
+                                .attr('height', height)
+                                .call(chart);
+
+                            nv.utils.windowResize(chart.update);
+                        }
+
+                        function Startprocessing() {
+                            $('#chartdivcontainer').hide();
+                            //showOverLay('{!HTMLENCODE(strStatus)}');
+                            showModalProgressBar(0,'');
+                           // showTimer();
+                            getAnalysisSummary();
+
+                        }
+
+                        function downloadLayout() {
+                            showOverLay('...');
+                            showAnalysisSummaryAction();
+                            hideProcessingWindow();
+                        }
+
+
+                        var timeout;
+
+                        function hideProcessingWindow() { //console.log('call');
+                            var timeout = setTimeout(function() {
+                                hideOverLay();
+                                removeTimeOut();
+                            }, 5000);
+                        }
+
+                        function removeTimeOut() {
+                            // console.log('removeTimeOut');
+                            clearTimeout(timeout);
+                        }
+                        </script>
+                        <apex:pagemessages escape="false" rendered="{!!isErrorFound}" />
+                         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style='outline:none;'>
+						        <div class="modal-dialog modal-sm">
+						            <div class="modal-content">
+						                <div class="modal-header">
+						                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						                    <h4 class="modal-title" id="myModalLabel">Filter</h4><i class="grey-text">(Which component you want to search.)</i>
+						                </div>
+						                <div class="modal-body">
+						                     <apex:selectList size="1" value="{!selectedFileType}" multiselect="true" styleclass="multiselect objectClass">
+						                            <apex:selectOptions value="{!allFileType}" />
+						                        </apex:selectList>
+						                </div>
+						                <div class="modal-footer">
+						                    <button type="button" class="Btn Btn-primary" data-dismiss="modal">Close</button>
+						                </div>
+						            </div>
+						        </div>
+						     </div>
+                    </apex:form>
+                    <div id='chartdivcontainer1' style='display:none1;'>
+                        <div id="chartdiv" class="ct-chart1 ct-perfect-fourth1 card">
+                            <!-- <apex:outputtext value='<svg id="chrt1"></svg>' escape='false'></apex:outputtext>   -->
+                            <svg id="chrt1"></svg>
+                        </div>
+                        <apex:outputPanel layout="block" id="analysisdetail">
+                            <apex:outputPanel layout="none" rendered="{!objImpactAnalysisModel!=null && objImpactAnalysisModel.mapAnalysisDetail!=null && isImpactFound}">
+                                <div id='cwbtooljq' style='margin-top:10px;float:left;width:100%;height:100%;' class="card">
+                                    <div id="tabs" class='tabd' style='overflow1:hidden;float: left;font-family:1cursive !important;width:100%'>
+                                        <ul>
+                                            <apex:repeat value="{!objImpactAnalysisModel.mapAnalysisDetail}" var="key">
+                                                <apex:variable value="{!objImpactAnalysisModel.mapAnalysisDetail[key]}" var="listdetail" />
+                                                <apex:outputPanel layout="none" rendered="{!listdetail.size>0}">
+                                                    <li><a href="#{!SUBSTITUTE(key,' ','')}" class='tablink'>{!key}  <span class="badge">{!listdetail.size}</span></a></li>
+                                                </apex:outputPanel>
+                                            </apex:repeat>
+                                        </ul>
+                                        <apex:repeat value="{!objImpactAnalysisModel.mapAnalysisDetail}" var="key">
+                                            <apex:variable value="{!objImpactAnalysisModel.mapAnalysisDetail[key]}" var="listdetail" />
+                                            <apex:outputPanel layout="none" rendered="{!listdetail.size>0}">
+                                                <div id="{!SUBSTITUTE(key,' ','')}">
+                                                    <apex:pageblock >
+                                                        <apex:pageBlockSection columns="1" collapsible="false" showHeader="false">
+                                                            <apex:pageBlockTable value="{!objImpactAnalysisModel.mapAnalysisDetail[key]}" var="obj">
+                                                                <apex:column headerValue="Component Type">
+                                                                    {!key}
+                                                                </apex:column>
+                                                                <apex:column headerValue="Component Name">
+                                                                    <!-- Page Layout -->
+                                                                    <apex:outputLink target="_blank" value="/layouteditor/layoutEditor.apexp?type={!objImpactAnalysisModel.strObject}&lid={!obj.id}" rendered="{!AND(!ISNULL(obj.id),UPPER(obj.componentType)==UPPER('Layout'),NOT(CONTAINS(obj.componentname,'__c')))}">{!obj.componentname}</apex:outputLink>
+                                                                    <apex:outputLink target="_blank" value="/layouteditor/layoutEditor.apexp?type={!objImpactAnalysisModel.strObject}&lid={!LEFT(obj.id,15)}" rendered="{!AND(!ISNULL(obj.id),UPPER(obj.componentType)==UPPER('Layout'),(CONTAINS(obj.componentname,'__c')))}">{!obj.componentname}</apex:outputLink>
+                                                                    <!-- Listview -->
+                                                                    <apex:outputLink target="_blank" value="/ui/list/FilterEditPage?id={!obj.id}" rendered="{!obj.componentType=='ListView'}">{!obj.componentname}</apex:outputLink>
+                                                                    <!-- Based Sharing Rule -->
+                                                                    <apex:outputLink target="_blank" value="/p/own/OrgSharingDetail?setupid=SecuritySharing" rendered="{!obj.componentType=='BaseSharingRule'}">{!obj.componentname}</apex:outputLink>
+                                                                    <apex:outputPanel rendered="{!if(not(or(obj.componentType=='BaseSharingRule',UPPER(obj.componentType)==UPPER('Layout'),obj.componentType=='ListView')),true,false)}">
+                                                                        <apex:outputLink target="_blank" value="{!if(obj.componentType=='Assignment Rule Entry','/setup/own/entityruledetail.jsp?id=' + obj.id + '&setupid=LeadRules' , '/' +obj.Id)}" rendered="{!if(not(ISNULL(obj.id)),true,false)}">{!obj.componentname}</apex:outputLink>
+                                                                        <apex:outputtext rendered="{!if(ISNULL(obj.id),true,false)}"> {!obj.componentname}</apex:outputtext>
+                                                                    </apex:outputPanel>
+                                                                </apex:column>
+                                                                <apex:column headerValue="Folder/Object" value="{!obj.folderorobject}" />
+                                                                <apex:column headerValue="Created By" value="{!obj.createdByName}" />
+                                                                <apex:column headerValue="Created Date">
+                                                                    <apex:outputText value="{0, date,MM/dd/yy}">
+                                                                        <apex:param value="{!obj.CreatedDate}" />
+                                                                    </apex:outputText>
+                                                                </apex:column>
+                                                                <apex:column headerValue="Last Modified By" value="{!obj.lastModifiedByName}" />
+                                                                <apex:column headerValue="Last Modified Date">
+                                                                    <apex:outputText value="{0, date,MM/dd/yy}">
+                                                                        <apex:param value="{!obj.LastModifiedDate}" />
+                                                                    </apex:outputText>
+                                                                </apex:column>
+                                                            </apex:pageBlockTable>
+                                                        </apex:pageBlockSection>
+                                                    </apex:pageblock>
+                                                </div>
+                                            </apex:outputPanel>
+                                        </apex:repeat>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </div>
+                    <apex:outputpanel id="analsisSummaryDiv">
+                        <div class="modal fade " id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">Save Analysis</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label class="radio-inline">Summary</label>
+                                            <input type="text" name="analysissummary" id="analysissummary" value="" class='form-control' style="width:97%" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="Btn Btn-default" data-cancel="modal" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="Btn Btn-primary" data-confirm="modal" onclick='_saveAnalysisSummary();'>Save Analysis</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </apex:outputpanel>
+                    <!-- </fieldset> -->
+                </apex:outputpanel>
+            </div>
+            <apex:outputpanel layout="none" rendered="{!!showAnalsisSummary}">
+                <div id='analysissummaryresult'>
+                    <!-- <apex:enhancedList type="cwbtool__AnalysisSummary__c" height="300" rowsPerPage="25" id="listId" customizable="true" /> -->
+                    <apex:ListViews type="cwbtool__AnalysisSummary__c" />
+                </div>
+            </apex:outputpanel>
+        </div>
+    </div>
+  
+</apex:page>

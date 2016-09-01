@@ -1,0 +1,108 @@
+<apex:page showHeader="false"  sidebar="false" standardStylesheets="false" CACHE="FALSE">      
+<html><head><style>
+ body {font-family:Verdana, sans-serif;font-size:11pt;}
+ div.heading-black {font-size:14.0pt;font-weight:bold;}
+ div.heading-black-smaller {font-size:12pt;font-weight:bold;} 
+ div.heading-green {font-size:14.0pt;font-weight:bold; color:green;}
+ div.note {font-size:9.0pt;}
+</style>
+</head>
+<body>  
+<table width="100%" style="vertical-align: text-top;">
+          <tr>
+            <td style="text-align:right">
+                <apex:image value="{!URLFOR($Resource.HomePageResource, '/img/DanfossLogo200px.jpg')}"/>                
+            </td>
+            </tr>
+            </table>    
+            <div style="font-size:10pt">   
+<apex:outputLink value="/apex/BYLLSite_Danish">Danish</apex:outputLink> 
+    –&nbsp; <apex:outputLink value="/apex/BYLLSite">English</apex:outputLink> –&nbsp; <apex:outputLink value="/apex/BYLLSite_Slovak">Slovak</apex:outputLink> </div>
+<center>
+<div class="heading-green"><h1>Pflanzen Sie einen Baum</h1></div>
+
+Es ist unser Ziel, <i>"die Welt in der wir leben zu einem besseren Ort zu machen , als wir sie vorgefunden haben."</i><br/>
+-   J.M. Kouzes, B.Z. Posner: A Leaders Legacy
+ </center><br/><br/>
+Die Teammitglieder des Build Your Leadership Lagacy (BYLL) Trainings, ALP1,  des Jahres 2013 pflanzten diese beiden Apfelbäume am 16. Oktober 2013 im Rahmen einer globalen Zeremonie an den folgenden Danfoss Power Solutions Werken: <br/>
+<br/>
+<table width="100%"><tr><td width="50%" valign="top">
+    <table><tr><td width="300px"><div class="heading-black-smaller">Standort:</div></td><td><div class="heading-black-smaller">Teammitglieder:</div></td></tr>
+    <tr><td>Ames, Iowa, USA</td><td>Patrick Le Denmat, Molly Redenbaugh</td></tr>
+    <tr><td>Easley, South Carolina, USA</td><td>Doug Koch</td></tr>
+    <tr><td>Neumünster, Germany</td><td>Dirk Mettjes</td></tr>
+    <tr><td>Nordborg, Denmark</td><td>Bjoern Steinfath Iversen</td></tr>
+    <tr><td>Povazska Bystrica, Slovakia</td><td>Norbert Jakubik</td></tr>
+    <tr><td><br/><br/></td></tr>
+    <tr><td colspan="2"><div class="heading-green">Das Pflanzen dieser Bäume ist für uns ein Symbol für:</div>
+•   Den Zusammenschluss von Danfoss und Sauer-Danfoss als zwei gleichermassen Grün denkenden Unternehmungen.<br/>
+•   Die Symbiose und Harmonie zwischen unserer technischen Arbeitswelt und der Natur.<br/>
+•   Unsere Beiträge zum Schutz unserer Umwelt.<br/>
+•   Die Umwandlung von Kohlendioxyd um den Klimawandel zu bekämpfen.<br/>
+•   Unser Engagement um  <i>"die Welt in der wir leben zu einem besseren Ort zu machen als wir sie vorgefunden haben."</i>
+    </td></tr>
+    </table>         
+</td>
+<td style="text-align:right">
+<apex:image value="{!URLFOR($Resource.BYLLfiles, '/BYLL-HTML_files/image002.jpg')}"/></td></tr>
+</table><br/>
+<br/>
+<br/>
+<div class="heading-green">Wussten Sie schon?</div>
+•   Ein einzelner erwachsener Baum kann bis zu 22 KG Kohlendioxyd pro Jahr aus der Luft filtern und dabei genug Sauerstoff für 2 Menschen produzieren. <div class="note">Quelle: McAliney, Mike: Documentation and Information Sources for Land Resources Protection, Trust for Public Land, Sacramento, CA, December, 1993</div><br/> 
+•   Ein ganzer Hektar Bäume kann pro Jahr die Menge an Kohlendioxyd aufnehmen die ein Auto mit einer Laufleistung von 40.000 KM produziert.   <div class="note">Quelle: The New York Times</div><br/><br/>
+
+<table width="100%">
+    <tr><td colspan="2"><div class="heading-green">Bäume und ihre Rollen in unserem Leben:</div></td></tr>
+    <tr><td><apex:image value="{!URLFOR($Resource.BYLLfiles, '/BYLL-HTML_files/image004.jpg')}"/>
+    </td>         
+    <td valign="top">
+
+<div class="heading-black-smaller">Umwandlung von Kohlendioxyd in Sauerstoff</div>
+Pflanzen und Bäume schaffen mehr Sauerstoff als sie für ihr eigenes Wachstum verbrauchen. Grüne Pflanzen absorbieren darüber hinaus noch weitere schädliche Gase wie Schwefeldioxyd , Stickstoffdioxyd, Carbonoxyd.<br/>
+<br/><div class="heading-black-smaller">Senkung der Lufttemperatur</div>
+Ein Hektar Wald verdunstet bis zu 350 Liter Wasser pro Stunde und verringert so die Lufttemperatur um etwa 6 - 9 ˚C.<br/>
+<br/><div class="heading-black-smaller">Vermeidung von Bodererosion</div>
+Baumwurzeln befestigen die Böden an Hängen und Ufern und schützen sie sovor Erosion durch Wind und Wasser. <br/>
+<br/><div class="heading-black-smaller">Lärmschutz</div>
+Ein 10 Meter breiter Streifen von Bäumen senkt den Geräuschpegel um bis zu 6 dB. Laubbäume können 26% Schallenergie absorbieren.<br/>
+<br/><div class="heading-black-smaller">Aufnahme von Staub und Mikro-Organismen</div>
+Blätter fungieren als Filter für Staub.  Bäume sind dabei in der Lage 27% des Staubes in den Städten aus der Luft zu filtern. Bäume schaffen auch  Substanzen die wie Antibiotika wirken und Keime abtöten. In einem Nadelwald finden sich 200 mal weniger Keime in der Luft als in der einer Stadtstrasse.<br/>
+<br/><div class="heading-black-smaller">Speicherung von Feuchtigkeit und sauberemWasser</div>
+Speicherung von Feuchtigkeit und sauberemWasser.<br/>
+<br/><div class="heading-black-smaller">Erhöhung der Artenvielfalt</div>
+Bäume dienen als Schutz- und Lebensraum für viele Arten von Pflanzen und Tieren.<br/>
+<br/><div class="heading-black-smaller">Industrieller Nutzwert</div>
+Früchte, Holz für Dekorationen, Papierproduktion, Feuer,..., Blätterund  Blüten für Arzneimittel.<br/>    
+<br/><div class="heading-black-smaller">Sozialer Nutzwert</div>
+Wälder und Parks werden zur Entspannung  und zur Freizeitgestaltung mit Tieren, Freunden, Familie,... aufgesucht.
+</td></tr>
+     </table>
+<br/><br/>
+<div class="heading-green">Der Kohlenstoffkreislauf</div>
+Alle Lebewesen bestehen aus Kohlenstoff. Kohlenstoff ist ebenfalls ein Teil des Ozeans, der Luft und sogar von Gestein. Die Erde ist ein dynamischer Ort und der auf ihr befindliche Kohlenstoff steht niemals still. Es ist alles  in Bewegung! 
+<br/>
+ <br/> 
+<table width="100%">
+    <tr><td>
+    <apex:image value="{!URLFOR($Resource.BYLLfiles, '/BYLL-HTML_files/image006.jpg')}"/>
+    </td>         
+    <td valign="top">
+    In der Atmosphäre wird der Kohlenstoff zusammen mit Sauerstoff in einem Gas als Kohlendioxyd gebunden. Pflanzen nutzen Kohlendioxid und Sonnenlicht, um ihre eigene Nahrung für ihr Wachstum zu erstellen. Der Kohlenstoff wird so ein Teil der Pflanze. Abgestorbene Pflanzen können im Laufe von Jahrmillionen  zu fossilen Brennstoffen wie Kohle oder Öl werden. Verbrennen Menschen diese fossilen Brennstoffe, dann werden grosse Teile des gebundenen Kohlenstoffes wieder in Form von Kohlendioxid in die Atmosphäre abgegeben und der Kreislauf beginnt erneut. 
+    <br/><br/>
+    Kohlendioxid ist ein Treibhausgas und speichert die Wärme in der Atmosphäre. Ohne sie und andere Treibhausgase, wäre die Erde eine gefrorene Welt. Im Laufe der Jahrhunderte haben die Menschen so viel Kraftstoff verbrannt, dass Heute etwa 30% mehr Kohlendioxid in der Luft sind als noch vor etwa 150 Jahren und die Folgen werden als Klimawandel spürbar. Eisbohrkerne zeigen uns, dass es jetzt mehr Kohlendioxid in der Atmosphäre gibt als in den kompletten vergangenen 420.000 Jahren.
+    <br/><br/>
+    Mehr Information sind u.A. erhältlich unter:<br/>
+    <apex:outputLink target="_blank" value="http://en.wikipedia.org/wiki/Carbon_cycle">http://en.wikipedia.org/wiki/Carbon_cycle</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://www.youtube.com/watch?v=xFE9o-c_pKg">http://www.youtube.com/watch?v=xFE9o-c_pKg</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://www.geography4kids.com/files/cycles_carbon.html">http://www.geography4kids.com/files/cycles_carbon.html</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://www.kidsgeo.com/geography-for-kids/0159-the-carbon-cycle.php">http://www.kidsgeo.com/geography-for-kids/0159-the-carbon-cycle.php</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://answers.ask.com/science/other/how_does_the_carbon_dioxide_oxygen_cycle_work">http://answers.ask.com/science/other/how_does_the_carbon_dioxide_oxygen_cycle_work</apex:outputLink><br/>
+    </td></tr>
+     </table>
+    <br/><br/>    
+            <div style="font-size:10pt">   
+<apex:outputLink value="/apex/BYLLSite_Danish">Danish</apex:outputLink> 
+    –&nbsp; <apex:outputLink value="/apex/BYLLSite">English</apex:outputLink> –&nbsp; <apex:outputLink value="/apex/BYLLSite_Slovak">Slovak</apex:outputLink> </div>
+ </body></html>   
+</apex:page>

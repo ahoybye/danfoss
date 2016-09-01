@@ -1,0 +1,8 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false"  docType="html-5.0">
+	<apex:composition template="ccpt__mobile_template">
+		<apex:define name="setup">
+			CONST_PAGE_DEFAULT = 'meeting.list';
+            CONST_PAGE_DEFAULT_PARAMS = {displayType : 'upcoming', arg1 : null, arg2 : null};
+		</apex:define>
+	</apex:composition>
+</apex:page>

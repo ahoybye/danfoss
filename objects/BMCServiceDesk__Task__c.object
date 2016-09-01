@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__Cannot_Update_Closed_Task</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(BMCServiceDesk__state__c ), NOT( PRIORVALUE(BMCServiceDesk__state__c)),NOT(ISCHANGED( BMCServiceDesk__Total_Duration__c ) )  ,NOT( ISNEW( )) )</errorConditionFormula>
+        <errorMessage>This task is closed. Reopen the task to modify it.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Select_Either_User_Lead_or_Contact</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(
+      (
+            (BMCServiceDesk__FKClient__c != NULL  &amp;&amp;  BMCServiceDesk__FKLead__c == NULL &amp;&amp; BMCServiceDesk__FKContact__c == NULL) ||
+            (BMCServiceDesk__FKClient__c == NULL  &amp;&amp;  BMCServiceDesk__FKLead__c != NULL &amp;&amp; BMCServiceDesk__FKContact__c == NULL) ||
+            (BMCServiceDesk__FKClient__c == NULL  &amp;&amp;  BMCServiceDesk__FKLead__c == NULL &amp;&amp; BMCServiceDesk__FKContact__c != NULL) 
+      ) ||
+      AND(ISNEW(), OR(BMCServiceDesk__FKIncident__c != NULL,
+	  BMCServiceDesk__FKProblem__c != NULL,
+	  BMCServiceDesk__FKRelease__c != NULL))
+      , 
+      false, true)</errorConditionFormula>
+        <errorMessage>To save the task, select a value in any one of the following fields: Client ID, Contact or Lead.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__TaskLinkingValidation</fullName>
+        <active>true</active>
+        <description>Verifies that a task is linked to only one object (Incident, Change Request, or Problem or Release) at a time.</description>
+        <errorConditionFormula>OR(
+						AND (  NOT( ISBLANK ( BMCServiceDesk__FKChange__c ) ) , NOT( ISBLANK ( BMCServiceDesk__FKIncident__c )) ),
+						AND ( NOT( ISBLANK (  BMCServiceDesk__FKProblem__c  ) ) , NOT( ISBLANK ( BMCServiceDesk__FKChange__c ) ) ),
+						AND ( NOT( ISBLANK ( BMCServiceDesk__FKIncident__c ) ) , NOT( ISBLANK ( BMCServiceDesk__FKProblem__c ) ) ),
+						AND ( NOT( ISBLANK (  BMCServiceDesk__FKRelease__c  ) ) , NOT( ISBLANK ( BMCServiceDesk__FKChange__c ) ) ),
+						AND ( NOT( ISBLANK (  BMCServiceDesk__FKProblem__c  ) ) , NOT( ISBLANK ( BMCServiceDesk__FKRelease__c ) ) ),
+						AND ( NOT( ISBLANK (  BMCServiceDesk__FKIncident__c  ) ) , NOT( ISBLANK ( BMCServiceDesk__FKRelease__c ) ) ))</errorConditionFormula>
+        <errorMessage>A task can be linked to only one object (Incident or Change Request or Problem or Release) at a time</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__dueDateMustBeAfterOpenedDate</fullName>
+        <active>true</active>
+        <description>The Due Date must be later than the Opened Date</description>
+        <errorConditionFormula>AND(NOT(OR(ISNULL(BMCServiceDesk__dueDateTime__c),ISBLANK(BMCServiceDesk__dueDateTime__c) ) ),NOT(ISCHANGED( BMCServiceDesk__openDateTime__c ) ), BMCServiceDesk__dueDateTime__c &lt; BMCServiceDesk__openDateTime__c  )</errorConditionFormula>
+        <errorMessage>The Due Date must be later than the Opened Date</errorMessage>
+    </validationRules>
+</CustomObject>

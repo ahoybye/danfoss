@@ -1,0 +1,32 @@
+<apex:component controller="PartnerPortalPanelComponentCtrl">
+<apex:attribute name="Position" type="String" assignTo="{!pos}" description="" required="true"/>
+
+<apex:outputPanel rendered="{!portalBanner != null}">
+<div class="panelContainer">
+  <div class="panelHeaderText">
+    <h2>
+      <apex:outputField value="{!portalBanner.Name}"/>
+    </h2>
+  </div>
+  <div class="panelImage" style="background-image: url('{!IF($Site.Prefix!=null,$Site.Prefix,'')}/servlet/servlet.FileDownload?file={!portalBanner.Attachments[0].Id}&otherId=');">
+  </div>
+  <div class="panelSummary">
+    <p>
+      <apex:outputText value="{!portalBanner.Summary__c}" escape="false"/>
+    </p>
+  </div>
+  <div class="panelLinks">
+    <apex:outputPanel rendered="{!portalLinks.size > 0}" >
+    <ul>
+      <apex:repeat value="{!portalLinks}" var="link">
+      <li>
+        <a class="arrow {!IF(link.DisplayPop__c, 'disableNav', '')}" href="{!IF(link.DisplayPop__c, '#', link.URL__c)}" target="{!IF(link.DisplayPop__c, '', link.Target__c)}" onclick="{!IF(link.DisplayPop__c, 'openInfoBox(\"'+HTMLENCODE(link.DisplayPopupText__c)+'\", \"'+link.URL__c+'\");return null;', '')}">{!link.Name}</a>
+      </li>
+    </apex:repeat>  
+  </ul>
+</apex:outputPanel>
+</div>
+</div>
+</apex:outputPanel>
+
+</apex:component>

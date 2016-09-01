@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>Must_Select_one_or_more_values</fullName>
+        <active>true</active>
+        <description>Must Select one or more values for ‘Content Type to Query’ if ‘Object’ = Content</description>
+        <errorConditionFormula>AND(ISBLANK(Content_Type_to_Query__c), TEXT(Object__c) == &apos;Content&apos;)</errorConditionFormula>
+        <errorDisplayField>Content_Type_to_Query__c</errorDisplayField>
+        <errorMessage>Please specify Content Type to Query.</errorMessage>
+    </validationRules>
+</CustomObject>

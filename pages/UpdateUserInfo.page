@@ -1,0 +1,39 @@
+<apex:page standardController="User" extensions="UpdateUserInfoController">
+<apex:form >
+  <apex:outputPanel style="display:none;">
+    {!user.ContactId}
+  </apex:outputPanel>
+  <apex:pageBlock title="Edit Personal Information">
+      <apex:pageMessages escape="false"/>
+      <apex:pageBlockSection >
+              <apex:inputField value="{!user.Title}"/>
+              <apex:inputField value="{!user.CommunityNickname}"/>
+              <apex:inputField value="{!user.Department}"/>
+              
+              <apex:inputField value="{!user.Division}"/>
+              <apex:inputField value="{!user.Phone}"/>
+              
+              <apex:inputField value="{!user.Fax}"/>
+              <apex:inputField value="{!user.MobilePhone}"/>                            
+            
+              <apex:inputField value="{!user.LocaleSidKey}"/>
+              <apex:inputField value="{!user.LanguageLocaleKey}"/>
+          <apex:pageBlockSectionItem >    
+               <apex:outputLabel >Receive Salesforce CRM Content Email Alerts</apex:outputLabel>
+              <apex:inputField value="{!user.UserPreferencesContentNoEmail}"/>
+          </apex:pageBlockSectionItem>
+          <apex:pageBlockSectionItem >
+               <apex:outputLabel >Receive Salesforce CRM Content Alerts as Daily Digest </apex:outputLabel>
+              <apex:inputField value="{!user.UserPreferencesContentEmailAsAndWhen}"/>
+          </apex:pageBlockSectionItem>  
+            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+      </apex:pageBlockSection>
+      <apex:pageBlockButtons >
+          <apex:commandButton value="Save" action="{!updateUser}"/>
+          <apex:commandButton value="Cancel" action="{!cancelRequest}"/>
+      </apex:pageBlockButtons>
+  </apex:pageBlock>
+</apex:form>  
+</apex:page>

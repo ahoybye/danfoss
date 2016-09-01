@@ -1,0 +1,234 @@
+<apex:component controller="AddLineItems" allowDML="true">
+  <apex:sectionHeader title="Add Products to {!objName}"/>
+
+<script>
+ function calculateTotal(quantityId,UnitPriceId,totalId) { 
+   var quantity = document.getElementById(quantityId).value;
+    quantity = quantity.replace(/{!ThousandSeparator}/g,"").replace("{!DecimalSeparator}",".");
+    var unitPrice = document.getElementById(UnitPriceId).value;
+    unitPrice = unitPrice.replace(/{!ThousandSeparator}/g,"").replace("{!DecimalSeparator}",".");
+    Visualforce.remoting.Manager.invokeAction("{!$RemoteAction.AddLineItems.getTotalPrice}",quantity,unitPrice,
+                                              function(result,event) {
+                                                if(event.status) {
+                                                  document.getElementById(totalId).innerHTML = result;
+                                                }
+                                              }
+                                             );
+ } 
+</script>
+<br/><br/><br/> 
+
+<apex:form > 
+<apex:pageMessages />
+<apex:pageBlock >
+  <apex:pageBlockButtons >
+    <apex:commandButton value="Save" action="{!SaveLineItems}"/>
+    <apex:commandButton value="Save & More" action="{!SaveAndMore}"/>
+    <apex:commandButton value="Cancel" action="{!cancel}"/> 
+    <apex:commandButton value="Refresh SAP Price" action="{!GetSAPPrice}" rendered="{!priceretrieved}"/>
+  </apex:pageBlockButtons>
+  
+  <apex:pageBlockTable value="{!OpportunityLineItems}" cellspacing="0" cellpadding="5" var="lineItem" rendered="{!isOpportunity}">
+    
+    <apex:column headerValue="Product">
+      <apex:outputField value="{!lineItem.priceBookEntry.Product2.Name}" />  
+      &nbsp;&nbsp;
+    </apex:column>  
+    
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Quantity.Label}">
+      <apex:inputField required="false" id="quantity" value="{!lineItem.Quantity}" onchange="calculateTotal('{!$Component.quantity}','{!$Component.unitPrice}','{!$Component.total}');"/>
+    </apex:column>
+    
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.UnitPrice.Label}">
+      <apex:inputField id="unitPrice" value="{!lineItem.UnitPrice}" onchange="calculateTotal('{!$Component.quantity}','{!$Component.unitPrice}','{!$Component.total}');"/>
+    </apex:column>
+    
+    <apex:column rendered="False" headerValue="{!$ObjectType.OpportunityLineItem.Fields.Distributor_Price__c.Label}">
+      <apex:inputField rendered="false" value="{!lineItem.Distributor_Price__c}" />
+    </apex:column>
+    
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Competitor__c.Label}">
+      <apex:inputField value="{!lineItem.Competitor__c}" />
+    </apex:column>
+     
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Approx_Competitor_Price__c.Label}">
+      <apex:inputField value="{!lineItem.Approx_Competitor_Price__c}" />
+    </apex:column>
+    
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.SAP_Price__c.Label}">
+      <apex:outputText value="{!lineItem.SAP_Price__c}" />
+    </apex:column>
+ 
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.SAP_List_Price__c.Label}">
+      <apex:outputText value="{!lineItem.SAP_List_Price__c}" />
+    </apex:column>
+   
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.SAP_Currency__c.Label}">
+      <apex:outputText value="{!lineItem.SAP_Currency__c}" />
+    </apex:column>
+  
+    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.TotalPrice.Label}">
+      <apex:outputText value="0.00" id="total"/>
+    </apex:column>     
+  </apex:pageBlockTable>
+                                                       
+                                                       
+                                                       <!-- Table for quote line item  -->
+                                                       
+  <apex:pageBlockTable value="{!QuoteLineItems}" cellspacing="0" cellpadding="5" var="lineItem" rendered="{!AND(!isOpportunity, !isMachine)}">
+    
+    <apex:column headerValue="Description">
+      <apex:outputField value="{!lineItem.priceBookEntry.Product2.Name}" />  
+      &nbsp;&nbsp;
+    </apex:column>  
+    
+     <apex:column headerValue="Material">
+      <apex:outputField value="{!lineItem.priceBookEntry.Product2.SAP_Material_Code__c}" />  
+      &nbsp;&nbsp;
+    </apex:column>   
+    
+    <!-- <apex:column >
+	    <apex:facet name="header">
+	        <apex:outputText >Customer<br/>Product Category</apex:outputText>                           
+	    </apex:facet>
+      <apex:inputField value="{!lineItem.PS_Customer_Product_Category__c}" required="true"/>
+    </apex:column>  -->
+    
+    <apex:column >
+	    <apex:facet name="header">
+	        <apex:outputText >Annual<br/>Quantity</apex:outputText>                           
+	    </apex:facet>
+      <apex:inputField style="width:50px" id="quoteQuantity" value="{!lineItem.Quantity}" onchange="calculateTotal('{!$Component.quoteQuantity}','{!$Component.quotePrice}','{!$Component.quoteTotalPrice}');"/>
+    </apex:column>
+    
+    <apex:column >
+	    <apex:facet name="header">
+	        <apex:outputText >Unit<br/>Sales Price</apex:outputText>                           
+	    </apex:facet>
+      <apex:inputField style="width:50px" id="quotePrice" value="{!lineItem.UnitPrice}" onchange="calculateTotal('{!$Component.quoteQuantity}','{!$Component.quotePrice}','{!$Component.quoteTotalPrice}');"/>
+    </apex:column>
+    
+    <apex:column >		
+	    <apex:facet name="header">
+	        <apex:outputText >Distributor<br/>Sell Price</apex:outputText>                           
+	    </apex:facet>
+      <apex:inputField style="width:50px" value="{!lineItem.Distributor_Price__c}" />
+    </apex:column>
+    
+    <apex:column headerValue="{!$ObjectType.QuoteLineItem.Fields.SAP_Price__c.Label}">
+      <apex:outputText value="{!lineItem.SAP_Price__c}" />
+    </apex:column>
+ 
+    <apex:column headerValue="{!$ObjectType.QuoteLineItem.Fields.SAP_List_Price__c.Label}">
+      <apex:outputText value="{!lineItem.SAP_List_Price__c}" />
+    </apex:column>
+   
+    <apex:column headerValue="{!$ObjectType.QuoteLineItem.Fields.SAP_Currency__c.Label}">
+      <apex:outputText value="{!lineItem.SAP_Currency__c}" />
+    </apex:column>     
+   
+    <apex:column headerValue="{!$ObjectType.QuoteLineItem.Fields.Description.Label}" >
+      <apex:inputField value="{!lineItem.Description}" />
+    </apex:column>
+    
+     <apex:column headerValue="{!$ObjectType.QuoteLineItem.Fields.TotalPrice.Label}" style="text-align:right;">
+      <apex:outputText id="quoteTotalPrice" value="0.00" />
+    </apex:column>
+  </apex:pageBlockTable>
+  
+                                                      <!-- Table for machine line item  -->
+   
+    <apex:pageBlockTable value="{!MachineLineItems}" cellspacing="0" cellpadding="5" var="lineItem" rendered="{!isMachine}">
+    
+	    <apex:column headerValue="Product">
+	      <apex:outputField value="{!lineItem.Name}" />  
+	      &nbsp;
+	    </apex:column>  
+	    <apex:column >
+            <apex:facet name="header">
+                <apex:outputLabel value="{!$ObjectType.Machine_Model_Product__c.Fields.Subsystem__c.Label}"/>                           
+            </apex:facet>
+			<div class="requiredInput">
+			<div class="requiredBlock"></div>
+            <apex:inputField value="{!lineItem.Subsystem__c}"/>
+			</div>
+        </apex:column>
+		
+		<apex:column >
+            <apex:facet name="header">
+                <apex:outputLabel value="{!$ObjectType.Machine_Model_Product__c.Fields.Product_Type__c.Label}"/>                           
+            </apex:facet>
+			<div class="requiredInput">
+			<div class="requiredBlock"></div>
+            <apex:inputField value="{!lineItem.Product_Type__c}"/>
+			</div>
+        </apex:column>
+		
+	    <apex:column headerValue="{!$ObjectType.Machine_Model_Product__c.Fields.Product_Feature__c.Label}">
+	      <apex:inputField value="{!lineItem.Product_Feature__c}"/>
+	    </apex:column>
+		
+	    		
+	    <apex:column >
+            <apex:facet name="header">
+                <apex:outputText >Unit per<br/>machine</apex:outputText>                           
+            </apex:facet>
+			<div class="requiredInput">
+			<div class="requiredBlock"></div>
+            <apex:inputField style="width:50px" id="quantity" value="{!lineItem.Number_per_machine__c}" onchange="calculateTotal('{!$Component.Number_per_machine__c}','{!$Component.Price__c}','{!$Component.total}');"/>
+			</div>
+	    </apex:column>
+		
+	  <apex:column rendered="{!priceretrieved}" >
+            <apex:facet name="header">
+                <apex:outputLabel value="{!$ObjectType.Machine_Model_Product__c.Fields.Price__c.Label}"/>                           
+            </apex:facet>
+            <apex:outputField value="{!lineItem.Price__c}"/>
+	    </apex:column>
+		
+		<apex:column rendered="{!!priceretrieved}" >
+            <apex:facet name="header">
+                <apex:outputText >Price<br/>per unit</apex:outputText>                           
+            </apex:facet>
+			<div class="requiredInput">
+			<div class="requiredBlock"></div>
+            <apex:inputField style="width:50px" id="unitPrice" value="{!lineItem.Price__c}" onchange="calculateTotal('{!$Component.Number_per_machine__c}','{!$Component.Price__c}','{!$Component.total}');"/>
+			</div>
+	    </apex:column>
+		
+		<apex:column rendered="{!!priceretrieved}" >
+            <apex:facet name="header">
+                <apex:outputLabel value="Currency"/>                           
+            </apex:facet>
+            <apex:inputField value="{!lineItem.CurrencyIsoCode}" />			
+		</apex:column>
+	    
+		<apex:column >
+            <apex:facet name="header">
+                <apex:outputText >Adoption<br/>Rate %</apex:outputText>  
+            </apex:facet>
+			<div class="requiredInput">
+			<div class="requiredBlock"></div>
+            <apex:inputField style="width:50px" value="{!lineItem.Adoption_Rate__c}"/>
+			</div>
+        </apex:column>
+		
+	 	<apex:column >
+            <apex:facet name="header">
+                <apex:outputText >Danfoss<br/>Competitiveness</apex:outputText>                           
+            </apex:facet>
+			<div class="requiredInput">
+			<div class="requiredBlock"></div>
+            <apex:inputField value="{!lineItem.Competitiveness__c}"/>
+			</div>
+        </apex:column>
+	   	   
+	    <apex:column headerValue="{!$ObjectType.Machine_Model_Product__c.Fields.SD_Competitiveness_Reason__c.Label}">
+	      <apex:inputField value="{!lineItem.SD_Competitiveness_Reason__c}" />
+	    </apex:column> 
+		    
+    </apex:pageBlockTable>
+  
+</apex:pageBlock>
+</apex:form>
+</apex:component>

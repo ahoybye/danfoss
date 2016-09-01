@@ -1,0 +1,40 @@
+<apex:page controller="CustomerRequestNewController" title="Select Customer Request Type">
+	<head>
+        <base target="_parent" />
+    </head>
+    <apex:form >
+        <apex:pageBlock title="    Select Customer Request Type" tabStyle="PS_Customer_Request__c">
+			<apex:pageBlockSection > 
+				<apex:pageBlockSectionItem >
+					<apex:outputPanel styleClass="requiredInput" layout="block">
+						<apex:outputPanel styleClass="requiredBlock"/>
+						<apex:selectList value="{!requestType}" size="1">
+			                <apex:selectOptions value="{!items}"/>
+			            </apex:selectList>
+					</apex:outputPanel> 
+				</apex:pageBlockSectionItem>
+		    </apex:pageBlockSection>     
+        </apex:pageBlock> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Continue" action="{!createRequest}"/>
+            <apex:commandButton value="Cancel" action="{!cancelRequest}"/><br/> <br/>
+		
+		<apex:pageBlock title="Available Customer Request Types" tabStyle="PS_Customer_Request__c">
+        <apex:pageBlockTable value="{!lstRecordTypes}" var="rt">
+            <apex:column value="{!rt.Name}" style="font-weight: bold" width="200px">
+				<apex:facet name="header">Request Type</apex:facet>
+			</apex:column>
+            <apex:column value="{!rt.Description}">
+				<apex:facet name="header">Description</apex:facet>
+			</apex:column>
+        </apex:pageBlockTable>           
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Helpful Links" tabStyle="Opportunity"> 
+        	<ul style="padding-left: 0px;">
+			<li><apex:commandLink value="Publicly available certificates of compliance (Quality, Environmental, Safety, Energy, etc.)" action="{!URLFOR('http://powersolutions.danfoss.com/about-us/doing-business-with-us/conformity-and-compliance/')}"/></li>
+			<br/>
+			<li><apex:outputLink value="/servlet/servlet.FileDownload?file={!leadtimes.id}" target="_blank">Lead Times</apex:outputLink></li>
+			</ul>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

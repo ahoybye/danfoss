@@ -1,0 +1,1191 @@
+<apex:page controller="BMCServiceDesk.AdminCMDBDiscoveryProvision" id="AdminCMDBDiscoveryProvision" extensions="BMCServiceDesk.AdminDiscoveryConfigController,BMCServiceDesk.AdminDiscoveryImportConfigController,BMCServiceDesk.AdminDiscoveryOPRule" standardstylesheets="true" showheader="false" >
+
+<link rel="stylesheet" href="{!$Resource.ExtJS4_1_3}/resources/css/ext-all.css" type="text/css" />
+<link rel="stylesheet" href="{!$Resource.SDEFStyles}/AdminCMDBDiscoveryProvision.css" type="text/css" />
+<link rel="Stylesheet" type="text/css" href="{!$Resource.SDEFStyles}/HelpStyles.css" />
+
+<body onload="doOnLoadActivity()">
+<script>
+var isPasswordValid = false;
+var msgStr = '{!msgStr}'; 
+var infoIconPath = "{!$Resource.SDEFStyles}/SDEFbuttons/icon_field_info_white.png";
+var isServerReprovisioningNeeded = {!isServerReprovisioningNeeded};
+var ProvisioningServerCalloutMsg = '{!JSENCODE(ProvisioningServerCalloutMsg)}';
+var BCMProvisioningServerUrl = '{!JSENCODE(BCMProvisioningServerUrl)}';
+
+var SyncPassword = {!SyncPassword};
+var ScannerDeviceListJSON = '';
+var protocolConfigJSON = '';
+var memberListJSON = '';
+var exceptionMsg = '';
+var _datePicker ;
+var toggleInteger;
+var reprovisionWarning = '{!JSENCODE($Label.ACReprovisionWarning)}';
+var reprovisionWarningTitle = '{!JSENCODE($Label.ServiceTargetStatus_Warning)}';
+var remoteSitesUrl =  '{!JSENCODE(remoteSitesUrl)}';
+var CommunicationPortsHelpText = '{!JSENCODE($Label.CommunicationPortsHelpText)}';
+
+var invalidStartOrEndDateMsg =  '{!JSENCODE($Label.Invalidstartorenddate)}';
+
+var PasswordCharValidation =  '{!JSENCODE($Label.PasswordCharValidation)}';
+var PasswordNumberValidation =  '{!JSENCODE($Label.PasswordNumberValidation)}';
+var PasswordLengthValidation =  '{!JSENCODE($Label.PasswordLengthValidation)}';
+var PasswordMatchValidation =  '{!JSENCODE($Label.PasswordMatchValidation)}';
+var lblEnterPassword = '{!JSENCODE($Label.EnterPassword)}';
+
+var scannerInfoToFetchScan = '';
+var ServerPwdDiv,ServerPwdConfirmDiv;
+var PwdValidationmsg = ''; 
+var isServerProvisioned;
+var IdsOfRFRecords;
+function detectIE() {
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf('MSIE ');
+  if (msie > 0) {
+    // IE 10 or older => return version number
+    return true;
+  }
+  
+  //for IE 11
+  if(ua.indexOf("Trident/7.0") > 0)
+      return true;
+
+  //for IE Edge and other browsers
+  return false;
+}
+
+var ScanId = '';
+var scanSavedInRF;
+//Creating Remote site settings automatically
+function createRemoteSite(name,description,remoteURL){
+		var binding = new XMLHttpRequest();
+		var request =
+			'<?xml version="1.0" encoding="utf-8"?>' +
+			'<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'+
+			    '<env:Header>' +
+			        '<urn:SessionHeader xmlns:urn="http://soap.sforce.com/2006/04/metadata">' +
+			            '<urn:sessionId>{!$Api.Session_ID}</urn:sessionId>' +
+			        '</urn:SessionHeader>' +
+			    '</env:Header>' +
+			      '<env:Body>' +
+			        '<createMetadata xmlns="http://soap.sforce.com/2006/04/metadata">' +
+			            '<metadata xsi:type="RemoteSiteSetting">' +
+			                '<fullName>'+ name +'</fullName>' +
+			                '<description>'+ description +'</description>' +
+			                '<disableProtocolSecurity>false</disableProtocolSecurity>' +
+			                '<isActive>true</isActive>' +
+			                '<url>'+ remoteURL +'</url>' +
+			            '</metadata>' +
+			        '</createMetadata>' +
+			    '</env:Body>' +
+			'</env:Envelope>';
+		binding.open('POST', 'https://{!Host}/services/Soap/m/31.0');
+		binding.setRequestHeader('SOAPAction','""');
+		binding.setRequestHeader('Content-Type', 'text/xml');
+		binding.onreadystatechange =
+        function() {
+            if(binding.readyState==4){
+                var parser = new DOMParser();
+                var doc;
+                var messageText = '';
+                if(detectIE()){
+                	doc = new ActiveXObject("Microsoft.XMLDOM");
+              		doc.loadXML(binding.responseText);
+					if(doc.selectSingleNode("/soapenv:Envelope/soapenv:Body/createMetadataResponse/result").childNodes != null){
+						var nodes = doc.selectSingleNode("/soapenv:Envelope/soapenv:Body/createMetadataResponse/result").childNodes;
+						if(nodes != null && nodes.length >2 ){              		
+							if(nodes[0].nodeName =="fullName" && nodes[1].nodeName =="success"){
+								// Remote site created successfully
+	              				messageText = '';
+              				}else if(nodes[0].nodeName =="errors" && nodes[0].childNodes[1].nodeName =="message"){
+              					// Remote site creation failed
+              					messageText = nodes[0].childNodes[1].text;
+              				}
+              			}	
+					}
+                }else{
+                	doc  = parser.parseFromString(binding.response, 'application/xml');
+                	var errors = doc.getElementsByTagName('errors');
+					for(var errorIdx = 0; errorIdx < errors.length; errorIdx++){
+						var msg=RemedyForceHTMLProcessor.getText(errors.item(errorIdx).getElementsByTagName('message').item(0));
+						messageText+= msg + '\n';
+					}
+                }
+                
+            	if(messageText==''){
+            		ShowInlineMessage('SaveRemoteSiteSettingDiv','tableCls',-52);
+            		if(isServerProvisioned){
+            			UpdateLicenseTable();
+            			//window.location.reload(true);
+            		}
+            	}else{
+            		Ext.Msg.show({
+						title:msgHeader,
+						msg: messageText,
+						icon: Ext.MessageBox.INFO,
+						width: 300,
+						frame:false,
+						buttons: Ext.Msg.OK
+					});
+            	}
+            }
+        }
+        var tes = binding.send(request);
+}
+
+</script>
+    <apex:form id="mainform" style="overflow: hidden">
+        <apex:actionFunction name="save" action="{!save}" rerender="msgPanel" oncomplete="hideMask();showMsg();enableOrDisableSaveNRefresh(true);" >
+        </apex:actionFunction>
+        <apex:actionFunction name="resetCMDBProvision" action="{!reset}" rerender="mainPanel" >
+        </apex:actionFunction>
+        <apex:actionFunction name="ProvisionCMDBDiscoveryServer" action="{!ProvisionCMDBDiscoveryServer}" rerender="ProvisionmsgPanel,provisionPanel,TabLayout" oncomplete="renderParameterizedLabels();handleAfterProvision();" >
+        </apex:actionFunction>
+		<apex:actionFunction name="checkServerAlive" action="{!isDiscoveryServerAlive}" rerender="KeepAlivePanel" oncomplete="showReprovisionWarning();" >
+        </apex:actionFunction>
+		<apex:actionFunction name="reprovision" action="{!reprovisionServer}" rerender="TabLayout,provisionPanel,ProvisionmsgPanel" oncomplete="createProvisioningButton();hideLoadingMask();">
+        </apex:actionFunction>	
+		<apex:actionFunction name="UpdateLicenseDetails" action="{!UpsertLicenseDetails}" rerender="" oncomplete="" >
+        </apex:actionFunction>
+        <apex:actionFunction name="UpdateLicenseTable" action="{!fetchLicenseDetails}" rerender="LicenseSection" oncomplete="UpdateLicenseDetails();" >
+        </apex:actionFunction>
+        
+        <apex:actionFunction name="saveLatestStatusNUpdateTime" action="{!synchronizeStatusNLastStatusUpdateTime}" rerender="">
+        	<apex:param assignTo="{!scannerdeviceListJSON}" name="ScannerDeviceListJSON" value="" />
+        </apex:actionFunction>
+        
+		<apex:actionFunction action="{!fetchScannerInfo}" name="getScannerInfo" reRender="JSONVariablePnl,scheduleTypeOptions,StartDate,EndDate" oncomplete="showScannerInfo();hideLoadingMask();">
+        	<apex:param assignTo="{!currentScannerDetailsJSON}" name="scannerInfoToFetchScan" value=""/>
+    	</apex:actionFunction>
+    	
+    	<apex:actionFunction action="{!saveConfigurationInRF}" name="saveConfigurationInRF" rerender="savePnl" oncomplete="saveCompleteInRF();">
+    	</apex:actionFunction>
+    	<apex:actionFunction action="{!deleteCreatedScan}" name="deleteCreatedScan" rerender="" oncomplete="">
+    		<apex:param assignTo="{!ScanId}" name="ScanId" value=""/>
+    	</apex:actionFunction>
+    	
+    	<apex:actionFunction action="{!syncScanConfigData}" name="syncScanInfo" rerender="" oncomplete="">
+        	<apex:param assignTo="{!currentScannerDetailsJSON}" name="scannerDetailsToSave" value=""/>
+            <apex:param assignTo="{!currentScannerProtocolsNCreds}" name="currentScannerProtocolsNCreds" value=""/>
+            <apex:param assignTo="{!currentScannerTargetList}" name="currentScannerTargetList" value=""/>
+            <apex:param assignTo="{!IDsInRF}" name="IdsOfRFRecords" value=""/>
+    	</apex:actionFunction>
+    	<apex:actionFunction name="getScanners" action="{!fetchScanner}" rerender="JSONVariablePnl,scheduleTypeOptions,StartDate,EndDate" oncomplete="initializeScanConfigPage();" >
+    	</apex:actionFunction>
+		<apex:actionFunction name="populateOPRuleData" action="{!populateOPRuleData}" rerender="JSONVariablePnl" oncomplete="CreateOPRuleSection();" >
+    	</apex:actionFunction>
+		<apex:actionFunction action="{!resetScanForm}" name="resetScanForm" reRender="JSONVariablePnl,scheduleTypeOptions,StartDate,EndDate" oncomplete="refreshScanConfig();" >
+    	</apex:actionFunction>
+		<apex:actionFunction name="saveScanners" action="{!saveScannerInfo}" rerender="JSONVariablePnl" oncomplete="saveComplete();refreshGridInfo();">
+            <apex:param assignTo="{!currentScannerDetailsJSON}" name="currentScannerDetails" value=""/>
+            <apex:param assignTo="{!currentScannerProtocolsNCreds}" name="currentScannerProtocolsNCreds" value=""/>
+            <apex:param assignTo="{!currentScannerTargetList}" name="currentScannerTargetList" value=""/>
+            <apex:param assignTo="{!StartType}" name="StartType" value=""/>
+         	<apex:param assignTo="{!StopType}" name="StopType" value=""/>
+         	<apex:param assignTo="{!scanCount}" name="scanCount" value=""/>
+         	<apex:param assignTo="{!frequencyType}" name="frequencyType" value=""/>
+         	<apex:param assignTo="{!scheduleDayOfWeek}" name="scheduleDayOfWeek" value=""/>
+         	<apex:param assignTo="{!scheduleInstance}" name="scheduleInstance" value=""/>
+         	<apex:param assignTo="{!frqTimeHrs}" name="frqTimeHrs" value=""/>
+         	<apex:param assignTo="{!frqTimeMin}" name="frqTimeMin" value=""/>
+         	<apex:param assignTo="{!frqTimeFrame}" name="frqTimeFrame" value=""/>
+         	<apex:param assignTo="{!ScheduleType}" name="ScheduleType" value=""/>
+        </apex:actionFunction>
+        
+        <apex:actionfunction action="{!autoRefresh}" name="autoRefreshScannerGrid" rerender="autoRefreshPanel" oncomplete="autoRefreshComplete();">
+			<apex:param assignTo="{!scannerdeviceListJSON}" value="" name="ScannerDeviceListJSON"/>
+		</apex:actionfunction>
+		
+		<apex:actionfunction action="{!FetchMappingTable}" name="FetchMappingTableData" rerender="MappingDataPanel" oncomplete="createMappingTable();">
+			<apex:param assignTo="{!CMDBClassId}" value="" name="CMDBClass"/>
+			<apex:param value="" name="MappingObjectCount"/>
+		</apex:actionfunction>
+		<apex:actionfunction action="{!saveImportJobDetails}" name="SaveImportJobDetails" rerender="" oncomplete="hideMask();showMsg();">
+			<apex:param assignTo="{!schedulingInterval}" name="ScheduleIntervalData" value=""/>
+			<apex:param assignTo="{!gridDataMap}" name="gridDataMap" value=""/>
+			<apex:param assignTo="{!enableBCMLog}" name="enableBCMLog" value=""/>
+			<apex:param assignTo="{!opInterval}" name="opInterval" value=""/>
+		</apex:actionfunction>
+		<apex:actionfunction name="ScheduleJob" action="{!scheduleJob}" reRender="JobStatusPanel" oncomplete="onCompleteStart();">
+			<apex:param assignTo="{!schedulingInterval}" name="ScheduleIntervalData" value=""/>
+		</apex:actionfunction>
+		<apex:actionfunction name="StopJob" action="{!stopJob}" reRender="JobStatusPanel" oncomplete="onCompleteStop();"/>
+		<apex:actionfunction action="{!saveOPRuleInterval}" name="saveOPRuleInterval" rerender="msgPanel" >
+			<apex:param assignTo="{!opInterval}" value="" name="opInterval"/>
+			<apex:param assignTo="{!isOPIntervalStopped}" value="" name="isOPIntervalStopped"/>
+			
+		</apex:actionfunction>
+        <apex:actionfunction action="{!DeleteScanner}" name="DeleteScanner" reRender="JSONVariablePnl,scheduleTypeOptions,StartDate,EndDate" oncomplete="updateGridAfterDeletion();" >
+			<apex:param assignTo="{!currentScannerDetailsJSON}" name="currentScannerDeviceId" value=""/>
+		</apex:actionfunction>		
+		<apex:actionRegion >
+			<apex:actionFunction Name="launchConsole" action="{!launchConsole}"  />
+		</apex:actionRegion>
+		<apex:actionRegion >
+	    	<apex:actionFunction Name="directConnectDevice" action="{!callXMLRPC}" rerender="acErrorPanel" onComplete="hideLoadingMask();showACError();">
+		    	<apex:param name="actionContext" value=""/>
+		    	<apex:param name="deviceId" value=""/>
+		    	<apex:param name="contextId" value=""/>
+	   		</apex:actionFunction>
+   		</apex:actionRegion>
+        <table id="tableCls" height="100%" width="100%">
+        	<tr>
+                <td colspan="4">
+                    <div id="divToolbar" />
+                    <div id="SaveMessageDiv" class="msgCls message" style="display:none">
+                        <table class="messageTable clsmainTable" cellspacing="0" cellpadding="0" border="0">
+                            <tr valign="top">
+                                <td>
+								    <apex:image styleClass="SaveSuccessIcon" title="{!$Label.BMCServiceDesk__SavedSuccessfully}" value="/s.gif" alt="{!$Label.BMCServiceDesk__SavedSuccessfully}" />
+                                </td>
+                                <td>
+                                    <div id="SaveMessage"  style="margin-left: 6px;" ><apex:outputText value="{!$Label.BMCServiceDesk__SavedSuccessfully}" /></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="SaveRemoteSiteSettingDiv" class="msgCls message" style="display:none">
+                        <table class="messageTable clsmainTable" cellspacing="0" cellpadding="0" border="0">
+                            <tr valign="top">
+                                <td>
+                                    <img class="SaveSuccessIcon" title="{!JSENCODE($Label.RemoteSiteCreated)}" src="/s.gif" alt="{!JSENCODE($Label.RemoteSiteCreated)}" />
+                                </td>
+                                <td>
+                                    <div id="SaveMessage"  style="margin-left: 6px;" >{!JSENCODE($Label.RemoteSiteCreated)}</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            	<td colspan="4" class="tdCls stdfont" id="CMDBProvisionsuccessful" style="display: none;" >
+	            	<div align="center" class="clsProvisionSuccessMsg">&#10004;&nbsp;&nbsp;{!JSENCODE($Label.DiscoveryServerConnectionSuccess+'.')}</div>
+				</td>
+			</tr>
+            <tr>
+            	<td colspan="4" class="tdCls stdfont">
+            		<apex:outputPanel id="topPanel">
+            			<table width="100%" border="0" cellspacing="0" cellpadding="0" id="topTable">
+            				<tr>
+                                <td>
+                                	<div class="clshelpDiv" id="helpDiv" />
+                                    <apex:inputCheckbox value="{!isCMDBDiscoveryEnabled}" id="enableDiscoveryServices" onclick="checkDiscoveryServerIsAlive();disableMidPanel('{!$Component.enableDiscoveryServices}');" style="margin-top:1px;margin-right:5px;" styleclass="floatLeft10px"/>
+                                    <div class="floatLeft10px" ><apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__EnableDiscoveryServices)}" style="align:left;" /></div>
+                                </td>
+                            </tr>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr>
+                                <td>
+                                	<div id="noExpiryDiv" style="display: none;line-height:0;height: 0;overflow: hidden;">
+										<apex:inputCheckbox value="{!noExpiryEmailNotification}" id="noExpiryNotification" onclick="disableMidPanel('{!$Component.enableDiscoveryServices}');" style="margin-top:1px;margin-right:5px;" styleclass="floatLeft10px"/>
+                                    	<div class="floatLeft10px" id="noExpirylblDiv"><apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__ACNoEmailNotification)}" style="align:left;" /></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <hr class="clsHrdiv"/>
+                                </td>
+                            </tr>
+                        </table>
+            		</apex:outputPanel>
+            	</td>
+            </tr>
+            <tr>
+            	<td colspan="4" class="stdfont">
+            	<apex:outputPanel id="provisionPanel">
+            		<apex:outputPanel id="midPanel" rendered="{!NOT(isBCMMasterProvisioned)}" >
+            			<table width="100%" border="0" cellspacing="0" cellpadding="0" id="midTable" class = "clsMidTable">
+            				<tr>
+            					<td>
+            						<div>
+                                    	<apex:outputLabel value="{!($Label.BMCServiceDesk__BeforeYouBegin)}" styleClass="sectionHeaderLabel" />
+									</div>
+								</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>
+            						<span id = 'ProvisionClientManagementDetail'></span>
+            						<script>
+            							var lblProvisionClientManagementDetail = '{!JSENCODE(lblProvisionClientManagementDetail)}';
+										BCMProvisioningServerUrl = '{!JSENCODE(BCMProvisioningServerUrl)}';
+										var lblHere = '{!JSENCODE($Label.here)}';
+										var onclickFuncProvServer = 'createRemoteSite('+ '\'BMC_Remedyforce_Discovery_Prov_Server\'' + ',' + '\'Metadata API Remote Site Setting for BMC Remedyforce Discovery Provisioning Server\'' + ',' + '\'' +BCMProvisioningServerUrl+ '\'' +')';
+    	    						</script>	
+            					</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>
+            						<div>
+                                    	<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__ProvisionBCMMaster)}" styleClass="sectionHeaderLabel"/>
+									</div>
+								</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>
+            						<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__ProvisionDiscoveryServicesDetail)}"/>
+            					</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>
+            						<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__DiscoveryUserDetails)}"/>
+            					</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>
+            						<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__DiscoveryPasswordDetails)}"/>
+            					</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>
+	            					<table>
+								  		<tr>
+											<td class="clsTabLayouttd" style="padding-bottom: 5px;">
+												<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__UserName+' ')}" />
+											</td>
+											<td class="clsTabLayouttd" style="padding-bottom: 5px;">
+												<apex:outputLabel value="{!OrgId}" styleClass="txtStyle" style="font-weight: bold; margin-left: 10px; " />
+												<apex:outputLabel value="{!$Label.BMCServiceDesk__OrgIdDetails}" styleClass="txtStyle" style="margin-left: 8px; " />
+											</td>
+										</tr>
+										<tr>
+											<td class="clsTabLayouttd">
+												<apex:outputLabel value="{!$Label.BMCServiceDesk__ACPassword+' '}" />
+											</td>
+											<td class="clsTabLayouttd">
+												<apex:inputSecret maxlength="255" value="{!BCMMasterPassword}"  id="ServerPwd" styleClass="txtStyle" style="margin-left: 10px;" onblur="validatePassword(false)" onkeyup="clearPasswordCheck()" onfocus="this.value = this.value;"/>
+												<apex:outputLabel value="{!'('+$Label.BMCServiceDesk__DiscoveryPwdTooltip+')'}" styleClass="txtStyle" style="margin-left: 8px; " />
+												<script>
+													ServerPwdDiv = '{!$Component.ServerPwd}';
+												</script>
+											</td>
+										</tr>
+										<tr>
+											<td class="clsTabLayouttd">
+												<apex:outputLabel value="{!$Label.BMCServiceDesk__SSConfirmPassword+'* '}" />
+											</td>
+											<td class="clsTabLayouttd">
+												<apex:inputSecret maxlength="255" value="{!BCMMasterPassword}"  id="ServerPwdConfirm" styleClass="txtStyle" style="margin-left: 10px;" onkeyup="validatePassword(true)" onblur="validatePassword(true,true)" />
+												<script>
+													ServerPwdConfirmDiv = '{!$Component.ServerPwdConfirm}';
+												</script>
+											</td>
+										</tr>
+										<tr>
+											<td class="clsTabLayouttd"/>
+											<td class="clsTabLayouttd" style="padding-left: 10px;">
+												<div id="PwdValidationdiv" style="display:none;">
+												</div>
+											</td>
+										</tr>
+								     </table>
+            					</td>
+            				</tr>
+            				<tr>
+            					<td>&nbsp;</td>
+            				</tr>
+            				<tr>
+            					<td>
+            						<div id="ProvisionButtonTD" class="clsProvisionButtonTxtLabelTD"></div>  
+            						<div id="ProvisionButtonMask" class="clsProvisionBtnMask">
+            							<img class="clsProvisionBtnMaskImg" src = '{!$Resource.SDEFStyles}/SDEFimages/ajax-loader.gif'/><div class="clsProvisionBtnMaskDiv">{!JSENCODE($Label.ProvisionInProgress)}</div>
+            						</div>  
+            					</td>
+            				</tr>
+            			</table>
+            		</apex:outputPanel>
+            	</apex:outputPanel>
+            	</td>
+            </tr>
+            <tr>
+                <td colspan="4"  class="tdCls stdfont" style="padding-top:8px; padding-bottom: 8px;">
+               	<apex:outputPanel id="TabLayout">
+                <apex:outputPanel rendered="{!isBCMMasterProvisioned}" id="TabLayoutPanel">
+	                <table cellpadding="0" cellspacing="0">
+                    		<tr id="TabButtons">
+		                    	<td style="padding-left: 5px;"><input type="button"
+		                            id="CMDBDiscovery_Provsion" class="changeBtnCls clasActiveTab"
+		                            title="{!$Label.ScannerRollOut}" value="{!JSENCODE($Label.ScannerRollOut)}"
+		                            onclick="displayActiveTab(this);" /></td>
+		                        <td style="padding-left: 5px;"><input type="button"
+		                            id="CMDBDiscovery_Settings" class="changeBtnCls" title="{!$Label.BMCServiceDesk__ScanConfigurations}"
+		                            value="{!$Label.BMCServiceDesk__ScanConfigurations}" 
+		                            onclick="displayActiveTab(this);" /></td>
+		                        <td style="padding-left: 5px;"><input type="button"
+		                            id="CMDBDiscovery_Import" class="changeBtnCls clsDisabledTabs clsDisabledTabsText" title="{!$Label.ImportConfiguration}"
+		                            value="{!$Label.ImportConfiguration}"
+		                            onclick="displayActiveTab(this);" /></td>
+								<td style="padding-left: 5px;">
+									<apex:outputPanel rendered="{!showOPRuleTab}" >
+										<input type="button"
+										id="CMDBDiscovery_OPRule" class="changeBtnCls" title="{!$Label.OperationalRuleConfigurations}"
+										value="{!$Label.OperationalRuleConfigurations}"
+										onclick="displayActiveTab(this);"  />
+									</apex:outputPanel>
+								</td>
+		                    </tr>
+					</table>
+<!-- Scanner Rollout Tab -->	
+	                <div id="CMDBDisc_Provision" class ="clsProvisionTab">
+	                    <apex:outputPanel id="mainPanel">
+	                        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainTable">
+	                            <tr>
+	            					<td>
+	            						<div class = "clsMainTableLbl">
+	                                    	<apex:outputLabel styleClass="sectionHeaderLabel" value="{!$Label.BMCServiceDesk__EnableCommunicationBCMMaster}" />
+	                                    </div>
+									</td>
+	            				</tr>
+	            				 <tr>
+	            					<td class="clsTabLayouttd">
+	            						<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__RemotSiteDetails)}" />
+	                                </td>
+	            				</tr>
+	            				<tr>
+		            				<td class="clsTabLayouttd">
+		            					<span id = "RemoteSiteSettingWithBCMMaster"></span>
+		            					<script>
+		            						var lblRemoteSiteSettingWithBCMMaster = '{!JSENCODE(lblRemoteSiteSettingWithBCMMaster)}';
+											var port = '{!JSENCODE(port)}';
+											var BCMMasterURL = 'https://'+'{!JSENCODE(BCMMasterURL)}'+':'+port;
+											var onclickFuncDiscServer = 'createRemoteSite('+ '\'BMC_Remedyforce_Discovery_Server\'' + ',' + '\'Metadata API Remote Site Setting for BMC Remedyforce Discovery Server\'' + ',' + '\'' +BCMMasterURL+ '\'' +')';
+		            					</script>
+		            				</td>
+	            				</tr>
+	            				<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+	            				<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+	            				<tr>
+	            				<td>
+	            				<apex:outputPanel id="LicenseSection">
+		            				<table  width="100%">
+		            				<tr>
+			            				<td class="clsTabLayouttd clsMainTableLbl">
+			            					<apex:outputLabel styleClass="sectionHeaderLabel" value="{!JSENCODE($Label.BMCServiceDesk__RFDiscLicenseDetails)}" />
+		            					<apex:image rendered="{!LEN(DiscoveryVersion)<1}" style="margin-left: 5px; vertical-align: text-top;" value="{!$Resource.BMCServiceDesk__Themes}/SSDefaultTheme/images/en_US/SS_Information_16.png" height="13" width="13" alt="{!JSENCODE($Label.BMCServiceDesk__SSHelp)}" title="{!$Label.BMCServiceDesk__RFDiscoveryLicenseMoreInfo}"/>
+	                                    </td>
+			            			</tr>
+		            				<tr>
+	
+			            				<td class="clsTabLayouttd">
+			            					<table class="gridTable">
+			            					  <tr class="tableHeader stdWhiteBoldFont">
+											    <th>{!JSENCODE($Label.LicenseType)}</th>
+											    <th>{!JSENCODE($Label.Status)}</th>
+											  </tr>
+											  <tr class="gridTR BGLightGrey">
+											    <td style="width: 80%" class="tdMargin">{!DiscoveryVersion}</td>
+											    <td style="width: 20%" class="tdMargin">{!LicenseStatus}</td>		
+											  </tr>	
+			            					</table>
+			            				</td>
+			            			</tr>
+			            			<tr>
+		            					<td>&nbsp;</td>
+		            				</tr>
+		            				<tr>
+			            				<td class="clsTabLayouttd clsMainTableLbl">
+			            					<apex:outputLabel styleClass="sectionHeaderLabel" value="{!JSENCODE($Label.BMCServiceDesk__AgentEntitlements)}" />
+			            				</td>
+			            			</tr>
+		            				<tr>
+			            				<td class="clsTabLayouttd">
+			            					<table  class="gridTable">
+			            					  <tr class="tableHeader stdWhiteBoldFont">
+											    <th>{!JSENCODE($Label.TotalAgents)}</th>
+											    <th>{!JSENCODE($Label.Used)}</th>
+											    <th>{!JSENCODE($Label.Available)}</th>
+											  </tr>
+											  <tr class="gridTR BGLightGrey">
+											  	<td style="width: 33%" class="tdMargin">{!LicenseCount}</td>
+											    <td style="width: 33%" class="tdMargin">{!LicencesUsedCount}</td>
+											    <td style="width: 33%" class="tdMargin">{!LicenseAvailableCount}</td>
+											  </tr>
+											</table>
+			            				</td>
+			            			</tr>
+			            			<tr>
+		            					<td>&nbsp;</td>
+		            				</tr>
+		            				<tr>
+			            				<td class="clsTabLayouttd clsMainTableLbl">
+			            					<apex:outputLabel styleClass="sectionHeaderLabel" value="{!JSENCODE($Label.BMCServiceDesk__CommunicationPortsHeader)}" />
+			            				</td>
+			            			</tr>
+		            				<tr>
+			            				<td class="clsTabLayouttd">
+			            					<table  class="gridTable">
+			            					  <tr class="tableHeader stdWhiteBoldFont">
+											    <th>{!JSENCODE($Label.IntegrationPort)}</th>
+											    <th>{!JSENCODE($Label.Console)}</th>
+											    <th>{!JSENCODE($Label.AgentPort)}</th>
+											  </tr>
+											  <tr class="gridTR BGLightGrey">
+											  	<td style="width: 33%" class="tdMargin">{!JSENCODE(IntegrationPort)}</td>
+											    <td style="width: 33%" class="tdMargin">{!JSENCODE(ConsolePort)}</td>
+											    <td style="width: 33%" class="tdMargin">{!JSENCODE(AgentPort)}</td>
+											  </tr>
+											</table>
+			            				</td>
+			            			</tr>
+			            			<tr>
+		            					<td>&nbsp;</td>
+		            				</tr>
+		            				</table>
+		            			</apex:outputPanel>
+		            			</td>
+	   		            		</tr>
+	   		            		<tr>
+		            				<td class="clsTabLayouttd clsMainTableLbl">
+		            					<apex:outputLabel styleClass="sectionHeaderLabel" value="{!JSENCODE($Label.BMCServiceDesk__InstallScanners)}" />
+		            				</td>
+		            			</tr>
+		            			<tr>
+		            				<td class="clsTabLayouttd">
+		            					<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__DownloadURLForScannersDesc)}" />
+		            				</td>
+		            			</tr>
+		            			<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+		            			<tr>
+		            				<td class="clsTabLayouttd">
+		            					<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__DownloadURLForScanners)}" />
+		            				</td>
+		            			</tr>
+		            			<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+		            			<tr>
+		            				<td class="clsTabLayouttd">
+										
+										<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__UnstallerURLInformation)}" />
+		            				</td>
+		            			</tr>
+		            			<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+		            			<tr>
+		            				<td class="clsTabLayouttd">
+			            				<table>
+				            				<tr>
+				            					<td>
+													<div style="margin-left: 15px;padding-right:70px;border-right:1px solid black;">
+														<apex:outputLabel style="font-weight: bold !important;" value="{!JSENCODE($Label.BMCServiceDesk__ReservedLabel4)}" /> 
+				            						<br/>
+				            						<br/>
+														<ul>
+															<li style="list-style-type: disc;">
+																<apex:outputlink style="color:blue;" value="{!InstWin32}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Windows32bit)}</apex:outputlink>
+															</li>
+															<li style="list-style-type: disc;">
+																<apex:outputlink style="color:blue;" value="{!InstWin64}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Windows64bit)}</apex:outputlink>
+															</li>
+															<li style="list-style-type: disc;">
+																<apex:outputlink style="color:blue;" value="{!InstLin32}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Linux32Bit)}</apex:outputlink>
+															</li>
+															<li style="list-style-type: disc;"> 
+																<apex:outputlink style="color:blue;" value="{!InstLin64}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Linux64Bit)}</apex:outputlink>
+															</li>
+														</ul>
+													</div>
+												</td>
+												<td>
+				            						<div style="margin-left: 70px;">
+				            						<apex:outputLabel style="font-weight: bold !important;" value="{!JSENCODE($Label.BMCServiceDesk__AcUninstall)}" />
+				            						<br/>
+				            						<br/>
+														<ul>
+															<li style="list-style-type: disc;">
+																<apex:outputlink style="color:blue;" value="{!UnInstWin32}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Windows32bit)}</apex:outputlink>
+															</li>
+															<li style="list-style-type: disc;">
+																<apex:outputlink style="color:blue;" value="{!UnInstWin64}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Windows64bit)}</apex:outputlink>
+															</li>
+															<li style="list-style-type: disc;">
+																<apex:outputlink style="color:blue;" value="{!UnInstLin32}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Linux32Bit)}</apex:outputlink>
+															</li>
+															<li style="list-style-type: disc;"> 
+																<apex:outputlink style="color:blue;" value="{!UnInstLin64}" target="_blank">{!JSENCODE($Label.BMCServiceDesk__Linux64Bit)}</apex:outputlink>
+															</li>
+														</ul>
+													</div>
+												</td>
+				            				</tr>
+			            				</table>
+			            			</td>
+		            			</tr>
+		            			<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+	            				<tr>
+	            					<td class="clsTabLayouttd">
+										
+										<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__URLEmailInformation)}" />
+		            				</td>
+		            			</tr>
+		            			<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+	            				<tr>
+	            					<td class="clsTabLayouttd">
+	            						<span id = 'SalesforceOrgID'></span>
+	            						<script>
+		            						var lblSalesforceOrgID = '{!JSENCODE(lblSalesforceOrgID)}';
+											var OrgId = '{!JSENCODE(OrgId)}';
+										</script>
+			            			</td>
+	            				</tr>
+	            				<tr>
+	            					<td>&nbsp;</td>
+	            				</tr>
+	            			</table>
+	                    </apex:outputPanel>
+	                </div>         
+<!-- Scan Configuration Tab -->		                
+	                <div id="CMDBDisc_Settings"  class ="" style="display: none;overflow-y: scroll; height: 632px;padding:0px !important;margin:10px!important;">
+                        
+                         <div id= "externalTLBARDiv" style="width:96.5%;position: fixed !important;z-index: 100 !important;-webkit-transform: translate3d(0,0,0);">
+                            <div id="tbar" style="width: 99.4%;"></div>
+                         </div>
+                         <div id = "scannerDetailsGridHdrDiv" style="margin:45px 0px 10px 0px;">
+                             <apex:outputLabel id="scannerDetailGridHdr" value="{!$Label.BMCServiceDesk__ScannerDetails}" styleclass="FieldLabels"/>
+                         </div>
+                         <div id="ScannerDevice" style="border:1px solid;margin:10px; border-color:#999999"></div>
+						 <apex:outputPanel id="acErrorPanel"> 
+							<script>
+								exceptionMsg= '{!exceptionMsg}';
+							</script>
+						</apex:outputPanel> 
+						<div id="WarningSection" style="display:none;"  class="hideWarningSectionStyle" >
+							 <p><img id="Warning" align="left" src="{!$Resource.SDEFStyles}/SDEFimages/exclamation_triangle.png" style=" {!IF(DiscoveryVersion==$Label.Agentless,'padding-top:2px','padding-top:10px')};margin: 0 20px;" />
+							 <p id="LaunchConsoleDiv" > </p>
+			               </p>
+		                </div>
+						<div id="bottomDiv" style="border:1px solid;padding:10px 10px 10px 0px;border-color:#999999;margin:0px 10px 10px 10px;">
+                            
+        					<table width="100%">
+            					<tr>
+                					<td colspan="2">
+                    					<div id="scannerDiv">
+                        					<apex:outputLabel value="{!$Label.BMCServiceDesk__Scanner}" styleClass="FieldLabels"/>
+                        					<apex:outputLabel id="lblscannerdevice" value="" styleClass="FieldLabelsData" />
+                    					</div>
+                					</td>
+                				
+            					</tr>
+        					</table>
+        					<table width="100%">
+            					<tr style="height:10px">
+            						<td colspan="2"> </td>
+            					</tr>
+            					<tr>
+                					<td colspan="2">
+                    					<div id="scanConfigDiv">
+                        					<apex:outputLabel value="{!$Label.BMCServiceDesk__ScanConfigurations}" styleClass="FieldLabels"/>
+                    					</div>
+                					</td>
+            					</tr>
+            					<tr>    
+                					<td colspan="2" height="30">
+                    					<div id="scanConfigDescDiv">
+                        					<apex:outputLabel value="{!$Label.BMCServiceDesk__ScanSettingsDesc}" styleClass="FieldInfoLabels"/>
+                    					</div>
+                					</td>
+								</tr>
+								<tr>
+								    <td>
+									<apex:outputLabel value="{!$Label.BMCServiceDesk__BCMProtocol}" styleClass="FieldLabels"/>
+                					</td> 
+                					<td>
+                    					<div id="userCredsHeaderDiv" ></div>
+                					</td>       
+            					</tr> 
+            					<tr>
+                					<td style="width: 40%">
+                    					<div id="protocolGridDiv" ></div>
+                					</td>
+                					<td style="width: 60%">
+                    					<div id="userCredsGridDiv"></div>
+                    					<div id="snmpCredsGridDiv" ></div>
+                					</td>       
+            					</tr>
+        					</table>
+        					<table width="100%" >
+            					<tr>
+                					<td><div id="targetListLblDiv"></div></td>
+            					</tr> 
+            					<tr>
+                					<td><div id="targetListDescLblDiv"></div></td>
+            					</tr>
+            					<tr>
+                					<td><div id="memeberGridDiv" style="margin: 10px"></div></td>
+            					</tr>
+        					</table>
+							 
+							<table border="0" width="100%" >
+								<tr>
+									<td  class="rf-label-td" colspan="3"> <apex:outputLabel styleClass="rf-scan-lbl" value="{!$Label.BMCServiceDesk__Schedule}" /> </td>
+								</tr>
+								<tr>
+								<td  class="rf-label-td" colspan="3"> 
+									<apex:selectRadio id="scheduleTypeOptions" value="{!schedule.ScheduleType}" layout="pageDirection" onclick="onScheduleTypeClick(this)">
+										<apex:selectOptions value="{!scheduleTypes}"/>
+									</apex:selectRadio>
+								</td>
+								</tr>
+							</table>
+							<div id="FreqencyTableId" >
+							<table width="100%" >
+								<tr>
+									<td  height="5" colspan="3"> </td>
+								</tr>
+								<tr>
+									<td  class="rf-label-td"  colspan="3" id="frequencyTD" > <apex:outputLabel styleClass="rf-scan-lbl" value="{!$Label.BMCServiceDesk__RecurrencePattern}" /> </td>
+								</tr>
+								<tr>
+								<td class="rf-label-td" colspan="3">
+									<div  id="frequencyDiv" />
+								</td>
+								</tr>
+								<tr id="weeklyTR" >
+									<td valign="top"  width="30" class="rf-label-td">
+									<apex:outputlabel value="{!$Label.BMCServiceDesk__On}"/>
+								</td>
+								<td class="rf-label-td" width="120">
+									<input  id="1" name="wd" type="checkbox" class="marginBottom7px" /><apex:outputlabel styleClass="dayLabelCls" for="1">{!$Label.BMCServiceDesk__Monday}</apex:outputlabel><br/>
+									<input  id="2" name="wd" type="checkbox" class="marginBottom7px" /><apex:outputlabel styleClass="dayLabelCls" for="2">{!$Label.BMCServiceDesk__Tuesday}</apex:outputlabel><br/>
+									<input  id="3" name="wd" type="checkbox" class="marginBottom7px" /><apex:outputlabel styleClass="dayLabelCls" for="3">{!$Label.BMCServiceDesk__Wednesday}</apex:outputlabel><br/>
+									<input  id="4" name="wd" type="checkbox" class="marginBottom7px" /><apex:outputlabel styleClass="dayLabelCls" for="4">{!$Label.BMCServiceDesk__Thursday}</apex:outputlabel><br/>
+									<input  id="5" name="wd" type="checkbox" class="marginBottom7px" /><apex:outputlabel styleClass="dayLabelCls" for="5">{!$Label.BMCServiceDesk__Friday}</apex:outputlabel><br/>
+								</td>
+								<td valign="top" class="rf-label-td" >
+									<input  id="6" name="wd" type="checkbox" value="1" class="marginBottom7px" /><apex:outputlabel styleClass="dayLabelCls" for="6">{!$Label.BMCServiceDesk__Saturday}</apex:outputlabel><br/>
+									<input  id="0" name="wd" type="checkbox" value="1" class="marginBottom7px" /><apex:outputlabel styleClass="dayLabelCls" for="0">{!$Label.BMCServiceDesk__Sunday}</apex:outputlabel><br/>
+								</td>
+								</tr>
+								<tr id="monthlyTR" >
+									<td  valign="top"  width="30" class="rf-label-td">
+									<apex:outputlabel styleClass="rf-stop-lbl" value="{!$Label.BMCServiceDesk__On}"/> 
+								</td>
+								<td  colspan="2" class="rf-label-td">
+									<div id="recMonDayInstance" ></div>      
+									<div id="recMonDayOfWeek" ></div>
+								</td>
+								</tr>
+								<tr>
+									<td  height="5" colspan="3"> </td>
+								</tr>
+								<tr id="timeframeTR">
+									<td  class="rf-label-td" width="30"> <apex:outputLabel styleClass="rf-stop-lbl" value="{!$Label.BMCServiceDesk__At}" /></td>
+									<td  class="rf-label-td" colspan="2"> 
+									<div id="hourSpiner"/>  
+									<div id="minSpiner"/>  
+									<div id="TimeFrameDiv"></div>
+								</td>
+								</tr>
+								<tr>
+									<td  height="15" colspan="3"> </td>
+								</tr>
+							</table>
+							</div>
+							<div id="DurationTableId">
+							<table border="0" width="100%" >
+							<tr>
+								<td  class="rf-label-td" colspan="2"> <apex:outputLabel styleClass="rf-scan-lbl" value="{!$Label.BMCServiceDesk__RecurrenceRange}" /> </td>
+							</tr>
+							<tr>
+								<td  class="rf-label-td" colspan="2" > <apex:outputLabel value="{!$Label.BMCServiceDesk__ACStartservice}:" /> </td>
+							</tr>
+							<tr>
+								<td class="rf-label-td rf-top-padding5" width="160"  colspan="1" >
+								<div  id="StartDurationDiv" />
+							</td>
+							<td class="rf-label-td rf-top-padding5" colspan="1" >
+								<div id="StartDate_Div" >
+									<apex:inputField styleClass="rf-scan-date"  id="StartDate" value="{!schedule.scanScheduleObj.BMCServiceDesk__StartDate__c}"  onfocus="DatePicker.pickDate(true, '{!$Component.mainform.StartDate}', true);" />
+								</div>							
+							</td>
+							</tr>
+							<tr>
+								<td  height="10" colspan="2"> </td>
+							</tr>
+							<tr>
+								<td  class="rf-label-td" colspan="2"> <apex:outputLabel value="{!$Label.BMCServiceDesk__ACStopservice}:"  /> </td>
+							</tr>
+							<tr>
+								<td class="rf-label-td rf-top-padding5" width="160" colspan="1" >
+									<div  id="StopDurationDiv" />
+								</td>
+								<td class="rf-label-td rf-top-padding5" colspan="1"  >
+									<div id="EndDate_Div" >
+									<apex:inputField styleClass="rf-scan-date"  id="EndDate" value="{!schedule.scanScheduleObj.BMCServiceDesk__EndDate__c}" onfocus="DatePicker.pickDate(true, '{!$Component.mainform.EndDate}', true);"/>
+									</div>
+									<div id="ScanCount_Div" style="display:none;">
+										<div id="scanCounter"/> 
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td  height="10" colspan="2"> </td>
+							</tr>
+							</table>
+							</div>
+						 </div>
+	                </div>
+<!-- Import Configuration Tab -->	                
+	                <div id="CMDBDisc_Import"  class ="clsProvisionTab" style="display: none;">
+	                    <apex:outputPanel id="ImportPanel">
+	                        <apex:outputtext value="{!$Label.BMCServiceDesk__SelectClassesToImport}" styleClass="sectionHeaderLabel" />
+						    <br/><br/>
+						    
+						    <apex:variable value="{!0}" var="MappingObjectCount" />
+						    <apex:repeat value="{!MappingObjects}" var="CMDBClass" id="ImportClasses">
+						    	<apex:variable value="{!MappingObjectCount + 1}" var="MappingObjectCount" />
+						        <apex:inputCheckbox id="CB" value="{!CMDBClass.Enabled}" style="*margin-left: -4px !important;" disabled="{!if(MappingObjectCount == 1,true,false)}" onclick=""/>&nbsp;&nbsp;
+						        <apex:outputLabel style="vertical-align : top" value="{!CMDBClass.className}" />&nbsp;&nbsp;
+						        <img id="ExpandIcon{!MappingObjectCount}" src="{!$Resource.SDEFStyles}/SDEFicons/arrow-down.png" width="11" height="11" style="vertical-align:baseline;display:inline;" onclick="ExpandMappingTable('{!CMDBClass.classId}','{!MappingObjectCount}');"/>
+						        <img id="CollapseIcon{!MappingObjectCount}" src="{!$Resource.SDEFStyles}/SDEFicons/arrow-up.png" width="11" height="11" style="vertical-align:baseline; display:none;" onclick="CollapseMappingTable('{!CMDBClass.classId}','{!MappingObjectCount}');"/>
+						        <br/>
+						        <div id="{!CMDBClass.classId}" style="padding-top: 5px; padding-bottom: 5px;"></div>
+						        <br/>
+						    </apex:repeat>
+						    
+						    <apex:outputtext value="{!$Label.BMCServiceDesk__ImportSchedule}" styleClass="sectionHeaderLabel"/><br/>
+						    <table style="padding-top:10px;">
+							    <tr>
+							    	<td class="TD10pxHeightCls"></td>
+						    	</tr>
+						     	<tr>
+							       <td>
+							        <apex:outputLabel value="{!$Label.BMCServiceDesk__ImportDiscoveredDataEvery}"  style="font:9pt Arial" />       
+							       </td>
+							       <td>
+							           <div id="hourFieldTD" style="float:left;padding-left:15px;"></div>
+							           <div id="hourLabelTD" style="font:9pt Arial;margin-left:5px;margin-top:4px;float:left;" >{!JSENCODE($Label.HoursLabel)}</div>
+							       </td>
+							       <td>
+							           <div id="minuteFieldTD" style="float:left;padding-left:15px;"></div>
+							           <div id="minLabelTD" style="font:9pt Arial;margin-left:5px;margin-top:4px;float:left;">{!JSENCODE($Label.MinutesLabel)}</div>
+							      </td>
+							      <td>
+							           <div id="ImportJobButtonTD" class="clsImportJobbtnLabelTD"></div>    
+							       </td>
+							    </tr>
+							    <tr>
+						        	<td class="TD10pxHeightCls"></td>
+						        </tr>
+							                
+						    </table>
+						    <br/>
+						    <apex:outputtext value="{!$Label.BMCServiceDesk__LastSuccessfulImportAt}" style="padding-top:15px;"/>:&nbsp;
+						    <apex:outputtext value="{!lastImport}" style="padding-top:15px;"/><br/><br/>
+						    <apex:outputtext value="{!$Label.BMCServiceDesk__NumberOfRecordsImported}" style="padding-top:15px;"/>:&nbsp;
+						    <apex:outputtext value="{!recordsImported}" style="padding-top:15px;"/>
+						    
+						    <apex:outputpanel id="MappingDataPanel">
+						        <script>
+						            var MappingEntry = {!fieldMappings};
+						            var ExpandedCMDBClass = '{!JSENCODE($CurrentPage.parameters.CMDBClass)}';
+						            var ExpandedCMDBClassCount = '{!JSENCODE($CurrentPage.parameters.MappingObjectCount)}';
+						        </script>
+						    </apex:outputpanel>
+						    
+						    <apex:outputpanel id="JobStatusPanel">
+								<script>
+									jobstatusflag={!jobstatus};
+							    	
+							    	function onCompleteStart(){
+							    		Ext.getCmp('ImportJobButton').setDisabled(false);
+									}
+									
+									function onCompleteStop(){
+										Ext.getCmp('ImportJobButton').setDisabled(false);
+									}
+								</script>
+							</apex:outputpanel>
+	                    </apex:outputPanel>
+	                </div>
+					<div id="CMDBDisc_OPRule"  class ="clsProvisionTab" style="display: none;height:400px;">
+					<apex:outputPanel id="OP_RulePanel" rendered="{!showOPRuleTab}" >
+					<table border="0" width="100%">
+						<tr><td colspan="2"><apex:outputLabel id="ORStatusMapHeader" styleClass="rf-scan-lbl" value="{!JSENCODE($Label.BMCServiceDesk__ORStatusMappingHeader)}"/></td> </tr>
+						<tr><td height="10" colspan="2"></td> </tr>
+						<tr><td colspan="2"><apex:outputLabel id="ORNote1" styleClass="clsInputLabelTD" value="{!JSENCODE($Label.BMCServiceDesk__ACORNote)}"/></td> </tr>
+						<tr><td height="8" colspan="2"></td> </tr>
+						<tr><td colspan="2"> <div id="mappingGrid"/> </td> </tr>
+						<tr><td height="15" colspan="2"></td> </tr>
+						<tr><td colspan="2"><apex:outputLabel styleClass="rf-scan-lbl" value="{!JSENCODE($Label.BMCServiceDesk__ImportSchedule)}" /></td></tr>
+						<tr><td colspan="2" height="10"></td> </tr>
+						<tr><td colspan="2"><apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__BCM_OPRuleJobNotes)}" /></td></tr>
+						<tr><td colspan="2" height="10"></td> </tr>
+						<tr>
+						<td width="42%">
+						    <apex:outputLabel styleClass="rf-stop-lbl" style="width: 50%;" value="{!JSENCODE($Label.BMCServiceDesk__ACProcessOpRuleEvery)}" />
+							<div style="float:left;padding-left:15px;width: 12%;" id="hourSpiner_OP"></div>
+							<div class="rf-stop-lbl" style="float:left;padding-left:10px;width: 13%;">{!$Label.HoursLabel}</div>
+							<div id="minSpiner_OP" style="float:left;padding-left:10px;width: 11%;"></div> 
+							<div style="float:left;padding-left:10px;width: 12%;" class="rf-stop-lbl">{!$Label.MinutesLabel}</div>
+							
+						</td> 
+						<td >
+						 <input type="button" value="{!intervalBtnLabel}" class="rf-btn" onClick="SaveOPIntervalHandler(this)"/>
+						</td>
+						</tr>
+						<tr><td colspan="2" height="10"></td></tr>
+						<tr>
+							<td colspan="2" valign="top">
+								 <apex:inputCheckBox title="{!JSENCODE($Label.BMCServiceDesk__ACLogsEnableTooltip)}" value="{!enableACLog}" id="enableACLogHistory" styleClass="fontCls" style="margin:0px;" onchange="isChanged=true;" />
+								 <apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__ACLogsEnable)}" style="vertical-align: top;"/> 
+								
+							</td>
+						</tr>
+					</table>
+					</apex:outputPanel>
+				   </div>
+	            </apex:outputPanel>
+                </apex:outputPanel>
+                </td>
+            </tr>
+        </table>
+    <apex:outputPanel id="msgPanel">
+        <script>
+            msg = '{!JSENCODE(disableACmsg)}';
+			var isOPIntervalStopped = {!isOPIntervalStopped};
+        </script>
+    </apex:outputPanel>
+    <apex:outputPanel id="ProvisionmsgPanel">
+        <script>
+           msgStr = '{!JSENCODE(msgStr)}'; 
+           if(msgStr !=''){
+	    		Ext.Msg.show({
+				    title:msgHeader,
+				    msg: msgStr,
+				    icon: Ext.MessageBox.ERROR,
+				    width: 300,
+				    frame:false,
+				    buttons: Ext.Msg.OK
+				});
+				createProvisioningButton();
+           }
+           	isServerProvisioned = {!isBCMMasterProvisioned};
+        </script>
+    </apex:outputPanel>
+    <apex:outputPanel id="KeepAlivePanel">
+        <script>
+		   var isServerReprovisioningNeeded = {!isServerReprovisioningNeeded };
+        </script>
+    </apex:outputPanel>
+    
+    <apex:outputPanel id="autoRefreshPanel">
+        <script>
+		   ScannerDeviceListJSON = '{!JSENCODE(scannerdeviceListJSON)}';
+        </script>
+    </apex:outputPanel>
+    <apex:outputPanel id="savePnl">
+        <script>
+           scanSavedInRF = {!scanSavedInRF};
+		   exceptionMsg = '{!JSENCODE(exceptionMsg)}';
+        </script>
+    </apex:outputPanel>
+    
+	<apex:outputPanel id="JSONVariablePnl">
+        <script>
+        	scannerInfoToFetchScan = '{!JSENCODE(currentScannerDetailsJSON)}';
+           	ScannerDeviceListJSON = '{!JSENCODE(scannerdeviceListJSON)}';
+           	memberListJSON = '{!memberListJSON}';
+           	protocolConfigJSON = '{!JSENCODE(protocolsNCredsJSON)}';
+           	exceptionMsg = '{!JSENCODE(exceptionMsg)}';
+	 		var frequencyType='{!JSENCODE(schedule.frequencyType)}';
+     		var StartType='{!JSENCODE(schedule.StartType)}';
+     		var StopType='{!JSENCODE(schedule.StopType)}';
+	 		var ScheduleType='{!JSENCODE(schedule.ScheduleType)}';
+     		var frqTimeHrs={!schedule.frqTimeHrs};
+     		var frqTimeMin={!schedule.frqTimeMin};
+     		var frqTimeFrame='{!JSENCODE(schedule.frqTimeFrame)}';
+	 		var scanCount={!schedule.scanCount};
+     		var scheduleDayOfMonth={!schedule.scheduleDayOfMonth};
+     		var scheduleInstanceDayOfMonth = '';
+     		if(typeof(scheduleDayOfMonth[0]) != 'undefined'){
+     			scheduleInstanceDayOfMonth = scheduleDayOfMonth[0]+''; 
+     		}
+			var scheduleDayOfWeek={!schedule.scheduleDayOfWeek};
+			var scheduleInstance=scheduleDayOfWeek[0]+'';
+			var orData = {!opRuleGridData};
+			IdsOfRFRecords = '{!IDsInRF}';
+			toggleInteger = {!toggleInteger};
+        </script>
+    </apex:outputPanel>
+	
+    <script>
+		var TargetField = '{!JSENCODE($Label.TargetField)}';
+		var SourceFields = '{!JSENCODE($Label.SourceFields)}';
+		var defaultHours = '{!JSENCODE(Schedulehours)}';  
+		var defaultMins = '{!JSENCODE(Scheduleminutes)}';
+		var EnableImport = {!EnableImportTab};
+		
+        var wikiUrl = '{!JSENCODE(wikiUrl)}';
+        var scanStartDateFld = '{!$Component.mainform.StartDate}';
+        var scanStopDateFld = '{!$Component.mainform.EndDate}';
+        var isDiscoveryServicesEnabled = '{!$Component.enableDiscoveryServices}';
+        var lblDiscoveryServicesEnabled = '{!JSENCODE($Label.BMCServiceDesk__EnableDiscoveryServices)}';
+        var noExpiryNotification = '{!$Component.noExpiryNotification}';
+        
+        var TabLayoutPanelId = '{!$Component.TabLayoutPanel}';
+        parent.addHelpOnPage(document.getElementById('helpDiv'),'',wikiUrl); 
+		
+		var scannerNameCmp = '{!JSENCODE($Component.mainform.lblscannerdevice)}';
+
+
+		var saveToolTip = '{!JSENCODE($Label.Save)}';
+		var deleteToolTip = '{!JSENCODE($Label.Delete)}';
+		var lblSave = '{!JSENCODE($Label.Save)}';
+		var lblRefresh = '{!JSENCODE($Label.Refresh)}';
+		var lblScanner = '{!JSENCODE($Label.Scanner)}';
+		lblScanner = lblScanner.substring(0, lblScanner.length - 1); // Remove : from label
+		var lblOperatingSystemName = '{!JSENCODE($Label.OperatingSystem)}';
+		var lblObjectId = '{!JSENCODE($Label.ObjectId)}';
+		var lblIPAddress = '{!JSENCODE($Label.IPAddress)}';
+		var lblLocation = '{!JSENCODE($Label.Location)}';
+		var lblMsgNoRecordFound = '{!JSENCODE($Label.MsgNoRecordFoundSearchPage)}';
+		var lblNoScannersRolled = '{!JSENCODE($Label.NoScannersRolled)}';
+		var	reqFieldMsg = '{!JSENCODE($Label.requiredFieldMsg)}';
+		var	invalidTargetMsg = '{!JSENCODE($Label.TargetListInputError)}';	
+		
+		
+
+		var imgPath = '{!$Resource.SDEFStyles}/SDEFimages/chevron_right_blue.gif';
+
+		var lblLogIn = '{!JSENCODE($Label.SSUserName)}';
+		var lblPassword = '{!JSENCODE($Label.Password)}';
+		var lblReenterPassword = '{!JSENCODE($Label.ConfirmPasswordToolTip)}';
+		var lblEdittooltip = '{!JSENCODE($Label.CMDBEdit)}';
+		var lblAddtooltip = '{!JSENCODE($Label.Add)}';
+		var lblCredentialsFor = '{!JSENCODE($Label.CredentialsFor)}';
+		var lblAddUserCredentials = '{!JSENCODE($Label.AddUserCredentials)}';
+		var lblCommunity = '{!JSENCODE($Label.Community)}';
+		var lblConfirm = '{!JSENCODE($Label.ConfirmHomePage)}'; // label for 'Confirm'
+		var lblCommunityConfirmationFailed = '{!JSENCODE($Label.ReenterSameCommunity)}';
+		var lblConfirmCommunity = lblConfirm + ' ' + lblCommunity;
+		var lblEnterCommunityConfirm = '{!JSENCODE($Label.EnterCommunityConfirm)}';
+		var lblEnterCommunity = '{!JSENCODE($Label.EnterCommunity)}';
+		var lblUSMUser = '{!JSENCODE($Label.USMUser)}';
+		var lblAuthorizationAlgorithm = '{!JSENCODE($Label.AuthorizationAlgorithm)}';
+		var lblAuthorizationPassword = '{!JSENCODE($Label.AuthorizationPassword)}';
+		var lblPrivacyAlgorithm = '{!JSENCODE($Label.PrivacyAlgorithm)}';
+		var lblPrivacyPassword = '{!JSENCODE($Label.PrivacyPassword)}';
+		var lblTargetList = '{!JSENCODE($Label.TargetList)}';
+		var lblMembers = '{!JSENCODE($Label.Members)}';
+		var lblExcludedMembers = '{!JSENCODE($Label.ExcludedMembers)}';
+		var lblAddTargetList = '{!JSENCODE($Label.AddTargetList)}';
+		var lblTargetListDesc = '{!JSENCODE($Label.TargetListDesc)}';
+		var lblReenterSamePassword= '{!JSENCODE($Label.ReenterSamePassword)}';
+		var lblProtocolChbxHdr = '{!JSENCODE($Label.Activate)}';
+		var lblProtocolHdr = '{!JSENCODE($Label.DeviceType)}';
+		var lblSMBProtocol = '{!JSENCODE($Label.SMBProtocol)}';
+		var lblSSHProtocol = '{!JSENCODE($Label.SSHProtocol)}';
+		var lblSNMPProtocol = '{!JSENCODE($Label.SNMPProtocol)}';
+		var lblVMWAREProtocol = '{!JSENCODE($Label.VMWAREProtocol)}';
+		var lblHyperVProtocol = '{!JSENCODE($Label.HyperVProtocol)}';
+		var PleaseWait = '{!JSENCODE($Label.PleaseWait)}';
+		var lblSelectDayOfWeek = '{!JSENCODE($Label.WeeklyRecurrenceValidation)}';
+		var lblSelectDayOfMonth = '{!JSENCODE($Label.ErrorMessageForMonthlyRecord)}';
+
+		var targetMembersGridInfoText = '{!JSENCODE($Label.TargetMembersGridInfo)}';
+		var targetMembersTooltip = '{!JSENCODE($Label.TargetMembersTooltip)}';
+		var excludedMembersTooltip = '{!JSENCODE($Label.ExcludedMembersTooltip)}';
+	  
+		var lblSave = '{!JSENCODE($Label.Save)}';
+		var Saving = '{!JSENCODE($Label.MobSaving)}';
+		var msgHeader = '{!JSENCODE($Label.ManageDiscovery)}';
+		var ProvisionButtonTxt = '{!JSENCODE($Label.BMCServiceDesk__ProvisionBCMMaster)}';
+		var lblViewDetails = '{!JSENCODE($Label.ViewDetails)}';
+		var lblScanDetails = '{!JSENCODE($Label.ScanDetails)}';
+		var lblExecutionStatus = '{!JSENCODE($Label.ExecutionStatus)}';
+		var lblLastScanDate = '{!JSENCODE($Label.ACLastStatusUpdTime)}';
+		var ACScandetailsfor = '{!JSENCODE($Label.ACScandetailsfor)}'; 
+        var ORStatusLabel = '{!JSENCODE($Label.ORStatusLabel)}';
+		var	taskStatusLabel = '{!JSENCODE($Label.taskStatusLabel)}';
+        var timeMandatoryError = '{!JSENCODE($Label.milestoneTimeMandatory)}';
+		var	StartLbl = '{!JSENCODE($Label.ACStartservice)}';
+        var StopLbl = '{!JSENCODE($Label.ACStopservice)}';	
+	    var	EF ='ф';
+		var nonPrint = '¬';
+		var PE = 'П';
+		var opHours = '{!JSENCODE(opHours)}';
+        var opMinutes = '{!JSENCODE(opMinutes)}';
+		var DeleteConfirmMessage = '{!JSENCODE($Label.DeleteConfirmMessage)}';
+	  	var lblDelete = '{!JSENCODE($Label.delete)}';
+		var enableLogChkId = '{!JSENCODE($Component.mainform.enableACLogHistory)}';
+		
+		var targetListEmptyWrng = '{!JSENCODE($Label.TargetListEmptyWarning)}';
+		var savingMsg = '{!JSENCODE($Label.MobSaving)}';
+		var deletingMsg = '{!JSENCODE($Label.CMDBClsDelMaskMsg)}';
+
+		var	ACMultipleScanConfigMsg = '{!JSENCODE($Label.ACMultipleScanConfigMsg)}' + ' ';
+		var	ACLaunchConsole = '{!JSENCODE($Label.ACLaunchConsole)}';
+		var	NotConfigured = '{!JSENCODE($Label.NotConfigured)}';
+		var lblUnSavedDataMsg = '{!JSENCODE($Label.DataNotSavedMsg)}';	
+		var lblwarningTitle = '{!JSENCODE($Label.Warning)}';
+		var lblYes = '{!JSENCODE($Label.ExtjsMessageYes)}';
+		var lblNo = '{!JSENCODE($Label.ExtjsMessageNo)}';
+		var lblOk = '{!JSENCODE($Label.ExtjsMessageOK)}';
+		
+		/* START - SCAN SCHEDULE */
+		var FrequencyTypeJSON={!schedule.FrequencyTypeJSON};
+		var monDayInstanceJSON={!schedule.monDayInstanceJSON};
+		var DayOfWeekListJSON= {!schedule.DayOfWeekListJSON};
+		var AMPMListJSON={!schedule.AMPMListJSON};
+		var StartDurationJSON={!schedule.StartDurationJSON};
+		var StopDurationJSON={!schedule.StopDurationJSON};
+		var isFPUserValidated =  {!isFPUserValidated};
+		var statusInfo = '{!JSENCODE($Label.scanStatusInfo)}'; 
+		var ACFPlaunchWindowHeader = '{!JSENCODE($Label.ACFPlaunchWindowHeader)}';
+		var showOPRuleTab= {!showOPRuleTab};
+		var toViewGoto = '{!JSENCODE($Label.toViewGoto)} '; 
+		var DiscoveryVersion = '{!JSENCODE(DiscoveryVersion)}';
+		var Agentless = '{!JSENCODE($Label.Agentless)}';
+		
+		/* END - SCAN SCHEDULE */
+		
+		var lblSFRemoteSiteSetting = '{!JSENCODE($Label.SFRemoteSiteSetting)}';
+		var lblHere = '{!JSENCODE($Label.here)}';
+		var lblNoPasswordConfirmation = '{!JSENCODE($Label.youDontWantToEnterPassword)}'; 
+		var importPageRepeatId = '{!$Component.ImportClasses}';
+	</script>
+    </apex:form>
+</body>
+<script src="{!$Resource.ExtJS4_1_3}/ext-all.js"  type="text/javascript"/>
+<script src="{!$Resource.SDEFCommonJS}/AdminCMDBDiscoveryProvision.js"  type="text/javascript"/>
+<script src="{!$Resource.SDEFCommonJS}/AdminDiscoveryImportConfiguration.js"  type="text/javascript"/>
+<script src="{!$Resource.SDEFCommonJS}/AdminDiscoveryOPRule.js"  type="text/javascript"/>
+<script type="text/javascript" src="{!$Resource.SDEFCommonJS}/AdminJSCommon.js"></script>
+<script src="{!$Resource.SDEFCommonJS}/AdminDiscoveryConfig.js"  type="text/javascript"/>
+<script type="text/javascript" src="{!$Resource.SDEFCommonJS}/WikiHelp.js" />
+<script type="text/javascript" src="{!$Resource.SDEFCommonJS}/HTML_ENCODE_DECODE.js"></script>
+</apex:page>

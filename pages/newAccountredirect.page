@@ -1,0 +1,16 @@
+<apex:page standardController="account" extensions="newAccountredirectController">
+<script>
+    addEventListener('load', function() {
+        if (window.sforce && "{!BusOrg}" != 'Climate and Energy') {
+            sforce.one.createRecord('Account',"{!recTypeId}");
+        } 
+        else if(window.sforce && "{!BusOrg}" == 'Climate and Energy'){
+            sforce.one.navigateToURL("{!GoToAccount}");
+        }
+        else{
+            location = "{!GoToAccount}";
+        }
+
+    });
+    </script>
+</apex:page>

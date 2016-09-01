@@ -1,0 +1,70 @@
+<apex:page docType="html-5.0" standardController="Question" extensions="QuestionAskController" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+    <title>Ask a Question</title>
+    
+    
+    <apex:composition template="DF_Template">
+        <apex:define name="body">
+
+            <apex:form >
+                <c:DF_Header />
+                <div class="container-bs">
+                    <h1 class="reset">Ask a Question</h1>
+                    <label class="reset" style="color: red;margin-bottom: 20px;font-weight: bold;">*All fields are required</label><br/>
+                    <apex:pagemessages />
+                    <div class="ask-question">
+                        <div class="form-group title-group">
+                            <label>Question Title</label>
+                            <apex:inputField value="{!Question.Title}" required="false" style="width: 25%;"/>
+                        </div>
+                        <div class="form-group stacked">
+                            <!-- <label>Question Body</label> -->
+                            <apex:inputField value="{!Question.Body}"/>
+                        </div>
+                       <!-- <div class="form-group">
+                            <label>Question Origin</label>
+                            <apex:outputField value="{!Question.Origin}"/>
+                        </div>-->
+                        <div class="form-group">
+                            
+                            <c:MultiselectPicklist leftLabel="Available Categories"
+                                leftOptions1="{!catOptions}"
+                                rightLabel="Selected Categories"
+                                rightOptions1="{!selectedCategories}"
+                                allData="{!allData}"
+                                size="6"
+                                width="150px"/>
+                        </div><!-- /.form-group -->
+                        <!--<div class="form-group">
+                            <label>Select Category</label>
+                            <apex:selectList value="{!selectedCategory}" label="Select Category" size="1">
+                                <apex:selectOptions value="{!catOptions}"/>
+                            </apex:selectList>
+                        </div>-->
+                        <div class="controls">
+                            <apex:commandButton styleClass="btn-bs btn-default" value="Cancel" action="{!Cancel}"/>
+                            <apex:commandButton styleClass="btn-bs btn-primary" value="Save" action="{!Save}"/>
+                        </div><!-- /.controls -->
+                    </div><!-- /.ask-question -->
+                </div><!-- /.container-bs -->
+
+                <!-- 
+                <apex:pageBlock >
+                    <apex:pageBlockSection columns="1">
+                        <apex:inputField value="{!Question.Title}"/>
+                        <apex:inputField value="{!Question.Body}"/>
+                        <apex:outputField value="{!Question.Origin}"/>
+                        <apex:selectList value="{!selectedCategory}" label="Select Category" size="1">
+                            <apex:selectOptions value="{!catOptions}"/>
+                        </apex:selectList>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons >
+                        <apex:commandButton value="Save" action="{!Save}"/>
+                        <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                    </apex:pageBlockButtons>
+                </apex:pageBlock> 
+                -->
+            </apex:form>
+
+        </apex:define>
+    </apex:composition>
+</apex:page>

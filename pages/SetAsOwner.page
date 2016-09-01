@@ -1,0 +1,44 @@
+<apex:page standardcontroller="Case" extensions="SetAsOwner" action="{!gotoCase}" >
+  <apex:includeScript value="/support/console/33.0/integration.js"/>
+    <apex:pageMessages />
+    <apex:form id="form">
+      <apex:outputPanel rendered="{!CaseUrl != null}">
+             <script>
+             var targetUrl = '{!CaseUrl}'; 
+             var casenumber = '{!CaseNumber}'; 
+             var vfpageTab = sforce.console.getEnclosingTabId();
+             
+             
+         if (sforce.console.isInConsole()) {
+                // It is not enough to set the location of the page, since then the tab name will not be updated
+                targetUrl += (targetUrl.indexOf("?") == -1 ? "?" : "&") + "&isdtp=vw";
+				
+                sforce.console.getEnclosingPrimaryTabId(function(result) {
+                    var primaryTabId = result.id;
+                    sforce.console.getEnclosingTabId(function(result) {
+                        var tabId = result.id;
+                            sforce.console.getSubtabIds(primaryTabId, function(result) {
+                            		var subTabIds = result.ids;
+                            			if (tabId == subTabIds[0]) {
+                               					sforce.console.openPrimaryTab(null, targetUrl, true, casenumber + ': Reassigned',tabId, name);
+                                            sforce.console.closeTab(primaryTabId);
+                                            	
+                            } else {
+                               
+				                                sforce.console.openSubtab(primaryTabId, targetUrl, true, undefined, tabId);
+                                
+                            }
+                        });
+                    });
+                });
+            
+            
+            
+            } else {
+                location = '/'+ targetUrl;
+            }
+            	
+            </script>
+    </apex:outputPanel>
+    </apex:form>
+</apex:page>

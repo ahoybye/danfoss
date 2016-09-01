@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>ADC_Tour_for_AMS_NMS_NOR_only</fullName>
+        <active>true</active>
+        <description>Don&apos;t allow an ADC Tour to be requested if the plant site is not AMS, NMS or NOR</description>
+        <errorConditionFormula>AND( ADC_Tour_Requested__c, 
+NOT( 
+OR( ISPICKVAL(Plant_of_Visit__c, &apos;AMS&apos;), 
+ISPICKVAL(Plant_of_Visit__c, &apos;NMS&apos;),
+ISPICKVAL(Plant_of_Visit__c, &apos;NOR&apos;)) 
+) 
+)</errorConditionFormula>
+        <errorDisplayField>ADC_Tour_Requested__c</errorDisplayField>
+        <errorMessage>ADC Tour can only be requested for a visit to AMS, NMS or NOR</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Confirmed_Date_Cannot_be_set_in_the_Past</fullName>
+        <active>true</active>
+        <description>When initially entered, the Confirmed date cannot be set to a date in the past.</description>
+        <errorConditionFormula>AND (ISCHANGED( Confirmed_Date__c ), ISNULL(PRIORVALUE(Confirmed_Date__c)),Confirmed_Date__c &lt; TODAY() )</errorConditionFormula>
+        <errorDisplayField>Confirmed_Date__c</errorDisplayField>
+        <errorMessage>The Confirmed Date cannot be initially set to a date in the past.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Logistics_Implement_No</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(RecordType.DeveloperName = &apos;Logistics_Setup&apos;, ISPICKVAL(Implement_Changes__c, &apos;No&apos;), ISBLANK(Rejected_Reason__c))</errorConditionFormula>
+        <errorDisplayField>Rejected_Reason__c</errorDisplayField>
+        <errorMessage>A rejected reason is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>New_Material_Number_Model_Code_Check</fullName>
+        <active>true</active>
+        <description>For New Material Number requests only</description>
+        <errorConditionFormula>AND( RecordType.DeveloperName = &apos;New_Material_Number&apos;,
+ISCHANGED(Product__c), Model_Code__c != &apos;&apos;, Requested_Model_Code__c != &apos;&apos;, OR(ISPICKVAL(Status__c, &apos;In Progress&apos;), ISPICKVAL(Status__c, &apos;In SAE Review&apos;)), Requested_Model_Code__c != Model_Code__c)</errorConditionFormula>
+        <errorMessage>The Requested Material Specification does not match the new Model Code.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>New_Product_Feature_Release_Yes</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(RecordType.DeveloperName = &apos;New_Product_Feature&apos;, ISPICKVAL(Release_to_Production__c, &apos;Yes&apos;), ISNULL(Decision_Date__c))</errorConditionFormula>
+        <errorDisplayField>Decision_Date__c</errorDisplayField>
+        <errorMessage>A decision date is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>New_Product_Feature_System_Release_No</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(RecordType.DeveloperName = &apos;New_Product_Feature&apos;, RecordType.DeveloperName = &apos;System_Model&apos;),
+ISPICKVAL(Release_to_Production__c, &apos;No&apos;), 
+ISBLANK(Rejected_Reason__c)
+)</errorConditionFormula>
+        <errorDisplayField>Rejected_Reason__c</errorDisplayField>
+        <errorMessage>A rejected reason is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Contact_from_Indirect_Account</fullName>
+        <active>true</active>
+        <errorConditionFormula>TEXT(Contact__r.Account.Channel__c) =  &quot;Indirect&quot;</errorConditionFormula>
+        <errorDisplayField>Contact__c</errorDisplayField>
+        <errorMessage>You can&apos;t select a Contact from an Indirect Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prototype_Fields_Required_NMN_SM</fullName>
+        <active>true</active>
+        <description>New Material Number and System Model</description>
+        <errorConditionFormula>AND(OR(RecordType.DeveloperName = &apos;New_Material_Number&apos;, RecordType.DeveloperName = &apos;System_Model&apos;), Customer_is_Requesting_Prototype__c, OR(ISBLANK(Quantity__c), ISPICKVAL(Build_Process__c, &apos;&apos;)))</errorConditionFormula>
+        <errorDisplayField>Customer_is_Requesting_Prototype__c</errorDisplayField>
+        <errorMessage>Quantity and Build Process are required if customer is requesting a prototype.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prototype_Fields_Required_NPF</fullName>
+        <active>true</active>
+        <description>New Product Feature</description>
+        <errorConditionFormula>AND(RecordType.DeveloperName = &apos;New_Product_Feature&apos;, Customer_is_Requesting_Prototype__c, OR(ISNULL(Customer_Requested_Date_Prototype__c),ISBLANK(Quantity__c), ISPICKVAL(Build_Process__c, &apos;&apos;)))</errorConditionFormula>
+        <errorDisplayField>Customer_is_Requesting_Prototype__c</errorDisplayField>
+        <errorMessage>Customer Requested Date, Quantity and Build Process are required if customer is requesting a prototype.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Special_Tests_Certs_BU_Match_Check</fullName>
+        <active>true</active>
+        <description>Check Primary BU to make sure it matches the product BU if there is a product selected</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Business_Unit__c)),
+TEXT(Primary_BU__c) != Business_Unit__c, 
+RecordType.DeveloperName = &apos;Special_Tests_Certificates&apos;)</errorConditionFormula>
+        <errorDisplayField>Primary_BU__c</errorDisplayField>
+        <errorMessage>Primary Business Unit must match the product business unit</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>System_Model_BU_Match_Check</fullName>
+        <active>true</active>
+        <description>Check Primary BU to make sure it matches one of the two selected product BUs</description>
+        <errorConditionFormula>AND(TEXT(Primary_BU__c) != Business_Unit__c, 
+TEXT(Primary_BU__c) != Business_Unit_Second__c, 
+RecordType.DeveloperName = &apos;System_Model&apos;)</errorConditionFormula>
+        <errorDisplayField>Primary_BU__c</errorDisplayField>
+        <errorMessage>Primary Business Unit must match one of the product business units</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>System_Model_Release_No</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(RecordType.DeveloperName = &apos;System_Model&apos;, ISPICKVAL(Release_to_Production__c, &apos;No&apos;), ISBLANK(Rejected_Reason__c))</errorConditionFormula>
+        <errorDisplayField>Rejected_Reason__c</errorDisplayField>
+        <errorMessage>A rejected reason is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>System_Model_Release_Yes</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(RecordType.DeveloperName = &apos;System_Model&apos;, ISPICKVAL(Release_to_Production__c, &apos;Yes&apos;), ISNULL(Confirmed_Date__c))</errorConditionFormula>
+        <errorDisplayField>Confirmed_Date__c</errorDisplayField>
+        <errorMessage>A confirmed date is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Upon_Creation_Date_Cannot_be_in_the_Past</fullName>
+        <active>true</active>
+        <description>Upon Creation of a Customer Request, the Customer Requested date cannot be set to a date in the past.</description>
+        <errorConditionFormula>AND (ISNEW(),((Customer_Requested_Date__c)&lt;=TODAY()))</errorConditionFormula>
+        <errorDisplayField>Customer_Requested_Date__c</errorDisplayField>
+        <errorMessage>The Customer Requested Date cannot initially set to a date in the past.</errorMessage>
+    </validationRules>
+</CustomObject>

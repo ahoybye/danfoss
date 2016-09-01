@@ -1,0 +1,90 @@
+<apex:page standardcontroller="PS_Customer_Request__c" extensions="CustomerRequestViewPageExtension">
+    <apex:pageMessages />
+    <apex:detail subject="{!PS_Customer_Request__c.Id}" relatedList="true" showChatter="true" inlineEdit="false"/>
+    <apex:relatedlist list="CombinedAttachments" title="Notes & Attachments"/>
+    <apex:form >                    
+        <apex:pageBlock tabStyle="PS_Customer_Request__c" title="Business Unit Routing" rendered="{!showBUSection}">
+            <div style="margin: 0px -6px;">
+                <apex:pageBlockButtons location="Top">
+                    <apex:commandLink value="New Reviewer" action="{!createTaskBU}" styleClass="btn" style="padding: 2px 3px;text-decoration: none;" title="New Reviewer" rendered="{!PS_Customer_Request__c.SubmittedInitially__c}"/>
+                    <apex:commandLink value="Submit for Review" action="{!submitToBU}" styleClass="btn" style="padding: 2px 3px;text-decoration: none;" title="Submit for Review" rendered="{!lstTasks.size>0}"/>
+                </apex:pageBlockButtons>
+                
+                <apex:pageBlockTable value="{!lstTasks}" var="task" rendered="{!lstTasks.size>0}" style="">
+                    <apex:column headerValue="Action"> 
+                         <apex:outputPanel rendered="{!task.Status=='Completed'}">
+                            <apex:image value="/img/func_icons/util/checkmark16.gif"></apex:image>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!task.Status!='Completed' && (task.CreatedById==$User.Id || task.OwnerId==$User.Id || PS_Customer_Request__c.OwnerId==$User.Id)}">
+                            <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Edit, task.Id, [retURL='/'+task.WhatId])}">Edit</apex:outputLink>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!task.Status=='In Progress' && (task.CreatedById==$User.Id || task.OwnerId == $User.Id || PS_Customer_Request__c.OwnerId == $User.Id)}">
+                            |&nbsp;
+                            <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Close, task.Id, [retURL='/'+task.WhatId])}">Complete</apex:outputLink>
+                        </apex:outputPanel>                                                     
+                        <!-- <apex:outputPanel rendered="{!task.Status!='Completed' && (task.CreatedById==$User.Id || PS_Customer_Request__c.OwnerId==$User.Id)}">
+                            |&nbsp;
+                            <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Delete, task.Id, [retURL='/'+task.WhatId])}">Del</apex:outputLink>  
+                        </apex:outputPanel> -->
+                    </apex:column>
+                    <apex:column headerValue="Order">
+                        <apex:outputField value="{!task.Order__c}">
+                        </apex:outputField>
+                    </apex:column>
+                    <apex:column headerValue="Subject">
+                        <apex:outputLink value="{!URLFOR($Action.Task.View,task.id)}" target="_parent">{!task.Subject}</apex:outputLink>
+                    </apex:column>      
+                    <apex:column value="{!task.OwnerId}"/>
+                    <apex:column value="{!task.Status}"/>
+                    <apex:column value="{!task.Est_Start_Date__c}"/>
+                    <apex:column value="{!task.Actual_Start_Date__c}"/>
+                    <apex:column value="{!task.ActivityDate}"/>
+                    <apex:column value="{!task.Actual_Finish_Date__c}"/>
+                    <apex:column value="{!task.Description}"/>
+                    <apex:column value="{!task.Completed_By__c}"/>
+                </apex:pageBlockTable>
+            </div> 
+        </apex:pageBlock>
+        
+        <apex:pageBlock tabStyle="PS_Customer_Request__c" title="Open Activities">
+            <div style="margin: 0px -6px;">
+           <apex:pageBlockButtons location="Top">               
+                  <apex:commandLink value="New Task" action="{!createTaskSales}" styleClass="btn" style="padding: 2px 3px;text-decoration: none;" title="New Task"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!lstTasksSales}" var="task">
+                <apex:column headerValue="Action"> 
+                    <apex:outputPanel rendered="{!task.Status=='Completed'}">
+                        <apex:image value="/img/func_icons/util/checkmark16.gif"></apex:image>
+                    </apex:outputPanel>
+                   <!--  <apex:outputPanel rendered="{!task.Status!='Completed' && task.OwnerId == $User.Id}"> -->
+                    <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Edit, task.Id, [retURL='/'+task.WhatId])}">Edit</apex:outputLink>
+                    &nbsp;|&nbsp;
+                    <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Close, task.Id, [retURL='/'+task.WhatId])}">Cls</apex:outputLink>
+                    <!-- </apex:outputPanel> -->
+                </apex:column>      
+                <apex:column headerValue="Subject">
+                    <apex:outputLink value="{!URLFOR($Action.Task.View,task.id)}" target="_parent">{!task.Subject}</apex:outputLink>
+                </apex:column>      
+                <apex:column value="{!task.OwnerId}"/>
+                <apex:column value="{!task.ActivityDate}"/>
+                <apex:column value="{!task.Status}"/>
+                <apex:column value="{!task.Priority}"/>
+            </apex:pageBlockTable>
+             </div> 
+        </apex:pageBlock>
+        <apex:pageBlock tabStyle="PS_Customer_Request__c" title="Activity History">
+            <div style="margin: 0px -6px;">
+            <apex:pageBlockTable value="{!lstTasksSalesClosed}" var="task">
+                <apex:column headerValue="Subject">
+                    <apex:outputLink value="{!URLFOR($Action.Task.View,task.id)}" target="_parent">{!task.Subject}</apex:outputLink>
+                </apex:column>      
+                <apex:column value="{!task.OwnerId}"/>
+                <apex:column value="{!task.ActivityDate}"/>
+                <apex:column value="{!task.Status}"/>
+                <apex:column value="{!task.Priority}"/>
+            </apex:pageBlockTable>
+             </div> 
+        </apex:pageBlock>
+    </apex:form>
+    <c:CustomerRequestHistoryComponent cId="{!PS_Customer_Request__c.Id}"/>
+</apex:page>

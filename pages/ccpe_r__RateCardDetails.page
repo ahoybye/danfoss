@@ -1,0 +1,31 @@
+<apex:page standardController="ccpe_r__Rate_Card__c" extensions="ccpe_r.RateCardDetailController">
+	<apex:outputPanel id="PageContent">
+	<apex:form >
+		<apex:sectionHeader subtitle="{!IF(NOT(ISBLANK(rateCard.Id)), rateCard.Name, IF(NOT(isCloned),'New Rate Card','Clone Rate Card'))}" title="Edit Rate Card" />
+		<apex:pageBlock >
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!save}" value="Save" />
+				<apex:commandButton action="{!cancel}" value="Cancel" />
+				<apex:commandButton action="{!createClone}" value="Clone" rerender="PageContent" rendered="{!NOT(isCloned)}"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Rate Card Details">
+				<apex:inputField value="{!rateCard.Name}" />
+				<apex:inputField value="{!rateCard.ccpe_r__Account__c}" />
+				<apex:inputField value="{!rateCard.ccpe_r__Active__c}" />
+			</apex:pageBlockSection>
+
+			<apex:pageBlockSection title="Hourly Skill Rates">
+				<apex:pageBlockTable value="{!skillRates}" var="skill">
+					<apex:column >
+						<apex:outputField value="{!workTypes[skill.ccpe_r__Work_Type__c].Name}" />
+					</apex:column>
+					<apex:column >
+						<apex:inputField value="{!skill.ccpe_r__Hourly_Rate__c}" />
+					</apex:column>
+				</apex:pageBlockTable>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+	</apex:form>
+	</apex:outputPanel>
+</apex:page>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>ccpe_ppm__Cannot_Change_Schedule_After_Planning</fullName>
+        <active>true</active>
+        <description>Once the planning stage is completed, the Cost/Benefit Schedules cannot be changed</description>
+        <errorConditionFormula>RecordType.Name != &apos;Planning&apos; &amp;&amp;
+RecordType.Name != &apos;Request&apos; &amp;&amp;
+(ISCHANGED(ccpe_ppm__Costs_Schedule__c) || 
+ISCHANGED(ccpe_ppm__Benefits_Schedule__c))</errorConditionFormula>
+        <errorMessage>Investment schedules cannot be changed once the execution stage has begun.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_ppm__Strategic_Fit_Impact_over_2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND((ccpe_ppm__Strategic_Fit_Impact__c &gt; 2),ISBLANK(ccpe_ppm__Strategic_Fit_Justification__c))</errorConditionFormula>
+        <errorMessage>Please fill in Strategic Fit Justification when Strategic Fit Impact is greater than 2.</errorMessage>
+    </validationRules>
+</CustomObject>

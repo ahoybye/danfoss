@@ -1,0 +1,465 @@
+<apex:page standardController="Machine_Model__c" extensions="MIDProductListingControllerExtension" >
+    <script>
+        function switchMenu(obj,obj1,obj2) 
+        {
+            var el = document.getElementById(obj);                                       
+            if ( el.style.display != 'none' ) {
+            el.style.display = 'none';
+            }
+            else {
+            el.style.display = '';
+            }
+            var e2 = document.getElementById(obj1);                                       
+            if ( e2.style.display != 'none' ) {
+            e2.style.display = 'none';
+            }
+            else {
+            e2.style.display = '';
+            }
+            var e3 = document.getElementById(obj2);                                       
+            if ( e2.style.display != 'none' ) {
+            e3.style.display = 'none';
+            }
+            else {
+            e3.style.display = '';
+            }
+        }
+        function expandAll(obj1,obj2,obj3,obj4,obj5,obj6,obj7,obj8,obj9,obj10,obj11,obj12,obj13,obj14,obj15,lble,lblc)
+        {
+            var exArray = new Array(obj1,obj2,obj3,obj4,obj5,obj6,obj7,obj8,obj9,obj10,obj11,obj12,obj13,obj14,obj15);
+            for (var i = 0; i <= 14; i = i+3) {
+                var el = document.getElementById(exArray[i]);                          
+                el.style.display = '';
+            }
+            for (var i = 1; i <= 14; i = i+3) {
+                var el = document.getElementById(exArray[i]);                          
+                el.style.display = '';
+            }
+            for (var i = 2; i <= 14; i = i+3) {
+                var el = document.getElementById(exArray[i]);                          
+                el.style.display = 'none';
+            }
+        }
+        function collapseAll(obj1,obj2,obj3,obj4,obj5,obj6,obj7,obj8,obj9,obj10,obj11,obj12,obj13,obj14,obj15,lble,lblc)
+        {
+            var exArray = new Array(obj1,obj2,obj3,obj4,obj5,obj6,obj7,obj8,obj9,obj10,obj11,obj12,obj13,obj14,obj15);
+            for (var i = 0; i <= 14; i = i+3) {
+                var el = document.getElementById(exArray[i]);                                                 
+                el.style.display = 'none';
+            }
+            for (var i = 1; i <= 14; i = i+3) {
+                var el = document.getElementById(exArray[i]);                          
+                el.style.display = '';
+            }
+            for (var i = 2; i <= 14; i = i+3) {
+                var el = document.getElementById(exArray[i]);                          
+                el.style.display = 'none';
+            }
+        }
+    </script>
+	<head>
+		<base target="_parent" />
+	</head>
+   <apex:form >
+	   <apex:pageBlock >
+		    <!-- <apex:pageBlockButtons location="top" >
+				 <apex:commandButton value="Add Product" action="{!NewMachineProduct}"/>					 
+			</apex:pageBlockButtons> -->
+	      <apex:outputLabel id="outlabele" styleclass="btn" value="Expand All" onclick="expandAll('{!$Component.inlinetablesec1}','{!$Component.minusimage1}','{!$Component.plusimage1}',
+	            '{!$Component.inlinetablesec2}','{!$Component.minusimage2}','{!$Component.plusimage2}',
+	            '{!$Component.inlinetablesec3}','{!$Component.minusimage3}','{!$Component.plusimage3}',
+	            '{!$Component.inlinetablesec4}','{!$Component.minusimage4}','{!$Component.plusimage4}',
+	            '{!$Component.inlinetablesec5}','{!$Component.minusimage5}','{!$Component.plusimage5}','{!$Component.outlabele}','{!$Component.outlabelc}')" />
+	      <apex:outputLabel id="outlabelc" styleclass="btn" value="Collapse All" onclick="collapseAll('{!$Component.inlinetablesec1}','{!$Component.plusimage1}','{!$Component.minusimage1}',
+	            '{!$Component.inlinetablesec2}','{!$Component.plusimage2}','{!$Component.minusimage2}',
+	            '{!$Component.inlinetablesec3}','{!$Component.plusimage3}','{!$Component.minusimage3}',
+	            '{!$Component.inlinetablesec4}','{!$Component.plusimage4}','{!$Component.minusimage4}',
+	            '{!$Component.inlinetablesec5}','{!$Component.plusimage5}','{!$Component.minusimage5}','{!$Component.outlabele}','{!$Component.outlabelc}')" />
+	     <br />
+	        <apex:variable value="{!steeringproducts.size}" var="count"/> 
+	        <apex:outputpanel id="plusimage1">
+	            <apex:image url="{!$Resource.Plus}" onclick="switchMenu('{!$Component.inlinetablesec1}','{!$Component.minusimage1}','{!$Component.plusimage1}')" /> 
+	        </apex:outputpanel> 
+	        <apex:outputpanel id="minusimage1" style="display:none;">
+	            <apex:image url="{!$Resource.Minus}" onclick="switchMenu('{!$Component.inlinetablesec1}','{!$Component.plusimage1}','{!$Component.minusimage1}')"/>
+	        </apex:outputpanel>
+	        <font size="3"><b>Steering Function: &nbsp; &nbsp; &nbsp; {!FLOOR(count)} &nbsp;</b></font>
+	         <apex:CommandLink action="{!NewMachineProduct}" value="Add Steering Function Product" target="_parent"> 
+	             <apex:param name="subsystem" value="Steering Function" assignTo="{!subsystem}"/>
+	             <apex:param name="mmprodName" value="{!Machine_Model__c.Name}" assignTo="{!mmprodName}"/>
+	             <apex:param name="curr" value="{!Machine_Model__c.CurrencyIsoCode}" assignTo="{!curr}"/>
+	        </apex:CommandLink>  
+	        <apex:outputpanel id="inlinetablesec1" style="display:none;">
+	            <apex:pageBlock >					
+	                <apex:pageBlockTable value="{!steeringproducts}" var="prod" id="tableSteering" >
+	                   <apex:column > 
+	                        <apex:facet name="header">Action</apex:facet>
+	                        <apex:outputLink value="{!URLFOR($Action.Machine_Model_Product__c.Edit,prod.id, [retURL=$CurrentPage.parameters.Id])}" target="_parent">Edit</apex:outputLink> |&nbsp;
+	                         <apex:commandLink value="Delete" action="{!deleteProduct}" onclick="if(!confirm('Are you sure?')){return};" rerender="tableSteering">
+						 		<apex:param name="prodToDel" value="{!prod.id}" assignTo="{!prodToDel}" /> 
+	                		</apex:commandLink>
+	                    </apex:column> 
+	                    <apex:column width="17%" >
+	                        <apex:facet name="header">Product Type</apex:facet>
+	                        <apex:outputText value="{!prod.Product_Type__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Product</apex:facet>
+	                        <apex:outputLink value="/{!prod.Id}" target="_parent">{!prod.name}</apex:outputLink>
+	                    </apex:column>
+	                     <apex:column >
+	                        <apex:facet name="header">Product Description</apex:facet>
+	                        <apex:outputText value="{!prod.Machine_Model_Product__r.Name}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Supplier</apex:facet>
+	                        <apex:outputText value="{!prod.Supplier__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Units</apex:facet>
+	                        <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Number_per_machine__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Price</apex:facet>
+	                        <apex:outputText value="{0, number, #,###.##} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Price__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Adoption Rate</apex:facet>
+	                        <apex:outputText value="{0, number, 0}%">
+	                            <apex:param value="{!prod.Adoption_Rate__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential</apex:facet>
+	                         <apex:outputText value="{0, number, #,###} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Total_Product_value__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential (units)</apex:facet>
+	                         <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Total_Product_units__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">PS Competitiveness</apex:facet>
+	                        <apex:outputText value="{!prod.Competitiveness__c}"/>
+	                    </apex:column>
+	                </apex:pageBlockTable>
+	            </apex:pageBlock>
+	        </apex:outputpanel>
+	        <br />
+	        <apex:variable value="{!propelproducts.size}" var="count"/> 
+	        <apex:outputpanel id="plusimage2">
+	            <apex:image url="{!$Resource.Plus}" onclick="switchMenu('{!$Component.inlinetablesec2}','{!$Component.minusimage2}','{!$Component.plusimage2}')" /> 
+	        </apex:outputpanel> 
+	        <apex:outputpanel id="minusimage2" style="display:none;">
+	            <apex:image url="{!$Resource.Minus}" onclick="switchMenu('{!$Component.inlinetablesec2}','{!$Component.plusimage2}','{!$Component.minusimage2}')"/>
+	        </apex:outputpanel>
+	        <font size="3"><b>Transmission:&nbsp; &nbsp; &nbsp; &nbsp;</b></font>  <font size="2"><b> &nbsp; &nbsp; &nbsp; &nbsp;</b></font> <font size="3"><b>{!FLOOR(count)} &nbsp;</b></font>
+	         <apex:CommandLink action="{!NewMachineProduct}" value="Add Transmission Product" target="_parent">        
+	             <apex:param name="subsystem" value="Transmission" assignTo="{!subsystem}"/>
+	             <apex:param name="mmprodName" value="{!Machine_Model__c.Name}" assignTo="{!mmprodName}"/>
+	             <apex:param name="curr" value="{!Machine_Model__c.CurrencyIsoCode}" assignTo="{!curr}"/>
+	        </apex:CommandLink>  
+	        <apex:outputpanel id="inlinetablesec2" style="display:none;">
+	            <apex:pageBlock >
+	                <apex:pageBlockTable value="{!propelproducts}" var="prod" id="tablePropel" >
+	                   <apex:column > 
+	                        <apex:facet name="header">Action</apex:facet>
+	                        <apex:outputLink value="{!URLFOR($Action.Machine_Model_Product__c.Edit,prod.id, [retURL=$CurrentPage.parameters.Id])}" target="_parent">Edit</apex:outputLink> |&nbsp;
+	                         <apex:commandLink value="Delete" action="{!deleteProduct}" onclick="if(!confirm('Are you sure?')){return};" rerender="tablePropel">
+						 		<apex:param name="prodToDel" value="{!prod.id}" assignTo="{!prodToDel}" /> 
+	                		</apex:commandLink>
+	                    </apex:column> 
+	                    <apex:column >
+	                        <apex:facet name="header">Product Type</apex:facet>
+	                        <apex:outputText value="{!prod.Product_Type__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Product</apex:facet>
+	                        <apex:outputLink value="/{!prod.Id}" target="_parent">{!prod.name}</apex:outputLink>
+	                    </apex:column>
+	                     <apex:column >
+	                        <apex:facet name="header">Product Description</apex:facet>
+	                        <apex:outputText value="{!prod.Machine_Model_Product__r.Name}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Supplier</apex:facet>
+	                        <apex:outputText value="{!prod.Supplier__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Units</apex:facet>
+	                        <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Number_per_machine__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Price</apex:facet>
+	                        <apex:outputText value="{0, number, #,###.##} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Price__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Adoption Rate</apex:facet>
+	                        <apex:outputText value="{0, number, 0}%">
+	                            <apex:param value="{!prod.Adoption_Rate__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential</apex:facet>
+	                         <apex:outputText value="{0, number, #,###} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Total_Product_value__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential (units)</apex:facet>
+	                         <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Total_Product_units__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">PS Competitiveness</apex:facet>
+	                        <apex:outputText value="{!prod.Competitiveness__c}"/>
+	                    </apex:column>
+	                </apex:pageBlockTable>
+	            </apex:pageBlock>
+	        </apex:outputpanel>
+	        <br />
+	        <apex:variable value="{!workfunctionproducts.size}" var="count"/> 
+	        <apex:outputpanel id="plusimage3">
+	            <apex:image url="{!$Resource.Plus}" onclick="switchMenu('{!$Component.inlinetablesec3}','{!$Component.minusimage3}','{!$Component.plusimage3}')" /> 
+	        </apex:outputpanel> 
+	        <apex:outputpanel id="minusimage3" style="display:none;">
+	            <apex:image url="{!$Resource.Minus}" onclick="switchMenu('{!$Component.inlinetablesec3}','{!$Component.plusimage3}','{!$Component.minusimage3}')"/>
+	        </apex:outputpanel>
+	        <font size="3"><b>Working Function: &nbsp; &nbsp; &nbsp; {!FLOOR(count)} &nbsp;</b></font>
+	         <apex:CommandLink action="{!NewMachineProduct}" value="Add Working Function Product" target="_parent">    
+	             <apex:param name="subsystem" value="Working Function" assignTo="{!subsystem}"/>
+	             <apex:param name="mmprodName" value="{!Machine_Model__c.Name}" assignTo="{!mmprodName}"/>
+	             <apex:param name="curr" value="{!Machine_Model__c.CurrencyIsoCode}" assignTo="{!curr}"/>
+	        </apex:CommandLink>  
+	        <apex:outputpanel id="inlinetablesec3" style="display:none;">
+	            <apex:pageBlock >
+	                <apex:pageBlockTable value="{!workfunctionproducts}" var="prod" id="tableWorkFunction" >
+	                   <apex:column > 
+	                        <apex:facet name="header">Action</apex:facet>
+	                        <apex:outputLink value="{!URLFOR($Action.Machine_Model_Product__c.Edit,prod.id, [retURL=$CurrentPage.parameters.Id])}" target="_parent">Edit</apex:outputLink> |&nbsp;
+	                         <apex:commandLink value="Delete" action="{!deleteProduct}" onclick="if(!confirm('Are you sure?')){return};" rerender="tableWorkFunction">
+						 		<apex:param name="prodToDel" value="{!prod.id}" assignTo="{!prodToDel}" /> 
+	                		</apex:commandLink>
+	                    </apex:column> 
+	                    <apex:column >
+	                        <apex:facet name="header">Product Type</apex:facet>
+	                        <apex:outputText value="{!prod.Product_Type__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Product</apex:facet>
+	                        <apex:outputLink value="/{!prod.Id}" target="_parent">{!prod.name}</apex:outputLink>
+	                    </apex:column>
+	                     <apex:column >
+	                        <apex:facet name="header">Product Description</apex:facet>
+	                        <apex:outputText value="{!prod.Machine_Model_Product__r.Name}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Supplier</apex:facet>
+	                        <apex:outputText value="{!prod.Supplier__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Units</apex:facet>
+	                        <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Number_per_machine__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Price</apex:facet>
+	                         <apex:outputText value="{0, number, #,###.##} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Price__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Adoption Rate</apex:facet>
+	                        <apex:outputText value="{0, number, 0}%">
+	                            <apex:param value="{!prod.Adoption_Rate__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential</apex:facet>
+	                         <apex:outputText value="{0, number, #,###} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Total_Product_value__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential (units)</apex:facet>
+	                         <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Total_Product_units__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">PS Competitiveness</apex:facet>
+	                        <apex:outputText value="{!prod.Competitiveness__c}"/>
+	                    </apex:column>
+	                </apex:pageBlockTable>
+	            </apex:pageBlock>
+	        </apex:outputpanel>
+	        <br />
+	        <apex:variable value="{!fandriveproducts.size}" var="count"/> 
+	        <apex:outputpanel id="plusimage4">
+	            <apex:image url="{!$Resource.Plus}" onclick="switchMenu('{!$Component.inlinetablesec4}','{!$Component.minusimage4}','{!$Component.plusimage4}')" /> 
+	        </apex:outputpanel> 
+	        <apex:outputpanel id="minusimage4" style="display:none;">
+	            <apex:image url="{!$Resource.Minus}" onclick="switchMenu('{!$Component.inlinetablesec4}','{!$Component.plusimage4}','{!$Component.minusimage4}')"/>
+	        </apex:outputpanel>
+	        <font size="3"><b>Fan Drive: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {!FLOOR(count)} &nbsp;</b></font>
+	         <apex:CommandLink action="{!NewMachineProduct}" value="Add Fan Drive Product" target="_parent"> 
+	             <apex:param name="subsystem" value="Fan Drive" assignTo="{!subsystem}"/>
+	             <apex:param name="mmprodName" value="{!Machine_Model__c.Name}" assignTo="{!mmprodName}"/>
+	             <apex:param name="curr" value="{!Machine_Model__c.CurrencyIsoCode}" assignTo="{!curr}"/>
+	        </apex:CommandLink>  
+	        <apex:outputpanel id="inlinetablesec4" style="display:none;">
+	            <apex:pageBlock >
+	                <apex:pageBlockTable value="{!fandriveproducts}" var="prod" id="tableFanDrive" >
+	                   <apex:column > 
+	                        <apex:facet name="header">Action</apex:facet>
+	                        <apex:outputLink value="{!URLFOR($Action.Machine_Model_Product__c.Edit,prod.id, [retURL=$CurrentPage.parameters.Id])}" target="_parent">Edit</apex:outputLink> |&nbsp;
+	                         <apex:commandLink value="Delete" action="{!deleteProduct}" onclick="if(!confirm('Are you sure?')){return};" rerender="tableFanDrive">
+						 		<apex:param name="prodToDel" value="{!prod.id}" assignTo="{!prodToDel}" /> 
+	                		</apex:commandLink>
+	                    </apex:column> 
+	                    <apex:column >
+	                        <apex:facet name="header">Product Type</apex:facet>
+	                        <apex:outputText value="{!prod.Product_Type__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Product</apex:facet>
+	                        <apex:outputLink value="/{!prod.Id}" target="_parent">{!prod.name}</apex:outputLink>
+	                    </apex:column>
+	                     <apex:column >
+	                        <apex:facet name="header">Product Description</apex:facet>
+	                        <apex:outputText value="{!prod.Machine_Model_Product__r.Name}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Supplier</apex:facet>
+	                        <apex:outputText value="{!prod.Supplier__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Units</apex:facet>
+	                        <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Number_per_machine__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Price</apex:facet>
+	                         <apex:outputText value="{0, number, #,###.##} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Price__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Adoption Rate</apex:facet>
+	                        <apex:outputText value="{0, number, 0}%">
+	                            <apex:param value="{!prod.Adoption_Rate__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential</apex:facet>
+	                         <apex:outputText value="{0, number, #,###} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Total_Product_value__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential (units)</apex:facet>
+	                         <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Total_Product_units__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">PS Competitiveness</apex:facet>
+	                        <apex:outputText value="{!prod.Competitiveness__c}"/>
+	                    </apex:column>
+	                </apex:pageBlockTable>
+	            </apex:pageBlock>
+	        </apex:outputpanel>
+	        <br />
+	        <apex:variable value="{!electronicsproducts.size}" var="count"/> 
+	        <apex:outputpanel id="plusimage5">
+	            <apex:image url="{!$Resource.Plus}" onclick="switchMenu('{!$Component.inlinetablesec5}','{!$Component.minusimage5}','{!$Component.plusimage5}')" /> 
+	        </apex:outputpanel> 
+	        <apex:outputpanel id="minusimage5" style="display:none;">
+	            <apex:image url="{!$Resource.Minus}" onclick="switchMenu('{!$Component.inlinetablesec5}','{!$Component.plusimage5}','{!$Component.minusimage5}')"/>
+	        </apex:outputpanel>
+	        <font size="3"><b>HMI &amp; Electronics: &nbsp; &nbsp; &nbsp; {!FLOOR(count)} &nbsp;</b></font>
+	         <apex:CommandLink action="{!NewMachineProduct}" value="Add HMI & Electronics Product" target="_parent"> 
+	             <apex:param name="subsystem" value="HMI and Electronics" assignTo="{!subsystem}"/>
+	             <apex:param name="mmprodName" value="{!Machine_Model__c.Name}" assignTo="{!mmprodName}"/>
+	             <apex:param name="curr" value="{!Machine_Model__c.CurrencyIsoCode}" assignTo="{!curr}"/>
+	        </apex:CommandLink>  
+	        <apex:outputpanel id="inlinetablesec5" style="display:none;">
+	            <apex:pageBlock >
+	                <apex:pageBlockTable value="{!electronicsproducts}" var="prod" id="tableElectronics" >
+	                   <apex:column > 
+	                        <apex:facet name="header">Action</apex:facet>
+	                        <apex:outputLink value="{!URLFOR($Action.Machine_Model_Product__c.Edit,prod.id, [retURL=$CurrentPage.parameters.Id])}" target="_parent">Edit</apex:outputLink> |&nbsp;
+	                         <apex:commandLink value="Delete" action="{!deleteProduct}" onclick="if(!confirm('Are you sure?')){return};" rerender="tableElectronics">
+						 		<apex:param name="prodToDel" value="{!prod.id}" assignTo="{!prodToDel}" /> 
+	                		</apex:commandLink>
+	                    </apex:column> 
+	                    <apex:column >
+	                        <apex:facet name="header">Product Type</apex:facet>
+	                        <apex:outputText value="{!prod.Product_Type__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Product</apex:facet>
+	                        <apex:outputLink value="/{!prod.Id}" target="_parent">{!prod.name}</apex:outputLink>
+	                    </apex:column>
+	                     <apex:column >
+	                        <apex:facet name="header">Product Description</apex:facet>
+	                        <apex:outputText value="{!prod.Machine_Model_Product__r.Name}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Supplier</apex:facet>
+	                        <apex:outputText value="{!prod.Supplier__c}"/>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Units</apex:facet>
+	                        <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Number_per_machine__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Price</apex:facet>
+	                         <apex:outputText value="{0, number, #,###.##} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Price__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Adoption Rate</apex:facet>
+	                        <apex:outputText value="{0, number,0}%">
+	                            <apex:param value="{!prod.Adoption_Rate__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential</apex:facet>
+	                         <apex:outputText value="{0, number, #,###} {!prod.CurrencyIsoCode}">
+	                            <apex:param value="{!prod.Total_Product_value__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">Potential (units)</apex:facet>
+	                         <apex:outputText value="{0, number, 0}">
+	                            <apex:param value="{!prod.Total_Product_units__c}"/>
+	                        </apex:outputText>
+	                    </apex:column>
+	                    <apex:column >
+	                        <apex:facet name="header">PS Competitiveness</apex:facet>
+	                        <apex:outputText value="{!prod.Competitiveness__c}"/>
+	                    </apex:column>
+	            </apex:pageBlockTable>
+	        </apex:pageBlock>
+	        </apex:outputpanel> 
+		</apex:pageBlock>
+        </apex:form>
+</apex:page>

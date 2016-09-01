@@ -1,0 +1,44 @@
+<apex:page showHeader="false" sidebar="false"   standardStylesheets="false" cache="false">
+<head>
+    <title>MyComatrol</title>
+
+    <apex:stylesheet value="{!URLFOR($Resource.ComatrolHomePageResource, 'css/styles.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ComatrolHomePageResource, 'js/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ComatrolHomePageResource, 'js/nivo.slider.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.ComatrolHomePageResource, 'css/nivo-slider.css')}"/>    
+    <style type="text/css">.nivo-caption {left:0}</style>   
+</head>
+<body>
+<div class="container">
+    <div id="header">
+        <div class="logo"><span class="hidden">Comatrol</span></div>
+        <br class="clear"/>
+    </div><!-- /#header -->
+
+    <div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+            <a href="#"><apex:image url="{!URLFOR($Resource.ComatrolHomePageResource, 'img/banners/slide01.jpg')}" title="#htmlcaption" /></a>
+        </div><!-- /#Slider -->     
+    </div><!-- /.slider-wrapper-->
+
+    <div id="content">
+        <apex:insert name="middle-content"/>
+        <br class="clear"/>
+        <div id="footer-home">
+            <div class="copyright">Copyright &copy; 2014 Comatrol</div>
+        </div><!-- /#footer -->
+        <br class="clear"/>
+
+    </div><!-- /#content -->
+</div><!-- /.container -->
+<apex:includeScript value="{!URLFOR($Resource.ComatrolHomePageResource, 'js/nivo.slider.min.js')}"/>
+<script type="text/javascript">
+  $(window).load(function() {
+      $('#slider').nivoSlider({
+        directionNav: false,
+        controlNav: false
+      });
+  });
+</script>   
+</body>    
+</apex:page>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>Null_selection_not_allowed</fullName>
+        <active>true</active>
+        <description>to prevent the user selecting &quot;-None-&quot;</description>
+        <errorConditionFormula>AND(ISCHANGED(Line_Item_Approval_Stage__c), ISPICKVAL(Line_Item_Approval_Stage__c, &quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>Line_Item_Approval_Stage__c</errorDisplayField>
+        <errorMessage>Stage cannot be set to &quot;--None--&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Users_cannot_edit_configit_line_items</fullName>
+        <active>true</active>
+        <errorConditionFormula>(
+$Profile.Name &lt;&gt; &quot;API Only User (CE)&quot;
+)
+ &amp;&amp; NOT(ISNEW()) &amp;&amp; NOT(ISCLONE()) &amp;&amp; ISPICKVAL(Quote.Opportunity.Account.Business_Org__c,&quot;Climate and Energy&quot;) &amp;&amp; NOT(ISBLANK(ConfigitQuoteLineId__c))</errorConditionFormula>
+        <errorMessage>This Line Item may only be editted in Configit</errorMessage>
+    </validationRules>
+</CustomObject>

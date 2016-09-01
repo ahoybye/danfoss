@@ -1,0 +1,25 @@
+<apex:page standardController="Account">
+    <apex:pageBlock id="block1">
+        <apex:repeat value="{!Account.Sub_Accounts__r}" var="sa">
+            <apex:pageBlockSection id="section1" columns="2" collapsible="true" title="{!sa.name}">
+                <apex:repeat value="{!$ObjectType.Sub_Account__c.FieldSets.SubAccountFields}" var="f">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!f.label}" />                        
+                        <apex:outputText value="{!sa[f]}" />          
+                    </apex:pageBlockSectionItem>
+                </apex:repeat>       
+            </apex:pageBlockSection>
+        </apex:repeat>
+    </apex:pageBlock>
+    <script>
+        function collapseAllSections(elem) {
+            var c = elem.getElementsByTagName('div');
+            for (var i = 0; i < c.length; i++) {
+                if (c[i].id.indexOf("section1") > -1) {
+                    twistSection(c[i].getElementsByTagName('img')[0]);
+                } 
+            }
+        }
+        collapseAllSections(document.getElementById('{!$Component.block1}'))
+    </script>
+</apex:page>

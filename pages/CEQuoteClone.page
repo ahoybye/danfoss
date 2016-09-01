@@ -1,0 +1,17 @@
+<apex:page standardController="Quote" extensions="CEQuoteCloneController" >
+    <apex:sectionHeader Title="Re-assign quote" subtitle="{!Quote.Name}"/>
+    <apex:form id="form"> 
+        <apex:pageMessages id="msgs" escape="false" />
+        <apex:outputPanel >
+            <apex:pageBlock mode="mainDetail">
+                 <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cloneQuote}" value="Re-assign quote"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection >
+    				<apex:inputField id="Opportunity" value="{!Quote.opportunity__c}"></apex:inputField>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:outputPanel>    
+    </apex:form>
+</apex:page>

@@ -1,0 +1,51 @@
+<apex:page controller="ccpe_r.ProjectLookupController">
+	<apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+	<script>
+		function setAllSelected() {
+		    $('.retainerSelection').each(function () {
+		    	this.checked = $('.selectAll').is(':checked');
+		    });
+		};
+	</script>
+	<style>
+		.pbTitle {
+        	white-space: nowrap;
+    	}
+	</style>
+	<apex:sectionHeader title="{!IF(acc != null, 'Projects without Retainers for ' + acc.Name, 'Projects without Retainers')}"/>
+	<apex:form >
+		<apex:PageMessages id="messages"/>
+		<apex:pageBlock >
+			<apex:pageBlockButtons >
+	            <apex:commandButton action="{!save}" value="Update" rerender="messages"/>
+	            <apex:commandButton action="{!cancel}" value="Cancel" html-formnovalidate="formnovalidate"/>
+	        </apex:pageBlockButtons>
+			<apex:outputPanel id="outputPanel">
+				<apex:pageBlockTable value="{!projects}" var="project">
+					<apex:column style="width:19px; padding-right:5px">
+						<apex:facet name="header">
+							<apex:inputCheckbox style="margin-left:3px" id="selectAll" styleClass="selectAll" onclick="setAllRet($(this).is(':checked')); setAllSelected();"/>
+						</apex:facet>
+						<apex:inputCheckbox style="margin-left:3px" styleClass="retainerSelection">
+							<apex:actionSupport event="onclick" action="{!setRetainer}" rerender="">
+								<apex:param name="proj" value="{!project.Id}" assignTo="{!curProjId}"/>
+							</apex:actionSupport>
+						</apex:inputCheckbox>
+					</apex:column>
+					<apex:column headerValue="Name">
+						<apex:outputField value="{!project.Name}"/>
+					</apex:column>
+					<apex:column headerValue="Start Date">
+						<apex:outputField value="{!project.project_cloud__Start__c}"/>
+					</apex:column>
+					<apex:column headerValue="End Date">
+						<apex:outputField value="{!project.project_cloud__End__c}"/>
+					</apex:column>
+				</apex:pageBlockTable>
+			</apex:outputPanel>
+		</apex:pageBlock>
+       	<apex:actionFunction name="setAllRet" action="{!setAllRetainers}" rerender="">
+       		<apex:param name="projs" value="" assignTo="{!allSelected}"/>
+       	</apex:actionFunction>
+	</apex:form>
+</apex:page>

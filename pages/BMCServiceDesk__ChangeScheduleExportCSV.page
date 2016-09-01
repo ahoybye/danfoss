@@ -1,0 +1,11 @@
+<apex:page controller="BMCServiceDesk.ChangeScheduleController" action="{!exportToCSV}" cache="true" contentType="text/csv#ChangeSchedule.csv">{!bom} 
+<apex:outputText value="{!ReleaseTooltipHeader}" rendered="{!isReleaseFilter}"/>
+<apex:repeat value="{!lstwrapperRelease}" var="item" rendered="{!isReleaseFilter}">
+{!item.RelReport}
+</apex:repeat>
+
+{!ChangeTooltipHeader}
+<apex:repeat value="{!lstwrapperChange}" var="item" rendered="{!isChangeFilter}">
+{!item.CRReport}
+</apex:repeat>
+</apex:page>

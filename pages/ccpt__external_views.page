@@ -1,0 +1,29 @@
+<apex:page showHeader="false" sidebar="false" controller="ccpt.AngularExtension" extensions="ccpt.JavascriptRemoting,ccpt.MeetingRemoting,ccpt.RelatedToComponentController">
+
+	<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/bootstrap/css/bootstrap.min.css')}" />
+	<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/font-awesome-4.2.0/css/font-awesome.min.css')}" />
+	<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/fonts/raleway/raleway.css')}" />
+	<link rel="stylesheet" href="{!URLFOR($Resource.productivity_external, '/css/productivity_external.css')}" />
+
+	<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/angular.min.js')}"></script>
+	<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/angular-animate.min.js')}"></script>
+	<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/plugins/angular-ui-router.min.js')}"></script>
+	<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/plugins/angular-ui-router-helper.min.js')}"></script>
+	<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/ui-bootstrap-tpls.min.js')}"></script>
+
+	<script src="{!URLFOR($Resource.productivity_external, '/js/providers/vfRemoting.js')}"></script>
+	<script>
+		var CONST_RESOURCE_URL = '{!$Resource.productivity_external}/';
+		var NAMESPACE = '{!fieldNamespace}';
+		var JS_NAMESPACE = '{!jsNamespace}';
+		var CONST_MEETING_SCHEMA = {!meetingLookups};
+	</script>
+	<script src="{!URLFOR($Resource.productivity_external, '/js/prodExt.js')}"></script>
+	<body ng-app="productivityExternal">
+		<div class="view-header">
+			<apex:image url="{!URLFOR($Resource.ccpt__productivity_frameworks, '/img/cc-logo-gray.png')}" width="50" height="50" style="float: left" />
+			<div class="name">{{ title }}</div>
+		</div>
+		<div class="ui-view view-content"></div>
+	</body>
+</apex:page>

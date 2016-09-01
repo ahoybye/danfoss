@@ -1,0 +1,30 @@
+<apex:page standardController="Contact">    
+    <head>
+        <style type="text/css">
+            .fldLabel{
+                font-family: Arial; 
+                font-size: 8.5pt; 
+                color: #4a4a56; 
+                font-weight:bold;
+                text-align:left;
+            }
+            .link{
+                vertical-align:top;
+            }
+        </style>
+    </head>
+    <apex:pageBlock mode="maindetail">
+        <apex:outputPanel style="vertical-align:top;">
+        <apex:pageBlockSection showheader="false" collapsible="false" columns="2">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:pageBlockSectionItem rendered="{!ISNULL(Contact.E_DISC__c)}">
+                <apex:outputLabel value="E-DISC" for="ed" styleClass="fldLabel"/>
+                <apex:outputLink value="{!URLFOR('/apex/EDISCpage')}?cont={!Contact.Id}&retURL={!URLFOR('/')}{!Contact.Id}" id="ed" target="_parent">Create E-Disc</apex:outputLink>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem rendered="{!NOT(ISNULL(Contact.E_DISC__c))}">
+                <apex:outputLabel value="E-DISC" for="contName" styleClass="fldLabel"/>
+                <apex:outputLink value="/apex/EDISCpage?id={!Contact.E_DISC__c}" id="contName" target="_blank">{!Contact.E_DISC__r.Name}</apex:outputLink>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection></apex:outputPanel>
+    </apex:pageBlock>
+</apex:page>

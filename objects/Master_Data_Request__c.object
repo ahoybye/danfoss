@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>Customer_Request_Completed_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status__c,&quot;Completed&quot;), 
+OR(
+AND(Left(Text(Back_end_System__c),3)=&quot;P08&quot;,ISBLANK(SAP__c)),
+AND(Left(Text(Back_end_System__c),3)=&quot;P02&quot;,ISBLANK(P02__c)),
+AND(Left(Text(Back_end_System__c),3)=&quot;P16&quot;,ISBLANK(P16__c)),
+AND(Left(Text(Back_end_System__c),6)=&quot;Siebel&quot;,ISBLANK(Siebel__c)),
+AND(Left(Text(Back_end_System__c),7)=&quot;Turbocor&quot;, ISBLANK(Turbocor__c )),
+AND(Left(Text(Back_end_System__c),8)=&quot;Goldmine&quot;,ISBLANK(Goldmine__c)),
+AND(Left(Text(Back_end_System__c),6)=&quot;Kompas&quot;,ISBLANK(Kompas__c)),
+AND(Left(Text(Back_end_System__c),3)=&quot;PCM&quot;,ISBLANK(PCM__c))
+))</errorConditionFormula>
+        <errorMessage>You must enter an ID for the back-end system selected.</errorMessage>
+    </validationRules>
+</CustomObject>

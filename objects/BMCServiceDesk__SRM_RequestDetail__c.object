@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__Quantity_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>BMCServiceDesk__Quantity__c  &lt;= 0</errorConditionFormula>
+        <errorDisplayField>BMCServiceDesk__Quantity__c</errorDisplayField>
+        <errorMessage>Quantity should be greater than zero</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__dateRequiredLaterthanCurrentDate</fullName>
+        <active>true</active>
+        <errorConditionFormula>(ISNEW() &amp;&amp; BMCServiceDesk__DateRequired__c &lt;= NOW()) ||( ISCHANGED(BMCServiceDesk__DateRequired__c) &amp;&amp;  BMCServiceDesk__DateRequired__c &lt;= NOW())</errorConditionFormula>
+        <errorMessage>The Date Required should not be earlier than the current date and time</errorMessage>
+    </validationRules>
+</CustomObject>

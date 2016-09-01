@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>No_Contact_from_Indirect_Account</fullName>
+        <active>true</active>
+        <errorConditionFormula>Text(Opportunity.Account.Business_Org__c) &lt;&gt; &quot;Climate and Energy&quot; &amp;&amp;
+TEXT(Contact.Account.Channel__c) =  &quot;Indirect&quot;</errorConditionFormula>
+        <errorMessage>You can&apos;t select a Contact from an Indirect Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Price_Status_Change</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ $Profile.Name !=&apos;System Administrator&apos;, 
+ $Profile.Name !=&apos;CRM_System Administrator PS&apos;, 
+ISCHANGED(Price_Status__c), 
+NOT(ISPICKVAL(PRIORVALUE(Price_Status__c ), &quot;&quot;)) 
+)</errorConditionFormula>
+        <errorDisplayField>Price_Status__c</errorDisplayField>
+        <errorMessage>SAP Price Status cannot be changed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Total_can_only_be_changed_by_Configit</fullName>
+        <active>true</active>
+        <errorConditionFormula>(
+$Profile.Name &lt;&gt; &quot;API Only User (CE)&quot;
+)
+&amp;&amp;
+PRIORVALUE(TotalPrice) &lt;&gt; TotalPrice &amp;&amp;
+PRIORVALUE(TotalPrice)&lt;&gt;0
+&amp;&amp; ISPICKVAL(Opportunity.Account.Business_Org__c,&quot;Climate and Energy&quot;)</errorConditionFormula>
+        <errorMessage>Quote Line Items can only be changed from Configit</errorMessage>
+    </validationRules>
+</CustomObject>

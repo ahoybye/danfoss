@@ -1,0 +1,3 @@
+<apex:page sidebar="false" showHeader="false">
+	<script>window.location.href='{!$Page.ccpt__me}#/meeting/list/upcoming//'</script>
+</apex:page>

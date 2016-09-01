@@ -1,0 +1,7 @@
+<apex:page standardcontroller="PS_Customer_Request__c">
+	<br/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<apex:outputPanel styleClass="message errorM3">
+		<apex:image style="vertical-align: bottom;" value="/img/msg_icons/error16.png"/>&nbsp;&nbsp;
+		<apex:outputText value="You must start a new PS Customer Request from either an account or an opportunity product."/>
+	</apex:outputPanel>
+</apex:page>

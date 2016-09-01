@@ -1,0 +1,17 @@
+<apex:page standardController="ccpt__Card__c" showHeader="false" sidebar="false" title="Card__c.Name" extensions="ccpt.AngularExtension">
+	<script>
+		var relatedId = '';
+		<apex:repeat value="{!cardLookupMap}" var="lookup" rendered="{!ccpt__Card__c.Id == null || ccpt__Card__c.Id == ''}">
+			if('{!Card__c[lookup]}') {
+				relatedId = '{!Card__c[lookup]}';
+			}
+		</apex:repeat>
+		var url = '{!$Page.me}#';
+		if({!ccpt__Card__c.Id == null || ccpt__Card__c.Id == ''}) {
+			url += 'dashboard/card/{!Card__c.Id}/' + relatedId;
+		} else {
+			url += 'board/view/{!Card__c.Column__r.Board__c}/{!Card__c.Id}';
+		}
+		window.open(url, '_self', '');
+	</script>
+</apex:page>

@@ -1,0 +1,91 @@
+<apex:page id="page" controller="project_cloud.SubscriptionsCapacityController" extensions="project_cloud.BetaHelper" tabStyle="Subscriptions_Capacity__tab" readOnly="true">
+
+	<c:walkme />
+	<c:include_jquery />
+
+	<apex:sectionHeader title="Resources Capacity" subtitle="Resources Capacity" />
+	<apex:outputPanel rendered="{!isBeta}">
+		<apex:outputPanel rendered="{!NOT(isBetaWithConfirm)}">
+			<script>
+				window.location.href = '{!$Page.resourcing}#/c/worktypes';
+			</script>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{!isBetaWithConfirm}">
+			<apex:pageMessage summary="Resourcing Beta" severity="warning" strength="3" escape="false">You have specified that you still wish to access the old resourcing pages.<br />To access the new resourcing pages, please click <a href='{!$Page.resourcing}#/c/worktypes'>here</a></apex:pageMessage>
+		</apex:outputPanel>
+	</apex:outputPanel>
+	<p>Each cell shows both 'Available Capacity' and ('Total Capacity') by skill. The best way to visualize this is that 'Available Capacity' is the seats left for sale in the football stadium, whereas 'Total Capacity' is the stadiums overall capacity.</p>
+	<p>Note: Capacities are dynamic by skill type, so each row should be read in isolation and NOT added to try to ascertain total capacity.</p>
+
+	<apex:pageMessages id="messages" />
+
+	<style type="text/css">
+		.empty-column-content {
+			display: none;
+		}
+
+		.capacity-red {
+			background-color: #fb8a8c;/*red*/
+		}
+	</style>
+	<script type="text/javascript">
+		//overwrite the saleforce function so the focus is not put on the jump to user input
+		function setFocusOnLoad() {}
+	</script>
+
+	<apex:form id="form">
+		<apex:pageBlock id="block">
+			<apex:pageBlockButtons id="buttons" location="top">
+				<apex:actionRegion id="buttonsRegion">
+					<span class="dateInput dateOnlyInput">
+						<apex:inputText value="{!selectedStart}" id="start" onfocus="DatePicker.pickDate(false, '{!$Component.page.form.block.buttons.start}', false);" size="12" maxlength="12" />
+					</span>
+					<apex:selectList id="filterDay" value="{!selectedColumnInterval}" size="1">
+						<apex:selectOptions value="{!columnIntervals}" />
+					</apex:selectList>
+					<!-- Disabled until there is a request for this functionality
+					<apex:commandLink value="Previous" action="{!changeColumns}" rerender="section, messages" status="tableStatus">
+						<apex:param name="previousDate" value="false" assignTo="{!opt_nextOrPrevious}" />
+					</apex:commandLink>
+					<apex:outputText value=" | " />
+					<apex:commandLink value="Next" action="{!changeColumns}" rerender="section, messages" status="tableStatus">
+						<apex:param name="previousDate" value="true" assignTo="{!opt_nextOrPrevious}" />
+					</apex:commandLink>
+					&nbsp;
+					-->
+					<apex:commandButton id="changeColumns" value="Refresh Columns" action="{!changeColumns}" rerender="section, messages" status="tableStatus" />
+				</apex:actionRegion>
+				&nbsp;
+				<c:list_search tableSelector="{!$Component.page.form.block.section.table}" />
+			</apex:pageBlockButtons>
+			<apex:actionStatus id="tableStatus" layout="block">
+				<apex:facet name="start">
+					<c:loading />
+				</apex:facet>
+				<apex:facet name="stop">
+					<apex:pageBlockSection id="section" columns="1">
+						<apex:pageBlockTable id="table" var="row" value="{!rows}" rendered="{!NOT(ISBLANK(rows))}">
+							<apex:column id="user" headerValue="Skill (Work Type)">
+								<apex:outputLink value="/{!row.skill.Id}">
+									{!row.skill.Name}
+								</apex:outputLink>
+							</apex:column>
+							<apex:repeat id="cells" var="cell" value="{!row.cells}">
+								<apex:column styleClass="{!IF(cell.available < 0, 'capacity-red', '')}">
+									<apex:outputText value="{0, number, #.##} out of ({1, number, #.##})">
+										<apex:param value="{!cell.available}" />
+										<apex:param value="{!cell.total}" />
+									</apex:outputText>
+								</apex:column>
+							</apex:repeat>
+							<apex:repeat id="headers" var="header" value="{!headers}">
+								<apex:column id="header" headerValue="{!header}" styleClass="empty-column-content" />
+							</apex:repeat>
+						</apex:pageBlockTable>
+					</apex:pageBlockSection>
+				</apex:facet>
+			</apex:actionStatus>
+		</apex:pageBlock>
+	</apex:form>
+
+</apex:page>

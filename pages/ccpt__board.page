@@ -1,0 +1,12 @@
+<apex:page showHeader="true" standardController="ccpt__Board__c" extensions="ccpt.AngularExtension" sidebar="true">
+	<script>
+		var relatedId = '';
+		<apex:repeat value="{!boardLookupMap}" var="lookup" rendered="{!ccpt__Board__c.Id == null || ccpt__Board__c.Id == ''}">
+		console.log('{!lookup}', '{!Board__c[lookup]}');
+			if('{!Board__c[lookup]}') {
+				relatedId = '{!Board__c[lookup]}';
+			}
+		</apex:repeat>
+		window.open('{!$Page.me}#/board/' + ({!ccpt__Board__c.Id == null || ccpt__Board__c.Id == ''} ? 'new/' + relatedId : 'view/{!Board__c.Id}/'), '_self', '');
+	</script>
+</apex:page>

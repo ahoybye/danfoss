@@ -1,0 +1,45 @@
+<apex:page standardController="Contract__c" extensions="ContractApprovalsExtension">
+    <apex:form >
+    <apex:outputLabel rendered="{!Tasks==null || Tasks.size<1}">No records to display</apex:outputLabel>
+        <apex:pageBlock rendered="{!Tasks.size>0}">
+           <apex:pageBlockSection columns="1" collapsible="true" title="Current Approvals"> 
+            <apex:pageblocktable value="{!Tasks}" var="rec">
+                <apex:column width="140px"> 
+                    <apex:facet name="header">Role</apex:facet>
+                    <apex:outputtext value="{!SUBSTITUTE(SUBSTITUTE(rec.Contract_Stage__c, 'Apl__c', ''), '_', ' ')}"/>               
+                </apex:column>
+                <apex:column width="200px" headerValue="Approver">
+                    <apex:outputText value="{!rec.Owner.Name}" rendered="{!contains(rec.Subject,'CNT-')}"/>
+                    <apex:outputText value="{!rec.Subject}" rendered="{!NOT(contains(rec.Subject,'CNT-'))}"/>
+                </apex:column>
+                <apex:column width="101px" value="{!rec.Status}" headerValue="Status"/>
+                <apex:column width="120px" headerValue="Date">
+                    <apex:outputText value="{0,date,MM/dd/yyyy HH:mm}">
+                        <apex:param value="{!rec.Contract_Approved_Time__c}"/>
+                    </apex:outputText>
+                </apex:column>
+                <apex:column value="{!rec.Description}" headerValue="Comments"/> 
+            </apex:pageblocktable>
+           </apex:pageBlockSection> 
+        </apex:pageBlock>
+        <!-- Past Approvals/Rejections -->
+        <apex:pageBlock rendered="{!pastTasks.size>0}">
+           <apex:pageBlockSection columns="1" collapsible="true" title="Past Approvals"> 
+            <apex:pageblocktable value="{!pastTasks}" var="rec">
+                <apex:column width="140px"> 
+                    <apex:facet name="header">Role</apex:facet>
+                    <apex:outputtext value="{!SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(rec.Contract_Stage__c, 'Apl__c', ''), '_', ' '), ' BA', '')}"/>              
+                </apex:column>
+                <apex:column width="200px" value="{!rec.Owner.Name}" headerValue="Approver"/>
+                <apex:column width="101px" value="{!rec.Status}" headerValue="Status"/>
+                <apex:column width="120px" headerValue="Date">
+                    <apex:outputText value="{0,date,MM/dd/yyyy HH:mm}">
+                        <apex:param value="{!rec.Contract_Approved_Time__c}"/>
+                    </apex:outputText>
+                </apex:column>
+                <apex:column value="{!rec.Description}" headerValue="Comments"/> 
+            </apex:pageblocktable>
+           </apex:pageBlockSection> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

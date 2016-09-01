@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>BU_required_for_PIB</fullName>
+        <active>true</active>
+        <description>Business unit required for Integrated PIB</description>
+        <errorConditionFormula>AND (   ISPICKVAL(Account.Business_Org__c,&quot;Integrated&quot;) ,
+ Product_Information_Bulletin__c , 
+ISBLANK(  PIB_BU__c  ))</errorConditionFormula>
+        <errorMessage>One Business Unit is required if Product Information Bulletin is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BU_required_for_SB</fullName>
+        <active>true</active>
+        <description>Business unit required for Integrated SB</description>
+        <errorConditionFormula>AND (   ISPICKVAL(Account.Business_Org__c,&quot;Integrated&quot;) ,
+  Service_Bulletin__c , 
+ISBLANK(  PIB_BU__c  ))</errorConditionFormula>
+        <errorMessage>One Business Unit is required if Service Bulletin is selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Account_Address_Validate</fullName>
+        <active>false</active>
+        <description>Rule to validate if the field &apos;Same Address as Account&apos; is checked and Contact address is different from account address</description>
+        <errorConditionFormula>NOT(ISCHANGED(Same_Address_as_Account__c)) &amp;&amp; Same_Address_as_Account__c  = TRUE &amp;&amp; 
+(
+(NOT(ISBLANK( MailingStreet)) &amp;&amp; MailingStreet  &lt;&gt;  Account.ShippingStreet) || 
+(NOT(ISBLANK( MailingCity)) &amp;&amp; MailingCity  &lt;&gt;  Account.ShippingCity) || 
+(NOT(ISBLANK( MailingState))&amp;&amp; MailingState &lt;&gt;  Account.ShippingState)|| 
+(NOT(ISBLANK( MailingCountry))&amp;&amp; MailingCountry &lt;&gt;  Account.ShippingCountry)|| 
+(NOT(ISBLANK( MailingPostalCode))&amp;&amp; MailingPostalCode &lt;&gt;  Account.ShippingPostalCode)
+
+)</errorConditionFormula>
+        <errorDisplayField>Same_Address_as_Account__c</errorDisplayField>
+        <errorMessage>The contact and account address should be same as the field &apos;Same Address as Account&apos; is checked. Please uncheck this field to save the record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Gender_Mandatory_Specific_Countries</fullName>
+        <active>true</active>
+        <description>Gender should be mandatory for countries: AT, DE, CH and NL</description>
+        <errorConditionFormula>ISPICKVAL( Account.Business_Org__c , &apos;Climate and Energy&apos;) &amp;&amp; 
+ISBLANK(TEXT( Gender__c )) 
+&amp;&amp;  
+(
+ISPICKVAL( Country_PrivateAddress__c , &apos;AT&apos;) ||
+MailingCountry = &apos;AT&apos; || 
+ISPICKVAL( Country_PrivateAddress__c , &apos;DE&apos;) ||
+MailingCountry = &apos;DE&apos; || 
+ISPICKVAL( Country_PrivateAddress__c , &apos;CH&apos;) ||
+MailingCountry = &apos;CH&apos; || 
+MailingCountry = &apos;NL&apos; || 
+ISPICKVAL( Country_PrivateAddress__c , &apos;NL&apos;) 
+)</errorConditionFormula>
+        <errorDisplayField>Gender__c</errorDisplayField>
+        <errorMessage>Gender is required !</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contact_Inactive_no_edit</fullName>
+        <active>true</active>
+        <description>Once a contact is marked Inactive it can no longer be edited. The contact can be cloned.</description>
+        <errorConditionFormula>AND( 
+ PRIORVALUE(Inactive_Contact__c) = True, 
+  NOT(
+     OR( 
+      $Profile.Name = &quot;System Administrator&quot;, 
+      $Profile.Name = &quot;CRM_System Administrator PS&quot;, 
+      $Profile.Name = &quot;CRM_System Administrator Turolla&quot;, 
+      $Profile.Name = &quot;CRM_System Administrator Comatrol&quot;,
+      $Profile.Name = &quot;CRM Standard User (CE)&quot;, 
+      $Profile.Name = &quot;System Administrator (CE)&quot;
+      )
+    )
+  )</errorConditionFormula>
+        <errorDisplayField>Inactive_Contact__c</errorDisplayField>
+        <errorMessage>This contact is marked inactive. You can Clone the contact or contact your system administrator to reactivate.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Email_Required_if_Communication_is_Check</fullName>
+        <active>true</active>
+        <description>Valid email is required if the General Communications is true</description>
+        <errorConditionFormula>AND (
+General_Communication__c,   
+ISBLANK( Email ))</errorConditionFormula>
+        <errorDisplayField>Email</errorDisplayField>
+        <errorMessage>Email is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_country_required_when_local</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!ISBLANK(Fax_Local__c) &amp;&amp; ISPICKVAL(Fax_Country__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Fax_Country__c</errorDisplayField>
+        <errorMessage>Value is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_local_digits_only</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!REGEX(Fax_Local__c, &quot;\\d*&quot;)</errorConditionFormula>
+        <errorDisplayField>Fax_Local__c</errorDisplayField>
+        <errorMessage>Must contain only numbers</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_local_must_not_be_global</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>BEGINS(Fax_Local__c, &quot;00&quot;) &amp;&amp; !ISBLANK(Fax_Local__c)</errorConditionFormula>
+        <errorDisplayField>Fax_Local__c</errorDisplayField>
+        <errorMessage>00 prefix not allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>International_Phone_Format</fullName>
+        <active>false</active>
+        <errorConditionFormula>NOT(CONTAINS(Phone ,&quot;+&quot;))</errorConditionFormula>
+        <errorDisplayField>Phone</errorDisplayField>
+        <errorMessage>Phone number must be in international format, with a &quot;+&quot; followed by the country code; example - +1 (555) 555-1212</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mobile_country_required_when_local</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!ISBLANK(Mobile_Local__c) &amp;&amp; ISPICKVAL(Mobile_Country__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Mobile_Country__c</errorDisplayField>
+        <errorMessage>Value is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mobile_local_digits_only</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!REGEX(Mobile_Local__c, &quot;\\d*&quot;)</errorConditionFormula>
+        <errorDisplayField>Mobile_Local__c</errorDisplayField>
+        <errorMessage>Must contain only numbers</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Mobile_local_must_not_be_global</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>BEGINS(Mobile_Local__c, &quot;00&quot;) &amp;&amp; !ISBLANK(Mobile_Local__c)</errorConditionFormula>
+        <errorDisplayField>Mobile_Local__c</errorDisplayField>
+        <errorMessage>00 prefix not allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_country_required_when_local</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!ISBLANK(Phone_Local__c) &amp;&amp; ISPICKVAL(Phone_Country__c, &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Phone_Country__c</errorDisplayField>
+        <errorMessage>Value is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_local_digits_only</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>!REGEX(Phone_Local__c, &quot;\\d*&quot;)</errorConditionFormula>
+        <errorDisplayField>Phone_Local__c</errorDisplayField>
+        <errorMessage>Must contain only numbers</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_local_must_not_be_global</fullName>
+        <active>true</active>
+        <description>A workflow rule combines the country code and local part from custom fields into the full phone number in the standard field.</description>
+        <errorConditionFormula>BEGINS(Phone_Local__c, &quot;00&quot;) &amp;&amp; !ISBLANK(Phone_Local__c)</errorConditionFormula>
+        <errorDisplayField>Phone_Local__c</errorDisplayField>
+        <errorMessage>00 prefix not allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>address_blank_if_same_as_account</fullName>
+        <active>false</active>
+        <errorConditionFormula>Same_Address_as_Account__c &amp;&amp; !(
+ISBLANK( MailingStreet ) &amp;&amp; ISBLANK(  MailingPostalCode ) &amp;&amp; ISBLANK(MailingCity ) &amp;&amp; ISBLANK( MailingCountry )
+)</errorConditionFormula>
+        <errorDisplayField>Same_Address_as_Account__c</errorDisplayField>
+        <errorMessage>If you want to use the account address, you must remove the contact&apos;s mailing address.</errorMessage>
+    </validationRules>
+</CustomObject>

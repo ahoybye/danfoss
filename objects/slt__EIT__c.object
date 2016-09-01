@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>slt__Require_Base_ID</fullName>
+        <active>true</active>
+        <description>At least one base object ID field reference must be specified</description>
+        <errorConditionFormula>AND( ISBLANK(slt__ParentAccountIDField__c),  ISBLANK(slt__ParentContactIDField__c) )</errorConditionFormula>
+        <errorMessage>At least one base object ID field reference must be specified</errorMessage>
+    </validationRules>
+</CustomObject>

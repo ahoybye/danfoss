@@ -1,0 +1,37 @@
+<!--
+Page has javascript that mark Lead.Validate = true.
+Validate Button javascript code is moved to call from formula field link. 
+ -->
+<apex:page standardController="Lead">
+<head>
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"/>
+<apex:includeScript value="{!URLFOR($Resource.Custom_JSConfirm)}"/>
+<apex:includeScript value="/soap/ajax/18.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/18.0/apex.js"/>
+<script type="text/javascript"> 
+    sforce.connection.sessionId = '{!$Api.Session_ID}';
+    $.alerts.okButton = ' Yes '; 
+    $.alerts.cancelButton = ' No '; 
+    jConfirm('Are you sure you want to validate this lead?', '', function(r) { 
+        if(r == true){ 
+            var lead = new sforce.SObject("Lead"); 
+            lead.id = '{!Lead.Id}'; 
+            lead.Validated__c = true; 
+            sforce.connection.assignmentRuleHeader = {}; 
+            sforce.connection.assignmentRuleHeader.useDefaultRule = true;   
+            
+            sforce.connection.emailHeader = {};
+            sforce.connection.emailHeader.triggerAutoResponseEmail = true;
+            sforce.connection.emailHeader.triggerOtherEmail = true; 
+            sforce.connection.emailHeader.triggerUserEmail = true;
+            result = sforce.connection.update([lead]); 
+            //alert('Lead has been validated'); 
+            window.location.href ='/{!Lead.Id}'; 
+       }else{
+            window.location.href ='/{!Lead.Id}'; 
+       } 
+    } 
+    );
+</script>
+</head>
+</apex:page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>project_cloud__Completed_Estimation_is_between_0_100</fullName>
+        <active>false</active>
+        <description>Make sure the Estimation percentage is between 0 and 100</description>
+        <errorConditionFormula>project_cloud__Completed__c &lt; 0 || project_cloud__Completed__c &gt; 100</errorConditionFormula>
+        <errorDisplayField>project_cloud__Completed__c</errorDisplayField>
+        <errorMessage>Value must be between 0 and 100</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Date_is_within_Timesheet_Range</fullName>
+        <active>false</active>
+        <description>Make sure the Date field on the Timesheet entry is within the Start and End Date on the Timesheet</description>
+        <errorConditionFormula>project_cloud__Date__c &lt; project_cloud__Timesheet__r.project_cloud__Start__c || project_cloud__Date__c &gt; project_cloud__Timesheet__r.project_cloud__End__c</errorConditionFormula>
+        <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+        <errorMessage>The Date entered is not within the range of the timesheet</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Ensure_Timesheet_Owner_is_User</fullName>
+        <active>false</active>
+        <description>Make sure that the owner of the Timesheet selected is the user creating the entry unless the Profile of the User is a project manager</description>
+        <errorConditionFormula>$User.Id != project_cloud__Timesheet__r.OwnerId &amp;&amp; $Profile.Name != &apos;Project Manager&apos; &amp;&amp; $Profile.Name != &apos;System Administrator&apos;</errorConditionFormula>
+        <errorDisplayField>project_cloud__Timesheet__c</errorDisplayField>
+        <errorMessage>Time entries cannot be added to a timesheet that is not your own</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Hour_Valid_Blocks</fullName>
+        <active>false</active>
+        <description>Ensure that the hours entered are a multiple of Custom Setting Working_Hours.Units value. This ensures time is entered in valid time unit blocks</description>
+        <errorConditionFormula>project_cloud__Hours__c &lt;= 0 || project_cloud__Hours__c &gt;= 24</errorConditionFormula>
+        <errorDisplayField>project_cloud__Hours__c</errorDisplayField>
+        <errorMessage>Hours must be greater than 0 and less than 24 hours</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Hours_are_15_minute_blocks</fullName>
+        <active>false</active>
+        <description>This validation rule has been replaced by the Hours Valid blocks. Time is not entered in 15 minutes blocks but in multiples of the hours block value</description>
+        <errorConditionFormula>MOD(project_cloud__Hours__c, 0.25) != 0</errorConditionFormula>
+        <errorDisplayField>project_cloud__Hours__c</errorDisplayField>
+        <errorMessage>Hours must be entered as 15 minute blocks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entry_Deprecated</fullName>
+        <active>true</active>
+        <description>The Time Entry object has been deprecated, to create a time entry use the Work Object with Type &apos;Time Entry&apos;</description>
+        <errorConditionFormula>ISNEW()</errorConditionFormula>
+        <errorMessage>The Time Entry object has been deprecated, to create a Time Entry use the Work Object with Type &apos;Time Entry&apos;</errorMessage>
+    </validationRules>
+</CustomObject>

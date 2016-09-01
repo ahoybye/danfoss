@@ -1,0 +1,11 @@
+<apex:page standardController="ccpt__Action__c" showHeader="false" sidebar="false" title="Action__c.Name" extensions="ccpt.AngularExtension">
+	<script>
+		var relatedId = '';
+		<apex:repeat value="{!actionLookupMap}" var="lookup" rendered="{!ccpt__Action__c.Id == null || ccpt__Action__c.Id == ''}">
+			if('{!Action__c[lookup]}') {
+				relatedId = '{!Action__c[lookup]}';
+			}
+		</apex:repeat>
+		window.open('{!$Page.me}#/dashboard/action/{!Action__c.Id}/' + relatedId, '_self', '');
+	</script>
+</apex:page>

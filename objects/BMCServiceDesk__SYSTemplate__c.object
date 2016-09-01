@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__TemplateName</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR( ISNULL(Name) , ISBLANK( Name))</errorConditionFormula>
+        <errorMessage>Please enter Template Name</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__templateForRequired</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR( ISNULL( TEXT(BMCServiceDesk__templateFor__c) ) , ISBLANK(TEXT(BMCServiceDesk__templateFor__c)))</errorConditionFormula>
+        <errorMessage>Please select Template For.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__templateNameUniqueValidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISNEW(),
+NOT(ISBLANK(VLOOKUP( $ObjectType.BMCServiceDesk__SYSTemplate__c.Fields.Name , $ObjectType.BMCServiceDesk__SYSTemplate__c.Fields.Name,NULLVALUE(Name, Name) ))),
+IF(ISCHANGED(Name),
+IF((Name) = (VLOOKUP($ObjectType.BMCServiceDesk__SYSTemplate__c.Fields.Name , $ObjectType.BMCServiceDesk__SYSTemplate__c.Fields.Name,Name)), TRUE, FALSE),
+FALSE))</errorConditionFormula>
+        <errorMessage>Duplicate Name</errorMessage>
+    </validationRules>
+</CustomObject>

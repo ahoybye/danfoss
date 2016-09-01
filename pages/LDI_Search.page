@@ -1,0 +1,189 @@
+<apex:page controller="LDISearchController" readonly="true"
+    sidebar="true">
+    <apex:form >
+        <apex:pageMessages id="errors" />
+        <apex:pageBlock title="Linked Distributor Inventory" mode="edit">
+            <table width="100%" border="0">
+                <tr>
+                    <td width="200" valign="top"><apex:pageBlock mode="edit" id="criteria">
+                        <head>
+                            <style>
+                                #phSearchForm {
+                                    display: none !important;
+                                }
+                            </style>
+<!--                        <apex:includeScript value="{!URLFOR($Resource.SimpleTipjquery)}" />-->
+                         <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" />
+<!--                        <apex:includeScript value="{!URLFOR($Resource.PopupJS)}" />-->
+                        <script type="text/javascript">
+                          function doSearch() {
+                            searchServer(
+                              document.getElementById("product").value,
+                              document.getElementById("model").value,
+                              document.getElementById("descr").value,
+                              document.getElementById("distributor").options[document.getElementById("distributor").selectedIndex].value
+                              );
+                          }
+                          window.onkeypress = handleKeyPress;
+                          function handleKeyPress(e){
+                            var eventInstance = window.event ? event : e;
+                            var keyCode = eventInstance.charCode ? eventInstance.charCode : eventInstance.keyCode;    
+                            if (keyCode == 13){
+                               searchServer(
+                                  document.getElementById("product").value,
+                                  document.getElementById("model").value,
+                                  document.getElementById("descr").value,
+                                  document.getElementById("distributor").options[document.getElementById("distributor").selectedIndex].value
+                              );return false;
+                            }
+                          }
+                          </script>
+ 
+                        </head>
+                        <apex:actionFunction name="searchServer" action="{!runSearch}" rerender="results,errors" status="searchStatus">
+                            <apex:param name="product" value="" />
+                            <apex:param name="model" value="" />
+                            <apex:param name="descr" value="" />
+                            <apex:param name="distributor" value="" />
+                        </apex:actionFunction>
+
+                        <table cellpadding="2" cellspacing="2" id="criteria">
+                            <tr>
+                                <td style="font-weight: bold;">Material<br />
+                                <input type="text" id="product" name="product" /></td>
+                                
+                                <td style="font-weight: bold;">Model Code<br />
+                                <input type="text" id="model"  /></td>
+                                
+                                <td style="font-weight: bold;">Description<br />
+                                <input type="text" id="descr" /></td>
+                                
+                                <td style="font-weight:bold;">Distributor<br/>
+                                  <select id="distributor" >
+                                    <option value=""></option>                                  
+                                    <apex:repeat value="{!distributors}" var="dist">
+                                      <option value="{!dist}">{!dist}</option>
+                                    </apex:repeat>
+                                  </select>
+                                </td>                                 
+                                <td width="40%" style="color: #9C052C;" colspan="2">
+                                        <br/><apex:outputPanel onclick="doSearch()" onkeypress="return handleKeyPress(event)" styleClass="btn" style="padding: 4px 4px 4px 4px" > Search </apex:outputPanel>
+                                    &nbsp;<apex:commandButton style="padding: 4px 4px 4px 4px" action="{!cancel}" value="Reset" id="btnCancel" rerender="inventoryList,results,errors,criteria"/>
+                                    <apex:actionStatus id="searchStatus">
+                                        <apex:facet name="start">
+                                            <c:enhancedActionStatus BackColor="#efefef" borderColor="#090948" borderSize="3" height="50px" width="120px" ImageUrl="{!$Resource.AjaxAnimation}" Message="Loading..." messageStyle="color:darkred;font-size:11pt;font-weight:bold;"/>
+                                        </apex:facet>
+                                    </apex:actionStatus>
+                                </td>    
+                                
+                                <td width="20%" valign="top" style="text-align: right">
+                                    <apex:commandLink style="text-align: right" action="{!gotoUpload}" value="Upload Inventory File"  id="lnkUpload" />
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td colspan="7"><p>Note: Search Criteria uses similar logic as 'Contains' in Excel. % is a wild card that can be used multiple times within the search.
+                                    <br/>Example: SV10-34%-DE-%B would search and find Model Codes SV10-34-04-12D-DE-B-00 and PSV10-34-05-12D-DE-12-B-00</p></td></tr>
+                        </table>
+                    </apex:pageBlock></td> 
+                </tr>
+                <tr>
+                <td valign="top">
+                
+                <apex:pageBlock mode="edit" id="results">                
+                       <apex:outputText style="color: #9C052C; font-weight: bold;" value="{0} matches found<br/><br/>" escape="false" rendered="{!NOT(ISNULL(inventList))}">
+                        <apex:param value="{!setCont.resultSize}" />
+                    </apex:outputText>
+                        <apex:outputPanel layout="block" styleClass="pSearchShowMore" id="otpNav2">
+              Total Records Found: <apex:outputText rendered="{!IF(setCont.resultSize==10000,true,false)}">10000 +</apex:outputText><apex:outputText rendered="{!IF(setCont.resultSize < 10000,true,false)}">{!setCont.resultSize}</apex:outputText>
+                  <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(setCont.HasPrevious)}"/>
+                  <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!setCont.HasPrevious}"/>
+                  <apex:commandLink action="{!Previous}" title="Previous Page" value="Previous Page" rendered="{!setCont.HasPrevious}" rerender="inventoryList,otpNav,otpNav2" status="searchStatus"/>
+                  <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setCont.HasPrevious)}">Previous Page</apex:outputPanel>         
+                  &nbsp;({!IF(setCont.PageNumber == 1,1,((setCont.PageNumber -1) * setCont.PageSize)+1)}-{!IF(setCont.resultSize < setCont.PageSize,setCont.resultSize,setCont.PageNumber * setCont.pageSize)})&nbsp;
+                  <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setCont.HasNext)}">Next Page</apex:outputPanel>         
+                  <apex:commandLink title="Next Page" value="Next Page" rendered="{!setCont.HasNext}" action="{!Next}" rerender="inventoryList,otpNav,otpNav2" status="searchStatus"/>&nbsp;
+                  <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!setCont.HasNext}"/>
+                  <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(setCont.HasNext)}"/>          
+              </apex:outputPanel>
+                        <apex:pageBlockTable value="{!inventList}" var="inv" id="inventoryList">
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:commandLink value="Material" action="{!toggleSort}" rerender="results,debug">
+                                        <apex:param name="sortField" value="Product__c" assignTo="{!sortField}" />
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputLabel value="{!inv.Name}" />
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:commandLink value="Model Code" action="{!toggleSort}" rerender="results,debug">
+                                        <apex:param name="sortField" value="Product__r.Model_Code__c" assignTo="{!sortField}" />
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputLabel value="{!inv.Product__r.Model_Code__c}" />
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:commandLink value="Description" action="{!toggleSort}" rerender="results,debug">
+                                        <apex:param name="sortField" value="Product__r.Name" assignTo="{!sortField}" />
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputLabel value="{!inv.Product__r.Name}" />
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:commandLink value="On Hand" action="{!toggleSort}" rerender="results,debug">
+                                        <apex:param name="sortField" value="Quantity__c" assignTo="{!sortField}" />
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputLabel value="{!IF(inv.Quantity__c == null, 0, inv.Quantity__c)}" />
+                            </apex:column>
+                            <apex:column >
+                                 <apex:facet name="header">Updated</apex:facet>
+                                 <apex:outputText value="{0, date, dd-MMM-yyyy}" >
+                                    <apex:param value="{!inv.LastModifiedDate}" />
+                                </apex:outputText>
+                            </apex:column>
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:commandLink value="Distributor" action="{!toggleSort}" rerender="results,debug">
+                                        <apex:param name="sortField" value="Account__r.Name" assignTo="{!sortField}" />
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <a title="Phone: {!inv.Account__r.Phone} \n Email: {!inv.Account__r.LDI_Email__c}" onmouseover="this.title='Phone: {!inv.Account__r.Phone}\nEmail: {!inv.Account__r.LDI_Email__c}';">{!inv.Account__r.Name}</a>
+                           </apex:column>           
+                             <apex:column >
+                                 <apex:facet name="header">
+                                  <apex:commandLink value="Region" action="{!toggleSort}" rerender="results,debug" status="searchStatus">
+                                        <apex:param name="sortField" value="Account__r.LDI_Region__c" assignTo="{!sortField}" />
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputLabel value="{!inv.Account__r.LDI_Region__c}" />
+                            </apex:column>               
+                        </apex:pageBlockTable>
+                            
+                            <apex:outputPanel layout="block" styleClass="pSearchShowMore" id="otpNav">
+              Total Records Found: <apex:outputText rendered="{!IF(setCont.resultSize != null && setCont.resultSize==10000,true,false)}">10000 +</apex:outputText><apex:outputText rendered="{!IF(setCont.resultSize != null && setCont.resultSize < 10000,true,false)}">{!setCont.resultSize}</apex:outputText>
+                  <apex:image url="/img/search_prevarrow_disabled.gif" styleClass="prevArrow" rendered="{!NOT(setCont.HasPrevious)}"/>
+                  <apex:image url="/img/search_prevarrow.gif" title="Previous Page" styleClass="prevArrow" rendered="{!setCont.HasPrevious}"/>
+                  <apex:commandLink action="{!Previous}" title="Previous Page" value="Previous Page" rendered="{!setCont.HasPrevious}" rerender="inventoryList,otpNav,otpNav2" status="searchStatus"/>
+                  <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setCont.HasPrevious)}">Previous Page</apex:outputPanel>         
+                  &nbsp;({!IF(setCont.PageNumber == 1,1,((setCont.PageNumber -1) * setCont.PageSize)+1)}-{!IF(setCont.resultSize < setCont.PageSize,setCont.resultSize,setCont.PageNumber * setCont.pageSize)})&nbsp;
+                  <apex:outputPanel styleClass="pShowLess noLink" style="color:grey" rendered="{!NOT(setCont.HasNext)}">Next Page</apex:outputPanel>         
+                  <apex:commandLink title="Next Page" value="Next Page" rendered="{!setCont.HasNext}" action="{!Next}" rerender="inventoryList,otpNav,otpNav2" status="searchStatus"/>&nbsp;
+                  <apex:image url="/img/search_nextarrow.gif" title="Next Page" styleClass="nextArrow" rendered="{!setCont.HasNext}"/>
+                  <apex:image url="/img/search_nextarrow_disabled.gif" rendered="{!NOT(setCont.HasNext)}"/>          
+              </apex:outputPanel>
+                    </apex:pageBlock>
+                    </td>
+                </tr>
+            </table>
+            <apex:pageBlock title="Debug - SOQL" id="debug" rendered="false">
+                <apex:outputText value="{!debugSoql}" />
+            </apex:pageBlock>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>

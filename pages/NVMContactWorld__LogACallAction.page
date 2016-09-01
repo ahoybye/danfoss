@@ -1,0 +1,57 @@
+<apex:page controller="NVMContactWorld.LogACallActionController" action="{!Init}" >
+    <apex:stylesheet value="{!URLFOR($Resource.NVMContactWorld__Assets, 'assets/Styles-NVM.css')}"/>
+    <apex:includeScript value="https://code.jquery.com/jquery-1.7.1.js" />
+    <apex:includeScript value="/canvas/sdk/js/publisher.js" />
+    <apex:form id="logACallForm">
+
+        <apex:actionFunction action="{!Init}" name="refresh" reRender="logACallContainer"/>
+        <apex:actionFunction action="{!SaveNoteAndRefresh}" name="saveAndRefresh" reRender="logACallContainer" />
+
+        <apex:outputPanel id="logACallContainer" layout="block" >
+            <div id="NvmPublisherAction">
+                <apex:outputPanel layout="none" rendered="{!IsCallActive == false && IsCallRelatedToVisibleObject == false}">
+                    <p id="noActiveCallMsg">You have no active call, and your most recent call was not related to this record.</p>
+                    <apex:commandButton action="{!Init}" value="Refresh" id="btnRefresh"/>
+                </apex:outputPanel>
+
+                <apex:outputPanel layout="none" rendered="{!IsCallActive == true && (IsCallRelated == false || IsCallRelatedToVisibleObject == false)}">
+                    <apex:outputPanel layout="none" rendered="{!VisibleObjectWasConvertedFromRelatedObject == true}">
+                        <p id="convertMsg"><b>The visible record '{!VisibleObjectName}' was converted from the record '{!RelatedToObjectName}' that this call is related to.</b></p>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!IsCallRelated == false}">
+                        <p id="callNotLinkedMsg">Your active call has not been linked to a record yet.</p>
+                    </apex:outputPanel>
+                    <apex:outputPanel layout="none" rendered="{!IsCallRelated == true && VisibleObjectWasConvertedFromRelatedObject == false}">
+                        <p id="linkedToOtherMsg">Your active call is not linked to this record, it is linked to <a href="{!RelatedToObjectUrl}" target="_parent">{!RelatedToObjectName}</a>.</p>
+                    </apex:outputPanel>
+                    <p><apex:commandButton id="linkCallBtn" value="Link active call to {!VisibleObjectName}" action="{!LinkEventToVisibleObject}" /></p>
+                </apex:outputPanel>
+
+                <apex:outputPanel layout="none" rendered="{!IsCallActive == true || IsCallRelatedToVisibleObject == true}">
+                    <label>Notes</label>
+                    <apex:inputTextarea html-placeholder="Please enter your call notes..." value="{!CallNote}" styleClass="{!CallNoteStyleClass}" />
+                    <apex:dynamicComponent componentValue="{!DynamicTaskFields}"/>
+                    <div class="bottomBar">
+                        <b class="errorMsg">{!ErrorMessage}</b>
+                        <apex:commandButton id="saveNoteBtn" value="Save Note" action="{!SaveNote}" styleClass="nvmPublisherActionButton" />
+                    </div>
+                </apex:outputPanel>
+              </div>
+         </apex:outputPanel>
+    </apex:form>
+
+    <script type="text/javascript">
+
+        $(function(){
+            Sfdc.canvas.publisher.subscribe([{name : "publisher.customActionMessage", onData : function(e) {
+                if (e.message === 'Refresh_NVM_Log_A_Call') {
+                    refresh();
+                } else if (e.message === 'Save_And_Refresh_NVM_Log_A_Call') {
+                    saveAndRefresh();
+                }
+            }}]);
+        });
+
+    </script>
+
+</apex:page>

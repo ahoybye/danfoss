@@ -1,0 +1,47 @@
+<apex:page standardController="case" extensions="CaseNewEmailExtension" >
+
+<apex:includeScript value="/support/console/28.0/integration.js"/>
+
+    <script type="text/javascript">
+
+    		var targetUrl = '{!emailURL}';
+            if (sforce.console.isInConsole()) {
+       
+                sforce.console.getEnclosingPrimaryTabId(function(result) {
+                    var primaryTabId = result.id;
+                    sforce.console.getEnclosingTabId(function(result) {
+                        var tabId = result.id;
+                        sforce.console.getSubtabIds(primaryTabId, function(result) {
+                            var subTabIds = result.ids;
+                            if (tabId == subTabIds[0]) {
+                                sforce.console.openPrimaryTab(primaryTabId , targetUrl, true,'Send an email');
+                                sforce.console.openPrimaryTab(primaryTabId , '{!ca.id}', true,'{!ca.casenumber}');  
+								
+                            } else {
+                                sforce.console.openSubtab(primaryTabId , targetUrl, true,'Send an email');
+                                sforce.console.openSubtab(primaryTabId , '{!ca.id}', true,'{!ca.casenumber}');  
+                                CloseTab();   
+                            }
+                        });
+                    });
+                });
+            } else {
+                location = targetUrl;
+            }
+    
+    	function CloseTab() {
+         
+        sforce.console.getEnclosingTabId(closeSubtab);
+        }  
+        var closeSubtab = function closeSubtab(result) {
+        var tabId = result.id;
+        sforce.console.closeTab(tabId);
+        }
+
+    
+    
+    
+            </script>
+  
+
+</apex:page>

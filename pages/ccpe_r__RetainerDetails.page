@@ -1,0 +1,61 @@
+<apex:page standardController="ccpe_r__Retainer__c" extensions="ccpe_r.RetainerExtension">
+    <apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+    <apex:outputPanel id="PageContent">
+        <apex:form >
+            <apex:sectionHeader title="{!IF(retainer.Id == null, 'New Retainer', 'Edit Retainer')}" />
+            <apex:pageBlock >
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!save}" value="Save" rerender="messages"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel" html-formnovalidate="formnovalidate"/>
+                    <apex:commandButton action="{!createClone}" value="Clone" rerender="PageContent" rendered="{!NOT(isCloned) && retainer.Id != null}"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection id="RetainerDetails" title="Retainer Details">
+                            <apex:inputText value="{!blankCriteriaSpend}" label="Agreed Spend For Time Period" onchange="fillBlankSpend($(this).val());"/>
+                            <apex:inputCheckbox value="{!isSkillBased}" label="Skill Based Retainer" onclick="setGlobal($(this).is(':checked'));" />
+                            <apex:inputText value="{!blankCriteriaHours}" label="Agreed Hours For Time Period" onchange="fillBlankHours($(this).val());"/>
+                            <apex:inputField value="{!retainer.ccpe_r__Time_Period__c}" required="true" onchange="changeTimePeriod($(this).val(), $());" />
+                            <apex:repeat value="{!$ObjectType.ccpe_r__Retainer__c.FieldSets.ccpe_r__Retainer_Page_View}" var="f">
+                                <apex:inputField value="{!retainer[f]}" label="{!f.Label}"/>
+                            </apex:repeat> 
+                            <apex:outputText value="" rendered="{!NOT(isCloned) && MOD($ObjectType.ccpe_r__Retainer__c.FieldSets.ccpe_r__Retainer_Page_View.size, 2) == 0}"/>
+                            <apex:inputField value="{!retainer.ccpe_r__Template__c}" rendered="{!NOT(isCloned)}" />
+                </apex:pageBlockSection>
+                <apex:outputPanel id="rolloverPanel">
+                    <apex:pageBlockSection showHeader="false" rendered="{!retainer.ccpe_r__Time_Period__c != 'One Time'}">
+                            <apex:inputField value="{!retainer.ccpe_r__Spend_Roll_Over__c}"/>
+                            <apex:inputField value="{!retainer.ccpe_r__Hours_Roll_Over__c}"/>
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                <apex:pageBlockSection id="LineItemCriteriaDetails" title="Line Item Criteria" columns="1">
+                    <apex:PageMessages id="messages"/>
+                    <apex:pageBlockTable value="{!criterias}" var="criteria">
+                        <apex:column headerValue="Skill" rendered="{!isSkillBased}">
+                            <apex:outputField value="{!criteria.ccpe_r__Work_Type__c}" />
+                        </apex:column>
+                        <apex:column headerValue="Agreed Spend for Time Period">
+                            <apex:inputField value="{!criteria.ccpe_r__Agreed_Spend__c}" />
+                        </apex:column>
+                        <apex:column headerValue="Agreed Hours for Time Period">
+                            <apex:inputField value="{!criteria.ccpe_r__Agreed_Hours__c}" />
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:form>
+        <apex:form >
+            <apex:actionFunction name="setGlobal" action="{!globalSelected}" rerender="LineItemCriteriaDetails">
+                <apex:param name="globalValue" assignTo="{!isSkillBased}" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction name="changeTimePeriod" action="{!oneTimeSelected}" rerender="rolloverPanel">
+                <apex:param name="newTimePeriod" assignTo="{!retainer.ccpe_r__Time_Period__c}" value=""/>
+                <apex:param name="startDate" assignTo="{!retainer.Start_Date__c}" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction name="fillBlankSpend" action="{!fillBlankCriteriaSpend}" rerender="LineItemCriteriaDetails">
+                <apex:param name="fillSpend" assignTo="{!blankCriteriaSpend}" value=""/>
+            </apex:actionFunction>
+            <apex:actionFunction name="fillBlankHours" action="{!fillBlankCriteriaHours}" rerender="LineItemCriteriaDetails">
+                <apex:param name="fillHours" assignTo="{!blankCriteriaHours}" value=""/>
+            </apex:actionFunction>
+        </apex:form>
+    </apex:outputPanel>
+</apex:page>

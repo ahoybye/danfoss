@@ -1,0 +1,3 @@
+<apex:page standardcontroller="Machine_Model__c" extensions="MIDClonePageControllerExtension" action="{!chainClone}">
+
+</apex:page>

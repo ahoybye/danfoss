@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__LinkName_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR( ISNULL(BMCServiceDesk__LinkName__c) , ISBLANK(BMCServiceDesk__LinkName__c))</errorConditionFormula>
+        <errorMessage>Please enter Name.</errorMessage>
+    </validationRules>
+</CustomObject>

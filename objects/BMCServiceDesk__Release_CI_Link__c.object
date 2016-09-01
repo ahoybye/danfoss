@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <webLinks>
+        <fullName>BMCServiceDesk__Link_All_Related_CIs</fullName>
+        <availability>online</availability>
+        <description>Link CIs of Linked Change Requests to Release</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Automatically Link to Release</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>if({!BMCServiceDesk__Release__c.BMCServiceDesk__State__c}){
+	if( typeof consoleDetailElements != &apos;undefined&apos; ) {
+		
+		window.open(&quot;/apex/BMCServiceDesk__StdReleaseExtension?id={!BMCServiceDesk__Release__c.Id}&amp;action=LinkallCI&amp;isCalledFromConsole=true&amp;ishideStageProgression=true&quot;,null,&quot;height=1, width=1, left=1,top=1, resizable = 0, scrollbars = 0, location=0, menubar=0, status=0, toolbar=0&quot;);
+	}
+	else {
+		var win = window.parent;		
+		win.location.href = &quot;/apex/BMCServiceDesk__StdReleaseExtension?id={!BMCServiceDesk__Release__c.Id}&amp;action=LinkallCI&quot;;
+	}
+}
+else {
+var label =&apos;{!JSENCODE($Label.BMCServiceDesk__ReleaseClosed)}&apos;;
+alert(label);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__New_Link</fullName>
+        <availability>online</availability>
+        <description>Link  Release to CI</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Select and Link to Release</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 671;
+var stdLayoutScreenHeight = 503;
+function stdScreenLeft(){
+return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2));
+}
+
+function stdScreenTop(){
+return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2));
+}
+var isCalledFromConsole = false;
+if( typeof consoleDetailElements != &apos;undefined&apos; ) isCalledFromConsole = true;
+
+if({!BMCServiceDesk__Release__c.BMCServiceDesk__State__c}) {
+
+window.open(&quot;/apex/BMCServiceDesk__SearchAndLink?filterObjectId={!BMCServiceDesk__Release__c.Id}&amp;parentName=Release__c&amp;childName=BMC_BaseElement__c&amp;isCalledFromConsole=&quot;+isCalledFromConsole+&quot;&amp;filterClause=MarkAsDeleted__c=false&quot;,null,&quot;status = 1,height =&quot;+ stdLayoutScreenHeight+&quot;, width = &quot;+ stdLayoutScreenWidth+&quot;,left= &quot;+stdScreenLeft()+&quot;,top=&quot;+ stdScreenTop()+&quot;, resizable = 1,scrollbars=no&quot;);
+}
+else {
+var label =&apos;{!JSENCODE($Label.BMCServiceDesk__ReleaseClosed)}&apos;;
+alert(label);
+}</url>
+    </webLinks>
+</CustomObject>

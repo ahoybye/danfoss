@@ -1,0 +1,13 @@
+<apex:component >
+    <apex:attribute name="setCon" description="The standard set controller" type="ApexPages.StandardSetController" required="true"/>
+    <apex:attribute name="status" description="The Visualforce component ID of the status field" type="String" required="true"/>
+    <apex:attribute name="rerender" description="The Visualforce component ID of the status field" type="String" required="true"/>
+    <apex:outputPanel styleClass="paginator">
+        <apex:outputPanel styleClass="prevNextLinks">
+            <apex:commandLink action="{!setCon.first}" rendered="{!setCon.HasPrevious}" rerender="{!rerender}" status="{!status}" styleClass="prevNext"><img class="first" alt="First Page" title="First Page" src="/s.gif"/></apex:commandLink>
+            <apex:commandLink action="{!setCon.previous}" rendered="{!setCon.HasPrevious}" rerender="{!rerender}" status="{!status}" styleClass="prevNext"><img class="prev" alt="Previous" title="Previous" src="/s.gif"/> Previous</apex:commandLink>
+            <apex:commandLink action="{!setCon.next}" rendered="{!setCon.HasNext}" rerender="{!rerender}" status="{!status}" styleClass="prevNext">Next <img class="next" alt="Next" title="Next" src="/s.gif"/></apex:commandLink>
+            <apex:commandLink action="{!setCon.last}" rendered="{!setCon.HasNext}" rerender="{!rerender}" status="{!status}" styleClass="prevNext"><img class="last" alt="Last Page" title="Last Page" src="/s.gif"/></apex:commandLink>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:component>

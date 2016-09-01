@@ -1,0 +1,607 @@
+<apex:page id="page" standardController="project_cloud__Project_Task__c" extensions="project_cloud.ProjectTaskResourcesGridExtension,project_cloud.TokenInputHelper,project_cloud.SubscriptionsLoad,project_cloud.BetaHelper" title="Resource Assignments - {!project_cloud__Project_Task__c.Name}"
+        action="{!IF(Project_Task__c.Project_Phase__r.Project__r.IsOnly_Subscriptions__c, URLFOR($Page.project_task_subscriptions, Project_Task__c.Id, [id=Project_Task__c.Id, retURL=$CurrentPage.parameters.retURL]), null)}">
+        <!--
+        Verify the flag "Only Subscriptions" on the Project record. If it has
+        been checked, this page is should not be used, the Project Task
+        Subscriptions page should be used for resourcing. Redirect the user there
+        -->
+    <apex:stylesheet value="{!URLFOR($Resource.project_cloud__ccprojex_customui,'/pulse/font-awesome/css/font-awesome.css')}" />
+    <style type="text/css">
+        .tooltip-target {
+            cursor: pointer;
+        }
+        .tooltip-content {
+            display: none;
+        }
+        .qtip-content > div > ul {
+            margin: 0;
+            padding: 0;
+        }
+        .qtip-content > div > ul > li {
+            padding: 0;
+            margin: 0;
+        }
+        
+        input.remoting-loading {
+            background-image: url('/img/loading.gif');
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        
+        div.saving-state{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            float:right;
+            background-image: url('/img/loading.gif');
+            background-position: center center;
+            background-repeat: no-repeat;   
+            display: none;  
+        }
+
+        .hidden-column {
+            display: none;
+        }
+
+        .allocation-cell {
+            min-width: 60px;
+        }
+
+        tbody td.resouces-table-col-sat,
+        tbody td.resouces-table-col-sun {
+            background-color: rgba(0,0,0,0.05) !important;
+            /*background-color: #E3E3D7 !important;*/
+        }
+        .resouces-allocations-disabled input {
+            background-color: #EEE;
+            border: 1px solid #CCC;
+        }
+        .resouces-allocations-disabled label {
+            color: #AAA;
+        }
+
+        .allocation-cell input {
+            width: 35px;
+        }
+        .allocation-cell label {
+            color: #999;
+        }
+        .allocation-cell:hover label.tooltip-target {
+            color: #000;
+        }
+
+        .helpOrbCustom {
+            background-image: url("/img/help/helpOrbs.gif");
+            background-position: 0 0;
+            height: 15px;
+            vertical-align: middle;
+            width: 20px;
+        }
+        .helpOrbCustom:hover {
+            background-position: right top;
+        }
+
+        #page\:form\:block\:subscribedSection .labelCol {
+            width: 15%;
+        }
+        #page\:form\:block\:subscribedSection .dataCol {
+            width: 10%;
+        }
+
+        .bPageBlock table.list {
+            table-layout: fixed;
+        }
+        
+
+    </style>
+    <style>
+        .total-hours{
+            /*color: #ccc;*/
+            color: white;
+            font-size: 10px;
+        }
+        
+        .hours-input{
+             width: 30px;
+             box-sizing: border-box;
+             /*border: 1px solid #ccc;*/
+             border: 1px solid #eee;
+             padding: 2px;
+             font-size: 11px;
+             outline: none;
+             color: #555;
+        }
+        
+        .hours-input.filtered, .hours-input.changed{
+            border-color: #77D4F1;
+        }
+        
+        #grid_filter, #grid_length, #filteredgrid_filter, #filteredgrid_length{
+            margin-bottom: 10px;
+        }
+        #grid td, #filteredgrid td{
+            padding: 4px 6px;
+            vertical-align: middle; 
+        }
+        #grid tr.even,#filteredgrid tr.even{
+            background: #D4FFEC; 
+        }
+        #grid tbody > tr:hover, #grid tbody > tr:hover > td{
+            background: rgb(227, 243, 255);
+        }
+        #grid tr:hover > td{
+            background: none;
+        }
+        
+        #grid tr.filtered{
+            background: #77CEF8; /*#D7F5FF;*/
+        }
+        
+        #grid tr.allocated{
+            background: #60E1A8; /*#D4FFEC;*/
+        }
+        
+        #grid tr:hover .total-hours{
+        	color: #ccc;
+        }
+        
+    	#saved-notification, #failed-notification{
+    		background: #555; color: white; padding: 16px 30px; position: fixed; bottom: 15px; right: 15px; font-size: 16px; z-index: 5000;
+    		display: none;
+    	}
+    	
+    	#saved-notification > i, #failed-notification > i{
+    		font-size: 16px; margin-right: 15px;
+    	}
+    </style>
+    <c:walkme />
+    <c:include_jquery declareEsc="true" noConflict="true" />
+    <apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.css')}" />
+    <script>
+        var toSave = {};
+        var NS = '{!namespace}';
+        
+        function enqueueToSave(obj){
+            if(toSave[obj.attr('data-userid')] == undefined){
+                toSave[obj.attr('data-userid')] = {}
+            }
+            if(obj.attr('data-type') == 'allocation'){
+                toSave[obj.attr('data-userid')][obj.attr('data-date')] = { Id : obj.attr('data-id'), hours : (obj.val().trim() == '' ? '0' : obj.val()) }
+                obj.addClass('changed');
+            }else{
+                toSave[obj.attr('data-userid')]['subscription'] = { Id : obj.attr('data-id'), subscribed : obj.is(':checked') }
+                obj.addClass('changed');
+            }
+        }
+        
+        function SaveGrid(){
+            j$('div.saving-state').show();
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ProjectTaskResourcesGridExtension.SaveGrid}',
+                '{!project_cloud__Project_Task__c.Id}', toSave, j$("#capabilities-filter").val(),
+                function(result, event){
+                    if(event.status){
+                        DrawGrid();
+                        j$('#saved-notification').fadeIn();
+                        setTimeout(function(){ j$('#saved-notification').fadeOut();}, 2000);
+                    }else{
+                        j$('#failed-notification').fadeIn();
+                        setTimeout(function(){ j$('#failed-notification').fadeOut();}, 2000);
+                    }
+                    j$('div.saving-state').hide();
+                    RecalculateHours();
+                }
+            );
+        }
+        
+        function changeFilter(capabilities, people){
+        	InitFilterGrid(capabilities, people);
+            if(capabilities != '' || people != ''){
+                
+            }else{
+                j$('input.remoting-loading').removeClass('remoting-loading');
+            }
+            
+        }
+        
+        var userIds = [];
+        var gridOffset = {!direction};
+        var COLUMN_COUNT = {!columnCount};
+        
+        function GridMove(value){
+            if(gridOffset == -9999 || gridOffset == 9999 || gridOffset == 0){
+                gridOffset = value;
+            }else{
+                gridOffset += value;
+            }
+            SaveGrid();
+        }
+        function htmlDecode(value){
+            return j$('<div/>').html(value).text();
+        }
+        
+        function DrawGrid(clear){
+            if(clear == undefined){
+                clear = true;
+            }
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.ProjectTaskResourcesGridExtension.ResourceGridGenerate}',
+                '{!project_cloud__Project_Task__c.Id}', gridOffset, j$("#capabilities-filter").val(), j$("#people-filter").val(),
+                function(result, event){
+                    var t = j$('#grid').DataTable();
+                    if(clear){
+                        toSave = {};
+                        userIds = {};
+                        t.clear();
+                        for(var i = 2; i < result.columns.length; i++){
+                            var th = result.columns[i].title + '';
+                            th = htmlDecode(th);
+                            j$('.table-header.col' + i).html(th);
+                        }
+                    }
+                    
+                    var rows = [];
+                    for(var i = 0; i < result.resources.length; i++){
+                        var row = CreateRow(result.resources[i], false);
+                        if(row != null){
+                            rows[rows.length] = row;
+                        }
+                    }
+                    var filteredRows = []
+                    for(var i = 0; i < result.filtered.length; i++){
+                        var row = CreateRow(result.filtered[i], true);
+                        if(row != null){
+                            filteredRows[filteredRows.length] = row;
+                        }
+                    }
+                    t.rows.add(rows).draw().nodes().to$().addClass('allocated');
+                    if(filteredRows.length > 0){
+                        t.rows.add(filteredRows).draw().nodes().to$().addClass('filtered');
+                    }
+                    j$('input.remoting-loading').removeClass('remoting-loading');
+                }
+            );
+        }
+        
+        function CreateRow(row){
+            if(userIds[row.owner.Id] != true){
+                
+                var rowObj = [];
+                rowObj[0] = '<div style="width: 100%; height: 100%; box-sizing: border-box;">' + (row.isOwnerTeam ? '<i class="icon-group" style="float: right;"></i>' : '') + '<a href="/' + row.owner.Id + '" target="_blank" style="display: block; min-width: 150px;">' + row.owner.Name + '</a></div>';
+                rowObj[1] = '<input type="checkbox" onchange="enqueueToSave(j$(this));" data-type="subscription" data-userid="' + row.owner.Id + '" data-id="' + (row.subscription.Id != undefined ? row.subscription.Id : '') + '" ' + (row.subscription.Id != undefined ? 'CHECKED' : '') + ' />';
+                if(!row.isOwnerTeam){
+                    for(var z = 0; z < row.cells.length; z++){
+                        rowObj[rowObj.length] = '<div class="tooltip-target" data-uid="' + row.owner.Id + '" data-date="' + row.cells[z].allocation[NS + 'Date__c'] + '"><input class="hours-input" type="text" onchange="enqueueToSave(j$(this));" data-type="allocation" data-id="' + (row.cells[z].allocation.Id != undefined ? row.cells[z].allocation.Id : '') + '" data-userid="' + row.cells[z].allocation.OwnerId + '" data-date="' + row.cells[z].allocation[NS + 'Date__c'] + '" value="' + (row.cells[z].allocation[NS + 'Hours__c'] != undefined ? row.cells[z].allocation[NS + 'Hours__c'] : '') + '" />&nbsp;<span class="total-hours">' + row.cells[z].total + '</span></div>';
+                    }
+                }else{
+                    for(var z = 0; z < 7; z++){
+                        rowObj[rowObj.length] = '';
+                    }
+                }
+                userIds[row.owner.Id] = true;
+                return rowObj;
+            }
+            return null;
+        }
+        
+        function InitFilterGrid(capabilities, people){
+            DrawGrid(true);
+        }
+        
+        j$(document).ready(function(){
+            DrawGrid(true);
+            j$("#saving-state").addClass("remoting-loading");
+            
+        });
+    </script>
+    <apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/tokeninput/token-input-mac.css')}" />
+
+    
+
+
+    <c:tree projectId="{!project_cloud__Project_Task__c.Project_Phase__r.project_cloud__Project__c}" workableId="{!project_cloud__Project_Task__c.Id}" />
+
+    <apex:sectionHeader title="{!project_cloud__Project_Task__c.Name}" subtitle="Resource Assignments" />
+    <apex:outputPanel rendered="{!isBeta}">
+        <apex:outputPanel rendered="{!NOT(isBetaWithConfirm)}">
+            <script>
+                window.location.href = '{!$Page.project_cloud__resourcing}?id={!project_cloud__Project_Task__c.Id}#/allocations/{!project_cloud__Project_Task__c.Id}';
+            </script>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!isBetaWithConfirm}">
+            <apex:pageMessage summary="Resourcing Beta" severity="warning" strength="3" escape="false">You have specified that you still wish to access the old resourcing pages.<br />To access the new resourcing pages, please click <a href='{!$Page.resourcing}?id={!project_cloud__Project_Task__c.Id}#/allocations/{!project_cloud__Project_Task__c.Id}'>here</a></apex:pageMessage>
+        </apex:outputPanel>
+    </apex:outputPanel>
+    <chatter:feedWithFollowers entityId="{!project_cloud__Project_Task__c.Id}" />
+
+    <apex:pageMessages id="messages" />
+	<div id="saved-notification" style=""><i class="icon-check-sign"></i>Saved</div>
+	<div id="failed-notification" style=""><i class="icon-remove-sign"></i>Save Failed</div>
+    <apex:form id="form">
+        <apex:actionFunction name="RecalculateHours" action="{!refreshTaskInformation}" rerender="subscribedSection" />
+        
+        <apex:pageBlock id="block">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}" oncomplete="SaveGrid(); return true;" rerender="messages" />
+                <apex:commandButton value="Cancel" onclick="DrawGrid(true); return false;" />
+                <div class="saving-state"></div>
+                <div style="display: inline-block; line-height: 20px; vertical-align: middle;">
+                    &nbsp;<span style="font-weight: bold;">Save &amp; Jump to:</span>
+                    &nbsp;
+                    <!-- <a href="#" onclick="GridMove(-9999); return false;">Project Task Start</a>&nbsp;|&nbsp;-->
+                    <a href="#" onclick="GridMove(-{!columnCount}); return false;">Previous</a>&nbsp;|&nbsp;
+                    <!-- <a href="#" onclick="GridMove(0); return false;">Today</a>&nbsp;|&nbsp;-->
+                    <a href="#" onclick="GridMove({!columnCount}); return false;">Next</a><!-- &nbsp;|&nbsp;
+                    <a href="#" onclick="GridMove(9999); return false;">Project Task End</a>-->
+                </div>
+                <!-- 
+                <apex:commandLink value="Today" action="{!saveAndChangeDates}" rerender="allocatedFilteredPanel" status="allocatedFilteredStatus">
+                    <apex:param name="direction" value="0" assignTo="{!direction}" />
+                </apex:commandLink>&nbsp;|&nbsp;
+                <apex:commandLink value="Next" action="{!saveAndChangeDates}" rerender="allocatedFilteredPanel" status="allocatedFilteredStatus">
+                    <apex:param name="direction" value="{!columnCount}" assignTo="{!direction}" />
+                </apex:commandLink>&nbsp;|&nbsp;
+                <apex:commandLink value="Project Task End" action="{!saveAndChangeDates}" rerender="allocatedFilteredPanel" status="allocatedFilteredStatus">
+                    <apex:param name="direction" value="9999" assignTo="{!direction}" />
+                </apex:commandLink>
+                -->
+            </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem id="workTypeItem">
+                    <apex:outputLabel value="{!project_cloud__Project_Task__c.Name} Capabilities" />
+                    <apex:outputPanel id="capabilitiesPanel">
+                        <input type="text" id="capabilities-filter" style="display: none;" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="personItem">
+                    <apex:outputLabel >
+                        Search by People or Project Teams
+                        <a href="#" id="clear-people-filter">[clear]</a>
+                    </apex:outputLabel>
+                    <apex:outputPanel id="personPanel">
+                        <input type="text" id="people-filter" style="display: none;" />
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="subscribedSection" columns="4">
+                <apex:inputField value="{!project_cloud__Project_Task__c.project_cloud__Subscribed__c}" />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.project_cloud__Project_Task__c.fields.project_cloud__Allocated_Hours__c.label} / {!$ObjectType.project_cloud__Project_Task__c.fields.project_cloud__Estimated_Hours__c.label}" />
+                    <apex:outputText value="{!taskInformation.project_cloud__Allocated_Hours__c} / {!taskInformation.project_cloud__Estimated_Hours__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.project_cloud__Project_Phase__c.fields.project_cloud__Subscribed__c.inlineHelpText}">
+                    <apex:outputLabel for="phaseSubscribed" value="{!taskInformation.Project_Phase__r.Name} {!$ObjectType.project_cloud__Project_Phase__c.fields.project_cloud__Subscribed__c.label}" />
+                    <apex:outputField id="phaseSubscribed" value="{!taskInformation.Project_Phase__r.project_cloud__Subscribed__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem helpText="{!$ObjectType.project_cloud__Project__c.fields.project_cloud__Subscribed__c.inlineHelpText}">
+                    <apex:outputLabel for="projectSubscribed" value="{!taskInformation.Project_Phase__r.Project__r.Name} {!$ObjectType.project_cloud__Project__c.fields.project_cloud__Subscribed__c.label}" />
+                    <apex:outputField id="projectSubscribed" value="{!taskInformation.Project_Phase__r.Project__r.project_cloud__Subscribed__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >&nbsp;</apex:pageBlockSection>
+            <c:grid columns="{!columnHeaders}" data="[]" name="grid" />
+        </apex:pageBlock>
+    </apex:form>
+
+    <script type="text/javascript" src="{!URLFOR($Resource.jquery_plugins_zip, '/qtip/jquery.qtip.js')}"></script>
+    <script type="text/javascript" src="{!URLFOR($Resource.jquery_plugins_zip, '/tokeninput/jquery.tokeninput.js')}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+
+            function onAddDeleteChangeFilter(item) {
+                $("#token-input-" + $(this).prop("id")).addClass("remoting-loading");
+                changeFilter($("#capabilities-filter").val(), $("#people-filter").val());
+                return true;
+            }
+
+            var tokenOptions = {
+                //rest of the tokenInput options
+                theme: "mac",
+                preventDuplicates: true,
+                onAdd: onAddDeleteChangeFilter,
+                onDelete: onAddDeleteChangeFilter
+            }
+            $("#people-filter").tokenInput(function(query, tokenInputResultsHandler) {
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.TokenInputHelper.getTokens}', query, { user: null, team: null }, function(result, event) {
+                    if (event.status) {
+                        tokenInputResultsHandler(query, result);
+                    } else if (event.type === 'exception') {
+                        alert(event.message);
+                    }
+                });
+            }, tokenOptions);
+
+            tokenOptions.prePopulate = {!existingCapabilitiesJson};
+            $("#capabilities-filter").tokenInput(function(query, tokenInputResultsHandler) {
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.TokenInputHelper.getTokens}', query, { work_type: null }, function(result, event) {
+                    if (event.status) {
+                        tokenInputResultsHandler(query, result);
+                    } else if (event.type === 'exception') {
+                        alert(event.message);
+                    }
+                });
+            }, tokenOptions);
+
+
+            //attach to the clear anchor
+            $("#clear-people-filter").click(function(event, ui) {
+                //clear the list but override the onDelete action so the ajax is not called multiple times
+                $("#people-filter").tokenInput("clear", {onDelete: null});
+                //call the ajax only once
+                onAddDeleteChangeFilter();
+            });
+
+/*
+            //delegate creation of the tooltip until mouseover
+            esc$("{!$Component.page.form.block}").on("mouseover", ".tooltip-target", function(event) {
+                // Bind the qTip within the event handler
+                $(this).qtip({
+                    overwrite: false, // Make sure the tooltip won't be overridden once created
+                    content: $(this).next(".tooltip-content").contents(),
+                    position: {
+                        my: "bottom left",
+                        at: "top center",
+                        container: esc$("{!$Component.page.form}")
+                    },
+                    show: {
+                        event: event.type, // Use the same show event as the one that triggered the event handler
+                        ready: true // Show the tooltip as soon as it's bound, vital so it shows up the first time you hover!
+                    },
+                    hide: {
+                        fixed: true,
+                        delay: 250
+                    },
+                    style: {
+                        classes: 'ui-tooltip-light ui-tooltip-rounded ui-tooltip-shadow'
+                    }
+                }, event); // Pass through the original event to qTip
+            });
+*/
+        });
+        </script>
+        <script>
+
+        //used by the timezone parser
+        if(typeof Date.prototype.toSFDCRemotingDateFormat === "undefined") {
+            Date.prototype.toSFDCRemotingDateFormat = function() {
+                //Apex Dates are all stored as GMT, hence no timezone offset being required
+                return DateUtil.formatDate(this, "E, d NNN yyyy") + " 00:00:00 GMT";
+            }
+        }
+
+        //used by the timezone parser
+        if(typeof Date.prototype.toSFDCRemotingDatetimeFormat === "undefined") {
+            Date.prototype.toSFDCRemotingDatetimeFormat = function() {
+                var offset = this.getTimezoneOffset();
+                // Note the reversed sign!
+                offset = (offset < 0? '+' : '-') +
+                        parseInt(Math.abs(offset / 60)).lpad(2) +
+                        Math.abs(offset % 60).lpad(2);
+                return DateUtil.formatDate(this, "E, d NNN yyyy HH:mm:ss") + " " + offset;
+            }
+        }
+        
+        j$(document).ready(function($) {
+        
+            var columnInterval = 'WEEK'; //esc$("{!$Component.page.form.block.buttons.filterDay}");
+
+            //delegate creation of the tooltip until mouseover
+            $('html').on("mouseover", "td > div.tooltip-target", function(mouseoverEvent) {
+                var self = $(this);
+                var userId = self.data('uid');
+                var startDate = self.data('date');
+                startDate = new Date(startDate);
+                startDate.setTime(startDate.getTime() + startDate.getTimezoneOffset()*60*1000 );
+                // Bind the qTip within the event handler
+                self.qtip({
+                    overwrite: false, // Make sure the tooltip won't be overridden once created
+                    content: function(qtipContentEvent, qtipApi) {
+                        var columnNumber = parseInt(self.attr('data-columnid'));
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.SubscriptionsLoad.getMouseoverDetails}', userId, startDate.toSFDCRemotingDateFormat(), 'DAY', function(loadCellDetail, remotingEvent) {
+                            if (remotingEvent.status) {
+                                var wrapper = $("<div/>");
+                                var allocations = $("<ul/>");
+                                var events = $("<ul/>");
+                                if(loadCellDetail.hours > 0) {
+                                    var hours;
+                                    var appendBr = false;
+                                    if(loadCellDetail.subscriptions.length > 0) {
+                                        var subscriptions = $("<ul/>");
+                                        var subscription;
+                                        for(var i = 0, len = loadCellDetail.subscriptions.length; i < len; i++) {
+                                            subscription = loadCellDetail.subscriptions[i];
+                                            hours = subscription.hoursPerDay * subscription.range.numberOfWorkingDays;
+                                            hours = Math.round(hours * 100) / 100;
+                                            subscriptions.append($("<li>" + subscription.task[NS + 'Project_Phase__r'][NS + 'Project__r'].Name + ": " + subscription.task.Name + ": " + hours + " hours</li>"));
+                                            appendBr = true;
+                                        }
+                                        wrapper.append(subscriptions);
+                                        if(appendBr) {
+                                            wrapper.append("<br/>");
+                                            appendBr = false;
+                                        }
+                                    }
+                                    if(loadCellDetail.allocations.length > 0) {
+                                        var allocations = $("<ul/>");
+                                        var allocation;
+                                        for(var i = 0, len = loadCellDetail.allocations.length; i < len; i++) {
+                                            allocation = loadCellDetail.allocations[i];
+                                            allocations.append($("<li>" + allocation[NS + 'Project_Task__r'][NS + 'Project_Phase__r'][NS + 'Project__r'].Name + ": " + allocation[NS + 'Project_Task__r'].Name + ": " + allocation[NS + 'Hours__c'] + " hours</li>"));
+                                            appendBr = true;
+                                        }
+                                        wrapper.append(allocations);
+                                        if(appendBr) {
+                                            wrapper.append("<br/>");
+                                            appendBr = false;
+                                        }
+                                    }
+                                    if(loadCellDetail.tickets.length > 0) {
+                                        var tickets = $("<ul/>");
+                                        var ticket;
+                                        for(var i = 0, len = loadCellDetail.tickets.length; i < len; i++) {
+                                            ticket = loadCellDetail.tickets[i];
+                                            tickets.append($("<li>" + ticket.Name + ": " + ticket[NS + 'Ticket_Name__c'] + ": " + ticket[NS + 'Estimated_Hours__c'] + " hours</li>"));
+                                            appendBr = true;
+                                        }
+                                        wrapper.append(tickets);
+                                        if(appendBr) {
+                                            wrapper.append("<br/>");
+                                            appendBr = false;
+                                        }
+                                    }
+                                    if(loadCellDetail.events.length > 0) {
+                                        var events = $("<ul/>");
+                                        var event;
+                                        var title;
+                                        for(var i = 0, len = loadCellDetail.events.length; i < len; i++) {
+                                            event = loadCellDetail.events[i];
+                                            title = event.Subject;
+                                            if(typeof event.WhatId !== "undefined") {
+                                                title += " (" + event.What.Name + ")";
+                                            }
+                                            if(event.IsAllDayEvent) {
+                                                title += " All Day";
+                                            } else {
+                                                hours = event.DurationInMinutes / 60;
+                                                hours = Math.round(hours * 100) / 100;
+                                                title += hours + " hours";
+                                            }
+                                            events.append($("<li>" + title + "</li>"));
+                                        }
+                                        wrapper.append(events);
+                                    }
+                                    qtipApi.set('content.text', wrapper);
+                                } else {
+                                    qtipApi.set('content.text', 'Nothing Resourced Today');
+                                }
+                            } else if (remotingEvent.type === 'exception') {
+                                qtipApi.set('content.text', remotingEvent.message);
+                            }
+                        });
+                        // Set the intital content as the loading icon
+                        return '<apex:image value="/img/loading.gif" alt="Loading..." />';
+                    },
+                    position: {
+                        at: "bottom left",
+                        viewport: $(window),
+                        container: esc$("{!$Component.page.form}")
+                    },
+                    show: {
+                        event: mouseoverEvent.type, // Use the same show event as the one that triggered the event handler
+                        delay: 400,
+                        ready: true // Show the tooltip as soon as it's bound, vital so it shows up the first time you hover!
+                    },
+                    hide: {
+                        fixed: true,
+                        delay: 300
+                    },
+                    style: {
+                        classes: 'ui-tooltip-light ui-tooltip-rounded ui-tooltip-shadow'
+                    }
+                }, mouseoverEvent); // Pass through the original event to qTip
+            });
+
+        });
+    </script>
+</apex:page>

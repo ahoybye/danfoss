@@ -1,0 +1,98 @@
+<apex:page standardController="project_cloud__Project__c" extensions="project_cloud.ProjectTabGanttExtension" title="{!project_cloud__Project__c.Name} - Gantt Chart">
+
+	<c:walkme />
+	<c:include_jquery />
+	<script src="{!URLFOR($Resource.jquery_plugins_zip, '/colorbox/jquery.colorbox.js')}"></script>
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/colorbox.css')}" />
+
+	<c:tree projectId="{!project_cloud__Project__c.Id}" />
+	<c:tree2 workableId="{!project_cloud__Project__c.Id}" />
+	<apex:sectionHeader title="{!project_cloud__Project__c.Name}" subtitle="Gantt Chart" />
+
+	<apex:outputText value="{!project_cloud__Project__c.project_cloud__Start__c}" rendered="false" />
+	<apex:outputText value="{!project_cloud__Project__c.project_cloud__End__c}" rendered="false" />
+
+	<script type="text/javascript">
+		var popupcontent = '<div style="display:none;text-align:center; align:center;width:100%;">Progress of task has now been updated<br /><br /><button>OK</button></div>';
+	</script>
+	<apex:form >
+		<apex:actionFunction name="CreateDependency" action="{!createDependency}" status="saveStatus" rerender="depPanel" oncomplete="window.location=window.location">
+			<apex:param name="from" assignTo="{!dependencyFromId}" value="" />
+			<apex:param name="to" assignTo="{!dependencyToId}" value="" />
+		</apex:actionFunction>
+		<!-- 
+		<apex:actionFunction name="PreDeleteDependency" rerender="depPanel" action="{!preDeleteDependency}" oncomplete="">
+			<apex:param name="from" assignTo="{!dependencyFromId}" value="" />
+			<apex:param name="to" assignTo="{!dependencyToId}" value="" />
+			<apex:param name="dependencyId" assignTo="{!dependencyToDeleteId}" value="" />
+		</apex:actionFunction>
+		-->
+		<apex:actionFunction name="DeleteDependency" action="{!deleteDependency}" rerender="" oncomplete="setTimeout(function() { window.location.href = window.location.href; }, 200); return false;">
+			<apex:param name="dependencyId" assignTo="{!dependencyToDeleteId}" value="" />
+		</apex:actionFunction>
+		<apex:actionFunction name="UpdateProgress" action="{!updateProgress}"  status="saveStatus" rerender="" oncomplete="return false;">
+			<apex:param name="taskId" assignTo="{!taskId}" value="" />
+			<apex:param name="progress" assignTo="{!progress}" value="0" />
+		</apex:actionFunction>
+		<!-- <apex:actionStatus id="counterStatus" onstart="jQuery.colorbox({inline:true, href:'#popupcontent', width:'300px', height: '130px', open:true, transition: 'elastic', speed: 300, title: '', opacity: 0.4});jQuery('#popupcontent').css('display','block');" onstop="jQuery.colorbox.close();" /> -->
+		<apex:actionStatus id="saveStatus" onstart="$('#ccprojex__saving').fadeIn('fast');" onstop="$('#ccprojex__saving').fadeOut('fast');" />
+	</apex:form>
+	<script>
+		
+	</script>
+	<div id="ccprojex__saving" style="position: fixed;bottom: 10px;right: 10px; z-index: 6000; background: #e5e5e5; border: #c5c5c5; padding: 10px 30px; border-radius: 5px; display: none;">Saving</div>
+	<apex:outputText id="dummyfield" value="" style="display:none;" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/colorbox.css')}" />
+
+	
+
+	<apex:pageMessages id="messages" />
+	<apex:pageMessage summary="No gantt chart could be found." severity="warning" rendered="{!gantt.phasesTasksJson == null || gantt.phasesTasksJson == ''}" />
+	<script>
+		var dependencyToDeleteId = '';
+		function PreDeleteDependency(from, to, id){
+			dependencyToDeleteId = id;
+			$.colorbox({inline:true, href:'#dependencydeleteconfirm', width:'600px', height: '150px', open:true, speed: 500, title: '', opacity: 0.4});
+			jQuery('#dependencydeleteconfirm').css('display','block');
+		}
+	</script>
+	<div id="dependencyconfirm" style="display: none; text-align: center; align: center; width: 100%;">
+		<apex:form >
+			<apex:outputText value="Dependency saved would you like to reload the gantt chart to reflect the changes?" />
+			<br />
+			<br />
+			<apex:commandButton value="Yes" onclick="window.location=window.location" id="ReloadPageButton" style="min-width: 60px;" />
+			<apex:commandButton value="No" onclick="jQuery.colorbox.close();" id="NoReload" style="min-width: 60px;" />
+			<apex:outputPanel id="depPanel" style="text-align:center; align:center;width:100%;">
+			</apex:outputPanel>
+		</apex:form>
+	</div>
+	<div id="dependencydeleteconfirm" style="display: none; text-align: center; align: center; width: 100%;">
+	<apex:form >
+		<apex:outputText value="Are you sure you would like to delete this dependency?" />
+		<br />
+		<br />
+		<apex:commandButton value="Yes" onclick="DeleteDependency(dependencyToDeleteId); return false;" style="min-width: 60px;" />
+		<!-- <apex:commandButton value="Yes" action="{!deleteDependency}" style="min-width: 60px;" /> -->
+		<apex:commandButton value="No" onclick="jQuery.colorbox.close(); return false;" style="min-width: 60px;" />
+	</apex:form></div>
+	<div id="popupcontent" style="display: none; text-align: center; align: center; width: 100%;">
+		<apex:image value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip,'/colorbox/images/loading.gif')}" />
+		<apex:image value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip,'/colorbox/images/saving.png')}" />
+	</div>
+	<apex:pageBlock rendered="{!gantt.phasesTasksJson != null && gantt.phasesTasksJson != ''}">
+		<apex:outputPanel layout="block" id="ganttBlock">
+			<c:gantt value="{!gantt}" includeScripts="true" isPublic="false" />
+			<div id="gantt_div"></div>
+		</apex:outputPanel>
+	</apex:pageBlock>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(document).bind('cbox_closed', function(){
+				$('#dependencyconfirm').css('display','none');
+				$('#dependencydeleteconfirm').css('display','none');
+				$('#popupcontent').css('display','none');
+			});
+		});
+	</script>
+</apex:page>

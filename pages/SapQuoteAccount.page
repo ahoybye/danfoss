@@ -1,0 +1,24 @@
+<apex:page standardController="Account" extensions="SapQuoteAccountExtension" showHeader="false" action="{!init}">  
+    <apex:form id="form">
+        <apex:pageMessages />
+        <apex:pageBlock title="Select SAP Account">
+            <apex:pageblockTable value="{!Div}" var="s">
+                <apex:column >
+                    <apex:commandlink value="Create Quote" action="{!CreateQuote}" rerender="form" status="fetchStatus">
+                        <apex:param name="vID" value="{!s.Id}" assignTo="{!selectedDD}"/>
+                    </apex:commandlink>
+                </apex:column>
+                <apex:repeat value="{!$ObjectType.Sub_Account__c.FieldSets.SapQuoteFields}" var="field">
+                    <apex:column value="{!s[field.FieldPath]}"/>
+                </apex:repeat>
+            </apex:pageblockTable>
+            <apex:panelGrid columns="3">
+                <c:PrevNextLinks setCon="{!setCon}" rerender="form" status="fetchStatus"/>
+                <c:PageNumber setCon="{!setCon}"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

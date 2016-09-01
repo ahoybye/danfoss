@@ -1,0 +1,648 @@
+<apex:page controller="Oppty30Controller" action="{!initOppty20}" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en"> 
+<head>
+  <meta charset="utf-8" />
+  <title>My Pipeline Dashboard</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <apex:stylesheet value="{!URLFOR($Resource.SLDS0203, 'assets/styles/salesforce-lightning-design-system.min.css')}" />        
+   <script src="{!$Resource.jquery_js_310}" />
+  <style>
+    .helpClass {
+        margin-left:5px;
+        vertical-align: middle;
+    }
+    
+    .lookupClass {
+        margin-left:5px;
+        width:20px;
+        height:20px;
+        vertical-align: middle;
+        background:url(/img/func_icons/util/lookup20.gif) 0 0;
+    }
+    
+    #segment_picklist, #region_picklist, #country_picklist {
+        z-index: 1001;
+        visibility: hidden;
+        position: fixed;
+        width: 170px;
+        height: 170px;
+        border: 1px solid #000;
+        background-color: #fff;
+        overflow-y: auto;
+    }   
+    
+    .slds-box--xx-small {
+        padding: .20rem;
+        font-weight: normal;
+    }
+    
+    th, td {
+        text-align:right;
+        font-weight: bold;
+    }
+    
+    .slds-strong-text {
+        text-align:right;
+        font-weight: bold;
+    }
+    
+    .slds-table td, .slds-table th {
+        padding: 0.25rem;        
+    }
+    
+    .slds-align-left td {
+        text-align:left;
+        padding: 0.15rem;
+    }
+    
+    </style>
+         
+</head>
+<body>
+<apex:form id="frmMain">
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div>
+	
+    <!-- MASTHEAD -->
+    <!--
+    <p class="slds-text-heading--label slds-m-bottom--small">My Pipeline</p>
+    -->
+    <!-- / MASTHEAD -->
+
+<!-- PAGE HEADER -->
+<div class="slds-page-header" role="banner">
+  <!--
+    <div class="slds-grid">
+    <div class="slds-col slds-has-flexi-truncate"> 
+      
+      <p class="slds-text-heading--label">Dashboard</p>
+      <h1 class="slds-page-header__title slds-truncate" title="My Pipieline">My Pipeline</h1>
+      
+    </div>    
+  </div>-->
+  
+  <div class="slds-grid slds-wrap slds-grid--pull-padded" style="background-color:#EEEEEE">               
+        <div class="slds-col--padded slds-size--1-of-1">               
+        <apex:outputPanel id="thePanel" rendered="{!$Permission.MyPipelineUseViewAs}">                                              
+        <apex:inputHidden value="{!runningUserId}" id="selectedUserId"/>
+        <div class="slds-form-element slds-lookup slds-is-open slds-size--1-of-2  slds-medium-size--1-of-3 slds-large-size--1-of-4" data-select="single" data-scope="single">
+          <label class="slds-form-element__label" for="lookup-user">View As:</label>
+          <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">            
+            <svg aria-hidden="true" class="slds-input__icon slds-icon-text-default">
+              <use xlink:href="{!URLFOR($Resource.SLDS0203, '/assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+              
+            </svg>
+              <div class="slds-text-body--small" style='font-size:9px'>&nbsp;Type to search for a user, * is wildcard</div>
+              <input id="lookup-user" class="slds-lookup__search-input slds-input" type="text" aria-autocomplete="list" onkeyup="getRemoteUsers()" role="combobox" aria-expanded="true" aria-activedescendant="" placeholder="{!runningUserName}" />              
+          </div>
+          <div class="slds-lookup__menu slds-hidden" role="listbox" id="searchResultBox">            
+            <ul class="slds-lookup__list" role="presentation" id="searchResults">                            
+            </ul>           
+          </div>
+        </div>
+        </apex:outputPanel>      
+        </div>
+         
+        </div>
+              
+        <div class="slds-grid slds-wrap slds-grid--pull-padded" style="background-color:#EEEEEE">
+        <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-7">
+                        
+                <label class="slds-form-element__label" for="lookup-user">Team:</label><br/>
+                <div class="slds-form-element__control">
+                        &nbsp;<apex:selectList size="1" value="{!selectedTeamMember}" Label="Team">
+                            <apex:selectOptions value="{!teamOptions}"/>                        
+                        </apex:selectList>
+              </div>
+        </div>
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-7">
+                        <label class="slds-form-element__label" for="lookup-user">Segment:</label><br/>
+                        <apex:outputText style="background-color: #d9d9d9;" id="segment_lookup" value="{!selectedSegments.size} selected" Label="Segment:" />
+                        <apex:image onclick="picklistOpen('{!$Component.segment_lookup}', '#segment_picklist')" styleClass="lookupClass" value="/s.gif"/>                                
+        </div>
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-7">
+                        <label class="slds-form-element__label" for="lookup-user">Region:</label><br/>
+                        <apex:outputText style="background-color: #d9d9d9;" id="region_lookup" value="{!selectedRegions.size} selected" Label="Region:"/>
+                        <apex:image onclick="picklistOpen('{!$Component.region_lookup}', '#region_picklist')" styleClass="lookupClass" value="/s.gif"/>
+        </div>
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-7">
+                        <label class="slds-form-element__label" for="lookup-user">Country:</label><br/>
+                        <apex:outputText style="background-color: #d9d9d9;" id="country_lookup" value="{!selectedCountries.size} selected"  Label="Country:"/>
+                        <apex:image onclick="picklistOpen('{!$Component.country_lookup}', '#country_picklist')" styleClass="lookupClass" value="/s.gif"/>
+        </div>
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-7">
+                            <label class="slds-form-element__label" for="lookup-user">Time Period:</label><br/>
+                        <apex:selectList size="1" value="{!selectedTime}">
+                            <apex:selectOptions value="{!timeOptions}"/>
+                        </apex:selectList>
+        </div>
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-7">
+                        <label class="slds-form-element__label" for="lookup-user">Currency:</label><br/>
+                        <apex:selectList size="1" value="{!selectedCurrency}">
+                            <apex:selectOptions value="{!currencyOptions}"/>
+                        </apex:selectList>
+        </div>
+        <div class="slds-col--padded slds-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-7" style="vertical-align:bottom">
+              <apex:commandButton styleClass="slds-button slds-button--neutral" action="{!loadData}" title="Refresh" value="Refresh"/>
+        </div>
+        
+        </div>
+        <!-- Divs for help text and picklists -->
+
+   
+              
+    <!-- Picklists -->
+    <div id="segment_picklist">
+        <apex:selectCheckboxes layout="pageDirection" value="{!selectedSegments}" styleClass="slds-align-left">
+            <apex:selectOptions value="{!segmentOptions}" />
+        </apex:selectCheckboxes>
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#segment_picklist');" value="OK" reRender="segment_lookup"/>
+    </div>
+
+    <div id="region_picklist">
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#region_picklist');" value="OK" reRender="region_lookup"/>
+        <apex:selectCheckboxes layout="pageDirection" value="{!selectedRegions}" styleClass="slds-align-left">
+            <apex:selectOptions value="{!regionOptions}"/>
+        </apex:selectCheckboxes>
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#region_picklist');" value="OK" reRender="region_lookup"/>
+    </div>
+
+    <div id="country_picklist">
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#country_picklist');" value="OK" reRender="country_lookup"/>
+        <apex:selectCheckboxes layout="pageDirection" value="{!selectedCountries}" styleClass="slds-align-left">
+            <apex:selectOptions value="{!countryOptions}"/>
+        </apex:selectCheckboxes>
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#country_picklist');" value="OK" reRender="country_lookup"/>
+    </div>
+     
+    
+  
+</div>
+<!-- / PAGE HEADER -->
+
+
+    <!-- PRIMARY CONTENT WRAPPER -->
+    <div class="myapp">
+    <div class="slds-grid slds-wrap slds-grid--pull-padded">        
+        <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2">
+            <!-- <table class="slds-table slds-table--bordered slds-table--cell-buffer"> -->
+            <table class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal">
+            <thead>
+                <tr class="slds-text-heading--label-normal ">         
+                    <th class='slds-strong-text' scope="col" colspan="7">
+                        <div class='slds-box slds-box--x-small slds-theme--info' style='text-align:center'>
+                            Target Achievement - Current Year
+              				<apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}', this)">
+                                <apex:image id="target_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                                <apex:param name="sHelpHint" value="Target Achievement" assignTo="{!sHelpHint}"/>
+                            </apex:commandLink>
+                        </div>
+                    </th>      
+                </tr>               
+                <tr class="slds-text-heading--label-normal">
+                    <th scope="col" style="text-align:left">
+                        <div class="slds-truncate" title="name"></div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="YTD">YTD</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q1">Q1</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q2">Q2</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q3">Q3</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q4">Q4</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Total">Total</div>
+                    </th>                    
+                </tr>
+                </thead>
+                <tbody>
+                <apex:repeat value="{!netwin_trend_data_slds}" var="ntd" id="ntdRepeater_cy">
+                  <tr>
+                      <th scope="row" data-label="{!ntd.name}" style="text-align:left">
+                        <div class="slds-truncate slds-strong-text" title="Name">{!ntd.name}</div>
+                      </th>
+                      <td data-label="YTD">                        
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.ytd,'-'),'slds-theme--error','slds-theme--success'), '')}" title="YTD">{!ntd.ytd}</div>
+                      </td>
+                      <td data-label="Q1">
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q1_cy,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q1">{!ntd.q1_cy}</div>
+                      </td>       
+                      <td data-label="Q2">
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q2_cy,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q2">{!ntd.q2_cy}</div>
+                      </td>
+                      <td data-label="Q3">                        
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q3_cy,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q3">{!ntd.q3_cy}</div>
+                      </td>
+                      <td data-label="Q4">
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q4_cy,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q4">{!ntd.q4_cy}</div>
+                      </td>
+                      <td data-label="Total">                        
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.total_cy,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Total">{!ntd.total_cy}</div>
+                      </td>                      
+                  </tr>
+                </apex:repeat>  
+              </tbody>
+            </table>
+            
+            </div> <!-- top element: target current year --> 
+            <div class="slds-col--padded slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2">
+            <!-- <table class="slds-table slds-table--bordered slds-table--cell-buffer"> -->
+            <table class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal">
+            <thead>
+                <tr class="slds-text-heading--label-normal slds-strong-text">         
+                    <th class='slds-strong-text' scope="col" colspan="6" >                        
+                        <div class='slds-box slds-box--x-small slds-theme--info' style='text-align:center'>
+                            Target Achievement - Next Year
+              				<apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}', this)">
+                                <apex:image id="target_help_ny" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                                <apex:param name="sHelpHint" value="Target Achievement" assignTo="{!sHelpHint}"/>
+                            </apex:commandLink>              
+                        </div>
+                    </th>      
+                </tr>                
+                <tr class="slds-text-heading--label-normal">
+                    <th scope="col">
+                        <div class="slds-truncate slds-strong-text" title="name"></div>
+                    </th>                    
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q1">Q1</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q2">Q2</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q3">Q3</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Q4">Q4</div>
+                    </th>
+                    <th scope="col">
+                    <div class="slds-truncate slds-strong-text" title="Total">Total</div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <apex:repeat value="{!netwin_trend_data_slds}" var="ntd" id="ntdRepeater_ny">
+                  <tr>
+                      <th scope="row" data-label="{!ntd.name}" style="text-align:left">
+                        <div class="slds-truncate slds-strong-text" title="Name"><strong>{!ntd.name}</strong></div>
+                      </th>                      
+                      <td data-label="Q1">
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q1_ny,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q1">{!ntd.q1_ny}</div>                        
+                      </td>       
+                      <td data-label="Q2" >
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q2_ny,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q2">{!ntd.q2_ny}</div>                        
+                      </td>
+                      <td data-label="Q3">
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q3_ny,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q3">{!ntd.q3_ny}</div>                        
+                      </td>
+                      <td data-label="Q4">
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.q4_ny,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Q4">{!ntd.q4_ny}</div>                        
+                      </td>
+                      <td data-label="Total">                        
+                        <div class="slds-truncate {!IF(CONTAINS(ntd.name,'Gap'), 'slds-box slds-box--xx-small ' + IF(CONTAINS(ntd.total_ny,'-'),'slds-theme--error','slds-theme--success'), '')}" title="Total">{!ntd.total_ny}</div>                                               
+                      </td>
+                  </tr>
+                </apex:repeat>  
+              </tbody>
+            </table>
+            
+            </div> <!-- top element: target next year--> 
+            </div> <!-- Grid -->
+            <br/>            
+            <div class="slds-grid slds-wrap slds-grid--pull-padded">
+                <div class="slds-col slds-size--1-of-1 slds-medium-size--1-of-5 slds-large-size--1-of-5">
+                    <div class="slds-col slds-size--1-of-1">
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                        <thead>
+                            <tr class="slds-text-heading--label-normal">         
+                                <th scope="col" colspan="3" >
+                                    <div class='slds-box slds-box--x-small slds-theme--info' style='text-align:center'>
+                                        Win Rate
+              							<apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}', this)">
+                                            <apex:image id="winrate_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                                            <apex:param name="sHelpHint" value="Winrate" assignTo="{!sHelpHint}"/>
+                                        </apex:commandLink>
+                                    </div>             
+                                </th>      
+                            </tr>                            
+                            <tr class="slds-text-heading--label-normal">
+                                <th scope="col">
+                                    <div class="slds-truncate slds-strong-text" title="name">Win Rate Needed</div>
+                                </th>
+                                <th scope="col">
+                                <div class="slds-truncate" title="pct">in %</div>
+                                </th>                                
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <apex:repeat value="{!winrate_data_slds}" var="wrd" id="wrdRepeater">
+                              <tr>
+                                  <th scope="row" data-label="Type">
+                                    <div class="slds-truncate slds-strong-text" title="Name">{!wrd.name}</div>
+                                  </th>                      
+                                  <td data-label="Q1">
+                                    <div class="slds-truncate" title="Pct">{!wrd.pct}</div>
+                                  </td>                                         
+                              </tr>
+                            </apex:repeat>  
+                        </tbody>
+                        </table>
+                    </div> <!-- Winrate div -->
+                    <br/>
+                    <div class="slds-col slds-size--1-of-1">
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                        <thead>
+                            <tr class="slds-text-heading--label-normal">         
+                                <th scope="col" colspan="3" >
+                                <div class='slds-box slds-box--x-small slds-theme--info' style='text-align:center'>
+                                    Quality &amp; Risk
+              						<apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}', this)">
+                                        <apex:image id="qrisk_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                                        <apex:param name="sHelpHint" value="QRisk" assignTo="{!sHelpHint}"/>
+                                    </apex:commandLink>
+                                </div>
+                                </th>      
+                            </tr>                            
+                            <tr class="slds-text-heading--label-normal">
+                                <th scope="col">
+                                    <div class="slds-truncate slds-strong-text" title="name">Q &amp; Risk</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="quantity">#</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Size">Size</div>
+                                </th> 
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <apex:repeat value="{!qcheck_data_slds}" var="qcd" id="qcdRepeater">
+                              <tr>
+                                  <th scope="row" data-label="Type">
+                                    <div class="slds-truncate slds-strong-text" title="Name">{!qcd.name}</div>
+                                  </th>                      
+                                  <td data-label="Quantity">
+                                    <div class="slds-truncate {!IF(CONTAINS(qcd.quantity,'0'),'','slds-box slds-box--xx-small slds-theme--error')}" title="Quantity">{!qcd.quantity}</div>                                    
+                                  </td>
+                                  <td data-label="Size">
+                                    <div class="slds-truncate {!IF(CONTAINS(qcd.size,'0.00M'),'','slds-box slds-box--xx-small slds-theme--error')}" title="Size">{!qcd.size}</div>
+                                    
+                                  </td> 
+                              </tr>
+                            </apex:repeat>  
+                        </tbody>
+                        </table>
+                    </div> <!-- Quality and Risk div-->                                         
+                </div>
+                <div class="slds-col slds-size--1-of-1 slds-medium-size--4-of-5 slds-large-size--4-of-5">
+                    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                        <thead>
+                        <tr class="slds-text-heading--label-normal">         
+                            <th scope="col" colspan="12" >
+                                <div class='slds-box slds-box--x-small slds-theme--info' style='text-align:center'>
+                                    Shape &amp; Flow
+                                    <apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}', this)">
+                                        <apex:image id="shape_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                                        <apex:param name="sHelpHint" value="Shape" assignTo="{!sHelpHint}"/>
+                                    </apex:commandLink>              
+                                </div>
+                            </th>      
+                        </tr>
+                        <tr class="slds-truncate">         
+                            <th scope="col" colspan="1" >
+                                <div class='slds-box slds-box--xx-small slds-theme--info' style='text-align:center'>
+                                    Stage
+                                </div>
+                            </th>
+                            <th scope="col" colspan="2" >
+                                <div class='slds-box slds-box--xx-small slds-theme--info' style='text-align:center'>
+                                    Total                   
+                                </div>
+                            </th>
+                            <th scope="col" colspan="3" >
+                                <div class='slds-box slds-box--xx-small slds-theme--info' style='text-align:center'>
+                                    Calendar Year                   
+                                </div>
+                            </th>
+                            <th scope="col" colspan="2" >
+                                <div class='slds-box slds-box--xx-small slds-theme--info' style='text-align:center'>
+                                    New in Stage                    
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="slds-text-heading--label-normal">
+                            <th scope="col ">
+                                <div class="slds-truncate slds-strong-text" title="name"></div>
+                            </th>
+                            <th scope="col">
+                            <div class="slds-truncate slds-strong-text" title="TotalNumber">#</div>
+                            </th>
+                            <th scope="col">
+                            <div class="slds-truncate slds-strong-text" title="TotalSize">Size</div>
+                            </th>
+                            <th scope="col">
+                            <div class="slds-truncate slds-strong-text" title="CYNumber">#</div>
+                            </th>
+                            <th scope="col">
+                            <div class="slds-truncate slds-strong-text" title="CYSize">Size</div>
+                            </th>
+                            <th scope="col">
+                            <div class="slds-truncate slds-strong-text" title="avgProb">Avg.Prob.</div>
+                            </th>
+                            <th scope="col">
+                            <div class="slds-truncate slds-strong-text" title="NISNumber">#</div>
+                            </th>
+                            <th scope="col">
+                            <div class="slds-truncate slds-strong-text" title="NISSize">Size</div>
+                            </th>                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <apex:repeat value="{!shapeflow_data_slds}" var="sfd" id="sfdRepeater">
+                              <tr>
+                                  <th scope="row" data-label="Type">
+                                    <div class="slds-truncate slds-strong-text" title="Stage">{!sfd.stageName}</div>
+                                  </th>                      
+                                  <td data-label="Q1">
+                                    <div class="slds-truncate" title="totalCount">{!sfd.totalCount}</div>
+                                  </td>       
+                                  <td data-label="Q2">
+                                    <div class="slds-truncate" title="totalSize">{!sfd.totalSize}</div>
+                                  </td>
+                                  <td data-label="Q3">
+                                    <div class="slds-truncate" title="yearCount">{!sfd.yearCount}</div>
+                                  </td>
+                                  <td data-label="Q4">
+                                    <div class="slds-truncate" title="yearSize">{!sfd.yearSize}</div>
+                                  </td>
+                                  <td data-label="Total">
+                                    <div class="slds-truncate" title="yearProb">{!sfd.yearProb}</div>
+                                  </td>
+                                  <td data-label="Total">
+                                    <div class="slds-truncate" title="stageCount">{!sfd.stageCount}</div>
+                                  </td>
+                                 <td data-label="Total">
+                                    <div class="slds-truncate" title="stageSize">{!sfd.stageSize}</div>
+                                  </td>
+                              </tr>
+                            </apex:repeat>  
+                          </tbody>
+                    </table>    
+                </div> <!-- Shape and Flow div -->                              
+            </div> <!-- Grid: middle sesction -->
+            <br/>
+            
+            
+            <div class="slds-grid slds-grid--align-space">
+                <div>
+              <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')"><strong>Links:&nbsp;&nbsp;</strong>Priority Map
+                        <apex:param name="sReportHint" value="Shape" assignTo="{!sReportHint}"/>
+                    </apex:commandLink>
+                </div>    
+                <div>                    
+                    <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')">Net Win Trend Report
+                        <apex:param name="sReportHint" value="Net Win Trend" assignTo="{!sReportHint}"/>
+                    </apex:commandLink>
+                </div>    
+                <div>                                                   
+                    <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')">Quality Report
+                        <apex:param name="sReportHint" value="Quality Check" assignTo="{!sReportHint}"/>
+                    </apex:commandLink> 
+                </div>    
+                <div>                                               
+                    <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')">Win/Loss Report
+                        <apex:param name="sReportHint" value="Win Loss" assignTo="{!sReportHint}"/>
+                    </apex:commandLink> 
+                </div>                    
+            </div> <!-- Links grid -->
+            
+    </div> <!-- App -->
+    <!-- / PRIMARY CONTENT WRAPPER -->
+              
+	<!-- Help text -->
+	<div id="overlay" style="posistion:absolute;left:0px,top:0px;visibility: hidden;width:50%;" class="slds-popover" role="dialog">  		  
+    	<div class="slds-popover__body"><p></p></div>
+	</div>	
+              
+    <!-- FOOTER -->
+    <!-- / FOOTER -->
+  
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->
+  <!-- JAVASCRIPT -->  
+  <script type="text/javascript">
+      // open the report as a new tab
+        function reportOpen(reportUrl) {
+            console.log(reportUrl);
+            var win = window.open(reportUrl, '_blank');
+            win.focus();
+        }
+    
+        // open the overlay help window
+        function helpOpen(helptxt, el) {
+            var position = getPosition(el);
+              
+            // position the text            
+            $("#overlay").css("visibility", "visible");
+            $("#overlay").css("position", "fixed");
+            $("#overlay").css("left", "25%");
+            $("#overlay").css("top", "150px");
+            $("#overlay p").html(helptxt);
+        }
+        
+        // close the overlay window when it is clicked
+        $("#overlay").click(function(){
+            $("#overlay").css("visibility", "hidden");
+        });
+    
+        // open the overlay picklist window
+        function picklistOpen(lookupId, picklistId) {
+            // hide any previously opened picklists
+            $("[id$=_picklist]").css("visibility", "hidden");
+    
+            // get the position of the lookup icon
+            var v_lookup = document.getElementById(lookupId);
+            var position = getPosition(v_lookup);
+              
+            // poistion the picklist
+            $(picklistId).css("left", position.x);
+            $(picklistId).css("top", position.y + 20);
+            $(picklistId).css("visibility", "visible");
+        }
+        
+        // close the overlay picklist window
+        function picklistClose(picklistId) {
+            $(picklistId).css("visibility", "hidden");
+        } 
+                    
+        // get the x and y co-ordinates of an element
+        function getPosition(element) {
+            var xPosition = 0;
+            var yPosition = 0;
+          
+            while(element) {
+                xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+                yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+                element = element.offsetParent;
+            }
+            return { x: xPosition, y: yPosition };
+        }             
+    
+    function selectUser(userId, userName) {                     
+            $("[id$='selectedUserId']").val(userId);
+            $("[id$='lookup-user']").val(userName);            
+            $("[id$='searchResultBox']").removeClass( "slds-visible" ).addClass( "slds-hidden" );            
+            //$("form[id$='frmMain']").submit();  // refresh is done manually by the user
+    }
+    function getRemoteUsers() {
+        var searchName = document.getElementById('lookup-user').value;  
+        searchName = searchName.replace("*", "%");
+        Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.Oppty30Controller.getUsers}',
+            searchName, 
+            function(lstresult, event){                
+                if (event.status) {                     
+                    var allResults='';
+                    for (var n=0; n<lstresult.length; n++){                        
+                        var result = lstresult[n];                                                
+                        allResults = allResults +  
+                            "<li>" + 
+                            "<a class='slds-lookup__item-action slds-media slds-media--center' href='javascript:selectUser(\"" + result.Id + "\", \"" + result.Name + "\");' role='option'>" +
+                            "<div class='slds-media__body'><div class='slds-lookup__result-text'>"+ result.Name + "</div>" + 
+                            "</div></a></li>";
+                        
+                     }
+                    $("[id$='searchResultBox']").removeClass( "slds-hidden" ).addClass( "slds-visible" );
+                    $("#searchResults").html(allResults);
+                    
+                    //document.getElementById('searchResult').innerHTML = allResults;
+                } else if (event.type === 'exception') {
+                    //document.getElementById("responseErrors").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    alert(event.message + ' ' +event.where);
+                } else {
+                    //document.getElementById("responseErrors").innerHTML = event.message;
+                    alert(event.message);
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    
+    </script>  
+  <!-- / JAVASCRIPT -->
+</apex:form> 
+</body>
+
+</html>
+</apex:page>

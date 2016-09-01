@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>BMCServiceDesk__Validate_FootPrints_Login</fullName>
+        <active>false</active>
+        <description>Enable this validation rule to prevent users from editing the BMC Client Management Login ID. However, the users can delete the BMC Client Management Login ID.</description>
+        <errorConditionFormula>IF(NOT(ISCHANGED(BMCServiceDesk__FPLoginID__c) ), false, IF(ISBLANK( BMCServiceDesk__FPLoginID__c), false, IF(BMCServiceDesk__FP_Login_Validated__c,false, true)))</errorConditionFormula>
+        <errorMessage>You can delete a BMC Client Management Login ID from here but you cannot edit it.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Do_not_allow_Business_Org_change</fullName>
+        <active>true</active>
+        <description>Changing business org on a user will cause significant data access issues due to inherited sharing. Correct process dictates that the user is marked inactive and a new user in the proper org is corrected.</description>
+        <errorConditionFormula>And(
+Ischanged(Business_Org__c),
+NOT(ISPICKVAL(PRIORVALUE(Business_Org__c ), &quot;&quot;)),
+NOT(ISPICKVAL(PRIORVALUE(Business_Org__c ), &quot;Danfoss&quot;))
+)</errorConditionFormula>
+        <errorDisplayField>Business_Org__c</errorDisplayField>
+        <errorMessage>Changing business org on a user will cause significant data access issues due to inherited sharing. Please follow the appropriate process by inactivating the current user and creating a new user in the correct business org.</errorMessage>
+    </validationRules>
+</CustomObject>

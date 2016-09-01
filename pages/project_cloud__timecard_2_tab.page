@@ -1,0 +1,110 @@
+<apex:page id="page" controller="project_cloud.TimecardRemoting" tabStyle="Time_Card__tab" title="Timecard" sidebar="false" showHeader="false">
+	<script>
+		var searchParamStr = window.location.search;
+		var searchParams = searchParamStr.replace('?', '').split('&');
+		var prodInd;
+		for(var i = 0; i < searchParams.length; i++) {
+			if(searchParams[i].indexOf('productivity') != -1) {
+				prodInd = i;
+				break;
+			}
+		}
+		if(searchParamStr.length) {
+			//window.location = window.location.pathname + '#/view' + searchParamStr;
+		}
+	</script>
+	<div ng-app="timecard" class="timecard">
+		<script type="text/ng-template" id="newTimeEntry.html">
+			<apex:form >
+				<apex:repeat value="{!$ObjectType.project_cloud__Work__c.FieldSets.project_cloud__Quick_Entry}" var="f"> 
+					<apex:inputField styleClass="{!f.fieldPath}" value="{!timeEntry[f]}" rendered="{!f.Type == 'picklist'}" />
+				</apex:repeat>
+			</apex:form>
+		</script>
+		<style>
+			.splash{
+				position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background: #3d3d3d; z-index: 5000;
+				display:none;
+				text-align:center;
+				vertical-align: middle;
+				-webkit-transition:0.3s linear all;
+				transition:0.3s linear all;
+			}
+
+			[ng-cloak].splash {
+				display: block !important;
+			}
+			[ng-cloak] {display: none;}
+		</style>
+		<div ng-cloak="true" class="splash">
+			<img src="{!URLFOR($Resource.timecard_assets_zip, '/img/CC-Logo-2016-white-box.png')}" style="width: 150px; height: 122px; position: fixed;top: 50%;left: 50%;margin-left: -75px;margin-top: -61px;" />
+		</div>
+
+		<link rel="stylesheet" href="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/bootstrap/css/bootstrap.min.css')}" />
+		<link rel="stylesheet" href="{!URLFOR($Resource.timecard_assets_zip,'/css/ccCommon.css')}" />
+		<link rel="stylesheet" href="{!URLFOR($Resource.timecard_assets_zip,'/css/font-awesome-4.3.0/css/font-awesome.min.css')}" />
+		<link rel="stylesheet" href="{!URLFOR($Resource.timecard_assets_zip,'/css/fonts/raleway.css')}" />
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/angularjs/angular.min.js')}"></script>
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/angularjs/angular-animate.min.js')}"></script>
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/angularjs/angular-sanitize.min.js')}"></script>
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/angularjs/angular-touch.min.js')}"></script>
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/angularjs/plugins/angular-ui-router.min.js')}"></script>
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/angularjs/plugins/angular-ui-router-helper.min.js')}"></script>
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/frameworks/ui-bootstrap-tpls-0.13.0.min.js')}"></script>
+		<script src="../../soap/ajax/35.0/connection.js" type="text/javascript"></script>
+		<!-- Dynamically Load depending on whether or not the page has the standard SF header shown -->
+		<script src="/jslibrary/1442862172000/ui-sfdc-javascript/SfdcCore.js" type="text/javascript" ng-if="$root.const.topHeader"></script>
+		<script src="/jslibrary/1442862172000/sfdc/main.js" type="text/javascript" ng-if="$root.const.topHeader"></script>
+
+		<script>
+			//Until Remoting up, put vars here
+			var CONST_NAMESPACE = '{!namespace}';
+			var JS_NAMESPACE = '{!jsNamespace}';
+			var CONST_RESOURCE_URL = '{!$Resource.timecard_assets_zip}/v/';
+			var OBJECT_FILTERS = {!objects};
+			var CONST_RELATIONSHIPS = {!relationships};
+			var CONST_DAYS = {!days};
+			var CONST_PRODUCTIVITY = {!isProductivityUser};
+			var PAGE_SIZE = {!pageSize};
+			var FIELD_SET = {!fieldSet};
+			var RECORDTYPE_ID = '{!timeEntryId}';
+			var NEW_ENTRY_DEFAULTS = '{!newEntry}';
+			var SESSION_ID = "{!$Api.Session_ID}";
+			var TOP_HEADER = true;//{!$CurrentPage.parameters.productivity == 'true' && isProductivityUser};
+			if(TOP_HEADER) {
+				angular.element(document.body).addClass('productivity-body');
+			}
+
+		</script>
+		<script src="{!URLFOR($Resource.timecard_assets_zip,'/js/timecard.js')}"></script>
+
+		<style type="text/css">
+
+			/*Cell Background styling for indicating approved or rejected time*/
+			div.approval-before {
+				/*no styling*/
+			}
+			div.approval-during {
+				background-color: #ffd74b;/*yellow*/
+				padding: 0 0 2px 2px;
+			}
+			div.approval-approved {
+				background-color: #a1f78d;/*green*/
+				padding: 0 0 2px 2px;
+			}
+			div.approval-rejected {
+				background-color: #fb8a8c;/*red*/
+				padding: 0 0 2px 2px;
+			}
+
+			/*Firefox has terrible disabled styling. This is to standardise the look of the disabled inputs*/		
+			input:disabled {
+				background-color: #CCC;
+				border: 1px solid #AAA;
+			}
+		</style>
+		<div ng-include="$root.const.url + 'views/header.html'"></div>
+		<ui-view ng-class="{ 'bg' : $root.const.topHeader }"></ui-view>
+		<toast></toast>
+	</div>
+</apex:page>

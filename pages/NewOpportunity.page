@@ -1,0 +1,17 @@
+<apex:page standardController="Opportunity" extensions="NewOpportunityExtension">
+<script>
+    addEventListener('load', function() {
+        if (window.sforce && "{!BusOrg}" != 'Climate and Energy') {
+            sforce.one.createRecord('Opportunity',"{!recTypeId}");
+        } 
+        else if(window.sforce && "{!BusOrg}" == 'Climate and Energy'){
+            sforce.one.navigateToURL("{!GoToOpp}");
+        }
+        else{
+            location = "{!GoToOpp}";
+        }
+
+    });
+    </script>
+
+</apex:page>

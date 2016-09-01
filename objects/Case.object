@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>CER_PREVENT_MOVING_FROM_L2_TO_L1</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+), 
+Owner:Queue.Id !=&quot;&quot;,
+CONTAINS(HistoryQID__c , &quot;1LQ&quot;),
+OR(
+CONTAINS(HistoryQID__c , &quot;2LQ&quot;),
+CONTAINS(HistoryQID__c , &quot;3LQ&quot;)
+),
+CONTAINS( $Setup.QueueLevelIDs__c.X1stLevelQ__c , Owner:Queue.Id )
+, 
+ISCHANGED(OwnerId) 
+)</errorConditionFormula>
+        <errorMessage>Can&apos;t move Case back to a 1st Line Queue</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CER_PREVENT_PLACING_BACK_ON_QUEUE</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+), 
+CONTAINS(HistoryQID__c , LEFT(Owner:Queue.Id,15) ),
+Owner:Queue.Id !=  CurrentQID__c,
+Owner:Queue.Id !=&quot;&quot;
+)</errorConditionFormula>
+        <errorMessage>Can&apos;t put case back on a queue it has already been on</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_CHANNEL_PATNER_MANDATORY</fullName>
+        <active>true</active>
+        <description>Assigned to Channel Partner is Mandatory when Case Status is selected as &quot;9. Assigned to Channel Partner&quot;</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status, &apos;9. Assigned to Channel Partner&apos;) ,
+ISBLANK(Assigned_To_Channel_Partner__c)
+)</errorConditionFormula>
+        <errorDisplayField>Assigned_To_Channel_Partner__c</errorDisplayField>
+        <errorMessage>Please select the Assigned Channel Partner, when selecting the Case status as &quot;9. Assigned to Channel Partner&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_COMMENTS_REQUIRED_FOR_RESOLUTION_OTHE</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+), 
+ISPICKVAL(Case_Resolution__c, &apos;Other&apos;),
+ISBLANK( Resolution_Comments__c )
+)</errorConditionFormula>
+        <errorDisplayField>Resolution_Comments__c</errorDisplayField>
+        <errorMessage>Required for &quot;Other&quot; resolution</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_CONTACT_OR_USER_OR_PHONE_MANDATORY</fullName>
+        <active>true</active>
+        <description>Contact is Manadatory while creating Case. Else the Web Phone or Internal User should be provided.</description>
+        <errorConditionFormula>OR(
+AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+),
+AND(
+ISBLANK(ContactId),
+ISBLANK(SuppliedPhone),
+ISBLANK(Requestor_Internal_Users__c),
+ISBLANK(SuppliedEmail)
+)
+),
+AND(
+ISBLANK(ContactId),
+ISPICKVAL( Reason , &apos;Customer Support&apos;)
+)
+)</errorConditionFormula>
+        <errorDisplayField>ContactId</errorDisplayField>
+        <errorMessage>Contact is mandatory when registering Request from Customer.
+For Support Case Contact is mandatory when Case Reason is set to &apos;Customer Support&apos;.
+For Internal Support cases please select the Internal Requester.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_CSC_CLOSE_CASE_CAN_ONLY_BE_REOPENED</fullName>
+        <active>true</active>
+        <description>CSC Closed cases can only be reopened before taking any further action.</description>
+        <errorConditionFormula>AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+),
+NOT(ISPICKVAL(Status, &apos;19. Reopen&apos;)),
+NOT(ISPICKVAL(Status, &apos;Closed&apos;)), 
+$User.Username != &apos;piuser@sauer-danfoss.com&apos;,
+ISPICKVAL(PRIORVALUE(Status), &apos;Closed&apos;) )</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>You can only Reopen a closed case before taking any further action. Please select the Status &apos;19. Reopen&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_INDIA_SERVICE_WARRANTY_TYPE_MANDATORY</fullName>
+        <active>true</active>
+        <description>Service Warranty Type is mandatory in India when Case is closed.</description>
+        <errorConditionFormula>AND( 
+ text(Owner:User.Region__c) = &apos;India&apos;, 
+OR (text (Reason) = &apos;Aftersales Service&apos;, 
+text (Reason) = &apos;AMC&apos;), 
+ISPICKVAL(Status, &apos;Closed&apos;), 
+ISPICKVAL(Service_Warranty_Type__c,&apos;&apos;) )</errorConditionFormula>
+        <errorDisplayField>Service_Warranty_Type__c</errorDisplayField>
+        <errorMessage>Please select a Service Warranty Type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_REOPEN_REASON_MANDATORY</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+),  
+ISPICKVAL(Status, &apos;19. Reopen&apos;),   
+ISPICKVAL(Reopen_Reason__c,&apos;&apos;) )</errorConditionFormula>
+        <errorDisplayField>Reopen_Reason__c</errorDisplayField>
+        <errorMessage>Reopen reason mandatory while re-opening the Case</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_RESOLUTION_MANDATORY_WHEN_CLOSED</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+),  
+ISPICKVAL( Status , &apos;Closed&apos;),   
+ISPICKVAL(  Case_Resolution__c  , &apos;&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>Case_Resolution__c</errorDisplayField>
+        <errorMessage>Case Resolution is Mandatory while closing the case</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_SERVICE_ENGINEER_MANDATORY</fullName>
+        <active>true</active>
+        <description>For the Service Cases Service Engineer Name is Mandatory when selecting the status as &quot;8. Assigned to Service Engineer&quot;</description>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+ISPICKVAL(Status, &apos;8. Assigned to Service Engineer&apos;) ,
+ISBLANK(Assigned_Service_Engineer_Name__c) 
+)</errorConditionFormula>
+        <errorDisplayField>Assigned_Service_Engineer_Name__c</errorDisplayField>
+        <errorMessage>Please specify the Assigned to Service Engineer Name when Status is selected as &quot;8. Assigned to Service Engineer&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CSC_CANT_CLOSE_CASE_ON_Q</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+OR(
+RecordType.DeveloperName = &apos;Complaint&apos;,
+RecordType.DeveloperName = &apos;Product_Inquiry&apos;,
+RecordType.DeveloperName = &apos;Service_Request&apos;,
+RecordType.DeveloperName = &apos;Support_Case&apos;,
+RecordType.DeveloperName = &apos;Transactional_Request&apos;
+), 
+TEXT(Status) = &quot;Closed&quot;,
+Owner:Queue.Id != &quot;&quot;
+)</errorConditionFormula>
+        <errorMessage>Accept Ownership of the Case before Closure</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Price_Planning_Details</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( RecordType.DeveloperName = &quot;Pricing&quot;, Account.Region__c = &apos;Europe&apos; , CONTAINS(TEXT(Pricing_Stage__c), &quot;2&quot;),
+ OR( ISPICKVAL(Open_orders_to_be_updated__c,&quot;&quot; ) ,  ISPICKVAL( Update_quoted_prices_after_Sep_1st__c,&quot;&quot; ) )
+)</errorConditionFormula>
+        <errorMessage>Price Planning Details cannot be &quot;--None--&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Support_Level_Required</fullName>
+        <active>true</active>
+        <description>If Type of Effort is Support, Support Level is required - excluding Comatrol, PS and Turolla</description>
+        <errorConditionFormula>AND(NOT(ISPICKVAL(Business_Org__c, &quot;Comatrol&quot;)), NOT(ISPICKVAL(Business_Org__c, &quot;Power Solutions&quot;)), NOT(ISPICKVAL(Business_Org__c, &quot;Turolla&quot;)), INCLUDES( Level_of_Effort__c , &quot;Support&quot;),
+ ISPICKVAL( Support_Level__c, &quot;&quot; ))</errorConditionFormula>
+        <errorDisplayField>Support_Level__c</errorDisplayField>
+        <errorMessage>Support Level selection is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__One_Project_Phase_or_Task</fullName>
+        <active>true</active>
+        <description>Only one of the lookups to the Project Objects can be selected</description>
+        <errorConditionFormula>IF(ISBLANK(project_cloud__Project__c), 0, 1) + IF(ISBLANK(project_cloud__Project_Phase__c), 0, 1) + IF(ISBLANK(project_cloud__Project_Task__c), 0, 1) &gt; 1</errorConditionFormula>
+        <errorMessage>Please select only one of: Project, Phase or Task</errorMessage>
+    </validationRules>
+</CustomObject>

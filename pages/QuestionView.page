@@ -1,0 +1,210 @@
+<apex:page docType="html-5.0" standardController="Question" extensions="QuestionViewController" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" id="qstnPage">
+    <title>View Question</title>
+    
+    <style>
+    
+        .view-question .content > ul > li.noBullets:not(:last-of-type):after{
+            color: white !important;
+        }
+                 
+    </style>
+
+    <apex:composition template="DF_Template">
+        <apex:define name="body">
+            <apex:form id="qstnForm">
+                <c:DF_Header />
+
+                <div class="container-bs">
+                    <h1 class="reset">View Question</h1>
+                    
+                    
+
+                    <div class="view-question">
+                        <div class="question original">
+                            <div class="title">{!qstn.Title}</div>
+                            
+                            <div class="body">
+                                <div class="controls">
+                                    <apex:outputPanel layout="none" rendered="{!!currUserFollowing}">
+                                        <apex:commandLink action="{!subscribe}" title="Favorite">
+                                            <span class="icon-star-empty"></span>
+                                        </apex:commandLink>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel layout="none" rendered="{!currUserFollowing}" >
+                                        <apex:commandLink action="{!unsubscribe}" title="Favorite">
+                                            <span class="icon-star-full"></span>
+                                        </apex:commandLink>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel layout="none">
+                                        <span class="number">{!qstn.NumSubscriptions} favorite(s)</span>
+                                    </apex:outputPanel>
+                                </div>
+                                <div class="content">
+                                <!--<apex:outputPanel html-class="content" rendered="{!IF(bolQuestionEdit || bolQuestionDelete, true, false)}">-->
+                                    <apex:outputField value="{!qstn.Body}"/>
+                                    <ul>
+                                        <li class="{!IF(bolQuestionEdit, '', 'noBullets')}"><apex:commandLink action="{!editQuestion}" value="Edit" rendered="{!bolQuestionEdit}"/></li>
+                                        <li >
+                                            <apex:commandLink action="{!deleteQuestion}" value="Delete" rendered="{!bolQuestionDelete}">
+                                                <apex:param name="answerId" value="{!qstn.Id}" assignTo="{!deleteQuestionId}"/>
+                                            </apex:commandLink>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                               <!-- </apex:outputPanel>-->
+                                <div class="detail">
+                                    
+                                    <div class="date">
+                                        <span>Asked on </span>
+                                        <!--<apex:outputText value="{0,date,MMMM d, yyyy 'at' h:mm a z}"><apex:param value="{!qstn.CreatedDate}" /></apex:outputText>-->
+                                        <apex:outputField value="{!qstn.CreatedDate}"/>
+                                        <span>by</span>
+                                    </div>
+                                    <a class="user" href="/{!qstn.CreatedById}">
+                                        <img src="{!qstn.CreatorSmallPhotoUrl}" height="30" width="30" />
+                                        <span class="name">{!qstn.CreatorName}</span>
+                                    </a>
+                                </div>
+                                
+                            </div><!-- /.body -->
+                            <div class="section-title">{!qstn.NumReplies} {!IF(qstn.NumReplies=1, 'Answer', 'Answers')}</div>
+                        </div><!-- /.original -->
+
+                        <apex:outputPanel id="bestReplyPnl" rendered="{!AND(qstn.BestReplyId != '', qstn.BestReplyId != null)}">
+
+                            <div class="question best">
+                                <div class="body">
+                                    <div class="controls">
+                                        <apex:vote id="bestAnsVote" objectId="{!qstn.BestReplyId}" rendered="{!IF(qstn.BestReply.CreatedById != currUserId, true, false)}"></apex:vote>
+                                        <div class="points">
+                                            <apex:outputPanel rendered="{!IF(qstn.BestReply.CreatedById != currUserId, false, true)}" >
+                                                <span class="no">{!mapReplyIdToVotes[qstn.BestReplyId]}</span>
+                                                <span>Points</span>
+                                            </apex:outputPanel>
+                                        </div><!-- /.points -->
+                                    </div><!-- /.controls -->
+                                    <div class="content">
+                                        <apex:outputField value="{!qstn.Bestreply.Body}"/>
+                                        
+                                        <!--<apex:variable var="class" value="bestAnswer" rendered="{!bolSelectBestAnswer}"/>
+                                        <apex:variable var="class" value="editAnswer" rendered="{!mapReplyIdTobolReplyEdit[qstn.BestReplyId]}"/>
+                                        <apex:variable var="class" value="deleteAnswer" rendered="{!mapReplyIdTobolReplyDelete[qstn.BestReplyId]}"/>-->
+                                        
+                                        <ul>
+                                            <li class="{!IF(bolRemoveBestAnswer, '', 'noBullets')}">
+                                                <apex:commandLink action="{!removeBestAnswer}" value="Remove as Best Answer" immediate="true" rendered="{!bolRemoveBestAnswer}"></apex:commandLink>
+                                            </li>
+                                            <li class="{!IF(mapReplyIdTobolReplyEdit[qstn.BestReplyId], '', 'noBullets')}">
+                                                <apex:commandLink action="{!editAnswer}" value="Edit" rendered="{!mapReplyIdTobolReplyEdit[qstn.BestReplyId]}">
+                                                    <apex:param name="answerId" value="{!qstn.BestReplyId}" assignTo="{!editAnswerId}"/>
+                                                </apex:commandLink>
+                                            </li>
+                                            <li class="{!IF(mapReplyIdTobolReplyDelete[qstn.BestReplyId], '', 'noBullets')}">
+                                                <apex:commandLink action="{!deleteAnswer}" value="Delete" rendered="{!mapReplyIdTobolReplyDelete[qstn.BestReplyId]}" reRender="qstnBlock">
+                                                    <apex:param name="answerId" value="{!qstn.BestReplyId}" assignTo="{!deleteAnswerId}"/>
+                                                </apex:commandLink>
+                                            </li>
+                                        </ul>
+                                    </div><!-- /.content -->
+                                    <div class="best-answer">
+                                        <!-- <apex:image value="/img/msg_icons/confirm24.png" width="20" height="20"/> -->
+                                        <span class="icon-check-alt"></span>
+                                        <div class="copy">Best Answer</div>
+                                    </div><!-- /.best-answer -->
+                                    <div class="detail">
+                                        <div class="date">
+                                            <span>Answered on </span>
+                                            <!--<apex:outputText value="{0,date,MMMM d, yyyy 'at' h:mm a z}"><apex:param value="{!qstn.BestReply.CreatedDate}" /></apex:outputText>-->
+                                            <apex:outputField value="{!qstn.BestReply.CreatedDate}"/>
+                                            <span>by</span>
+                                        </div>
+                                        <a class="user" href="/{!qstn.BestReply.CreatedById}">
+                                            <img src="{!qstn.BestReply.CreatorSmallPhotoUrl}" height="30" width="30"/>
+                                            <span class="name">{!qstn.BestReply.CreatorName}</span>
+                                        </a>
+                                    </div><!-- /.admin -->
+                                </div><!-- /.body -->
+                            </div><!-- /.question -->
+
+                        </apex:outputPanel>
+
+                        <apex:repeat value="{!qstn.Replies}" var="r" rendered="{!qstn.NumReplies>0}">
+                            <apex:outputPanel id="replyPnl" rendered="{!IF(r.Id != qstn.BestReplyId, true, false)}">
+
+                                <div class="question">
+                                    <div class="body">
+                                        <div class="controls">
+                                            <apex:vote id="replyVotes" objectId="{!r.Id}" rendered="{!IF(r.CreatedById != currUserId, true, false)}"></apex:vote>
+                                            <div class="points">
+                                                <apex:outputPanel rendered="{!IF(r.CreatedById != currUserId, false, true)}">
+                                                    <span class="no">{!mapReplyIdToVotes[r.Id]}</span>
+                                                    <span>Points</span>
+                                                </apex:outputPanel>
+                                            </div><!-- /.points -->
+                                        </div><!-- /.controls -->
+                                        <div class="content">
+
+                                            <apex:outputText rendered="{!IF(r.Id == qstn.BestReplyId, true, false)}">This was selected as the best answer</apex:outputText>
+
+                                            <apex:outputField value="{!r.Body}"/>
+                                            
+                                            <!--<apex:variable var="bestAnswer" value="bestAnswer" rendered="{!bolSelectBestAnswer}"/>
+                                            <apex:variable var="editAnswer" value="editAnswer" rendered="{!mapReplyIdTobolReplyEdit[r.Id]}"/>
+                                            <apex:variable var="deleteAnswer" value="deleteAnswer" rendered="{!mapReplyIdTobolReplyDelete[r.Id]}"/>-->
+                                            
+                                            <ul>
+                                                <li class="{!IF(bolSelectBestAnswer, '', 'noBullets')}">
+                                                    <apex:commandLink action="{!addBestAnswer}" value="Select as Best Answer" rendered="{!bolSelectBestAnswer}" immediate="true">
+                                                        <apex:param name="bestAnswerId" value="{!r.Id}" assignTo="{!bestAnswerId}"/>
+                                                    </apex:commandLink>
+                                                </li>
+                                                <li class="{!IF(mapReplyIdTobolReplyEdit[r.Id], '', 'noBullets')}">
+                                                    <apex:commandLink action="{!editAnswer}" value="Edit" rendered="{!mapReplyIdTobolReplyEdit[r.Id]}">
+                                                        <apex:param name="answerId" value="{!r.Id}" assignTo="{!editAnswerId}"/>
+                                                    </apex:commandLink>
+                                                </li>
+                                                <li class="{!IF(mapReplyIdTobolReplyDelete[r.Id], '', 'noBullets')}">
+                                                    <apex:commandLink action="{!deleteAnswer}" value="Delete" rendered="{!mapReplyIdTobolReplyDelete[r.Id]}">
+                                                        <apex:param name="answerId" value="{!r.Id}" assignTo="{!deleteAnswerId}"/>
+                                                    </apex:commandLink>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div><!-- /.content -->
+                                        <div class="detail">
+                                            
+                                            <div class="date">
+                                                <span>Answered on </span>
+                                                <a href="/{!r.CreatedById}">{!r.CreatorName}</a>
+                                                <span>by</span>
+                                            </div>
+                                            <a class="user" href="/{!r.CreatedById}">
+                                                <img src="{!r.CreatorSmallPhotoUrl}" height="30" width="30" />
+                                                <span class="name">{!r.CreatorName}</span>
+                                            </a>
+                                        </div><!-- /.admin -->
+                                    </div><!-- /.body -->
+                                </div><!-- /.question -->
+                            </apex:outputPanel>
+                        </apex:repeat>
+                    </div><!-- /.view-question -->
+                </div>
+
+                <div class="answer-question">
+                    <div class="container-bs">
+                        <div class="section-title">Your Answer</div>
+						<apex:inputTextArea value="{!ans.Body}" label="Your Answer" richText="true" />
+                        <!-- <apex:inputField value="{!ans.Body}"/> -->
+                        <div class="controls">
+                            <apex:commandButton styleClass="btn-bs btn-primary" action="{!postAnswer}" value="Answer"/>
+                        </div><!-- /.controls -->
+                    </div><!-- /.container-bs -->
+                </div><!-- /.answer-question -->
+                
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page standardController="Opportunity" sidebar="false" showHeader="false" showChat="false" standardStylesheets="true">
+
+    <slt:Timeline value="{!Opportunity.Id}" csat="false" />
+
+</apex:page>

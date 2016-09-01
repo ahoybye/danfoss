@@ -1,0 +1,547 @@
+<apex:page controller="Oppty20Controller" action="{!initOppty20}" sidebar="false" tabStyle="Opportunity">
+<apex:includeScript id="google" value="https://www.google.com/jsapi"/>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+
+<apex:sectionHeader title="Dashboard" subtitle="My Pipeline"/>
+  
+<style>
+/* Overwrite some standard salesforce and google css */
+th {
+    text-align: center;
+}
+a {
+    color: #fff;
+}
+.google-visualization-table .gradient {
+    background-image: none;
+}    
+.google-visualization-table th {
+    text-align: center;
+    font-weight: normal;
+    background-color: #808d99;
+}
+.google-visualization-table-td-number {
+    font-weight: bold;
+}
+
+.headerData {
+    background-color: #808d99;
+    color: white;
+}
+.cellData {
+    background-color: #d9d9d9;
+}
+
+#overlay {
+    visibility: hidden;
+    z-index: 1000;
+    position:fixed;
+    top: 30%;
+    left: 30%;
+    width: 60%;
+    height:300px;
+    overflow-y: auto; 
+}
+
+#overlay div {
+    // width:600px;
+    margin: 10px auto;
+    background-color: #fff;
+    border:1px solid #000;
+    padding:15px;
+    text-align:left;
+}
+
+.helpClass {
+    margin-left:5px;
+    vertical-align: middle;
+}
+
+.lookupClass {
+    margin-left:5px;
+    width:20px;
+    height:20px;
+    vertical-align: middle;
+    background:url(/img/func_icons/util/lookup20.gif) 0 0;
+}
+
+#segment_picklist, #region_picklist, #country_picklist {
+    z-index: 1001;
+    visibility: hidden;
+    position: fixed;
+    width: 170px;
+    height: 170px;
+    border: 1px solid #000;
+    background-color: #fff;
+    overflow-y: auto;
+}   
+</style>
+
+<apex:form id="frmMain">
+    <apex:pageBlock >        
+    		<table style="width:100%">
+        		<tr>
+    				<td style="width:200px;">
+                		<apex:outputLabel style="margin-left:1%;" value="View As: " rendered="{!$Permission.MyPipelineUseViewAs}"/><br/>
+            			<apex:inputField id="UserViewAs" value="{!dummy.User__c}" Label="View As" rendered="{!$Permission.MyPipelineUseViewAs}"/>
+					</td>
+                    <td style="max-width: 100px;">
+       					<apex:outputLabel style="margin-left:1%;" value="Team: "/><br/>
+                        <apex:selectList size="1" value="{!selectedTeamMember}" Label="Team">
+							<apex:selectOptions value="{!teamOptions}"/>        				
+        				</apex:selectList>
+					</td>
+                    <td style="max-width: 50px;">
+						<apex:outputLabel style="margin-left:1%;" value="Segment: "/><br/>
+						<apex:outputText style="background-color: #d9d9d9;" id="segment_lookup" value="{!selectedSegments.size} selected" Label="Segment:" />
+            			<apex:image onclick="picklistOpen('{!$Component.segment_lookup}', '#segment_picklist')" styleClass="lookupClass" value="/s.gif"/>                                
+					</td>
+					<td style="max-width: 50px;">
+                        <apex:outputLabel style="margin-left:1%;" value="Region: "/><br/>
+						<apex:outputText style="background-color: #d9d9d9;" id="region_lookup" value="{!selectedRegions.size} selected" Label="Region:"/>
+        				<apex:image onclick="picklistOpen('{!$Component.region_lookup}', '#region_picklist')" styleClass="lookupClass" value="/s.gif"/>
+					</td>
+					<td style="max-width: 50px;">
+                        <apex:outputLabel style="margin-left:1%;" value="Country: "/><br/>
+                        <apex:outputText style="background-color: #d9d9d9;" id="country_lookup" value="{!selectedCountries.size} selected"  Label="Country:"/>
+        				<apex:image onclick="picklistOpen('{!$Component.country_lookup}', '#country_picklist')" styleClass="lookupClass" value="/s.gif"/>
+					</td>           
+					<td style="max-width: 50px;">
+                            <apex:outputLabel style="margin-left:1%;" value="Time Period: "/><br/>
+        				<apex:selectList size="1" value="{!selectedTime}">
+                    		<apex:selectOptions value="{!timeOptions}"/>
+        				</apex:selectList>
+					</td>                            
+					<td style="max-width: 50px;">
+						<apex:outputLabel style="margin-left:1%;" value="Currency: "/><br/>
+        				<apex:selectList size="1" value="{!selectedCurrency}">
+            				<apex:selectOptions value="{!currencyOptions}"/>
+        				</apex:selectList>
+					</td>                            
+					<td style="text-align:left">
+							<apex:commandButton style="margin-left:2%;" action="{!loadData}" title="Refresh" value="Refresh"/>
+					</td>                            
+				</tr>
+			</table>                            
+    </apex:pageBlock>
+                            
+    <!-- Dashboard Data - Setting up the sizes of all the different areas -->
+    <!-- Top part for the target / trend   -->  
+    <div id="dashboard_div" style="display:table;width:100%;background-color:#535e68;">
+        <div style='display:table-row'>
+        <div style='display:table-cell'>
+        <!-- Top Section - Target Achievement -->
+            <div style="float:left;width:98%;margin-top:1%;margin-left:1%;margin-bottom:0.2%;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;">
+                Target Achievement            
+                <apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}')">
+                    <apex:image id="target_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                    <apex:param name="sHelpHint" value="Target Achievement" assignTo="{!sHelpHint}"/>
+                </apex:commandLink>
+            </div> 
+        <div style="float:left;width:98%;margin-left:1%;margin-bottom:0.2%;line-height:1.8em;font-weight:bold;text-align:center;">
+                <div style="float:left;width:59.4%;right-margin:2px;color:#fff;background-color:#808d99;">
+            		Current Year
+            	</div>
+        		<div style="float:left;margin-left:1px;width:40.5%;color:#fff;background-color:#808d99;">
+            		Following Year
+            	</div> 
+            </div>                        
+            <div id="middle_div" style="float:left;min-height:120px;margin-left:1%;width:98%;">        
+                  <div style="width:100%;" id="table_target"/>          	  
+        	</div>
+        
+        <!-- Middle Section - 3 components -->
+        <!-- 2 in the left side and 1 in the right / WinRate, Quality and risk and Shape & Flow -->
+        
+        <div style="float:left;width:98%;margin:1%;margin-bottom:0.2%;line-height:1.8em;">
+            <div style='display:table;width:100%;'>
+                <div style='display:table-row;'>
+                    <div style='display:table-cell;width:20%;'>
+            
+            <div style='display:table;width:100%;'>
+                <div style='display:table-row;width:100%;margin:2px;'>                    
+                        <div style='display:table-cell;width:100%;'>
+                        <div style="margin-bottom:2px;margin-top:12px;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;width:100%;">
+                        Win Rate
+                        <apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}')">
+                            <apex:image id="winrate_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                            <apex:param name="sHelpHint" value="Winrate" assignTo="{!sHelpHint}"/>
+                        </apex:commandLink>
+                        </div>
+                        <!-- Win Rate Needed -->
+                        <div id="bottom_div1" style="min-height:10px;width:100%;">
+                            <div style="width:100%;" id="table_winrate_div"/>
+                            <br/>
+                        </div>     
+                    </div>
+                    </div>
+                        
+                    <div style='display:table-row'>
+                    <div style='display:table-cell;width:100%;margin:2px;'>
+                        <!-- Quality & Risk -->            
+                        <div style="margin-bottom:2px;margin-top:12px;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;width:100%;">
+                            Quality and Risk
+                            <apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}')">
+                                <apex:image id="qrisk_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                        		<apex:param name="sHelpHint" value="QRisk" assignTo="{!sHelpHint}"/>
+                    		</apex:commandLink>            
+        				</div>                        
+                		<div id="bottom_div3" style="min-height:160px;width:100%;">
+                    		<div style="width:100%;" id="table_qrisk_div"/>
+                    		<br/>
+                		</div>
+            </div>
+            </div>
+            </div>
+        </div>                        
+        <div style='display:table-cell;width:80%;margin:5px;'>
+		<!-- <div style="float:left;margin-left:2px;margin-bottom:0.2%;line-height:1.8em;"> -->
+            <div style='display:table;width:98%;'>
+                <div style='display:table-row;'>    
+                    <div style='display:table-cell;'>
+                     <!-- Shape & Flow -->                     
+                     <div style="margin:0% 1% 2px 1%;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;width:100%;">
+                        Shape and Flow           
+                        <apex:commandLink action="{!getHelp}" oncomplete="helpOpen('{!sHelpText}')">
+                            <apex:image id="shape_help" styleClass="helpClass" value="/img/alohaSkin/help_orange.png" />
+                            <apex:param name="sHelpHint" value="Shape" assignTo="{!sHelpHint}"/>
+                        </apex:commandLink>
+                    </div>        
+					</div>
+                    </div>
+					<div style='display:table-row;'>
+                    <div style='display:table-cell;width:105%;'>                        
+                    <div style="float:left;margin-left:1%;margin-bottom:0.2%;width:39.0%;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;">
+                        &nbsp;
+                    </div>
+                    <div style="float:left;margin-left:1px;margin-bottom:0.2%;width:14.7%;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;">
+                        Total
+                    </div>                                    
+                    <div style="float:left;margin-left:1px;margin-bottom:0.2%;width:31.0%;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;">
+                        Calendar Year
+                    </div>                   					
+                    <div style="float:left;margin-left:1px;margin-bottom:0.2%;width:14%;line-height:1.8em;font-weight:bold;text-align:center;color:#fff;background-color:#808d99;">
+                        New in stage
+                    </div>             
+            		</div>
+                    </div>
+					<div style='display:table-row;width:100%;'>
+                    <div style='display:table-cell;width:100%;'>		        
+                    <!-- Shape & Flow -->    
+                    <div id="bottom_div2" style="float:left;margin:0% 1% 2% 1%;width:100%;min-height:160px;">
+                        <div style="width:100%;" id="table_shapeflow_div"/>
+                        <br/>
+                    </div>
+
+                        </div>
+                        </div>
+                        </div>
+            			</div>
+                        </div>
+                        </div>
+            </div>
+        <!-- Bottom Section -->
+		<div style="float:left;width:100%;margin-left:2px;margin-bottom:0.2%;line-height:1.8em;">
+        <div id="bottom_links" style="min-height:50px;margin:1%;width:98%;">            
+            <span style="color:#fff;font-weight:bold;margin-right: 5px;">Links:</span>
+            <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')">Priority Map
+                <apex:param name="sReportHint" value="Shape" assignTo="{!sReportHint}"/>
+            </apex:commandLink>
+            
+            <span style="color:#fff;font-weight:bold;margin-right: 20%;"></span>                
+            <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')">Net Win Trend Report
+                <apex:param name="sReportHint" value="Net Win Trend" assignTo="{!sReportHint}"/>
+            </apex:commandLink>
+
+            <span style="color:#fff;font-weight:bold;margin-right: 20%;"></span>                                
+            <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')">Quality Report
+                <apex:param name="sReportHint" value="Quality Check" assignTo="{!sReportHint}"/>
+            </apex:commandLink> 
+
+            <span style="color:#fff;font-weight:bold;margin-right: 20%;"></span>                                
+            <apex:commandLink action="{!getReport}" oncomplete="reportOpen('{!sReportUrl}')">Win/Loss Report
+                <apex:param name="sReportHint" value="Win Loss" assignTo="{!sReportHint}"/>
+            </apex:commandLink> 
+                
+        </div>
+        </div>       
+	</div>
+   </div>
+</div>
+    <!-- Help text -->
+    <div id="overlay">
+         <div><p></p></div>
+    </div>
+
+    <!-- Picklists -->
+    <div id="segment_picklist">
+        <apex:selectCheckboxes layout="pageDirection" value="{!selectedSegments}">
+            <apex:selectOptions value="{!segmentOptions}"/>
+        </apex:selectCheckboxes>
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#segment_picklist');" value="OK" reRender="segment_lookup"/>
+    </div>
+
+    <div id="region_picklist">
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#region_picklist');" value="OK" reRender="region_lookup"/>
+        <apex:selectCheckboxes layout="pageDirection" value="{!selectedRegions}">
+            <apex:selectOptions value="{!regionOptions}"/>
+        </apex:selectCheckboxes>
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#region_picklist');" value="OK" reRender="region_lookup"/>
+    </div>
+
+    <div id="country_picklist">
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#country_picklist');" value="OK" reRender="country_lookup"/>
+        <apex:selectCheckboxes layout="pageDirection" value="{!selectedCountries}">
+            <apex:selectOptions value="{!countryOptions}"/>
+        </apex:selectCheckboxes>
+        <apex:commandButton style="display: table; margin: 5px auto;" onclick="picklistClose('#country_picklist');" value="OK" reRender="country_lookup"/>
+    </div>
+
+</apex:form>
+    
+<script type="text/javascript">
+
+  // Load the Visualization API and the controls package.
+  // Packages for all the other charts you need will be loaded
+  // automatically by the system.
+  //google.load('visualization', '1.0', {'packages':['controls']});
+  google.load('visualization', '1.0', {'packages':['table']});  
+
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.setOnLoadCallback(drawDashboard);
+
+  function drawDashboard() {            
+        /* Quality & Risk */
+        var data_qrisk = new google.visualization.DataTable();
+                
+        data_qrisk.addColumn('string', 'Q & Risk');
+        data_qrisk.addColumn('number', '#');
+      	//data_qrisk.addColumn('number', 'Trend');
+        data_qrisk.addColumn('number', 'Size');
+
+      	<apex:repeat value="{!qcheck_data}" var="qcheck" id="qcheckRepeater">
+            data_qrisk.addRow({!qcheck});
+        </apex:repeat>
+
+        var qc_format = new google.visualization.NumberFormat( {suffix: 'M', negativeColor: 'red', negativeParens: true} );
+      
+      // Set the color codes
+      for(var i=0; i < data_qrisk.getNumberOfRows(); i++){
+            var first_cell = data_qrisk.getValue(i, 0); // get the first cell value
+            if(first_cell == 'Overdue') {
+                var num_val = data_qrisk.getValue(i, 1);
+                if (num_val == 0) data_qrisk.setProperty(i, 1, 'style', 'color: green;');
+                else if (num_val > 0) data_qrisk.setProperty(i, 1, 'style', 'color: red;');
+
+                var trend_val = data_qrisk.getValue(i, 2);
+                if (trend_val < 0) data_qrisk.setProperty(i, 2, 'style', 'color: green;');
+                else if (trend_val > 0) data_qrisk.setProperty(i, 2, 'style', 'color: red;');
+            } 
+            /* JPK TEMP 07-04-2016 */
+            if(first_cell == 'Inactive') {
+                data_qrisk.setProperty(i, 1, 'style', 'color: grey;');
+                data_qrisk.setProperty(i, 2, 'style', 'color: grey;');
+            }             
+        }
+            
+        var qrisk_format = new google.visualization.NumberFormat( {suffix: 'M', negativeColor: 'red', negativeParens: true} );
+        qrisk_format.format(data_qrisk, 2); // Amount field      
+      
+        var table_qrisk = new google.visualization.Table(document.getElementById('table_qrisk_div'));
+        table_qrisk.draw(data_qrisk, {allowHtml: true, alternatingRowStyle: false, showRowNumber: false,
+                                width: '100%', height: '100%',
+                                cssClassNames: {headerCell: 'headerData', tableCell: 'cellData'}
+                                });
+      
+        /* Shape & Flow */
+		var data_flow = new google.visualization.DataTable();
+                
+        data_flow.addColumn('string', 'Shape & Flow');
+        data_flow.addColumn('number', '#');
+        data_flow.addColumn('number', 'Size');
+        data_flow.addColumn('number', '#');
+        data_flow.addColumn('number', 'Size');
+        data_flow.addColumn('number', 'Avg.Prob.');
+      	data_flow.addColumn('number', '#');
+        data_flow.addColumn('number', 'Size');
+      
+        <apex:repeat value="{!shapeflow_data}" var="shapeflow" id="shapeflowRepeater">
+            data_flow.addRow({!shapeflow});
+        </apex:repeat>
+        
+        var flow_format1 = new google.visualization.NumberFormat( {suffix: 'M', negativeColor: 'red', negativeParens: true} );
+        flow_format1.format(data_flow, 2); // Amount field
+        flow_format1.format(data_flow, 4); // Amount field
+        flow_format1.format(data_flow, 7); // Amount field      
+        var flow_format2 = new google.visualization.NumberFormat( {suffix: '%', negativeColor: 'red', negativeParens: true, fractionDigits: 0} );
+        flow_format2.format(data_flow, 5); // Percentage
+      
+        var table_flow = new google.visualization.Table(document.getElementById('table_shapeflow_div'));
+        table_flow.draw(data_flow, {allowHtml: true, alternatingRowStyle: false, showRowNumber: false,
+                                width: '100%', height: '100%',
+                                cssClassNames: {headerCell: 'headerData', tableCell: 'cellData'}
+                                });        
+      
+        /* Win Rate */      
+        var data_winrate = new google.visualization.DataTable();
+                
+        data_winrate.addColumn('string', 'Win Rate Needed');
+        data_winrate.addColumn('number', 'in %');      
+
+        <apex:repeat value="{!winrate_data}" var="winrate" id="winrateRepeater">
+            data_winrate.addRow({!winrate});
+        </apex:repeat>
+
+        var winrate_format = new google.visualization.NumberFormat( {suffix: '%', negativeColor: 'red', negativeParens: true, fractionDigits: 0} );
+        winrate_format.format(data_winrate, 1); // Percentage
+        
+        var table_winrate = new google.visualization.Table(document.getElementById('table_winrate_div'));
+        table_winrate.draw(data_winrate, {allowHtml: true, alternatingRowStyle: false, showRowNumber: false,
+                                width: '100%', height: '100%',
+                                cssClassNames: {headerCell: 'headerData', tableCell: 'cellData'}
+                                });   
+      
+        /* Target */
+        var data_nwt = new google.visualization.DataTable();
+
+      //var patternFormat = {
+      //    suffix: '%',
+      //    negativeColor: '#FF0000',
+      //    negativeParens: true,
+      //    fractionDigits: 0
+      //  };        
+      
+        data_nwt.addColumn('string', '');        
+        data_nwt.addColumn('number', 'YTD');
+        data_nwt.addColumn('number', 'Q1');
+        data_nwt.addColumn('number', 'Q2');
+        data_nwt.addColumn('number', 'Q3');
+        data_nwt.addColumn('number', 'Q4');
+        data_nwt.addColumn('number', 'Total');        
+        data_nwt.addColumn('number', 'Q1');
+        data_nwt.addColumn('number', 'Q2');
+        data_nwt.addColumn('number', 'Q3');
+        data_nwt.addColumn('number', 'Q4');      
+        data_nwt.addColumn('number', 'Total');  
+ 		
+      	<apex:repeat value="{!netwin_trend_data}" var="nwt" id="nwtRepeater">
+            data_nwt.addRow({!nwt});
+        </apex:repeat>        
+
+        data_nwt.setProperty(0, 6, 'style', 'font-style:bold;font-size:15px;');
+        data_nwt.setProperty(1, 6, 'style', 'font-style:bold;font-size:15px;');
+        data_nwt.setProperty(2, 6, 'style', 'font-style:bold;font-size:15px;');
+        data_nwt.setProperty(3, 6, 'style', 'font-style:bold;font-size:15px;');      
+        data_nwt.setProperty(4, 6, 'style', 'font-style:bold;font-size:15px;');      
+        data_nwt.setProperty(0,11, 'style', 'font-style:bold;font-size:15px;');
+        data_nwt.setProperty(1,11, 'style', 'font-style:bold;font-size:15px;');
+        data_nwt.setProperty(2,11, 'style', 'font-style:bold;font-size:15px;');
+        data_nwt.setProperty(3,11, 'style', 'font-style:bold;font-size:15px;');      
+        data_nwt.setProperty(4,11, 'style', 'font-style:bold;font-size:15px;');   
+        
+        // Set the delta color codes
+        for(var i=0; i < data_nwt.getNumberOfRows(); i++){
+            var first_cell = data_nwt.getValue(i, 0); // get the first cell value
+            
+            if(first_cell == 'Gap' || first_cell == 'Gap %') {
+                for(var j=1; j <= 11; j++) {
+                    var num_val = data_nwt.getValue(i, j);
+                    if (num_val < 0) {
+                      data_nwt.setProperty(i, j, 'style', 'color: red;');
+                    } else {
+                      if (num_val >= 0) data_nwt.setProperty(i, j, 'style', 'color: green;');
+                    }
+                }
+            } 
+        } 
+      
+        var nwt_format1 = new google.visualization.NumberFormat( {suffix: 'M', negativeColor: 'red', negativeParens: true} );
+        nwt_format1.format(data_nwt, 1); // Apply formatter to second column
+        nwt_format1.format(data_nwt, 2); // Apply formatter to third column
+        nwt_format1.format(data_nwt, 3); // Apply formatter to fourth column
+        nwt_format1.format(data_nwt, 4); // Apply formatter to fixth column
+        nwt_format1.format(data_nwt, 5); // Apply formatter to sixth column
+        nwt_format1.format(data_nwt, 6); // Apply formatter to seventh column
+        nwt_format1.format(data_nwt, 7); // Apply formatter to third column
+        nwt_format1.format(data_nwt, 8); // Apply formatter to eighth column
+        nwt_format1.format(data_nwt, 9); // Apply formatter to ninth column
+        nwt_format1.format(data_nwt, 10); // Apply formatter to tenth column
+        nwt_format1.format(data_nwt, 11); // Apply formatter to eleventh column
+
+        var nwt_format2 = new google.visualization.NumberFormat( {suffix: '%', negativeColor: 'red', negativeParens: true, fractionDigits: 0} );
+        data_nwt.setFormattedValue(4, 1, nwt_format2.formatValue(data_nwt.getValue(4, 1)));
+        data_nwt.setFormattedValue(4, 2, nwt_format2.formatValue(data_nwt.getValue(4, 2)));
+        data_nwt.setFormattedValue(4, 3, nwt_format2.formatValue(data_nwt.getValue(4, 3)));         
+        data_nwt.setFormattedValue(4, 4, nwt_format2.formatValue(data_nwt.getValue(4, 4)));      
+        data_nwt.setFormattedValue(4, 5, nwt_format2.formatValue(data_nwt.getValue(4, 1)));
+        data_nwt.setFormattedValue(4, 6, nwt_format2.formatValue(data_nwt.getValue(4, 2)));
+        data_nwt.setFormattedValue(4, 7, nwt_format2.formatValue(data_nwt.getValue(4, 3)));         
+        data_nwt.setFormattedValue(4, 8, nwt_format2.formatValue(data_nwt.getValue(4, 4))); 
+        data_nwt.setFormattedValue(4, 9, nwt_format2.formatValue(data_nwt.getValue(4, 1)));
+        data_nwt.setFormattedValue(4,10, nwt_format2.formatValue(data_nwt.getValue(4, 2)));
+        data_nwt.setFormattedValue(4,11, nwt_format2.formatValue(data_nwt.getValue(4, 3)));         
+      
+        var table_nwt = new google.visualization.Table(document.getElementById('table_target'));
+      
+      //table_nwt.setFormattedValue(0, 1, target_format1.formatValue(table_nwt.getValue(0, 1)));
+      
+        table_nwt.draw(data_nwt, {allowHtml: true, alternatingRowStyle: false, showRowNumber: false,
+                                  width: '100%', height: '100%',
+                                  cssClassNames: {headerCell: 'headerData', tableCell: 'cellData'}
+                                 });  
+  }
+
+    // open the report as a new tab
+    function reportOpen(reportUrl) {
+        console.log(reportUrl);
+        var win = window.open(reportUrl, '_blank');
+        win.focus();
+    }
+
+    // open the overlay help window
+    function helpOpen(helptxt) {
+        $("#overlay").css("visibility", "visible");
+        $("#overlay p").html(helptxt);
+    }
+    
+    // close the overlay window when it is clicked
+    $("#overlay").click(function(){
+        $("#overlay").css("visibility", "hidden");
+    });
+
+    // open the overlay picklist window
+    function picklistOpen(lookupId, picklistId) {
+        // hide any previously opened picklists
+        $("[id$=_picklist]").css("visibility", "hidden");
+
+        // get the position of the lookup icon
+        var v_lookup = document.getElementById(lookupId);
+        var position = getPosition(v_lookup);
+          
+        // poistion the picklist
+        $(picklistId).css("left", position.x);
+        $(picklistId).css("top", position.y + 20);
+        $(picklistId).css("visibility", "visible");
+    }
+    
+    // close the overlay picklist window
+    function picklistClose(picklistId) {
+        $(picklistId).css("visibility", "hidden");
+    } 
+    
+    // get the x and y co-ordinates of an element
+    function getPosition(element) {
+        var xPosition = 0;
+        var yPosition = 0;
+      
+        while(element) {
+            xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+            yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+            element = element.offsetParent;
+        }
+        return { x: xPosition, y: yPosition };
+    }
+
+</script>
+
+</apex:page>

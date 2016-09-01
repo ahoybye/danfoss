@@ -1,0 +1,96 @@
+<apex:page sidebar="true" showHeader="true" controller="PartnerPortalHomeCtrl" id="pg" standardStylesheets="false">
+<head>
+<!-- redirect to terms and conditions page if terms and conditions are not yet accepted by User -->
+ <apex:outputpanel rendered="{!AND(NOT(ISPICKVAL($User.Terms_and_Conditions_Status__c,'Accepted')),$Site.Prefix = '/MyComatrol')}">
+<script type="text/javascript">
+    window.location = "{!$Page.MyComatrolTermsAndConditions}";
+</script>
+</apex:outputpanel>
+<apex:stylesheet value="{!URLFOR($Resource.ComatrolHomePageResource , 'css/styles.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.ComatrolHomePageResource  , 'js/jquery.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.ComatrolHomePageResource  , 'js/nivo.slider.min.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.ComatrolHomePageResource , 'css/nivo-slider.css')}"/>
+</head>
+<div class="container">
+    <div class="slider-wrapper theme-default">
+        <div id="slider" class="nivoSlider">
+            <a href="#">
+                <apex:image rendered="{!NOT(ISBLANK(portalBanner))}" url="/servlet/servlet.FileDownload?file={!portalBanner.Attachments[0].Id}" title="#htmlcaption"/>
+            </a>
+        </div>
+        <div id="htmlcaption" class="nivo-html-caption" >
+          <apex:outputText value="{!portalBanner.Summary__c}" rendered="{!NOT(ISBLANK(portalBanner))}" escape="false"/> 
+        </div>
+    </div>
+    <div id="content" >
+        <div class="right-content" style="margin-top:0px;">
+            <div class="greeting">
+                <span>Welcome,</span>
+                <span class="name">{!$User.FirstName} {!$User.LastName}</span>
+            </div>              
+            <div class="content-wrapper">
+                <div class="light-blue">
+                    <table class="articles">
+                        <tr>
+                              <td>
+                                <div class="half">
+                                    <c:HomePageWidgets ContentType="Announcement" />
+                                </div>
+                            </td>
+                             <td width="50%">
+                                <div class="half">
+                                    <c:HomePageWidgets ContentType="Product Information Bulletin" />
+                                </div>
+                            </td>
+                           
+                        </tr>
+                        <tr>
+                          <td>
+                                <div class="half">
+                                    <c:PricingWidget ContentType="Pricing" />
+                                </div>
+                            </td>
+
+                              <td colspan="1">
+                                <div class="half">
+                                    <c:TechnicalLiteratureWidget ContentType="Technical Literature" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            <!--  Marketing -->
+            <table class="marketing">
+                    <tbody><tr>
+                        <td align="left">
+                            <apex:outputLink target="_blank" value="{!marCommLeft.Link__c}" rendered="{!Not(ISBLANK(marCommLeft))}" disabled="{!ISBLANK(marCommLeft.Link__c)}">
+                                    <apex:image alt="{!marCommLeft.Alt__c}" title="{!marCommLeft.Alt__c}" value="/servlet/servlet.FileDownload?file={!marCommLeft.Attachments[0].Id}" width="200" height="150px;"/>
+                            </apex:outputLink>
+                        </td>
+                        <td align="center">
+                            <apex:outputLink target="_blank" value="{!marCommMiddle.Link__c}" rendered="{!Not(ISBLANK(marCommMiddle))}" disabled="{!ISBLANK(marCommMiddle.Link__c)}">
+                                    <apex:image alt="{!marCommMiddle.Alt__c}" title="{!marCommMiddle.Alt__c}" value="/servlet/servlet.FileDownload?file={!marCommMiddle.Attachments[0].Id}" width="200" height="150px;"/>
+                            </apex:outputLink>
+                        </td>
+                        <td align="right">
+                            <apex:outputLink target="_blank" value="{!marCommRight.Link__c}" rendered="{!Not(ISBLANK(marCommRight))}" disabled="{!ISBLANK(marCommRight.Link__c)}">
+                                    <apex:image alt="{!marCommRight.Alt__c}" title="{!marCommRight.Alt__c}" value="/servlet/servlet.FileDownload?file={!marCommRight.Attachments[0].Id}" width="200" height="150px;"/>
+                            </apex:outputLink>
+                        </td>
+                    </tr>
+                    </tbody>
+            </table>
+<!--            <c:TaskComponent /> -->
+            </div>                          
+        </div>
+    </div>
+</div><!-- /.container -->
+<script type="text/javascript">
+  $(window).load(function() {
+      $('#slider').nivoSlider({
+        directionNav: false,
+        controlNav: false
+      });
+  });
+</script>
+</apex:page>

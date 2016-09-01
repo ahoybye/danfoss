@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__Cannot_Update_Closed_Problem</fullName>
+        <active>true</active>
+        <description>This rule does not allow user to edit record if it is closed.</description>
+        <errorConditionFormula>AND( NOT( BMCServiceDesk__State__c ) , NOT( PRIORVALUE( BMCServiceDesk__State__c ) ),NOT( ISNEW() ), NOT( ISCHANGED( BMCServiceDesk__Total_Duration__c ) ), NOT( ISCHANGED( BMCServiceDesk__Number_of_linked_Changes__c ) ), NOT( ISCHANGED( BMCServiceDesk__Number_of_linked_Incidents__c ) )   )</errorConditionFormula>
+        <errorMessage>This problem is closed. Reopen the problem to modify it.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__KnownErrorMustBeCheckedForWorkaround</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( AND( ISBLANK(BMCServiceDesk__Work_Around__c)=FALSE,BMCServiceDesk__Known_Error__c=FALSE), TRUE,FALSE)</errorConditionFormula>
+        <errorMessage>Select the Known Error field to save the workaround</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__dueDateMustBeAfterOpenedDate</fullName>
+        <active>true</active>
+        <description>Due date must come after Opened Date.</description>
+        <errorConditionFormula>AND(NOT(OR(ISNULL(BMCServiceDesk__Due_Date_Time__c),ISBLANK(	BMCServiceDesk__Due_Date_Time__c) ) ),NOT(ISCHANGED( BMCServiceDesk__Open_Date_Time__c ) ), BMCServiceDesk__Due_Date_Time__c &lt; BMCServiceDesk__Open_Date_Time__c)</errorConditionFormula>
+        <errorMessage>The Due Date must be later than the Opened Date</errorMessage>
+    </validationRules>
+</CustomObject>

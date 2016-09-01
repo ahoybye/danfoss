@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flowActions>
+        <fullName>SYNCH_MA_TO_ACCOUNT</fullName>
+        <flow>Marketing_Attributes_Synch_to_Account</flow>
+        <flowInputs>
+            <name>AccountID</name>
+            <value>{!Account__c}</value>
+        </flowInputs>
+        <flowInputs>
+            <name>Attribute_ID</name>
+            <value>{!Account_Division_Data_Config__r.ID__c}</value>
+        </flowInputs>
+        <flowInputs>
+            <name>Attribute_lkp</name>
+            <value>{!Attribute_lkp__c}</value>
+        </flowInputs>
+        <flowInputs>
+            <name>Division_lkp</name>
+            <value>{!Division_lkp__c}</value>
+        </flowInputs>
+        <flowInputs>
+            <name>ValueAgg</name>
+            <value>{!ValueAgg__c}</value>
+        </flowInputs>
+        <label>SYNCH MA TO ACCOUNT</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+    <flowActions>
+        <fullName>SYNCH_MA_TO_CONTACT</fullName>
+        <flow>MarketingAttributesSynchtoAccount</flow>
+        <flowInputs>
+            <name>Attrib</name>
+            <value>{!Attribute_lkp__c}</value>
+        </flowInputs>
+        <flowInputs>
+            <name>ContactID</name>
+            <value>{!Contact__c}</value>
+        </flowInputs>
+        <flowInputs>
+            <name>Division</name>
+            <value>{!Division_lkp__c}</value>
+        </flowInputs>
+        <flowInputs>
+            <name>ValueAgg</name>
+            <value>{!ValueAgg__c}</value>
+        </flowInputs>
+        <label>SYNCH MA TO CONTACT</label>
+        <language>en_US</language>
+        <protected>false</protected>
+    </flowActions>
+</Workflow>

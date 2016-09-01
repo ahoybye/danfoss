@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>project_cloud__Dependency_in_Same_Project</fullName>
+        <active>true</active>
+        <description>Make sure the dependency junction Object is making a link between 2 tasks in the same project phase</description>
+        <errorConditionFormula>project_cloud__Child__r.project_cloud__Project_Phase__r.project_cloud__Project__r.Id != project_cloud__Parent__r.project_cloud__Project_Phase__r.project_cloud__Project__r.Id</errorConditionFormula>
+        <errorMessage>Dependencies between Projects Tasks in different Projects are currently not supported</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Dependents_Read_Only</fullName>
+        <active>true</active>
+        <description>The Parent Dependent Lookup field is read only. I.e once the lookup is created it cannot be modified to point to another object</description>
+        <errorConditionFormula>ISCHANGED(project_cloud__Parent__c) || ISCHANGED(project_cloud__Child__c)</errorConditionFormula>
+        <errorMessage>The Parent and Child relationships cannot be modified.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Increment_Always_Zero</fullName>
+        <active>true</active>
+        <description>The increment field is a system field for calculating the parent end date, after calculation it should always be 0 to prevent future calculations being compromised.</description>
+        <errorConditionFormula>ISBLANK(project_cloud__Increment__c) || project_cloud__Increment__c != 0</errorConditionFormula>
+        <errorDisplayField>project_cloud__Increment__c</errorDisplayField>
+        <errorMessage>Increment must always be 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__No_Self_Relationships</fullName>
+        <active>true</active>
+        <description>Prevent the creation of a dependency with the same Parent and child</description>
+        <errorConditionFormula>project_cloud__Parent__c = project_cloud__Child__c</errorConditionFormula>
+        <errorMessage>This Dependency cannot be created it will create a circular (self) relationship</errorMessage>
+    </validationRules>
+</CustomObject>

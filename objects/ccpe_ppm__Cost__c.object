@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>ccpe_ppm__Cannot_associate_with_parent_area</fullName>
+        <active>true</active>
+        <description>Only sub-areas can be associated with a cost</description>
+        <errorConditionFormula>NOT(ISBLANK(ccpe_ppm__Area__c)) &amp;&amp; ISBLANK(ccpe_ppm__Area__r.project_cloud__Area__c)</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Area__c</errorDisplayField>
+        <errorMessage>Costs cannot be associated with parent areas.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>project_cloud__Allocations_Must_Have_Date</fullName>
+        <active>true</active>
+        <description>Allocations require a Date to be selected</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Allocation&apos; &amp;&amp; ISBLANK(project_cloud__Date__c)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+        <errorMessage>Allocations require a Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Allocations_Must_Have_Hours</fullName>
+        <active>true</active>
+        <description>Allocations require an hours value greater than 0</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Allocation&apos; &amp;&amp; NOT(project_cloud__Hours__c &gt; 0)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Hours__c</errorDisplayField>
+        <errorMessage>Allocations require an hours value greater than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Allocations_Project_Tasks_Only</fullName>
+        <active>true</active>
+        <description>Calendar Allocations can only be created against Project Tasks</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Allocation&apos; &amp;&amp; ISBLANK(project_cloud__Project_Task__c)</errorConditionFormula>
+        <errorMessage>Allocations can only be created for Project Tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Record_Type_Matches_Deprecated_Type</fullName>
+        <active>true</active>
+        <description>To prevent users from setting the type on a work object without setting the record type (through the data loader or api) The type is restricted to match the record type.</description>
+        <errorConditionFormula>SUBSTITUTE($RecordType.DeveloperName, &apos;_&apos;, &apos; &apos;) != TEXT(project_cloud__Type__c)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Type__c</errorDisplayField>
+        <errorMessage>The Type field has been deprecated, please use record types to define the type of work.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Subscriptions_Projects_Phase_Tasks_Only</fullName>
+        <active>true</active>
+        <description>Subscriptions can only be created against Projects, Project Phases and Project Tasks</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Subscription&apos; &amp;&amp;
+ISBLANK(project_cloud__Project__c) &amp;&amp;
+ISBLANK(project_cloud__Project_Phase__c) &amp;&amp;
+ISBLANK(project_cloud__Project_Task__c )</errorConditionFormula>
+        <errorMessage>Subscriptions can only be created against Projects, Project Phases and Project Tasks</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entries_Between_Project_Task_Dates</fullName>
+        <active>false</active>
+        <description>Only allow time entries to be recorded between a Project Task Start and End date</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Time_Entry&apos; &amp;&amp;
+NOT(ISBLANK(project_cloud__Project_Task__c)) &amp;&amp; (
+	project_cloud__Date__c &lt; project_cloud__Project_Task__r.project_cloud__Start__c
+	|| project_cloud__Date__c &gt; project_cloud__Project_Task__r.project_cloud__End__c
+)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+        <errorMessage>Date must be between the Start and End date of the Project Task</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entries_Must_Have_Date</fullName>
+        <active>true</active>
+        <description>Time Entries require a Date to be selected. And that date must be in the range of the timesheet. And Can&apos;t be changed once set.</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Time_Entry&apos; &amp;&amp; OR(
+	ISBLANK(project_cloud__Date__c),
+	ISCHANGED(project_cloud__Date__c),
+	project_cloud__Date__c &lt; project_cloud__Timesheet__r.project_cloud__Start__c,
+	project_cloud__Date__c &gt; project_cloud__Timesheet__r.project_cloud__End__c
+)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Date__c</errorDisplayField>
+        <errorMessage>Time Entries require a Date which can not be changed and is between the date range of the Timesheet.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entries_Must_Have_Hours</fullName>
+        <active>true</active>
+        <description>Time Entries require an hours value greater than 0</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Time_Entry&apos; &amp;&amp;
+(ISBLANK(project_cloud__Hours__c) || NOT(project_cloud__Hours__c &gt; 0))</errorConditionFormula>
+        <errorDisplayField>project_cloud__Hours__c</errorDisplayField>
+        <errorMessage>Time Entries require an hours value greater than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entries_Must_Have_Timesheet</fullName>
+        <active>true</active>
+        <description>Time Entries require a Timesheet to be selected</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Time_Entry&apos; &amp;&amp; ISBLANK(project_cloud__Timesheet__c)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Timesheet__c</errorDisplayField>
+        <errorMessage>Time Entries require a Timesheet to be selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entries_Not_On_Templates</fullName>
+        <active>true</active>
+        <description>Time Entries should not be created against Project Templates. If for whatever reason you want to allow this, please disable this validation rule.</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Time_Entry&apos; &amp;&amp; project_cloud__Project_CCPE_Ignore__r.project_cloud__IsTemplate__c</errorConditionFormula>
+        <errorMessage>TIme Entries must not be created against Project Templates</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entries_On_Incomplete_Tasks_Only</fullName>
+        <active>false</active>
+        <description>When activated this validation rule prevents Time Entries from being created against Project Tasks which have been marked Completed</description>
+        <errorConditionFormula>project_cloud__Project_Task__r.project_cloud__IsComplete__c</errorConditionFormula>
+        <errorDisplayField>project_cloud__Project_Task__c</errorDisplayField>
+        <errorMessage>This Project Task has been marked Completed. Time can no longer be recorded against it.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Time_Entries_Timesheet_Locked</fullName>
+        <active>true</active>
+        <description>When the status of the Timesheet is Submitted or Approved the hours entered on a Time Entry can&apos;t be modifed</description>
+        <errorConditionFormula>$RecordType.DeveloperName == &apos;Time_Entry&apos; &amp;&amp;
+/*New record or hours changed. So mass updates of other values on time entries are possible*/
+(ISNEW() || ISCHANGED(project_cloud__Hours__c)) &amp;&amp; (
+	ISPICKVAL(project_cloud__Timesheet__r.project_cloud__Status__c, &apos;Submitted&apos;) ||
+	ISPICKVAL(project_cloud__Timesheet__r.project_cloud__Status__c, &apos;Approved&apos;)
+)</errorConditionFormula>
+        <errorMessage>Timesheet is locked. The Time Entry can not be modified.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>project_cloud__Type_Required</fullName>
+        <active>true</active>
+        <description>All Work Objects require a Record Type to be selected. And once set must not be changed.</description>
+        <errorConditionFormula>/*Make sure the record type is not blank*/
+ISBLANK(RecordTypeId) ||
+/*Make sure the record type is not changed, unless it is being set from null (migrated)*/
+(ISCHANGED(RecordTypeId) &amp;&amp; NOT(ISBLANK(PRIORVALUE(RecordTypeId))))</errorConditionFormula>
+        <errorMessage>All Work Objects require a Record Type which can not be changed.</errorMessage>
+    </validationRules>
+</CustomObject>

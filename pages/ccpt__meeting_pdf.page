@@ -1,0 +1,32 @@
+<apex:page >
+<!--<apex:page standardController="Meeting__c" extensions="MeetingExtension" renderAs="pdf">
+
+        <apex:stylesheet value="{!URLFOR($Resource.productivity_assets,'/css/meeting-pdf.css')}" />
+        <body style="font-family: 'Arial Unicode MS'; color: #555;">
+            <div class="header" style="">
+                <apex:image value="{!URLFOR($Resource.productivity_assets,'/img/logo-pdf.png')}" style="margin: 0px; padding: 0px;"/>
+                <h1 style="margin-top: 0px; padding-top: 0px; margin: 0px; padding: 0px;"><apex:outputText value="{!meeting.Name}" /></h1>
+                <span  style="font-size: 14px;"><c:date_format value="{!meeting.Start__c}" output="dd MMMMM yyyy" /></span>
+            </div>
+            <div class="content">
+            <apex:repeat value="{!agendaItems}" var="agenda">
+                <h2>{!agenda.Name}</h2>
+                <p style=""><apex:outputField value="{!MinuteMap[agenda.Id].Content__c}" /></p>
+                
+                <apex:outputPanel rendered="{!agenda.Meeting_Actions__r.size > 0}">
+                    <table>
+                    <apex:repeat value="{!agenda.Meeting_Actions__r}" var="action">
+                        <tr>
+                            <td>
+                            <div><apex:outputText value="{!action.Action__r.Name}" /> ({!action.Action__r.Owner.Name})</div>
+                            </td>
+                            <td style="text-align: right;"><c:date_format value="{!action.Action__r.Due_Date__c}" output="dd MMM yyyy" /></td>
+                        </tr>
+                   </apex:repeat>
+                   </table>
+                </apex:outputPanel>
+            </apex:repeat>
+            </div>
+        </body>
+-->
+</apex:page>

@@ -1,0 +1,53 @@
+<apex:page showHeader="true" sidebar="true" controller="InformationHubCtrl" standardStylesheets="false">
+
+  <head>
+    <apex:stylesheet value="{!URLFOR($Resource[styleSheetRecord.Stylesheet_Resource__c] , 'css/styles.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, '/js/jquery.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/main.css')}"/>
+    <style>
+        #phSearchForm {
+            display: none !important;
+        }
+    </style>
+  </head>
+
+  <div class="container">
+    <div id="content" >
+        <div class="right-content" style="margin-top:0px;">
+            <div>
+  <div class="greeting">
+    <span class="name" style="float: left;">
+      <ol class="breadcrumb">
+        <li><a href="{!IF($Site.Prefix!=null,$Site.Prefix,'')}{!'/apex/MarketingToolbox?sfdc.tabName='&$CurrentPage.parameters.sfdc.tabName}">{!$Label.Marketing_Toolbox}</a></li>
+        <li>{!$Label.Information_Hub}</li>
+      </ol>
+    </span> 
+    <div style="float: right;">
+      <a href="{!IF($Site.Prefix!=null,$Site.Prefix,'')}{!'/apex/MarketingToolbox?sfdc.tabName='&$CurrentPage.parameters.sfdc.tabName}">{!$Label.Back}</a>
+    </div>
+  </div>          
+                <div class="content-wrapper">
+                    <div class="light-blue">
+                         <table class="articles">
+                                <tr>
+                                    <td width="45%"><c:PartnerPortalHomeComponent Position="Top Left" /></td>
+                                    <td width="5%"></td>
+                                    <td width="45%"><c:PartnerPortalHomeComponent Position="Top Right" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><br /></td>
+                                </tr>
+                                <tr>
+                                    <td width="45%"><c:PartnerPortalHomeComponent Position="Bottom Left" /></td>
+                                    <td width="5%"></td>
+                                    <td width="45%"><c:PartnerPortalHomeComponent Position="Bottom Right" /></td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>                     
+        </div>
+    </div>
+  </div>
+
+</apex:page>

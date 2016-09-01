@@ -1,0 +1,102 @@
+<apex:page standardController="Account" extensions="GetTeamsExtension" showHeader="false" >
+    <apex:form id="form">
+        <apex:sectionHeader title="Manage Account Team" subtitle="{!Account.Name}">
+         <!-- you can add additional header content here if needed, for example, the 
+              top-of-page help text on the Convert Lead page -->
+              <apex:outputText value="{!Account.Special_Conditions__c}" rendered="false"/>
+        </apex:sectionHeader>
+ 
+        <apex:pageMessages /> 
+        <apex:pageMessage summary="Please contact Account Manager to be added to this account" severity="Error" strength="3" rendered="{!a.Special_Conditions__c=='NDA' || a.Special_Conditions__c=='Key Account'}"/>          
+        <apex:tabPanel switchType="client" value="{!shownTab}" id="theTabPanel" rendered="{!NOT(a.Special_Conditions__c=='NDA'|| a.Special_Conditions__c=='Key Account')}">
+            <apex:tab label="Add/Remove me" name="userTab" id="userTab" >                
+                <apex:pageBlock title="Add me" id="addUser" rendered="{!userInTeam==false}">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!addUser}" value="Add" reRender="form"/>
+                </apex:pageBlockButtons>                    
+                    <apex:pageBlockSection >
+                        <apex:outputField id="teamuserAdd" value="{!userTeamMember.UserId}" />
+                        <apex:inputField id="teamroleAdd" value="{!userTeamMember.TeamMemberRole}" />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:pageBlock title="Remove me" id="removeUser" rendered="{!userInTeam==true}">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!removeUser}" value="Remove" reRender="form" />
+                </apex:pageBlockButtons>                    
+                    <apex:pageBlockSection >
+                        <apex:outputField id="teamuserDel" value="{!userTeamMember.UserId}" />
+                        <apex:outputField id="teamroleDel" value="{!userTeamMember.TeamMemberRole}" />
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:tab>
+            <apex:tab label="Add SBA Teams" name="teamsTab" id="teamsTab" rendered="false">
+                    <apex:pageBlock title="Select Team" id="addTeams">
+                    <apex:pageBlockSection columns="3" collapsible="true">
+                        <apex:outputField value="{!Account.Name}"/>
+                        <apex:outputField value="{!Account.ShippingPostalCode}"/>
+                        <apex:outputField value="{!Account.shippingcountry}"/>                                               
+                    <!--    <apex:pageBlockSectionItem >
+                            <apex:outputLabel >{!$ObjectType.Account.fields.ShippingCountry.label}</apex:outputLabel>
+                            <apex:outputText >{!countryList}</apex:outputText>
+                        </apex:pageBlockSectionItem> -->
+                    </apex:pageBlockSection>
+                    <apex:pageMessage severity="info" strength="2" summary="There are no suggested teams for this {!$ObjectType.Account.fields.ShippingPostalCode.label} and {!$ObjectType.Account.fields.ShippingCountry.label}." rendered="{!Teams.size = 0}"/>
+                    <apex:pageblockTable value="{!Teams}" var="s" rendered="{!Teams.size != 0}">
+                        <apex:column value="{!s.Name}"/>
+                        <apex:column value="{!s.SBA_Team__c}"/>                
+                        <apex:column value="{!s.Division__c}"/>
+                        <apex:column >
+                            <apex:commandlink value="Add Team" action="{!AddTeam}" status="fetchStatus"  >
+                                <apex:param name="vID" value="{!s.Id}" assignTo="{!selectedDD}"/>
+                            </apex:commandlink>
+                        </apex:column>
+                    </apex:pageblockTable>
+                    <apex:panelGrid columns="3" rendered="{!Teams.size != 0}">
+                        <c:PrevNextLinks setCon="{!setCon}" rerender="form" status="fetchStatus"/>
+                        <c:PageNumber setCon="{!setCon}"/>
+                        <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                            <apex:actionStatus id="fetchStatus" startText="Loading..." stopText=""/>
+                        </apex:outputPanel>
+                    </apex:panelGrid>
+                </apex:pageBlock>
+           <!--     <apex:pageBlock id="existingTeams" title="Existing Teams" rendered="false">
+                    <apex:pageBlockTable value="{!Account.Associated_Teams__r}" var="AT" >
+                        <apex:column value="{!AT.Name}"/>
+                        <apex:column value="{!AT.Team__r.Name}"/>
+                        <apex:column value="{!AT.Team__r.SBA_Team__c}"/>                            -->
+                    <!--    <apex:column >
+                            <apex:commandLink action="{!removeAT}" value="Remove" status="selectContactStatus" reRender="form" >
+                                <apex:param name="selectedATId" value="{!AT.Id}" assignTo="{!selectedATId}"/>
+                            </apex:commandLink>
+                        </apex:column>                    -->
+           <!--         </apex:pageBlockTable>
+                    
+                </apex:pageBlock> -->
+            </apex:tab>
+            <apex:tab label="Add/Remove users" name="allusersTab" id="allusersTab" rendered="{!$Permission.AllowedToAddRemoveAnyAccountTeamMember}">            
+                <!--11th March 2015 Account Team Member Fixes allow a section where you can remove account team members-->
+                <apex:pageBlock title="Add Team Member" id="addAnyUser">
+                    <apex:pageBlockButtons rendered="{!NOT(a.Special_Conditions__c=='NDA'|| a.Special_Conditions__c=='Key Account')}">
+                        <apex:commandButton action="{!addTeamMember}" value="Add" reRender="form"/>
+                    </apex:pageBlockButtons>                    
+                    <apex:pageBlockSection >
+                        <apex:inputField id="teamuserAdd" value="{!anyUserTeamMember.UserId}" required="false" />
+                        <apex:inputField id="teamroleAdd" value="{!anyUserTeamMember.TeamMemberRole}"  required="false"/>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+                <apex:pageBlock id="AccountTeamMembers" title="Existing Account Team">
+                <apex:pageBlockTable value="{!currentAccountTeamMembers}" var="ATM" >
+                    <apex:column value="{!ATM.User.Name}"/>
+                    <apex:column value="{!ATM.TeamMemberRole}"/>
+                    <apex:column >
+                        <apex:commandLink action="{!removeTeamMember}" value="Remove" status="selectContactStatus" reRender="form" >
+                            <apex:param name="selectedATMId" value="{!ATM.Id}" assignTo="{!selectedATMId}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                </apex:pageBlockTable>  
+                </apex:pageBlock>
+            </apex:tab>   
+        </apex:tabPanel>
+        
+    </apex:form>
+</apex:page>

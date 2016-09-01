@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <webLinks>
+        <fullName>BMCServiceDesk__Deploy</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Deploy</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+
+var deployResult = sforce.apex.execute(&quot;BMCServiceDesk.WebServiceMethodsUtility&quot;,&quot;deployRecords&quot;, {id:&quot;{!BMCServiceDesk__ContentImport__c.Id}&quot;});
+
+if(deployResult.indexOf(&quot;ERROR&quot;) == -1)
+{
+location.reload();
+}
+else
+alert(deployResult);</url>
+    </webLinks>
+</CustomObject>

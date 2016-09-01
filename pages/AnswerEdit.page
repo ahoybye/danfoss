@@ -1,0 +1,45 @@
+<apex:page docType="html-5.0" standardController="Reply" extensions="AnswerEditController" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false">
+    <title>Edit answer</title>
+
+    <apex:composition template="DF_Template">
+        <apex:define name="body">
+
+            <apex:form >
+
+                <c:DF_Header />
+                <div class="container-bs">
+                    <h1 class="reset">Edit Answer</h1>
+                    <div class="ask-question">
+                        <div class="form-group">
+                            <label>Question Title</label>
+                            <apex:outputField value="{!ans.Question.Title}" label="Question"/>
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            <apex:inputField value="{!ans.Body}"/>
+                        </div><!-- /.form-group -->
+                        <div class="controls">
+                            <apex:commandButton styleClass="btn-bs btn-default" value="Cancel" action="{!Cancel}"/>
+                            <apex:commandButton styleClass="btn-bs btn-primary" value="Save" action="{!Save}"/>
+                        </div><!-- /.controls -->
+                    </div><!-- /.ask-question -->
+                </div>
+
+                <!-- 
+                <apex:pageBlock >
+                    <apex:pageBlockSection columns="2">
+                        <apex:inputField value="{!ans.Body}"/>
+                        <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                        <apex:outputField value="{!ans.Question.Title}" label="Question"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons >
+                        <apex:commandButton value="Save" action="{!Save}"/>
+                        <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                    </apex:pageBlockButtons>
+                </apex:pageBlock> 
+                -->
+
+            </apex:form>
+
+        </apex:define>
+    </apex:composition>
+</apex:page>

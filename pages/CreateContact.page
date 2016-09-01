@@ -1,0 +1,37 @@
+<apex:page standardController="Contact" extensions="CreateContactExtension">
+    <apex:form id="form">
+        <apex:pageMessages />
+        <apex:pageBlock mode="edit" title="Create Contact" >
+        <apex:actionRegion >
+            <apex:pageBlockSection columns="1" id="PB">     
+                <apex:inputField required="true" value="{!Contact.AccountId}">
+                  <apex:actionSupport event="onchange" action="{!qryAcc}" rerender="PB2" />
+                  </apex:inputField>
+            </apex:pageBlockSection>
+              </apex:actionRegion>
+                        <apex:pageBlockSection columns="1" id="PB2">     
+
+                <apex:inputField value="{!Contact.FirstName}"/>
+                <apex:inputField required="true" value="{!Contact.LastName}"/>
+                <apex:inputField required="false" value="{!Contact.Email}"/>
+                
+                <apex:inputField value="{!Contact.Gender__c}"  rendered="{!CONTAINS('AT:DE:CH:NL',acc.Country_MainAddress__c)}" required="True"/>
+            </apex:pageBlockSection>  
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!createNew}" value="Create Contact"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:outputPanel rendered="{!navigateToEditCon}">
+                Creating Contact...
+                <script>
+                var conID = '{!Contact.Id}';
+                if (window.sforce) {
+                    sforce.one.editRecord(conID);
+                } else {
+                    location = "/" + conID + "/e?retURL="+ conID;
+                }
+                </script>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

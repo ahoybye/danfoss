@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <validationRules>
+        <fullName>BMCServiceDesk__Start_Date_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>BMCServiceDesk__Start_Date__c  &gt;  BMCServiceDesk__End_Date__c</errorConditionFormula>
+        <errorMessage>Start date should be lesser than End date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Validate_Parent_service_for_an_offering</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(BMCServiceDesk__ServiceType__c, &apos;Offering&apos;)  &amp;&amp;   ISBLANK(BMCServiceDesk__FKBusinessService__c)</errorConditionFormula>
+        <errorMessage>Please enter the parent service in the Sub-Service of field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__Validate_Subservice_of</fullName>
+        <active>true</active>
+        <errorConditionFormula>Not(ISBLANK( BMCServiceDesk__FKBusinessService__c )) &amp;&amp; UPPER(BMCServiceDesk__FKBusinessService__r.BMCServiceDesk__Class__c) != &apos;BMC_BUSINESSSERVICE&apos;</errorConditionFormula>
+        <errorMessage>The Sub-Service of attribute can only be populated with a Business Service Instance.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <validationRules>
+        <fullName>CE_ShareofWallet_Currency_Consistency_Ch</fullName>
+        <active>false</active>
+        <description>Share of Wallets should be in the currency of the account</description>
+        <errorConditionFormula>AND(text(Type__c) != &apos;SoWSumComp&apos;, Text(Type__c) != &apos;SoWSum&apos;, 
+text(CurrencyIsoCode) !=  text(Account__r.CurrencyIsoCode))</errorConditionFormula>
+        <errorMessage>Share of Wallets should be in the same currency as the account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_SoW_CANNOT_CHANGE_PRODUCTLINE</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED( Product_Line__c )</errorConditionFormula>
+        <errorMessage>You cannot change Product Line once the record is saved, as this affects the un-allocated amount functionality</errorMessage>
+    </validationRules>
+</CustomObject>

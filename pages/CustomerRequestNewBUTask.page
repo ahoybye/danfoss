@@ -1,0 +1,51 @@
+<apex:page controller="CustomerRequestNewBUTaskExt" title="New Task for {!creqname}">
+	<apex:sectionheader title="{!$ObjectType.Task.label} Edit" subtitle="{!IF(ISNULL(Task.Subject), 'New Task',Task.Subject)}"/>
+	<apex:form >
+		<apex:pageblock mode="edit" title="{!$ObjectType.Task.label} Edit">
+			<apex:pageblockbuttons >
+				<apex:commandbutton value="Save" action="{!cSave}"/>
+				<apex:commandbutton value="Save & New" action="{!saveAndNew}"/>
+				<apex:commandbutton value="Cancel" action="{!Cancel}" immediate="true"/>
+			</apex:pageblockbuttons>
+
+			<apex:outputpanel > 
+				<apex:pageblocksection title="Task Information" showheader="true" columns="2">
+					<apex:inputfield value="{!Task.Order__c}" required="true"/>
+					<apex:outputfield value="{!Task.WhatId}"/>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Assigned To"/>						
+						<apex:inputfield value="{!Task.OwnerId}" required="true"/>				       
+				    </apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem />
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Subject"/>
+						<apex:inputfield value="{!Task.Subject}" required="true"/>
+				    </apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem />
+					<!-- <apex:pageBlockSectionItem >
+						<apex:outputLabel value="Reviewer Role"/>
+						<apex:inputfield value="{!Task.Reviewer_Role__c}" required="true"/>
+				    </apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem />
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Reviewer Task"/>
+						<apex:inputfield value="{!Task.Reviewer_Task__c}"/>
+				    </apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem /> -->
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Est. Start Date"/>
+						<apex:inputfield value="{!Task.Est_Start_Date__c}" required="true"/>
+				    </apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem />
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Est. Finish Date"/>
+						<apex:inputfield value="{!Task.ActivityDate}" required="true"/>
+				    </apex:pageBlockSectionItem>
+				</apex:pageblocksection>
+				<apex:pageblocksection title="Description Information" showheader="false" columns="1">
+					<apex:inputfield value="{!Task.Description}"/>
+				</apex:pageblocksection>
+			</apex:outputpanel>
+		</apex:pageblock>
+	</apex:form>
+</apex:page>

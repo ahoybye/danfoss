@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>ccpe_ppm__Actuals_Must_Be_Changed_After_Planning</fullName>
+        <active>true</active>
+        <description>Changes to actual costs can only occur during the Maintenance and Execution stages.</description>
+        <errorConditionFormula>(ccpe_ppm__Cost__r.ccpe_ppm__Investment__r.RecordType.Name == &apos;Planning&apos; &amp;&amp;
+   ISPICKVAL(ccpe_ppm__Status__c, &apos;Actual&apos;) &amp;&amp;
+   ISCHANGED(ccpe_ppm__Amount__c))</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Amount__c</errorDisplayField>
+        <errorMessage>Actual Costs cannot be changed during the Planning Stage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_ppm__Date_Must_Match_Schedule_Type</fullName>
+        <active>true</active>
+        <description>Date must match the Cost Schedule set on the parent Investment.</description>
+        <errorConditionFormula>DAY(ccpe_ppm__Date__c) != 1 ||
+    ((ISPICKVAL(ccpe_ppm__Cost__r.ccpe_ppm__Investment__r.ccpe_ppm__Costs_Schedule__c,&apos;Quarterly&apos;) &amp;&amp;
+     MOD(MONTH(ccpe_ppm__Date__c), 3) != 1) ||
+     (ISPICKVAL(ccpe_ppm__Cost__r.ccpe_ppm__Investment__r.ccpe_ppm__Costs_Schedule__c, &apos;Annual&apos;) &amp;&amp;
+      MONTH(ccpe_ppm__Date__c) != 1))</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Date__c</errorDisplayField>
+        <errorMessage>Date does not match the Cost Schedule set on the Investment.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_ppm__Planned_Must_Be_Changed_During_Planning</fullName>
+        <active>true</active>
+        <description>Planned costs can only be changed during the Planning Stage.</description>
+        <errorConditionFormula>(ccpe_ppm__Cost__r.ccpe_ppm__Investment__r.RecordType.Name == &apos;Maintenance&apos; ||
+ ccpe_ppm__Cost__r.ccpe_ppm__Investment__r.RecordType.Name == &apos;Execution&apos;) &amp;&amp;
+ISPICKVAL(ccpe_ppm__Status__c, &apos;Planned&apos;) &amp;&amp;
+ISCHANGED(ccpe_ppm__Amount__c)</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Amount__c</errorDisplayField>
+        <errorMessage>Cannot change a planned cost once the Planning Stage has concluded.</errorMessage>
+    </validationRules>
+</CustomObject>

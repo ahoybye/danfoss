@@ -1,0 +1,238 @@
+<apex:page sidebar="false" showHeader="false" controller="BMCServiceDesk.FulfillmentInputLookupFilterController" standardStylesheets="false">
+
+  <link rel="stylesheet" type="text/css" href="{!$Resource.ExtJS4_1_3}/resources/css/ext-all.css" />
+  <link rel="stylesheet" type="text/css"  href="{!$Resource.SDEFStyles}/AdminHome.css" />
+  <apex:includeScript value="{!$Resource.BMCServiceDesk__ExtJS4_1_3}/ext-all.js" id="ext-all-js"/>
+  <apex:form id="RDLookupFilterform" style="display:none;">
+    <apex:actionFunction action="{!getPicklistValues}" name="getPicklistValues" rerender="picklistPanel" oncomplete="setPickListOptions();hideWaitbox();">
+            <apex:param name="filterId" assignTo="{!picklistAPIName}" value=""/>
+    </apex:actionFunction>
+     <apex:actionFunction action="{!save}" name="save" rerender="fieldsPanel,filterTypeId,InactiveId,InactiveChkId,filterLogicId" onComplete="hideWaitbox();afterSave();reloadCriteriaGrid();showExtMsg();setCancelFlagAfterSave();setCriteriaID();">
+     	<apex:param name="saveAsNew" value=""/>
+    </apex:actionFunction>
+    <!-- Criteria grid data -->
+    <apex:inputHidden id="CriteriaGridStrId"  value="{!CriteriaGridStr}"/>
+    <!-- End of Criteria grid data -->
+  <table width="100%"  class="rf-gray-border" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+           <td colspan="3">
+              <div style="{!IF(fulfillmentCriteria != 'true','height:15px', 'height:0px')}"></div>
+           </td>
+          </tr>
+          <tr style="{!IF(fulfillmentCriteria != 'true','', 'display:none')}">
+           <td>   
+                <apex:outputLabel value="{!$Label.BMCServiceDesk__FilterName}" styleClass="clsInputLabelTD"/>
+            </td>
+           <td>   
+                <apex:inputField value="{!filterObj.Name}" id="filterNameId" style="width: 350px;" onchange="isDataChanged();" styleClass="clsInputTextBox"/>
+           </td>
+            <td>
+                <apex:inputCheckbox value="{!filterObj.BMCServiceDesk__Inactive__c}" id="InactiveId" onchange="isDataChanged();" /> 
+                <apex:outputLabel value="{!$Label.BMCServiceDesk__Inactive}" styleClass="clsInputLabelTD" style=" vertical-align: bottom; padding-left:3px"/>
+            </td>          
+         </tr>
+         <tr class="rf-criteria-form-td" style="{!IF(fulfillmentCriteria != 'true','', 'display:none')}">
+             <td>
+                <apex:outputLabel value="{!($ObjectType.BMCServiceDesk__LookupFilter__c.fields.BMCServiceDesk__FilterType__c.label)}"  styleClass="clsInputLabelTD" />
+            </td>
+            <td>
+                 <apex:inputField value="{!filterObj.BMCServiceDesk__FilterType__c}" id="filterTypeId" onchange="isDataChanged();" styleClass="clsTemplateSelectList" style="width: 134px;"/>
+                </td>
+         </tr>
+             <tr>
+            <td colspan="3">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr class="rf-td-toolbar">
+                        <td style="padding-left:10px;" >
+                            <div id="lookupFieldCombo"/>
+                        </td>
+                        <td >
+                            <div id="compareOpDiv" style="padding-right: 15px;"/>
+                        </td>
+                        <td style="{!IF(fulfillmentCriteria == 'true','', 'display:none')}">
+                            <div id="fieldValueCombo"/>
+                        </td>
+                         <td>
+							<div style="{!IF(fulfillmentCriteria == 'true','', 'display:none')};padding-left:15px;" id="selectFieldCombo"/>
+                            <apex:inputText id="inputTxt" style="{!IF(fulfillmentCriteria != 'true','', 'display:none')}"  styleClass="filterInputEle"/ >
+                            <input type="text" id="referenceID" value=""  style="display:none;" />
+                            <apex:inputText id="datetimeinput" styleClass="filterInputEle" style="display:none"/>
+                            <apex:inputText id="inputDate" styleClass="filterInputEle" style="display:none"/>
+                            <apex:inputTextarea id="inputTxtArea" style="display:none" styleClass="filterTextarea" onkeyup=""/>
+                        
+                            <input type="button" id="lookUp" class="filterLookupIconOn" style="display:none;" onClick="openQualLookup();"/>
+                            <input type="button" id="inputTxtAreaButtonEle" class="filterTextBoxPopupIcon" style="display:none" onclick="window.parent.showTextEditor(null, selectedLabel, selectedTextAreaLength, '{!JSENCODE($Label.OK)}', '{!JSENCODE($Label.Cancel)}', null, null, null, getInputTextAreaEle());" />
+                            <apex:image id="dateTimePopupImg"  styleClass="CMDB_DatePickerImage" style="display:none" width="19px" height="19px" value="{!$Resource.BMCServiceDesk__SDEFStyles}/SDEFbuttons/b_calendar_popup.gif" onclick="showDateTimePicker();"/>
+                            <apex:image id="datePopupImg"  styleClass="CMDB_DatePickerImage" style="display:none" width="19px" height="19px" value="{!$Resource.BMCServiceDesk__SDEFStyles}/SDEFbuttons/b_calendar_popup.gif" onclick="showDatePicker();"/>
+                        </td>
+                        <td>
+                            <div id="picklistCombo"/>   
+                            <div id="booleanCombo"/>        
+                        </td>
+                        <td width="5%" align="right" style="padding-right:10px">
+                        	<table>
+                        		<tr>
+                        			<td><button type="button" id="AddBtnId" class="rf-btn" onClick="addUpdateCriteriaGrid();" style="margin-left:30px;">{!JSENCODE($Label.Add)}</button></td>
+                        			<td><button type="button" id="UpdateBtnId" class="rf-btn" style="display:none;" onClick="upadateCriteriaGrid();">{!JSENCODE($Label.Update)}</button></td>
+                        			<td><button type="button" id="DelCriteriaBtnId"   disabled="disabled" class="rf-btn" onClick="deleteFromCriteriaGrid();">{!JSENCODE($Label.Delete)}</button></td>
+                        		</tr>
+                        	</table>
+                        </td>
+						 <td align="right" style="{!IF(fulfillmentCriteria != 'true','display:none', '')}"> 
+							<apex:inputCheckbox value="{!filterObj.BMCServiceDesk__Inactive__c}" id="InactiveChkId" style="margin-left:5px" onchange="isDataChanged();" rendered="{!(fulfillmentCriteria=='true')}"/> 
+						 </td>
+						 <td align="right" style="{!IF(fulfillmentCriteria != 'true','display:none', '')}">
+							<apex:outputLabel value="{!$Label.BMCServiceDesk__Inactive}" styleClass="clsInputLabelTD" style=" vertical-align: bottom; padding-left:3px;padding-right: 10px;"/>
+						</td>
+                    </tr>
+                    <tr>
+                        <td colspan ="{!IF(fulfillmentCriteria == 'true', 8, 7)}"> 
+                            <div id="criteriaGrid"/>        
+                        </td>
+                    </tr>
+                </table>
+            </td>
+           </tr>
+                     <tr>
+           <td colspan="4"  style=" background-color: #DEE0E0;height: 39px;padding-left:20px;"> 
+               <table width="100%">
+                    <tr>
+                        <td>
+                            <apex:outputLabel value="{!$ObjectType.BMCServiceDesk__LookupFilter__c.fields.BMCServiceDesk__FilterLogic__c.label}" for="" style="padding-right:10px;"/>
+                        
+                            <apex:inputField id="filterLogicId" value="{!filterObj.BMCServiceDesk__FilterLogic__c}" styleClass="rf-filter-logic" style="width:200px;" />
+                        
+                            <apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__filterLogicExample)}" for="" style="padding-left:10px;"/>
+                        </td>
+                        <td align="right" style="padding-right:20px;">
+                            <button id="SaveBtnId" type="button" class="rf-btn" onClick="callSave();">{!JSENCODE($Label.Save)}</button> 
+                            <button id="CancelBtnId" type="button" class="rf-btn" onClick="callCancel();">{!JSENCODE($Label.Cancel)}</button>
+                        </td>
+                    </tr>
+               </table>
+           </td>
+       </tr>
+  </table>
+  </apex:form>
+   <apex:outputpanel id="fieldsPanel">
+    <script>
+    var fieldStr = {!fieldStr},
+    	CriteriaGridData={!LookupCriteriaGridData},
+    	filterObjName = '{!JSENCODE(filterObj.Name)}',
+    	filterObjId = '{!filterObj.id}',
+    	msgStr = '{!JSENCODE(MsgStr)}',
+    	isLkfUsed = {!isLkfUsed};
+	var QueryCondition = '{!JSENCODE(QueryCondition)}';
+	var ConsolefieldStr = {!ConsolefieldStr};
+   </script>
+ </apex:outputpanel>
+ <apex:outputpanel id="picklistPanel">
+<script>
+  var picklistStr = '{!picklistValuesStr}';
+</script>
+ </apex:outputpanel>
+  <script>
+     
+  Ext.ns("LookupFilter");
+     LookupFilter.Labels = {
+        labelField : '{!JSENCODE($Label.CIExpField)}',
+        labelValue : '{!JSENCODE($Label.Value)}',
+        DeleteConfirmMessage : '{!JSENCODE($Label.DeleteConfirmMessage)}',
+        Delete : '{!JSENCODE($Label.Delete)}',
+        Console: '{!JSENCODE($ObjectType.LookupFilter__c.fields.Console__c.label)}',
+        FilterFor: '{!JSENCODE($ObjectType.LookupFilter__c.fields.FilterFor__c.label)}',
+        FilterType: '{!JSENCODE($ObjectType.LookupFilter__c.fields.FilterType__c.label)}',
+        Inactive: '{!JSENCODE($Label.Inactive)}',
+        Criterion : "{!JSENCODE($Label.Criterion)}",
+        FieldName:'{!JSENCODE($Label.FieldName)}',
+        Operator : "{!JSENCODE($Label.Operator)}",
+        operandValue : "{!JSENCODE($Label.Value)}",
+        SelectFieldErrMsg:'{!JSENCODE($Label.ErrorMsgTemplateS)}',
+        SelectCompOpMessage:'{!JSENCODE($Label.SelectCompOpMessage)}',
+        EnterValMsg:'{!JSENCODE($Label.EnterValueMsg)}',
+        FilterLogicValidation:'{!JSENCODE($Label.FilterLogicValidation)}',
+        FilterExists:'{!JSENCODE($Label.FilterExists)}',
+        PleaseWait:'{!JSENCODE($Label.PleaseWait)}',
+        cancelConfirm : '{!JSENCODE($Label.AdminLookupFilterCancel)}',
+        FilterLogicLimitExceeded: '{!JSENCODE($Label.ProjectedServiceOutageTextAreaOverflow)}',
+        CompatibleErrorMsg: '{!JSENCODE($Label.CompatibleErrorMsg)}',
+        Cancel: '{!JSENCODE($Label.Cancel)}',
+        EditFilter:'{!JSENCODE($Label.EditFilter)}',
+        NewFilter:'{!JSENCODE($Label.NewFilter)}',      
+        FilterLogicAddCriteriaValidation: '{!JSENCODE($Label.FilterLogicAddCriteriaValidation)}',
+        FilterLogicDeleteCriteriaValidation: '{!JSENCODE($Label.FilterLogicDeleteCriteriaValidation)}',
+        FilterLogicModifyCriteriaValidation: '{!JSENCODE($Label.FilterLogicModifyCriteriaValidation)}',
+        labelTrue: '{!JSENCODE($Label.True)}',
+        labelFalse: '{!JSENCODE($Label.False)}',
+        filtername: '{!JSENCODE(filterObj.Name)}',
+        saveAs: '{!JSENCODE($Label.saveAs)}',
+        createNewfilterOption: '{!JSENCODE($Label.createNewfilterOption)}',
+        changeFilterOption: '{!JSENCODE($Label.changeFilterOption)}',
+        CloseWindowLabel: '{!JSENCODE($Label.CloseWindowLabel)}',
+		LabelEdit: '{!JSENCODE($Label.CMDBEdit)}',
+        filterNameRequired: '{!JSENCODE($Label.filterNameRequired)}'
+        }
+   var compStore = new Object(),
+	   labelOperator = '{!JSENCODE(labelOperator)}',
+	   LKfilterId = '{!JSENCODE($CurrentPage.parameters.LKfilterId)}',
+	   EF = 'ф',
+	   DZHE ='џ', //Cyrillic character
+	   nonPrint = '¬',
+	   PE = 'П',
+	   ExtjsMessageOK = '{!JSENCODE($Label.Ok)}', 
+	   Cancel = '{!JSENCODE($Label.Cancel)}',
+	   SavedSuccessfully = '{!JSENCODE($Label.SavedSuccessfully)}';
+         var SDEDateFormat = '{!userDateFormat}';
+		 var fulfillmentCriteria = '{!JSENCODE(fulfillmentCriteria)}';
+		 var formId = '{!$Component.RDLookupFilterform}';
+		 var BEObjLabel = '{!JSENCODE($ObjectType.BMC_BaseElement__c.Label)}';
+		 
+   function getInputTxtEle(){
+    return document.getElementById('{!$Component.RDLookupFilterform.inputTxt}');
+   }
+   function getInputTextAreaEle(){
+    return document.getElementById('{!$Component.RDLookupFilterform.inputTxtArea}');
+   } 
+   function getDateTimeInputEle(){
+    return document.getElementById('{!$Component.RDLookupFilterform.datetimeinput}');  
+   }
+   function getDateTimePickerImg(){
+    return document.getElementById('{!$Component.RDLookupFilterform.dateTimePopupImg}');
+   }
+   function getDateInputEle(){
+    return document.getElementById('{!$Component.RDLookupFilterform.inputDate}');  
+   }
+   function getDatePickerImg(){
+    return document.getElementById('{!$Component.RDLookupFilterform.datePopupImg}');
+   }
+   function getLookupEle(){
+    return document.getElementById('lookUp');
+   }
+   function getLookUpPanelEle(){
+    return document.getElementById('{!$Component.lookUpPanel}');
+   }
+   function getCriteriaGridStrEle(){
+    return document.getElementById('{!$Component.RDLookupFilterform.CriteriaGridStrId}');
+   }
+   function getFilterLogicObj(){
+        return document.getElementById('{!$Component.RDLookupFilterform.filterLogicId}');  
+   }
+   function getFilterNameEle(){
+        return document.getElementById('{!$Component.RDLookupFilterform.filterNameId}');  
+   }
+    
+   function showDateTimePicker(){
+    var dateTimeInputId = document.getElementById('{!$Component.RDLookupFilterform.datetimeinput}');
+    _datePicker.Show(dateTimeInputId);
+   }
+   function showDatePicker(){
+    var dateInputId = document.getElementById('{!$Component.RDLookupFilterform.inputDate}');
+    _datePicker.Show(dateInputId);
+   } 
+    function getFilterTypeObj(){
+      return document.getElementById('{!$Component.RDLookupFilterform.filterTypeId}');
+   }
+   
+  </script>
+  <script type="text/javascript" src="{!$Resource.SDEFCommonJS}/FulfillmentInputLookupFilterPage.js"></script>
+</apex:page>

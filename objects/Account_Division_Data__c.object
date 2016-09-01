@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>must_be_related_to_a_record</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(Account__c) &amp;&amp; ISBLANK(Contact__c)</errorConditionFormula>
+        <errorMessage>The marketing attribute must be related to a record</errorMessage>
+    </validationRules>
+</CustomObject>

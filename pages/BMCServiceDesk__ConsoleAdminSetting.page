@@ -1,0 +1,462 @@
+<apex:page controller="BMCServiceDesk.ConsoleAdminSettingController" id="consolePage" standardstylesheets="false" showheader="false" >
+<link rel="stylesheet" href="{!$Resource.ExtJS4_1_3}/resources/css/ext-all.css" type="text/css" />
+<link rel="stylesheet" href="{!$Resource.SDEFStyles}/ConsoleAdminSetting.css" type="text/css" />
+<link rel="Stylesheet" type="text/css" href="{!$Resource.SDEFStyles}/HelpStyles.css" />
+<!-- page specific style -->
+<style>
+.x-btn-inner{
+	padding-left : 0px !important;
+	padding-right : 0px !important;
+}
+
+</style>
+
+ <apex:form id="mainform">
+ <table width="100%" id="tableCls" height="100%" >
+    <tr>
+        <td colspan="3">
+        <div id="divTB"/>
+        </td>
+    </tr>
+    <tr>
+        <td class="enableConsoleCls" valign="top">
+		<apex:outputPanel rendered="{!NOT(isForSSLayout)}">
+		<table><tr><td><apex:inputCheckbox value="{!enableConsole}"  rendered="{!NOT(isFreshInstall)}" disabled="{!enableRFConsole}" id="EnableIndivisualConsole" onclick="showHideConfigure('{!$Component.EnableIndivisualConsole}');" style="margin-top:1px;" styleclass="floatLeft10px"/>
+				<div class="floatLeft10px stdfont"><apex:outputLabel rendered="{!NOT(isFreshInstall)}" value="{!JSENCODE($Label.BMCServiceDesk__enableAndUseConsole )}"  style="align:left; margin-right:40px;" /></div></td></tr>
+			<tr height="10"><td> </td></tr>
+			<tr><td><apex:inputCheckbox value="{!enableRFConsole}" id="enableRFViewChk" onclick="ShowHideCheckBox()" style="margin-top:1px;" styleclass="floatLeft10px"/>
+			<div class="floatLeft10px stdfont" ><apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__enableRemedyforceConsole)}" style="align:left;" /></div></td></tr>
+			<tr> 
+			<td id="RFConsoleTD" style="{!IF(enableRFConsole,'display:block','display:none')};">
+			<table>
+				<tr height="10"><td> </td></tr>
+				<tr class="tblHeaderCls paddingTop20 BoltFontcls"><td ><apex:outputLabel id="GeneralConsoleSettingLabel" value="{!JSENCODE($Label.BMCServiceDesk__ConsoleSettings)}"  style="{!IF(enableRFConsole,'visibility:visible','visibility:hidden')};"/></td></tr>
+				
+				   
+				 <tr height="10"></tr>
+			  
+				<tr><td><apex:outputPanel id="consoleDashboardPanel" style="{!IF(enableRFConsole,'visibility:visible','visibility:hidden')};">
+				 <apex:inputCheckbox value="{!enableConsoleDashboard}" id="enableConsoleDashboardViewChk" style="margin-top:1px;" styleclass="floatLeft10px"/>
+				  <div class="floatLeft10px stdfont" ><apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__enableConsoleDashboardLabel)}" style="align:left;" /></div> 
+				</apex:outputPanel></td></tr>
+				<tr height="10" style="{!IF(showSegregationCheck,'display:block','display:none')};"><td> </td></tr>
+				<tr><td><apex:outputPanel id="consoleIncidentSRSegregationPanel" style="{!IF(enableRFConsole,'visibility:visible','visibility:hidden')};" rendered="{!showSegregationCheck}">
+				 <apex:inputCheckbox value="{!enableIncidentSRSegregation}" id="enableConsoleIncidentSRSegregationViewChk" onclick="changePageUI(enablerf.checked,enableStandAloneCon)" style="margin-top:1px;" styleclass="floatLeft10px"/>
+				  <div class="floatLeft10px stdfont" ><apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__enableRFConsoleIncidentSRSegregation)}" style="align:left;" /></div> 
+				</apex:outputPanel></td></tr>
+				<tr height="10"><td> </td></tr>
+				<tr><td> 
+				   <table id="RecordLockDiv"  style="{!IF(enableRFConsole,'visibility:visible','visibility:hidden')};">
+				   <tr>
+				   <td> 
+				  <apex:outputLabel value="{!$Label.BMCServiceDesk__RecordLocking}" />
+				  </td>
+				  <td>
+				 <div id="EnableRecordLocking" style="margin-left: 10px" ></div>  
+				  </td>
+				   <td>
+					  <div id="lockDuration"  style="margin-left: 10px"></div>
+					 </td>
+					 </tr></table>
+					</td> </tr>
+					<tr height="10"><td> </td></tr>
+					<tr class="tblHeaderCls paddingTop20 BoltFontcls"><td ><apex:outputLabel id="IndividualViewLable" value="{!JSENCODE($Label.BMCServiceDesk__ConsoleViewSettings)}"  style="{!IF(enableRFConsole,'visibility:visible','visibility:hidden')};"/></td></tr>
+				</table>
+			</td>
+			</tr>
+		</table>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{!isForSSLayout}">
+		<apex:inputCheckbox value="{!enableTktLayout}" id="enableTktLayoutChk"  style="margin-top:1px;" styleclass="floatLeft10px" onclick="showHideConfigure('{!$Component.enableTktLayoutChk}');" rendered="{!showTktLayoutCheckbox}"/>
+		<div class="floatLeft10px stdfont"><apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__enableAndUseTktLayout)}"  style="align:left; margin-right:40px;" rendered="{!showTktLayoutCheckbox}"/></div>
+		</apex:outputPanel>
+        </td>
+		 <td valign="top">
+              <div  id="helpDiv" class="clshelpDiv" ></div>
+         </td>
+    </tr>
+    <tr >
+        <td id ="configureConsoleId" style="{!IF(enableConsole,'visibility:visible','visibility:hidden')};padding:15px;"  colspan="3" > 
+            
+            <table  height="100%" width="100%" class="configureTblCls " border='0' style="  border-collapse: initial;border-collapse: separate;">
+                <tr>
+                    <td colspan="2" class="configureTdClas" id="ConsoleTd">
+                    <apex:outputPanel rendered="{!isForSSLayout}" layout="block" style="float:left;right: 20px;padding-top: 4px;padding-left:10px;">
+                            <apex:outputText value="{!JSENCODE($Label.BMCServiceDesk__Layout)}" rendered="{!isForSSLayout}"/>
+                        </apex:outputPanel>
+           				<div style="{!IF(isForSSLayout,'','float:left;border-right:  thin solid #BCBCBC; padding-top: 1px;')};" id="columncount">
+           					<div id="StndAloneLbl" class="floatLeft10px paddingTop4" ></div>
+           					<div id="RFCLbl" class="floatLeft10px paddingTop4 "></div>
+           					<div id="viewPickList" class=" floatLeft10px"></div>
+           					<div id="2colOr1colSelect" style="float:left"></div>
+           					<apex:outputPanel id="consoleSSSmartSuggestion" style="{!IF(isForSSLayout,'display:block;float:left;margin-left:10px;padding-left:10px;border-left:thin solid #BCBCBC','display:none')};">
+           						<button type="button" class="rf-btn" style="cursor: pointer;" onClick="AddSSCustomizeSmartSuggest();">{!$Label.SmartSuggestions}</button>
+           					</apex:outputPanel>           					
+           				</div>
+	           				<div id="customizeMenus" class="paddingLeft15" style="{!IF(isForSSLayout,'display:none;','')}; ">
+                               <table>
+                                   <tr style="valign:middle">
+                                       <td style="padding-left: 10px;">
+                                 <button type="button" class="rf-btn" style="{!IF(isForSSLayout,'visibility:hidden','visibility:this.visibility')}; margin-right:10px;cursor: pointer;" onClick="AddCustomizeMenu();">{!$Label.customizeMenu}</button>
+                                       </td> 
+                                       <td style="padding-right:10px;"> <apex:outputPanel id="consoleSmartSuggestion" style="{!IF(NOT(isForSSLayout) && enableRFConsole,'visibility:visible','visibility:hidden')};">
+												<button type="button" class="rf-btn" style="cursor: pointer;" onClick="AddCustomizeSmartSuggest();">{!$Label.SmartSuggestions}</button> 
+											</apex:outputPanel>
+									   </td> 
+                                   </tr>
+                               </table>
+	           				</div>
+                        
+                    </td>
+                </tr>
+
+                <tr  style="{!IF(isForSSLayout,'display:none;','')}; " id="coloumCountTR">
+                    <td colspan="2" class="paddingTop10">
+                        <apex:outputPanel rendered="{!NOT(isForSSLayout)}" layout="block" styleClass="paddingLeft15 floatLeft10px paddingTop4" >
+                            <apex:outputText value="{!JSENCODE($Label.BMCServiceDesk__consoleAdminConsoleLayout)}"  />
+                        </apex:outputPanel>
+                        <div id="coloumCount"/>
+                    </td>
+                </tr>
+                        
+                <tr  style="{!IF(isForSSLayout,'display:none;','')}; " id="EnableMassUpdateTR">
+                    <td>
+                        <div id ="EnableMassUpdatePanelDiv" class="paddingLeft15" rendered="{!NOT(isForSSLayout)}">
+                           <div id="EnableMassUpdatePanel" class="floatLeft10px paddingTopBot5px"></div>
+                           <div id="enableMassUpdateLbl" class ="paddingTop7"></div>
+                        </div>
+                    </td>
+                </tr>
+				<tr id="help" style="display: none;">
+                      <td style="width:100%" >
+                         <div class="paddingLeft15 paddingTop20 ">
+						 <img  src= "{!$Resource.SDEFStyles}/SDEFicons/url.png">  </img>
+                          <apex:outputLabel style="padding-top:10px" value="{!JSENCODE($Label.BMCServiceDesk__ChangeScheduleSettingHelp)}" /> 
+						 </div>                       
+                    </td>
+                </tr>
+                <tr >
+                    <th  width="276px" class="tblHeaderCls paddingTop20 BoltFontcls"> {!JSENCODE($Label.ForSelectedProfiles)} </th>
+                    <th class ="tblHeaderCls" > <div class=" paddingLeft15 BoltFontcls paddingTop4" id="profileName" ></div></th>
+                    
+                </tr>
+                <tr>
+                	<td  class="tdgridCls">
+                    	<div id="right-tab-header"/>
+                        <div id="right-tab-header1" style="display: none;"/>
+                    </td>
+                    <td class="tdgridCls configurePadding30" valign="top">
+               			<table border="1" class="configureTblCls " id="nestedTable" height="{!IF(isForSSLayout, "554px" ,"380px")}">
+               				<tr class="paddingLeft5">
+			            		<td valign="top" class="paddingLeft15">
+				            		<div>
+				            			<div id="viewAcessChk" class="floatLeft10px paddingTop15"></div>
+											<apex:outputPanel rendered="{!isForSSLayout}" styleClass="clsQueueSection">
+											<apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__AssignTktFromLayout )}" />
+											<apex:inputText id="assignQueueId"  value="{!ssAssignedQueue}" title="{!$Label.BMCServiceDesk__IncidentDropButton}"  styleClass="clsInputTextBoxReadOnly" />	 
+                                       <input type="button" onclick="openQueueOnlyPopUp();"  class="lookupIconOn" />
+											</apex:outputPanel>
+				            			<div id="viewCnsoleLabel" class="verticalTop paddingTop18"></div>
+				            			<div id ="editServiceRequestsDiv" style="{!IF(isForSSLayout,'visibility:hidden;display:none;','visibility:this.visibility')}; ">
+				            				<div id="editServiceRequestsPanel" class="floatLeft10px paddingTopBot5px"></div>
+					            			<div id="editServiceRequestsLbl" class ="paddingTop7"></div>
+					            		</div>
+				            			<div id="layoutTD" class="paddingTop10"> </div>
+				            		</div>
+                                    <apex:outputPanel rendered="{!NOT(isForSSLayout)}">
+				            		<table>
+				            			<tr> 
+						            		<td class ="paddingTop15 ActionToolHeaderCls BoltFontcls" > 
+                                            <apex:outputLabel value="{!JSENCODE($Label.BMCServiceDesk__AvailableAction )}" />
+											</td>
+			                    			<td class ="tblHeaderCls ActionToolHeaderCls padingLeft20 BoltFontcls">											 	<apex:outputLabel rendered="{!NOT(isForSSLayout)}" value="{!JSENCODE($Label.BMCServiceDesk__AvailableAgentTools )}" />
+											</td>
+						            	</tr>
+						            	<tr>
+						            		<td valign="top" class="paddingTop10"><div id="actionId"/> </td>
+						            		<td valign="top" class="paddingTop10 padingLeft20 configurePadding15"><div id="agentToolsId"/></td>
+						            	</tr>
+				            		</table>
+                                    </apex:outputPanel>
+                                  
+			            		</td>
+			            	</tr>
+			            </table>     
+                    </td>
+                </tr>
+            </table>
+             
+        </td>
+
+ </tr>
+ </table>
+ <apex:actionFunction name="reloadLayouts" rerender="ObjectLayoutsData" oncomplete="setProfileDisabled(false);">
+ 	<apex:param name="currentSelectedObject" assignTo="{!consoleSelected}" value="" />
+ </apex:actionFunction>
+	<apex:actionFunction name="assignIncidentTOQueue" action="{!assignIncidentTOQueue}"  rerender="assignQueueId" > 
+	<apex:param assignTo="{!selectedQueue}" name="selectedQueue" value=""/>
+	</apex:actionFunction>       	
+     
+ 
+ 
+  <script>
+   var enableMassUpdateLabel = '{!JSENCODE($Label.enableMassUpdate)}';
+   var isFreshInstall = {!isFreshInstall};
+   var isRFConsoleEnable ={!enableRFConsole};
+   var incidentActionsData ={!incidentActionsData};
+   var taskActionsData ={!taskActionsData};
+   var taskAgentsData={!taskAgentsData};
+   var incidentAgentsData ={!incidentAgentsData};
+   var problemActionsData ={!problemActionsData};
+   var problemAgentsData={!problemAgentsData};
+   var changeActionsData ={!changeActionsData};
+   var changeAgentsData={!changeAgentsData};
+   var consoleSelected='Incident';
+   var isForSSLayout={!isForSSLayout};
+   if(isForSSLayout==true)
+	consoleSelected='SelfService';
+   var taskCount={!taskColumnCount};
+   var incidentCount ={!incidentColumnCount};
+   var problemCount ={!problemColumnCount};
+   var changeCount ={!changeColumnCount};
+   var ssColumnCount ={!ssColumnCount};
+   var srCount ={!srColumnCount};
+   var incidentConsole='{!JSENCODE($Label.Incident_Console)}';
+   var taskConsole ='{!JSENCODE($Label.Task_Console)}';
+   var plist ={!profileData};
+   var profileDataForChngSch = {!profileDataForChngSch};
+   var saveLbl='{!JSENCODE($Label.Save)}';
+   var consoleLbl='{!JSENCODE($Label.console)}';
+   var consoleViewLbl='{!JSENCODE($Label.ConsoleView)}';
+   var createLbl = '{!JSENCODE($Label.CreateEditLayout)}';
+   var refreshLbl = '{!JSENCODE($Label.Refresh)}';    
+   var ORGNameSpace = {!ORGNameSpace};  
+   var consoleWarningMessageOnProfileChange = '{!JSENCODE($Label.consoleWarningMessageOnProfileChange)}';
+   var consoleWarningMessageOnConsoleViewChange = '{!JSENCODE($Label.consoleWarningMessageOnConsoleViewChange)}';   
+   if(isForSSLayout==true){
+       consoleWarningMessageOnProfileChange = '{!JSENCODE($Label.consoleWarningMessageOnProfileChangeSelfService)}';
+       consoleLbl = '{!JSENCODE($Label.TicketLayout)}';
+   }
+   var isChecked ={!enableConsole};
+   var enableRFchk = {!EnableRFConsole};
+   var actionGrid,agentGrid,profileGrid,messageString,rightSideTabStore,viewStore,consoleViewCombo,ConsoleLabel, ConsoleViewLabel, coloumCountCombo;
+   var ConsoleViewLabel,ConsoleLabel,layoutPanel,enableRFConsoleChk,consoleView,layouGridPanel,pid,editServiceRequests,editServiceRequestsLbl;
+   var layoutGrid, layoutStore;
+   var layoutJsonString = '{!JSENCODE(ObjectLayouts)}';
+   var refreshCustomLayoutlbl = '{!JSENCODE($Label.RefreshCustomLayoutList)}';
+	var editingServiceRequestslbl = '{!JSENCODE($Label.EnableEditingSubmittedServiceRequest)}';
+	var saveSuccess ='{!JSENCODE($Label.SavedSuccessfully)}';
+   var selectProfile='{!JSENCODE($Label.SelectProfile)}';
+   var actionslbl='{!JSENCODE($Label.Actions)}';
+   var agentslbl='{!JSENCODE($Label.AgentTools)}';
+   var releaseActionsData ={!releaseActionsData};
+   var ConsoleViewAcesslbl='{!JSENCODE($Label.profileAcessConsoleView)}';
+   var profilelbl='{!JSENCODE($Label.Profile)}: ';
+   var SSTicket='{!JSENCODE($Label.SSTicket)}';
+   var releaseAgentsData={!releaseAgentsData};
+   var releaseCount ={!releaseColumnCount};
+   var assinLayout = '{!JSENCODE($Label.AssignLayout)}';
+   var layout = '{!JSINHTMLENCODE($Label.Layout)}';
+   var StandAloneViewStore = [["Incident","{!JSENCODE($Label.Incident_Console)}"],["Task", "{!JSENCODE($Label.Task_Console)}"]]; //["Problem","{!JSENCODE($Label.Problem_Console)}"],["Change","{!JSENCODE($Label.Change_Console)}"],["Release","{!JSENCODE($Label.Release_Console)}"]];
+   var RFViewStore = [["Incident","{!JSENCODE($Label.IncidentAndServiceRequests)}"],["Task", "{!JSENCODE($Label.Navigator_Tasks)}"],["Problem","{!JSENCODE($Label.Navigator_Problems)}"],["Change","{!JSENCODE($Label.ChangeRequests)}"],["Release","{!JSENCODE($Label.Releases)}"],["Broadcast","{!JSENCODE($Label.Navigator_Broadcasts)}"],["ChangeSch","{!JSENCODE($Label.Navigator_ChangeSchedule)}"]];
+   var RFSegregationViewStore = [["Incident","{!JSENCODE($Label.Navigator_Incidents)}"],["SR", "{!JSENCODE($Label.serviceRequestPortletHeader)}"],["Task", "{!JSENCODE($Label.Navigator_Tasks)}"],["Problem","{!JSENCODE($Label.Navigator_Problems)}"],["Change","{!JSENCODE($Label.ChangeRequests)}"],["Release","{!JSENCODE($Label.Releases)}"],["Broadcast","{!JSENCODE($Label.Navigator_Broadcasts)}"],["ChangeSch","{!JSENCODE($Label.Navigator_ChangeSchedule)}"]];
+   var coloumCountStoreData = [[1,"1 {!JSENCODE($Label.Column)}"],[2,"2 {!JSENCODE($Label.Column)}"]];
+   var enableConsoleLbl='';
+   var selectedLayout = 'Default';
+   var enablerf = document.getElementById('{!$Component.enableRFViewChk}');
+   var enableConsoleDashboardPanel = document.getElementById('{!$Component.consoleDashboardPanel}');
+   var enableStandAloneCon = document.getElementById('{!$Component.EnableIndivisualConsole}');
+   var queueEle = '{!$Component.assignQueueId}';
+   var nonPrint = '¬';
+   var IncidentSRLbl = '{!JSENCODE($Label.IncidentAndServiceRequests)}';
+   var confirmLbl = '{!JSENCODE($Label.ConfirmHomePage)}';
+   var ConfirmColumnCountlbl = '{!JSENCODE($Label.ConfirmColumnCount)}';
+   var wikiUrl = '{!wikiUrl}';
+   if(isForSSLayout){
+   ConfirmColumnCountlbl='{!JSENCODE($Label.SS_ConfirmColumnCount)}';
+   parent.addHelpOnPage(document.getElementById('helpDiv'),'ticket_layouts.htm',wikiUrl);
+   }else{
+   parent.addHelpOnPage(document.getElementById('helpDiv'),'console.htm',wikiUrl);
+   }
+   var isChangeFlag = 'false';
+   var isConsoleViewChange = 'false';
+   var consoleValueChangedFlag = false;
+   var selectedLayout;
+   var okLbl = '{!JSENCODE($Label.Ok)}';
+   var yesLbl = '{!JSENCODE($Label.ExtjsMessageYes)}';
+   var noLbl = '{!JSENCODE($Label.ExtjsMessageNo)}'; 
+   var broadcastActionsData ={!broadcastActionsData};
+   var broadcastAgentsData={!broadcastAgentsData};
+   var broadcastCount ={!broadcastColumnCount};
+   var spChar = '�';
+   var ActionIncident,ActionTask,ActionProblem,ActionRelease,ActionChange,ActionBroadcast;
+   var AgentIncident,AgentTask,AgentProblem,AgentRelease,AgentChange,AgentBroadcast;
+   var firstTimePageLoad =true;
+   var CurrentObject = 'Incident';
+   var enableUpdating,enableRecordUpdate,editSR;
+   var enableConsoleIncidentSRSegregationPanel = document.getElementById('{!$Component.consoleIncidentSRSegregationPanel}');
+   var enableIncidentSRSegregation = document.getElementById('{!$Component.enableConsoleIncidentSRSegregationViewChk}');
+	var lockdurationTime='{!JSENCODE(lockdurationTime)}';
+   var recordLockValue ='{!JSENCODE(recordLockValue)}';
+   var OffValue = '{!JSENCODE($Label.RecordLockOff)}';
+   var ExplicitValue = '{!JSENCODE($Label.RecordLockExplicit)}';
+   var ImplicitValue = '{!JSENCODE($Label.RecordLockImplicit)}';
+   var Min15Value = '15 ' + '{!JSENCODE($Label.MinutesLabel)}';
+   var Min30Value = '30 ' + '{!JSENCODE($Label.MinutesLabel)}';
+   var Hour1Value = '1 ' + '{!JSENCODE($Label.HourLabel)}';
+    var Hour2Value = '2 ' +'{!JSENCODE($Label.HoursLabel)}';
+    var Hour4Value = '4 ' +'{!JSENCODE($Label.HoursLabel)}';
+    var Hour8Value = '8 ' +'{!JSENCODE($Label.HoursLabel)}';
+    var Hour12Value = '12 ' +'{!JSENCODE($Label.HoursLabel)}';
+	var smartSuggestionlbl ='{!JSENCODE($Label.SmartSuggestions)}';
+	var enableIncidentSRSegregationVal={!enableIncidentSRSegregation};
+	var GeneralSettingsLabelEle=document.getElementById('{!$Component.GeneralConsoleSettingLabel}');
+	var IndividualViewLableEle=document.getElementById('{!$Component.IndividualViewLable}');
+	var enableTktLayoutChk={!enableTktLayout};
+	var SRMatchingLabel='{!JSENCODE($Label.ServiceRequestMatching)}';
+	var AllProfileLabel='{!JSENCODE($Label.AllProfilesEntitlement)}';
+	var RemedyForce_Consolelbl='{!JSENCODE($Label.RemedyForce_Console)}';
+	var Remedyforce_Self_Servicelbl='{!JSENCODE($Label.Remedyforce_Self_Service)}';
+	
+ </script>
+  <script type="text/javascript" src="{!$Resource.SDEFCommonJS}/WikiHelp.js"></script> 
+  <script type="text/javascript" src="{!$Resource.ExtJS4_1_3}/ext-all.js"></script> 
+  <script type="text/javascript" src="{!$Resource.SDEFCommonJS}/ConsoleAdminSetting.js"></script> 
+  <apex:outputpanel id="updatePanel">
+  <script>
+  	 enableRecordUpdate = {!enableRecordUpdate};
+  </script>
+  </apex:outputpanel> 
+   <apex:outputpanel id="RefrshActionAgentGridView">
+	<script>
+	 CurrentObject = window.parent.SelectedConsoleChoice;
+	if(firstTimePageLoad == false){
+	
+			if(consoleSelected == 'Incident' || consoleSelected == 'SR'){
+				incidentActionsData ={!incidentActionsData};
+				incidentAgentsData ={!incidentAgentsData};
+				if (ActionIncident != null && incidentActionsData != null) {
+					ActionIncident.loadData(incidentActionsData);
+				}
+				if (AgentIncident != null && incidentAgentsData != null) {
+					AgentIncident.loadData(incidentAgentsData);
+					ChangeAgentLabel();
+				}
+			} 
+			if(consoleSelected == 'Task'){
+				taskActionsData ={!taskActionsData};
+				taskAgentsData={!taskAgentsData};
+				if (ActionTask != null && taskActionsData != null) {
+					ActionTask.loadData(taskActionsData);
+				}
+				if (AgentTask != null && taskAgentsData != null) {
+					AgentTask.loadData(taskAgentsData);
+				}
+			}
+			if(consoleSelected == 'Problem'){
+				problemActionsData ={!problemActionsData};
+				problemAgentsData={!problemAgentsData};
+				if (ActionProblem != null && problemActionsData != null) {
+					ActionProblem.loadData(problemActionsData);
+				}
+				if (AgentProblem != null && problemAgentsData != null) {
+					AgentProblem.loadData(problemAgentsData);
+				}
+			}
+			if(consoleSelected == 'Release'){
+				releaseActionsData ={!releaseActionsData};
+				releaseAgentsData={!releaseAgentsData};
+				if (ActionRelease != null && releaseActionsData != null) {
+					ActionRelease.loadData(releaseActionsData);
+				}
+				if (AgentRelease != null && releaseAgentsData != null) {
+					AgentRelease.loadData(releaseAgentsData);
+				}
+			}
+			if(consoleSelected == 'Broadcast'){
+				broadcastActionsData ={!broadcastActionsData};
+				broadcastAgentsData={!broadcastAgentsData};
+				if (ActionBroadcast != null && broadcastActionsData != null) {
+					ActionBroadcast.loadData(broadcastActionsData);
+				}
+				if (AgentBroadcast != null && broadcastAgentsData != null) {
+					AgentBroadcast.loadData(broadcastAgentsData);
+				}
+			}
+			if(consoleSelected == 'Change'){
+				changeActionsData ={!changeActionsData};
+				changeAgentsData={!changeAgentsData};
+				if (ActionChange != null && changeActionsData != null) {
+					ActionChange.loadData(changeActionsData);
+				}
+				if (AgentChange != null && changeAgentsData != null) {
+					AgentChange.loadData(changeAgentsData);
+				}
+			}
+			}
+			firstTimePageLoad = false;
+		</script>
+	</apex:outputpanel>  
+<apex:outputPanel id="msgString">
+<script>
+messageString='{!JSENCODE(messageString)}';
+
+</script>
+</apex:outputPanel>
+<apex:outputpanel id="ObjectLayoutsData">
+	<script>
+		layoutJsonString = {!ObjectLayouts};
+		if (layoutStore != null && layoutJsonString != null) {
+			layoutStore.loadData(layoutJsonString);
+			if(pid != null)
+				setSelectedLayouts(selectedLayout);
+			if(document.getElementById(selectedLayout) == null || document.getElementById(selectedLayout) == undefined) {
+				getSelectedLayouts(pid, consoleSelected);
+			}
+		}
+	</script>
+</apex:outputpanel>
+    <apex:actionFunction action="{!SaveLayouts}" name="SaveLayouts" rerender="msgString" oncomplete="ChangeSchSaveMsg();">
+		<apex:param name="consoleSelected" value="" assignTo="{!consoleSelected}" />
+		<apex:param name="selectedProfileId" assignTo="{!selectedProfileId}" value="" />
+		<apex:param name="selectedLayout" assignTo="{!selectedlayout}" value="" />
+		<apex:param name="selectedVeiw" assignTo="{!selectedVeiw}" value="" />
+		<apex:param name="selectedQueue" assignTo="{!selectedQueue}" value="" />
+		<apex:param name="enableUpdating" assignTo="{!enableUpdating}" value="" />
+		<apex:param name="editSR" assignTo="{!editSR}" value="" />
+	   <apex:param name="recordLockValue" assignTo="{!recordLockValue}" value="" />
+        <apex:param name="lockdurationTime" assignTo="{!lockdurationTime}" value="" />
+
+		
+	</apex:actionFunction>
+	<apex:actionFunction action="{!saveConsoleSetting}" name="saveConsoleSetting" rerender="msgString" oncomplete="onCompleteSave();"/>
+	<apex:actionFunction action="{!saveColoumnCount}" name="saveColoumnCount" rerender="msgString" oncomplete="onCompleteSave();"> 
+		<apex:param name="consoleSelected" value="" assignTo="{!consoleSelected}" />
+		<apex:param name="columnCount" value="" assignTo="{!currentColumnCount}" /> 
+	</apex:actionFunction>
+	<apex:actionFunction name="RefrshActionAgentGrid" action="{!ActionAgentdataInController}" rerender="RefrshActionAgentGridView">
+	<apex:param name="CurrentObject" assignTo="{!consoleSelected}" value="" /> 	
+	</apex:actionFunction>
+	<apex:actionFunction action="{!getRecordUpdateSettingCheckVal}" name="getRecordUpdateSettingCheckVal" rerender="EnableMassUpdatePanel,updatePanel" oncomplete="ChangeUpdateSettingCheckVal();"> 
+		<apex:param name="consoleSelected" value="" assignTo="{!consoleSelected}" />
+	</apex:actionFunction>
+	<script>
+ 		window.parent.callarray['key']=RefrshActionAgentGrid;
+		window.parent.showSelectedDataforProfile['data']= RefreshAndSetSelected;
+        if(window.parent.refreshLayouts != undefined){
+            window.parent.refreshLayouts(reloadLayouts);
+        }
+	</script>
+</apex:form>   
+
+ 
+ <script>
+ _RemotingActions={}
+ _RemotingActions.saveRecord= "{!$RemoteAction.ConsoleAdminSettingController.saveRecord}";
+ _RemotingActions.getSelectedActions= "{!$RemoteAction.ConsoleAdminSettingController.getSelectedActions}";
+ _RemotingActions.getSelectedLayout= "{!$RemoteAction.ConsoleAdminSettingController.getSelectedLayout}";
+ _RemotingActions.getSelectedViews= "{!$RemoteAction.ConsoleAdminSettingController.getSelectedViews}";
+ _RemotingActions.getEditSR= "{!$RemoteAction.ConsoleAdminSettingController.getEditSR}";
+ _RemotingActions.getSelectedProfiles="{!$RemoteAction.ConsoleAdminSettingController.getSelectedProfiles}";
+ </script>
+ </apex:page>

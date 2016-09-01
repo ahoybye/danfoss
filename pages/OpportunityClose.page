@@ -1,0 +1,20 @@
+<apex:page standardController="Opportunity" extensions="OpportunityCloseExtension">
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock mode="edit" title="Choose Reason">
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!Opportunity.StageName}"/>
+                <apex:inputField value="{!Opportunity.CE_Phase__c}"/>
+                <apex:inputField value="{!Opportunity.CE_Status__c}"/>
+                <apex:inputField value="{!Opportunity.Reason__c}"/>               
+                <apex:inputField value="{!Opportunity.CE_HS_Sub_reason__c}" rendered="{!hs}"/>
+                <apex:inputField value="{!Opportunity.CE_PE_Sub_reason__c}" rendered="{!pe}"/>
+                <apex:inputField value="{!Opportunity.CE_RC_Sub_reason__c}" rendered="{!rc}"/>
+                <apex:pageBlockSectionItem >                
+                    <apex:commandButton value="Close" action="{!closeOpp}"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>                    
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

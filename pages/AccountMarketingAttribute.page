@@ -1,0 +1,35 @@
+<apex:page tabStyle="Account" controller="MarketingAttributeExtensionV2"  showHeader="false">
+    <apex:form id="form">
+        
+         <apex:pageBlock mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveAtt}" value="Save" disabled="{!attribValue == '-' || attribSetValue== '-'}"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Division Data" columns="1">
+                
+                <apex:selectList id="selectAttribSet" size="1" label="Attribute Set" value="{!attribSetValue}" rendered="{!isCreate}">
+                    <apex:actionSupport event="onchange" action="{!getAttribValues}" rerender="form"/>
+                    <apex:selectOptions value="{!attribSetOptions}"/>                    
+                </apex:selectList>
+                
+                <apex:outputField value="{!adQry.Attribute_Set__c}" rendered="{!!isCreate}"/>
+                
+                <apex:selectList id="selectAttrib" size="1" label="Attribute" value="{!attribValue}" rendered="{!isCreate}">
+                    <apex:actionSupport event="onchange" action="{!getPicklistValues}" rerender="form"/>
+                    <apex:selectOptions value="{!attribOptions}"/>                    
+                </apex:selectList>
+                
+                <apex:outputField value="{!adQry.Attribute__c}" rendered="{!!isCreate}"/>
+
+                <apex:inputField value="{!acc[fieldAPI]}" label="Value" rendered="{!type=='Account'  && (attribValue != '-' && attribSetValue!= '-')}"/>  
+
+                <apex:inputField value="{!con[fieldAPI]}" label="Value" rendered="{!type=='Contact' && (attribValue != '-' && attribSetValue!= '-')}"/>   
+                  
+              
+            </apex:pageBlockSection>    
+        </apex:pageBlock>
+                
+    </apex:form>
+
+</apex:page>

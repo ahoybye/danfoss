@@ -1,0 +1,5 @@
+<apex:page standardController="ccpt__Meeting__c" sidebar="false" showHeader="false" title="{!ccpt__Meeting__c.Name}" standardStylesheets="true" >
+	<script>
+		window.location.href = '{!$Page.me}#/meeting/view/{!Meeting__c.Id}';
+	</script>
+</apex:page>

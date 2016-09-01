@@ -1,0 +1,3 @@
+<apex:page standardController="Contact" extensions="ContactTeamDivisionsExtension">
+    <apex:outputText value="{!udivs}"/>
+</apex:page>

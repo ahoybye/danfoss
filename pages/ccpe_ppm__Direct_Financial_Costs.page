@@ -1,0 +1,174 @@
+<apex:page standardController="ccpe_ppm__Investment__c" extensions="ccpe_ppm.DirectFinancialCostsExtension">
+	<apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+    <apex:includeScript value="{!URLFOR($Resource.ccpe_ppm__direct_finance_zip,'direct_finance.js')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ccpe_ppm__direct_finance_zip,'direct_finance.css')}" />
+	<c:tree parentId="{!ccpe_ppm__Investment__c.Id}" parentName="{!ccpe_ppm__Investment__c.Name}" />
+	
+	<script>
+		function getLocaleInfo() {
+			thousandDelim = '{!thousandDelim}'.trim();
+			locale = '{!locale}';
+			locale = locale.replace('_', '-');
+			$('.planned > span, .actual > span').each(function() {
+				$(this).text(formatCurrency($(this).text()));
+			});
+		}
+	</script>
+
+	<div id="confirmationDialog" style="display: none;">
+		<div>
+			<div id="confirmationText"></div>
+			<input type="button" value="Save" class="btn" onclick="closeConfirmDialog(); save();" />
+			<input type="button" value="Discard" onclick="closeConfirmDialog(); resetValues(); changeDuration();" class="btn" />
+			<input type="button" value="Cancel" onclick="closeConfirmDialog(); $('#pBlockButtons select').val(schedule);" class="btn" />
+		</div>
+	</div>
+	<div class="Custom16Tab">
+		<apex:sectionHeader subtitle="Direct Financial {!rTypeName}s" title="{!ccpe_ppm__Investment__c.Name}"/>
+	</div>
+	<apex:form styleClass="full-width" style="padding-top: 5px;">
+		<apex:actionFunction name="save" action="{!save}" status="loading" oncomplete="changeDuration();" rerender=""/>
+		<apex:actionFunction name="nextPeriod" action="{!nextPeriod}" rerender="outPanel" oncomplete="changingPeriods();" status="loading">
+			<apex:param name="changes" value="" assignTo="{!changes}" />
+		</apex:actionFunction>
+		<apex:actionFunction name="prevPeriod" action="{!prevPeriod}" rerender="outPanel" oncomplete="changingPeriods();" status="loading">
+			<apex:param name="changes" value="" assignTo="{!changes}" />
+		</apex:actionFunction>
+		<apex:actionFunction name="changeDuration" action="{!changePeriodDuration}" rerender="outPanel" oncomplete="hasChanged = 0; schedule = $('#pBlockButtons select').val(); changingPeriods();" status="loading" />
+		<apex:pageBlock >
+			<apex:pageBlockButtons location="top" id="pageButtons">
+				<div id="pBlockButtons">
+					<div id="changesMade"></div>
+		        	<apex:commandButton action="{!reset}" value="Reset" rerender="out" onclick="resetValues();"/>
+		        	<apex:commandButton action="{!save}" value="Save" rerender="outPanel" oncomplete="refreshTable();" status="loading"/>
+		        	<a style="color: #015ba7; text-decoration: none; cursor: pointer" onclick="toggleSubAreas(false);" >Collapse All</a>
+		        	|
+		        	<a style="color: #015ba7; text-decoration: none; cursor: pointer" onclick="toggleSubAreas(true);" >Expand All</a>
+		        	<apex:actionStatus id="loading" onstart="disableButtons(true); $('.outer-table').fadeTo('slow', 0); getOpenSubAreas();" onstop="disableButtons(false); tabWrap($('.outer-table'));">
+		                <apex:facet name="start" >
+		                  <img id="loadingGif" src="/img/loading.gif"/>                    
+		                </apex:facet>
+		        	</apex:actionStatus>
+					<div class="onoffswitch" style="float: right; display: {!IF(isPlanned, 'none;', 'block;')}">
+					    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onchange="toggleActuals();" ></input>
+					    <label class="onoffswitch-label" for="myonoffswitch">
+					        <span class="onoffswitch-inner"></span>
+					        <span class="onoffswitch-switch"></span>
+					    </label>
+					</div>
+					<div style="margin: 1px; padding: 1.5px 3px; float: right; display: inline-block; height: 21px;">
+						<img id="prev" onclick="$('.outer-table').fadeTo('slow', 0); prevPeriod(hasChanged);" />
+						<img id="next" onclick="$('.outer-table').fadeTo('slow', 0); nextPeriod(hasChanged);" />
+
+						<apex:inputField value="{!investment.ccpe_ppm__Costs_Schedule__c}" required="true" rendered="{!isPlanned}" onchange="openConfirmDialog('{!rTypeName}', schedule);" />
+					</div>
+				</div>
+	        </apex:pageBlockButtons>
+			<apex:outputPanel id="outPanel" styleClass="full-width tc">
+				<table border="1" class="full-width outer-table tc">
+					<thead>
+						<th class="tc full-width">Area</th>
+						<th class="tc subAreaHead">Sub-Area</th>
+						<apex:repeat value="{!timePeriods}" var="timePeriod">
+							<th class="tc">
+								<apex:outputText value="{0,date,yyyy}" rendered="{!schedule == 'Annual' || schedule == null}">
+									<apex:param value="{!timePeriod}" />
+								</apex:outputText>
+								<apex:outputText value="{0,date,MMM yy}" rendered="{!schedule != 'Annual' && schedule != null}">
+									<apex:param value="{!timePeriod}" />
+								</apex:outputText>
+							</th>
+						</apex:repeat>
+					</thead>
+					<tbody>
+						<apex:repeat value="{!areaWrappers}" var="areaWrapper">	
+							<tr style="height: 100%">
+								<td class="tl label-cell" onclick="toggleSubArea($('img', this));" style="white-space: nowrap;">
+									<apex:outputText value="{!areaWrapper.area.Name}" style="vertical-align: top"/>
+									<img class="toggle-arrow" src="/img/arrowDown.gif" title="Edit" style="vertical-align: top"/>
+								</td>
+								<td colspan="{!timePeriods.size + 1}" style="padding: 0px; height: 100%;">
+									<div class="inner-table-wrapper" style="min-height: 16px;">
+										<div class="table-wrap" style="height: 100%">
+											<table class="inner-table">
+												<apex:repeat value="{!areaWrapper.subAreas}" var="subWrapper" >
+													<tr>
+														<td rowspan="{!IF(isPlanned, '1', '2')}" class="label-cell">
+															<apex:outputText value="{!subWrapper.subArea.Name}" styleClass="subArea"/>
+														</td>
+														<apex:repeat value="{!subWrapper.plannedSchedules}" var="sched">
+															<td class="planned {!IF(sched.schedule.ccpe_ppm__Amount__c != sched.savedAmount, 'hasChanged', '')}" title="{!IF(isPlanned, sched.savedAmount, '')}">
+																<apex:inputField value="{!sched.schedule.ccpe_ppm__Amount__c}" html-data-amount="{!sched.savedAmount}" styleClass="non-label-cell tr" onkeyup="setColor($(this), event);" onchange="formatValue($(this));" rendered="{!isPlanned}" />
+																<apex:outputText value="{0, number, ##,###,##0.00}" styleClass="non-label-cell tr opac-50" rendered="{!NOT(isPlanned)}">
+																	<apex:param value="{!sched.schedule.ccpe_ppm__Amount__c}"/>
+																</apex:outputText>
+															</td>
+														</apex:repeat>
+													</tr>
+													<tr style="{!IF(isPlanned, 'display: none;', '')}">
+														<apex:repeat value="{!subWrapper.actualSchedules}" var="sched" rendered="{!NOT(isPlanned)}">
+															<td class="actual {!IF(sched.schedule.ccpe_ppm__Amount__c != sched.savedAmount, 'hasChanged', '')}">
+																<div class="actual">
+																	<!--<apex:inputField value="{!sched.schedule.ccpe_ppm__Amount__c}" html-data-amount="{!sched.savedAmount}" styleClass="non-label-cell tr" onkeyup="setColor($(this), event);" onchange="formatValue($(this));" rendered="{!NOT(isPlanned)}" />-->
+																	<apex:outputText value="{0, number, ##,###,##0.00}" styleClass="non-label-cell tr opac-50">
+																		<apex:param value="{!sched.schedule.ccpe_ppm__Amount__c}" />
+																	</apex:outputText>
+																</div>
+															</td>
+														</apex:repeat>
+													</tr>
+												</apex:repeat>
+											</table>
+										</div>
+										<div class="sub-table table-wrap">
+											<table class="sub-table">
+												<tr>
+													<td rowspan="2" class="label-cell">
+														<span class="subArea"></span>
+													</td>
+													<apex:repeat value="{!timePeriods}" var="timePeriod">
+														<td class="planned opac-50">
+															<span class="non-label-cell tr">0.00</span>
+														</td>
+													</apex:repeat>
+												</tr>
+												<tr>
+													<apex:repeat value="{!timePeriods}" var="timePeriod">
+														<td class="actual opac-50">
+															<div class="actual">
+																<span class="non-label-cell tr">0.00</span>
+															</div>
+														</td>
+													</apex:repeat>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</apex:repeat>
+					</tbody>
+					<tfoot style="font-weight: bold;">
+						<tr>
+							<td rowspan="2" colspan="2" id="total-label" class="label-cell tl">Total</td>
+							<apex:repeat value="{!timePeriods}" var="timePeriod">
+								<td class="planned opac-50">
+									<span class="non-label-cell tr">0.00</span>
+								</td>
+							</apex:repeat>
+						</tr>
+						<tr style="{!IF(isPlanned, 'display: none;', '')}">
+							<apex:repeat value="{!timePeriods}" var="timePeriod" rendered="{!NOT(isPlanned)}">
+								<td class="actual opac-50">
+									<div class="actual">
+										<span class="non-label-cell tr">0.00</span>
+									</div>
+								</td>
+							</apex:repeat>
+						</tr>
+					</tfoot>
+				</table>
+			</apex:outputPanel>
+		</apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,117 @@
+<apex:page sidebar="true" showHeader="true" controller="MarketingToolboxCtrl" standardStylesheets="false">
+
+<head>
+
+  <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, '/js/jquery.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, '/js/jquery-ui.min.js')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/main.css')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/jquery-ui.css')}"/>
+    <style>
+        #phSearchForm {
+            display: none !important;
+        }
+    </style>
+  
+  <script>
+    $j = jQuery.noConflict();
+    $j(document).ready(function() {
+      prepareDialog();
+      $j( ".disableNav" ).click(function( event ) {
+        event.preventDefault();
+      });
+    });
+
+    function prepareDialog(){
+      $j(function() {
+        $j( "#link-info" ).dialog({
+          resizable: false,
+          height:"250px", 
+          width:"550px",
+          maxWidth:800,
+          autoOpen:false,
+          modal: true,
+        });
+      });
+    }
+
+    function openInfoBox(infoText, url){
+      var container =  $j( "#link-info-text" );
+      container.empty();
+      container.html(infoText);
+      container.html(container.text());
+      container.children().css({"font-size": "13px"});
+      var diagButtons;
+      if(url !== '') {
+        diagButtons = {
+          "{!$Label.Proceed}": function() {
+            window.open(url);
+            $j( this ).dialog( "close" );                      
+            return false;
+          }
+        };
+      } else {
+        diagButtons = {
+          "{!$Label.Ok}": function() {
+            $j( this ).dialog( "close" );                      
+            return false;
+          }
+        };
+      }
+      $j( "#link-info" ).dialog({
+        buttons: diagButtons
+      });
+      $j( "#link-info" ).dialog( "open");
+    }
+  </script>
+
+</head>
+
+<div class="marketingContainer">
+<div id="content" >
+  <div class="right-content" style="margin-top:0px;">
+    <div>
+      <div class="greeting">
+        <span class="name">
+          <apex:outputText escape="false" value="{!$Label.Marketing_Toolbox}"/>
+        </span>   
+      </div>              
+      <div>
+        <div class="content-wrapper">
+          <table class="Positions">
+            <tr>
+              <td><c:PartnerPortalPanelComponent Position="1"/></td>
+              <td><c:PartnerPortalPanelComponent Position="2"/></td>
+              <td><c:PartnerPortalPanelComponent Position="3"/></td>
+              <td><c:PartnerPortalPanelComponent Position="4"/></td>
+            </tr>
+            <tr>
+              <td colspan="3"><br /></td>
+            </tr>
+            <tr>
+              <td><c:PartnerPortalPanelComponent Position="5"/></td>
+              <td><c:PartnerPortalPanelComponent Position="6"/></td>
+              <td><c:PartnerPortalPanelComponent Position="7"/></td>
+              <td><c:PartnerPortalPanelComponent Position="8"/></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="greeting">
+      <span class="name">
+        <apex:outputText escape="false" value="{!$Label.FAQ}"/>
+      </span>   
+    </div>
+    <div class="content-wrapper">
+      <apex:form >
+      <c:FAQComponent />
+    </apex:form>
+  </div>                         
+</div>
+</div>
+</div>
+<div  style="display: inline; color:#000000; font-weight: normal;font-family: myriad-pro, sans-serif;" id="link-info" title="{!$Label.MoreInfo}">
+  <div style="margin-left: 10px;margin-right: 10px;line-height: 18.5714302062988px;" id="link-info-text"></div>
+  <br />
+</div>
+</apex:page>

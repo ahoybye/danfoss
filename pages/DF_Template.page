@@ -1,0 +1,31 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="true" applyHtmlTag="false" applyBodyTag="false" >
+  <html dir="ltr" lang="en-US" >
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <apex:stylesheet value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/smoothness/jquery-ui.css"/>
+      <apex:stylesheet value="{!URLFOR($Resource.vfsass, 'css/custom-bootstrap.css')}" />
+      <apex:stylesheet value="{!URLFOR($Resource.vfsass, 'css/main.css')}" />
+      <apex:stylesheet value="//fonts.googleapis.com/css?family=Lato:400,700" />
+    </head>
+
+    <body>
+      <!-- <c:Header /> -->
+
+      <!-- This is where your content pages will show up -->
+      <apex:insert name="body"/>
+
+      <!-- <c:Footer /> -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js'/>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src="{!URLFOR($Resource.vfsass, 'js/main.min.js')}"></script>
+      <script>jQuery.noConflict();</script>
+
+      
+
+    </body>
+  </html>
+</apex:page>

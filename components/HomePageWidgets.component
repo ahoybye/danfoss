@@ -1,0 +1,16 @@
+<apex:component controller="HomePageWidgetsCon" access="global">
+<apex:attribute name="ContentType" description="Type of the content"  type="String" assignTo="{!ContentType}" />
+	<div class="heading">
+		<span>{!ContentType}</span>
+		<apex:outputLink styleClass="view-button" value="{!URLFOR('/sfc/#search')}?searchProperties={!ContentFilterString}">View All </apex:outputLink>
+		<br class="clear"/>
+	</div>
+	<ul class="articles">
+		<apex:outputText value="Content not available" rendered="{!IF(widgetsList.size = 0 , true, false)}"/>
+		<apex:repeat value="{!widgetsList}" var="widgets">
+		  <li>
+		  	<apex:outputLink value="{!URLFOR('/sfc/#version?selectedDocumentId=')}{!widgets.ContentDocumentId}">{!widgets.Title}</apex:outputLink>
+		  </li>
+		</apex:repeat>	
+	</ul>
+</apex:component>

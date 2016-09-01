@@ -1,0 +1,31 @@
+<apex:page standardController="Account" extensions="AccountSalesAreasExtension">
+<apex:includeScript value="/support/console/28.0/integration.js"/>
+
+    <script>        
+    function breakOut() {  
+                        
+          var e = window.event;
+          var target = e.target || e.srcElement;
+          if (target.nodeName == 'A' && target.target=='' && !sforce.console.isInConsole()) {    
+               top.location.replace(target.href);
+             
+          }
+          else if (sforce.console.isInConsole()) {    
+              e.returnValue = false;
+              window.open(target.href);    
+
+              
+          }
+        
+    }
+    window.onclick = breakOut;
+    </script>
+    <base target="_parent"/>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!salesAreas}" var="sa">
+            <apex:repeat value="{!$ObjectType.Sales_Area__c.FieldSets.AccountRelatedListColumns}" var="field">
+                <apex:column value="{!sa[field.FieldPath]}"/>
+            </apex:repeat>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

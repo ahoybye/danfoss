@@ -1,0 +1,71 @@
+<apex:page controller="QuoteTabController">
+<script type="text/javascript">
+  function loading(val) {
+    if (val) {
+      document.getElementById('contentLoading').style.display = 'block';
+      document.getElementById('contentLoaded').style.display = 'none';
+    }
+    else {
+      document.getElementById('contentLoading').style.display = 'none';
+      document.getElementById('contentLoaded').style.display = 'block';
+    }
+  }
+</script>
+<apex:form id="form" >
+<apex:actionStatus id="loading" onstart="loading(true)" onstop="loading(false)" />
+<apex:actionFunction id="getQuotes" name="getQuotes" action="{!getQuotes}" reRender="form" status="loading" />
+<apex:pageBlock title="My Quotes"> 
+    <apex:outputLabel style="font-weight:bold;">View:&nbsp;</apex:outputLabel>
+    
+    <apex:selectList value="{!selectedListView}" multiselect="false" size="1" label="View: " onchange="getQuotes();">
+        <apex:selectOptions value="{!listViewOptions}"/>
+    </apex:selectList>
+    <br/>
+    <br/>
+    <div id="contentLoading" style="display:none;">
+        <div style="text-align: center;">
+            <img src="/img/loading.gif" alt="Loading graphic" />
+        </div>
+    </div>
+    <div id="contentLoaded" >  
+        <apex:outputPanel id="quoteList">
+        <apex:pageBlockTable value="{!quoteList}" var="q" >         
+            <apex:column >
+                <apex:facet name="header" >Quote Number</apex:facet>
+                <apex:outputLink value="/{!q.Id}">            
+                    <apex:outputText value="{!q.QuoteNumber}">
+                    </apex:outputText>
+               </apex:outputLink>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header" >Quote Name</apex:facet>
+                <apex:outputLink value="/{!q.Id}">            
+                    <apex:outputText value="{!q.name}">
+                    </apex:outputText>
+               </apex:outputLink>
+            </apex:column>
+            <apex:column value="{!q.Responsible__c}" rendered="{!showField_Responsible}" />
+            <apex:column value="{!q.Custom_Account_Lookup__c}"/>
+            <apex:column value="{!q.ContactId}"/>
+            <apex:column value="{!q.Status}"/>            
+            <apex:column value="{!q.Valid_To__c}"/>
+            <apex:column value="{!q.Requested_Quote_Delivery_Date__c}"/>
+            <apex:column value="{!q.OpportunityId}"/>
+            <apex:column value="{!q.TotalPrice}"/>
+            <apex:column value="{!q.Task_Due_Date__c}" rendered="{!showField_DueDate}" />
+            </apex:pageBlockTable>
+            
+            <br />
+            <apex:panelGrid columns="3">
+                <c:PrevNextLinks setCon="{!setCon}" rerender="form" status="fetchStatus"/>
+                <c:PageNumber setCon="{!setCon}"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+            </apex:outputPanel>
+        </div>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

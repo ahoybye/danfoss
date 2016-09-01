@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <fullName>Cannot_merge_customer_into_prospect</fullName>
+        <active>true</active>
+        <errorConditionFormula>Master_Account__r.RecordType.DeveloperName = &quot;Prospect_CE&quot; &amp;&amp;  Merged_Account__r.RecordType.DeveloperName = &quot;Customer_CE&quot;</errorConditionFormula>
+        <errorMessage>You cannot merge an account of type Customer into an account of type Prospect</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Locked_after_merged</fullName>
+        <active>true</active>
+        <errorConditionFormula>Request_processed__c</errorConditionFormula>
+        <errorMessage>You cannot change the record after it has been processed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_be_different_accounts</fullName>
+        <active>true</active>
+        <errorConditionFormula>Master_Account__r.Id ==  Merged_Account__r.Id</errorConditionFormula>
+        <errorMessage>You must select different account to merge</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Only_CE_Business_Org</fullName>
+        <active>true</active>
+        <errorConditionFormula>Text(Master_Account__r.Business_Org__c) &lt;&gt; &apos;Climate and Energy&apos; ||  Text(Merged_Account__r.Business_Org__c) &lt;&gt; &apos;Climate and Energy&apos;</errorConditionFormula>
+        <errorMessage>Only accounts with Business Org = &apos;Climate and Energy&apos; can be merged</errorMessage>
+    </validationRules>
+</CustomObject>

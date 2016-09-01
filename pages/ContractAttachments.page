@@ -1,0 +1,96 @@
+<apex:page standardController="Contract__c" extensions="ContractAttachmentsExtension">
+    <apex:form >
+        <apex:pageBlock >
+              <apex:pageblockButtons location="top">
+                  <apex:commandLink action="{!AddAttachment}" value="Attach Contract Document" target="_top" rendered="{!hasPermission || hasFullPermission}"/> <!-- rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id}"/> -->
+               </apex:pageblockButtons>     
+                       
+            <apex:pageBlockSection title="Rough Drafts/Supporting Documents" collapsible="true" columns="1" id="rough">
+                <apex:pageblocktable rendered="{!RoughAttachments.size > 0}" value="{!RoughAttachments}" var="rec">
+					<apex:column headerValue="Action" width="150" > 
+		                <apex:outputLink onclick="window.parent.location.href='/apex/ContractAttach?Id={!rec.parentid}';" rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+		                Edit Type
+		                </apex:outputLink>
+		                
+		                <apex:outputpanel rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+		                &nbsp;|&nbsp;
+		                </apex:outputpanel>
+		                                
+		                <apex:outputLink value="/servlet/servlet.FileDownload?file={!rec.id}" target="_blank">
+		                View
+		                </apex:outputLink>
+		                                
+		                <apex:outputpanel rendered="{!hasDeletePermission || hasFullPermission}">
+		                &nbsp;|&nbsp;
+		                </apex:outputpanel>
+		                                
+		                <apex:commandLink value="Del" action="{!deleteAttachment}" onclick="if(!confirm('Are you sure?')){return};" rerender="rough" rendered="{!hasDeletePermission || hasFullPermission}">
+		                     <apex:param name="attachmentToDel" value="{!rec.id}" assignTo="{!attachmentToDel}" /> 
+							 <apex:param name="contAttToDel" value="{!rec.parentid}" assignTo="{!contAttToDel}" /> 
+		                </apex:commandLink>	                
+	                </apex:column> 
+	                <apex:column value="{!rec.Name}" headerValue="Title"/>
+	                <apex:column value="{!rec.CreatedDate}" headerValue="Created"/>
+                </apex:pageblocktable>
+            </apex:pageBlockSection>
+						
+            <apex:pageBlockSection title="Final Draft" collapsible="true" columns="1" id="final">
+                <apex:pageblockTable rendered="{!FinalAttachments.size > 0}" value="{!FinalAttachments}" var="rec">
+					<apex:column headerValue="Action"  width="150" > 
+		                <apex:outputLink onclick="window.parent.location.href='/apex/ContractAttach?Id={!rec.parentid}';" rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+		                Edit Type
+		                </apex:outputLink>
+		                
+		                <apex:outputpanel rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+		                &nbsp;|&nbsp;
+		                </apex:outputpanel>
+		                                
+		                <apex:outputLink value="/servlet/servlet.FileDownload?file={!rec.id}" target="_blank">
+		                View
+		                </apex:outputLink>
+		                                
+		                <apex:outputpanel rendered="{!hasDeletePermission || hasFullPermission}">
+		                &nbsp;|&nbsp;
+		                </apex:outputpanel>
+		                                
+		                <apex:commandLink value="Del" action="{!deleteAttachment}" onclick="if(!confirm('Are you sure?')){return};" rerender="final" rendered="{!hasDeletePermission || hasFullPermission}">
+		                     <apex:param name="attachmentToDel" value="{!rec.id}" assignTo="{!attachmentToDel}" /> 
+							 <apex:param name="contAttToDel" value="{!rec.parentid}" assignTo="{!contAttToDel}" /> 
+		                </apex:commandLink>		                
+	                </apex:column> 
+	                <apex:column value="{!rec.Name}" headerValue="Title"/>
+	                <apex:column value="{!rec.CreatedDate}" headerValue="Created"/>
+                </apex:pageblockTable>
+            </apex:pageBlockSection>
+			
+            <apex:pageBlockSection title="Signed Document(s)" collapsible="true" columns="1" id="signed">
+                <apex:pageblocktable rendered="{!SignedAttachments.size > 0}" value="{!SignedAttachments}"  var="rec">
+                    <apex:column headerValue="Action"  width="150" > 
+		                <apex:outputLink onclick="window.parent.location.href='/apex/ContractAttach?Id={!rec.parentid}';" rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+		                Edit Type
+		                </apex:outputLink>
+		                
+		                <apex:outputpanel rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+		                &nbsp;|&nbsp;
+		                </apex:outputpanel>
+		                                
+		                <apex:outputLink value="/servlet/servlet.FileDownload?file={!rec.id}" target="_blank">
+		                View
+		                </apex:outputLink>
+		                                
+		                <apex:outputpanel rendered="{!hasDeletePermission || hasFullPermission}">
+		                &nbsp;|&nbsp;
+		                </apex:outputpanel>
+		                                
+		                <apex:commandLink value="Del" action="{!deleteAttachment}" onclick="if(!confirm('Are you sure?')){return};" rerender="signed" rendered="{!hasDeletePermission || hasFullPermission}">
+		                     <apex:param name="attachmentToDel" value="{!rec.id}" assignTo="{!attachmentToDel}" /> 
+							 <apex:param name="contAttToDel" value="{!rec.parentid}" assignTo="{!contAttToDel}" /> 
+		                </apex:commandLink>		                
+	                </apex:column> 
+					<apex:column value="{!rec.Name}" headerValue="Title"/>
+	                <apex:column value="{!rec.CreatedDate}" headerValue="Created"/>
+                </apex:pageblocktable>
+            </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

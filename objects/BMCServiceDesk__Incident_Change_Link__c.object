@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <webLinks>
+        <fullName>BMCServiceDesk__Create_and_Link_Change_Request</fullName>
+        <availability>online</availability>
+        <description>Create Change Request and Link to Incident</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create and Link Change Request to Incident</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>if({!BMCServiceDesk__Incident__c.BMCServiceDesk__state__c}){
+		if(window.parent.waitMsgBar)window.parent.waitMsgBar.show();
+		{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+		{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)}
+		var isCreateable = sforce.apex.execute(&quot;BMCServiceDesk.WebServiceMethodsUtility&quot;,&quot;checkForCreatePermission&quot;, {objName:&quot;Change_Request__c&quot;});
+		if (isCreateable!= &apos;true&apos;) {
+		var label=&apos;{!JSENCODE($Label.BMCServiceDesk__InsufficentCreatePrivilege)}&apos;;
+		alert(label);
+		window.parent.waitMsgBar.hide();
+		}else{
+		var label=&apos;{!JSENCODE(BMCServiceDesk__Incident__c.Id)}&apos;;
+		if( typeof consoleDetailElements != &quot;undefined&quot; )
+            {
+                    createAndLinkRecords(&apos;CreateIncidentChangeLink&apos;);
+            }
+        else
+            { 
+                var win = window.parent;
+		        win.location.href=&quot;/apex/BMCServiceDesk__StdLayoutBtnToolbarPage?Id=&quot;+label+&quot;&amp;action=CreateIncidentChangeLink&amp;incId=&quot;+label;
+            }
+		}
+		}else
+		{
+		var msg=&apos;{!JSENCODE($Label.BMCServiceDesk__Incident_is_Closed)}&apos;;
+		alert(msg);
+		}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__Link_Incident</fullName>
+        <availability>online</availability>
+        <description>Link Incident to Change Request</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Select and Link Incidents to Change Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 671;
+var stdLayoutScreenHeight = 500;
+function stdScreenLeft(){
+return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2));
+}
+
+function stdScreenTop(){
+return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2));
+}
+
+if({!BMCServiceDesk__Change_Request__c.BMCServiceDesk__State__c}) {
+	if( typeof consoleDetailElements != &quot;undefined&quot; )
+	{
+	window.open(&quot;/apex/BMCServiceDesk__SearchAndLink?filterObjectId={!BMCServiceDesk__Change_Request__c.Id}&amp;parentName=Change_Request__c&amp;isCalledFromConsole=true&amp;childName=Incident__c&amp;filterClause=Inactive__c=false&quot;,null,&quot;status = 1,height =&quot;+ stdLayoutScreenHeight+&quot;, width = &quot;+ stdLayoutScreenWidth+&quot;,left= &quot;+stdScreenLeft()+&quot;,top=&quot;+ stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;); 
+	}else{
+	window.open(&quot;/apex/BMCServiceDesk__SearchAndLink?filterObjectId={!BMCServiceDesk__Change_Request__c.Id}&amp;parentName=Change_Request__c&amp;isCalledFromConsole=false&amp;childName=Incident__c&amp;filterClause=Inactive__c=false&quot;,null,&quot;status = 1,height =&quot;+ stdLayoutScreenHeight+&quot;, width = &quot;+ stdLayoutScreenWidth+&quot;,left= &quot;+stdScreenLeft()+&quot;,top=&quot;+ stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+	}
+}
+else {
+var label =&apos;{!JSENCODE($Label.BMCServiceDesk__CrClosed)}&apos;;
+alert(label);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__New_Change</fullName>
+        <availability>online</availability>
+        <description>Link Change Request to Incident</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Select and Link Change Requests to Incident</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 671;
+var stdLayoutScreenHeight = 500;
+function stdScreenLeft(){
+return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2));
+}
+
+function stdScreenTop(){
+return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2));
+}
+
+if({!BMCServiceDesk__Incident__c.BMCServiceDesk__state__c}){
+if( typeof consoleDetailElements != &quot;undefined&quot; )
+{
+window.open(&quot;/apex/BMCServiceDesk__SearchAndLink?filterObjectId={!BMCServiceDesk__Incident__c.Id}&amp;parentName=Incident__c&amp;isCalledFromConsole=true&amp;childName=Change_Request__c&amp;filterClause=Inactive__c=false&quot;,null,&quot;status = 1,height =&quot;+ stdLayoutScreenHeight+&quot;, width = &quot;+ stdLayoutScreenWidth+&quot;,left= &quot;+stdScreenLeft()+&quot;,top=&quot;+ stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+}
+else
+{
+window.open(&quot;/apex/BMCServiceDesk__SearchAndLink?filterObjectId={!BMCServiceDesk__Incident__c.Id}&amp;parentName=Incident__c&amp;isCalledFromConsole=false&amp;childName=Change_Request__c&amp;filterClause=Inactive__c=false&quot;,null,&quot;status = 1,height =&quot;+ stdLayoutScreenHeight+&quot;, width = &quot;+ stdLayoutScreenWidth+&quot;,left= &quot;+stdScreenLeft()+&quot;,top=&quot;+ stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+
+}
+
+}else
+{
+var label=&apos;{!JSENCODE($Label.BMCServiceDesk__Incident_is_Closed)}&apos;;
+alert(label);
+}</url>
+    </webLinks>
+</CustomObject>

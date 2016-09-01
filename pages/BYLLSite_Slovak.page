@@ -1,0 +1,108 @@
+<apex:page showHeader="false"  sidebar="false" standardStylesheets="false" CACHE="FALSE">      
+<html><head><style>
+ body {font-family:Verdana, sans-serif;font-size:11pt;}
+ div.heading-black {font-size:14.0pt;font-weight:bold;}
+ div.heading-black-smaller {font-size:12pt;font-weight:bold;} 
+ div.heading-green {font-size:14.0pt;font-weight:bold; color:green;}
+ div.note {font-size:9.0pt;}
+</style>
+</head>
+<body>  
+<table width="100%" style="vertical-align: text-top;">
+          <tr>
+            <td style="text-align:right">
+                <apex:image value="{!URLFOR($Resource.HomePageResource, '/img/DanfossLogo200px.jpg')}"/>                
+            </td>
+            </tr>
+            </table>    
+            <div style="font-size:10pt">   
+<apex:outputLink value="/apex/BYLLSite_Danish">Danish</apex:outputLink> 
+    –&nbsp; <apex:outputLink value="/apex/BYLLSite_German">German</apex:outputLink> –&nbsp; <apex:outputLink value="/apex/BYLLSite">English</apex:outputLink> </div>
+<center>
+<div class="heading-green"><h1>Zasaď strom</h1></div>
+
+<i>„Je našou povinnosťou zanechať svet v ktorom žijeme lepším ako sme ho našli“</i><br/>
+-   J.M. Kouzes, B.Z. Posner: A Leaders Legacy
+ </center><br/><br/>
+Členovia tímu BYLL (Manažérske vzdelávanie „Buduj svoj odkaz vedúceho“) v roku 2013, pracovný tím 1, posadili tieto stromy dňa 16. októbra 2013 v rámci globálnej akcie Danfoss Power Solutions v nasledujúcich lokalitách:<br/>
+<br/>
+<table width="100%"><tr><td width="50%" valign="top">
+    <table><tr><td width="300px"><div class="heading-black-smaller">Závod:</div></td><td><div class="heading-black-smaller">Členovia tímu:</div></td></tr>
+    <tr><td>Ames, Iowa, USA</td><td>Patrick Le Denmat, Molly Redenbaugh</td></tr>
+    <tr><td>Easley, Južná Karolína, USA</td><td>Doug Koch</td></tr>
+    <tr><td>Neumuenster, Nemecko</td><td>Dirk Mettjes</td></tr>
+    <tr><td>Nordborg, Dánsko</td><td>Bjoern Steinfath Iversen</td></tr>
+    <tr><td>Považská Bystrica, Slovensko</td><td>Norbert Jakubík</td></tr>
+    <tr><td><br/><br/></td></tr>
+    <tr><td colspan="2"><div class="heading-green">Zasadenie dvoch rovnakých stromov je symbolom:</div>
+•   zlúčenia firiem Sauer-Danfoss a Danfoss ako dvoch rovnakých, environmentálne orientovaných firiem.<br/>
+•   vytvárania symbiózy a harmónie medzi naším technickým svetom a prírodou<br/>
+•   ochrany životného prostredia<br/>
+•   snahy odstraňovať oxid uhličitý z atmosféry a tak prispievať k boju proti zmene klímy<br/>
+•   záväzku <i>"zanechať svet, v ktorom žijeme lepším ako sme ho našli."</i>
+    </td></tr>
+    </table>         
+</td>
+<td style="text-align:right">
+<apex:image value="{!URLFOR($Resource.BYLLfiles, '/BYLL-HTML_files/image002.jpg')}"/></td></tr>
+</table><br/>
+<br/>
+<br/>
+<div class="heading-green">Viete že?</div>
+•   Jeden dospelý strom môže za jeden rok absorbovať oxid uhličitý v množstve 24 kg a uvoľniť späť do atmosféry také množstvo kyslíka, ktoré spotrebujú dvaja dospelí ľudia. <div class="note">Zdroj: McAliney, Mike: Documentation and Information Sources for Land Resources Protection, Trust for Public Land, Sacramento, CA, December, 1993</div><br/> 
+•   Jeden aker (0,4 ha, resp. 4046 m2) stromov ročne spotrebuje také množstvo oxidu uhličitého, ktoré vyprodukuje priemerné auto prejdením 42.000 km. Stromy na tej istej rozlohe tiež produkujú dostatok kyslíka pre dýchanie 18 osôb po dobu jedného roka. <div class="note">Zdroj: The New York Times</div><br/><br/>
+
+<table width="100%">
+    <tr><td colspan="2"><div class="heading-green">Stromy a ich pôsobenie na náš život:</div></td></tr>
+    <tr><td><apex:image value="{!URLFOR($Resource.BYLLfiles, '/BYLL-HTML_files/image004.jpg')}"/>
+    </td>         
+    <td valign="top">
+
+<div class="heading-black-smaller">Vytvárajú kyslík  O<sub>2</sub> a spotrebovávajú oxid uhličitý CO<sub>2</sub></div>
+Rastliny a stromy vytvárajú viac kyslíku ako spotrebujú pre svoj rast. Prebytok uvoľňujú do atmosféry. Zelené rastliny absorbujú tiež škodlivé plyny ako napr. oxid siričitý SO<sub>2</sub>, oxidy dusíka  NO<sub>X</sub>, oxid uhoľnatý CO.<br/>
+<br/><div class="heading-black-smaller">Znižujú teplotu vzduchu</div>
+Jeden hektár  lesa odparí až 350 litrov vody za hodinu a tak dokáže znížiť teplotu vzduchu v rozmedzí 6 - 9˚C.<br/>
+<br/><div class="heading-black-smaller">Zadržujú pôdu</div>
+Korene stromov udržujú pôdu vo svahoch a na brehoch riek čím chránia pôdu pred eróziou. <br/>
+<br/><div class="heading-black-smaller">Znižujú hluk</div>
+Pás stromov široký 10 metrov zníži hluk až o 6 dB. Listnaté stromy absorbujú až 26% hluku (akustickej energie). 74% vrátia a rozptýlia,  preto sú často používané v protihlukových stenách. <br/>
+<br/><div class="heading-black-smaller">Pohlcujú prach a ničia mikroorganizmy</div>
+Listy pôsobia ako filtre na prach. Stromy sú schopné zachytiť 27% prachu v mestách.  Stromy vytvárajú látky, ktoré ničia choroboplodné zárodky podobne ako  antibiotika. V ihličnatom lese sa nachádza  200-krát menej baktérií ako na bežnej ulici v meste.<br/>
+<br/><div class="heading-black-smaller">Udržujú vlhkosť a čistia vodu</div>
+Les funguje ako špongia počas dažďov a tak pomáha predchádzať povodniam. <br/> 
+<br/><div class="heading-black-smaller">Zvyšujú  biologickú rozmanitosť</div>
+Stromy vytvárajú úkryty a domovy pre veľa druhov rastlín a živočíchov. <br/>
+<br/><div class="heading-black-smaller">Hospodárske využitie </div>
+Plody, drevo pre priemyselné využitie (výroba papiera, palivo, ....), dekorácie a pod. Listy, kôra, kvety pre medicínske použitie.  <br/>
+<br/><div class="heading-black-smaller">Sociálna funkcia</div>
+Lesy a parky sú využívané pre oddych a stretávanie sa ľudí, rodín, priateľov.<br/>
+</td></tr>
+     </table>
+<br/><br/>
+<div class="heading-green">Uhlíkový cyklus</div>
+Všetky živé bytosti obsahujú uhlík. Uhlík je tiež súčasťou oceánov, vzduchu a dokonca aj niektorých skál. Pretože Zem je dynamické prostredie, uhlík nezostáva v jednej forme.  Je neustále v pohybe ! 
+<br/>
+ <br/> 
+<table width="100%">
+    <tr><td>
+    <apex:image value="{!URLFOR($Resource.BYLLfiles, '/BYLL-HTML_files/image006.jpg')}"/>
+    </td>         
+    <td valign="top">
+    V atmosfére je uhlík viazaný väčšinou na kyslík vo forme plynu s názvom oxid uhličitý.  Rastliny využívajú fotosyntézu, pri ktorej z oxidu uhličitého a slnečného svetla vytvárajú organické látky potrebné pre svoj rast.  Uhlík sa tým stáva súčasťou rastliny. Rastliny a zvieratá, ktoré umierajú a ich zvyšky ostávajú v zemi sa v priebehu miliónov rokov menia na fosílne palivá (uhlie a ropa). Keď ľudia spaľujú fosílne palivá vzniká oxid uhličitý, ktorý sa vracia späť do atmosféry. Tým sa uhlíkový cyklus uzatvára. 
+    <br/><br/>
+    Oxid uhličitý je „skleníkový plyn“, ktorý spôsobuje otepľovanie atmosféry. Bez neho a ďalších skleníkových plynov by Zem ostala zmrznutým svetom a neumožnila by rozvoj života. Pôsobením človeka je dnes v atmosfére o 30% viac oxidu uhličitého, než tam bolo pred 150 rokmi. Tým sa atmosféra otepľuje.  Túto skutočnosť potvrdzujú aj vzorky z ľadovcov. Tie potvrdzujú, že v súčasnosti sa nachádza v atmosfére najviac oxidu uhličitého za obdobie posledných cca 420.000 rokov.
+    <br/><br/>
+    Viac informácií nájdete na nasledujúcich stránkach:<br/>
+    <apex:outputLink target="_blank" value="http://en.wikipedia.org/wiki/Carbon_cycle">http://en.wikipedia.org/wiki/Carbon_cycle</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://www.youtube.com/watch?v=xFE9o-c_pKg">http://www.youtube.com/watch?v=xFE9o-c_pKg</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://www.geography4kids.com/files/cycles_carbon.html">http://www.geography4kids.com/files/cycles_carbon.html</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://www.kidsgeo.com/geography-for-kids/0159-the-carbon-cycle.php">http://www.kidsgeo.com/geography-for-kids/0159-the-carbon-cycle.php</apex:outputLink><br/>
+    <apex:outputLink target="_blank" value="http://answers.ask.com/science/other/how_does_the_carbon_dioxide_oxygen_cycle_work">http://answers.ask.com/science/other/how_does_the_carbon_dioxide_oxygen_cycle_work</apex:outputLink><br/>
+    </td></tr>
+     </table>
+    <br/><br/>   
+            <div style="font-size:10pt">   
+<apex:outputLink value="/apex/BYLLSite_Danish">Danish</apex:outputLink> 
+    –&nbsp; <apex:outputLink value="/apex/BYLLSite_German">German</apex:outputLink> –&nbsp; <apex:outputLink value="/apex/BYLLSite">English</apex:outputLink> </div>
+ </body></html>   
+</apex:page>

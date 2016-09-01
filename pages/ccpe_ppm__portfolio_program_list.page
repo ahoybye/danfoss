@@ -1,0 +1,25 @@
+<apex:page standardController="ccpe_ppm__Portfolio__c" title="{!ccpe_ppm__Portfolio__c.Name} - Programs">
+
+	<apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+	<c:tree parentId="{!ccpe_ppm__Portfolio__c.Id}" parentName="{!ccpe_ppm__Portfolio__c.Name}" />
+
+	<apex:sectionHeader title="{!ccpe_ppm__Portfolio__c.Name}" subtitle="Portfolio Programs"/>
+
+	<apex:pageMessages />
+
+	<apex:pageBlock id="block">
+		<apex:pageBlockTable id="programsTable" var="program" value="{!ccpe_ppm__Portfolio__c.Programs__r}">
+			<apex:column headerValue="{!$ObjectType.ccpe_ppm__Program__c.fields.Name.label}">
+				<c:lookup_hover_detail recordId="{!program.Id}">
+					{!program.Name}
+				</c:lookup_hover_detail>
+			</apex:column>
+	        <apex:repeat var="f" value="{!$ObjectType.ccpe_ppm__Program__c.FieldSets.ccpe_ppm__Portfolio_Program_List}">
+	            <apex:column headerValue="{!f.label}">
+	                <apex:outputField value="{!program[f]}" />
+	            </apex:column>
+	        </apex:repeat>
+		</apex:pageBlockTable>
+	</apex:pageBlock>
+
+</apex:page>

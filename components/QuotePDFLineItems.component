@@ -1,0 +1,56 @@
+<apex:component controller="QuoteLineItemPDFExtension">
+    <!-- <apex:attribute name="headerValueSize" assignTo="{!valheaderValueSize}" description="This is the value for the headerValueSize." type="Integer" required="false"/>
+    <apex:attribute name="FooterValueSize" assignTo="{!valFooterValueSize}" description="This is the value for the FooterValueSize." type="Integer" required="false"/> -->    
+
+  <apex:repeat value="{!listparentWrapper}" var="index">   
+    <table cellpadding="0" cellspacing="0" id="lineitems">
+        <tr valign="top" style="background: #DDDDDD;">
+            <th style="padding-left: 1px; width: 200px;">
+				<apex:outputLabel value="{!$Label[partlabel]}"/>
+				<apex:outputLabel value="{!$Label.Description}" style="white-space:pre;"/>
+				<apex:outputLabel value="{!$Label.Model_Code}" style="white-space:pre;"/>
+			</th>
+            <th style="padding-left: 1px;padding-right: 10px; width: 135px;{!IF(customerPartColumn, '', 'display:None;')}"><apex:outputLabel value="{!$Label.Customer_Part_Number}"/></th>
+            <th style="padding-left: 1px;padding-right: 10px;{!IF(additionColumn, '', 'display:None;')}"><apex:outputLabel value="{!$Label.Additional_Description}"/></th>
+            <!-- <th style="padding-left: 1px;{!IF(commentColumn, '', 'display:None;')}"><apex:outputLabel value="{!$Label.Comments}"/></th> -->				
+            <th style="text-align:right;padding-right: 1px; width: 125px;">
+				<apex:outputLabel value="{!$Label.Annual_Quantity}"/>
+				<apex:outputLabel value="{!$Label.Unit_Sales_Price}" style="white-space:pre;"/>
+				<apex:outputLabel value="{!$Label.Distributor_Sell_Price}" style="white-space:pre;" rendered="{!distsellpriceColumn}"/>					
+			</th>
+        </tr>  
+        <apex:repeat value="{!index.listwrapper}" var="qli">
+            <tr valign="top">
+                <td style="padding-left: 1px;">{!qli.danfossPartNumber}<br/>{!qli.priceBookEntryProduct2Name}<br/>{!qli.modalCode}</td>                 
+                <td style="padding-left: 1px;padding-right: 10px;{!IF(customerPartColumn, '', 'display:None;')}">{!qli.customerPartNumber}</td>
+                <td style="padding-left: 1px;padding-right: 10px;{!IF(additionColumn, '', 'display:None;')}">{!qli.description}</td>
+                <!-- <td style="padding-left: 1px;{!IF(commentColumn, '', 'display:None;')}">{!qli.publishedCustomerComments}</td> -->
+                <td style="text-align:right;padding-right: 1px;">
+					<apex:outputText value="{0, number, 0}">
+                        <apex:param value="{!qli.annualQuantity}"/>
+                    </apex:outputText><br/>
+					<apex:outputText value="{0, number, #,###.00}">
+                        <apex:param value="{!qli.unitSalePrice}"/>
+                    </apex:outputText> 
+					<apex:outputText value="  {!qli.currencyIsoCode}"/><br/>
+					<apex:outputText value="{0, number, #,###.00}" rendered="{!distsellpriceColumn}">
+                        <apex:param value="{!qli.distributorPrice}"/>
+                    </apex:outputText> 
+					<apex:outputText value="  {!qli.currencyIsoCode}" rendered="{!qli.distributorPrice!=null}"/>
+				</td>
+				
+            </tr>
+			<tr>
+				<td id="comments2" style="{!IF(commentColSpan2, '', 'display:None;')}" colspan="2"><apex:outputText rendered="{!qli.commentColumn}">Comments: {!qli.publishedCustomerComments}</apex:outputText></td>
+				<td id="comments3" style="{!IF(commentColSpan3, '', 'display:None;')}" colspan="3"><apex:outputText rendered="{!qli.commentColumn}">Comments: {!qli.publishedCustomerComments}</apex:outputText></td>
+				<td id="comments4" style="{!IF(commentColSpan4, '', 'display:None;')}" colspan="4"><apex:outputText rendered="{!qli.commentColumn}">Comments: {!qli.publishedCustomerComments}</apex:outputText></td>
+			</tr>
+        </apex:repeat>  
+    </table> 
+   
+    <apex:outputPanel rendered="{!index.isBreakPage}">
+        <div style="page-break-before:always;"/>
+        <br /><br />                            
+    </apex:outputPanel> 
+  </apex:repeat>
+</apex:component>
