@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Mass Email: Dist Training Council Announcement</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Distributor Training Council Announcement</name>
+    <style>formalLetter</style>
+    <subject>Distributor Training Council Announcement</subject>
+    <textOnly>{!Today}
+
+Attention: Principal&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+Subject: Distributor Training Council Announcement
+
+
+Dear Customer,
+
+
+In January 2012 Sauer-Danfoss held its first Distributor Principal Conference in Orlando, FL. We learned that our distributors want more training, more exposure to Sauer-Danfoss management, and a distributor council or distributor advisory council to bring distributor and distributor customer concerns to the Sauer-Danfoss Business Areas.
+
+
+The Distributor Training Council will consolidate the training needs of all distributors into one common goal. Recent surveys show that distributor knowledge levels on Sauer-Danfoss product range from basic to advanced making it difficult to develop internal training programs. The survey also shows that there are several technical levels of training needed to satisfy the needs of the advanced distributor salesman. This council would jointly determine a training program that would address all levels of product knowledge within their sales organization. The results of these meetings will be a more effective and credible communication tool to our BA management as they develop training protocol. In addition, this group will assist in the prioritization and utilization of Sauer-Danfoss resources to support distribution training needs.
+
+
+Before your company accepts an invitation, please seriously consider the following goals based on the statement in the previous paragraph.
+
+
+1.) The goal of these meetings will  be to discuss and determine training needs for our North American Distributor Partners.
+
+2.) Please select a representative from your company that will be able to commit to a complete term on the council.
+
+3.) The commitment term will be for four meetings per council member. A rotation scheme will be developed so all distributor partners can participate.
+
+4.) Your company representative should thoroughly understand the needs of your company and be able to articulate them in a group environment.
+
+5.) There will be two council meetings per year. If your representative cannot attend the scheduled meeting, then your company will not be represented. There will be no substitutions.
+
+
+
+
+
+The first Distributor Training Council Meeting will be held in Ames Iowa. There will be eight distributor representatives, seven Business Area representatives, and four distributor sales team representatives. The second meeting will be held in Europe at one of our factories to be announced. This is a strong commitment from Sauer-Danfoss as well as our distributor partners.
+
+
+The agenda:
+
+
+May 29, 2013 Arrive in Ames IA no later than 5 pm in time for dinner with the Business Area Management group
+
+May 30, 2013 Meeting start at 8 am sharp at the Ames factory
+
+Introduction and goal review
+
+Training discussion, define congruent goals
+
+Overview of existing Sauer-Danfoss Training
+
+Training discussion
+
+Lunch
+
+Factory Tour
+
+Continue training discussion
+
+Dinner
+
+May 31, 2013 Meeting start at 8 am sharp at the Ames factory
+
+Wrap up previous days discussions
+
+Web Portal Review – Molly Redenbaugh
+
+Develop September agenda
+
+Lunch
+
+Depart after 3 pm
+
+
+The second meeting will be scheduled in September at one of the factories in Europe.
+
+This meeting will require an extra day for travel.  Dates and logistics for this meeting will be discussed at the March meeting.
+
+
+We are very excited to begin the process of training development based on our distributor partners input. Please share with us your thoughts and feedback on when you would like to begin your participation in the Distributor Training Council. Please send us your feedback no later than March 25th.
+
+
+Thank you and we look forward to hearing from you very soon.
+
+
+Sincerely,
+
+&lt;?xml:namespace prefix = v ns = &quot;urn:schemas-microsoft-com:vml&quot; /&gt;
+
+Les Mosteller
+
+
+Cc: Twila Brafford</textOnly>
+    <type>html</type>
+</EmailTemplate>

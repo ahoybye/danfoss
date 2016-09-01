@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Return_Request_Impossible_DEN_AT_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_AT_LETTERHEAD</letterhead>
+    <name>Return_Request_Impossible_DEN_AT_DE</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>An: {!Case.Account}
+
+z.Hd. {!Case.Contact}
+
+W E R K S R Ü C K G A B E
+
+Ihre anfrage
+vom
+Unsere Rechnung
+vom
+
+Eine Rücknahme is nicht möglich, da:
+
+*Eine Rücknahme ist laut unseren AGB´s nur innerhalb von 14 Tagen nach Rechnungsstellung möglich.
+
+Gemäß der allgemeinen Verkaufs- und Lieferbedingungen der Danfoss GmbH District Energy Division werden Waren aus ordnungsgemäß erfüllten Kaufverträgen nicht zurückgenommen.
+
+In Ausnahmefällen aus Kulanzgründen und mit vorheriger Einwilligung der Danfoss GmbH werden ausschließlich Lagerwaren (A-Produkte) aus der Preisliste innerhalb 14 Tagen nach Rechnungserstellung zurückgenommen, die original und ungeöffnet verpackt sind. Hier wird eine Rücknahmegebühr berechnet.
+
+Mit freundlichen Grüßen
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+{!Case.Thread_Id}
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel: +43 1253 022 322
+E-Mail Austria: CS@danfoss.at</textOnly>
+    <type>html</type>
+</EmailTemplate>

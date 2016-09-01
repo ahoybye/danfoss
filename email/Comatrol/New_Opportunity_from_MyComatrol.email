@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p style="font-size: 12pt;"><span style="font-size: 12pt;">&nbsp;</span></p><p><font class="Apple-style-span" size="3" face="arial" style="font-size: 12pt;">The following Opportunity for&nbsp;<b>{!Opportunity.Account}</b>&nbsp;has been created by&nbsp;</font><font face="arial">{!Contact.Name}.&nbsp; Please take a moment to ensure the information entered by your Distribution partner is correct and familiarize yourself with this new opportunity.<br></font></p><div style="font-size: 12pt;"><br></div><div style="font-size: 12pt;"><b>Opportunity Owner:</b>&nbsp;{!Opportunity.OwnerFullName}</div><div style="font-size: 12pt;"><b style="font-size: 12pt;">Opportunity Name:</b><span style="font-size: 12pt;">&nbsp;{!Opportunity.Name}</span></div><div style="font-size: 12pt;"><b>Production Start Date:</b>&nbsp;{!Opportunity.CloseDate}</div><div style="font-size: 12pt;"><br></div><div style="font-size: 12pt;"><br></div><div style="font-size: 12pt;"><b>Notes:</b></div><div style="font-size: 12pt;"><font class="Apple-style-span" face="arial">{!Opportunity.Description}</font></div><p style="font-size: 12pt;"><span style="font-size: 12pt;">&nbsp;</span><font class="Apple-style-span" face="arial"></font></p><div style="font-size: 12pt;"><font class="Apple-style-span" face="arial">Click&nbsp;<a href="https://sd.my.salesforce.com/p/email/template/EmailTemplateEditorUi/{!Opportunity.Link}">here</a>&nbsp;to view the record.</font></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

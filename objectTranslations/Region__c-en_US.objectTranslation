@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Region</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Regions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Comatrol Distributor Quote Footer --></label>
+        <name>Comatrol_Distributor_Quote_Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comatrol OEM Quote Footer --></label>
+        <name>Comatrol_OEM_Quote_Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Region --></label>
+        <name>Contract_Region__c</name>
+        <picklistValues>
+            <masterLabel>ASEAN</masterLabel>
+            <translation><!-- ASEAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia</masterLabel>
+            <translation><!-- Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korea</masterLabel>
+            <translation><!-- Korea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North America</masterLabel>
+            <translation><!-- North America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South America</masterLabel>
+            <translation><!-- South America --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- PS Distributor Quote Footer --></label>
+        <name>Distributor_Quote_Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- PS OEM Quote Footer --></label>
+        <name>OEM_Quote_Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Turolla Distributor Quote Footer --></label>
+        <name>Turolla_Distributor_Quote_Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Turolla OEM Quote Footer --></label>
+        <name>Turolla_OEM_Quote_Footer__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

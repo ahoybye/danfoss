@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify queue members/new owner when submitted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Customer_Requests</letterhead>
+    <name>Submit Customer Request for Visitor Notification</name>
+    <style>freeForm</style>
+    <subject>{!PS_Customer_Request__c.Type__c} Customer Request {!PS_Customer_Request__c.Name} for {!PS_Customer_Request__c.Account__c} - Submitted</subject>
+    <textOnly>A new Visitor Notification request has been created.  If you are the designated person for your plant/region, please review the request and take ownership.
+
+
+
+Purpose of Visit:  {!PS_Customer_Request__c.Purpose_of_Visit__c}
+
+Plant of Visit: {!PS_Customer_Request__c.Plant_of_Visit__c}
+
+Customer Visit in Date:  {!PS_Customer_Request__c.Customer_Visit_In_Date__c}
+
+
+
+
+
+Customer Request</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Turolla_Logo</letterhead>
+    <name>SLA: Turolla Lead Notification</name>
+    <style>formalLetter</style>
+    <subject>Leads:{!Lead.Name} require your input for next Level Processing</subject>
+    <textOnly>Hello {!Receiving_User.Name}
+
+
+
+Leads: {!Lead.Name}  requires your attention to advance in the lead qualification process.
+
+
+
+Click following link or copy into browser address bar to directly access Lead in salesforce.
+
+{!Lead.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

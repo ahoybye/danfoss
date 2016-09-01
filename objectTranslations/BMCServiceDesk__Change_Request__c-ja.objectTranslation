@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>変更リクエスト</value>
+    </caseValues>
+    <fields>
+        <help>このフィールドでは、変更リクエストの完了日を選択します。 このフィールドは、終了予定日前に未完了の変更リクエストを追跡するために使用されます。</help>
+        <label><!-- Actual End Date --></label>
+        <name>BMCServiceDesk__Actual_End_Date__c</name>
+    </fields>
+    <fields>
+        <help>変更リクエストの実装を開始した日時を選択します。 このフィールドは、[開始予定日時]に開始しなかった変更リクエストの追跡に使用されます。</help>
+        <label><!-- Actual Start Date --></label>
+        <name>BMCServiceDesk__Actual_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドでは、電子メールテンプレートを選択した後に電子メールに追加情報を追加します。</help>
+        <label><!-- Additional email information --></label>
+        <name>BMCServiceDesk__Additional_email_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Tasks Closed Controller --></label>
+        <name>BMCServiceDesk__AllTaskCloseController__c</name>
+    </fields>
+    <fields>
+        <help>事前承認済みの変更リクエストを作成してすぐに実行できるようにしたい場合は、このフィールドを選択します。</help>
+        <label><!-- Approved --></label>
+        <name>BMCServiceDesk__Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- &lt;BLANK&gt; --></label>
+        <name>BMCServiceDesk__BLANK__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストの実行前に構成アイテムを初期状態に戻す復元計画を入力します。</help>
+        <label><!-- Back-out Plan --></label>
+        <name>BMCServiceDesk__Back_Out_Plan__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストの実行前に構成アイテムを初期状態に戻す詳細な復元計画を入力します。</help>
+        <label><!-- Back-out Plan Details --></label>
+        <name>BMCServiceDesk__Back_out_Plan_Details__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから、その変更リクエストのカテゴリを選択します。 カテゴリにより標準の分類を使用して変更リクエストを分類できます。分類しておくとレポート用の追跡が簡単になります。</help>
+        <label><!-- Category~ --></label>
+        <name>BMCServiceDesk__Category__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから変更カテゴリを選択し、変更リクエストが[マイナー]、[重要]、[メジャー]のいずれのカテゴリに該当するかを示します。</help>
+        <label><!-- Change Category --></label>
+        <name>BMCServiceDesk__Change_Category__c</name>
+        <picklistValues>
+            <masterLabel>Major</masterLabel>
+            <translation>メジャー</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation>マイナー</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Significant</masterLabel>
+            <translation>重要</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストの説明を入力します。</help>
+        <label><!-- Description --></label>
+        <name>BMCServiceDesk__Change_Description__c</name>
+    </fields>
+    <fields>
+        <help>画像形式で変更の種類を表示します。</help>
+        <label><!-- Change Flag --></label>
+        <name>BMCServiceDesk__Change_Flag__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから変更タイプを選択し、その変更リクエストが[標準]、[通常]、[緊急]のいずれのタイプに該当するのかを示します。</help>
+        <label><!-- Change Type --></label>
+        <name>BMCServiceDesk__Change_Type__c</name>
+        <picklistValues>
+            <masterLabel>Emergency</masterLabel>
+            <translation>緊急</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation>通常</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation>標準</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Change Request #+ --></label>
+        <name>BMCServiceDesk__Change_console_detail_link__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストの終了理由を記録します。</help>
+        <label><!-- Close Comments --></label>
+        <name>BMCServiceDesk__Close_Comments__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドでは、その変更リクエストの終了日を選択します。</help>
+        <label><!-- Closed Date --></label>
+        <name>BMCServiceDesk__Closed_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closure Category --></label>
+        <name>BMCServiceDesk__ClosureCategory__c</name>
+        <picklistValues>
+            <masterLabel>Implemented</masterLabel>
+            <translation>実装済み</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Implemented</masterLabel>
+            <translation>一部実装済み</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation>却下済み</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rolled back</masterLabel>
+            <translation>ロールバック済み</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn by requester</masterLabel>
+            <translation>リクエスト者により取り消し済み</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Collision Detection State --></label>
+        <name>BMCServiceDesk__CollisionDetectionState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collision --></label>
+        <name>BMCServiceDesk__Collision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliant --></label>
+        <name>BMCServiceDesk__Compliant__c</name>
+    </fields>
+    <fields>
+        <label><!-- SmartView (Beta) --></label>
+        <name>BMCServiceDesk__Deep_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Controller --></label>
+        <name>BMCServiceDesk__Dummy_Update__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから、その変更リクエストのカテゴリを選択します。 カテゴリにより標準の分類を使用して変更リクエストを分類できます。分類しておくとレポート用の追跡が簡単になります。</help>
+        <label><!-- Category --></label>
+        <name>BMCServiceDesk__FKCategory__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed By --></label>
+        <name>BMCServiceDesk__FKClosed_By__c</name>
+        <relationshipLabel><!-- Change Requests (Closed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>オプションのリストから、変更リクエストのインパクトレベルを選択します。 インパクトレベルと緊急度は、変更リクエストの優先度の計算に使用されます。</help>
+        <label><!-- Impact --></label>
+        <name>BMCServiceDesk__FKImpact__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストを作成しているスタッフメンバーのイニシエータIDが自動的に設定されます。</help>
+        <label><!-- Initiator ID --></label>
+        <name>BMCServiceDesk__FKInitiator__c</name>
+        <relationshipLabel><!-- Change Requests (Initiator ID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>優先度は、選択した緊急度とインパクトの値によって計算されます。</help>
+        <label><!-- Priority --></label>
+        <name>BMCServiceDesk__FKPriority__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Request # --></label>
+        <name>BMCServiceDesk__FKServiceRequest__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>BMCServiceDesk__FKStaff__c</name>
+        <relationshipLabel><!-- Change Requests (Staff) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>オプションのリストから、その変更リクエストに該当するステータスを選択します。 ステータスは、変更リクエストの進捗状況を開始から終了までのステージで表示するために使用されます。</help>
+        <label><!-- Status --></label>
+        <lookupFilter>
+            <errorMessage><!-- Select an active status that applies to change request. --></errorMessage>
+        </lookupFilter>
+        <name>BMCServiceDesk__FKStatus__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>レコードに適用するテンプレートを選択します。テンプレートを使用すると、フォームでよく使用するフィールドに事前に入力できます。</help>
+        <label><!-- Template --></label>
+        <name>BMCServiceDesk__FKTemplate__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>オプションのリストから、その変更リクエストに必要な完了の緊急度を選択します。 緊急度とインパクトレベルは変更リクエストの優先度の計算に使用されます。</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>オプションのリストから、変更リクエストのインパクトレベルを選択します。 インパクトレベルと緊急度は、変更リクエストの優先度の計算に使用されます。</help>
+        <label><!-- Impact~ --></label>
+        <name>BMCServiceDesk__Impact__c</name>
+    </fields>
+    <fields>
+        <help>変更リクエストが無効になっていて、レコード保持ポリシーを遵守するためにレコードを保持する必要がある場合は、このフィールドを選択します。</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__Inactive__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストを作成しているスタッフメンバーの名前が自動的に設定されます。</help>
+        <label><!-- Initiator First Name --></label>
+        <name>BMCServiceDesk__Initiator_First_Name__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストを作成しているスタッフメンバーのイニシエータIDが自動的に設定されます。</help>
+        <label><!-- Initiator ID~ --></label>
+        <name>BMCServiceDesk__Initiator_ID__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから、変更リクエストを作成しているスタッフメンバーの名字を選択します。</help>
+        <label><!-- Initiator Last Name --></label>
+        <name>BMCServiceDesk__Initiator_Last_Name__c</name>
+    </fields>
+    <fields>
+        <help>レコードは[変更リクエストコンソール]タブまたは[Remedyforceコンソール]タブで開きます</help>
+        <label><!-- Launch Console --></label>
+        <name>BMCServiceDesk__Launch_Console__c</name>
+    </fields>
+    <fields>
+        <label><!-- LockedRecordTimestamp --></label>
+        <name>BMCServiceDesk__LockedRecordTimestamp__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、その変更リクエストが作成された日時が自動的に設定されます。</help>
+        <label><!-- Opened Date --></label>
+        <name>BMCServiceDesk__Open_Date_Time__c</name>
+    </fields>
+    <fields>
+        <help>優先度は、選択した緊急度とインパクトの値によって計算されます。</help>
+        <label><!-- Priority~ --></label>
+        <name>BMCServiceDesk__Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>BMCServiceDesk__Queue__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、その変更リクエストを作成する詳細な理由を入力します。</help>
+        <label><!-- Reason Details --></label>
+        <name>BMCServiceDesk__Reason_for_Change_Details__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、その変更リクエストを作成する理由を入力します。</help>
+        <label><!-- Reasons --></label>
+        <name>BMCServiceDesk__Reason_for_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurrence --></label>
+        <name>BMCServiceDesk__Recurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Parent Record ID --></label>
+        <name>BMCServiceDesk__RecurringParentRecordId__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドは、[アクション] &gt; [応答済み]コマンドを実行した日時に自動的に設定されます。 このフィールドには、スタッフが変更リクエストについてイニシエータに通知したときの日時が記録されます。</help>
+        <label><!-- Responded Date --></label>
+        <name>BMCServiceDesk__Responded_Date__c</name>
+    </fields>
+    <fields>
+        <help>レビューに基づいて現在の変更リクエストについて追跡したい詳細なコメントがあれば、このフィールドに入力します。これらのメモには、変更の失敗理由や今後の失敗回避策などを記述できます。</help>
+        <label><!-- Review Details --></label>
+        <name>BMCServiceDesk__Review_Comments_Details__c</name>
+    </fields>
+    <fields>
+        <help>レビューに基づいて現在の変更リクエストについて追跡したいコメントがあれば、このフィールドに入力します。 これらのメモには、変更の失敗理由や今後の失敗回避策などを記述できます。</help>
+        <label><!-- Review Comments --></label>
+        <name>BMCServiceDesk__Review_Comments__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドでは、その変更リクエストの終了後のレビュー予定日を選択します。</help>
+        <label><!-- Review Date --></label>
+        <name>BMCServiceDesk__Review_Date__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストの詳細な実行手順を入力します。</help>
+        <label><!-- Rollout Plan Details --></label>
+        <name>BMCServiceDesk__Roll_Out_Plan_Details__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、変更リクエストの実行手順を入力します。</help>
+        <label><!-- Rollout Plan --></label>
+        <name>BMCServiceDesk__Roll_Out_Plan__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドでは、変更リクエストの完了予定日を選択します。</help>
+        <label><!-- Scheduled End --></label>
+        <name>BMCServiceDesk__Scheduled_End_Date__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドでは、変更リクエストの開始予定日を選択します。</help>
+        <label><!-- Scheduled Start --></label>
+        <name>BMCServiceDesk__Scheduled_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled During Blackout --></label>
+        <name>BMCServiceDesk__Scheduled_during_Blackout__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、現在ログオンしているスタッフのスタッフIDが自動的に設定されます。 必要に応じて、このフィールドを使用し、現在ログオンしているスタッフ以外のスタッフを選択できます。</help>
+        <label><!-- Staff ID Closed By~ --></label>
+        <name>BMCServiceDesk__Staff_ID_Closed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>BMCServiceDesk__State__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから、その変更リクエストに該当するステータスを選択します。 ステータスは、変更リクエストの進捗状況を開始から終了までのステージで表示するために使用されます。</help>
+        <label><!-- Status~ --></label>
+        <name>BMCServiceDesk__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Already Applied --></label>
+        <name>BMCServiceDesk__TemplateAlreadyApplied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Name --></label>
+        <name>BMCServiceDesk__TemplateName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Duration (minutes) --></label>
+        <name>BMCServiceDesk__Total_Duration_minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Update Count --></label>
+        <name>BMCServiceDesk__UpdateCount__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから、その変更リクエストに必要な完了の緊急度を選択します。 緊急度とインパクトレベルは変更リクエストの優先度の計算に使用されます。</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__Urgency__c</name>
+    </fields>
+    <fields>
+        <help>変更リクエストが最後に割り当てられたキューの名前を表示します。</help>
+        <label><!-- Last Queue --></label>
+        <name>BMCServiceDesk__queueName__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、説明フィールドの値の最初の255文字が表示されます。</help>
+        <label><!-- Short Description --></label>
+        <name>BMCServiceDesk__shortDescription__c</name>
+    </fields>
+    <nameFieldLabel>変更番号</nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- This change request is closed. Reopen the change request to modify it. --></errorMessage>
+        <name>BMCServiceDesk__Cannot_Update_Closed_Change_Request</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Actual End Date must be later than Actual Start Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ActualEndDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Review Date must be later than the Actual End Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ReviewDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Scheduled End Date must be later than Scheduled Start Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ScheduledEndDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Actual End Date must be later than the Scheduled Start Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ScheduledStartDate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Back_to_List --></label>
+        <name>BMCServiceDesk__Back_to_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Category_Tree --></label>
+        <name>BMCServiceDesk__Category_Tree</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_Management_Process --></label>
+        <name>BMCServiceDesk__Change_Management_Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_Manifest --></label>
+        <name>BMCServiceDesk__Change_Manifest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_Schedule --></label>
+        <name>BMCServiceDesk__Change_Schedule</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close --></label>
+        <name>BMCServiceDesk__Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Knowledge_Article --></label>
+        <name>BMCServiceDesk__Create_Knowledge_Article</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Knowledge_Articles --></label>
+        <name>BMCServiceDesk__Knowledge_Articles</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Launch_CI_Explorer --></label>
+        <name>BMCServiceDesk__Launch_CI_Explorer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>BMCServiceDesk__New</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Change_Record --></label>
+        <name>BMCServiceDesk__New_Change_Record</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reopen_Change --></label>
+        <name>BMCServiceDesk__Reopen_Change</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Responded --></label>
+        <name>BMCServiceDesk__Responded</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>BMCServiceDesk__Send_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Service_Targets --></label>
+        <name>BMCServiceDesk__Service_Targets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Project --></label>
+        <name>ccpe_bmc__Create_Project</name>
+    </webLinks>
+</CustomObjectTranslation>

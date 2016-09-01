@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2014 Price Adjustment Letter</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>2013 Danfoss Power Solutions Price Update</name>
+    <style>formalLetter</style>
+    <subject>2014  Danfoss Price Adustment Letter</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+Subject: 2014 Danfoss Power Solutions  Price Updates
+
+
+Dear {!Contact.FirstName},
+
+
+2013 business levels have been strong and we continue to support customer demands for high quality mobilehydraulics products. During this period, we have experienced some areas of inflation which require us to implement minor price adjustments for 2014. We appreciate your support and continued partnership with Danfoss Power Solutions.
+
+
+Attached is the  Danfoss Power Solutions price update letter for 2014.</textOnly>
+    <type>html</type>
+</EmailTemplate>

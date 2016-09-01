@@ -1,0 +1,62 @@
+<apex:page controller="BMCServiceDesk.AcDeviceEventsController" sidebar="false" showHeader="false" standardStylesheets="false">
+   <c:AcRestCommon isGridRequired="true"/>
+
+ <script>
+    var test={!test};
+    var isempty;
+    var strItemClickField = '{!strItemClickField}';
+    strFields={!strFields};
+    strColumns={!strColumns};
+    var checkForFirstTime = false;  
+    var Categories = "{!JSENCODE($Label.Categories)}",EventDescription = "{!JSENCODE($Label.ACEventDescription)}";
+    var tabOutImg = "{!$Resource.SDEFExtJS}/resources/images/default/shared/blue-loading.gif";
+    var TotalRecords = '{!TotalRecords}';
+ </script>
+  <apex:outputPanel id="msgPanel">
+            <apex:pageMessages />
+            <script>
+            msgStr = '{!msgStr}';
+            isAuthRequired={!isAuthRequired};
+            </script>
+        </apex:outputPanel>
+ 
+
+<apex:form id="myform"><apex:actionFunction name="loadevent" action="{!loadeventvalues}" rerender="mainform,msgPanel,updateSession" oncomplete="stopWaitMask();ShowMessageBox();checkUserAuth();">
+    <apex:param name="id" value="" assignTo="{!categoryindex}"/>
+ </apex:actionFunction>
+ <apex:actionFunction name="updateACSetting" action="{!updateSessionSetting}" oncomplete="return false;"/>
+ <apex:actionFunction action="{!paginatedEvents}" name="getPageRecords" reRender="mainform,msgPanel,updateSession" onComplete="stopWaitMask();ShowMessageBox();checkUserAuth();">
+     <apex:param name="offset" value="" />
+      <apex:param name="count" value="" />
+ </apex:actionFunction>
+ <apex:outputPanel id="mainform">
+ <script>
+
+ TotalRecords = '{!TotalRecords}';
+ calculateOffset();
+ proxyData={!proxyData};
+ isempty={!isempty};
+ 
+ if (checkForFirstTime)
+ {
+    populateGridData();
+    updateTotalRecordCount();
+ }
+ 
+ </script>   
+</apex:outputPanel>  
+</apex:form>
+<apex:outputPanel id="updateSession">
+            <script>
+                updateSessionInCS={!updateSessionInCS};
+                if(updateSessionInCS)
+                {
+                    updateACSetting();
+                }
+            </script>
+</apex:outputPanel>    
+  <script type="text/javascript" src="{!$Resource.SDEFCommonJS}/AcDeviceEvents.js" /> 
+<script>
+    window.parent.stopWaitMsgBar();
+</script> 
+</apex:page>

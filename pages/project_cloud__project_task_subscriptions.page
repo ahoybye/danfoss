@@ -1,0 +1,759 @@
+<apex:page id="page" standardController="project_cloud__Project_Task__c" extensions="project_cloud.ProjectTaskSubscriptionsGridExtension,project_cloud.TokenInputHelper,project_cloud.SubscriptionsLoad,project_cloud.BetaHelper" title="Resource Subscriptions - {!project_cloud__Project_Task__c.Name}"
+ action="{!IF(NOT(Project_Task__c.Project_Phase__r.Project__r.IsOnly_Subscriptions__c), URLFOR($Page.project_task_resources, Project_Task__c.Id, [id=Project_Task__c.Id, retURL=$CurrentPage.parameters.retURL]), null)}">
+		<!--
+		Verify the flag "Only Subscriptions" on the Project record. This is the
+		opposite logic as on the project_task_resources page: When the flag is
+		unchecked the Project Task Resources page should be used for allocations
+		and subscriptions
+		-->
+
+	<c:walkme />
+	<c:include_jquery declareEsc="true" noConflict="true"/>
+
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/tokeninput/jquery.tokeninput.js')}" />
+	
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/tokeninput/token-input-mac.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ccprojex_customui,'/pulse/font-awesome/css/font-awesome.css')}" />
+	<style type="text/css">
+		input.remoting-loading {
+			background-image: url('/img/loading.gif');
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+
+		.hidden-column {
+			display: none;
+		}
+
+		.helpOrbCustom {
+			background-image: url("/img/help/helpOrbs.gif");
+			background-position: 0 0;
+			height: 15px;
+			vertical-align: middle;
+			width: 20px;
+		}
+		.helpOrbCustom:hover {
+			background-position: right top;
+		}
+
+		.bPageBlock table.list {
+			table-layout: fixed;
+		}
+
+		#page\:form\:block\:subscribedSection .labelCol {
+			width: 15%;
+		}
+		#page\:form\:block\:subscribedSection .dataCol {
+			width: 10%;
+		}
+
+		.resource-load-green {
+			background-color: #a1f78d;/*green*/
+		}
+		.resource-load-yellow {
+			background-color: #ffd74b;/*yellow*/
+		}
+		.resource-load-red {
+			background-color: #fb8a8c;/*red*/
+		}
+		.load-cell-non-working {
+			background-color: #E3E3D7 !important;
+		}
+
+		span.load-original {
+			display: none;
+		}
+		
+		.total-hours{
+			color: #ccc;
+			font-size: 10px;
+		}
+		
+		.hours-input{
+			 width: 30px;
+			 box-sizing: border-box;
+			 border: 1px solid #ccc;
+			 padding: 2px;
+			 font-size: 11px;
+			 outline: none;
+			 color: #555;
+		}
+		
+		.hours-input.filtered, .hours-input.changed{
+			border-color: #77D4F1;
+		}
+		#grid_filter, #grid_length, #filteredgrid_filter, #filteredgrid_length{
+			margin-bottom: 10px;
+		}
+		#grid td, #filteredgrid td{
+			padding: 4px 6px;
+			vertical-align: middle;	
+		}
+		
+		
+		/*
+		#grid tr.even{
+			background: rgba(0,0,0,0.01);
+		}
+		*/
+		#grid tbody > tr:hover, #grid tbody > tr:hover > td{
+			background: rgb(227, 243, 255);
+		}
+		#grid tr:hover > td{
+			background: none;
+		}
+		
+		div.saving-state{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			float:right;
+			background-image: url('/img/loading.gif');
+			background-position: center center;
+			background-repeat: no-repeat;	
+			display: none;	
+		}
+		
+		table.dataTable tbody tr.assigned{
+			background-color: #60E1A8; /*#D4FFEC;*/
+			
+		}
+		
+		table.dataTable tbody tr.filtered{
+			background-color: #E8DF40;/*#FAFFD4;*/
+		}
+		
+		table.dataTable tbody tr.capable{
+			background-color: #77CEF8; /*#D4F1FF;*/
+		}
+		
+        #grid tr:hover .total-hours{
+        	color: #ccc;
+        }
+	</style>
+	
+	<c:tree projectId="{!project_cloud__Project_Task__c.Project_Phase__r.project_cloud__Project__c}" workableId="{!project_cloud__Project_Task__c.Id}" />
+
+	<apex:sectionHeader title="{!project_cloud__Project_Task__c.Name}" subtitle="Resource Subscriptions" />
+	<apex:outputPanel rendered="{!isBeta}">
+		<apex:outputPanel rendered="{!NOT(isBetaWithConfirm)}">
+			<script>
+				window.location.href = '{!$Page.resourcing}?id={!project_cloud__Project_Task__c.Id}#/allocations/{!project_cloud__Project_Task__c.Id}';
+			</script>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{!isBetaWithConfirm}">
+			<apex:pageMessage summary="Resourcing Beta" severity="warning" strength="3" escape="false">You have specified that you still wish to access the old resourcing pages.<br />To access the new resourcing pages, please click <a href='{!$Page.resourcing}?id={!project_cloud__Project_Task__c.Id}#/allocations/{!project_cloud__Project_Task__c.Id}'>here</a></apex:pageMessage>
+		</apex:outputPanel>
+	</apex:outputPanel>
+	<script>
+		j$(document).ready(function(){
+			DrawGrid(true);
+		});
+		var toSave = {};
+		var userIds = {};
+		var hoursRange = [];
+		var filteredChanged = {};
+		
+		function saveGrid(){
+			j$('div.saving-state').show();
+			Visualforce.remoting.Manager.invokeAction(
+				'{!$RemoteAction.ProjectTaskSubscriptionsGridExtension.saveResourceSubscriptionGrid}',
+				'{!project_cloud__Project_Task__c.Id}', toSave, j$('#capabilities-filter').val(), (j$('.fullySubscribed').is(':checked') ? true : false),
+				function(result, event){
+					j$('div.saving-state').hide();
+					if(!event.status){
+						alert('Saving failed');
+					}else{
+						window.location.href = window.location.href;
+					}
+				}
+			);
+		}
+		function DrawGrid(clear){
+			if(clear == undefined){
+				clear = false;
+			}
+			Visualforce.remoting.Manager.invokeAction(
+				'{!$RemoteAction.ProjectTaskSubscriptionsGridExtension.resourceSubscriptionGridGenerate}',
+				'{!project_cloud__Project_Task__c.Id}', j$("#capabilities-filter").val(), j$("#people-filter").val(),
+				function(result, event){
+					hoursRange = result.hoursRange;
+					var t = j$('#grid').DataTable();
+					if(clear){
+						toSave = {};
+						userIds = {};
+						filteredChanged = {};
+						t.clear();
+					}
+					
+					var rows = [];
+					for(var i = 0; i < result.resources.length; i++){
+						var row = CreateRow(result.resources[i]);
+						if(row != null){
+							rows[rows.length] = row;
+						}
+					}
+					
+					j$('#grid').DataTable().rows('.f.uc').remove();
+					for(var i = 0; i < result.filtered.length; i++){
+						if(filteredChanged[result.filtered[i].owner.Id] != true){
+							var row = CreateRow(result.filtered[i], true);
+							if(row != null){
+								rows[rows.length] = row;
+							}
+						}
+					}
+					t.rows.add(rows).draw();
+					j$('input.remoting-loading').removeClass('remoting-loading');
+					calculateLoadChanges(null);
+				}
+			);
+		}
+		
+		function CreateRow(row, isFiltered){
+			if(isFiltered == undefined){
+				isFiltered = false;
+			}
+			if(userIds[row.owner.Id] != true){
+				var rowObj = [];
+				rowObj[0] = (row.isTeam ? '<i class="icon-group" style="float: right;"></i>' : '') + '<a href="/' + row.owner.Id + '" target="_blank" style="display: block; min-width: 150px;">' + row.owner.Name + '</a>' +  '<div class="metadata" style="display: none;" data-filtered="' + row.isFiltered + '" data-assigned="' + row.isAssigned + '" data-capable="' + row.isCapable + '"></div>';
+				rowObj[1] = '<input type="checkbox" data-filtered="' + isFiltered + '" data-type="subscription" data-userid="' + row.owner.Id + '" data-id="' + (row.subscription.Id != undefined ? row.subscription.Id : '') + '" ' + (row.subscription.Id != undefined ? 'CHECKED' : '') + ' />';
+				for(var z = 0; z < row.cells.length; z++){
+					rowObj[rowObj.length] = '<span data-style-class="' + row.cells[z].styleClasses + '" data-userid="' + row.owner.Id + '" data-ov="' + parseFloat(row.cells[z].hours).toFixed(2) + '" data-oc="' + (row.subscription.Id != undefined ? true : false) + '">' + parseFloat(row.cells[z].hours).toFixed(2) + '</span>';
+				}
+				if(!isFiltered){
+					userIds[row.owner.Id] = true;
+				}
+				return rowObj;
+			}
+			return null;
+		}
+		
+		
+		j$(document).ready(function(){
+			j$('#grid').on('change', 'td.cell-subscribed > input[type="checkbox"]', function(event) {
+				delete toSave[j$(this).data('userid')];
+				if((j$(this).data('id') != '' && !(j$(this).is(':checked'))) || (j$(this).data('id') == '' && j$(this).is(':checked')) ){
+					toSave[j$(this).data('userid')] = { id : j$(this).data('id'), userid : j$(this).data('userid'), value : j$(this).is(':checked') };
+					if(j$(this).data('filtered') == true){
+						j$('tr[data-userid="' + j$(this).data('userid') + '"]').removeClass('uc').addClass('c');
+						filteredChanged[j$(this).data('userid')] = true;
+					}
+				}else{
+					if(j$(this).data('filtered') == true){
+						j$('tr[data-userid="' + j$(this).data('userid') + '"]').removeClass('c').addClass('uc');
+						delete filteredChanged[j$(this).data('userid')];
+					}
+				}
+				calculateLoadChanges(event);
+			});
+		});
+		
+		var originalCheckedCount = null;
+		function calculateLoadChanges(event) {
+			var checkboxes = j$('td.cell-subscribed > input[type="checkbox"]');
+			var checked = j$('td.cell-subscribed > input:checked');
+			if(originalCheckedCount == null){
+				originalCheckedCount = 0;
+				j$('td.cell-subscribed > input[type="checkbox"]').each(function(cellIndex){
+					if(j$(this).data('id').length > 0){
+						originalCheckedCount++;
+					}
+				});
+			}
+			//This is the total number of selected resources on the Project Task
+			var numberOfResources = checked.length
+	
+			//clear every cell, the code below will repopulate it
+			j$('td.load-cell-grid > span').each(function() {
+				var self = j$(this);
+				//load the original value into the objects data
+				var orig = self.data('ov');
+				//on subsequent changes reset every cell to it's original value
+				self.text(orig);
+			});
+
+			checkboxes.each(function() {
+				var checkbox = j$(this);
+				var isChecked = checkbox.is(':checked');
+				var oChecked = (checkbox.data('id') != '');
+				jQuery('td.load-cell-grid > span[data-userid="' + checkbox.data('userid') + '"]').each(function(cellIndex) {
+					var rangeHours = hoursRange[cellIndex];
+					//The initial difference is the subtraction of all the existing hours the used is subscribed for.
+					
+					var difference;
+					if( !(originalCheckedCount == numberOfResources && oChecked == isChecked)){
+						if(isChecked == true && oChecked == false){
+							setLoadDifferenceCell(j$(this), rangeHours / numberOfResources);
+						}else{
+							if(isChecked == true && oChecked == true){
+								setLoadDifferenceCell(j$(this), (rangeHours / numberOfResources) - (rangeHours / originalCheckedCount));
+							}else if(!isChecked && oChecked){
+								setLoadDifferenceCell(j$(this), -(rangeHours / originalCheckedCount));
+							}
+						}
+					}
+				});
+			});
+			//updateLoadDifferences(checkedCapables, numberOfResources);
+			//updateLoadDifferences(checkedFiltereds, numberOfResources);
+		}
+		
+		function setLoadDifferenceCell(cell, difference) {
+			var cellValue = cell.data('ov');
+			var originalCheckbox = j$('td.cell-subscribed > input[type="checkbox"][data-userid="' + cell.data('userid') + '"]');
+			if(difference !== 0) {
+				//prepend the + sign (minus is automatic when it's a negative
+				//number) to the difference and round the number to 20 decimal
+				//places.
+				var total = parseFloat(cellValue) + difference;
+				cellValue += (difference > 0 ? " + " : " - ") + Math.abs(difference).toFixed(1) + " = " + total.toFixed(1);
+			}
+			cell.text(cellValue);
+		}
+		
+		function createRowCallback(row, data, index){
+			var tempRow = j$(row);
+			var metadata = j$('div.metadata', tempRow);
+			var isCapable = (metadata.attr('data-capable') == 'true');
+			var isAssigned = (metadata.attr('data-assigned') == 'true');
+			var isFiltered = (metadata.attr('data-filtered') == 'true');
+			if(isAssigned){
+				tempRow.addClass('assigned');
+			}else if(isCapable){
+				tempRow.addClass('capable');
+			}else if(isFiltered){
+				tempRow.addClass('filtered');
+			}
+			var checkbox = j$('td.cell-subscribed > input[type="checkbox"]', tempRow);
+			j$('td.load-cell-grid > span[data-style-class]', tempRow).each(function(index, value){
+				j$(this).parent().addClass(j$(this).attr('data-style-class'));
+			});
+			tempRow.attr('data-userid', checkbox.attr('data-userid'));
+			if(checkbox.attr('data-filtered') == "true"){
+				tempRow.addClass('f uc');
+			}
+			tempRow.addClass(checkbox.attr('data-userid'));
+		}
+	</script>
+<!-- 
+	<c:tree projectId="{!project_cloud__Project_Task__c.Project_Phase__r.project_cloud__Project__c}" workableId="{!project_cloud__Project_Task__c.Id}" />
+
+	<apex:sectionHeader title="{!project_cloud__Project_Task__c.Name}" subtitle="Resource Subscriptions" />
+-->
+	<chatter:feedWithFollowers entityId="{!project_cloud__Project_Task__c.Id}" />
+
+	<apex:pageMessages id="messages" />
+	<apex:form id="form">
+		<apex:pageBlock id="block">
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save" onclick="saveGrid(); return false;" />
+				<apex:commandButton value="Cancel" action="{!cancel}" />
+				<div class="saving-state"></div>
+			</apex:pageBlockButtons>
+
+			<apex:pageBlockSection columns="1">
+				<apex:pageBlockSectionItem id="workTypeItem">
+					<apex:outputLabel value="{!project_cloud__Project_Task__c.Name} Capabilities" />
+					<apex:outputPanel id="capabilitiesPanel">
+						<input type="text" id="capabilities-filter" style="display: none;" value="{!initialCapabilitiesString}" />
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem id="personItem">
+					<apex:outputLabel >
+						Search by People or Project Teams
+						<a href="#" id="clear-people-filter">[clear]</a>
+					</apex:outputLabel>
+					<apex:outputPanel id="personPanel">
+						<input type="text" id="people-filter" style="display: none;" />
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection id="subscribedSection" columns="4">
+				<apex:inputField value="{!project_cloud__Project_Task__c.project_cloud__Subscribed__c}" styleClass="fullySubscribed" />
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$ObjectType.project_cloud__Project_Task__c.fields.project_cloud__Allocated_Hours__c.label} / {!$ObjectType.project_cloud__Project_Task__c.fields.project_cloud__Estimated_Hours__c.label}" />
+					<apex:outputText value="{!project_cloud__Project_Task__c.project_cloud__Allocated_Hours__c} / {!project_cloud__Project_Task__c.project_cloud__Estimated_Hours__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!$ObjectType.project_cloud__Project_Phase__c.fields.project_cloud__Subscribed__c.inlineHelpText}">
+					<apex:outputLabel for="phaseSubscribed" value="{!project_cloud__Project_Task__c.Project_Phase__r.Name} {!$ObjectType.project_cloud__Project_Phase__c.fields.project_cloud__Subscribed__c.label}" />
+					<apex:outputField id="phaseSubscribed" value="{!project_cloud__Project_Task__c.Project_Phase__r.project_cloud__Subscribed__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem helpText="{!$ObjectType.project_cloud__Project__c.fields.project_cloud__Subscribed__c.inlineHelpText}">
+					<apex:outputLabel for="projectSubscribed" value="{!project_cloud__Project_Task__c.Project_Phase__r.Project__r.Name} {!$ObjectType.project_cloud__Project__c.fields.project_cloud__Subscribed__c.label}" />
+					<apex:outputField id="projectSubscribed" value="{!project_cloud__Project_Task__c.Project_Phase__r.Project__r.project_cloud__Subscribed__c}" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="1">
+				<c:grid columns="{!columnHeaders}" data="[]" search="false" createdRowCallback="createRowCallback(row, data, index);"/>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+			<!-- 
+			<apex:pageBlockSection id="existingSection" title="Users or Teams with Existing Subscriptions to {!project_cloud__Project_Task__c.Name}" columns="1">
+				<apex:pageBlockTable id="existingTable" var="row" value="{!existings}">
+					<apex:column headerValue="User or Team">
+						{!row.owner['Name']}
+					</apex:column>
+					<apex:column headerValue="Subscribed">
+						<apex:inputCheckbox value="{!row.isSubscribed}" styleClass="cell-existing-{!row.owner.Id}" />
+					</apex:column>
+					<apex:repeat id="cells" var="cell" value="{!row.cells}">
+						<apex:column styleClass="{!cell.styleClasses} tooltip-target load-cell cell-existing-{!row.owner.Id}">
+							<apex:outputText value="{0, number, #.##}">
+								<apex:param value="{!cell.hours}" />
+							</apex:outputText>
+						</apex:column>
+					</apex:repeat>
+					<apex:repeat var="heading" value="{!headings}">
+						<apex:column headerValue="{!heading}" styleClass="hidden-column" />
+					</apex:repeat>
+				</apex:pageBlockTable>
+			</apex:pageBlockSection>
+			<apex:actionStatus id="capableStatus" layout="block">
+				<apex:facet name="start">
+					<c:loading />
+				</apex:facet>
+				<apex:facet name="stop">
+					<apex:pageBlockSection id="capableSection" title="Users or Teams Capable of working on {!project_cloud__Project_Task__c.Name}" columns="1">
+						<apex:pageBlockTable id="capableTable" var="row" value="{!capables}">
+							<apex:column headerValue="User or Team">
+								{!row.owner['Name']}
+							</apex:column>
+							<apex:column headerValue="Subscribed">
+								<apex:inputCheckbox value="{!row.isSubscribed}" styleClass="cell-capable-{!row.owner.Id}" />
+							</apex:column>
+							<apex:repeat id="cells" var="cell" value="{!row.cells}">
+								<apex:column styleClass="{!cell.styleClasses} tooltip-target load-cell cell-capable-{!row.owner.Id}">
+									<apex:outputText value="{0, number, #.##}">
+										<apex:param value="{!cell.hours}" />
+									</apex:outputText>
+								</apex:column>
+							</apex:repeat>
+							<apex:repeat var="heading" value="{!headings}">
+								<apex:column headerValue="{!heading}" styleClass="hidden-column" />
+							</apex:repeat>
+						</apex:pageBlockTable>
+					</apex:pageBlockSection>
+				</apex:facet>
+			</apex:actionStatus>
+			<apex:actionStatus id="filteredStatus" layout="block">
+				<apex:facet name="start">
+					<c:loading />
+				</apex:facet>
+				<apex:facet name="stop">
+					<apex:pageBlockSection id="filteredSection" title="Users or Teams that match the Filter" columns="1">
+						<apex:pageBlockTable id="filteredTable" var="row" value="{!filtereds}" styleClass="resourcesTable">
+							<apex:column headerValue="User">
+								{!row.owner['Name']}
+							</apex:column>
+							<apex:column headerValue="Subscribed">
+								<apex:inputCheckbox value="{!row.isSubscribed}" styleClass="cell-filtered-{!row.owner.Id}" />
+							</apex:column>
+							<apex:repeat id="cells" var="cell" value="{!row.cells}">
+								<apex:column styleClass="{!cell.styleClasses} tooltip-target load-cell cell-filtered-{!row.owner.Id}">
+									<apex:outputText value="{0, number, #.##}">
+										<apex:param value="{!cell.hours}" />
+									</apex:outputText>
+								</apex:column>
+							</apex:repeat>
+							<apex:repeat var="heading" value="{!headings}">
+								<apex:column headerValue="{!heading}" styleClass="hidden-column" />
+							</apex:repeat>
+						</apex:pageBlockTable>
+					</apex:pageBlockSection>
+				</apex:facet>
+			</apex:actionStatus>
+		</apex:pageBlock>
+
+		<apex:actionFunction name="changePeopleFilter" action="{!changePeopleFilter}" rerender="filteredSection, messages" status="filteredStatus">
+			<apex:param name="updatedChangeFilterValue" value="" assignTo="{!updatedChangeFilterValue}" />
+		</apex:actionFunction>
+		<apex:actionFunction name="changeCapabilitiesFilter" action="{!changeCapabilitiesFilter}" rerender="capableSection, messages" status="capableStatus">
+			<apex:param name="updatedChangeFilterValue" value="" assignTo="{!updatedChangeFilterValue}" />
+		</apex:actionFunction>
+	</apex:form>
+	-->
+	
+	<script type="text/javascript">
+		j$(document).ready(function($) {
+			function tokenInputChangeHandler(filterId, item, actionFunction) {
+				//If the loading indicator in the token input is required add
+				//this to the actionFunction and uncomment the line below
+				// onComplete="jQuery('input.remoting-loading').removeClass('remoting-loading');"
+				//$("#token-input-" + filterId).addClass("remoting-loading");
+				actionFunction($("#" + filterId).val());
+				return true;
+			}
+
+			$("#people-filter").tokenInput(function(query, tokenInputResultsHandler) {
+				Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.TokenInputHelper.getTokens}', query, { user: null, team: null }, function(result, event) {
+						if (event.status) {
+							tokenInputResultsHandler(query, result);
+						} else if (event.type === 'exception') {
+							alert(event.message);
+						}
+					});
+				}, {
+				theme: "mac",
+				preventDuplicates: true,
+				onAdd: function(item) { DrawGrid(); },
+				onDelete: function(item) { DrawGrid(); }
+			});
+			
+			$("#capabilities-filter").tokenInput(function(query, tokenInputResultsHandler) {
+				Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.TokenInputHelper.getTokens}', query, { work_type: null }, function(result, event) {
+						if (event.status) {
+							tokenInputResultsHandler(query, result);
+						} else if (event.type === 'exception') {
+							alert(event.message);
+						}
+					});
+				}, {
+				theme: "mac",
+				prePopulate: <apex:outputText value="{!initialCapabilitiesJson}" />,
+				preventDuplicates: true,
+				onAdd: function(item) { DrawGrid(); },
+				onDelete: function(item) { DrawGrid(); },
+				onReady : function(){ j$('#token-input-capabilities-filter').blur(); }
+			});
+
+
+			//attach to the clear anchor
+			$("#clear-people-filter").click(function(event, ui) {
+				//clear the list but override the onDelete action so the ajax is not called multiple times
+				$("#people-filter").tokenInput("clear", {onDelete: null});
+				//call the ajax only once
+				onAddDeleteChangeFilter();
+			});
+			
+			
+		});
+	</script>
+	
+	
+	<!-- 
+	<script type="text/javascript">
+
+		if(typeof Number.prototype.setScale === "undefined") {
+			Number.prototype.setScale = function(scale) {
+				return Math.round(this.valueOf() * Math.pow(10,scale)) / Math.pow(10,scale);
+			}
+		}
+
+		jQuery(document).ready(function($) {
+
+			function tokenInputChangeHandler(filterId, item, actionFunction) {
+				//If the loading indicator in the token input is required add
+				//this to the actionFunction and uncomment the line below
+				// onComplete="jQuery('input.remoting-loading').removeClass('remoting-loading');"
+				//$("#token-input-" + filterId).addClass("remoting-loading");
+				actionFunction($("#" + filterId).val());
+				return true;
+			}
+
+			$("#people-filter").tokenInput(function(query, tokenInputResultsHandler) {
+				Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.TokenInputHelper.getTokens}', query, { user: null, team: null }, function(result, event) {
+					if (event.status) {
+						tokenInputResultsHandler(query, result);
+					} else if (event.type === 'exception') {
+						alert(event.message);
+					}
+				});
+			}, {
+				theme: "mac",
+				preventDuplicates: true,
+				onAdd: function(item) { tokenInputChangeHandler("people-filter", item, changePeopleFilter) },
+				onDelete: function(item) { tokenInputChangeHandler("people-filter", item, changePeopleFilter) }
+			});
+
+			$("#capabilities-filter").tokenInput(function(query, tokenInputResultsHandler) {
+				Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.TokenInputHelper.getTokens}', query, { work_type: null }, function(result, event) {
+					if (event.status) {
+						tokenInputResultsHandler(query, result);
+					} else if (event.type === 'exception') {
+						alert(event.message);
+					}
+				});
+			}, {
+				theme: "mac",
+				prePopulate: <apex:outputText value="{!initialCapabilitiesJson}" />,
+				preventDuplicates: true,
+				onAdd: function(item) { tokenInputChangeHandler("capabilities-filter", item, changeCapabilitiesFilter) },
+				onDelete: function(item) { tokenInputChangeHandler("capabilities-filter", item, changeCapabilitiesFilter) }
+			});
+
+
+			//attach to the clear anchor
+			$("#clear-people-filter").click(function(event, ui) {
+				//clear the list but override the onDelete action so the ajax is not called multiple times
+				$("#people-filter").tokenInput("clear", {onDelete: null});
+				//call the ajax only once
+				onAddDeleteChangeFilter();
+			});
+
+			//Radio changing needs to be delegated because the tables are refreshed by ajax
+			esc$("{!$Component.page.form.block}").on("change", "input[type=checkbox]", function(event) {
+				calculateLoadChanges(event);
+			});
+			j$("#grid").on("change", "input[type=checkbox]", function(event) {
+				calculateLoadChangesGrid(event);
+			});
+
+		});
+
+		var hoursPerRange = {!hoursPerRange};
+		function calculateLoadChanges(event) {
+			var existingsCheckboxes = esc$("{!$Component.page.form.block.existingSection}").find("input[type=checkbox]");
+			var checkedExistings = new Array();
+			existingsCheckboxes.each(function() {
+				var checkbox = jQuery(this);
+				if(checkbox.prop("checked")) {
+					checkedExistings.push(checkbox);
+				}
+			});
+			var checkedCapables = esc$("{!$Component.page.form.block.capableSection}").find("input:checked");
+			var checkedFiltereds = esc$("{!$Component.page.form.block.filteredSection}").find("input:checked");
+	
+			//This is the total number of selected resources on the Project Task
+			var numberOfResources = checkedCapables.length + checkedFiltereds.length + checkedExistings.length;
+	
+			//clear every cell, the code below will repopulate it
+			jQuery("td.load-cell").each(function() {
+				var self = jQuery(this);
+				//load the original value into the objects data
+				var orig = self.data("original.value");
+				//the first time is about caching the original values
+				if(typeof orig === "undefined") {
+					orig = parseFloat(self.text());
+					if(isNaN(orig)) {
+						orig = 0;
+					}
+					self.data("original.value", orig);
+				} else {
+					//on subsequent changes reset every cell to it's original value
+					self.text(orig);
+				}
+			});
+
+			existingsCheckboxes.each(function() {
+				var checkbox = jQuery(this);
+				var isChecked = checkbox.prop("checked");
+				jQuery("td."+checkbox.prop("class")).each(function(cellIndex) {
+					var rangeHours = hoursPerRange[cellIndex];
+					//The initial difference is the subtraction of all the existing hours the used is subscribed for.
+					var difference = rangeHours / existingsCheckboxes.length * -1;
+					//If the row is still checked add the subscribed hours back tothe difference
+					if(isChecked) {
+						difference += rangeHours / numberOfResources;
+					}
+					setLoadDifferenceCell(jQuery(this), difference);
+				});
+			});
+			updateLoadDifferences(checkedCapables, numberOfResources);
+			updateLoadDifferences(checkedFiltereds, numberOfResources);
+		}
+		
+		function calculateLoadChangesGrid(event) {
+			var existingsCheckboxes = j$("#grid").find("input[type=checkbox]");
+			var checkedExistings = new Array();
+			existingsCheckboxes.each(function() {
+				var checkbox = jQuery(this);
+				if(checkbox.prop("checked")) {
+					checkedExistings.push(checkbox);
+				}
+			});
+			/*
+			var checkedCapables = esc$("{!$Component.page.form.block.capableSection}").find("input:checked");
+			var checkedFiltereds = esc$("{!$Component.page.form.block.filteredSection}").find("input:checked");
+			*/
+			//This is the total number of selected resources on the Project Task
+			var numberOfResources = checkedExistings.length; //checkedCapables.length + checkedFiltereds.length + checkedExistings.length;
+	
+			//clear every cell, the code below will repopulate it
+			j$("td.load-cell-grid > span").each(function() {
+				var self = jQuery(this);
+				//load the original value into the objects data
+				var orig = self.data("original.value");
+				//the first time is about caching the original values
+				if(typeof orig === "undefined") {
+					orig = parseFloat(self.text());
+					if(isNaN(orig)) {
+						orig = 0;
+					}
+					self.attr("data-original-value", orig);
+				} else {
+					//on suubsequent changes reset every cell to it's original value
+					self.text(orig);
+				}
+			});
+
+			existingsCheckboxes.each(function() {
+				var checkbox = j$(this);
+				var isChecked = checkbox.is(':checked');
+				j$('span[data-userid="' + checkbox.attr('data-userid') + '"]').each(function(cellIndex) {
+					var rangeHours = hoursPerRange[cellIndex];
+					console.log(rangeHours + ' ' + cellIndex)
+					//The initial difference is the subtraction of all the existing hours the used is subscribed for.
+					var difference = rangeHours / existingsCheckboxes.length * -1;
+					//If the row is still checked add the subscribed hours back tothe difference
+					if(isChecked) {
+						difference += rangeHours / numberOfResources;
+					}
+					setLoadDifferenceCell(jQuery(this), difference);
+				});
+			});
+			//updateLoadDifferences(checkedCapables, numberOfResources);
+			//updateLoadDifferences(checkedFiltereds, numberOfResources);
+		}
+	
+		function getChecked(els) {
+			var checked = new Array();
+			els.each(function() {
+				var el = jQuery(this);
+				if(el.prop("checked")) {
+					checked.push(el);
+				}
+			});
+			return checked;
+		}
+	
+		function updateLoadDifferences(checkboxes, numberOfResources) {
+			if(numberOfResources > 0) {
+				checkboxes.each(function() {
+					var checkbox = jQuery(this);
+					var isChecked = checkbox.prop("checked");
+					jQuery("td."+checkbox.prop("class")).each(function(cellIndex) {
+						var rangeHours = hoursPerRange[cellIndex];
+						if(rangeHours !== 0) {
+							setLoadDifferenceCell(jQuery(this), rangeHours / numberOfResources);
+						}
+					});
+				});
+			}
+		}
+
+		function setLoadDifferenceCell(cell, difference) {
+			var cellValue = cell.attr('data-original-value');
+			var originalCheckbox = j$('input[type="checkbox"][data-userid="' + cell.attr('data-userid') + '"]');
+			//if(difference !== 0) {
+				//prepend the + sign (minus is automatic when it's a negative
+				//number) to the difference and round the number to 20 decimal
+				//places.
+				var total = parseFloat(cellValue) + difference;
+				if(originalCheckbox.attr('data-id') != '' && originalCheckbox.is(':checked')){
+					
+				}else if(originalCheckbox.attr('data-id') == '' && !originalCheckbox.is(':checked')){
+				
+				}else{
+					cellValue += (difference > 0 ? " + " : " - ") + Math.abs(difference).setScale(2) + " = " + total.setScale(2);
+				}
+			//}
+			cell.text(cellValue);
+		}
+	</script>
+-->
+
+</apex:page>

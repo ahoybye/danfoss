@@ -1,0 +1,136 @@
+<apex:component controller="AddProducts" allowDML="true">
+  
+<apex:sectionHeader title="Find Products"  />     
+    <apex:actionStatus startStyle="color:Red;" startText="Sorting..."
+        stopText="..." stopStyle="color:white;" id="sortStatus" />
+
+    <apex:pageMessages />
+    <apex:form >    
+        <apex:actionFunction action="{!doSort}" name="sortData"
+            status="sortStatus" rerender="pbProducts">
+            <apex:param name="sortField" assignTo="{!sortField}" value="" />  
+        </apex:actionFunction>
+
+        <apex:pageBlock title="Search" >			
+            <table cellspacing="0" cellpadding="3" border="0" width="100%" style="text-align:right;">
+                <tr>	
+					<apex:outputPanel rendered="{!isMachine}">
+						<td align='right'>
+							<apex:outputLabel rendered="{!isMachine}" value="Sales Org" style="font-weight:bold; align:top"/>
+						</td>
+	                    <td>
+							<apex:selectList rendered="{!isMachine}" value="{!salesorg}" size="1">
+					            <apex:selectOptions value="{!items}"/>
+					        </apex:selectList>		
+						</td>
+					</apex:outputPanel>
+                    <td align='right'><b>{!$Label.MaterialNumberLabel}</b>
+                    </td>
+                    <td><apex:inputText value="{!ProductCode}" />
+                    </td>
+
+                    <td align='right'><b>{!$ObjectType.Product2.Fields.Name.Label}</b>
+                    </td>
+                    <td><apex:inputText value="{!Name}" />
+                    </td>
+
+                    <td align='right'><b>{!$ObjectType.Product2.Fields.Model_Code__c.Label}</b>
+                    </td>
+                    <td><apex:inputText value="{!Model_Code}" />
+                    </td>
+
+                    <td align='right'><b>{!$ObjectType.Product2.Fields.Product_Set__c.Label}</b>
+                    </td>
+                    <td><apex:inputText value="{!ProductSet}" />
+                    </td>
+                </tr>   
+				<tr>
+					<apex:outputPanel rendered="{!isMachine}">
+					 <td colspan="2" style="color:Red;" valign="top"><apex:outputtext >Sales Org required to retrieve SAP Price</apex:outputtext></td> 
+				 	 <td colspan="2" style="color:Red;" valign="top"><apex:outputtext >Search by PS part number or competitor product name<br/>(e.g. A4VG, PSL 7, etc.)</apex:outputtext></td>					 
+				 	 <td colspan="2" style="color:Red;"><apex:outputtext >Search by competitor product description<br/>(e.g. *Bosch*valve, *Eaton*steering, etc.)<br/>Always use '*' in front of each term</apex:outputtext></td>
+					</apex:outputPanel>
+				</tr>
+                <tr>
+                    <td colspan="1"><apex:commandButton value="Search"
+                            action="{!Search}" /> 
+                        <apex:commandButton value="Cancel" action="{!Cancel}" />
+                    </td>
+                    <td colspan="3"><apex:outputtext rendered="{!limitExceeded}" value="{!$Label.Err1Message}" style="color:Red;"></apex:outputtext></td>       
+                </tr>
+            </table>		
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Products" id="pbProducts">            
+            <apex:outputPanel rendered="{!IF(AllEntries.size > 0,false,true)}">
+            {!$Label.Err2Message}
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!!validExclusive}">
+            {!$Label.Err3Message}
+            </apex:outputPanel>            
+            <apex:pageBlockTable value="{!AllEntries}" var="entry" rendered="{!IF(AllEntries.size > 0,true,false)}">
+                <apex:column >
+<!--                    <input type="checkbox" name="{!entry.Product2.Id}" value="1" /> -->
+                  <apex:commandLink value="Select" style="color:#015ba7;" action="{!SelectProduct}">
+                    <apex:param value="1" name="{!entry.Product2.Id}" />
+                  </apex:commandLink>   
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);"
+                            onclick="sortData('Product2.ProductCode');">{!$Label.MaterialNumberLabel}
+           					<img src="{!IF(sortField = 'Product2.ProductCode',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!entry.Product2.ProductCode}" />
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);"
+                            onclick="sortData('Product2.Name');">{!$ObjectType.Product2.Fields.Name.Label}
+           					<img src="{!IF(sortField = 'Product2.Name',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputLink value="/{!entry.Product2.Id}">{!entry.Product2.Name}</apex:outputLink>
+                </apex:column>
+
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);"
+                            onclick="sortData('Product2.Model_Code__c');">{!$ObjectType.Product2.Fields.Model_Code__c.Label}
+           <img
+                                src="{!IF(sortField = 'Product2.Model_Code__c',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!entry.Product2.Model_Code__c}" />
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);"
+                            onclick="sortData('Product2.Product_Line__c');">{!$ObjectType.Product2.Fields.Product_Line__c.Label}
+           <img
+                                src="{!IF(sortField = 'Product2.Product_Line__c',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!entry.Product2.Product_Line__c}" />
+                </apex:column>
+
+
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);"
+                            onclick="sortData('Product2.Product_Set__c');">{!$ObjectType.Product2.Fields.Product_Set__c.Label}
+           <img
+                                src="{!IF(sortField = 'Product2.Product_Set__c',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!entry.Product2.Product_Set__c}" />
+                </apex:column>
+
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form> 
+</apex:component>

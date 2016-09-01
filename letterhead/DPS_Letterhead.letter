@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#ffffff</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#c0c0c0</color>
+        <height>2</height>
+    </bottomLine>
+    <description>Danfoss Letterhead</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>50</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>50</height>
+        <horizontalAlignment>Right</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#ffffff</color>
+        <height>1</height>
+    </middleLine>
+    <name>DPS Letterhead</name>
+    <topLine>
+        <color>#C0C0C0</color>
+        <height>2</height>
+    </topLine>
+</Letterhead>

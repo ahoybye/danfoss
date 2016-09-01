@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CUSTOMER SERVICE CONTACT_CH_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CH_LETTERHEAD</letterhead>
+    <name>CUSTOMER SERVICE CONTACT_CH_EN</name>
+    <style>formalLetter</style>
+    <subject>Your inquiry {!Case.CaseNumber}</subject>
+    <textOnly>Dear Mr./Ms. {!Case.Contact}:
+
+To contact our factory service center, please complete the attached PDF form
+
+in full and send it by email to the following address:
+
+competence-center@danfoss.com
+
+Please note that the processing of orders completed by hand or transmitted by fax
+
+requires extra processing time.
+
+Thank you!
+
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: +41 61 5880 114
+E-Mail: CS@danfoss.ch</textOnly>
+    <type>html</type>
+</EmailTemplate>

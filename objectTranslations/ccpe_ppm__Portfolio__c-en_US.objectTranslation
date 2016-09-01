@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Description --></label>
+        <name>ccpe_ppm__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Program End --></label>
+        <name>ccpe_ppm__End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest Program Start --></label>
+        <name>ccpe_ppm__Start__c</name>
+    </fields>
+</CustomObjectTranslation>

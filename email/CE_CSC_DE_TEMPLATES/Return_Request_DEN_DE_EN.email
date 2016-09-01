@@ -1,0 +1,29 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif" size="2">To: {!Case.Account}</font></p><p><font face="Verdana,Helvetica,Sans-Serif"><br><font size="2"></font></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Attn: {!Case.Contact}</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><u><font face="Verdana,Helvetica,Sans-Serif" size="2">Return</font></u></p><p><u></u><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Your inquiry</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">from</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Our invoice</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">from</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">A withdrawal is possible.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">According to our terms and conditions we will charge you for returned goods withdrawal costs amounting to 25 % of the invoice value. The prerequisite is that product is original and in unopened packaging.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">If the products have been damaged or the packaging opened, Danfoss will retain 50 % of the invoice price or a minimum of 100 EUR.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Please send the goods immediately back to:</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Danfoss GmbH</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">z. Hd. Herrn Yigit</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Carl-Legien-Str. 8</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">63073 Offenbach</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><strong><font face="Verdana,Helvetica,Sans-Serif" size="2">Please include a copy of this email.</font></strong></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">*</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Upon receipt and examination of the goods you will receive a credit note.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Sincerely yours</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Customer Service Central Europe Region</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt;"><span lang="EN-US" style='color: black; font-family: "Verdana","sans-serif"; mso-bidi-font-family: Arial; mso-ansi-language: EN-US;'><font face="Verdana,Helvetica,Sans-Serif" size="2">*********Please
+Do Not Delete or Type below this Line*********<br>
+{!Case.Thread_Id}</font></span></p><p><font face="Times New Roman">
+
+<br></font></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>Important note! We have a new central phone number and
+e-mail address</span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>Phone: </span><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE; mso-fareast-language: EN-GB;'>069 97533 044 </span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE; mso-fareast-language: EN-GB;'>E-Mail: </span><span lang="EN-US" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: EN-US;'><a href="mailto:CS@danfoss.de"><span lang="DE" style="color: windowtext; mso-ansi-language: DE;">CS@danfoss.de</span></a></span></p><font face="Times New Roman">
+
+</font>]]></td>
+</tr>
+</table>

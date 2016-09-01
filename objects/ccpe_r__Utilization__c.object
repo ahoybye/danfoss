@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpe_r__Billable_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Billable Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__End__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF($RecordType.DeveloperName == &apos;Weekly&apos;,
+	ccpe_r__Start__c + 6,
+/*ELSE*/IF($RecordType.DeveloperName == &apos;Monthly&apos;,
+	DATE(
+		YEAR(ccpe_r__Start__c),
+		MONTH(ccpe_r__Start__c),
+		CASE(MONTH(ccpe_r__Start__c),
+			1, 31,
+			2, IF(MOD(YEAR(ccpe_r__Start__c), 4) = 0, 29, 28),
+			3, 31,
+			4, 30,
+			5, 31,
+			6, 30,
+			7, 31,
+			8, 31,
+			9, 30,
+			10, 31,
+			11, 30,
+			12, 31,
+			0
+		)
+	),
+	NULL
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Exempt_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Exempt Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Hash__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(OwnerId) &amp; CASESAFEID(RecordTypeId) &amp; TEXT(ccpe_r__Start__c)</formula>
+        <label>Hash</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Non_Billable_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Worked_Hours__c - ccpe_r__Exempt_Hours__c - ccpe_r__Billable_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Non Billable Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Start__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Utilization_rate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>(ccpe_r__Billable_Hours__c +  ccpe_r__Exempt_Hours__c ) /  ccpe_r__Working_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Denotes the utilization rate of a user for a particular week or month (NOTE this field should not be used for reporting across multiple utilization periods)</inlineHelpText>
+        <label>Utilization Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Worked_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Entered Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Working_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <description>How many working days are there between the start and end dates</description>
+        <externalId>false</externalId>
+        <label>Working Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Working_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Target Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <recordTypes>
+        <fullName>ccpe_r__Monthly</fullName>
+        <active>true</active>
+        <description>Utilization calculations for a month of utilization</description>
+        <label>Monthly</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ccpe_r__Weekly</fullName>
+        <active>true</active>
+        <description>Utilization calculations for a week of utilization</description>
+        <label>Weekly</label>
+    </recordTypes>
+</CustomObject>

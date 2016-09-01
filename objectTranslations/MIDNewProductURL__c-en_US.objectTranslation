@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>MIDNewProductURL</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>MIDNewProductURL</value>
+    </caseValues>
+    <fields>
+        <label><!-- MachineModelcFieldID --></label>
+        <name>MachineModelcFieldID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object3LetterPrefix --></label>
+        <name>Object3LetterPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubsystemFieldID --></label>
+        <name>SubsystemFieldID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

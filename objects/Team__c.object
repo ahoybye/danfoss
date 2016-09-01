@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <picklist>
+            <picklistValues>
+                <fullName>District Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refrigeration Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Ext_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <inlineHelpText>Used to help data migration from SAP</inlineHelpText>
+        <label>Ext ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SBA_Team__c</fullName>
+        <externalId>false</externalId>
+        <label>SBA Team</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No auto. Determination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_F&amp;B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_F&amp;B, other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_HVAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_HVAC_FKR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_HVAC, Consultants</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_HVAC, Refrigeration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Industry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Industry, Application</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Industry, Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Industry, Water</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Partner_HVAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Partner_Industry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE_Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

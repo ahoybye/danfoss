@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CASE CREATED - EMAIL TO CUSTOMER_DE_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>CASE CREATED - EMAIL TO CUSTOMER_DE_DE</name>
+    <style>formalLetter</style>
+    <subject>Neuer Vogang angelegt {!Case.CaseNumber}</subject>
+    <textOnly>Sehr geehrte(r) Frau/Herr,
+
+vielen Dank für Ihre Anfrage an das Danfoss Customer Service Center.
+Ihre Vorgangs-Nummer lautet {!Case.CaseNumber}.
+Ihr Vorgang befindet sich in Bearbeitung und Sie erhalten schnellstmöglich eine Antwort.
+
+Unter der Telefonnummer +49 69 97533044 können Sie den Status Ihres Vorgangs überprüfen.
+Bitte halten Sie dazu die Vorgangsnummer bereit.
+
+Mit freundlichen Grüßen,
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+{!Case.Thread_Id}
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel.: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

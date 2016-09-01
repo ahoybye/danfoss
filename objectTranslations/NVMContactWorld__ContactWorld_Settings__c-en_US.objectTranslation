@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- ContactWorld Click-To-Dial URL --></label>
+        <name>NVMContactWorld__ContactWorld_Click_To_Dial_URL__c</name>
+    </fields>
+</CustomObjectTranslation>

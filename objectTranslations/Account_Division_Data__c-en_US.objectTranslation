@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Marketing Attribute</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Marketing Attributes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Division Data Config --></label>
+        <name>Account_Division_Data_Config__c</name>
+        <relationshipLabel><!-- Marketing Attributes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Marketing Attributes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attribute Set --></label>
+        <name>Attribute_Set_lkp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute --></label>
+        <name>Attribute_lkp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Marketing Attributes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division_lkp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formula to check if a marketing value has a value. Returns &quot;Yes&quot; if it has, &quot;No&quot; if it doesnt --></help>
+        <label><!-- Has Attribute Value --></label>
+        <name>Has_Attribute_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>ValueAgg__c</name>
+    </fields>
+    <fields>
+        <label><!-- ValueNumber --></label>
+        <name>ValueNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The marketing attribute must be related to a record --></errorMessage>
+        <name>must_be_related_to_a_record</name>
+    </validationRules>
+</CustomObjectTranslation>

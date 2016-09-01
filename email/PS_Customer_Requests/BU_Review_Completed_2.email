@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin: 2pt 0in;"><font size="3"><font face="Arial,Sans-Serif">The BU Reviewer Tasks have been completed.&nbsp; </font></font><font size="3"><font face="Arial,Sans-Serif">This request type requires an SAE Review.&nbsp; </font></font><font size="3"><font face="Arial,Sans-Serif">Please make sure that the "SAE Review" button has been clicked.</font></font></p><p class="MsoNormal" style="margin: 2pt 0in;"><font size="3"><font face="Arial,Sans-Serif"><br><b>Product:</b>&nbsp;{!PS_Customer_Request__c.Material_Number__c} - {!PS_Customer_Request__c.Product__c}&nbsp;<br></font></font></p><div><font size="3"><font face="Arial,Sans-Serif"><a href="{!PS_Customer_Request__c.Link}"><br></a></font></font></div><div><strong style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><a href="{!PS_Customer_Request__c.Link}">Customer Request</a></strong></div>]]></td>
+</tr>
+</table>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Prospect Account to Customer</name>
+    <style>formalLetter</style>
+    <subject>Action Requested: {!Account.Name} from Prospect to Customer</subject>
+    <textOnly>Hello,
+
+{!Account.Name} should be updated from Prospect type to Customer type in Salesforce.com.
+
+Account details:
+Reason for Becoming an Account: {!Account.Reason_For_Becoming_a_Direct_Account__c}
+Language:  {!Account.Language__c}
+Supplier / Vendor Code:  {!Account.Supplier_Code_Vendor_Code__c}
+Vat Number: {!Account.VAT_Reg_No__c}
+Parent Account: {!Account.Parent}
+
+Shipping Address
+{!Account.Name}
+{!Account.ShippingAddress}
+
+
+Billing Address
+{!Account.Name}
+{!Account.BillingAddress}
+
+Sales Orgs
+{!Account.Sales_Org__c}
+
+Terms
+Suggested Payment Terms: {!Account.Suggested_Payment_Terms__c}
+Suggested Incoterms: {!Account.Suggested_Incoterms__c}
+
+Link to {!Account.Name} {!Account.Link}.
+
+Thank you,
+{!Account.OwnerFullName}</textOnly>
+    <type>html</type>
+</EmailTemplate>

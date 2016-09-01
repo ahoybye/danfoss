@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Request Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Request Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- check if this request type includes the Application field --></help>
+        <label><!-- Includes Application --></label>
+        <name>Includes_Application__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Owner --></label>
+        <name>Initial_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Needs BU Routing Section --></label>
+        <name>Needs_BU_Routing_Section__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product --></label>
+        <name>Opportunity_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Display order of the request types in the picklist when creating a new request --></help>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check if this request type requires a Confirmed Date to be entered before taking ownership --></help>
+        <label><!-- Requires Confirmed Date --></label>
+        <name>Requires_Confirmed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires SAE Review --></label>
+        <name>Requires_SAE_Review__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

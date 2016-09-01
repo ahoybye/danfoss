@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Escalation email to next higher supervisor due to customer complaint_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Escalation email to next higher supervisor due to customer complaint_EN</name>
+    <style>formalLetter</style>
+    <subject>Case: {!Case.CaseNumber} - Escalation 2</subject>
+    <textOnly>Dear Mr./Ms.:
+
+I hereby wich to inform you that the above case was not resolved within the specified time. Case {!Case.CaseNumber}, whcih was opened on {!Case.CreatedDate} with {!Case.CaseNumber}. The case was assigned to {!Case.OwnerFullName}  and is currently at Escalation Level 1.
+
+Please take the necessary steps.
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>custom</type>
+</EmailTemplate>

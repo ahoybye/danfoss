@@ -1,0 +1,25 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<FONT face=Verdana,Helvetica,Sans-Serif>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>Dear {!Contact.FirstName},</FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></FONT>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>This is a reminder that the deadline for the&nbsp;September Advanced&nbsp;Rap&nbsp;Session Applications are due August 16th.</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>&nbsp;</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>Best regards,</FONT></P>
+<P><FONT face=Verdana></FONT>&nbsp;</P>
+<P>Twila Brafford</P>
+<P><A href="mailto:tbrafford@sauer-danfoss.com">tbrafford@sauer-danfoss.com</A></P>
+<P>515-956-5002</P>
+<P><FONT face=Verdana>Sauer-Danfoss</FONT></P>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<P align=center><FONT size=2 face=Verdana,Helvetica,Sans-Serif>Sauer-Danfoss, Inc. (US)&nbsp; 2800 East 13th Street, Ames, IA 50010</FONT></P>]]></td>
+</tr>
+</table>

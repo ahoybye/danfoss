@@ -1,0 +1,15 @@
+<apex:page standardController="Account_Plan__c" extensions="AccountPlanStrategyActionsController" >
+    <apex:form id="form">
+        <apex:pageBlock >
+                    <apex:pageBlockTable value="{!actions}" var="i">
+                            <apex:column value="{!i.WhatId}"/>
+                            <apex:column headerValue="{!$ObjectType.Task.fields.Subject.label}">
+                                <apex:outputLink target="_parent" value="/{!i.Id}">{!i.Subject}</apex:outputLink>
+                            </apex:column>
+                            <apex:column value="{!i.Status}"/>
+                            <apex:column value="{!i.ActivityDate}"/>                            
+                            <apex:column value="{!i.OwnerId}"/>                            
+                    </apex:pageBlockTable>        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

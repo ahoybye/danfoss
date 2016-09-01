@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpt__Content_Components__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A json string containing the different components found in this template&apos;s content section.</description>
+        <externalId>false</externalId>
+        <label>Content Components</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpt__Content_Styling__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A json string representing how the content of this template should be formatted.</description>
+        <externalId>false</externalId>
+        <label>Content Styling</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpt__Html_Footer__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains the html code for this template&apos;s footer.</description>
+        <externalId>false</externalId>
+        <label>Html Footer</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpt__Html_Header__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains the html code for this template&apos;s header.</description>
+        <externalId>false</externalId>
+        <label>Html Header</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+</CustomObject>

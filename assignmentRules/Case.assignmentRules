@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>Case Assignment Rules</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>CSC_Change_Management</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>CSC</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Change Management Cases</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ) ,  OR( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;Cooling&apos;) , AND ( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;&apos;), ISPICKVAL(Account.Owner.Division__c,&apos;Cooling&apos;) )  )  ,  !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;), Account.Name = &apos;Danfoss GmbH&apos; )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Drives_TS_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ),  OR(  ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;Drives&apos;) ,  AND ( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;&apos;), ISPICKVAL(Account.Owner.Division__c,&apos;Drives&apos;) )  )   ,  !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;),  Account.Name = &apos;Danfoss GmbH&apos; )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ),    OR(  ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;Heating&apos;) ,  AND ( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;&apos;), ISPICKVAL(Account.Owner.Division__c,&apos;Heating&apos;) )  ) ,  !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;), Account.Name = &apos;Danfoss GmbH&apos;  )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CSC_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ), !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;), Account.Name = &apos;Danfoss GmbH&apos;)</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ) ,  OR( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;Cooling&apos;) , AND ( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;&apos;), ISPICKVAL(Account.Owner.Division__c,&apos;Cooling&apos;) )  )  ,  !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Drives_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ),  OR(  ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;Drives&apos;) ,  AND ( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;&apos;), ISPICKVAL(Account.Owner.Division__c,&apos;Drives&apos;) )  )   ,  !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ),    OR(  ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;Heating&apos;) ,  AND ( ISPICKVAL(Contact.Primary_CSC_Division__c,&apos;&apos;), ISPICKVAL(Account.Owner.Division__c,&apos;Heating&apos;) )  ) ,  !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;)  )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CSC_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), OR( ISPICKVAL(Origin, &apos;CER Email Germany&apos;), ISPICKVAL(Origin, &apos;CER Email Austria&apos;), ISPICKVAL(Origin, &apos;CER Email Switzerland&apos;) ), !ISPICKVAL( Status ,&apos;2. Assigned to Back Office&apos;) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin , &quot;Internal&quot;), ISPICKVAL( Owner:User.Business_Org__c , &quot;Climate and Energy&quot;), ISPICKVAL( Owner:User.Division__c, &quot;Heating&quot;),ISPICKVAL( Owner:User.Region__c, &quot;CER&quot;) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  ISPICKVAL(Origin , &quot;Internal&quot;),  ISPICKVAL( Owner:User.Business_Org__c , &quot;Climate and Energy&quot;),  ISPICKVAL( Owner:User.Division__c, &quot;Cooling&quot;), ISPICKVAL( Owner:User.Region__c, &quot;CER&quot;)   )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CER_Heating_TS</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Heating TS&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_Complaint_Management_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Heating Complaints&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_AS_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Heating AS&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Heating BO&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Heating FL&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Cooling FL&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Cooling BO&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Drives_TS_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Drives TS&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Drives_FL_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Drives FL&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CER_Heating_DEN_Orders_DE_AT_CH</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Heating DEN Orders DE/AT/CH&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>India_OEM_Back_Office_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(),  ISPICKVAL( Origin , &apos;Email India&apos;), ISPICKVAL( Contact.Role_Definition__c, &apos;Commercial&apos;), ISPICKVAL( Account.Account_Type__c, &apos;Customer&apos;), Account_Customer_Type__c = &apos;OEM&apos; )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>India_Channel_Partners_Back_Office_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  ISPICKVAL( Origin , &apos;Email India&apos;),  ISPICKVAL( Contact.Role_Definition__c, &apos;Commercial&apos;),  Account.RecordType.DeveloperName = &apos;Customer_CE&apos;,  Account_Customer_Type__c = &apos;Channel Partner&apos;  )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>India_Projects_Back_Office_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  ISPICKVAL( Origin , &apos;Email India&apos;),  ISPICKVAL( Contact.Role_Definition__c, &apos;Commercial&apos;),  Account.RecordType.DeveloperName = &apos;Customer_CE&apos;,  OR( Account_Customer_Type__c = &apos;End User&apos;, Account_Customer_Type__c = &apos;Others&apos;, Account_Customer_Type__c = &apos;Consultant&apos;, Account_Customer_Type__c = &apos;Installer/Contractor&apos; ) )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>India_CSC_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND (ISNEW(),  ISPICKVAL( Origin , &apos;Email India&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CER_Heating_DEN_Tenders</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND( ISNEW(), ISPICKVAL(Origin, &apos;CER Email Heating DEN Tenders&apos;))</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Product Inquiry,Complaint,Service Request,Support Case,Transactional Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>2. Assigned to Back Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Primary_CSC_Division__c</field>
+                <operation>equals</operation>
+                <value>Cooling</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Danfoss_Region__c</field>
+                <operation>equals</operation>
+                <value>CER</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.HistoryQID__c</field>
+                <operation>notContain</operation>
+                <value>3LQ</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Product Inquiry,Complaint,Service Request,Support Case,Transactional Request</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>2. Assigned to Back Office</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Contact.Primary_CSC_Division__c</field>
+                <operation>equals</operation>
+                <value>Heating</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Account.Danfoss_Region__c</field>
+                <operation>equals</operation>
+                <value>CER</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.HistoryQID__c</field>
+                <operation>notContain</operation>
+                <value>3LQ</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  ISPICKVAL(Origin, &apos;Email Cooling Back Office&apos;)  )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_BO_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  ISPICKVAL(Origin, &apos;Email Heating Back Office&apos;)  )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_Systems_CER</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <formula>AND(  ISNEW(),  ISPICKVAL(Origin, &apos;Email Heating Technical Service&apos;)  )</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Drives_Cases_Support_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Drives</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Support_Level__c</field>
+                <operation>equals</operation>
+                <value>Level 1 Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Drives_Cases_Support_2</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Drives</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Support_Level__c</field>
+                <operation>equals</operation>
+                <value>Level 2 Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_Cases_Support_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Cooling</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Support_Level__c</field>
+                <operation>equals</operation>
+                <value>Level 1 Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Cooling_Cases_Support_2</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Cooling</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Support_Level__c</field>
+                <operation>equals</operation>
+                <value>Level 2 Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_Cases_Support_1</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Heating</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Support_Level__c</field>
+                <operation>equals</operation>
+                <value>Level 1 Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Heating_Cases_Support_2</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Heating</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Support_Level__c</field>
+                <operation>equals</operation>
+                <value>Level 2 Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CE_Cases_Support_3</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Cooling,Drives,Heating,DBS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>includes</operation>
+                <value>Support</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Support_Level__c</field>
+                <operation>equals</operation>
+                <value>Level 3 Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>CE_Cases_NonSupport</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Cooling,Drives,Heating,DBS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>excludes</operation>
+                <value>Support</value>
+            </criteriaItems>
+            <template>Case_Notifications/CE_SupportCase_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Product Inquiry,Complaint,Service Request,Support Case,Transactional Request</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_Cases_Marketing</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>PartnerLink</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Image Request,Logo Design,Marketing Question</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>PartnerLink Case,Change Management Cases</value>
+            </criteriaItems>
+            <template>Case_Notifications/PS_Case_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_Case_Approvers</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>PartnerLink Case,Change Management Cases</value>
+            </criteriaItems>
+            <template>Case_Notifications/PS_Case_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_Cases_Plus1_Helpdesk</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Plus+1 Helpdesk</value>
+            </criteriaItems>
+            <template>Case_Notifications/PS_Case_Notification_New</template>
+        </ruleEntry>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.OwnerId</field>
+                <operation>notContain</operation>
+                <value>PS</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>PartnerLink Case,Change Management Cases</value>
+            </criteriaItems>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_Cases_PSConfig</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Approved</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>equals</operation>
+                <value>Configuration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>excludes</operation>
+                <value>Development</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>excludes</operation>
+                <value>Integration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>notEqual</operation>
+                <value>Comatrol</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>PartnerLink Case,Change Management Cases</value>
+            </criteriaItems>
+            <template>Case_Notifications/PS_Case_Notification_Approved</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_License_Request</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Comatrol,Power Solutions,Turolla</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Approved</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>equals</operation>
+                <value>New CRM User</value>
+            </criteriaItems>
+            <template>Case_Notifications/PS_Case_Notification_CRMLicense</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_Cases_Comatrol_Config</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND 2 AND 3 AND 4 AND 5 AND 6</booleanFilter>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Approved</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>equals</operation>
+                <value>Configuration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>excludes</operation>
+                <value>Development</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>excludes</operation>
+                <value>Integration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Comatrol</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>PartnerLink Case,Change Management Cases</value>
+            </criteriaItems>
+            <template>Comatrol/Comatrol_Case_Notification_Approved</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_Cases_Portal</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND (2 OR 3) AND (4 OR 5 OR 6) AND 7</booleanFilter>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Approved</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>includes</operation>
+                <value>Integration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>includes</operation>
+                <value>Development</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Related_Object__c</field>
+                <operation>equals</operation>
+                <value>MyComatrol</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Related_Object__c</field>
+                <operation>equals</operation>
+                <value>PartnerLink</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Related_Object__c</field>
+                <operation>equals</operation>
+                <value>Portal Banners</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>PartnerLink Case,Change Management Cases</value>
+            </criteriaItems>
+            <template>Case_Notifications/PS_Case_Notification_Approved</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>PS_Cases_Technical</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <booleanFilter>1 AND (2 OR 3) AND (4 OR 5 OR 6) AND 7</booleanFilter>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>Approved</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>includes</operation>
+                <value>Integration</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Level_of_Effort__c</field>
+                <operation>includes</operation>
+                <value>Development</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Related_Object__c</field>
+                <operation>notEqual</operation>
+                <value>PartnerLink</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Related_Object__c</field>
+                <operation>notEqual</operation>
+                <value>Portal Banners</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Related_Object__c</field>
+                <operation>notEqual</operation>
+                <value>MyComatrol</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>PartnerLink Case,Change Management Cases</value>
+            </criteriaItems>
+            <template>Case_Notifications/PS_Case_Notification_Approved</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

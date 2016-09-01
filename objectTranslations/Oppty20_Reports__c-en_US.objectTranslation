@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Oppty20 Reports</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Oppty20 Reports</value>
+    </caseValues>
+    <fields>
+        <help><!-- User_Country__c field Id in the User object. --></help>
+        <label><!-- Country Field Id --></label>
+        <name>Country_Field_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Region__c field Id in the User object. --></help>
+        <label><!-- Region Field Id --></label>
+        <name>Region_Field_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Id of the Salesforce report. --></help>
+        <label><!-- Report Id --></label>
+        <name>Report_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Division__c field Id in the User object. --></help>
+        <label><!-- Segment Field Id --></label>
+        <name>Segment_Field_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

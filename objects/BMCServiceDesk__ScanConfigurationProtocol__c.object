@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__FKScanConfiguration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the reference of the scan configuration with which the protocol is associated.</description>
+        <externalId>false</externalId>
+        <label>Scan Configuration</label>
+        <referenceTo>BMCServiceDesk__ScanConfiguration__c</referenceTo>
+        <relationshipLabel>Scan Configuration Protocols</relationshipLabel>
+        <relationshipName>ScanConfigurationProtocols</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>To check if the protocol is active for the scan configuration or not.</description>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ProtocolLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE( BMCServiceDesk__ProtocolName__c,&apos;SMB&apos;, $Label.BMCServiceDesk__SMBProtocol , &apos;SSH&apos;, $Label.BMCServiceDesk__SSHProtocol, &apos;SNMP&apos;,$Label.BMCServiceDesk__SNMPProtocol, &apos;VMWARE&apos;, $Label.BMCServiceDesk__VMWAREProtocol, &apos;HYPERV&apos;, $Label.BMCServiceDesk__HyperVProtocol,$Label.BMCServiceDesk__PSATNotApplicable)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Protocol Label</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ProtocolName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the name of the protocol.</description>
+        <externalId>false</externalId>
+        <label>Protocol Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

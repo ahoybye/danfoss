@@ -1,0 +1,31 @@
+<apex:page standardController="Contact" extensions="ShowMarketingAttributesExtension" showHeader="false" cache="true">
+  	<apex:form id="form">
+        <apex:pageBlock title="Marketing Attributes">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton action="{!CreateADD}" value="New" reRender="form" status="fetchStatus"/>
+            </apex:pageBlockButtons>
+            <apex:pageblockTable value="{!ADDs}" var="s">
+                <apex:column headerValue="Action"> 
+                    <apex:commandlink value="Edit" action="{!EditADD}" rerender="form" status="fetchStatus"><apex:param name="vID" value="{!s.id}" assignTo="{!selectedADD}"/></apex:commandlink>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <apex:commandlink value="Del" action="{!DeleteADD}" rerender="form" status="fetchStatus"><apex:param name="vID" value="{!s.id}" assignTo="{!selectedADD}"/></apex:commandlink>
+                </apex:column>
+                <apex:column value="{!s.Division_lkp__c}" />
+                <apex:column value="{!s.Attribute_Set_lkp__c}" />
+                <apex:column value="{!s.Attribute_lkp__c}" />
+                <apex:column value="{!s.ValueAgg__c}" />
+            </apex:pageblockTable>
+            <apex:panelGrid columns="5">
+                <c:PrevNextLinks setCon="{!setCon}" rerender="form" status="fetchStatus"/>
+                <apex:selectList id="myselect" size="1" label="Value" value="{!selectedValue}">
+                    <apex:selectOptions value="{!statusOptions}"/>
+                    <apex:actionSupport event="onchange" action="{!filterADDs}" reRender="form" status="fetchStatus"/>
+                </apex:selectList>
+                <apex:commandButton action="{!filterADDs}" value="Filter" reRender="form" status="fetchStatus"/>
+                <c:PageNumber setCon="{!setCon}"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+      	</apex:pageBlock>
+	</apex:form>
+</apex:page>

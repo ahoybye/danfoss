@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__ContentVersion__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Version of content that is imported</description>
+        <externalId>false</externalId>
+        <label>Content Version</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__DeploymentDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date and time when imported records were deployed</description>
+        <externalId>false</externalId>
+        <label>Deployment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKInitiator__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>User who is importing data</description>
+        <externalId>false</externalId>
+        <label>Initiator</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>ContentImport</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FileName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the static resource that stores the imported data</description>
+        <externalId>false</externalId>
+        <label>File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ImportDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date and time when import was completed</description>
+        <externalId>false</externalId>
+        <label>Import Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__RemedyforceVersion__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lowest BMC Remedyforce version that is required to import the content</description>
+        <externalId>false</externalId>
+        <label>Remedyforce Version</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ScanDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date and time when scan was completed</description>
+        <externalId>false</externalId>
+        <label>Scan Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The following values are available:
+            Initiated
+            Scan Failed
+            Scan Completed
+            Import successful
+            Import failed
+            Deployed</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Initiated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scan Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scan Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Import failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Import Successful</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deployed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Summary__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Summary of status change of each record</description>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <webLinks>
+        <fullName>BMCServiceDesk__Deploy</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Deploy</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/31.0/apex.js&quot;)}
+
+var deployResult = sforce.apex.execute(&quot;BMCServiceDesk.WebServiceMethodsUtility&quot;,&quot;deployRecords&quot;, {id:&quot;{!BMCServiceDesk__ContentImport__c.Id}&quot;});
+
+if(deployResult.indexOf(&quot;ERROR&quot;) == -1)
+{
+location.reload();
+}
+else
+alert(deployResult);</url>
+    </webLinks>
+</CustomObject>

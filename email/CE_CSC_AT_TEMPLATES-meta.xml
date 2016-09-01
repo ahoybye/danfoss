@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>CE CSC AT TEMPLATES</name>
+    <publicFolderAccess>ReadOnly</publicFolderAccess>
+    <sharedTo>
+        <group>CER_Heating_Complaint_Management</group>
+        <group>CER_Heating_Components</group>
+        <group>CER_Heating_Systems</group>
+        <group>CE_CER</group>
+        <group>CE_CSC_CER_SEE_ALL</group>
+        <group>CE_CSC_CER_SEE_ALL_BO</group>
+        <group>CSC_CER_All_Group</group>
+    </sharedTo>
+</EmailFolder>

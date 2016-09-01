@@ -1,0 +1,44 @@
+<apex:page id="loginPage" controller="PortalLoginController" standardStylesheets="false" CACHE="FALSE" title="Danfoss Power Solutions - PartnerLink">
+      <apex:composition template="CommunitiesTemplateCustom">            
+        <apex:define name="middle-content" >
+        <head>
+            <apex:stylesheet value="{!$Site.Prefix}/communities/CommunitiesStyles.css"/>
+            <apex:stylesheet value="/css/sfdc_198.css"/>
+        </head>
+        <center>
+        <table>
+          <tr>
+            <td>
+                <apex:image url="{!URLFOR($Resource.HomePageResource, 'img/CommunityHeader2015.png')}" title="#htmlcaption" /><br/>
+                <apex:image value="{!URLFOR($Resource.HomePageResource, '/img/ADC2016.png')}"/>                
+            </td>
+            <td>
+                <div style="display: block; width:350px; margin-left: 1.5em">
+                    <apex:form forceSSL="true" id="login_form"> 
+                        <fieldset id="inputs" style="border:none;">
+                            <apex:outputlabel value="Username" for="username"/>
+                            <apex:inputText id="username" styleClass="input r4 wide mb16 mt8 username" value="{!loginEmail}" required="true"/>
+                            <apex:outputlabel value="Password" for="password"/>
+                            <apex:inputSecret id="password" styleClass="input r4 wide mb16 mt8 password" value="{!loginPassword}" required="true"/>                    
+                        </fieldset>         
+                        <fieldset id="actions" style="border:none;">
+                            <apex:commandButton value="Log in" action="{!login}" styleClass="button r4 wide" style="background-color:#EB0928"/>  <br/> <br/>
+                            <a href="{!$Page.CommunitiesForgotPassword}" style="color:#EB0928">Forgot your password?</a>                   
+                        </fieldset>
+                        <apex:outputPanel rendered="{!IF(errorMsg != '', true, false)}" style="font-size: 13px;font-weight: 300;color: red; font: normal normal 1em/100% Helvetica, Arial, 'Lucida Grande', sans-serif;">
+                            {!errorMsg}
+                        </apex:outputPanel>               
+                    </apex:form>     
+                    <div style="font-family: Verdana;font-size: 11px;color: gray; padding-left: 12px">
+                    <br/>
+                    If your company is an existing Danfoss Power Solutions partner,
+                    please contact your Account or Customer Service Representative to access PartnerLink.
+                    </div>
+                </div> 
+            </td>
+          </tr>
+        </table>
+        </center>
+      </apex:define>
+    </apex:composition>
+</apex:page>

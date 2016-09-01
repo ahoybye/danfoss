@@ -1,0 +1,480 @@
+<apex:page showHeader="false" sidebar="false" controller="ccpt.ExternalTemplateExtension">
+    <apex:stylesheet value="{!URLFOR($Resource.ccpt__productivity_assets,'/font-awesome-4.2.0/css/font-awesome.min.css')}" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.productivity_assets,'/emailwizard/bootstrap.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ccpt__productivity_assets,'/emailwizard/slider.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ccpt__productivity_assets,'/emailwizard/colorpicker.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ccpt__productivity_assets,'/emailwizard/loading-bar/loading-bar.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ccpt__productivity_assets,'/css/productivity.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.ccpt__productivity_assets,'/fonts/lato/stylesheet.css')}" />
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/angular.min.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/angular-sanitize.min.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/angular-animate.min.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/angular-loader.min.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/ui-bootstrap-tpls.min.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/slider.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/colorpicker.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/wizard.js')}"></script>
+    <script src="{!URLFOR($Resource.productivity_assets,'/emailwizard/loading-bar/loading-bar.min.js')}"></script>
+    <style>
+        .selector{
+            padding: 15px 20px;
+            border: 1px solid black;
+        }
+
+        .block{
+            display: block;
+        }
+
+        .inline-block{
+            display: inline-block;
+        }
+        .panel-title>a {
+            color: inherit;
+            display: block;
+            cursor: pointer;
+        }
+        .alignment, #font-style {
+            border: solid 1px #aaa;
+            display: inline-block;
+            border-radius: 2px;
+        }
+        .alignment > input, #font-style > input {
+            display: none;
+        }
+        .alignment > label, #font-style > label {
+            padding: 5px;
+            margin: 0;
+            cursor: pointer;
+        }
+        .alignment > label.fa-align-center, #font-style > label.fa-italic {
+            border-right: solid 1px #aaa;
+            border-left: solid 1px #aaa;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 10px;
+            background-color: rgba(0,0,0,0.05);
+            padding: 1px;
+        }
+        ::-webkit-scrollbar-thumb {
+            width: 4px;
+            margin: 1px;
+            height: 5px;
+            background-color: rgba(0,0,0,0.4);
+        }
+    </style>
+    <script>
+        var resourceUrl = '';
+        var CONST_RESOURCE_URL = '';
+        var CONST_NAMESPACE = '{!fieldNamespace}';
+        var JS_NAMESPACE = '{!jsNamespace}';
+
+        
+    </script>
+    <body ng-app="emailwizard">
+        <style>
+            .controls-container{
+                background: #eee; position: fixed; left: 0px; top: 0px; bottom: 0px; width: 400px; padding: 10px;
+            }
+
+            .slider-placeholder{
+                display: inline-block; width: 200px;
+            }
+
+            .slider-input-placeholder{
+                display: inline-block;
+                margin-left: 10px;
+            }
+
+            .slider-input-placeholder input{
+                width: 40px; border: 1px solid rgba(0,0,0,0.1);
+            }
+
+            slider {
+                margin: 10px 0px;
+            }
+
+            body {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 400px;
+                padding: 10px;
+            }
+
+
+
+            .template {
+                cursor: pointer;
+                border : 1px solid black;
+                border-width: {{ component.borderwidth }};
+                border-color : {{ component.bordercolor }};
+                margin: 20px;
+                box-sizing: content-box;
+                white-space: pre-wrap;
+            }
+
+            .block {
+                display: block;
+            }
+
+            .one-half {
+                display : inline-block;
+                width: 50%;
+            }
+            .panel-group {
+                margin-bottom: 0;
+            }
+            .nav-tabs {
+                border : none;
+                padding: 0 10px;
+            }
+            .nav-tabs > li {
+                margin-left: 5px;
+            }
+            .nav-tabs > li > a {
+                display: block;
+                cursor: pointer;
+                padding: 5px;
+            }
+            .nav-tabs > li.active > a {
+                z-index: 1;
+                border-bottom-color: white;
+            }
+            .agenda-title{
+                border: none;
+                border-bottom: 1px solid black;
+            }
+            .tab-content {
+                border: solid 1px #ddd ;
+                padding: 5px;
+                position:absolute;
+                top: 41px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: 10px;
+                margin-top: 0;
+                overflow: hidden;
+            }
+            .tab-content > .tab-pane {
+                width: 100%;
+                height: 100%;
+                overflow-y: auto;
+            }
+            textarea.custom-content{
+                display:block;
+                width: 100%;
+                height: 150px;
+                resize: vertical;
+                border: solid 1px #ddd;
+                margin-bottom: 10px;
+            }
+            .page-header {
+                margin-bottom: 0;
+                border-bottom: none;
+                text-align: center;
+            }
+            .table-wrapper {
+                overflow: hidden;
+            }
+            .table-wrapper:hover {
+                margin: 5px;
+                padding: 5px;
+                width: calc(100% - 10px);
+                border: solid 1px #000000;
+                background: #ffffff;
+            }
+            .actions {
+                display: inline-block;
+                float: right;
+                font-size: 18px;
+            }
+            .actions > i.fa {
+                padding: 5px;
+                width: 30px;
+                line-height: 18px;
+                vertical-align: top;
+                text-align: center;
+                border: solid 1px #aaa;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .actions > i.fa:active {
+                background: #aaa;
+            }
+            .actions > i.fa:hover {
+                background: #e1e1e1;
+            }
+            #template-list {
+                position: absolute;
+                top: 40px;
+                right: 0px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                width: 155px;
+                height: 215px;
+                background: #f5f5f5;
+                border: solid 1px #ddd;
+                border-radius: 4px;
+                box-shadow: 0 1px 1px rgba(0,0,0,.05);
+                list-style-type: none;
+                -webkit-padding-start: 0;
+                margin: 0;
+                z-index: 2;
+            }
+            #template-list > li {
+                padding: 5px;
+                margin: 0;
+                cursor: pointer;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .selected, .selected:hover {
+                background: #aaa !important;
+            }
+            #template-list > li:hover {
+                background: #ddd;
+            }
+            #template-list > li:NOT(:last-child) {
+                border-bottom: solid 1px #ddd;
+            }
+            #notification-dialog {
+                position: absolute;
+                left: 15px;
+                bottom: 15px;
+                z-index: 1000;
+                width: 300px;
+                padding: 15px 22px;
+                font-size: 14px;
+                color: white;
+                font-family: 'latohairline';
+            }
+
+            #template-list.ng-enter, #template-list.ng-leave, #notification-dialog.ng-leave, #notification-dialog.ng-enter {
+                transition: 0.25s linear all;
+                -webkit-transition: 0.25s linear all;
+            }
+            #template-list.ng-enter.ng-enter-active, #template-list.ng-leave {
+                width: 155px;
+            }
+            #template-list.ng-leave.ng-leave-active, #template-list.ng-enter {
+                width: 0px;
+            }
+            #notification-dialog.ng-leave.ng-leave-active, #notification-dialog.ng-enter {
+                opacity : 0;
+            }
+            #notification-dialog.ng-leave, #notification-dialog.ng-enter.ng-enter-active {
+                opacity : 1;
+            }
+
+            #save-dialog {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 2;
+            }
+            #save-dialog > div {
+                position: absolute;
+                top: calc(50% - 89px);
+                left: calc(50% - 181px);
+                background: #eee;
+                border: solid 1px #ddd;
+                font-family: 'latolight';
+            }
+            #side-scroll::-webkit-scrollbar {
+                width: 0px;
+                height: 10px;
+                background-color: rgba(0,0,0,0.05);
+                padding: 1px;
+            }
+            .hide {
+                display: none !important;
+            }
+        </style>
+        <div ng-controller="wizardinput" ng-init="getAllTemplates();" ng-click="showList = false;">
+            <div class="controls-container">
+                <div style="position: relative;">
+                    <div class="actions">
+                        <i class="fa fa-plus" ng-click="activeTemplate.Id = ''; getTemplate(); showList = false; showSave = false;" title="New Template"></i>
+                        <i ng-if="activeTemplate.Id != ''" class="fa fa-copy" style="font-size: 16px;" ng-click="activeTemplate.Id = ''; activeTemplate.Name = activeTemplate.Name + ' - copy'; showList = false; showSave = false;" title="Copy Template"></i>
+                        <i class="fa fa-folder-open" ng-click="showList = !showList; $event.stopPropagation();" ng-class="{selected : showList}" title="Open Template"></i>
+                        <i class="fa fa-save" ng-click="showSave = !showSave; showList = false;" ng-class="{selected : showSave}" title="Save Template"></i>
+                    </div>
+                    <ul id="template-list" ng-if="showList">
+                        <li ng-repeat="template in templates" ng-click="$parent.$parent.activeTemplate.Id = template.Id; getTemplate();$parent.$parent.showSave = false;" ng-class="{selected : template.Id == $parent.$parent.activeTemplate.Id}" ng-bind-html="template.Name | unsafe">
+                        </li>
+                    </ul>
+                    <h4 ng-if="activeComponent != null" style="line-height: 30px;">{{ activeComponent.display }}</h4>
+                </div>
+                <div id="side-scroll" style="margin-top: 10px; height: calc(100% - 40px); overflow-y: auto;">
+                    <accordion ng-if="activeComponent != null" close-others="$parent.isLoaded">
+                        <accordion-group heading="Border" ng-click="isOpen.border = true;">
+                            <label>Border Width:</label>
+                            <div ng-if="isOpen.border">
+                                <div class="slider-placeholder"><slider floor="0" ceiling="10" step="1" precision="0" ng-model="activeComponent.style.border.all.width"></slider></div>
+                                <div class="slider-input-placeholder">{{ activeComponent.style.border.all.width }}px</div>
+                            </div>
+                            <label>Border Radius:</label>
+                            <div ng-if="isOpen.border">
+                                <div class="slider-placeholder"><slider floor="0" ceiling="20" step="1" precision="0" ng-model="activeComponent.style.border.all.radius"></slider></div>
+                                <div class="slider-input-placeholder">{{ activeComponent.style.border.all.radius }}px</div>
+                            </div>
+                            <label>Border Color</label>
+                            <div>
+                                <input colorpicker="hex" type="text" ng-model="activeComponent.style.border.all.color" colorpicker-fixed-position="true"/>
+                            </div>
+                            <div ng-if="activeComponent.type == 'table'">
+                                <label>Border Collapse</label>
+                                <div>
+                                    <input type="checkbox" ng-model="activeComponent.style.border.collapse" />
+                                </div>
+                            </div>
+                        </accordion-group>
+                        <accordion-group heading="Font" ng-click="isOpen.font = true;">
+                            <label>Font Family:</label>
+                            <div>
+                                 <select ng-model="activeComponent.style.font.family" ng-options="font.family as font.display for font in fonts"></select>
+                            </div>
+                            <label>Font Size:</label>
+                            <div ng-if="isOpen.font">
+                                <div class="slider-placeholder"><slider floor="8" ceiling="20" step="1" precision="0" ng-model="activeComponent.style.font.size"></slider></div>
+                                <div class="slider-input-placeholder">{{ activeComponent.style.font.size }}px</div>
+                            </div>
+                            <label style="display: block;">Text Align:</label>
+                            <div class="alignment">
+                                 <input type="radio" ng-attr-id="text-align-{{ font.align }}" ng-model="activeComponent.style.font.align" ng-repeat="font in fontalign" ng-value="font.align">{{ font.display }}</input>
+                                 <label ng-repeat="font in fontalign" ng-attr-for="text-align-{{ font.align }}" class="fa fa-align-{{font.align}}" ng-style="{'background' : (activeComponent.style.font.align == font.align ? '#e1e1e1' : 'white')}"></label>
+                            </div>
+                            <label style="display: block;">Text Style:</label>
+                            <div id="font-style">
+                                <input id="font-style-bold" type="checkbox" ng-model="activeComponent.style.font.bold" />
+                                <input id="font-style-italic" type="checkbox" ng-model="activeComponent.style.font.italic" />
+                                <input id="font-style-underline" type="checkbox" ng-model="activeComponent.style.font.underline" />
+                                <label for="font-style-bold" class="fa fa-bold" ng-style="{'background' : (activeComponent.style.font.bold ? '#e1e1e1' : 'white')}"></label><!--
+                                --><label for="font-style-italic" class="fa fa-italic" ng-style="{'background' : (activeComponent.style.font.italic ? '#e1e1e1' : 'white')}"></label><!--
+                                --><label for="font-style-underline" class="fa fa-underline" ng-style="{'background' : (activeComponent.style.font.underline ? '#e1e1e1' : 'white')}"></label>
+                            </div>
+                        </accordion-group>
+
+                        <accordion-group heading="Spacing" ng-click="isOpen.spacing = true;">
+                            <label>Padding:</label>
+                            <div ng-if="isOpen.spacing">
+                                <div class="slider-placeholder"><slider floor="0" ceiling="15" step="1" precision="0" ng-model="activeComponent.style.padding"></slider></div>
+                                <div class="slider-input-placeholder">{{ activeComponent.style.padding }}px</div>
+                            </div>
+                            <label>Margin:</label>
+                            <div ng-if="isOpen.spacing">
+                                <div class="slider-placeholder"><slider floor="0" ceiling="15" step="1" precision="0" ng-model="activeComponent.style.margin"></slider></div>
+                                <div class="slider-input-placeholder">{{ activeComponent.style.margin }}px</div>
+                            </div>
+                        </accordion-group>
+
+                        <accordion-group heading="Colors">
+                            <label>Font Color</label>
+                            <div>
+                                <input colorpicker="hex" type="text" ng-model="activeComponent.style.color" colorpicker-fixed-position="true"/>
+                            </div>
+                            <label>Background Color</label>
+                            <div>
+                                <input colorpicker="hex" type="text" ng-model="activeComponent.style.background" colorpicker-fixed-position="true"/>
+                            </div>
+                        </accordion-group>
+
+                        <accordion-group heading="List Style" ng-if="activeComponent.type == 'ul'">
+                            <label>List Style:</label>
+                            <div>
+                                 <select ng-model="activeComponent.style.list.type" ng-options="list.style as list.display for list in listStyles"></select>
+                            </div>
+                        </accordion-group>
+
+                        <accordion-group heading="Size" ng-if="activeComponent.style.width != undefined" ng-click="isOpen.size = true;">
+                            <label>Width:</label>
+                            <div ng-if="isOpen.size">
+                                <div class="slider-placeholder"><slider floor="0" ceiling="100" step="1" precision="0" ng-model="activeComponent.style.width"></slider></div>
+                                <div class="slider-input-placeholder">{{ activeComponent.style.width }}%</div>
+                            </div>
+                            <div ng-if="activeComponent.type == 'div' || activeComponent.type == 'table'">
+                                <label style="display: block;">Alignment</label>
+                                <div class="alignment">
+                                     <input type="radio" ng-attr-id="comp-align-{{ font.align }}" ng-model="activeComponent.style.align" ng-repeat="font in fontalign" ng-value="font.align">{{ font.display }}</input>
+                                     <label ng-repeat="font in fontalign" ng-attr-for="comp-align-{{ font.align }}" class="fa fa-align-{{font.align}}" ng-style="{'background' : (activeComponent.style.align == font.align ? '#e1e1e1' : 'white')}"></label>
+                                </div>
+                            </div>
+                        </accordion-group>
+                    </accordion>
+                </div>
+                <div ng-if="notification.show" id="notification-dialog" ng-style="{'background' : ($parent.notification.type == 'SUCCESS' ? '#60a917' : '#F13E11')}" ng-click="notification.show = false;">
+                    <div style="font-size: 16px;"><i class="fa" ng-class="$parent.notification.type == 'SUCCESS' ? 'fa-check-circle' : 'fa-warning'" style="margin-right: 10px;"></i>{{ notification.title }}</div>
+                    <div>{{ notification.message }}</div>
+                </div>
+            </div>
+            <tabset ng-if="components != null" justified="true">
+                <tab heading="Full Preview">
+                    <div ng-bind-html="header | unsafe"></div>
+                    <component ng-repeat="component in components" element="component"></component>
+                    <div ng-bind-html="footer | unsafe"></div>
+                </tab>
+                <tab heading="Meeting Details">
+                    <component element="components[0]" children="false">
+                        <component element="components[0].nodes[0]">
+                            <component ng-repeat="component in element.nodes" element="component"></component>
+                        </component>
+                    </component>
+                </tab>
+                <tab heading="Attendees">
+                    <component element="components[0]" children="false">
+                        <component element="components[0].nodes[1]">
+                            <component ng-repeat="component in element.nodes" element="component"></component>
+                        </component>
+                    </component>
+                </tab>
+                <tab heading="Agenda Items">
+                    <component element="components[0]" children="false">
+                        <component element="components[0].nodes[2]">
+                            <component ng-repeat="component in element.nodes" element="component"></component>
+                        </component>
+                    </component>
+                </tab>
+                <tab heading="Your Header">
+                    <div class="page-header">
+                        <h1>Edit your custom header to be displayed in the email</h1><br/>
+                        <h4>(Note: Your email provider may not support certain tags and styles)</h4>
+                    </div>
+                    <textarea class="custom-content" ng-model="$parent.$parent.$parent.header"></textarea>
+                    <div ng-bind-html="$parent.$parent.$parent.header | unsafe"></div>
+                </tab>
+                <tab heading="Your Footer">
+                    <div class="page-header">
+                        <h1>Edit your custom footer to be displayed in the email</h1><br/>
+                        <h4>(Note: Your email provider may not support certain tags and styles)</h4>
+                    </div>
+                    <textarea class="custom-content" ng-model="$parent.$parent.$parent.footer"></textarea>
+                    <div ng-bind-html="$parent.$parent.$parent.footer | unsafe"></div>
+                </tab>
+            </tabset>
+            <div ng-if="showSave" id="save-dialog" ng-click="$parent.showSave = !$parent.showSave">
+                <div class="modal-window form" ng-click="$event.stopPropagation();">
+                    <div class="title">Save Template</div>
+                    <div class="form-content" style="width: 300px;">
+                        <div class="field-pair">
+                            <label style="font-size: 12px; font-weight: normal;">Name</label>
+                            <div class="field-input">
+                                <input type="text" ng-model="$parent.activeTemplate.Name" style="line-height: normal;"></input>
+                            </div>
+                        </div>
+                        <div class="form-actions" style="line-height: normal;">
+                            <input type="button" class="butn cancel" value="Cancel" ng-click="$parent.showSave = !$parent.showSave"></input>
+                            <input type="button" class="butn emph" value="Save" ng-click="save(); $parent.showSave = !$parent.showSave"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</apex:page>

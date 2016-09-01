@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case milestone Violation – Escalation Mail</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>CASE MILESTONE VIOLATION - ESCALATION MAIL</name>
+    <style>formalLetter</style>
+    <subject>Escalation: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear Sir/ Madam, 
+
+This is to update you that there has been a SLA breach for case {!Case.Subject} with {!Case.CaseNumber}. It was assigned to {!Case.OwnerFullName}. Please take necessary action
+
+Please follow the below link for more information
+{!Case.Link}
+
+Best regards,
+Danfoss Customer Service Center 
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

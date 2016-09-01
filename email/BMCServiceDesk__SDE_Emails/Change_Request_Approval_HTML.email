@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" align="center" width="600" >
+	<tr>
+		<td valign="top" align="left">
+			<img src="http://htmlbuilder.globase.com/images/danfoss/template_3/images/banner.jpg" alt="0" />
+		</td>
+    </tr>
+	<tr><td>&nbsp;</td></tr>
+    <tr>
+		<td>
+			<b><span style='font-size:15.0pt;font-family:"Verdana",sans-serif;color:black'>
+				Description: {!BMCServiceDesk__Change_Request__c.BMCServiceDesk__Change_Description__c}
+			</span></b>
+				
+			
+		</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	
+	<tr>
+		<td>
+			<span style='font-size:8.5pt;font-family:"Verdana",sans-serif;color:black'>{!BMCServiceDesk__Change_Request__c.Link}</span>
+		</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+		<td>
+			<span style='font-size:8.5pt;font-family:"Verdana",sans-serif;color:black'>Please Approve/Reject the Change Request</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span style='font-size:8.5pt;font-family:"Verdana",sans-serif;color:black'>Approve by replying on this mail with the word: yes</span>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span style='font-size:8.5pt;font-family:"Verdana",sans-serif;color:black'>Reject by replying to this mail with the word: no</span>
+		</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+		<td>
+			<span style='font-size:8.5pt;font-family:"Verdana",sans-serif;color:black'>You can add a comment to your reply by putting it directly after yes/no e.g.: no this is not good enough.</span>
+		</td>
+	</tr>
+</table>
+	<style type="text/css">
+	@-ms-viewport{
+	  width: device-width;
+	}
+
+    </style>
+	</body>
+</html>

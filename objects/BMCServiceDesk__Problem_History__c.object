@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__Action__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the action linked to the problem history</description>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKAction__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>From the list of options, select the user-defined actions that are applicable to problems. User-defined actions are used to record details of the steps taken to complete the problem.</inlineHelpText>
+        <label>Action~</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Created_By__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the user name who created the problem history record</description>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKCreated_By__r.Username</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By~</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the details regarding the problem history record</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the duration of the problem history record</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__EmailConversationData__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores email addresses (From, To, and CC) of the email message.</description>
+        <externalId>false</externalId>
+        <label>Email Addresses</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKAction__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field stores the foreign key value of the linked action</description>
+        <externalId>false</externalId>
+        <inlineHelpText>From the list of options, select the user-defined actions that are applicable to problems. User-defined actions are used to record details of the steps taken to complete the problem.</inlineHelpText>
+        <label>Action</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>BMCServiceDesk__Action__c.BMCServiceDesk__appliesToProblem__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>BMCServiceDesk__Action__c.BMCServiceDesk__inactive__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <filterItems>
+                <field>BMCServiceDesk__Action__c.BMCServiceDesk__Display_In_SelfService__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>BMCServiceDesk__Action__c</referenceTo>
+        <relationshipLabel>Problem Histories</relationshipLabel>
+        <relationshipName>Problem_Histories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKCreated_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field stores the foreign key value of the linked user who create the problem history record</description>
+        <externalId>false</externalId>
+        <label>Staff Id</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Problem_Histories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKProblem__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the foreign key value of the linked problem</description>
+        <externalId>false</externalId>
+        <label>Problem</label>
+        <referenceTo>BMCServiceDesk__Problem__c</referenceTo>
+        <relationshipLabel>Action History</relationshipLabel>
+        <relationshipName>Problem_Histories</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Formatted_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This filed is used to display the hh:mm format duration on related list column</description>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT( FLOOR((BMCServiceDesk__Duration__c / 60))),2,TEXT(0)) &amp; &quot;:&quot; &amp; LPAD(TEXT(MOD(BMCServiceDesk__Duration__c , 60)),2,TEXT(0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Duration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field stores the value if the problem history record is active or inactive</description>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Note__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field stores the details of the notes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to provide details about what has been accomplished when you performed this action. The date and time is recorded for each new entry or update that you make in this field.</inlineHelpText>
+        <label>Note</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Reply__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( BMCServiceDesk__FKAction__r.BMCServiceDesk__Abbreviation__c ==&apos;EMAILIN&apos; || BMCServiceDesk__FKAction__r.BMCServiceDesk__Abbreviation__c ==&apos;EMAILOUT&apos;, HYPERLINK(&quot;javascript:if(window.location.href!=null){var stdurl= window.location.href;if(stdurl.toLowerCase().indexOf(&apos;relatedlist?&apos;)!= -1){window.location.href=&apos;/apex/BMCServiceDesk__ComposeEmailPage?recordId=&quot;+ BMCServiceDesk__FKProblem__r.Id+&quot;&amp;HistoryId=&quot;+ Id+&quot;&amp;isNew=false&amp;objectName=Problem__c&amp;standardLayout=false&amp;isConsolePage=true&amp;actionType=&quot;+ BMCServiceDesk__FKAction__r.Name +&quot;&apos;}else{window.location.href=&apos;/apex/BMCServiceDesk__ComposeEmailPage?recordId=&quot;+ BMCServiceDesk__FKProblem__r.Id+&quot;&amp;HistoryId=&quot;+ Id+&quot;&amp;isNew=false&amp;objectName=Problem__c&amp;standardLayout=true&amp;isCalledFromConsole=false&amp;stdform=true&amp;actionType=&quot;+ BMCServiceDesk__FKAction__r.Name +&quot;&apos;}}&quot;,IMAGE(&quot;/resource/BMCServiceDesk__SDEFStyles/SDEFbuttons/b_reply_to_client_email.png&quot;, &quot;Reply&quot;),&apos;_self&apos;),null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reply</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__RichTextNote__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field used to store the rich Text Email conversation.</description>
+        <externalId>false</externalId>
+        <label>RichTextNote</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field stores the value if the problem history is syste or user record</description>
+        <externalId>false</externalId>
+        <label>System</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>BMCServiceDesk__Action_ID_Required</fullName>
+        <active>true</active>
+        <description>This rule checks for blank or empty Action</description>
+        <errorConditionFormula>OR( ISNULL(BMCServiceDesk__FKAction__c) , ISBLANK(BMCServiceDesk__FKAction__c))</errorConditionFormula>
+        <errorMessage>Please enter Action.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>BMCServiceDesk__New_Action</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Action</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 671; 
+var stdLayoutScreenHeight = 400; 
+function stdScreenLeft(){ 
+return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2)); 
+} 
+
+function stdScreenTop(){ 
+return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2)); 
+} 
+
+if({!BMCServiceDesk__Problem__c.BMCServiceDesk__State__c}){
+
+if( typeof consoleDetailElements != &quot;undefined&quot; )
+	{
+window.open(&apos;/apex/BMCServiceDesk__searchPage?popupId=Action&amp;isLookup=true&amp;objectType=Problem_History__c&amp;isCalledFromConsole=true&amp;enableSelfClosing=false&amp;standardLayout=true&amp;parentId={!BMCServiceDesk__Problem__c.Id}&amp;filterClause=appliesToProblem__c%3Dtrue%20and%20system__c%3Dfalse&apos;,null,&quot;status = 1,height=&quot;+stdLayoutScreenHeight+&quot;, width =&quot;+ stdLayoutScreenWidth+&quot;,left=&quot;+stdScreenLeft()+&quot;,top=&quot;+stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+	}else
+	{
+	window.open(&apos;/apex/BMCServiceDesk__searchPage?popupId=Action&amp;isLookup=true&amp;objectType=Problem_History__c&amp;isCalledFromConsole=false&amp;enableSelfClosing=false&amp;standardLayout=true&amp;parentId={!BMCServiceDesk__Problem__c.Id}&amp;filterClause=appliesToProblem__c%3Dtrue%20and%20system__c%3Dfalse&apos;,null,&quot;status = 1,height=&quot;+stdLayoutScreenHeight+&quot;, width =&quot;+ stdLayoutScreenWidth+&quot;,left=&quot;+stdScreenLeft()+&quot;,top=&quot;+stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+	}
+}
+else
+{
+var label=&apos;{!JSENCODE($Label.BMCServiceDesk__problemclosed)}&apos;
+alert(label);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__New_Note</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Note</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>if({!BMCServiceDesk__Problem__c.BMCServiceDesk__State__c}){
+if( typeof consoleDetailElements != &quot;undefined&quot; )
+{window.open(&apos;/apex/BMCServiceDesk__stdlayoutproblemaddnotepage?id={!BMCServiceDesk__Problem__c.Id}&amp;fromconsole=true&apos;,null,&apos;width=600,height=400,resizable = 0,scrollbars=no,status=1,top=350,left=350&apos;);
+}
+else{
+window.open(&apos;/apex/BMCServiceDesk__stdlayoutproblemaddnotepage?id={!BMCServiceDesk__Problem__c.Id}&amp;fromconsole=false&apos;,null,&apos;width=600,height=400,resizable = 0,scrollbars=no,status=1,top=350,left=350&apos;);
+}
+}
+else
+{
+var label=&apos;{!JSENCODE($Label.BMCServiceDesk__problemclosed)}&apos;;
+alert(label);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__View_All_Notes</fullName>
+        <availability>online</availability>
+        <description>Use this button to view the history of all the actions that are associated with a record.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Action History</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 673;
+var stdLayoutScreenHeight = 400;
+
+function stdScreenLeft(){
+return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2));
+}
+
+function stdScreenTop(){
+return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2));
+}
+
+var left = stdScreenLeft();
+var top = stdScreenTop();
+var windowFeatures = &quot;width=&quot; + stdLayoutScreenWidth + &quot;,height=&quot; + stdLayoutScreenHeight + &quot;,status,resizable,scrollbars=yes,left=&quot; + left + &quot;,top=&quot; + top; 
+
+window.open(&apos;/apex/BMCServiceDesk__ViewAllActions?recordState={!BMCServiceDesk__Problem__c.BMCServiceDesk__State__c}&amp;recordName={!BMCServiceDesk__Problem__c.Name}&amp;objectName=Problem&amp;Objectid={!BMCServiceDesk__Problem__c.Id}&amp;stdForm=true&amp;standardLayout=true&apos;,&apos;_blank&apos;,windowFeatures )</url>
+    </webLinks>
+</CustomObject>

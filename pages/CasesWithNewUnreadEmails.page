@@ -1,0 +1,79 @@
+<apex:page controller="CasesWithNewUnreadEmails" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">    
+<script src="/support/console/35.0/integration.js" type="text/javascript"></script>
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+<apex:includeScript value="{!URLFOR($Resource.SVG4Everybody, '/svg4everybody.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.SVG4Everybody, '/svg4everybody.legacy.min.js')}"/> 
+
+<head>
+    <title>Cases with Unread Emails</title>
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS, 'assets/styles/salesforce-lightning-design-system-vf.css')}" /> 
+</head>     
+<body>    
+    <div class="slds">
+        
+        <div class="myapp slds-scrollable--y" style="overflow-y:auto; height:400px;">    
+            <div id="caseList" class="slds-p-vertical--medium"></div>
+        </div>
+    </div>
+</body>
+<!-- JAVASCRIPT -->
+<script>
+  svg4everybody();
+  var outputDiv = document.getElementById("caseList");    
+
+  function updateOutputDiv() {    
+    Visualforce.remoting.Manager.invokeAction(
+        '{!$RemoteAction.CasesWithNewUnreadEmails.getCasesWithNewEmails}', 
+        function(results, event){
+            if (event.status) {
+                var html = '<div class="slds-scrollable--x"><table class="slds-table slds-table--bordered slds-table--striped">';    
+
+                html += '<thead><tr class="slds-text-heading--label">';
+                html += '<th scope="col"><span class="slds-truncate">&nbsp;</span></th>';
+                html += '<th scope="col"><span class="slds-truncate">Case Number</span></th>';
+                html += '<th scope="col"><span class="slds-truncate">Subject</span></th>';
+                /*html += '<th scope="col"><span class="slds-truncate">Id</span></th>';*/
+                html += '<th scope="col"><span class="slds-truncate">Status</span></th></tr></thead><tbody>';    
+
+                var casesfound = ' ';
+                
+                results.forEach(function(result) {
+                    html += '<tr><td>' 
+                    html += '<a href="#"  class="slds-icon__container" onClick="sforce.console.openPrimaryTab(null,\'\\\\'+result.Id+'\',true,\''+result.CaseNumber+'\');;"><svg aria-hidden="true" class="slds-icon slds-icon-text-default slds-icon--x-small">';
+                    html += '<use xlink:href="{!URLFOR($Resource.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#preview')}"></use></svg>';
+                    html += '<span class="slds-assistive-text">View icon</span></a>'+ '&nbsp;&nbsp;</td>' 
+                    html += '<td>' + result.CaseNumber + '</td>';
+                    html += '<td>' + result.Subject + '</td>';
+                    /*html += '<td>' + result.Id + '</td>';*/
+                    html += '<td>' + result.Status + '</td></tr>';
+                    
+                    casesfound = 'X';
+                    //alert('Casesfound1'+casesfound);
+                });
+                
+                //alert('Casesfound2'+casesfound);                
+                
+				if(casesfound != 'X'){
+                    html += '</tbody></table><Center>No Cases with New Unread Email(s)</Center></td></tr>';
+                }
+                
+                html = html + '</tbody></table></div>';
+                outputDiv.innerHTML = html;
+            }    
+         }, 
+         {escape: false}
+     );
+   }
+
+  updateOutputDiv();
+  var eventHandler = function (result) {
+                 if(!result.windowHidden){
+                     updateOutputDiv();
+                 }
+    };
+        
+  sforce.console.onCustomConsoleComponentButtonClicked(eventHandler);
+</script>
+<!-- / JAVASCRIPT -->
+</html>
+</apex:page>

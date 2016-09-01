@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>My personell Xmas greetings 2015</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DPS_Letterhead</letterhead>
+    <name>My Christmas Greetings 2015</name>
+    <style>freeForm</style>
+    <subject>Merry Christmas and a Happy New Year</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+
+
+2015 has been a challenging year for all of us, but now it&apos;s time to lean back and review with pride.
+
+
+I hope you will have some time to relax, recover, spend time with your families and prepare yourself for another exciting year 2016.
+
+
+We like to thank you for the successful cooperation and wish you and your families a Merry Christmas and a Happy New Year 2016!
+
+
+
+
+Neumuenster, {!Today}
+
+
+
+Best regards | Mit freundlichen Grüßen
+
+
+Your Danfoss Power Solutions Sales Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

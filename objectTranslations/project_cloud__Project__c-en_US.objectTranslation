@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Change Request --></label>
+        <name>ccpe_bmc__Change_Request__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Incident --></label>
+        <name>ccpe_bmc__Incident__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>ccpe_ocp__Account__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Opportunity the Project is related to --></help>
+        <label><!-- Opportunity --></label>
+        <name>ccpe_ocp__Opportunity__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- System Dates Changed Modstamp --></label>
+        <name>ccpe_ppm__Dates_Changed_Modstamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- The investment that the project is related to --></help>
+        <label><!-- Investment --></label>
+        <name>ccpe_ppm__Investment__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>ccpe_ppm__Program__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Budget Usage to Date --></label>
+        <name>ccpe_r__Budget_Usage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Budgeted Labor Cost --></label>
+        <name>ccpe_r__Budgeted_Labor_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Cost --></label>
+        <name>ccpe_r__Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Card --></label>
+        <name>ccpe_r__Rate_Card__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Calculated Rate --></label>
+        <name>ccpe_r__Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retainer --></label>
+        <name>ccpe_r__Retainer__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Total Actual Costs --></label>
+        <name>ccpe_r__Total_Actual_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Budgeted Costs --></label>
+        <name>ccpe_r__Total_Budgeted_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Utilization Category --></label>
+        <name>ccpe_r__Utilization_Category__c</name>
+        <picklistValues>
+            <masterLabel>Billable</masterLabel>
+            <translation><!-- Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exempt</masterLabel>
+            <translation><!-- Exempt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Billable</masterLabel>
+            <translation><!-- Non-Billable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cloned From --></label>
+        <name>project_cloud__Cloned_From__c</name>
+        <relationshipLabel><!-- Cloned Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Completion (%) --></label>
+        <name>project_cloud__Completed_Percent__c</name>
+    </fields>
+    <fields>
+        <help><!-- The value of this field should be the Salesforce Id of the chatter group you wish to link to this Project. --></help>
+        <label><!-- Customer Collaboration Group Id --></label>
+        <name>project_cloud__Customer_Collaboration_Group_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration In Working Days? --></label>
+        <name>project_cloud__Duration_IsWorking__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration (days) --></label>
+        <name>project_cloud__Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- The end date of the project derived from the latest ending project phase. The Sprint End Dates on the Project Phase&apos;s are not used when determining this date --></help>
+        <label><!-- Project End Date --></label>
+        <name>project_cloud__End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Hours --></label>
+        <name>project_cloud__Estimated_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Actual Expenses --></label>
+        <name>project_cloud__Expenses_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Budgeted Expenses --></label>
+        <name>project_cloud__Expenses_Budgeted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health (Traffic Light) --></label>
+        <name>project_cloud__Health_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health Reason --></label>
+        <name>project_cloud__Health_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health --></label>
+        <name>project_cloud__Health__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Hours Block --></label>
+        <name>project_cloud__Hours_Block__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Hours In Day --></label>
+        <name>project_cloud__Hours_In_Day__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manually Populate Completed Date --></label>
+        <name>project_cloud__IsManual_Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Only Subscriptions? --></label>
+        <name>project_cloud__IsOnly_Subscriptions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if this project can be used as a Project Template --></help>
+        <label><!-- Project Template --></label>
+        <name>project_cloud__IsTemplate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Working Day Friday --></label>
+        <name>project_cloud__IsWorking_Friday__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Working Day Monday --></label>
+        <name>project_cloud__IsWorking_Monday__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Working Day Saturday --></label>
+        <name>project_cloud__IsWorking_Saturday__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Working Day Sunday --></label>
+        <name>project_cloud__IsWorking_Sunday__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Working Day Thursday --></label>
+        <name>project_cloud__IsWorking_Thursday__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Working Day Tuesday --></label>
+        <name>project_cloud__IsWorking_Tuesday__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and should never be modified. --></help>
+        <label><!-- Working Day Wednesday --></label>
+        <name>project_cloud__IsWorking_Wednesday__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>project_cloud__Location__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and does not be visible. The status field is what should be used --></help>
+        <label><!-- Phase Status Maximum --></label>
+        <name>project_cloud__Phase_Status_Maximum__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a system field and does not be visible. The status field is what should be used. --></help>
+        <label><!-- Phase Status Minimum --></label>
+        <name>project_cloud__Phase_Status_Minimum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Charter --></label>
+        <name>project_cloud__Project_Charter__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The duration of the project in days, calculated from the start and end dates of the project --></help>
+        <label><!-- Length --></label>
+        <name>project_cloud__Project_Duration__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field can be used to sort Projects using the CCProjex Enterprise default order --></help>
+        <label><!-- Sorting Column --></label>
+        <name>project_cloud__Sorting_Hash__c</name>
+    </fields>
+    <fields>
+        <help><!-- The start date of the project derived from the earliest starting Project Task. The Sprint Start Dates on the Project Phase&apos;s are not used when determining this date --></help>
+        <label><!-- Project Start Date --></label>
+        <name>project_cloud__Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- The overall status of the project currently --></help>
+        <label><!-- Project Status --></label>
+        <name>project_cloud__Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, this indicates the Project which this task belongs to has been marked fully subscribed. (This is only applicable when allocating at the project level) --></help>
+        <label><!-- Fully Subscribed --></label>
+        <name>project_cloud__Subscribed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ticket (Project was created from) --></label>
+        <name>project_cloud__Ticket__c</name>
+        <relationshipLabel><!-- Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Type --></label>
+        <name>project_cloud__Type__c</name>
+        <picklistValues>
+            <masterLabel>Business Intelligence</masterLabel>
+            <translation><!-- Business Intelligence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Finance</masterLabel>
+            <translation><!-- Corporate Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Business Intelligence</masterLabel>
+            <translation><!-- DGIT Business Intelligence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Customer Relationship Management</masterLabel>
+            <translation><!-- DGIT Customer Relationship Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Desktop</masterLabel>
+            <translation><!-- DGIT Desktop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Enterprise Basis</masterLabel>
+            <translation><!-- DGIT Enterprise Basis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Enterprise Enabling Elements</masterLabel>
+            <translation><!-- DGIT Enterprise Enabling Elements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Enterprise Platforms</masterLabel>
+            <translation><!-- DGIT Enterprise Platforms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Environment, Health &amp; Safety</masterLabel>
+            <translation><!-- DGIT Environment, Health &amp; Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Finance &amp; Controlling</masterLabel>
+            <translation><!-- DGIT Finance &amp; Controlling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Governance, Risk &amp; Compliance</masterLabel>
+            <translation><!-- DGIT Governance, Risk &amp; Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Human Resource Management</masterLabel>
+            <translation><!-- DGIT Human Resource Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Innovation</masterLabel>
+            <translation><!-- DGIT Innovation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Manufacturing</masterLabel>
+            <translation><!-- DGIT Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Network</masterLabel>
+            <translation><!-- DGIT Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT PLAN</masterLabel>
+            <translation><!-- DGIT PLAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Product Lifecycle Management</masterLabel>
+            <translation><!-- DGIT Product Lifecycle Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Security</masterLabel>
+            <translation><!-- DGIT Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Server</masterLabel>
+            <translation><!-- DGIT Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Shared Services</masterLabel>
+            <translation><!-- DGIT Shared Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Supplier Relationship Management</masterLabel>
+            <translation><!-- DGIT Supplier Relationship Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Supply Chain Management</masterLabel>
+            <translation><!-- DGIT Supply Chain Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT Unified Communication</masterLabel>
+            <translation><!-- DGIT Unified Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DGIT User Experience</masterLabel>
+            <translation><!-- DGIT User Experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External</masterLabel>
+            <translation><!-- External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The units by which a project task duration is calculated. Estimated Hours project tasks run for the time input regardless of allocations, while Calendar Allocation project tasks can be shortened or lengthened by adding or removing resources from the task. --></help>
+        <label><!-- Project Units --></label>
+        <name>project_cloud__Units__c</name>
+        <picklistValues>
+            <masterLabel>Duration</masterLabel>
+            <translation><!-- Duration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estimated Hours</masterLabel>
+            <translation><!-- Estimated Hours --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a system object and should not be visible --></help>
+        <label><!-- Entered Hours --></label>
+        <name>project_cloud__Worked_Hours__c</name>
+    </fields>
+    <sharingReasons>
+        <label><!-- Allocation --></label>
+        <name>project_cloud__Allocation</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- Active Subscription --></label>
+        <name>project_cloud__Subscription</name>
+    </sharingReasons>
+    <validationRules>
+        <errorMessage><!-- When the Health is changed a reason must be given --></errorMessage>
+        <name>project_cloud__Health_Change_Requires_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This value cannot be changed. Once set it is read only --></errorMessage>
+        <name>project_cloud__Units_Cannot_Be_Changed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Working Days cannot be changed. Once set they are read only --></errorMessage>
+        <name>project_cloud__Working_Days_Read_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select at least one Working Day --></errorMessage>
+        <name>project_cloud__Working_Days_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Display_Project_Gantt --></label>
+        <name>Display_Project_Gantt</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Snapshot --></label>
+        <name>project_cloud__Create_Snapshot</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Time_Entry --></label>
+        <name>project_cloud__Create_Time_Entry</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Show_Gantt --></label>
+        <name>project_cloud__Show_Gantt</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- pulse --></label>
+        <name>project_cloud__pulse</name>
+    </webLinks>
+</CustomObjectTranslation>

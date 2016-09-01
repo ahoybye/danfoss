@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>Finance__c</fullName>
+        <description>This is for the contact address for the finance group related to the region</description>
+        <externalId>false</externalId>
+        <label>Finance</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legal_Counsel__c</fullName>
+        <externalId>false</externalId>
+        <label>Legal Counsel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Librarian__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Librarian</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contract_Regional_Role_Groups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Director_DIST__c</fullName>
+        <description>This is for the contact address for the Sales Director group related to the region</description>
+        <externalId>false</externalId>
+        <label>Sales Director DIST</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Director_OEM__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Director OEM</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Executive__c</fullName>
+        <description>This is for the contact address for the Sales Executive group related to the region</description>
+        <externalId>false</externalId>
+        <label>Sales Executive</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Manager__c</fullName>
+        <description>This is for the contact address for the Sales Manager group related to the region</description>
+        <externalId>false</externalId>
+        <label>Sales Manager</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_VP__c</fullName>
+        <description>This is for the contact address for the Sales VP group related to the region</description>
+        <externalId>false</externalId>
+        <label>Sales VP</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Technical_Director__c</fullName>
+        <description>This is for the contact address for the Tech Director group related to the region</description>
+        <externalId>false</externalId>
+        <label>Technical Director</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

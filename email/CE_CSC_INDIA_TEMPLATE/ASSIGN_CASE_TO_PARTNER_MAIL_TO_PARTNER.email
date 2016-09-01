@@ -1,0 +1,85 @@
+<messaging:emailTemplate subject="Case Number: {!relatedTo.CaseNumber} – {!relatedTo.Subject} [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]" 
+                         recipientType="Contact" 
+                         relatedToType="Case">
+
+<messaging:htmlEmailBody >
+    <html>
+        <apex:image id="Logo" value="https://danfoss--c.na8.content.force.com/servlet/servlet.ImageServer?id=015C0000001583h&oid=00DC0000000Qm80"/>
+        
+        <body>
+            <font face="verdana" size="3px">
+            <p>Dear Sir/Madam,</p>
+            <p/>
+            <p>We have a request from {!relatedTo.Contact.Name}, {!relatedTo.Account.Name} company. This request is being forwarded to you. Please find the case details below</p>
+            <p/>
+            <p><B>Customer Details:</B></p>
+            <p>Contact Name: {!relatedTo.Contact.Name}<br/>
+            Contact Details: {!relatedTo.Contact.Phone}/ {!relatedTo.Contact.MobilePhone}<br/>
+            Contact Email: {!relatedTo.Contact.Email}</p>
+            <p></p>
+            <p/>
+            <p><B>Case Details:</B></p>
+            <p>Request Type: {!relatedTo.RecordType.Name}<br/>
+            Description: {!relatedTo.Description}<br/>
+            Danfoss Sales Person: {!relatedTo.Owner.Name}</p>
+            <p></p>
+            <p/>
+            <p><B>Product Details:</B></p>
+            <P/>
+            <table border="1" >
+                <tr>
+                    <th>Product Code</th>
+                    <th>Product Description</th>
+                    <th>Requested Quantity</th>
+                </tr>
+                <apex:repeat var="cp" value="{!relatedTo.Case_Products__r}">
+                <tr>
+                    <td>{!cp.Product__r.Name}</td>
+                    <td>{!cp.Product__r.Product_Line__c}</td>
+                    <td>{!cp.Quantity__c}</td>
+                </tr>
+                </apex:repeat> 
+            </table>
+            <p/>
+            <p>Please reply back on the same email, with copy of quotation submitted to customer for our own records. </p>
+            <p/>
+            <p>Thanks and best regards,<br/>
+            Danfoss Customer Service Center</p>
+            <br/><br/><br/><br/><br/>
+            <p>*********Please Do Not Delete or Type below this Line*********<br/>
+            [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]</p>
+            </font>
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+    <messaging:plainTextEmailBody >
+    Dear Sir/Madam,
+    
+    We have a request from {!relatedTo.Contact.Name}, {!relatedTo.Account.Name} company. This request is being forwarded to you. Please find the case details below
+    
+    Customer details:
+    Contact Name: {!relatedTo.Contact.Name}
+    Contact Details: {!relatedTo.Contact.Phone}/ {!relatedTo.Contact.MobilePhone}
+    Contact Email: {!relatedTo.Contact.Email}
+    
+    Case details:
+    Request Type: {!relatedTo.RecordType.Name}
+    Description: {!relatedTo.Description}
+    Danfoss Sales Person: {!relatedTo.Owner.Name}
+    
+    Product Details:
+    [Product Code]  -  [Product Description]  -  [Requested Quantity]
+    <apex:repeat var="cp" value="{!relatedTo.Case_Products__r}">
+      [ {!cp.Product__r.Name} ] - [ {!cp.Product__r.Product_Line__c} ] - [ {!cp.Quantity__c} ]
+    </apex:repeat>
+    
+    Please reply back on the same email, with copy of quotation submitted to customer for our own records. 
+    
+    Thanks and best regards,
+    Danfoss Customer Service Center
+    
+    *********Please Do Not Delete or Type below this Line*********
+    [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]
+
+    </messaging:plainTextEmailBody>
+</messaging:emailTemplate>

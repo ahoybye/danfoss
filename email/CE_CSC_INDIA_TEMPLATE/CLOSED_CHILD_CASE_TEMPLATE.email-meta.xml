@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case Closure Email to the customer before closing the child case</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>CLOSED CHILD CASE TEMPLATE</name>
+    <style>formalLetter</style>
+    <subject>Case Number: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear Sir/ Madam,
+
+Your {!Case.RecordType} is created as a child case and we have associated the case with the Parent case already exisiting in our system with Case Number: {!Case.Parent}
+
+
+We will be closing the child case and all further correspondence will be done using the Parent case {!Case.Parent}
+
+
+Thanking you and assuring our best services always.
+
+Best regards,
+
+Danfoss Customer Service Center
+
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,21 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<font class="Apple-style-span" style="font-size: 12pt; background-color: rgb(255, 255, 255);" face="arial">Hello,</font> 
+<div style="font-size: 12pt; background-color: rgb(255, 255, 255);"><br></div>
+<div style="font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">The
+ Sales Office or Sales Group for account number 
+{!Account.SAP_Account_ID__c} has been changed in Salesforce. Please 
+update SAP to reflect this change.<br></font><font class="Apple-style-span" face="arial"><font class="Apple-style-span" face="arial"></font></font></div><br>Sales Office: {!Account.PS_Sales_Office__c} - {!Account.Sales_Manager__c}<br><div style="background-color: rgb(255, 255, 255);">Sales Group: {!Account.PS_Sales_Group__c} - {!Account.OwnerFullName}<br><br><table class="list" border="0" cellpadding="0" cellspacing="0"><tbody><tr class="dataRow odd"><th scope="row" class=" dataCell  "><br></th><td class=" dataCell  "><br></td></tr></tbody></table><font class="Apple-style-span" face="arial"><font size="3">Link to&nbsp;{!Account.Name}&nbsp;</font><font color="#0000ee"><u>{!Account.Link}</u></font><font size="3">.</font></font></div>
+<div style="font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><br></font></div>
+<div style="font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">Thank you</font></div>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

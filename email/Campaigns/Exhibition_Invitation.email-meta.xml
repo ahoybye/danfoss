@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Exhibition Invitation</name>
+    <style>formalLetter</style>
+    <subject>Exhibition Invitation</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+This is sample Exhibition Invitation.
+
+
+Please click here to unsubscribe
+
+
+
+
+
+Best regards,
+
+
+Sauer-Danfoss
+Sauer-Danfoss, Inc. (US)  2800 East 13th Street, Ames, IA 50010</textOnly>
+    <type>html</type>
+</EmailTemplate>

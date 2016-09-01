@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Rücknahme ist nur innerhalb von 14 Tagen nach Rechnungseingang möglich</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_Letterhead_Logo_Only</letterhead>
+    <name>Rücknahme nicht möglich District Energy</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>An: {!Case.Account}
+
+z.Hd. {!Case.Contact}
+
+W E R K S R Ü C K G A B E
+
+Ihre Anfrage
+vom
+Unsere Rechnung
+vom
+
+Eine Rücknahme ist nicht möglich, da:
+
+* Eine Rücknahme ist laut unseren AGB´s nur innerhalb von 14 Tagen nach Rechnungsstellung möglich.
+
+Gemäß der allgemeinen Verkaufs- und Lieferbedingungen der Danfoss GmbH District Energy Division werden Ware aus ordnungsgemäß erfüllten Kaufverträgen nicht zurückgenommen.
+
+In Ausnahmefällen, aus Kulanzgründen und mit vorheriger Einwilligung der Danfoss GmbH werden ausschließlich Lagerwaren (A-Produkte) aus der Preisliste innerhalb von 14 Tagen nach Rechnungserstellung zurückgenommen, die original und ungeöffnet verpackt sind. Hier wird eine Rücknahmegebühr berechnet.
+
+
+
+{!Case.OwnerFirstName} {!Case.OwnerLastName}
+Customer Service Central European Region
+
+Danfoss GmbH
+Carl-Legien-Straße 8, 63073 Offenbach/Main, Germany
+_______________________________________________
+Achtung, neue Kontaktdaten!!!
+Tel.:     +49 69 97533	044
+E-Mail: CS@danfoss.de
+_______________________________________________
+http://www.danfoss.de
+............
+Geschäftsführer: Ole Møller-Jensen
+Amtsgericht Offenbach am Main, Handelsregister HRB 41812
+Steuer-Nr. 035 225 07148, USt-ID. DE811179653
+............
+P   Go green - keep it on the screen   J
+
+Please consider the environment before printing this e-mail.
+*****
+This message and any files transmitted with it may be confidential and are intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system.
+*****
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen {!Case.Thread_Id}</textOnly>
+    <type>html</type>
+</EmailTemplate>

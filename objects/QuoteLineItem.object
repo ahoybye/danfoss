@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <fullName>NoDescNoCommNoPart</fullName>
+        <description>QuotePDF</description>
+        <displayedFields>
+            <field>Model_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Part_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UnitPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Distributor_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PricebookEntry.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>NoDescNoCommNoPart</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>NoDescYesCommNoPart</fullName>
+        <description>Quote PDF</description>
+        <displayedFields>
+            <field>Model_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PricebookEntry.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Distributor_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Part_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UnitPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Published_Customer_Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>NoDescYesCommNoPart</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>YesDescNoCommNoPart</fullName>
+        <description>QuotePDF</description>
+        <displayedFields>
+            <field>Part_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PricebookEntry.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Model_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UnitPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CurrencyIsoCode</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Distributor_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>YesDescNoCommNoPart</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>YesDescYesCommNoPart</fullName>
+        <description>Quote PDF</description>
+        <displayedFields>
+            <field>PricebookEntry.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>UnitPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Distributor_Price__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Model_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Published_Customer_Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Part_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>YesDescYesCommNoPart</label>
+    </fieldSets>
+    <fields>
+        <fullName>ApprovalComments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>These comments will not appear on the quote - internal use only</inlineHelpText>
+        <label>Approval Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Duration__c</fullName>
+        <description>Calculate time between Submitted and Approved.  Not on any page layout</description>
+        <externalId>false</externalId>
+        <formula>Approved_Time__c - Submitted_for_Approval_Time__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Approved Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Approver_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Approver Name</label>
+        <length>75</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BA_Decision_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>BA - Decision Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BA_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>BA_Decision_Time__c -  BA_Submitted_Time__c</formula>
+        <label>BA - Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BA_Pending__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>BA Pending</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BA_Submitted_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>BA - Submitted Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Business_Area_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Unit Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Area_Lead_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE( SUBSTITUTE(Product2.Business_Unit__c , &apos;Valves&apos;, &apos;&apos; ), &apos; &apos;, &apos;&apos;) &amp; &apos;Pricing@danfoss.com&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Business Area Lead - Email</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Unit</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClonedFlag__c</fullName>
+        <description>For use during the cloning process to indicate that the QLI is a clone so the Line Item Approval Stage isn&apos;t set to Auto-Approved until after update; the flag is cleared after the cloning process is complete so subsequent updates don&apos;t run the code that sets the Line Item Appoval Stage</description>
+        <externalId>false</externalId>
+        <label>ClonedFlag</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitQuoteLineId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>ConfigitQuoteLineId</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Countered__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Countered?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Currency_Match__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(TEXT( CurrencyIsoCode ) =  SAP_Currency__c , &quot;True&quot;, &quot;False&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Currency Match</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Part_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Part Number</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>Distributor_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Distributor Sell Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Email_of_Pricing__c</fullName>
+        <externalId>false</externalId>
+        <label>Email of Pricing</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_of_Sales_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Email of Sales Manager</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HasSchedule</fullName>
+    </fields>
+    <fields>
+        <fullName>Line_Item_Approval_Stage__c</fullName>
+        <description>DO NOT MAKE EDITS TO THIS FIELD!!! - WORKFLOWS AND TRIGGERS DEPEND ON THE VALUES.  This is the approval status field of the individual line item. This is updated by a workflow to Needs Sales Manager Review if there is a discount or a currency mismatch. It is also used to advance overall Quote approval stage field(s) via workflow and rollup summaries.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this Line Item needs to be escalated to Pricing Review or Business Area Review, please select here. If approving this line item is within your authority, please Approve or Decline.</inlineHelpText>
+        <label>Line Item Approval Stage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sales Manager - Requires Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricing Team - Requires Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Unit - Requires Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Manager - Countered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricing Team - Countered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Unit - Countered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account Owner - Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Manager - Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricing Team - Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Unit - Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Unit - Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled by Account Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Model_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Model Code</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multiplier__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(SAP_List_Price__c=0, 0, UnitPrice /  SAP_List_Price__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Multiplier</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <description>the order in which the line items will appear</description>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PS_Customer_Product_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Product Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Production</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prototype</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Part_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Part Number</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <inlineHelpText>This is the product description</inlineHelpText>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Published_Customer_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>These comments will appear on the quote by line item</inlineHelpText>
+        <label>Comments Published To Customer</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>QuoteId</fullName>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>QuoteId__c</fullName>
+        <externalId>false</externalId>
+        <formula>QuoteId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>QuoteId</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP Currency</label>
+        <length>3</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_List_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please note - This may not be a list Price - If this price and the Current SAP Price are the same then this is not a list price but a special net price.</inlineHelpText>
+        <label>SAP List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Material_Number_CE__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product2.SAP_Material_Code_CE__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SAP Material Number (CE)</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current SAP price for this customer is shown if a list and discount is in place.</inlineHelpText>
+        <label>Current SAP Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Submitted_for_Approval_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted for Approval Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+    <validationRules>
+        <fullName>Null_selection_not_allowed</fullName>
+        <active>true</active>
+        <description>to prevent the user selecting &quot;-None-&quot;</description>
+        <errorConditionFormula>AND(ISCHANGED(Line_Item_Approval_Stage__c), ISPICKVAL(Line_Item_Approval_Stage__c, &quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>Line_Item_Approval_Stage__c</errorDisplayField>
+        <errorMessage>Stage cannot be set to &quot;--None--&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Users_cannot_edit_configit_line_items</fullName>
+        <active>true</active>
+        <errorConditionFormula>(
+$Profile.Name &lt;&gt; &quot;API Only User (CE)&quot;
+)
+ &amp;&amp; NOT(ISNEW()) &amp;&amp; NOT(ISCLONE()) &amp;&amp; ISPICKVAL(Quote.Opportunity.Account.Business_Org__c,&quot;Climate and Energy&quot;) &amp;&amp; NOT(ISBLANK(ConfigitQuoteLineId__c))</errorConditionFormula>
+        <errorMessage>This Line Item may only be editted in Configit</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Refresh_SAP_Price</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Refresh SAP Price</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/RefreshQuoteSAPPrice?id={!QuoteLineItem.QuoteId__c }&amp;quoteLineItemId={!QuoteLineItem.Id}&amp;scontrolCaching=1</url>
+    </webLinks>
+</CustomObject>

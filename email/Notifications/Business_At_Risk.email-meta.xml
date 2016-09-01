@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Business At Risk</name>
+    <style>formalLetter</style>
+    <subject>{!Opportunity.Name} - Existing Business - is At Risk</subject>
+    <textOnly>Notice:
+ 
+{!UserLicense.Name},
+ 
+{!Opportunity.Name} has been identified as Type = {!Opportunity.Type} and Stage = {!Opportunity.StageName} 
+Opportunity Owner - {!Opportunity.OwnerFullName}Description - {!Opportunity.Description}
+
+
+Click here to review the Opportunity.
+ 
+ </textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contract Expired</name>
+    <style>none</style>
+    <subject>Contract has EXPIRED: Notify {!Contract__c.Customer__c} of {!Contract__c.Name}</subject>
+    <textOnly>The subject Contract has expired and notification needs to be sent to the customer. Please send a notice to the customer confirming expiration and upload a copy of the correspondence in the Contract Documents section of the Contract Record.  NOTICE: taking no action will result in Expiration without notice to the customer. It is very important to notify the customer and document the confirmation of expiration in the Contract Record within the &quot;Signed Documents&quot; section.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

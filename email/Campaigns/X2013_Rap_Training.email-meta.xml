@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Letter for Rap (review of applications and products)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>2013 Rap Training</name>
+    <style>formalLetter</style>
+    <subject>★ Reminder: Applicaton Deadline July Session Open Circuit Rap</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+
+Please find attached the 2013 Sauer-Danfoss Open Circuit RAP Application Deadline.
+
+
+For more information, please contact your Sauer-Danfoss Account Manager.
+
+
+Best regards,
+
+
+Sauer-Danfoss
+Sauer-Danfoss, Inc. (US)  2800 East 13th Street, Ames, IA 50010</textOnly>
+    <type>html</type>
+</EmailTemplate>

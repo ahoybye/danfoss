@@ -1,0 +1,64 @@
+<apex:page standardController="Account_Plan__c" extensions="AccountPlanShareOfWalletExtension" action="{!init}">  
+        <apex:form id="form">
+        <apex:pageMessages />
+        <apex:pageBlock title="Share of Wallet Danfoss">
+            <apex:pageblockTable value="{!SoW}" var="s" columns="10">
+                <apex:column value="{!s.Product_Line__c}"/>
+                <apex:column value="{!s.SoW_for__c}"/>
+                <apex:column value="{!s.Total_Potential_TO__c}">
+                    <apex:facet name="footer" >
+                        <apex:outputField value="{!SoWSum.Total_Potential_TO__c}"/>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!s.LY_TO_Baseline__c}">
+                    <apex:facet name="footer">
+                        <apex:outputField value="{!SoWSum.LY_TO_Baseline__c}"/>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!s.CY_Incremental_TO__c}">
+                    <apex:facet name="footer">
+                        <apex:outputField value="{!SoWSum.CY_Incremental_TO__c}"/>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!s.Targer_Turnover_Current_Year__c}">
+                    <apex:facet name="footer">
+                        <apex:outputField value="{!SoWSum.Targer_Turnover_Current_Year__c}"/>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!s.CY_Non_Address_TO__c}">
+                    <apex:facet name="footer">
+                        <apex:outputField value="{!SoWSum.CY_Non_Address_TO__c}"/>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!s.Future_Addressable_Turnover__c}">
+                    <apex:facet name="footer">
+                        <apex:outputField value="{!SoWSum.Future_Addressable_Turnover__c}"/>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!s.SoW_Total_Pot_TO__c}">
+                    <apex:facet name="footer">
+                        <apex:outputField value="{!SoWSum.SoW_Total_Pot_TO__c}"/>
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!s.SoW_Total_Addressable_Turnover__c}">
+                    <apex:facet name="footer">
+                        <apex:outputField value="{!SoWSum.SoW_Total_Addressable_Turnover__c}"/>
+                    </apex:facet>
+                </apex:column>
+            </apex:pageblockTable>
+            <apex:panelGrid columns="10">
+                <c:PrevNextLinks setCon="{!setCon}" rerender="form" status="setConStatus"/>
+                <c:PageNumber setCon="{!setCon}"/>
+                <apex:outputPanel style="color:#FF0000;font-weight:bold">
+                    <apex:actionStatus id="setConStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:pageBlock>
+        <!--<apex:panelGrid columns="4">
+            <apex:commandLink action="{!first}">First </apex:commandLink>
+            <apex:commandLink action="{!previous}" rendered="{!hasPrevious}">Previous</apex:commandLink>
+            <apex:commandLink action="{!next}" rendered="{!hasNext}">Next</apex:commandLink>
+            <apex:commandLink action="{!last}">Last</apex:commandLink>
+        </apex:panelGrid>-->
+    </apex:form>
+</apex:page>

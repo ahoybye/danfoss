@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Area Master</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Area Master Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- Channel Description --></label>
+        <name>Channel_Description__c</name>
+        <picklistValues>
+            <masterLabel>0: Common Distribution Channel</masterLabel>
+            <translation><!-- 0: Common Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10: CNRC Distrb. Channel</masterLabel>
+            <translation><!-- 10: CNRC Distrb. Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11: DIR Distribution Channel</masterLabel>
+            <translation><!-- 11: DIR Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18: CNCD Distribution Channel</masterLabel>
+            <translation><!-- 18: CNCD Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19: CNCC Distribution Channel</masterLabel>
+            <translation><!-- 19: CNCC Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: AG Distribution Channel</masterLabel>
+            <translation><!-- 1: AG Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20: CNWV Distribution Channel</masterLabel>
+            <translation><!-- 20: CNWV Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23: DKAP Thermostatic</masterLabel>
+            <translation><!-- 23: DKAP Thermostatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24: DKAP Surface:</masterLabel>
+            <translation><!-- 24: DKAP Surface: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25: DKAP Presswork</masterLabel>
+            <translation><!-- 25: DKAP Presswork --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26: DKAP Plastic</masterLabel>
+            <translation><!-- 26: DKAP Plastic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27: PLCD Distribution Channel</masterLabel>
+            <translation><!-- 27: PLCD Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31: DESC Refrigeration</masterLabel>
+            <translation><!-- 31: DESC Refrigeration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32: DESC Burners</masterLabel>
+            <translation><!-- 32: DESC Burners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33: DESC Heating</masterLabel>
+            <translation><!-- 33: DESC Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34: DESC Drives</masterLabel>
+            <translation><!-- 34: DESC Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35: DESC NESSIE</masterLabel>
+            <translation><!-- 35: DESC NESSIE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36: DESC Analytical</masterLabel>
+            <translation><!-- 36: DESC Analytical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46: KZSC</masterLabel>
+            <translation><!-- 46: KZSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>53: CNIC Distribution Channel</masterLabel>
+            <translation><!-- 53: CNIC Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>54: CNDH Distribution Channel</masterLabel>
+            <translation><!-- 54: CNDH Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>57: PLRC (D. Saginomiya)</masterLabel>
+            <translation><!-- 57: PLRC (D. Saginomiya) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60: RUCO</masterLabel>
+            <translation><!-- 60: RUCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>64: CNCCS Distribution Channel</masterLabel>
+            <translation><!-- 64: CNCCS Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>65: PLRC Producer Branch</masterLabel>
+            <translation><!-- 65: PLRC Producer Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7: MX Distribution Channel</masterLabel>
+            <translation><!-- 7: MX Distribution Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8: PLIC Distribution Channel</masterLabel>
+            <translation><!-- 8: PLIC Distribution Channel --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>Channel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division Description --></label>
+        <name>Division_Description__c</name>
+        <picklistValues>
+            <masterLabel>0: Common Division</masterLabel>
+            <translation><!-- 0: Common Division --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10: CNRC</masterLabel>
+            <translation><!-- 10: CNRC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11: DIR</masterLabel>
+            <translation><!-- 11: DIR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12: MCFD PL12</masterLabel>
+            <translation><!-- 12: MCFD PL12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14: High Pressure Pumps</masterLabel>
+            <translation><!-- 14: High Pressure Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16: PL16</masterLabel>
+            <translation><!-- 16: PL16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17: RAFRCC PL17</masterLabel>
+            <translation><!-- 17: RAFRCC PL17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18: Gearmotors PL 18</masterLabel>
+            <translation><!-- 18: Gearmotors PL 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19: CNCC</masterLabel>
+            <translation><!-- 19: CNCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: AC-R</masterLabel>
+            <translation><!-- 1: AC-R --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20: CNWV - DKFH</masterLabel>
+            <translation><!-- 20: CNWV - DKFH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21: DKFE</masterLabel>
+            <translation><!-- 21: DKFE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22: Heat Pumps</masterLabel>
+            <translation><!-- 22: Heat Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23: DKAP Thermostatic</masterLabel>
+            <translation><!-- 23: DKAP Thermostatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24: DKAP Surface</masterLabel>
+            <translation><!-- 24: DKAP Surface --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25: DKAP Presswork</masterLabel>
+            <translation><!-- 25: DKAP Presswork --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26: Solar Inverters</masterLabel>
+            <translation><!-- 26: Solar Inverters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27: PLCD</masterLabel>
+            <translation><!-- 27: PLCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28: Hydronic Balancing</masterLabel>
+            <translation><!-- 28: Hydronic Balancing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29: PL29</masterLabel>
+            <translation><!-- 29: PL29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2: Burner Components</masterLabel>
+            <translation><!-- 2: Burner Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30: PLHP (Thermia)</masterLabel>
+            <translation><!-- 30: PLHP (Thermia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31: DEH Heat Exchangers</masterLabel>
+            <translation><!-- 31: DEH Heat Exchangers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32: Heavy Duty Stations</masterLabel>
+            <translation><!-- 32: Heavy Duty Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33: Light Duty Stations</masterLabel>
+            <translation><!-- 33: Light Duty Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34: Floor Heating Hydron</masterLabel>
+            <translation><!-- 34: Floor Heating Hydron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35: Energy Metering</masterLabel>
+            <translation><!-- 35: Energy Metering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>37: Danfoss Turbocor</masterLabel>
+            <translation><!-- 37: Danfoss Turbocor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>39: Qinbao</masterLabel>
+            <translation><!-- 39: Qinbao --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3: Comfort Controls</masterLabel>
+            <translation><!-- 3: Comfort Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>42: MXAP</masterLabel>
+            <translation><!-- 42: MXAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>43: DKAP</masterLabel>
+            <translation><!-- 43: DKAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44: DKHC</masterLabel>
+            <translation><!-- 44: DKHC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45: DKCC</masterLabel>
+            <translation><!-- 45: DKCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46: KZSC</masterLabel>
+            <translation><!-- 46: KZSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4: AG-Central</masterLabel>
+            <translation><!-- 4: AG-Central --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>51: CNSCS</masterLabel>
+            <translation><!-- 51: CNSCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>52: CNSCM</masterLabel>
+            <translation><!-- 52: CNSCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>53: CNIC</masterLabel>
+            <translation><!-- 53: CNIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>54: CNDH</masterLabel>
+            <translation><!-- 54: CNDH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>55: CNAP</masterLabel>
+            <translation><!-- 55: CNAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>57: PLRCA</masterLabel>
+            <translation><!-- 57: PLRCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>58: DIR</masterLabel>
+            <translation><!-- 58: DIR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>59: CNDD</masterLabel>
+            <translation><!-- 59: CNDD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5: AC-O Staff Organizat</masterLabel>
+            <translation><!-- 5: AC-O Staff Organizat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60: RUCO</masterLabel>
+            <translation><!-- 60: RUCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>61: DKIC Nordborg</masterLabel>
+            <translation><!-- 61: DKIC Nordborg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>62: DKIC Kolding</masterLabel>
+            <translation><!-- 62: DKIC Kolding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>63: PLIC</masterLabel>
+            <translation><!-- 63: PLIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>64: CNCCS</masterLabel>
+            <translation><!-- 64: CNCCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>65: PLRCA Producer Br.</masterLabel>
+            <translation><!-- 65: PLRCA Producer Br. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>66: HKSC</masterLabel>
+            <translation><!-- 66: HKSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>67: BRAP</masterLabel>
+            <translation><!-- 67: BRAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>68: MXCO</masterLabel>
+            <translation><!-- 68: MXCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>69: DEIC</masterLabel>
+            <translation><!-- 69: DEIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6: RADEHC PL06</masterLabel>
+            <translation><!-- 6: RADEHC PL06 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>70: BRCO</masterLabel>
+            <translation><!-- 70: BRCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>71: USRA</masterLabel>
+            <translation><!-- 71: USRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>72: RAV-CO</masterLabel>
+            <translation><!-- 72: RAV-CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>74: MXCU</masterLabel>
+            <translation><!-- 74: MXCU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75: MXHC</masterLabel>
+            <translation><!-- 75: MXHC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>76: MXRCI</masterLabel>
+            <translation><!-- 76: MXRCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>77: MCHX (RA)</masterLabel>
+            <translation><!-- 77: MCHX (RA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7: MXRCC</masterLabel>
+            <translation><!-- 7: MXRCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>81: PL81</masterLabel>
+            <translation><!-- 81: PL81 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>83: PL83</masterLabel>
+            <translation><!-- 83: PL83 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>84: PL84</masterLabel>
+            <translation><!-- 84: PL84 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>85: PL85</masterLabel>
+            <translation><!-- 85: PL85 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>89: PL89</masterLabel>
+            <translation><!-- 89: PL89 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8: DEC Controls</masterLabel>
+            <translation><!-- 8: DEC Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90: HES-AV - Ventilation</masterLabel>
+            <translation><!-- 90: HES-AV - Ventilation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>92: PL92</masterLabel>
+            <translation><!-- 92: PL92 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>94: PL94</masterLabel>
+            <translation><!-- 94: PL94 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>96: PL96</masterLabel>
+            <translation><!-- 96: PL96 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>97: PL97</masterLabel>
+            <translation><!-- 97: PL97 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>98: PL98</masterLabel>
+            <translation><!-- 98: PL98 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>99: PL99</masterLabel>
+            <translation><!-- 99: PL99 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9: PL09</masterLabel>
+            <translation><!-- 9: PL09 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Area ID --></label>
+        <name>Sales_Area_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Area --></label>
+        <name>Sales_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Org Description --></label>
+        <name>Sales_Org_Description__c</name>
+        <picklistValues>
+            <masterLabel>1000: HEATING SEGMENT</masterLabel>
+            <translation><!-- 1000: HEATING SEGMENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>101: MX Sales Org.</masterLabel>
+            <translation><!-- 101: MX Sales Org. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>102: PLIC</masterLabel>
+            <translation><!-- 102: PLIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>103: USRA</masterLabel>
+            <translation><!-- 103: USRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>104: CNRC</masterLabel>
+            <translation><!-- 104: CNRC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>105: DEIC</masterLabel>
+            <translation><!-- 105: DEIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>107: Not used now 0101</masterLabel>
+            <translation><!-- 107: Not used now 0101 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>109: PLCD</masterLabel>
+            <translation><!-- 109: PLCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1101: MC Central CRM divis</masterLabel>
+            <translation><!-- 1101: MC Central CRM divis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1103: RA Central CRM divis</masterLabel>
+            <translation><!-- 1103: RA Central CRM divis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1105: HE Central CRM divis</masterLabel>
+            <translation><!-- 1105: HE Central CRM divis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1107: DEN Central CRM divi</masterLabel>
+            <translation><!-- 1107: DEN Central CRM divi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1109: CNRCI</masterLabel>
+            <translation><!-- 1109: CNRCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>110: CNCD</masterLabel>
+            <translation><!-- 110: CNCD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1110: CNDH</masterLabel>
+            <translation><!-- 1110: CNDH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1116: CNDD 1116</masterLabel>
+            <translation><!-- 1116: CNDD 1116 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1117: CNRCC Line Comp.</masterLabel>
+            <translation><!-- 1117: CNRCC Line Comp. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>111: CNCC (Next Gen)</masterLabel>
+            <translation><!-- 111: CNCC (Next Gen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1121: CNRC Alfa valve</masterLabel>
+            <translation><!-- 1121: CNRC Alfa valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>112: CNWV</masterLabel>
+            <translation><!-- 112: CNWV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>113: CNCO</masterLabel>
+            <translation><!-- 113: CNCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>114: HKSC</masterLabel>
+            <translation><!-- 114: HKSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>116: CNDD</masterLabel>
+            <translation><!-- 116: CNDD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>117: CNSCS</masterLabel>
+            <translation><!-- 117: CNSCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>118: CNSCM</masterLabel>
+            <translation><!-- 118: CNSCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>119: CNIC</masterLabel>
+            <translation><!-- 119: CNIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11: DIR</masterLabel>
+            <translation><!-- 11: DIR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1260: Secop Compressors</masterLabel>
+            <translation><!-- 1260: Secop Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1350: Danfoss LLC</masterLabel>
+            <translation><!-- 1350: Danfoss LLC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13: RAV-CO</masterLabel>
+            <translation><!-- 13: RAV-CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1401: MXRC in CC 0171</masterLabel>
+            <translation><!-- 1401: MXRC in CC 0171 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1402: MXSC in CC 0171</masterLabel>
+            <translation><!-- 1402: MXSC in CC 0171 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1407: MXAP in CC 0171</masterLabel>
+            <translation><!-- 1407: MXAP in CC 0171 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>144: RUSC</masterLabel>
+            <translation><!-- 144: RUSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>146: KZSC</masterLabel>
+            <translation><!-- 146: KZSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1470: HAGO sales org.</masterLabel>
+            <translation><!-- 1470: HAGO sales org. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1490: SEHP</masterLabel>
+            <translation><!-- 1490: SEHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>150: CNCCS</masterLabel>
+            <translation><!-- 150: CNCCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>151: CNAP</masterLabel>
+            <translation><!-- 151: CNAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>153: SGSC</masterLabel>
+            <translation><!-- 153: SGSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>160: BRAP Sales Org.</masterLabel>
+            <translation><!-- 160: BRAP Sales Org. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>161: BRCO Sales Org.</masterLabel>
+            <translation><!-- 161: BRCO Sales Org. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1620: BRSC</masterLabel>
+            <translation><!-- 1620: BRSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>168: PLRC (D. Saginomiya)</masterLabel>
+            <translation><!-- 168: PLRC (D. Saginomiya) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>169: PLRC Producer Branch</masterLabel>
+            <translation><!-- 169: PLRC Producer Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>171: MXCO</masterLabel>
+            <translation><!-- 171: MXCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>172</masterLabel>
+            <translation><!-- 172 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1750: FRCC</masterLabel>
+            <translation><!-- 1750: FRCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1780: DEGM</masterLabel>
+            <translation><!-- 1780: DEGM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1781: OGD</masterLabel>
+            <translation><!-- 1781: OGD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178A: BAU - ATSC</masterLabel>
+            <translation><!-- 178A: BAU - ATSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178B: BAU - BESC</masterLabel>
+            <translation><!-- 178B: BAU - BESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178C: BAU - CZSC</masterLabel>
+            <translation><!-- 178C: BAU - CZSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178D: BAU - DESC</masterLabel>
+            <translation><!-- 178D: BAU - DESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178E: BAU - ESSC</masterLabel>
+            <translation><!-- 178E: BAU - ESSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178F: BAU - FRSC</masterLabel>
+            <translation><!-- 178F: BAU - FRSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178H: BAU - CHSC</masterLabel>
+            <translation><!-- 178H: BAU - CHSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178I: BAU - ITSC</masterLabel>
+            <translation><!-- 178I: BAU - ITSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178K: BAU - DKSC</masterLabel>
+            <translation><!-- 178K: BAU - DKSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178N: BAU - NLSC</masterLabel>
+            <translation><!-- 178N: BAU - NLSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178S: BAU - SKSC</masterLabel>
+            <translation><!-- 178S: BAU - SKSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>178U: BAU - UACO</masterLabel>
+            <translation><!-- 178U: BAU - UACO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1990: DKDENR</masterLabel>
+            <translation><!-- 1990: DKDENR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1: DKRC/IC</masterLabel>
+            <translation><!-- 1: DKRC/IC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010: ATSC</masterLabel>
+            <translation><!-- 2010: ATSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020: HRSC</masterLabel>
+            <translation><!-- 2020: HRSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2030: HUSC</masterLabel>
+            <translation><!-- 2030: HUSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2040: SKSC</masterLabel>
+            <translation><!-- 2040: SKSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2041: SKAPZ</masterLabel>
+            <translation><!-- 2041: SKAPZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2042: SKGM</masterLabel>
+            <translation><!-- 2042: SKGM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2050: CZSC</masterLabel>
+            <translation><!-- 2050: CZSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2060: CSSC</masterLabel>
+            <translation><!-- 2060: CSSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2080: ROSC</masterLabel>
+            <translation><!-- 2080: ROSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2090: SISC</masterLabel>
+            <translation><!-- 2090: SISC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2100: FRSC</masterLabel>
+            <translation><!-- 2100: FRSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2110: UACO</masterLabel>
+            <translation><!-- 2110: UACO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2120: GBSC</masterLabel>
+            <translation><!-- 2120: GBSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2140: NLSC</masterLabel>
+            <translation><!-- 2140: NLSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2160: BESC</masterLabel>
+            <translation><!-- 2160: BESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2170: CHSC</masterLabel>
+            <translation><!-- 2170: CHSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2190: IESC</masterLabel>
+            <translation><!-- 2190: IESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2200: ESSC</masterLabel>
+            <translation><!-- 2200: ESSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2210</masterLabel>
+            <translation><!-- 2210 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2220: ITSC</masterLabel>
+            <translation><!-- 2220: ITSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2230: DKSC</masterLabel>
+            <translation><!-- 2230: DKSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2240: NOSC</masterLabel>
+            <translation><!-- 2240: NOSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2250: SESC</masterLabel>
+            <translation><!-- 2250: SESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2260: FISC</masterLabel>
+            <translation><!-- 2260: FISC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2270: LTSC</masterLabel>
+            <translation><!-- 2270: LTSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2280: EESC</masterLabel>
+            <translation><!-- 2280: EESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2290: LVSC</masterLabel>
+            <translation><!-- 2290: LVSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2300: DESC</masterLabel>
+            <translation><!-- 2300: DESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2310: DEIC</masterLabel>
+            <translation><!-- 2310: DEIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2370: BGSC</masterLabel>
+            <translation><!-- 2370: BGSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2380: PLSC</masterLabel>
+            <translation><!-- 2380: PLSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2381: PLSZ</masterLabel>
+            <translation><!-- 2381: PLSZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2382: PLFH</masterLabel>
+            <translation><!-- 2382: PLFH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2390: ISSC</masterLabel>
+            <translation><!-- 2390: ISSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2400: ZASC</masterLabel>
+            <translation><!-- 2400: ZASC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2410: SGSC</masterLabel>
+            <translation><!-- 2410: SGSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2420: PHSC</masterLabel>
+            <translation><!-- 2420: PHSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2430: MYSC</masterLabel>
+            <translation><!-- 2430: MYSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2450: NZSC</masterLabel>
+            <translation><!-- 2450: NZSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2460: INSC</masterLabel>
+            <translation><!-- 2460: INSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2470: TWSC</masterLabel>
+            <translation><!-- 2470: TWSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2480: THSC</masterLabel>
+            <translation><!-- 2480: THSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2490: KRSC</masterLabel>
+            <translation><!-- 2490: KRSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2500: AUSC</masterLabel>
+            <translation><!-- 2500: AUSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2510: VESC</masterLabel>
+            <translation><!-- 2510: VESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2520: COSC</masterLabel>
+            <translation><!-- 2520: COSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2530: CLSC</masterLabel>
+            <translation><!-- 2530: CLSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2550: ARSC</masterLabel>
+            <translation><!-- 2550: ARSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2560: MXSC</masterLabel>
+            <translation><!-- 2560: MXSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2580: USSC</masterLabel>
+            <translation><!-- 2580: USSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2590: TRSC</masterLabel>
+            <translation><!-- 2590: TRSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2600: AESC</masterLabel>
+            <translation><!-- 2600: AESC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2610: CNSCS</masterLabel>
+            <translation><!-- 2610: CNSCS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3080: BAU - OGD - OLD</masterLabel>
+            <translation><!-- 3080: BAU - OGD - OLD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3081: BAU - OGD</masterLabel>
+            <translation><!-- 3081: BAU - OGD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3090: SKGM</masterLabel>
+            <translation><!-- 3090: SKGM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3120: GS</masterLabel>
+            <translation><!-- 3120: GS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3150: CNDDH</masterLabel>
+            <translation><!-- 3150: CNDDH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3180: CNSE</masterLabel>
+            <translation><!-- 3180: CNSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3310: Solar Inverters</masterLabel>
+            <translation><!-- 3310: Solar Inverters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3430: DKEH</masterLabel>
+            <translation><!-- 3430: DKEH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3480: Veria (DKSCV)</masterLabel>
+            <translation><!-- 3480: Veria (DKSCV) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3610: INRC</masterLabel>
+            <translation><!-- 3610: INRC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3611: INIR</masterLabel>
+            <translation><!-- 3611: INIR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3650: IDSC</masterLabel>
+            <translation><!-- 3650: IDSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>41: RA Sales &amp; Logistics</masterLabel>
+            <translation><!-- 41: RA Sales &amp; Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4: MCFDGBO Sales Org.</masterLabel>
+            <translation><!-- 4: MCFDGBO Sales Org. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>55: DKAP Thermostats</masterLabel>
+            <translation><!-- 55: DKAP Thermostats --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56: DKAP Surface</masterLabel>
+            <translation><!-- 56: DKAP Surface --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>57: Pressworks A/S</masterLabel>
+            <translation><!-- 57: Pressworks A/S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>58: DKAP Plastics</masterLabel>
+            <translation><!-- 58: DKAP Plastics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5: MCFDDK Sales Org.</masterLabel>
+            <translation><!-- 5: MCFDDK Sales Org. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6: MCFDGBS Sales Org.</masterLabel>
+            <translation><!-- 6: MCFDGBS Sales Org. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>780: DKHEL</masterLabel>
+            <translation><!-- 780: DKHEL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8700: PLDH</masterLabel>
+            <translation><!-- 8700: PLDH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8800: FIDH</masterLabel>
+            <translation><!-- 8800: FIDH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8820: RODEN</masterLabel>
+            <translation><!-- 8820: RODEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8860: CNDHA</masterLabel>
+            <translation><!-- 8860: CNDHA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8870: CNDENH</masterLabel>
+            <translation><!-- 8870: CNDENH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9160: BAU - FISC</masterLabel>
+            <translation><!-- 9160: BAU - FISC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9170: BAU - GBSC</masterLabel>
+            <translation><!-- 9170: BAU - GBSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9180: Altra LLC</masterLabel>
+            <translation><!-- 9180: Altra LLC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Org --></label>
+        <name>Sales_Org__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

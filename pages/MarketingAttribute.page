@@ -1,0 +1,40 @@
+<apex:page standardController="Account_Division_Data__c" tabStyle="Account" extensions="MarketingAttributeExtension"  showHeader="false">
+  	<apex:form id="form">
+        <apex:pageMessages />
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save" disabled="{!Account_Division_Data__c.Account_Division_Data_Config__c = null}"/>
+                <apex:commandButton action="{!saveAndNew}" value="Save & new" rendered="false"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Division Data" columns="1">
+                
+                <apex:selectList id="selectAttribSet" size="1" label="Attribute Set" value="{!attribSetValue}" rendered="{!isCreate}">
+                    <apex:actionSupport event="onchange" action="{!getAttribValues}" rerender="form"/>
+                    <apex:selectOptions value="{!attribSetOptions}"/>                    
+                </apex:selectList>
+                <apex:outputText value="{!Account_Division_Data__c.Attribute_Set_lkp__c}" rendered="{!!isCreate}"/>
+                
+                <apex:selectList id="selectAttrib" size="1" label="Attribute" value="{!attribValue}" rendered="{!isCreate}">
+                    <apex:actionSupport event="onchange" action="{!getPicklistValues}" rerender="form"/>
+                    <apex:selectOptions value="{!attribOptions}"/>                    
+                </apex:selectList>
+                <apex:outputText value="{!Account_Division_Data__c.Attribute_lkp__c}" rendered="{!!isCreate}"/>
+                
+                <apex:selectList size="1" id="selectAttribValue" label="Value" value="{!Account_Division_Data__c.Value__c}" rendered="{!isPicklist}" >
+                    <apex:selectOptions value="{!valueOptions}"/>                    
+                </apex:selectList> 
+                
+                <apex:selectList size="5" id="selectAttribMultiValue" label="Value" value="{!selectedValues}" rendered="{!isMultiValuePicklist}" multiselect="true" >
+                    <apex:selectOptions value="{!valueOptions}"/>                    
+                </apex:selectList> 
+    
+                <apex:inputField id="attribValue" label="Value" value="{!Account_Division_Data__c.Value__c}" rendered="{!isText}" />         
+                <apex:inputField id="attribNumberValue" label="Value" value="{!Account_Division_Data__c.ValueNumber__c}"  rendered="{!isNumber}" />
+            
+            </apex:pageBlockSection>    
+        </apex:pageBlock>
+                
+    </apex:form>
+
+</apex:page>

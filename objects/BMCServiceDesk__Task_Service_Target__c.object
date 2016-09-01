@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <fullName>BMCServiceDesk__SF1_ListView</fullName>
+        <availableFields>
+            <field>BMCServiceDesk__ElapsedTime__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__SLAName__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__StartDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__TargetEndDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>This fieldset is used for fields in service target List page</description>
+        <displayedFields>
+            <field>BMCServiceDesk__TimeRemaining__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__StateValue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__TargetType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Salesforce1 - List View</label>
+    </fieldSets>
+    <fields>
+        <fullName>BMCServiceDesk__ClockPauseDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Clock Pause Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ClockState__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Clock</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Running</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paused</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stopped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ElapsedTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Elapsed Time</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKBusinessService__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKSLA__r.BMCServiceDesk__FKBusinessService__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKSLA__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SLA</label>
+        <referenceTo>BMCServiceDesk__ServiceLevelAgreement__c</referenceTo>
+        <relationshipLabel>Task Service Targets</relationshipLabel>
+        <relationshipName>Task_Service_Targets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKServiceTarget__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Service Target</label>
+        <referenceTo>BMCServiceDesk__Service_Target__c</referenceTo>
+        <relationshipLabel>Task Service Targets</relationshipLabel>
+        <relationshipName>Task_Service_Targets</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKTask__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Task</label>
+        <referenceTo>BMCServiceDesk__Task__c</referenceTo>
+        <relationshipLabel>Task Service Targets</relationshipLabel>
+        <relationshipName>Task_Service_Targets</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__IsCanceled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Canceled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__PausedDuration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Paused Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__SLAName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKSLA__r.BMCServiceDesk__AgreementTitle__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agreement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ServiceTargetName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKServiceTarget__r.BMCServiceDesk__Service_Target_Title__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Target Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Service_Target_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKServiceTarget__r.BMCServiceDesk__Target__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Target Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Service_Target_Support_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKServiceTarget__r.BMCServiceDesk__FKSupport_Hours__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Target Support Hours</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__StartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__StateValue__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(BMCServiceDesk__IsCanceled__c = true, $Label.BMCServiceDesk__ServiceTargetStatus_Canceled,
+CASE( BMCServiceDesk__ClockState__c, &apos;Running&apos;, $Label.BMCServiceDesk__ServiceTargetStatus_In_process,
+&apos;Paused&apos;, $Label.BMCServiceDesk__ServiceTargetStatus_Pending,
+&apos;Stopped&apos;,$Label.BMCServiceDesk__ServiceTargetStatus_Completed,
+$Label.BMCServiceDesk__ServiceTargetStatus_Attached))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( BMCServiceDesk__IsCanceled__c = True , $Label.BMCServiceDesk__ServiceTargetStatus_Cancelled,
+IF( ISNULL( BMCServiceDesk__TargetEndDate__c ) , $Label.BMCServiceDesk__ServiceTargetStatus_OK,
+IF( ISNULL( BMCServiceDesk__EndDate__c ),
+IF( ISNULL( BMCServiceDesk__ClockPauseDate__c ) ,
+IF( BMCServiceDesk__TargetEndDate__c &gt; NOW() , IF( ISNULL(BMCServiceDesk__WarningTime__c) || BMCServiceDesk__WarningTime__c &gt; NOW() , $Label.BMCServiceDesk__ServiceTargetStatus_OK, $Label.BMCServiceDesk__ServiceTargetStatus_Warning) , $Label.BMCServiceDesk__ServiceTargetStatus_Missed) , IF( BMCServiceDesk__TargetEndDate__c &gt; BMCServiceDesk__ClockPauseDate__c , IF( ISNULL(BMCServiceDesk__WarningTime__c) || BMCServiceDesk__WarningTime__c &gt; BMCServiceDesk__ClockPauseDate__c , $Label.BMCServiceDesk__ServiceTargetStatus_OK, $Label.BMCServiceDesk__ServiceTargetStatus_Warning) , $Label.BMCServiceDesk__ServiceTargetStatus_Missed)),
+IF( BMCServiceDesk__EndDate__c - BMCServiceDesk__TargetEndDate__c &gt; 0, $Label.BMCServiceDesk__ServiceTargetStatus_Missed, $Label.BMCServiceDesk__ServiceTargetStatus_Met
+)
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__TargetBusinessDays__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Target Business Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__TargetEndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Target End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__TargetTypeValue__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKServiceTarget__r.BMCServiceDesk__TargetTypeValue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Target Type~</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__TargetType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKServiceTarget__r.BMCServiceDesk__Target_Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Target Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Target_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Target Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Task__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKTask__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Task~</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__TimeRemaining__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Time Remaining</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__WarningTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Warning Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+</CustomObject>

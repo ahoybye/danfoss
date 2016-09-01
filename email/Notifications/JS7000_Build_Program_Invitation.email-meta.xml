@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>JS700 Build Program Invitation and Agreement</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>JS7000 Build Program Invitation</name>
+    <style>formalLetter</style>
+    <subject>JS7000 Joystick Build Program Invitation</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+
+{!Account.ShippingAddress}
+Dear {!Contact.FirstName},
+
+
+I am excited to announce the release of a new program to allow you to build and service JS7000 joysticks. As one of our most successful business partners you will be one of a select few with access to this program in its initial stage.&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+The program will be similar in nature to the PVG Build program you are already familiar with, but with several nuances unique to this being an electronic product rather than hydraulic.
+
+The initial investment required will include bench space, tooling, training and a minimum stocking order of $16,000 dollars for each location you choose to have included in the program.
+
+I have attached a copy of the JS7000 Build center agreement for your review.
+
+Should you wish to participate, please contact Tim Erickson at 515-239-6234 terickson@sauer-danfoss.com. Tim can provide you with electronic copies of the parts list and pricing, and recommended parts lists for ordering your initial inventory. Initial inventory orders and signed agreements should be sent through Tim.
+
+Initial inventory delivery will be 18 weeks from receipt of order. Subsequent deliveries will have a standard delivery of 6 weeks.
+
+Entrants into the program will be trained at the location of their choice by Sauer-Danfoss personnel. The training schedule will be determined on a first come first served basis, based on the receipt of your signed agreement and inventory order.
+
+We believe this is a great opportunity to grow our market share in the Joystick space. Your ability to provide OEM’s prototypes with short lead times should provide a competitive advantage. The short lead time can be used to supply replacements to end users with failed joysticks even replacing competitors units to help gain market share.
+
+We look forward to partnering with you in this exciting program!
+Sincerely,
+
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+
+Tim Erickson
+
+Sr Market Specialist</textOnly>
+    <type>html</type>
+</EmailTemplate>

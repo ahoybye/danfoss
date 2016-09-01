@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Access Level --></label>
+        <name>ccpt__Access_Level__c</name>
+        <picklistValues>
+            <masterLabel>Manage</masterLabel>
+            <translation><!-- Manage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>View</masterLabel>
+            <translation><!-- View --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>ccpt__Contact__c</name>
+        <relationshipLabel><!-- Meeting Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Hourly Cost --></label>
+        <name>ccpt__Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attended --></label>
+        <name>ccpt__IsAttended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting --></label>
+        <name>ccpt__Meeting__c</name>
+        <relationshipLabel><!-- Meeting Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>ccpt__User__c</name>
+        <relationshipLabel><!-- Meeting Attendees --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- User attendees require an access level. Contact attendees must not have an access level defined. --></errorMessage>
+        <name>ccpt__Access_Level_User_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Meeting Attendee requires a single User or Contact to be specified. --></errorMessage>
+        <name>ccpt__Attendee_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

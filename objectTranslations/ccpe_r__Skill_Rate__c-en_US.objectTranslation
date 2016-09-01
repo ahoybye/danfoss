@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Hourly Rate --></label>
+        <name>ccpe_r__Hourly_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Card --></label>
+        <name>ccpe_r__Rate_Card__c</name>
+        <relationshipLabel><!-- Skill Rates --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Type --></label>
+        <name>ccpe_r__Work_Type__c</name>
+        <relationshipLabel><!-- Skill Rates --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

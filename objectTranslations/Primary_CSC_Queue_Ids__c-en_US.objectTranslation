@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Primary CSC Queue Ids</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Primary CSC Queue Ids</value>
+    </caseValues>
+    <fields>
+        <label><!-- Cooling Commercial --></label>
+        <name>Cooling_Commercial__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cooling Technical --></label>
+        <name>Cooling_Technical__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drives Commercial --></label>
+        <name>Drives_Commercial__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drives Technical --></label>
+        <name>Drives_Technical__c</name>
+    </fields>
+    <fields>
+        <label><!-- Heating Commercial --></label>
+        <name>Heating_Commercial__c</name>
+    </fields>
+    <fields>
+        <label><!-- Heating Technical --></label>
+        <name>Heating_Technical__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

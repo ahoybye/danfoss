@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sub Account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sub Accounts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Group --></label>
+        <name>Account_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Sub Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Address Formula --></label>
+        <name>Address_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Salesman Report --></label>
+        <name>BI_Links__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing Block --></label>
+        <name>Billing_Block__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>Channel__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Description --></label>
+        <name>Country_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Text --></label>
+        <name>Country_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>Currency__c</name>
+        <picklistValues>
+            <masterLabel>ADK: Kwanza</masterLabel>
+            <translation><!-- ADK: Kwanza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ADP: Peseta</masterLabel>
+            <translation><!-- ADP: Peseta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AED: UAE</masterLabel>
+            <translation><!-- AED: UAE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AFA: Afghani</masterLabel>
+            <translation><!-- AFA: Afghani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ALL: Lek</masterLabel>
+            <translation><!-- ALL: Lek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AMD: Dram</masterLabel>
+            <translation><!-- AMD: Dram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ANG: W.Ind.Guilders</masterLabel>
+            <translation><!-- ANG: W.Ind.Guilders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ARS: Pesos</masterLabel>
+            <translation><!-- ARS: Pesos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATS: Schillings</masterLabel>
+            <translation><!-- ATS: Schillings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AUD: Austr. dollar</masterLabel>
+            <translation><!-- AUD: Austr. dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZM: Manat</masterLabel>
+            <translation><!-- AZM: Manat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAD: Dinar</masterLabel>
+            <translation><!-- BAD: Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BAM: Bosnian Mark</masterLabel>
+            <translation><!-- BAM: Bosnian Mark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BBD: Dollars</masterLabel>
+            <translation><!-- BBD: Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BDT: Taka</masterLabel>
+            <translation><!-- BDT: Taka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BEC: Belgian francs</masterLabel>
+            <translation><!-- BEC: Belgian francs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BEF: Belgian francs</masterLabel>
+            <translation><!-- BEF: Belgian francs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGL: Leva</masterLabel>
+            <translation><!-- BGL: Leva --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BGN: Bulgarian Leva</masterLabel>
+            <translation><!-- BGN: Bulgarian Leva --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BHD: Dinar</masterLabel>
+            <translation><!-- BHD: Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIF: Burundi Francs</masterLabel>
+            <translation><!-- BIF: Burundi Francs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BMD: Bermudan dollar</masterLabel>
+            <translation><!-- BMD: Bermudan dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BND: Dollars</masterLabel>
+            <translation><!-- BND: Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOP: Pesos</masterLabel>
+            <translation><!-- BOP: Pesos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRC: Real</masterLabel>
+            <translation><!-- BRC: Real --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BRL: Real</masterLabel>
+            <translation><!-- BRL: Real --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BSD: Dollars</masterLabel>
+            <translation><!-- BSD: Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BWP: Pula</masterLabel>
+            <translation><!-- BWP: Pula --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BYB: Beloruss.Ruble</masterLabel>
+            <translation><!-- BYB: Beloruss.Ruble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BYR: Beloruss.rubles</masterLabel>
+            <translation><!-- BYR: Beloruss.rubles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BZD: Dollars</masterLabel>
+            <translation><!-- BZD: Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAD: Canad.dollars</masterLabel>
+            <translation><!-- CAD: Canad.dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHF: Swiss francs</masterLabel>
+            <translation><!-- CHF: Swiss francs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CLP: Pesos</masterLabel>
+            <translation><!-- CLP: Pesos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CNY: Renminbi Yuan</masterLabel>
+            <translation><!-- CNY: Renminbi Yuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COP: Pesos</masterLabel>
+            <translation><!-- COP: Pesos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRC: Cost.Rica colon</masterLabel>
+            <translation><!-- CRC: Cost.Rica colon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CSD: Serbia Monteneg</masterLabel>
+            <translation><!-- CSD: Serbia Monteneg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CUP: Cuban pesos</masterLabel>
+            <translation><!-- CUP: Cuban pesos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CVE: Escudos</masterLabel>
+            <translation><!-- CVE: Escudos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CYL: Cyprus pounds</masterLabel>
+            <translation><!-- CYL: Cyprus pounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CZK: Krona</masterLabel>
+            <translation><!-- CZK: Krona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEM3: (Int.) DEM 3 DP</masterLabel>
+            <translation><!-- DEM3: (Int.) DEM 3 DP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEM: German marks</masterLabel>
+            <translation><!-- DEM: German marks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DJF: Djibouti francs</masterLabel>
+            <translation><!-- DJF: Djibouti francs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DKK: Danish krone</masterLabel>
+            <translation><!-- DKK: Danish krone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DOP: East Carr.doll.</masterLabel>
+            <translation><!-- DOP: East Carr.doll. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DZD: Dinar</masterLabel>
+            <translation><!-- DZD: Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECS: Sucre</masterLabel>
+            <translation><!-- ECS: Sucre --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EEK: Krona</masterLabel>
+            <translation><!-- EEK: Krona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EGP: Pounds</masterLabel>
+            <translation><!-- EGP: Pounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ERB: Birr</masterLabel>
+            <translation><!-- ERB: Birr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESP: Pesetas</masterLabel>
+            <translation><!-- ESP: Pesetas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ETB: Birr</masterLabel>
+            <translation><!-- ETB: Birr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR: Euro</masterLabel>
+            <translation><!-- EUR: Euro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FIM: Finnish mark</masterLabel>
+            <translation><!-- FIM: Finnish mark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FJD: Dollars</masterLabel>
+            <translation><!-- FJD: Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FRF: French franc</masterLabel>
+            <translation><!-- FRF: French franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBL: Falkland Pounds</masterLabel>
+            <translation><!-- GBL: Falkland Pounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GBP: Pounds sterling</masterLabel>
+            <translation><!-- GBP: Pounds sterling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GEK: Kupon</masterLabel>
+            <translation><!-- GEK: Kupon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GHC: Cedi</masterLabel>
+            <translation><!-- GHC: Cedi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GMD: Dalasi</masterLabel>
+            <translation><!-- GMD: Dalasi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GNF: Guinea Franc</masterLabel>
+            <translation><!-- GNF: Guinea Franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GRD: Drachma</masterLabel>
+            <translation><!-- GRD: Drachma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GTQ: Quetzal</masterLabel>
+            <translation><!-- GTQ: Quetzal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GWP: Guinea Peso</masterLabel>
+            <translation><!-- GWP: Guinea Peso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GYD: Guyana Dollars</masterLabel>
+            <translation><!-- GYD: Guyana Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HKD: H.K.dollars</masterLabel>
+            <translation><!-- HKD: H.K.dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HNL: Lempira</masterLabel>
+            <translation><!-- HNL: Lempira --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HRK: Kuna</masterLabel>
+            <translation><!-- HRK: Kuna --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HTG: Gourde</masterLabel>
+            <translation><!-- HTG: Gourde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUF: Forint</masterLabel>
+            <translation><!-- HUF: Forint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IDR: Rupee</masterLabel>
+            <translation><!-- IDR: Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IEP: Irish Pounds</masterLabel>
+            <translation><!-- IEP: Irish Pounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ILS: Scheckel</masterLabel>
+            <translation><!-- ILS: Scheckel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>INR: Rupee</masterLabel>
+            <translation><!-- INR: Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQD: Dinar</masterLabel>
+            <translation><!-- IQD: Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IRR: Rial</masterLabel>
+            <translation><!-- IRR: Rial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISK: Krona</masterLabel>
+            <translation><!-- ISK: Krona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ITL: Lire</masterLabel>
+            <translation><!-- ITL: Lire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JMD: Jamaican Dollar</masterLabel>
+            <translation><!-- JMD: Jamaican Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JOD: Jordanian Dinar</masterLabel>
+            <translation><!-- JOD: Jordanian Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JPY: Yen</masterLabel>
+            <translation><!-- JPY: Yen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KES: Shilling</masterLabel>
+            <translation><!-- KES: Shilling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KHR: Riel</masterLabel>
+            <translation><!-- KHR: Riel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KIS: Som</masterLabel>
+            <translation><!-- KIS: Som --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KMF: Comoros Franc</masterLabel>
+            <translation><!-- KMF: Comoros Franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KPW: N. Korean Won</masterLabel>
+            <translation><!-- KPW: N. Korean Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KRW: S.Korean Won</masterLabel>
+            <translation><!-- KRW: S.Korean Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KWD: Dinar</masterLabel>
+            <translation><!-- KWD: Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KYD: Cayman Dollars</masterLabel>
+            <translation><!-- KYD: Cayman Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KZT: Tenge</masterLabel>
+            <translation><!-- KZT: Tenge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAK: Kip</masterLabel>
+            <translation><!-- LAK: Kip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LBP: Lebanese Pounds</masterLabel>
+            <translation><!-- LBP: Lebanese Pounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LKR: Sri Lanka Rupee</masterLabel>
+            <translation><!-- LKR: Sri Lanka Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LRD: Liberian Dollar</masterLabel>
+            <translation><!-- LRD: Liberian Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LSL: Loti</masterLabel>
+            <translation><!-- LSL: Loti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LTL: Lita</masterLabel>
+            <translation><!-- LTL: Lita --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LUF: Luxembourg Fr.</masterLabel>
+            <translation><!-- LUF: Luxembourg Fr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LVL: Lat</masterLabel>
+            <translation><!-- LVL: Lat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LYD: Libyan Dinar</masterLabel>
+            <translation><!-- LYD: Libyan Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAD: Dirham</masterLabel>
+            <translation><!-- MAD: Dirham --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MDL: Lei</masterLabel>
+            <translation><!-- MDL: Lei --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MGF: Madagascan Fr.</masterLabel>
+            <translation><!-- MGF: Madagascan Fr. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MRO: Ouguiya</masterLabel>
+            <translation><!-- MRO: Ouguiya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTL: Lira</masterLabel>
+            <translation><!-- MTL: Lira --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MUR: Rupee</masterLabel>
+            <translation><!-- MUR: Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MVR: Rufiyaa</masterLabel>
+            <translation><!-- MVR: Rufiyaa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MWK: Malawi Kwacha</masterLabel>
+            <translation><!-- MWK: Malawi Kwacha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MXN: Pesos</masterLabel>
+            <translation><!-- MXN: Pesos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MXP: Pesos</masterLabel>
+            <translation><!-- MXP: Pesos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MYK: Kyat</masterLabel>
+            <translation><!-- MYK: Kyat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MYR: Ringgit</masterLabel>
+            <translation><!-- MYR: Ringgit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MZM: Metical</masterLabel>
+            <translation><!-- MZM: Metical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NGN: Naira</masterLabel>
+            <translation><!-- NGN: Naira --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NIC: Cordoba</masterLabel>
+            <translation><!-- NIC: Cordoba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NLG: Guilders</masterLabel>
+            <translation><!-- NLG: Guilders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOK: Norwegian krone</masterLabel>
+            <translation><!-- NOK: Norwegian krone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPR: Rupee</masterLabel>
+            <translation><!-- NPR: Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NZD: N.Zeal.Dollars</masterLabel>
+            <translation><!-- NZD: N.Zeal.Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMR: Omani Rial</masterLabel>
+            <translation><!-- OMR: Omani Rial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAB: Balboa</masterLabel>
+            <translation><!-- PAB: Balboa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEI: Inti</masterLabel>
+            <translation><!-- PEI: Inti --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEN: Soles</masterLabel>
+            <translation><!-- PEN: Soles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGK: Kina</masterLabel>
+            <translation><!-- PGK: Kina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHP: Peso</masterLabel>
+            <translation><!-- PHP: Peso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PKR: Rupee</masterLabel>
+            <translation><!-- PKR: Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLN: Zloty</masterLabel>
+            <translation><!-- PLN: Zloty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLZ: Zloty</masterLabel>
+            <translation><!-- PLZ: Zloty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTE: Escudos</masterLabel>
+            <translation><!-- PTE: Escudos --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PYG: Guarani</masterLabel>
+            <translation><!-- PYG: Guarani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QAR: Riyal</masterLabel>
+            <translation><!-- QAR: Riyal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RMB: Renminbi Yuan</masterLabel>
+            <translation><!-- RMB: Renminbi Yuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ROL: Lei</masterLabel>
+            <translation><!-- ROL: Lei --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RON: New Leu</masterLabel>
+            <translation><!-- RON: New Leu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RSD: Serb. Dinar</masterLabel>
+            <translation><!-- RSD: Serb. Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUB: Rouble</masterLabel>
+            <translation><!-- RUB: Rouble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUE: y.e.</masterLabel>
+            <translation><!-- RUE: y.e. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUR: Rouble</masterLabel>
+            <translation><!-- RUR: Rouble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RWF: Rwanda Francs</masterLabel>
+            <translation><!-- RWF: Rwanda Francs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAR: Riyal</masterLabel>
+            <translation><!-- SAR: Riyal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBD: Sol.Isl.Dollars</masterLabel>
+            <translation><!-- SBD: Sol.Isl.Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SCR: Rupee</masterLabel>
+            <translation><!-- SCR: Rupee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SDP: Pounds</masterLabel>
+            <translation><!-- SDP: Pounds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEK: Swedish krona</masterLabel>
+            <translation><!-- SEK: Swedish krona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SGD: Sing.dollars</masterLabel>
+            <translation><!-- SGD: Sing.dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIT: Tolar</masterLabel>
+            <translation><!-- SIT: Tolar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKK: Krona</masterLabel>
+            <translation><!-- SKK: Krona --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLL: Leone</masterLabel>
+            <translation><!-- SLL: Leone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SOS: Shilling</masterLabel>
+            <translation><!-- SOS: Shilling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SRG: Surinam Guilder</masterLabel>
+            <translation><!-- SRG: Surinam Guilder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STD: Dobra</masterLabel>
+            <translation><!-- STD: Dobra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUR: Rouble</masterLabel>
+            <translation><!-- SUR: Rouble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SVC: Colon</masterLabel>
+            <translation><!-- SVC: Colon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYP: Syrian Pound</masterLabel>
+            <translation><!-- SYP: Syrian Pound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SZL: Lilangeni</masterLabel>
+            <translation><!-- SZL: Lilangeni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>THB: Baht</masterLabel>
+            <translation><!-- THB: Baht --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJR: Rouble</masterLabel>
+            <translation><!-- TJR: Rouble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMM: Manat</masterLabel>
+            <translation><!-- TMM: Manat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TND: Dinar</masterLabel>
+            <translation><!-- TND: Dinar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TOP: Pa&apos;anga</masterLabel>
+            <translation><!-- TOP: Pa&apos;anga --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPE: Timor Escudo</masterLabel>
+            <translation><!-- TPE: Timor Escudo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRL: Lira</masterLabel>
+            <translation><!-- TRL: Lira --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRY: Lira</masterLabel>
+            <translation><!-- TRY: Lira --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTD: T.+ T. Dollar</masterLabel>
+            <translation><!-- TTD: T.+ T. Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TWD: Dollars</masterLabel>
+            <translation><!-- TWD: Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TZS: Shilling</masterLabel>
+            <translation><!-- TZS: Shilling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAH: Ukraine</masterLabel>
+            <translation><!-- UAH: Ukraine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAK: Karbowanez</masterLabel>
+            <translation><!-- UAK: Karbowanez --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UGS: Uganda Shilling</masterLabel>
+            <translation><!-- UGS: Uganda Shilling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UGX: Shilling</masterLabel>
+            <translation><!-- UGX: Shilling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USD: US dollars</masterLabel>
+            <translation><!-- USD: US dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USDN: US Dollar</masterLabel>
+            <translation><!-- USDN: US Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UYP: New Peso</masterLabel>
+            <translation><!-- UYP: New Peso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UYU: Uruguay</masterLabel>
+            <translation><!-- UYU: Uruguay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VEB: Bolivar</masterLabel>
+            <translation><!-- VEB: Bolivar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VEF: Bs.F</masterLabel>
+            <translation><!-- VEF: Bs.F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VND: Dong</masterLabel>
+            <translation><!-- VND: Dong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VUV: Vatu</masterLabel>
+            <translation><!-- VUV: Vatu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WST: Tala</masterLabel>
+            <translation><!-- WST: Tala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XAF: C.f.A. Franc</masterLabel>
+            <translation><!-- XAF: C.f.A. Franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XCD: Dollars</masterLabel>
+            <translation><!-- XCD: Dollars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XEU: ECU</masterLabel>
+            <translation><!-- XEU: ECU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XOF: Franc</masterLabel>
+            <translation><!-- XOF: Franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XPF: Franc</masterLabel>
+            <translation><!-- XPF: Franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YER: Yemeni Ryal</masterLabel>
+            <translation><!-- YER: Yemeni Ryal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YUM: Yugoslavia</masterLabel>
+            <translation><!-- YUM: Yugoslavia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZAR: Rand</masterLabel>
+            <translation><!-- ZAR: Rand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZMK: Kwacha</masterLabel>
+            <translation><!-- ZMK: Kwacha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZRZ: Zaire</masterLabel>
+            <translation><!-- ZRZ: Zaire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZWD: Zimbabwe Dollar</masterLabel>
+            <translation><!-- ZWD: Zimbabwe Dollar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Segment --></label>
+        <name>Customer_Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Customer Group --></label>
+        <name>Danfoss_Customer_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delivery Block --></label>
+        <name>Delivery_Block__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>Commercial Compressors</masterLabel>
+            <translation><!-- Commercial Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss Drives</masterLabel>
+            <translation><!-- Danfoss Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District Energy</masterLabel>
+            <translation><!-- District Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating Solutions</masterLabel>
+            <translation><!-- Heating Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrigeration Controls</masterLabel>
+            <translation><!-- Refrigeration Controls --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Responsible --></label>
+        <name>Employee_Responsible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exchange Rate Type --></label>
+        <name>Exchange_Rate_Type__c</name>
+        <picklistValues>
+            <masterLabel>001D</masterLabel>
+            <translation><!-- 001D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>002D</masterLabel>
+            <translation><!-- 002D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CZKE Sales Rate</masterLabel>
+            <translation><!-- CZKE Sales Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DIR Aftalt Kurs</masterLabel>
+            <translation><!-- DIR Aftalt Kurs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DIR Phillips Aftalt Kurs</masterLabel>
+            <translation><!-- DIR Phillips Aftalt Kurs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives Exchange Rate IPC</masterLabel>
+            <translation><!-- Drives Exchange Rate IPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Euro</masterLabel>
+            <translation><!-- Euro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Euro for B Exchange Rates</masterLabel>
+            <translation><!-- Euro for B Exchange Rates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Euro-2</masterLabel>
+            <translation><!-- Euro-2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Euro-3</masterLabel>
+            <translation><!-- Euro-3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange Rate China CNCO</masterLabel>
+            <translation><!-- Exchange Rate China CNCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange Rate Denmark CNCO</masterLabel>
+            <translation><!-- Exchange Rate Denmark CNCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange Rate Production</masterLabel>
+            <translation><!-- Exchange Rate Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange Rate Type AC</masterLabel>
+            <translation><!-- Exchange Rate Type AC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange Rate Type Fixed GM</masterLabel>
+            <translation><!-- Exchange Rate Type Fixed GM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exchange Rate Type for York</masterLabel>
+            <translation><!-- Exchange Rate Type for York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed Exchange Rate</masterLabel>
+            <translation><!-- Fixed Exchange Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPP Specific Exchange Rate</masterLabel>
+            <translation><!-- HPP Specific Exchange Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India Customs Rates</masterLabel>
+            <translation><!-- India Customs Rates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Bank Exchange Rate</masterLabel>
+            <translation><!-- Internal Bank Exchange Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intrastat Exchange Rate Type</masterLabel>
+            <translation><!-- Intrastat Exchange Rate Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kobskurs (Aktuel)</masterLabel>
+            <translation><!-- Kobskurs (Aktuel) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCFDDK Actual Trans. Rate for Valuation</masterLabel>
+            <translation><!-- MCFDDK Actual Trans. Rate for Valuation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCFDGB Customer Specific Exchange Rates</masterLabel>
+            <translation><!-- MCFDGB Customer Specific Exchange Rates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MXCO Investments Exch. Rate Type</masterLabel>
+            <translation><!-- MXCO Investments Exch. Rate Type --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RUCO Internal Exchange Rate</masterLabel>
+            <translation><!-- RUCO Internal Exchange Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian Budget Exchange Rate</masterLabel>
+            <translation><!-- Russian Budget Exchange Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salgskurs</masterLabel>
+            <translation><!-- Salgskurs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Exchange Rate</masterLabel>
+            <translation><!-- Standard Exchange Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Std. Translation at Local Average Rate</masterLabel>
+            <translation><!-- Std. Translation at Local Average Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UACO Indicative External Exchange Rate</masterLabel>
+            <translation><!-- UACO Indicative External Exchange Rate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- House No --></label>
+        <name>House_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive --></label>
+        <name>Inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Account Name --></label>
+        <name>Local_Account_Name_SubAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Address --></label>
+        <name>Local_Address_SubAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local City --></label>
+        <name>Local_City_SubAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local Region --></label>
+        <name>Local_Region_SubAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- DDS Global Customer --></label>
+        <name>MDM_PE_CUSTOMER_GRP_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DDS Global Sub Customer --></label>
+        <name>MDM_PE_CUSTOMER_GRP_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DDS Global Customer Company --></label>
+        <name>MDM_PE_CUSTOMER_GRP_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- DCS Customer Grp. (Level 1) --></label>
+        <name>MDM_RA_CUSTOMER_GRP_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DCS Customer Grp. (Level 2) --></label>
+        <name>MDM_RA_CUSTOMER_GRP_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DCS Selling Org --></label>
+        <name>MDM_RA_SELLING_ORG__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name 2 --></label>
+        <name>Name_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name 3 --></label>
+        <name>Name_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name 4 --></label>
+        <name>Name_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Block --></label>
+        <name>Order_Block__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Box --></label>
+        <name>PO_Box__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO City --></label>
+        <name>PO_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Postal Code City --></label>
+        <name>PO_Postal_Code_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region Text --></label>
+        <name>Region_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Account ID --></label>
+        <name>SAP_Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Search Term --></label>
+        <name>Search_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street 2 --></label>
+        <name>Street_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tran Block Reason --></label>
+        <name>Tran_Block_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transportation Zone --></label>
+        <name>Transportation_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Url --></label>
+        <name>Url__c</name>
+    </fields>
+    <fields>
+        <label><!-- is Master --></label>
+        <name>is_Master__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

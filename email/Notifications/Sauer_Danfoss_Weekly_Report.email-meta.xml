@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Sauer-Danfoss Weekly Report</name>
+    <style>formalLetter</style>
+    <subject>DOW Report</subject>
+    <textOnly>Attached is the current DOW report.  If you have any questions regarding a DOW entry or wish to discuss, please contact the appropriate Danfoss Power Solutions Account Manager.
+
+
+Please do not copy or print this document.  This is company confidential information.</textOnly>
+    <type>html</type>
+</EmailTemplate>

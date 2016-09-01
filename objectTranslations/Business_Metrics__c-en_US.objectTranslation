@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Business Metrics</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Business Metrics</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss Power Solutions</masterLabel>
+            <translation><!-- Danfoss Power Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valmova</masterLabel>
+            <translation><!-- Valmova --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Metric Frequency --></label>
+        <name>Metric_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Daily</masterLabel>
+            <translation><!-- Daily --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Metric --></label>
+        <name>Metric__c</name>
+        <picklistValues>
+            <masterLabel>Average Per Day Needed to Meet Forecast</masterLabel>
+            <translation><!-- Average Per Day Needed to Meet Forecast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Current Month</masterLabel>
+            <translation><!-- Budget Current Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Current Month for OrderBook</masterLabel>
+            <translation><!-- Budget Current Month for OrderBook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Month Three</masterLabel>
+            <translation><!-- Budget Month Three --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Month Two</masterLabel>
+            <translation><!-- Budget Month Two --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Next Month</masterLabel>
+            <translation><!-- Budget Next Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current Month Goal</masterLabel>
+            <translation><!-- Current Month Goal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Order Book Value</masterLabel>
+            <translation><!-- Daily Order Book Value --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Order Book Value Current Month</masterLabel>
+            <translation><!-- Daily Order Book Value Current Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Order Book Value Month Three</masterLabel>
+            <translation><!-- Daily Order Book Value Month Three --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Order Book Value Month Two</masterLabel>
+            <translation><!-- Daily Order Book Value Month Two --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Order Book Value Next Month</masterLabel>
+            <translation><!-- Daily Order Book Value Next Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily PCS Due</masterLabel>
+            <translation><!-- Daily PCS Due --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily PCS On Time</masterLabel>
+            <translation><!-- Daily PCS On Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daily Sales</masterLabel>
+            <translation><!-- Daily Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Early on Request Date</masterLabel>
+            <translation><!-- Early on Request Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expected Past Due on Request Date</masterLabel>
+            <translation><!-- Expected Past Due on Request Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forecast/Budget for the Month</masterLabel>
+            <translation><!-- Forecast/Budget for the Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HIC Assy</masterLabel>
+            <translation><!-- HIC Assy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intercompany PCS Due</masterLabel>
+            <translation><!-- Intercompany PCS Due --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intercompany PCS On Time</masterLabel>
+            <translation><!-- Intercompany PCS On Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KIT Assy</masterLabel>
+            <translation><!-- KIT Assy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lines Past Due ESL to REM</masterLabel>
+            <translation><!-- Lines Past Due ESL to REM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lines Past Due ESL to SHA</masterLabel>
+            <translation><!-- Lines Past Due ESL to SHA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lines Past Due ESL to SHB</masterLabel>
+            <translation><!-- Lines Past Due ESL to SHB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lines Past Due REM to ESL</masterLabel>
+            <translation><!-- Lines Past Due REM to ESL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lines Past Due REM to SHA</masterLabel>
+            <translation><!-- Lines Past Due REM to SHA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lines Past Due REM to SHB</masterLabel>
+            <translation><!-- Lines Past Due REM to SHB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTD Distributor PCS On Time</masterLabel>
+            <translation><!-- MTD Distributor PCS On Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTD Distributor Pieces Due</masterLabel>
+            <translation><!-- MTD Distributor Pieces Due --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTD PCS Due</masterLabel>
+            <translation><!-- MTD PCS Due --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MTD PCS On Time</masterLabel>
+            <translation><!-- MTD PCS On Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month One Goal</masterLabel>
+            <translation><!-- Month One Goal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month Three Goal</masterLabel>
+            <translation><!-- Month Three Goal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month Two Goal</masterLabel>
+            <translation><!-- Month Two Goal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month to Date Sales Plan</masterLabel>
+            <translation><!-- Month to Date Sales Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly Yield Rate Goal</masterLabel>
+            <translation><!-- Monthly Yield Rate Goal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On time on Request Date</masterLabel>
+            <translation><!-- On time on Request Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity Yield Rate</masterLabel>
+            <translation><!-- Opportunity Yield Rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Past Due 1-10 Days</masterLabel>
+            <translation><!-- Order Past Due 1-10 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Past Due 11-20 Days</masterLabel>
+            <translation><!-- Order Past Due 11-20 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Past Due 21-30 Days</masterLabel>
+            <translation><!-- Order Past Due 21-30 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Past Due 31-40 Days</masterLabel>
+            <translation><!-- Order Past Due 31-40 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Past Due 41-50 Days</masterLabel>
+            <translation><!-- Order Past Due 41-50 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Past Due Greater than 50 Days</masterLabel>
+            <translation><!-- Order Past Due Greater than 50 Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Value Released to the Floor (7 Days)</masterLabel>
+            <translation><!-- Order Value Released to the Floor (7 Days) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orders Booked 2012</masterLabel>
+            <translation><!-- Orders Booked 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orders Booked 2013</masterLabel>
+            <translation><!-- Orders Booked 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orders Booked Goal</masterLabel>
+            <translation><!-- Orders Booked Goal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due</masterLabel>
+            <translation><!-- Past Due --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due Daily Lines - Total</masterLabel>
+            <translation><!-- Past Due Daily Lines - Total --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due Recovery</masterLabel>
+            <translation><!-- Past Due Recovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due in Assembly</masterLabel>
+            <translation><!-- Past Due in Assembly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due in Cartridge</masterLabel>
+            <translation><!-- Past Due in Cartridge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due in Lathe</masterLabel>
+            <translation><!-- Past Due in Lathe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due in Machining</masterLabel>
+            <translation><!-- Past Due in Machining --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due in Purchasing</masterLabel>
+            <translation><!-- Past Due in Purchasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due in Supplier Quality</masterLabel>
+            <translation><!-- Past Due in Supplier Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past Due to Confirm Date</masterLabel>
+            <translation><!-- Past Due to Confirm Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Past due recovery on Request Date</masterLabel>
+            <translation><!-- Past due recovery on Request Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recommit Once</masterLabel>
+            <translation><!-- Recommit Once --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recommit Three Times</masterLabel>
+            <translation><!-- Recommit Three Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recommit Twice</masterLabel>
+            <translation><!-- Recommit Twice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Released (QTY)</masterLabel>
+            <translation><!-- Released (QTY) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Released (Value)</masterLabel>
+            <translation><!-- Released (Value) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rework Cartridge</masterLabel>
+            <translation><!-- Rework Cartridge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales (EUR) Planned</masterLabel>
+            <translation><!-- Sales (EUR) Planned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales MTD</masterLabel>
+            <translation><!-- Sales MTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Planned Current Month</masterLabel>
+            <translation><!-- Sales Planned Current Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales for the Month</masterLabel>
+            <translation><!-- Sales for the Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping Performance to ESL</masterLabel>
+            <translation><!-- Shipping Performance to ESL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping Performance to SHB</masterLabel>
+            <translation><!-- Shipping Performance to SHB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total Pieces Released</masterLabel>
+            <translation><!-- Total Pieces Released --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total Pieces to be Released</masterLabel>
+            <translation><!-- Total Pieces to be Released --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total Value Released</masterLabel>
+            <translation><!-- Total Value Released --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total Value to be Released</masterLabel>
+            <translation><!-- Total Value to be Released --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total to be Released (QTY)</masterLabel>
+            <translation><!-- Total to be Released (QTY) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valve Assy</masterLabel>
+            <translation><!-- Valve Assy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YTD On Time</masterLabel>
+            <translation><!-- YTD On Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YTD Pieces Due</masterLabel>
+            <translation><!-- YTD Pieces Due --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plant --></label>
+        <name>Plant__c</name>
+        <picklistValues>
+            <masterLabel>1301</masterLabel>
+            <translation><!-- 1301 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1321</masterLabel>
+            <translation><!-- 1321 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1520</masterLabel>
+            <translation><!-- 1520 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2021</masterLabel>
+            <translation><!-- 2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global Comatrol</masterLabel>
+            <translation><!-- Global Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global Turolla</masterLabel>
+            <translation><!-- Global Turolla --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Save the Date email for Agritechnica</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Agritechnica 2015 STD</name>
+    <style>none</style>
+    <subject>Save the date for Sales Partner reception</subject>
+    <textOnly>Agritechnica 2015
+
+Sales Partner Reception
+
+Join us for an informal reception for all of our valued EMEA Sales Partners.
+
+Tuesday, November 10, 2015 at 18:00 at the Danfoss Power Solutions booth.
+
+Watch your mailbox for more detailed information on the event. 
+
+Questions? 
+Please contact Marco De Jong
+Email: mdejong@danfoss.com
+
+powersolutions.danfoss.com
+
+
+Copyright © 2015 , All rights reserved. 
+
+Our mailing address is: 
+
+ 
+Danfoss Power Solutions US Company
+2800 East 13th Street
+Ames, Iowa 50010
+
+
+update subscription preferences
+http://www2.powersolutions.danfoss.com/updateallpreferences</textOnly>
+    <type>custom</type>
+</EmailTemplate>

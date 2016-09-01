@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__Action__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKAction__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Action~</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Created_By__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKCreated_By__r.Username</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created By~</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKAction__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Action</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>BMCServiceDesk__Action__c.BMCServiceDesk__inactive__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <filterItems>
+                <field>BMCServiceDesk__Action__c.BMCServiceDesk__appliesToRelease__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>BMCServiceDesk__Action__c.BMCServiceDesk__Display_In_SelfService__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>BMCServiceDesk__Action__c</referenceTo>
+        <relationshipLabel>Related Releases</relationshipLabel>
+        <relationshipName>Release_Histories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKCreated_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Created By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Release_Histories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKRelease__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Release</label>
+        <referenceTo>BMCServiceDesk__Release__c</referenceTo>
+        <relationshipLabel>Action History</relationshipLabel>
+        <relationshipName>Release_Histories</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Formatted_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT( FLOOR((BMCServiceDesk__Duration__c / 60))),2,TEXT(0)) &amp; &quot;:&quot; &amp; LPAD(TEXT(MOD(BMCServiceDesk__Duration__c , 60)),2,TEXT(0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Duration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Note__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Note</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>System</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>BMCServiceDesk__Action_ID_Required</fullName>
+        <active>true</active>
+        <description>This rule checks for blank or empty Action</description>
+        <errorConditionFormula>OR( ISNULL(BMCServiceDesk__FKAction__c) , ISBLANK(BMCServiceDesk__FKAction__c))</errorConditionFormula>
+        <errorMessage>Please enter Action.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>BMCServiceDesk__New_Action</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Action</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)}
+
+	var stdLayoutScreenWidth = 671; 
+	var stdLayoutScreenHeight = 400; 
+	function stdScreenLeft(){ 
+		return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2)); 
+	} 
+
+	function stdScreenTop(){ 
+		return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2)); 
+	} 
+	var isCalledFromConsole = false;
+	if( typeof consoleDetailElements != &apos;undefined&apos; ) isCalledFromConsole = true;
+	if({!BMCServiceDesk__Release__c.BMCServiceDesk__State__c}) {
+		window.open(&apos;/apex/BMCServiceDesk__searchPage?popupId=Action&amp;isLookup=true&amp;objectType=Release_History__c&amp;isCalledFromConsole=&apos;+isCalledFromConsole+&apos;&amp;enableSelfClosing=false&amp;standardLayout=true&amp;parentId={!BMCServiceDesk__Release__c.Id}&amp;filterClause=appliesToRelease__c%3Dtrue%20and%20system__c%3Dfalse&apos;,null,&quot;status = 1,height =&quot;+stdLayoutScreenHeight+&quot;, width =&quot;+ stdLayoutScreenWidth+&quot;,left=&quot;+stdScreenLeft()+&quot;,top=&quot;+stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+	}
+	else {
+		var label =&apos;{!JSENCODE($Label.BMCServiceDesk__ReleaseClosed)}&apos;;
+		alert(label);
+	}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__New_Note</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Note</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/10.0/apex.js&quot;)}
+
+var isUpdateable = sforce.apex.execute(&quot;BMCServiceDesk.WebServiceMethodsUtility&quot;,&quot;checkForUpdatePermission&quot;, {objName:&quot;Release__c&quot;});
+ 
+if (isUpdateable != &apos;true&apos;) {
+		var label=&apos;{!JSENCODE($Label.BMCServiceDesk__InsufficentCreatePrivilege)}&apos;;
+		alert(label);
+}else{
+	if({!BMCServiceDesk__Release__c.BMCServiceDesk__State__c}){
+	if( typeof consoleDetailElements != &quot;undefined&quot; )
+	{window.open(&apos;/apex/BMCServiceDesk__stdlayoutreleaseaddnotepage?id={!BMCServiceDesk__Release__c.Id}&amp;fromconsole=true&apos;,null,&apos;width=600,height=400,resizable = 0,scrollbars=no,status=1,top=350,left=350&apos;);
+	}
+	else{
+	window.open(&apos;/apex/BMCServiceDesk__stdlayoutreleaseaddnotepage?id={!BMCServiceDesk__Release__c.Id}&amp;fromconsole=false&apos;,null,&apos;width=600,height=400,resizable = 0,scrollbars=no,status=1,top=350,left=350&apos;);
+	}
+	}
+	else
+	{
+	var label=&apos;{!JSENCODE($Label.BMCServiceDesk__ReleaseClosed)}&apos;;
+	alert(label);
+	}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__View_All_Notes</fullName>
+        <availability>online</availability>
+        <description>Use this button to view the history of all the actions that are associated with a record.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Action History</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 671;
+	var stdLayoutScreenHeight = 400;
+
+	function stdScreenLeft(){
+	return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2));
+	}
+
+	function stdScreenTop(){
+	return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2));
+	}
+
+	var left = stdScreenLeft();
+	var top = stdScreenTop();
+	var windowFeatures = &quot;width=&quot; + stdLayoutScreenWidth + &quot;,height=&quot; + stdLayoutScreenHeight + &quot;,status,resizable,scrollbars=yes,left=&quot; + left + &quot;,top=&quot; + top; 
+
+	window.open(&apos;/apex/BMCServiceDesk__ViewAllActions?recordState={!BMCServiceDesk__Release__c.BMCServiceDesk__State__c}&amp;recordName={!BMCServiceDesk__Release__c.Name}&amp;objectName=Release&amp;Objectid={!BMCServiceDesk__Release__c.Id}&amp;stdForm=true&amp;standardLayout=true&apos;,&apos;_blank&apos;,windowFeatures )</url>
+    </webLinks>
+</CustomObject>

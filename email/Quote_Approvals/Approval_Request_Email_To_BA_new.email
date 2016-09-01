@@ -1,0 +1,8 @@
+<messaging:emailTemplate subject="Approval Request for {!relatedTo.Quote.Merge_Formula_Account_Name__c} located in the {!relatedTo.Quote.Merge_Formula_Region__c} Region for Quote {!relatedTo.Quote.QuoteNumber}" recipientType="Contact" relatedToType="QuoteLineItem">
+<messaging:plainTextEmailBody >
+BA approval request submitted for {!relatedTo.Quote.Merge_Formula_Account_Name__c} ({!relatedTo.Quote.Merge_Formula_SAP_ID__c}) located in {!relatedTo.Quote.Merge_Formula_Country__c}. {!relatedTo.Quote.MergeFormulaParentAccount__c}. 
+ 
+
+Note: The customer has requested a finalized quote by {!relatedTo.Quote.Customer_Request_Date__c}
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

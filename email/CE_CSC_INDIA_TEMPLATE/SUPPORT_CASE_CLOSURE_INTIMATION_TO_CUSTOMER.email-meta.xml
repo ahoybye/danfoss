@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Support Case closure - Mail to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>SUPPORT CASE - INFORMATION FROM CUSTOMER</name>
+    <style>formalLetter</style>
+    <subject>Intimation: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear Sir/ Madam,
+This is in reference to your case number {!Case.CaseNumber} registered with us.
+
+
+Request you to please provide the below information within three working days for us to take the case forward.
+
+
+Company Name :
+
+Contact Person :
+
+Contact Details :
+
+Complete Address :
+
+
+Kindly note that in case of non receipt of information we will be closing the case and hence request you to please provide the information as early as possible for enabling us to take prompt action.
+
+
+Thanking you and assuring our best services always.
+
+
+Best regards,
+
+Danfoss Customer Service Center
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

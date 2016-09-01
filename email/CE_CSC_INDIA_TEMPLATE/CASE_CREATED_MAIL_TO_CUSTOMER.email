@@ -1,0 +1,14 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span style="background-color: rgb(255, 255, 255);"><font face="Verdana, Helvetica, sans-serif">Dear Sir/Madam,</font></span>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif">Thank you for contacting Danfoss Customer Service center.&nbsp;Your case has been raised and forwarded to the concerned department. We will revert back to you at the earliest.</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"><br></font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif">Your case details as follows:</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"><font><b>Case Number:</b>&nbsp;</font>{!Case.CaseNumber}</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"><b>Subject:</b>&nbsp;&nbsp;{!Case.Subject}</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"><b>Case Description:</b>&nbsp;{!Case.Description}</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif">&nbsp;</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif">In order to check the status of your case, please call us on&nbsp;<b>0008001009289</b></font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif">&nbsp;</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif">Best regards,</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif">Danfoss Customer Service Center</font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"><br></font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"><br></font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"></font></p><p class="MsoNormalCxSpMiddle"><font face="Verdana, Helvetica, sans-serif"><b>N.B - Please reply back to this email for any further correspondence.</b></font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="1" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif">*********Please Do Not Delete or Type below this Line*</font><font face="Verdana,Helvetica,Sans-Serif">********<br>[{!Case.Thread_Id}]</font>]]></td>
+</tr>
+</table>

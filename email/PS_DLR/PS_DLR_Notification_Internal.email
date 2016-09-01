@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<br><div style="color: rgb(0, 0, 0); font-family: arial;"><br></div><div style="color: rgb(0, 0, 0); font-family: arial;">Please review the following Deviated Lead-time request as soon as possible.</div><div style="color: rgb(0, 0, 0); font-family: arial;"><br></div><div style="color: rgb(0, 0, 0); font-family: arial;"><b>Created By:</b>&nbsp;{!Deviated_Lead_time_Request__c.CreatedBy}</div><div style="color: rgb(0, 0, 0); font-family: arial;"><b>Created Date:</b>&nbsp;{!Deviated_Lead_time_Request__c.CreatedDate}</div><div style="color: rgb(0, 0, 0); font-family: arial;"><b>Account:&nbsp;</b>{!Deviated_Lead_time_Request__c.Account__c}</div><div style="color: rgb(0, 0, 0); font-family: arial;"><b>Reason:&nbsp;</b>{!Deviated_Lead_time_Request__c.Reason__c}</div><div style="color: rgb(0, 0, 0); font-family: arial;"><br></div><div><span style="color: rgb(0, 0, 0); font-family: arial;">Associated Opportunity (if applicable):</span><span style="color: rgb(0, 0, 0); font-family: arial;">&nbsp;</span><font face="arial">{!Deviated_Lead_time_Request__c.Opportunity__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial;"><br></div><div style="color: rgb(0, 0, 0); font-family: arial;"><font face="arial">{!Deviated_Lead_time_Request__c.Link}</font></div><div style="color: rgb(0, 0, 0); font-family: arial;"><font face="arial"><br></font></div><div style="color: rgb(0, 0, 0); font-family: arial;"><font face="arial">Thank you!</font></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

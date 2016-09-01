@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case created - MaDAMAGE/SHORT SUPPLY/EXCESS SUPPLY - MAIL TO CUSTOMER - INTERNAL SALES</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>DAMAGE/SHORT SUPPLY/EXCESS SUPPLY - MAIL TO CUSTOMER</name>
+    <style>formalLetter</style>
+    <subject>Case Number: {!Case.CaseNumber} – {!Case.Subject}  [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear Sir/Madam,
+
+Thank you for contacting Danfoss Customer Service center. Your case no is {!Case.CaseNumber}. It has been forwarded to the concerned department and we will revert back to you at the earliest.
+
+
+In order to check the status of your case, please call us on 0008001009289.
+
+Best regards,
+Danfoss Customer Service Center
+
+N.B - Please reply back to this email for any further correspondence.
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

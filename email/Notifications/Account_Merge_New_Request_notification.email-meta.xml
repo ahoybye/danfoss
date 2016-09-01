@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email alert when new account merge is requested</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Account Merge: New Request notification</name>
+    <style>none</style>
+    <subject>*** NEW Account Merge Request NOTIFICATION ***</subject>
+    <type>text</type>
+</EmailTemplate>

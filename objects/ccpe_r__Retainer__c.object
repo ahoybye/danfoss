@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <fullName>ccpe_r__Retainer_Page_View</fullName>
+        <description>Used on the Retainer view/edit page to isolate pre-defined fields.</description>
+        <displayedFields>
+            <field>ccpe_r__Account__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ccpe_r__Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ccpe_r__Opportunity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ccpe_r__End_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Retainer Page View</label>
+    </fieldSets>
+    <fields>
+        <fullName>ccpe_r__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The account that the retainer is related to</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Retainers</relationshipLabel>
+        <relationshipName>Retainers</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Current_Hours__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Current Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Current_Spend__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Current Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date signifies the end date of the retainer after which no more line items can be created</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Hours_Balance__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The remaining hours that can be assigned to work for this Retainer</description>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Hours_Gross__c - ccpe_r__Current_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Hours_Gross__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The number of hours available for Work for this Retainer</description>
+        <externalId>false</externalId>
+        <label>Hours Gross</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Hours_Roll_Over__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines if the retainer hours roll over between time periods for the client</description>
+        <externalId>false</externalId>
+        <label>Hours Roll Over</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The opportunity that the retainer is related to</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Retainers</relationshipLabel>
+        <relationshipName>Retainers</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Spend_Balance__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount that is available to spend on new Work for this Retainer</description>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Spend_Gross__c - ccpe_r__Current_Spend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Spend Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Spend_Gross__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The amount this Retainer can spend</description>
+        <externalId>false</externalId>
+        <label>Spend Gross</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Spend_Roll_Over__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines if the retainer spend rolls over between time periods for the client</description>
+        <externalId>false</externalId>
+        <label>Spend Roll Over</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The start date signifies when a retainer can first be used</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Template__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this retainer acts as a template for new retainer creation</description>
+        <externalId>false</externalId>
+        <label>Template</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Time_Period__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Time Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>One Time</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Denotes if the retainer is skill based or global based in nature</description>
+        <externalId>false</externalId>
+        <formula>RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__isActive__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Start_Date__c &lt;= TODAY() &amp;&amp; (ISBLANK(ccpe_r__End_Date__c) || ccpe_r__End_Date__c &gt; TODAY())</formula>
+        <label>isActive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <recordTypes>
+        <fullName>ccpe_r__Non_Skill_Based</fullName>
+        <active>true</active>
+        <description>A non-skill based Retainer</description>
+        <label>Non-Skill Based</label>
+        <picklistValues>
+            <picklist>ccpe_r__Time_Period__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ccpe_r__Skill_Based</fullName>
+        <active>true</active>
+        <description>A skill based Retainer.</description>
+        <label>Skill Based</label>
+        <picklistValues>
+            <picklist>ccpe_r__Time_Period__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ccpe_r__Skills_Based</fullName>
+        <active>false</active>
+        <label>Skills Based</label>
+        <picklistValues>
+            <picklist>ccpe_r__Time_Period__c</picklist>
+            <values>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>ccpe_r__One_Time_Retainers_Do_Not_Roll_Over</fullName>
+        <active>true</active>
+        <description>A one-time Retainer cannot roll-over</description>
+        <errorConditionFormula>ISPICKVAL(ccpe_r__Time_Period__c, &apos;One Time&apos;) &amp;&amp; (ccpe_r__Spend_Roll_Over__c == true || ccpe_r__Hours_Roll_Over__c == true)</errorConditionFormula>
+        <errorMessage>One-time Retainers cannot roll over</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_r__Retainer_Must_Have_Acc_Or_Opp</fullName>
+        <active>true</active>
+        <description>Every retainer must be related to either an Account or an Opportunity.</description>
+        <errorConditionFormula>ISBLANK(ccpe_r__Account__c)</errorConditionFormula>
+        <errorDisplayField>ccpe_r__Account__c</errorDisplayField>
+        <errorMessage>There must be a related Account</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>ccpe_r__Clone</fullName>
+        <availability>online</availability>
+        <description>Clones the Retainer</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/RetainerDetails?id={!ccpe_r__Retainer__c.Id}&amp;retURL=%2F{!ccpe_r__Retainer__c.Id}&amp;clone=true</url>
+    </webLinks>
+</CustomObject>

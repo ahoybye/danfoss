@@ -1,0 +1,3 @@
+Special Prices for this Quote are no longer needed for Quote {!Quote.QuoteNumber} for {!Quote.Merge_Formula_Account_Name__c} because it has been cancelled.
+
+Link to the Quote: {!Quote.Link}

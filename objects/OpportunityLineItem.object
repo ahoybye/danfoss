@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <fullName>ccpe_ocp__Create_Project</fullName>
+        <description>This is used by the Opportunity Product Create Project page</description>
+        <displayedFields>
+            <field>PricebookEntry.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ListPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Quantity</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TotalPrice</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Create Project</label>
+    </fieldSets>
+    <fields>
+        <fullName>Approx_Competitor_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Approx Competitor Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Comp_Pricing_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>( UnitPrice -  Approx_Competitor_Price__c ) /  Approx_Competitor_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Comp Pricing Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Competitor__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitor</label>
+        <picklist>
+            <picklistValues>
+                <fullName>3B6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Actia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amca</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Axiomatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bauser</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bondioli &amp; Pavesi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bosch Rexroth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brevini</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brosa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bucher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caldaro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Captive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Casappa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CH Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Command Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concentric</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CrossControl</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Curtis Instruments</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danaher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>David Brown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DeltaTech Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinamic Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dynamatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Easy Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eaton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EIA Electronics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elobau</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europarts (EP)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flucom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FluidPress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FW Murphy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Galtech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gessmann</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gidroprivod</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gomel Hydroprivod</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Graf-Syteco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grayhill</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guizhou Fengyang</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guorui Hydraulic Control (GRH)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hansa TMP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hawe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hefei Changyuan (HCHC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hefei SJ Hydraulic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hema</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hesmor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Country Tek</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High-Tech Fluid Power</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hirschmann</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Horde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HPI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Huade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Huai’an Guoye</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Husco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydac</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hyde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraforce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydreco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HydroControl</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrocontrols</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrosila</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hyest Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ifm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integrated Hydraulics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inter Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intermot (NHM)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Iskra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>J.R. Merritt</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jeil Hydraulics (Eaton)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jetter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jihostroj</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Jinjiang Huayuan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kar-Tech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kawasaki</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kayaba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kersen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kersen Hydraulic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kongsberg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kovrov KMZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leica</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liebherr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LiKe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Linde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liyuan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LOG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lord</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M+S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marchesini</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marzocchi Pompe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mitron</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Morey</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Müller Elektronik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nabtesco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nachi-Fujikoshi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nimco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ningbo Donghai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ningbo Yuzhou</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nishina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ognibene</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oilgear</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oldsbergs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Olsbergs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Supplier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Otto</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pal-FIn</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Penny+Giles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phoenix International</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PMP Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poclain</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poclain (Axial Pump)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P-Q Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PSM Hydraulics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QT Fluid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radk-Tech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RM Michaelides</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roquet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salami</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sam Hydraulic (Brevini)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sauer-Danfoss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shimadzu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sichuan Changyuan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sinjin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smart Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SPN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STW Technic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SunBun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun Hydraulics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sunsource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sure Grip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tecnord</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teleflex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Topcon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trimble</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTCONTROL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultra-MSI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown Supplier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ventury</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wachendorff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Walvoil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>White</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Williams Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Xiangtan Ruilong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yongquing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zhenjiang</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ziHYD (Thoth)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Material_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Material Number</label>
+        <length>60</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Requests__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether or not the line item has any customer requests. For use in the related list on the opportunity page layout.</description>
+        <externalId>false</externalId>
+        <label>Customer Requests</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount_Percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>(ListPrice  -  UnitPrice)  /  ListPrice</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Discount Percent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Distributor_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Distributor Sell Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Establish_Schedule__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND(PricebookEntry.Product2.CanUseQuantitySchedule, TEXT(Opportunity.Production_Start_Date__c)!=&quot;&quot;) 
+, 
+HYPERLINK(
+(&quot;/oppitm/establishschedule.jsp?id=&quot; +   Id + &quot;&amp;retURL=&quot; + Id +&quot;&amp;p8=&quot; +  TEXT(DAY(Opportunity.Production_Start_Date__c)) + &quot;-&quot; +  
+TEXT(MONTH(Opportunity.Production_Start_Date__c))+ &quot;-&quot; +
+TEXT(YEAR(Opportunity.Production_Start_Date__c))
+)
+, &quot;Establish Schedule with Date of first delivery&quot;)  , 
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Establish Schedule</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>In_Progress_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Opportunity.CE_Status__c , &quot;In Progress&quot;) ,  TotalPrice , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>In Progress Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Inquiry_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Inquiry Number</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Lost_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Opportunity.CE_Status__c , &quot;Lost&quot;) ,  TotalPrice , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lost Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Mark_as_Lost__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK((&quot;/apex/MarkOliAsLost?id=&quot; &amp; Id &amp; &quot;&amp;retURL=/&quot; &amp;  OpportunityId ), &quot;Mark as Lost&quot;, &quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mark as Lost</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Net_Win_Oppty_Line_Item__c</fullName>
+        <description>PS Hidden Field to calculate Net Price on the Product Line item level</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Opportunity.StageName, &quot;Closed-Won&quot;) || ISPICKVAL(Opportunity.StageName, &quot;Closed Won&quot;), TotalPrice, TotalPrice * -1 )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Win Oppty Line Item</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Open_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Opportunity.CE_Status__c , &quot;Open&quot;) ,  TotalPrice , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Open Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PO_Receipt_Date__c</fullName>
+        <description>This field is for the CSRs to fill in once a PO has been received for the opportunity line item.</description>
+        <externalId>false</externalId>
+        <label>PO Receipt Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Projected_Win_Oppty_Line_Item__c</fullName>
+        <description>PS Hidden Field to calculate project win total price based on header level data for BU and Project reporting.</description>
+        <externalId>false</externalId>
+        <formula>IF(Opportunity.Probability &gt; 0.89, TotalPrice, IF(Opportunity.Probability &lt; 0.11, TotalPrice *-1, 0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Projected Win Oppty Line Item</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Price__c</fullName>
+        <description>Field to hold original Sales Price that was proposed for Replacement Business</description>
+        <externalId>false</externalId>
+        <label>Proposed Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>SAP_Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP Currency</label>
+        <length>3</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_List_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please note - This may not be a list Price - If this price and the Current SAP Price are the same then this is not a list price but a special net price.</inlineHelpText>
+        <label>SAP List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current SAP price for this customer is shown if a list and discount is in place.</inlineHelpText>
+        <label>SAP Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL( Opportunity.StageName, &quot;Closed Won&quot;), &quot;Closed Won&quot;, 
+IF(ISPICKVAL(Opportunity.StageName, &quot;Closed Lost&quot;), &quot;Closed Lost&quot;, &quot;Open&quot; 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Won_Amount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Opportunity.CE_Status__c , &quot;Won&quot;) ,  TotalPrice , 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Won Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ocp__Project_Phase__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Project Phase</label>
+        <referenceTo>project_cloud__Project_Phase__c</referenceTo>
+        <relationshipLabel>Opportunity Products</relationshipLabel>
+        <relationshipName>Opportunity_Products</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <validationRules>
+        <fullName>CE_Opp_Product_Quantity_Positive_Only</fullName>
+        <active>true</active>
+        <description>Validates that the opportunity product quantity is not negative</description>
+        <errorConditionFormula>AND( OR( Opportunity.RecordType.DeveloperName = &apos;Project_Opportunity&apos;, Opportunity.RecordType.DeveloperName =&apos;CE_Opportunity&apos;), Quantity &lt; 0)</errorConditionFormula>
+        <errorDisplayField>Quantity</errorDisplayField>
+        <errorMessage>The Product Quantity should not be negative. Please enter a positive value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_Opp_Sales_Price_Positive_Only</fullName>
+        <active>true</active>
+        <description>Validates that opportunity amount (Sales Price) is not negative</description>
+        <errorConditionFormula>AND( OR( Opportunity.RecordType.DeveloperName = &apos;Project_Opportunity&apos;, Opportunity.RecordType.DeveloperName =&apos;CE_Opportunity&apos;), UnitPrice &lt; 0)</errorConditionFormula>
+        <errorDisplayField>UnitPrice</errorDisplayField>
+        <errorMessage>The Sales Price should not be negative. Please enter a positive value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_Closed_No_Edit_Quantity</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+AND( Opportunity.RecordType.DeveloperName !=&apos;CE_Opportunity&apos;, 
+Opportunity.RecordType.DeveloperName !=&apos;Project_Opportunity&apos;, 
+Opportunity.RecordType.DeveloperName !=&apos;Shadow_Opportunity&apos;), 
+Opportunity.IsClosed = True,  
+OR( 
+ISCHANGED(Quantity), 
+ISCHANGED( UnitPrice )), 
+NOT(OR( 
+$Profile.Name = &quot;System Administrator&quot;, 
+$Profile.Name = &quot;CRM_System Administrator PS&quot;, 
+$Profile.Name = &quot;CRM_VP Sales&quot;, 
+$Profile.Name = &quot;CRM_VP Sales Comatrol&quot;, 
+$Profile.Name = &quot;CRM_Super User Turolla&quot;, 
+$Profile.Name = &quot;CRM_Super User Comatrol&quot; 
+) 
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Quantity</errorDisplayField>
+        <errorMessage>It is not possible to edit the Quantity or Sales Price on a Closed Opportunity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TBD_Product</fullName>
+        <active>true</active>
+        <description>Evaluates if a product containing TBD is on a Closed opportunity</description>
+        <errorConditionFormula>AND( 
+OR (Status__c = &quot;Closed Won&quot;, 
+(Status__c = &quot;Closed Lost&quot;)), 
+CONTAINS(Product2.Name, &quot;TBD&quot;) 
+)</errorConditionFormula>
+        <errorDisplayField>Product2Id</errorDisplayField>
+        <errorMessage>Cannot have a Product containing &quot;TBD&quot; when Opportunity is Closed Won or Closed Lost</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Filter_Customer_Requests_OLI</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Filter Customer Requests</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CustomerRequestFilterPage?id={!Opportunity.AccountId}&amp;oid={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Manage_Product_Groups</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Product Groups</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/opportunityProductEntry?id={!Opportunity.Id}&amp;searchType=GROUPS</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Manage_Products</fullName>
+        <availability>online</availability>
+        <description>Climate and Energy - functionality to manage products</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Products</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/opportunityProductEntry?id={!Opportunity.Id}&amp;searchType=PRODUCTS</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Refresh_SAP_Price</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Refresh SAP Price</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/RefreshOpportunitySAPPrice?id={!Opportunity.Id}&amp;opportunityLineItemId={!OpportunityLineItem.Id}</url>
+    </webLinks>
+</CustomObject>

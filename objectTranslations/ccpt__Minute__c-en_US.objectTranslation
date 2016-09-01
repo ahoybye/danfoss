@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Agenda Item --></label>
+        <name>ccpt__Agenda_Item__c</name>
+        <relationshipLabel><!-- Minutes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Content --></label>
+        <name>ccpt__Content__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Draft --></label>
+        <name>ccpt__IsDraft__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,46 @@
+<apex:page controller="project_cloud.MyAssignmentsRemoting" tabstyle="project_cloud__Work__c" sidebar="false" showHeader="false" title="My Assignments">
+    <head><title>My Assignments</title></head>
+
+    <apex:stylesheet value="{!URLFOR($Resource.project_cloud__timecard_assets_zip,'/js/frameworks/bootstrap/css/bootstrap.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.project_cloud__timecard_assets_zip,'/css/font-awesome-4.3.0/css/font-awesome.min.css')}" />
+    <apex:stylesheet value="{!URLFOR($Resource.project_cloud__timecard_assets_zip,'/css/fonts/raleway.css')}" />
+    <c:ng_module modules="assignments">
+        <div ng-app="assignments" class="assignments">
+            <style>
+                .splash{
+                    position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background: #3d3d3d; z-index: 5000;
+                    display:none;
+                    text-align:center;
+                    vertical-align: middle;
+                    -webkit-transition:0.3s linear all;
+                    transition:0.3s linear all;
+                }
+
+                [ng-cloak].splash {
+                    display: block !important;
+                }
+                [ng-cloak] {display: none;}
+            </style>
+            <div ng-cloak="true" class="splash">
+                <img src="{!URLFOR($Resource.timecard_assets_zip, '/img/CC-Logo-2016-white-box.png')}" style="width: 150px; height: 122px; position: fixed;top: 50%;left: 50%;margin-left: -75px;margin-top: -61px;" />
+            </div>
+            <!-- Since header isn't shown, we must explicitly add the SF js files to uses the lookups and sforce object -->
+            <script src="/jslibrary/1442862172000/ui-sfdc-javascript/SfdcCore.js" type="text/javascript"></script>
+            <script src="/jslibrary/1442862172000/sfdc/main.js" type="text/javascript"></script>
+            <script>
+                var CONST_PRODUCTIVITY = {!isProductivityUser};
+                var CONST_REMEDYFORCE = {!isRemedyForceUser};
+                var NS = {!namespaces};
+                var IMAGE_URL = "{!URLFOR($Resource.timecard_assets_zip, '/img/')}";
+                var PAGE_SIZE = {!pageSize};
+                var TOP_HEADER = true;
+                angular.element(document.body).addClass('productivity-body');
+
+                var FIELD_SETS = {!fields};
+            </script>
+            <div ng-include="$root.const.url.templates + 'components/prod/header.html'"></div>
+            <ui-view class="assignments bg"></ui-view>
+            <toast></toast>
+        </div>
+    </c:ng_module>
+</apex:page>

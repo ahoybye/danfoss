@@ -1,0 +1,72 @@
+<apex:page id="page" controller="project_cloud.CapabilitiesController" extensions="project_cloud.BetaHelper" tabStyle="Capabilities__tab" title="Capabilities">
+
+	<c:walkme />
+	<c:include_jquery declareEsc="true" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/jquery.colorbox.js')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/colorbox.css')}" />
+
+	<style type="text/css">
+		/*
+		Overwrite the Saleforce css column width definitions because it
+		doesn't handle more than 2 columns.
+		*/
+		#page\:form .bPageBlock .detailList .labelCol {
+			width: 28%;
+		}
+		#page\:form .bPageBlock .detailList .dataCol {
+			width: 5%;
+		}
+	</style>
+	<script type="text/javascript">
+		//overwrite the saleforce function so the focus is not put on the jump to user input
+		function setFocusOnLoad() {}
+	
+		function twistSuggestionSections(opt_ExpandOrCollapse) {
+			jQuery(opt_ExpandOrCollapse ? ".showListButton" : ".hideListButton").each(function(index, el) {
+				twistSection(el);
+			});
+		}
+	</script>
+
+	<apex:sectionHeader title="Capabilities" subtitle="{!user.Name}" />
+	<apex:outputPanel rendered="{!isBeta}">
+		<apex:outputPanel rendered="{!NOT(isBetaWithConfirm)}">
+			<script>
+				window.location.href = '{!$Page.resourcing}#/capability';
+			</script>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{!isBetaWithConfirm}">
+			<apex:pageMessage summary="Resourcing Beta" severity="warning" strength="3" escape="false">You have specified that you still wish to access the old resourcing pages.<br />To access the new resourcing pages, please click <a href='{!$Page.resourcing}#/capability'>here</a></apex:pageMessage>
+		</apex:outputPanel>
+	</apex:outputPanel>
+	<apex:pageMessages id="messages" />
+
+	<apex:form id="form" rendered="{!NOT(ISBLANK(user))}">
+		<apex:pageBlock id="capabilitiesBlock" title="Capability Assignments">
+			<apex:pageBlockButtons id="topButtons" location="top">
+				<apex:commandButton value="Save" action="{!saveCapabilities}" />
+				<apex:commandButton value="Cancel" action="{!cancelAction}" />
+				&nbsp;
+				<a href="#" onclick="twistSuggestionSections(false);">Collapse All</a>
+				<apex:outputText value=" | " />
+				<a href="#" onclick="twistSuggestionSections(true);">Expand All</a>
+			</apex:pageBlockButtons>
+			<apex:pageBlockButtons id="bottomButtons" location="bottom">
+				<apex:outputText value="Save {!user.FirstName}'s Capabilities and Jump to: " style="vertical-align: middle;" />
+				<apex:inputField id="dummyUserSelector" value="{!dummyUserSelector.project_cloud__User__c}" />
+				<apex:commandButton value="Go" action="{!saveCapabilitiesAndJumpTo}" />
+			</apex:pageBlockButtons>
+			<apex:repeat var="workTypeType" value="{!capabilities}">
+				<apex:pageBlockSection title="{!workTypeType}" columns="3">
+					<apex:repeat var="cWrapper" value="{!capabilities[workTypeType]}" >
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel for="cCheckbox" value="{!cWrapper.workType.Name}" />
+							<apex:inputCheckbox id="cCheckbox" value="{!cWrapper.selected}" />
+						</apex:pageBlockSectionItem>
+					</apex:repeat>
+				</apex:pageBlockSection>
+			</apex:repeat>
+		</apex:pageBlock>
+	</apex:form>
+
+</apex:page>

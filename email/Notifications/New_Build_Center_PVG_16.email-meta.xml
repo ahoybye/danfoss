@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>New Build Center Program-PVG 16</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>New Build Center Program-PVG 16</name>
+    <style>formalLetter</style>
+    <subject>New Build Center Program-PVG 16 Webinar</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+Subject: New Build Center Program-PVG 16&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+Dear {!Contact.FirstName},
+
+
+
+
+
+We are pleased to announce Sauer-Danfoss’ 2012 plans for the addition of the PVG 16 product line to the Build Center Program. Our marketing and technical support teams have been working to develop the tools, training and manufacturing capability to support launching PVG 16 Build Centers in 2012. Our manufacturing locations have been continuing to build additional capacity for a strong growth strategy for North America PVG products.
+
+
+As a strong supporter of Sauer-Danfoss valve business growth, we are pleased to invite your organization to participate in this program. The PVG team has developed a comprehensive program including:
+
+
+· PVG 16 Product overview
+
+· PVG 16 Build Center Standard Component List
+
+· PVG 16 Build Sheet
+
+· PVG 16 Build Center Discount Schedule
+
+· PVG 16 Recommended Initial Stocking List
+
+· PVG 16 List Prices
+
+· A generic copy of the PVG16 Build Center Agreement
+
+
+The PVG Build Center is structured using the current PVG 16 component list prices and PVG discounts. We request that you complete a PVG 16 Market Plan Summary for your territory and agree to the other PVG 16 Build Center requirements noted in the formal contract agreement.
+
+
+A PVG 16 Market Plan Summary should include the following overview of your plans for a PVG 16 Build Center including:
+
+
+“Cost of Sales” Goals for PVG 16 Valves for 2013, 2014, and 2015
+Min &amp; Max targets/potentials will be accepted
+Don’t worry about our PVG 16 capacity; the factory is ready for growth with dedicated manufacture, assembly and test for Build Centers!!
+
+
+Participation in the PVG 16 Build Center Training via webinar.  Please contact Tim Multerer with the names of one to three (1-3) Valve Assembler/Technician(s). Please note: PVG 16 Build Center discounts will not be applied until a representative from your company has participated in a training session and build center agreements have been signed.
+
+
+· Class is Scheduled for October 9, 2012
+
+· Please see attachment for more details
+
+
+
+The Market plan summaries will be very helpful to our manufacturing team to support the PVG 16 Build Program successful launch. Your sales goals will also help us to plan for future capacity in 2013, 2014 and 2015.
+
+
+On behalf of the entire PVG 16 Build Center team, we would like to thank you in advance for your support and consideration as we launch the PVG 16 build program. As you may have read in our earlier PVG 16 update information, we believe the PVG 16 products are aligned with the needs of many mobile customers for quality, performance, delivery, and value compared to the competition. We hope the PVG 16 Build Centers will allow you to improve responsiveness and exceed your customer’s expectations for these products.
+Sincerely,
+
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+
+Thomas A. Rosskopf
+
+Director-Distribution and Aftermarket</textOnly>
+    <type>html</type>
+</EmailTemplate>

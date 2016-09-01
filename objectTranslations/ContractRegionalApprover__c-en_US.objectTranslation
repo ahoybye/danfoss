@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Regional Approver</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Regional Approvers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contract Specialist --></label>
+        <name>Contract_Specialist__c</name>
+        <relationshipLabel><!-- Contract Specialist --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Librarian --></label>
+        <name>Librarian__c</name>
+        <relationshipLabel><!-- Contract Librarian --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Director DIST --></label>
+        <name>Sales_Director_DIST__c</name>
+        <relationshipLabel><!-- Contract Regional Approvers (Sales Director DIST) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Director OEM --></label>
+        <name>Sales_Director_OEM__c</name>
+        <relationshipLabel><!-- Contract Regional Approvers (Sales Director OEM) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Executive --></label>
+        <name>Sales_Executive__c</name>
+        <relationshipLabel><!-- Contract Regional Approvers (Sales Executive) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales VP --></label>
+        <name>Sales_VP__c</name>
+        <relationshipLabel><!-- Contract Regional Approvers (Sales VP) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email confirmation for customers that lead-time request was received.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DPS_Letterhead</letterhead>
+    <name>*PS: DLR Customer Notification</name>
+    <style>freeForm</style>
+    <subject>Your Deviated Lead-time Request has been received for review.</subject>
+    <textOnly>Dear {!Deviated_Lead_time_Request__c.CreatedBy},
+
+We have received the following request
+
+DLR #{!Deviated_Lead_time_Request__c.Name}
+Created Date: {!Deviated_Lead_time_Request__c.CreatedDate}
+Account: {!Deviated_Lead_time_Request__c.Account__c}
+Reason: {!Deviated_Lead_time_Request__c.Reason__c}
+
+https://danfoss.secure.force.com/PartnerLink/{!Deviated_Lead_time_Request__c.Id}
+
+You will receive a follow-up email with further information after your request has been reviewed.
+
+
+
+
+This message is sent from a computer system that has yet to figure out how to read and reply to messages.  If you need help or have a question about this request, please contact your Customer Service Representative directly.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,792 @@
+<apex:page standardController="project_cloud__Project__c" recordSetVar="projects" extensions="project_cloud.ProjectListGanttController,project_cloud.GanttGenerator" sidebar="false" title="Cross Project Gantt - {!viewName}">
+
+	<c:walkme />
+	<!-- <apex:stylesheet value="{!URLFOR($Resource.ext_js, '/resources/css/ext-all-scoped.css')}"/>
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ext_js_plugins, '/bryntum/gantt/resources/css/sch-gantt-all.css')}"/> -->
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ext_js, '/resources/css/ext-all.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ext_js_plugins, '/bryntum/gantt/resources/css/sch-gantt-all.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ccprojex_customui,'/pulse/font-awesome/css/font-awesome.css')}" />
+	<c:include_jquery />
+	<script src="{!URLFOR($Resource.jquery_plugins_zip, '/colorbox/jquery.colorbox.js')}"></script>
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/colorbox.css')}" />
+	<script>
+		// Here we define Ext for the first time
+		Ext = {
+			buildSettings:{
+				scopeResetCSS: true 
+			}
+		};
+	</script>
+	<style>
+	.x-body {
+		font-family: Arial,Helvetica,sans-serif;
+		}
+		.x-tree-icon-leaf{
+			display: none;
+			background: none;
+		}
+		
+		.status-none{
+			background-color: #FF6628;
+		}
+		
+		.status-part{
+			background-color: #FFDE3B;
+		}
+		
+		.status-all{
+			background-color: #C6FF49;
+		}
+		
+		div.sch-dependency-line-h{
+			border-width: 2px 0;
+		}
+		div.sch-dependency-line-v{
+			border-width: 0px 2px;
+		}
+		
+		div.sch-dependency-line-h.sch-dependency-selected {
+			border-width: 1px 0;
+		}
+		
+		.sch-dependency-line, .sch-dependency-arrow {
+			border-color: blue;
+			cursor: pointer;
+		}
+		body .x-btn {
+			background-color: transparent;
+			border-color: transparent;
+			background: none;
+		}
+		
+		.ccbtn {
+			display: inline-block;
+			padding: 2px 12px;
+			margin-bottom: 0;
+			font-size: 12px;
+			line-height: 20px;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+			color: #333333;
+			text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+			background-color: #f5f5f5;
+			background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+			background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+			background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+			background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+			background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+			background-repeat: repeat-x;
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+			border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+			filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+			border: 1px solid #bbbbbb;
+			border-bottom-color: #a2a2a2;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			/*-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+			-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+			box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);*/
+		}
+		
+		.ccbtn > i{
+			font-size: 14px;
+		}
+		
+		.ccbtn:hover,.ccbtn:focus{color:#333333;text-decoration:none;background-position:0 -15px;-webkit-transition:background-position 0.1s linear;-moz-transition:background-position 0.1s linear;-o-transition:background-position 0.1s linear;transition:background-position 0.1s linear;}
+		.ccbtn:hover,.ccbtn:focus,.ccbtn:active,.ccbtn.active,.ccbtn.disabled,.ccbtn[disabled]{color:#333333;background-color:#e6e6e6;*background-color:#d9d9d9;}
+		
+		.ccbtn{
+			text-decoration: none;
+			width: 100%;
+			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			box-sizing: border-box;         /* Opera/IE 8+ */
+			text-align: left;
+		}
+		
+		.ccbtn{
+			background: none;
+			border: none;
+			background-image: none;
+			
+		}
+		/*
+		.input-prepend{
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			padding: 0px;
+			padding-left: 4px;
+			height: 100%;
+			background: white;
+			height: 24px;
+			line-height: 24px;
+		}
+		
+		.input-prepend div.add-on{
+			border-right: 1px solid #ccc;
+			display: inline-block;
+			height: 24px;
+			vertical-align: middle;
+			line-height: 24px;
+			padding: 5px;
+			box-sizing: border-box;
+			padding-right: 7px;
+			text-shadow: 0 1px 0 #ffffff;
+			background-color: #eeeeee;
+		}
+		*/
+		.input-prepend div.add-on {
+			border-right: 1px solid #ccc;
+			display: inline-block;
+			height: 24px;
+			vertical-align: middle;
+			line-height: 24px;
+			padding: 5px;
+			box-sizing: border-box;
+			padding-right: 7px;
+			text-shadow: 0 1px 0 #ffffff;
+			background-color: #eeeeee;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			padding-left: 8px;
+		
+		}
+		
+		.input-prepend {
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			padding: 0px;
+			background: white;
+			height: 24px;
+		}	
+		.input-prepend > input{
+			border: none;
+		}
+		
+		.health-Green{
+			background-color: #448126;
+		}
+		
+		.health-Yellow{
+			background-color: #f7b649;
+		}
+		
+		.health-Red{
+			background-color: #af0707;
+		}
+		
+		.health{
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			text-decoration: none;
+			display: inline-block;
+		}
+	</style>
+	<style>
+		.health-Green{
+			background-color: #448126;
+		}
+		
+		.health-Yellow{
+			background-color: #f7b649;
+		}
+		
+		.health-Red{
+			background-color: #af0707;
+		}
+		
+		.health{
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			text-decoration: none;
+			display: inline-block;
+		}
+		.x-tree-icon-leaf, .x-tree-icon{
+			display: none;
+			background: none;
+		}
+	</style>
+	
+	<!-- Don't use apex:includeScript because then the declaration will be out of order, the snippet above declaring scoped reset MUST come before the inclusion of the ext-all.js file -->
+	<script type="text/javascript" src="{!URLFOR($Resource.ext_js, '/ext-all.js')}"></script>
+	<script type="text/javascript" src="{!URLFOR($Resource.ext_js_plugins, '/bryntum/gantt/gnt-all-debug.js')}"></script>
+	<script type="text/javascript">
+
+		Ext.ns('ProjectsGantt');
+		Ext.ns('DetailGantt');
+		Ext.QuickTips.init(); 
+		Ext.Loader.setConfig({enabled: true, disableCaching : true });
+		Ext.require([
+			'Sch.plugin.Pan',
+			'Gnt.column.StartDate',
+			'Gnt.column.EndDate',
+			'Sch.plugin.Pan'
+		]);
+
+		Ext.onReady(function() {
+			ProjectsGantt.Gantt.init();
+		});
+
+		ProjectsGantt.Gantt = {
+		
+			// Initialize application
+			init: function (serverCfg) {
+				Ext.define('ccprojex.model.Task', {
+		    		extend                              : 'Gnt.model.Task',
+					autoCalculateEffortForParentTask    : false,
+					autoCalculatePercentDoneForParentTask   : false
+				});
+				Ext.QuickTips.init(); 
+				
+				var projectsJson = '{!projectsJson}';
+				  
+				var projectObj = '';
+				if(projectsJson != null && projectsJson != ''){
+					//To convert a JSON text into an object
+					var projectObj = Ext.JSON.decode(projectsJson); 
+				}
+				
+				var taskStore = Ext.create("Gnt.data.TaskStore", {
+					model : 'ccprojex.model.Task',
+					autoLoad: true,
+					proxy : {
+						data : projectObj,
+						type : 'memory',
+						reader: {
+							type : 'json'
+						}
+					}
+				});
+		
+				var colSlider = Ext.create("Ext.slider.Single", {
+					width: 120,
+					value: 100, // TODO Sch.PresetManager.getPreset('weekAndDayLetter').timeColumnWidth,
+					minValue: 80,
+					maxValue: 240,
+					increment: 10
+				});
+				
+				var start = '';
+				if('{!startDate}' != null) {
+					//<!-- Formats the date in yyyy, M, d format which when rendered becomes the 3 parameters for the javascript date object constructor -->
+					start = new Date( <apex:outputText value="{0,date,yyyy',' M',' d}"><apex:param value="{!startDate}" /></apex:outputText>);
+				}
+				
+				var end = '';
+				if('{!endDate}' != null){
+					end = new Date( <apex:outputText value="{0,date,yyyy',' M',' d}"><apex:param value="{!endDate}" /></apex:outputText>);
+				}
+				
+		
+				g = Ext.create('Gnt.panel.Gantt', {
+					height: 600,
+					width: "auto",
+					renderTo: Ext.get('projectsGantt'),
+					leftLabelField: 'Name',
+					highlightWeekends: false,
+					loadMask: true,
+					enableProgressBarResize: false,
+					enableDependencyDragDrop: false,
+					toggleParentTasksOnClick: false,
+					cascadeChanges : false,
+				   
+					startDate   : start,
+					endDate	 	: end,
+					
+					viewPreset: 'monthAndYear',
+					
+					eventRenderer: function (taskRecord) {
+						return {
+							ctcls : taskRecord.get('Id') // Add a CSS class to the task element
+						};
+					},
+		
+					tooltipTpl: new Ext.XTemplate(
+						'<table>',
+							'<tpl for="_record.raw.Fieldset">',
+								'<tr><td><strong>{field}:</strong></td><td>{value}</td></tr>',
+							'</tpl>',
+							'<tr><td colspan="2"><img src="{_record.raw.Owner}"  style="height: 25px; width: 25px; border-radius: 2px;" /></td></tr>',
+						'</table>'
+					).compile(),
+		
+					// Setup your static columns
+					columns: [
+						{xtype : 'treecolumn', header: 'Project', dataIndex: 'Name', width: 200,
+								renderer : function(v, meta, r,ri,ci,store,view) {
+                       				return  '<div class="health health-' + r.raw.Health + '" /><div style="display: inline; padding-left: 18px; vertical-align: middle; cursor: pointer;" onclick="ShowTrafficLightForm(\'' + r.data.Id + '\'); return false;">' + v + '</div>';
+                       				//return  '<a style="text-decoration: none; background : url(\'' + r.raw.ResourceStatus + '\'); background-size: 13px 13px; background-repeat: no-repeat; height: 13px; width: 13px; display: inline-block;" class="status-' + r.raw.ResourceStatus +'" href="/apex/project_task_resources?id=' + r.data.Id + '&retURL=' + encodeURIComponent(window.location.pathname + window.location.search) + '">&nbsp;</a><div style="display: inline-block; margin-left: 5px; height: 100%; line-height: 13px; vertical-align: middle;">' + v + '</div>';	
+                       			}
+                    		}
+					],
+		
+					taskStore: taskStore,
+					plugins : {
+						ptype : 'pan'
+					},
+					tbar: [
+						'->',
+						{
+							xtype: 'label',
+							text: 'Column Width'
+						},
+						' ',
+						colSlider
+					]
+				});
+	
+				// set gantt read only
+				g.setReadOnly(true);
+				colSlider.on({
+					change: function (s, v) {
+						g.setTimeColumnWidth(v, true);
+					},
+					changecomplete: function (s, v) {
+						g.setTimeColumnWidth(v);
+					}
+				});
+				g.on('taskclick', function (g, task) {
+					var detailGanttCB = jQuery("#detailGantt");
+					//Get the detail element and delete any children before reloading a new gantt
+					detailGanttCB.empty();
+					//This is the result form the javascript remoting
+					var ganttObj = null;
+					//Create the colorbox element for the all gantt details popup
+					console.log(task.internalId);
+					detailGanttCB.colorbox({
+						inline: true,
+						href:"#detailGantt",
+						width: "98%",
+						height: "98%",
+						open: true,
+						speed: 500,
+						opacity: 0.4,
+						title: task.get('Name'),
+						onComplete: function() {
+							jQuery(this).show();
+							jQuery('#cboxLoadingGraphic').show();
+							//The Project has been clicked, display the gant chart with the details of that project
+							//either: project_cloud. or nothing if running in a development org
+							{!currentNamespacePrefix}GanttGenerator.getBryntumGantt(task.internalId, function(result, event) {
+								
+								if (event.status) {
+									refreshGantt(result);
+								} else if (event.type === 'exception') {
+									jQuery(this).colorbox.close();
+								} else {
+									jQuery(this).colorbox.close();
+								}
+								
+							//We don't want to escape the results because it is json data
+							}, {escape: false});
+						}
+					});
+				});
+			}
+		};
+
+		function refreshGantt(ganttObj) {
+			if(ganttObj.phasesTasksJson != null && ganttObj.phasesTasksJson != '' &&
+				ganttObj.dependenciesJson != null && ganttObj.dependenciesJson != '') {
+
+				var detailStart = new Date(ganttObj.startDate);
+				var detailEnd = new Date(ganttObj.endDate);
+
+				var detailTaskStore = Ext.create("Gnt.data.TaskStore", {
+					model : 'Gnt.model.Task',
+					autoLoad: true,
+					proxy : {
+						data : Ext.JSON.decode(ganttObj.phasesTasksJson),
+						type : 'memory',
+						reader: {
+							type : 'json'
+						}
+					}
+				});
+
+				var detailDependencyStore = Ext.create("Gnt.data.DependencyStore", {
+					autoLoad	: true,
+					model		: 'Gnt.model.Dependency',
+					proxy		: {
+						data 	: Ext.JSON.decode(ganttObj.dependenciesJson),
+						type	: 'memory',
+						reader	: {
+						type	: 'json',
+						}
+				   }
+				});
+
+				var detailGantt = Ext.create('Gnt.panel.Gantt', {
+					height: 600,
+					width: 'fit',
+					renderTo: Ext.get('detailGantt'),
+					leftLabelField: 'Name',
+					highlightWeekends: true,
+					loadMask: true,
+					cascadeChanges : true,
+					enableTaskDragDrop: false,
+
+					startDate   : detailStart,
+					endDate	 	: detailEnd,
+
+					viewPreset: 'weekAndDayLetter',
+
+					eventRenderer: function (taskRecord) {
+						return {
+							ctcls : taskRecord.get('Id') // Add a CSS class to the task element
+						};
+					},
+
+					tooltipTpl: new Ext.XTemplate(
+						'<table>',
+							/*
+							'<tr><td><strong>Task:</strong></td><td>{Name}</td></tr>',
+							'<tr><td><strong>Start:</strong></td><td>{[Ext.Date.format(values.StartDate, "y-m-d")]}</td></tr>',
+							'<tr><td><strong>Progress:</strong></td><td>{PercentDone}%</td></tr>',
+							*/
+							'<tpl for="values._record.raw.Fieldset">',
+								'<tr><td><strong>{field}:</strong></td><td>{value}</td></tr>',
+							'</tpl>',
+							'<tr><td colspan="2" style="padding-top: 5px;">',
+								'<tpl for="values._record.raw.Allocated">',
+									'<img src="{img}" style="height: 25px; width: 25px; border-radius: 2px;"/>',
+								'</tpl>',
+							'</td></tr>',
+						'</table>',
+					/*
+						'<ul class="taskTip">',
+							'<li><strong>Task:</strong>{Name}</li>',
+							'<li><strong>Start:</strong>{[Ext.Date.format(values.StartDate, "y-m-d")]}</li>',
+							'<li><strong>Progress:</strong>{PercentDone}%</li>',
+							'<li>',
+								'<tpl for="values._record.raw.Allocated">',
+									'<img src="{img}" style="height: 25px; width: 25px; border-radius: 2px;"/>',
+								'</tpl>',
+							'</li>',
+						'</ul>',
+						*/
+						    {
+						        // XTemplate configuration:
+						        compiled: false,
+						        // member functions:
+						        getData : function(data){
+						        }
+						        
+						    }
+						
+					).compile(),
+
+					// Setup your static columns
+					columns: [
+						{
+							xtype : 'treecolumn',
+							header: 'Tasks',
+							sortable: true,
+							dataIndex: 'Name',
+							width: 200,
+							field: {
+								allowBlank: false
+							}
+						}
+					],
+
+					taskStore: detailTaskStore,
+					dependencyStore: detailDependencyStore,
+					
+				});
+				detailGantt.on('taskclick', function (g, task, e) {
+					window.location.href = '/' + task.internalId;
+				}); 
+				// set gantt read only
+				detailGantt.setReadOnly(false);
+				detailGantt.zoomToFit();
+			}
+			jQuery('#cboxLoadingGraphic').hide();
+		}
+	</script>
+
+	<apex:pageMessages />
+	<apex:sectionHeader title="Cross Project Gantt View" subtitle="{!viewName}" />
+	<apex:pageBlock >
+		<apex:pageBlockButtons >
+			<apex:form >
+				<apex:commandButton value="Back" action="{!back}" />
+			</apex:form>
+		</apex:pageBlockButtons>
+	<apex:outputPanel id="GanttControls">
+		<table style="width: 100%;">
+  			<tr>
+				<td>
+					<a class="ccbtn" href="#" style="text-align: center;" onclick="g.shiftPrevious(); return false;">
+  						<i class="icon-circle-arrow-left"></i> Previous
+  					</a>
+  				</td>
+  				<td>
+					<a class="ccbtn" href="#" style="text-align: center;" onclick="g.shiftNext(); return false;">
+			  			<i class="icon-circle-arrow-right"></i> Next
+			  		</a>
+  				</td>
+  				<td>
+					<a class="ccbtn" href="#" style="text-align: center;" onclick="scrollToFirst(); return false;">
+						<i class="icon-mail-reply"></i> Scroll to first project
+			  		</a>
+			  	</td>
+			  	<td>
+					<a class="ccbtn" href="#" style="text-align: center;" onclick="scrollToLast(); return false;">
+						<i class="icon-mail-forward"></i> Scroll to last project
+			  		</a>
+			  	</td>
+			  	<td>
+			  		<div class="input-prepend" style="float: right;">
+    					<div class="add-on"><i class="icon-search"></i></div>
+    					<input id="ccprojex__TaskFilter" class="span2" type="text" placeholder="Seach for project" style="width: 150px; vertical-align: middle;" />
+					</div>
+			  	</td>
+  			</tr>
+  			
+		</table>
+		</apex:outputPanel>
+		<div id="projectsGantt"></div>
+	</apex:pageBlock>
+	<div id="detailGantt" style="display: none;"></div>
+	<script>
+		function scrollToLast(){
+	        var latestEndDate = new Date(0),
+	            latest;
+	       g.taskStore.getRootNode().cascadeBy(function (task) {
+	            if (task.get('EndDate') >= latestEndDate) {
+	            	console.log(task);
+	                latestEndDate = task.get('EndDate');
+	                latest = task;
+	            }
+	        });
+	        g.getSchedulingView().scrollEventIntoView(latest, true);
+		}
+		function scrollToFirst(){
+	        var earliestStartDate = null,
+	            earliest;
+	        g.taskStore.getRootNode().cascadeBy(function (task) {
+	        	if(task.data.StartDate != 'null' && task.data.StartDate != null){
+		            if ( (task.data.StartDate <= earliestStartDate) || earliestStartDate == null) {
+		                earliestStartDate = task.data.StartDate;
+		                earliest = task;
+		            }
+	            }
+	        });
+	       g.getSchedulingView().scrollEventIntoView(earliest, true);
+		}
+		
+
+	</script>
+	<script>
+		function showFullScreen(obj) {
+			_fullScreenFn($('#projectsGantt'));
+		}
+		// Experimental, not X-browser
+		function _fullScreenFn(elem) {
+			if (screenfull.enabled) {
+    			screenfull.request(elem[0]);
+    			elem.css('height', $(window).height());
+    			elem.css('width',$(window).width());
+    			elem.css('position','absolute');
+    			elem.css('bottom','0');
+    			ProjectsGantt.Gantt.height = $(window).height();
+    			ProjectsGantt.Gantt.width = $(window).width();
+    			ProjectsGantt.Gantt.zoomToFit();
+    			
+			}
+		}
+	</script>
+	
+	<script>
+		/*global Element */
+		var fullscreenEnabled = false;
+		
+		(function (window, document) {
+			'use strict';
+		
+			var keyboardAllowed = typeof Element !== 'undefined' && 'ALLOW_KEYBOARD_INPUT' in Element, // IE6 throws without typeof check
+				fn = (function () {
+					var val, valLength;
+					var fnMap = [
+						[
+							'requestFullscreen',
+							'exitFullscreen',
+							'fullscreenElement',
+							'fullscreenEnabled',
+							'fullscreenchange',
+							'fullscreenerror'
+						],
+						// new WebKit
+						[
+							'webkitRequestFullscreen',
+							'webkitExitFullscreen',
+							'webkitFullscreenElement',
+							'webkitFullscreenEnabled',
+							'webkitfullscreenchange',
+							'webkitfullscreenerror'
+		
+						],
+						// old WebKit (Safari 5.1)
+						[
+							'webkitRequestFullScreen',
+							'webkitCancelFullScreen',
+							'webkitCurrentFullScreenElement',
+							'webkitCancelFullScreen',
+							'webkitfullscreenchange',
+							'webkitfullscreenerror'
+		
+						],
+						[
+							'mozRequestFullScreen',
+							'mozCancelFullScreen',
+							'mozFullScreenElement',
+							'mozFullScreenEnabled',
+							'mozfullscreenchange',
+							'mozfullscreenerror'
+						]
+					];
+					var i = 0;
+					var l = fnMap.length;
+					var ret = {};
+		
+					for (; i < l; i++) {
+						val = fnMap[i];
+						if (val && val[1] in document) {
+							for (i = 0, valLength = val.length; i < valLength; i++) {
+								ret[fnMap[0][i]] = val[i];
+							}
+							return ret;
+						}
+					}
+					return false;
+				})(),
+		
+				screenfull = {
+					request: function (elem) {
+						var request = fn.requestFullscreen;
+		
+						elem = elem || document.documentElement;
+		
+						// Work around Safari 5.1 bug: reports support for
+						// keyboard in fullscreen even though it doesn't.
+						// Browser sniffing, since the alternative with
+						// setTimeout is even worse.
+						if (/5\.1[\.\d]* Safari/.test(navigator.userAgent)) {
+							elem[request]();
+						} else {
+							elem[request](keyboardAllowed && Element.ALLOW_KEYBOARD_INPUT);
+						}
+					},
+					exit: function () {
+						window.location.href = window.location.href;
+						document[fn.exitFullscreen]();
+						
+					},
+					toggle: function (elem) {
+						if (this.isFullscreen) {
+							this.exit();
+						} else {
+							this.request(elem);
+						}
+					},
+					onchange: function (e) {
+						fullscreenEnabled = !fullscreenEnabled;
+						if(!fullscreenEnabled)
+							window.location.href = window.location.href;
+					},
+					onerror: function () {},
+					raw: fn
+				};
+		
+			if (!fn) {
+				return window.screenfull = false;
+			}
+		
+			Object.defineProperties(screenfull, {
+				isFullscreen: {
+					get: function () {
+						return !!document[fn.fullscreenElement];
+					}
+				},
+				element: {
+					enumerable: true,
+					get: function () {
+						return document[fn.fullscreenElement];
+					}
+				},
+				enabled: {
+					enumerable: true,
+					get: function () {
+						// Coerce to boolean in case of old WebKit
+						return !!document[fn.fullscreenEnabled];
+					}
+				}
+			});
+		
+			document.addEventListener(fn.fullscreenchange, function (e) {
+				screenfull.onchange.call(screenfull, e);
+			});
+		
+			document.addEventListener(fn.fullscreenerror, function (e) {
+				screenfull.onerror.call(screenfull, e);
+			});
+		
+			window.screenfull = screenfull;
+		})(window, document);
+	
+	
+		$('#ccprojex__TaskFilter').keyup(function (e) {
+			if(e.keyCode == 27){
+				$(this).val('');
+			}
+			var value = $(this).val();
+            var regexp = new RegExp(Ext.String.escapeRegex(value), 'i')
+            if (value) {
+                g.taskStore.filterTreeBy({
+                	filter : function (task) {
+				                	return regexp.test(task.get('Name'));
+				                },
+				    checkParents : true
+				    });
+            } else {
+                g.taskStore.clearTreeFilter();
+            }
+		});
+	</script>
+	<script>
+		jQuery(document).ready(function($) {
+			$(document).bind('cbox_closed', function(){
+				$('#detailGantt').css('display','none');
+			});
+		});
+
+	</script>
+	<apex:form >
+		<apex:actionFunction name="ShowTrafficLightForm" action="{!UpdateTrafficLightForm}" rerender="TrafficForm" oncomplete="jQuery.colorbox({inline:true, href:'#TrafficContainer', width:'400px', height: '250px', open:true, transition: 'elastic', speed: 300, title: '', opacity: 0.4, onCleanup : function(){ jQuery('#TrafficContainer').css('display','none'); } });jQuery('#TrafficContainer').css('display','block')">
+			<apex:param name="TrafficId" assignTo="{!trafficId}" value="{!trafficId}" />
+		</apex:actionFunction>
+	</apex:form>
+	<div id="TrafficContainer" style="display: none;">
+			<apex:outputPanel id="TrafficForm">
+				<apex:form >
+				<table style="width: 100%;">
+					<tr>
+						<td style="width: 120px;"><strong><apex:outputLabel value="{!$ObjectType.project_cloud__Project__c.fields.project_cloud__Health__c.label}" /></strong></td>
+						<td style="padding-right: 10px;"><apex:inputField value="{!traffic.project.project_cloud__Health__c}" style="width: 100%;"/></td>
+					</tr>
+					<tr>
+						<td style="width: 120px;"><strong><apex:outputLabel value="{!$ObjectType.project_cloud__Project__c.fields.project_cloud__Health_Reason__c.label}" /></strong></td>
+						<td style="padding-right: 10px;"><apex:inputField value="{!traffic.project.project_cloud__Health_Reason__c}" style="width: 100%;"/></td>
+					</tr>
+					<tr><td colspan="2" style="text-align: center;"><apex:commandButton value="Cancel" onclick="jQuery.colorbox.close();"/>&nbsp;<apex:commandButton value="Save" action="{!traffic.save}" oncomplete="jQuery.colorbox.close(); window.location.href=window.location.href;"/></td></tr>
+				</table>
+				</apex:form>
+			</apex:outputPanel>
+		</div>
+</apex:page>

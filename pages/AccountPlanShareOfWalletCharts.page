@@ -1,0 +1,39 @@
+<apex:page standardController="Account_Plan__c">  
+   
+<script type="text/javascript">
+    function pageOpen(id){
+        
+                if (window.sforce) {
+                    sforce.one.navigateToSObject(id);
+                } else {
+                     var url = '/' + id;
+        			 window.parent.location.replace(url);
+                }     
+    }
+
+ 
+    </script>
+    
+    <div>
+        <apex:outputLink onclick="pageOpen('{!$Setup.FieldID__c.AccountPlanGraphID__c}');">  
+            
+        <div style="display: inline-block; vertical-align: top">
+            <analytics:reportChart size="small" showRefreshButton="false" cacheResults="false" hideOnError="true" reportId="{!$Setup.FieldID__c.AccountPlanGraphID__c}" filter="[{column:'ACCOUNT.NAME',operator:'equals',value:'{!Account_Plan__c.Account__r.Name}'}]"   ></analytics:reportChart> 
+        </div>
+        </apex:outputLink>
+        
+        <apex:outputLink onclick="pageOpen('{!$Setup.FieldID__c.AccountPlanGraphID2__c}');">  
+        <div style="display: inline-block; vertical-align: top">
+            <analytics:reportChart size="small" showRefreshButton="false" cacheResults="false"  hideOnError="true" reportId="{!$Setup.FieldID__c.AccountPlanGraphID2__c}" filter="[{column:'ACCOUNT.NAME',operator:'equals',value:'{!Account_Plan__c.Account__r.Name}'}]"></analytics:reportChart>
+        </div>
+        </apex:outputLink>
+        
+       <apex:outputLink onclick="pageOpen('{!$Setup.FieldID__c.AccountPlanGraphID3__c}');">  
+
+        <div style="display: inline-block; vertical-align: top">
+            <analytics:reportChart size="small" showRefreshButton="false" cacheResults="false" hideOnError="true" reportId="{!$Setup.FieldID__c.AccountPlanGraphID3__c}" filter="[{column:'ACCOUNT.NAME',operator:'equals',value:'{!Account_Plan__c.Account__r.Name}'}]"></analytics:reportChart>
+        </div>
+        </apex:outputLink>
+        
+    </div>
+</apex:page>

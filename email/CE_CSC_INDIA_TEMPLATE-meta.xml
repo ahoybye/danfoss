@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Shared</accessType>
+    <name>CE CSC INDIA TEMPLATE</name>
+    <publicFolderAccess>ReadWrite</publicFolderAccess>
+    <sharedTo>
+        <group>CE_India</group>
+        <group>India_CSC_Agent</group>
+    </sharedTo>
+</EmailFolder>

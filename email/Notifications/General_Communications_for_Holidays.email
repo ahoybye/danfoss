@@ -1,0 +1,20 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif">Dear {!Contact.FirstName},</font></p>
+<p><font face="Verdana,Helvetica,Sans-Serif">&nbsp;</font></p>
+<p><font face="Verdana,Helvetica,Sans-Serif">Attached is a notification&nbsp;of the Danfoss Power Solutions 2013 Holiday Schedule.</font>&nbsp;</p>
+<p><font face="Verdana,Helvetica,Sans-Serif">&nbsp;</font></p>
+<p><font face="Verdana,Helvetica,Sans-Serif">Best regards,</font></p>
+<p><font face="Verdana"></font>&nbsp;</p>
+<p><font face="Verdana">Danfoss Power Solutions</font></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<p align="center"><span style="font-family: Verdana, Helvetica, sans-serif; font-size: small;">Danfoss Powe</span><span style="font-family: Verdana, Helvetica, sans-serif; font-size: small;">r Solutions (US)&nbsp; 2800 East 13th Street, Ames, IA 50010</span></p>]]></td>
+</tr>
+</table>

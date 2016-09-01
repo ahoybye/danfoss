@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2013 Lead Time Update</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>2013 Lead Time Update</name>
+    <style>formalLetter</style>
+    <subject>2013 Sauer-Danfoss Lead Time Update</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+Subject: Sauer-Danfoss Lead Time Reduction VMP Motor
+
+
+Dear Sauer-Danfoss Distributor,
+
+
+See the attached document referencing the updated leadtimes for VMP Motors.
+Sincerely,
+
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+
+
+
+Thomas A. Rosskopf
+
+Director-Distribution and Aftermarket</textOnly>
+    <type>html</type>
+</EmailTemplate>

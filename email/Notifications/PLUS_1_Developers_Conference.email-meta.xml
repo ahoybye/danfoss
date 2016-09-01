@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Linked Distributor Inventory Announcement</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>PLUS+1 Developers Conference</name>
+    <style>formalLetter</style>
+    <subject>PLUS+1 Developers Conference 2014</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+Subject: PLUS+1 Distributor Conference
+
+
+Dear Danfoss Power Solutions Distributor
+
+
+SAVE THE DATE
+
+
+We are planning a 2014 PLUS+1 Distributor Conference for the week of September29th.
+
+
+I have attached a short survey please complete and return to
+
+tbrafford@danfoss.com
+
+
+Please contact with any questions:
+
+Twila Brafford
+
+tbrafford@danfoss.com
+
+515-956-5002</textOnly>
+    <type>html</type>
+</EmailTemplate>

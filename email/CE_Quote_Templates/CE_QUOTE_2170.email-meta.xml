@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Quote Template for Sales Org 2170</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_Letterhead_Logo_Only</letterhead>
+    <name>CE_QUOTE_2170</name>
+    <style>freeForm</style>
+    <subject>{!Quote.Name} - {!Quote.QuoteNumber} - {!Quote.ConfigitQuoteRevDisplay__c}</subject>
+    <textOnly>Sehr geehrte(r) {!Contact.Salutation} {!Contact.LastName},
+
+
+
+Vielen Dank für das Interesse an unseren Produkten.
+
+Bitte finden Sie im Anhang zu dieser Email das passende Angebot aus unserem Hause.
+
+
+
+Technische Details, sowie Ihre direkten Ansprechpartner finden Sie dort auch benannt.
+
+
+
+Bei Fragen stehen wir gerne zur Verfügung.
+
+
+
+Mit freundlichen Grüßen
+
+{!User.Name}</textOnly>
+    <type>html</type>
+</EmailTemplate>

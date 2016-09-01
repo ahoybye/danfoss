@@ -1,0 +1,11 @@
+<apex:page standardController="Task" extensions="NewTaskExtension">
+    <script>
+    addEventListener('load', function() {
+        if (window.sforce) {
+            sforce.one.createRecord('Task',"{!recTypeId}");
+        } else {
+            location = "{!taskURL}";
+        }
+    });
+    </script>
+</apex:page>

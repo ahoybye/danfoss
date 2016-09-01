@@ -1,0 +1,22 @@
+<apex:page controller="TermAndConditionController" showHeader="false" sidebar="false">
+<head>
+    <apex:stylesheet value="{!URLFOR($Resource.HomePageResource , 'css/styles.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.HomePageResource  , 'js/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.HomePageResource  , 'js/nivo.slider.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.HomePageResource , 'css/nivo-slider.css')}"/>
+</head>
+<div class="container">
+    <div id="header">
+        <div class="logo"><span class="hidden">Danfoss</span></div>
+    </div>  
+<apex:form id="frm" >
+<apex:pageBlock Id="pb" title="Please accept below Terms and Conditions of Use">
+<apex:pageblockButtons location="bottom" rendered="{!NOT(hideButtons)}">
+      <apex:commandButton value="Accept" action="{!acceptConditions}"/>
+      <apex:commandButton value="Decline" action="{!declineConditions}"/>
+</apex:pageblockButtons>
+<apex:outputField value="{!termAndCondition.Description__c}"/>
+</apex:pageBlock>
+</apex:form>
+</div>
+</apex:page>

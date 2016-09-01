@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fieldSets>
+        <fullName>BMCServiceDesk__Incident_Survey</fullName>
+        <availableFields>
+            <field>BMCServiceDesk__Response_Timeliness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Satisfaction__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Service_Desk_Performance__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Staff_Effectiveness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>Questions to be shown in incident surveys</description>
+        <displayedFields>
+            <field>Resolution_Time__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Resolution_Quality__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Dialogue_Quality__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Incident Survey</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>BMCServiceDesk__Incident_Survey_Color_Bar</fullName>
+        <availableFields>
+            <field>BMCServiceDesk__Response_Timeliness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Satisfaction__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Service_Desk_Performance__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Staff_Effectiveness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>Questions to be shown in incident surveys in the form of color palette</description>
+        <label>Incident Survey: Color Bar</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>BMCServiceDesk__ServiceRequest_Survey</fullName>
+        <description>Questions to be shown in service request surveys</description>
+        <displayedFields>
+            <field>BMCServiceDesk__Response_Timeliness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__Staff_Effectiveness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__Service_Desk_Performance__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__Satisfaction__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Service Request Survey</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>BMCServiceDesk__Service_Request_Survey_Color_Bar</fullName>
+        <availableFields>
+            <field>BMCServiceDesk__Response_Timeliness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Satisfaction__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Service_Desk_Performance__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>BMCServiceDesk__Staff_Effectiveness__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>Questions to be shown in service request surveys in the form of color palette</description>
+        <label>Service Request Survey: Color Bar</label>
+    </fieldSets>
+    <fields>
+        <fullName>BMCServiceDesk__Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Any additional feedback you’d like to share with us?</inlineHelpText>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKIncident__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Incident</label>
+        <referenceTo>BMCServiceDesk__Incident__c</referenceTo>
+        <relationshipLabel>Surveys</relationshipLabel>
+        <relationshipName>Surveys</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Incident__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKIncident__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Incident #</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Response_Timeliness__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How responsive was the Service Desk?</inlineHelpText>
+        <label>Response Timeliness</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely responsive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very responsive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderately responsive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly responsive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not responsive at all</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Satisfaction__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Did the assistance provided meet your satisfaction?</inlineHelpText>
+        <label>Satisfaction</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely satisfied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very satisfied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderately satisfied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly satisfied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not satisfied at all</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Service_Desk_Performance__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How well did the Service Desk handle your request?</inlineHelpText>
+        <label>Service Desk Performance</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Extremely well</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very well</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderately well</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slightly well</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not well at all</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Staff_Effectiveness__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How would you rate the knowledge and attitude of the analyst?(1=Poor, 5=Outstanding)</inlineHelpText>
+        <label>Staff Effectiveness</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__SurveyFor__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>BMCServiceDesk__FKIncident__r.BMCServiceDesk__Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Survey For</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ToBeDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ToBeDeleted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Dialogue_Quality__c</fullName>
+        <description>Survey question measuring the quality of the dialogue/communication between the customer and IT.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please rate your dialogue/communication with IT personnel involved in resolving your incident (Both in writing and verbally).</inlineHelpText>
+        <label>Dialogue Quality</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Very Good</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good</fullName>
+                <color>#33FF33</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Average</fullName>
+                <color>#FFFF66</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poor</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Poor</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Resolution_Quality__c</fullName>
+        <description>Survey question measuring the quality of the resolution for the Incident.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please rate the quality of the resolution for your Incident (i.e. - was it professional and correct).</inlineHelpText>
+        <label>Resolution Quality</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Very Good</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good</fullName>
+                <color>#33FF33</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Average</fullName>
+                <color>#FFFF66</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poor</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Poor</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Resolution_Time__c</fullName>
+        <description>Survey question measuring the amount of time it took to resolve the issue.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please rate the time it took to resolve your Incident.</inlineHelpText>
+        <label>Resolution Time</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Very Good</fullName>
+                <color>#33CC00</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Good</fullName>
+                <color>#33FF33</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Average</fullName>
+                <color>#FFFF66</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poor</fullName>
+                <color>#FF0000</color>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Very Poor</fullName>
+                <color>#CC0000</color>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

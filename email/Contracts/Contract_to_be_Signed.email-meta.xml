@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contract to be Signed</name>
+    <style>none</style>
+    <subject>{!Contract__c.Name} for {!Contract__c.Customer__c} is ready for you to approve and sign</subject>
+    <textOnly>The subject Customer Contract requires your approval and signature. To assure a prompt response to the customer, please do the following as soon as possible:   1) Review the contract and assure that it meets your approval.   2) Download the applicable &quot;Final Draft&quot; attachment(s) found in the &quot;Contract Documents&quot; section of the contract record.   3) print 2 copies,   4) sign both,   5) scan and upload a scanned copy to the &quot;Signed Documents&quot; section of the subject Contract Record (save the file with the phrase &quot;Danfoss Signed&quot; added to the file name),   6) forward the hard copy signed documents (or digital version) to the applicable Contract Creator as soon as possible.   7) Complete the task in Salesforce per SW3908.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PS Pricing Review Due Date Escalation Email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>PS: Pricing Case Due Date Past</name>
+    <style>freeForm</style>
+    <subject>Pricing Case: {!Case.CaseNumber} is requires your immediate attention</subject>
+    <textOnly>YOUR IMMEDIATE ATTENTION IS REQUIRED:
+The following pricing case is 7 days past its original due date.
+
+Account: {!Case.Account}
+Subject: {!Case.Subject}
+Case Type: {!Case.Type}
+Status: {!Case.Pricing_Stage__c}
+Due Date: {!Case.Due_Date__c}
+
+Case Link: {!Case.Link}
+
+Please review this case immediately.
+
+cc:
+{!Account.OwnerFullName}
+{!Account.Sales_Manager__c}</textOnly>
+    <type>html</type>
+</EmailTemplate>

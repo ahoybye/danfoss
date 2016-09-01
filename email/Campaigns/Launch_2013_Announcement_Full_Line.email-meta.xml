@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Launch 2013 Announcement (Full-Line)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Launch 2013 Announcement (Full-Line)</name>
+    <style>freeForm</style>
+    <subject>Sauer-Danfoss 2013 Launch Webinars</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+Please see the attached document and sign-up for our 2013 Launch
+
+
+
+Best regards,
+
+
+Twila Brafford
+
+Sales Process Specialist
+
+Sauer-Danfoss, Inc.
+
+tbrafford@sauer-danfoss.com
+
+515.956.5002</textOnly>
+    <type>html</type>
+</EmailTemplate>

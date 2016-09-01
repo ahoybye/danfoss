@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Associated_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Associated Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Associated_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attitude_towards_Danfoss__c</fullName>
+        <description>CE Stakeholder Mapping field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the customers attitude towards Danfoss</inlineHelpText>
+        <label>Attitude towards Danfoss</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enthusiastic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hostile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Attitude_towards_competition__c</fullName>
+        <description>CE Stakeholder Mapping</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the customers attitude towards the competition</inlineHelpText>
+        <label>Attitude towards competition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enthusiastic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hostile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Back_to_Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK((&apos;/&apos; + Project_Opportunity__r.Id) , &apos;Back to Opportunity&apos;,&apos;_self&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Back to Opportunity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitQuoteLink__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;http://&apos;&amp;$Setup.ConfigitQuoteSettings__c.ServerHost__c&amp;&apos;/Configit/Quote/api/ext/Opportunity/create/&apos;&amp;$User.Id&amp;&apos;/&apos; &amp;  CASESAFEID(Associated_Account__c)&amp;&apos;/&apos; &amp; Id, &apos;Configit Quote&apos;, &apos;_parent&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Configit Quote</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Select an Account and press save to add contact person in the next page. Use field :Set Contacts</inlineHelpText>
+        <label>Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.AccountId</field>
+                <operation>equals</operation>
+                <valueField>$Source.Associated_Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Stakeholder Mapping</relationshipLabel>
+        <relationshipName>Associated_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Influence_on_Purchasing_Decision__c</fullName>
+        <description>CE Stakeholder Mapping field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How large an influence does the stakeholder have on the purchasing decision</inlineHelpText>
+        <label>Influence on Purchasing Decision</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Motivation_for_change__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Add the contacts motivation for changing supplier</inlineHelpText>
+        <label>Motivation for change</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Save</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Improve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No motivation - Doing fine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No motivation - Blind</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Project_Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity Name</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Stakeholder Mapping</relationshipLabel>
+        <relationshipName>Associated_Accounts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Quote_in_SAP_CRM__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(
+  &quot;/apex/SapQuoteStakeholder?id=&quot;&amp;Id,
+  &quot;Quote in SAP CRM&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quote in SAP CRM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Role_in_the_buying_Center__c</fullName>
+        <description>CE Stakeholder Mapping field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the cutomer contacts role in the buying center</inlineHelpText>
+        <label>Role in the buying Center</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ultimate approver</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Screener</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Friend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enemy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Setasmainaccount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Project_Opportunity__r.AccountId != Associated_Account__r.Id , 
+
+HYPERLINK(&quot;/apex/SetAsMainAccount?id=&quot; &amp; Id, &quot;Set as Main&quot;, &quot;_top&quot;)
+,
+&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Set As Main Account</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Show_Mapping__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK((&quot;/&quot; +  Id) , &quot;Show Mapping&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Show Mapping</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SubAccount__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sub Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Sub_Account__c.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Associated_Account__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Sub_Account__c</referenceTo>
+        <relationshipName>Associated_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_Association__c</fullName>
+        <description>&quot;Main Account&quot; and &quot;Previous Main Account&quot; - are values used by business logic and cannot be removed or changed</description>
+        <externalId>false</externalId>
+        <label>Type of Association</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Architect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consultancy company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contracting Company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor/Wholesaler</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>End customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installer Company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Main Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Owner/Investor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panel Building company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Possible Supplier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Previous Main Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System integrator company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technical inspection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Urgency_of_need__c</fullName>
+        <description>CE Stakeholder Mapping field</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How urgent is the need for our products</inlineHelpText>
+        <label>Urgency of need</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>opportunity_phase_status_look_up__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Project_Opportunity__r.CE_Phase__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Phase</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>opportunity_stage_look_up_c__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Project_Opportunity__r.StageName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <recordTypes>
+        <fullName>Account</fullName>
+        <active>true</active>
+        <label>Account</label>
+        <picklistValues>
+            <picklist>Attitude_towards_Danfoss__c</picklist>
+            <values>
+                <fullName>Enthusiastic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hostile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attitude_towards_competition__c</picklist>
+            <values>
+                <fullName>Enthusiastic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hostile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Influence_on_Purchasing_Decision__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Motivation_for_change__c</picklist>
+            <values>
+                <fullName>Improve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No motivation - Blind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No motivation - Doing fine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solve</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role_in_the_buying_Center__c</picklist>
+            <values>
+                <fullName>Enemy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Screener</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultimate approver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Association__c</picklist>
+            <values>
+                <fullName>Architect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultancy company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracting Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor%2FWholesaler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installer Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner%2FInvestor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Panel Building company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Possible Supplier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous Main Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System integrator company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical inspection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Urgency_of_need__c</picklist>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contact</fullName>
+        <active>false</active>
+        <label>Contact</label>
+        <picklistValues>
+            <picklist>Attitude_towards_Danfoss__c</picklist>
+            <values>
+                <fullName>Enthusiastic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hostile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attitude_towards_competition__c</picklist>
+            <values>
+                <fullName>Enthusiastic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hostile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Influence_on_Purchasing_Decision__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Motivation_for_change__c</picklist>
+            <values>
+                <fullName>Improve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Increase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No motivation - Blind</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No motivation - Doing fine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solve</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Role_in_the_buying_Center__c</picklist>
+            <values>
+                <fullName>Enemy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Friend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Screener</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultimate approver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Association__c</picklist>
+            <values>
+                <fullName>Architect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consultancy company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracting Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor%2FWholesaler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>End customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installer Company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner%2FInvestor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Panel Building company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Possible Supplier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous Main Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System integrator company</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical inspection</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Urgency_of_need__c</picklist>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Significant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <webLinks>
+        <fullName>Set_Contacts</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Set Contacts</masterLabel>
+        <openType>sidebar</openType>
+        <page>setContactonStakeHolderMapping</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

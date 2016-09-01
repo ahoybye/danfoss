@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Marketing Opt In/Out</name>
+    <style>formalLetter</style>
+    <subject>Unsubscribe request from {!Contact.Name}</subject>
+    <textOnly>URGENT:
+{!Contact.Name} has requested to unsubscribe from {template.Name}
+First Name : {!Contact.FirstName}
+Last Name : {!Contact.LastName}
+Account Name : {!Account.Name}
+Template Name: {template.Name}
+
+Click on following link to update the MarComm Section of the Contact record.
+
+
+{!Contact.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

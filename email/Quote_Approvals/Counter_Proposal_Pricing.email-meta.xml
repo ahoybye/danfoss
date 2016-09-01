@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Counter Proposal - Pricing</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Counter Proposal - Pricing</name>
+    <style>none</style>
+    <subject>The Quote {!Quote.QuoteNumber} for {!Quote.Merge_Formula_Account_Name__c} has been Countered by the Pricing Team</subject>
+    <type>text</type>
+</EmailTemplate>

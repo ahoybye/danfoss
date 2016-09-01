@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stakeholder Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stakeholder Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Associated Account --></label>
+        <name>Associated_Account__c</name>
+        <relationshipLabel><!-- Stakeholder Mapping --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What is the customers attitude towards Danfoss --></help>
+        <label><!-- Attitude towards Danfoss --></label>
+        <name>Attitude_towards_Danfoss__c</name>
+        <picklistValues>
+            <masterLabel>Enthusiastic</masterLabel>
+            <translation><!-- Enthusiastic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hostile</masterLabel>
+            <translation><!-- Hostile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negative</masterLabel>
+            <translation><!-- Negative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive</masterLabel>
+            <translation><!-- Positive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the customers attitude towards the competition --></help>
+        <label><!-- Attitude towards competition --></label>
+        <name>Attitude_towards_competition__c</name>
+        <picklistValues>
+            <masterLabel>Enthusiastic</masterLabel>
+            <translation><!-- Enthusiastic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hostile</masterLabel>
+            <translation><!-- Hostile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negative</masterLabel>
+            <translation><!-- Negative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive</masterLabel>
+            <translation><!-- Positive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Back to Opportunity --></label>
+        <name>Back_to_Opportunity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Configit Quote --></label>
+        <name>ConfigitQuoteLink__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select an Account and press save to add contact person in the next page. Use field :Set Contacts --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Stakeholder Mapping --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- How large an influence does the stakeholder have on the purchasing decision --></help>
+        <label><!-- Influence on Purchasing Decision --></label>
+        <name>Influence_on_Purchasing_Decision__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Add the contacts motivation for changing supplier --></help>
+        <label><!-- Motivation for change --></label>
+        <name>Motivation_for_change__c</name>
+        <picklistValues>
+            <masterLabel>Improve</masterLabel>
+            <translation><!-- Improve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Increase</masterLabel>
+            <translation><!-- Increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No motivation - Blind</masterLabel>
+            <translation><!-- No motivation - Blind --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No motivation - Doing fine</masterLabel>
+            <translation><!-- No motivation - Doing fine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Save</masterLabel>
+            <translation><!-- Save --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solve</masterLabel>
+            <translation><!-- Solve --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Project_Opportunity__c</name>
+        <relationshipLabel><!-- Stakeholder Mapping --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quote in SAP CRM --></label>
+        <name>Quote_in_SAP_CRM__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the cutomer contacts role in the buying center --></help>
+        <label><!-- Role in the buying Center --></label>
+        <name>Role_in_the_buying_Center__c</name>
+        <picklistValues>
+            <masterLabel>Enemy</masterLabel>
+            <translation><!-- Enemy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend</masterLabel>
+            <translation><!-- Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operator</masterLabel>
+            <translation><!-- Operator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Screener</masterLabel>
+            <translation><!-- Screener --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate approver</masterLabel>
+            <translation><!-- Ultimate approver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Set As Main Account --></label>
+        <name>Setasmainaccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Mapping --></label>
+        <name>Show_Mapping__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Account --></label>
+        <name>SubAccount__c</name>
+        <relationshipLabel><!-- Stakeholder Mapping --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type of Association --></label>
+        <name>Type_of_Association__c</name>
+        <picklistValues>
+            <masterLabel>Architect</masterLabel>
+            <translation><!-- Architect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consultancy company</masterLabel>
+            <translation><!-- Consultancy company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contracting Company</masterLabel>
+            <translation><!-- Contracting Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor/Wholesaler</masterLabel>
+            <translation><!-- Distributor/Wholesaler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>End customer</masterLabel>
+            <translation><!-- End customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering office</masterLabel>
+            <translation><!-- Engineering office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installer Company</masterLabel>
+            <translation><!-- Installer Company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Main Account</masterLabel>
+            <translation><!-- Main Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM</masterLabel>
+            <translation><!-- OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Owner/Investor</masterLabel>
+            <translation><!-- Owner/Investor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panel Building company</masterLabel>
+            <translation><!-- Panel Building company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Possible Supplier</masterLabel>
+            <translation><!-- Possible Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Main Account</masterLabel>
+            <translation><!-- Previous Main Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System integrator company</masterLabel>
+            <translation><!-- System integrator company --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical inspection</masterLabel>
+            <translation><!-- Technical inspection --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How urgent is the need for our products --></help>
+        <label><!-- Urgency of need --></label>
+        <name>Urgency_of_need__c</name>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mandatory</masterLabel>
+            <translation><!-- Mandatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Significant</masterLabel>
+            <translation><!-- Significant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Phase --></label>
+        <name>opportunity_phase_status_look_up__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Stage --></label>
+        <name>opportunity_stage_look_up_c__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Account --></label>
+        <name>Account</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Contact --></label>
+        <name>Contact</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Set_Contacts --></label>
+        <name>Set_Contacts</name>
+    </webLinks>
+</CustomObjectTranslation>

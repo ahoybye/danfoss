@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CUSTOMER SERVICE CONTACT_DE_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>CUSTOMER SERVICE CONTACT_DE_DE</name>
+    <style>formalLetter</style>
+    <subject>Ihre Anfrage Vorgang {!Case.CaseNumber}</subject>
+    <textOnly>Sehr geehrte (r) Frau Herr {!Case.Contact},
+
+um den Werkskundendienst anzufordern füllen Sie bitte das beigefügte PDF-Formular
+
+vollständig aus und senden es bitte an die E-Mail-Adresse:
+
+competence-center@danfoss.com
+
+Bitte beachten Sie, dass wir handschriftlich ausgefüllte oder per Fax übermittelte Aufträge
+
+Nur verzögert  bearbeitet werden können.
+
+Vielen Dank!
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel: 069 97533 044 
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

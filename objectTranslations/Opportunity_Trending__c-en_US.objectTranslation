@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Trending</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Trendings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount at Risk --></label>
+        <name>Amount_at_Risk__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Probability Weighted --></label>
+        <name>Average_Probability_Weighted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Probability --></label>
+        <name>Average_Probability__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Large Amount --></label>
+        <name>ExtraLarge_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExtraLarge count --></label>
+        <name>ExtraLarge_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive Amount --></label>
+        <name>Inactive_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive count --></label>
+        <name>Inactive_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity count --></label>
+        <name>Opportunity_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overaged Amount --></label>
+        <name>Overaged_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overaged count --></label>
+        <name>Overaged_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overdue Amount --></label>
+        <name>Overdue_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overdue count --></label>
+        <name>Overdue_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>OwnerId__c</name>
+        <relationshipLabel><!-- Opportunity Trendings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment --></label>
+        <name>Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Size Change Amount --></label>
+        <name>SizeChange_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- SizeChange count --></label>
+        <name>SizeChange_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stalled count --></label>
+        <name>Stalled_count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stalled in Stage Amount --></label>
+        <name>Stalled_in_Stage_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Slip Amount --></label>
+        <name>TimeSlip_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeSlip count --></label>
+        <name>TimeSlip_count__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

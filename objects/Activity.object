@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Activity_ID_case_sensitive__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activity ID (case sensitive)</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Finish_Date__c</fullName>
+        <description>For Customer Requests</description>
+        <externalId>false</externalId>
+        <label>Actual Finish Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Start_Date__c</fullName>
+        <description>For Customer Requests</description>
+        <externalId>false</externalId>
+        <label>Actual Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Bulletin_Delivery_Job__c</fullName>
+        <externalId>false</externalId>
+        <label>Bulletin Delivery Job</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Area</label>
+        <picklist>
+            <controllingField>Danfoss_Division__c</controllingField>
+            <picklistValues>
+                <fullName>Building Societies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Burner Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Climate Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Compressors</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cooling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Condensing Units</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consulting Engineer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contactors &amp; Motor Starters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contractor/Installer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cooling</controllingFieldValues>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss Link™</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decentral Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DHU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Differential P and F Controllers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Domestic Hot Water Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronic Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Filter Driers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Floor Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Frequency Converters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heat Exchangers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heat Pumps and Water Heater</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integrated Servo Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Investor/ Developer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motors</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Valves</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts &amp; Service</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL02 - Burner Components</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL03 - Residential Heating</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL08 - District Energy Controls</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL20 - ‪Heat Recovery Vent &amp; Solutions</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL21 - Electric Heating Systems</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL22 - Heat Pumps</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL28 - Hydronic Balancing &amp; Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL31 - DEN Heat Exchangers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL32 - DEN Heavy Duty Stations</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL33 - DEN Light Duty Stations</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL34 - Floor Heating Hydronics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL35 - Energy Metering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Heating</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power Options</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pressure Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Institutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cooling</controllingFieldValues>
+                <controllingFieldValues>Heating</controllingFieldValues>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radiator Thermostats</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refrigeration Controls</fullName>
+                <default>false</default>
+                <controllingFieldValues>Cooling</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Room Thermostats</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soft Starters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Integr/Designer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Temperature Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+                <controllingFieldValues>Power Solutions</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valves</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wholesaler/Distributer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Closing_Comments__c</fullName>
+        <description>Explain the task that was completed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Explanation of Completed Task</inlineHelpText>
+        <label>Closing Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Completed_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For Customer Request BU task completion</description>
+        <externalId>false</externalId>
+        <label>Completed By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>set in TaskTriggerHandler for non- Contract PS tasks</inlineHelpText>
+        <label>Completed Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Approved_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Approved Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Expiration_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Expiration Action</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Extension_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Extension End Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <label>Instructions</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Previous__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Contract Previous</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Stage</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Division__c</fullName>
+        <description>List to segment divisions for Activities</description>
+        <externalId>false</externalId>
+        <label>Danfoss Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Power Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Data_Quality_Score__c =100, &quot;Key Event/Task Details Captured&quot;,&quot;Missing: &quot;&amp;IF( LEN( Subject ) &lt; 3,&quot;Quality Subject Description, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF(LEN(WhoId)=0,&quot;Contact/Lead Reference, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF(LEN(WhatId)=0,&quot;Account/Opportunity Reference&quot;,&quot;&quot;))</formula>
+        <label>Data Quality Description</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( LEN(  Subject  ) &lt; 3, 0,30) + IF( LEN(  WhoId ) = 0, 0,40) + IF( LEN(  WhatId ) = 0, 0,30)</formula>
+        <label>Data Quality Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Before_Today_in_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 1+(ActivityDate-(DATEVALUE(TEXT(YEAR(ActivityDate)) + &quot;-&quot; + TEXT(MONTH(ActivityDate)) + &quot;-&quot; + &quot;01&quot;))) 
+&lt;= 
+(1+TODAY()-(DATEVALUE(TEXT(YEAR(TODAY())) + &quot;-&quot; + TEXT(MONTH(TODAY())) + &quot;-&quot; + &quot;01&quot;))) 
+, TRUE 
+, FALSE 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date Before Today in Month</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_before_Today_in_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+CASE( 
+IF( MONTH(ActivityDate) &lt;=3, &quot;Q1&quot;, 
+IF( MONTH(ActivityDate) &lt;=6, &quot;Q2&quot;, 
+IF( MONTH(ActivityDate) &lt;=9, &quot;Q3&quot;, 
+&quot;Q4&quot; 
+))) , 
+&quot;Q1&quot;, ActivityDate-DATE(YEAR(ActivityDate), 1, 1) + 1, 
+&quot;Q2&quot;, ActivityDate-DATE(YEAR(ActivityDate), 4, 1) + 1, 
+&quot;Q3&quot;, ActivityDate-DATE(YEAR(ActivityDate), 7, 1) + 1, 
+ActivityDate-DATE(YEAR(ActivityDate), 10, 1) + 1 
+) 
+&lt;= 
+CASE( IF( MONTH(TODAY()) &lt;=3, &quot;Q1&quot;, 
+IF( MONTH(TODAY()) &lt;=6, &quot;Q2&quot;, 
+IF( MONTH(TODAY()) &lt;=9, &quot;Q3&quot;, 
+&quot;Q4&quot; 
+))) , 
+&quot;Q1&quot;, TODAY()-DATE(YEAR(TODAY() ), 1, 1) + 1, 
+&quot;Q2&quot;, TODAY()-DATE(YEAR(TODAY() ), 4, 1) + 1, 
+&quot;Q3&quot;, TODAY()-DATE(YEAR(TODAY() ), 7, 1) + 1, 
+TODAY()-DATE(YEAR(TODAY() ), 10, 1) + 1 
+) 
+, TRUE 
+, FALSE 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date before Today in Quarter</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_before_Today_in_Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+(1+(ActivityDate- (DATEVALUE( TEXT(YEAR(ActivityDate)) + &quot;-01-01&quot; )))) 
+&lt;= 
+(1+(TODAY()- (DATEVALUE(TEXT(YEAR(TODAY()))+ &quot;-01-01&quot; )))) 
+, TRUE 
+, FALSE 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date before Today in Year</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Division_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Owner:User.Division__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Danfoss Segment</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Est_Start_Date__c</fullName>
+        <description>For Customer Requests</description>
+        <externalId>false</externalId>
+        <label>Est. Start Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Events_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Events Notes</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Include_in_Comatrol_Weekly__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include in Comatrol Weekly</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Include_in_DOW__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Include in DOW / Activity Report</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__ACD__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the ACD the call was delivered from</description>
+        <externalId>false</externalId>
+        <label>ACD</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__CW_Call_End_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time in Contact World that the call ended</description>
+        <externalId>false</externalId>
+        <label>CW Call End Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__CW_Call_Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The time shown in Contact World when the call first hit your call plan</description>
+        <externalId>false</externalId>
+        <label>CW Call Start Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__ContactWorld_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The contact world number relating to this call.  In the case of an inbound call this would be the number dialled by the caller.  For an outbound call this would be the number presented to the person being called.</description>
+        <externalId>false</externalId>
+        <label>ContactWorld Number</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__Customer_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The customer number.  In the case of an inbound call this will be the calling line id.  For an outbound this will be the number that the agnet has called.</description>
+        <externalId>false</externalId>
+        <label>Customer Number</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__Service_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The service name that the call came from</description>
+        <externalId>false</externalId>
+        <label>Service Name</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Participants__c</fullName>
+        <description>Enter the Number of Participants at an event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>HS Only - Number of Participants trained or at a Group Meeting</inlineHelpText>
+        <label>Number of Participants</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Reviewer Order</inlineHelpText>
+        <label>Order</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Closing_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any relevant comments prior to closing this activity.</inlineHelpText>
+        <label>Partner Closing Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Comments</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reporting_Date__c</fullName>
+        <description>A copy of the ActivityDate field to be used in reporting</description>
+        <externalId>false</externalId>
+        <formula>ActivityDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Same as &quot;Date&quot;. To be able to use same field twice in reporting. Once for close quarter, and one for exact date</inlineHelpText>
+        <label>Reporting Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Activity_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>SAP Activity ID</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Type_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Type Category</label>
+        <picklist>
+            <controllingField>Type__c</controllingField>
+            <picklistValues>
+                <fullName>Sales Meeting</fullName>
+                <default>true</default>
+                <controllingFieldValues>Sales Visit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Group Meeting</fullName>
+                <default>false</default>
+                <controllingFieldValues>Sales Visit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exhibition/Seminar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Sales Visit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Call inbound</fullName>
+                <default>false</default>
+                <controllingFieldValues>Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Phone Call outbound</fullName>
+                <default>false</default>
+                <controllingFieldValues>Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Virtual Training</fullName>
+                <default>false</default>
+                <controllingFieldValues>Training</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Survey</fullName>
+                <default>false</default>
+                <controllingFieldValues>Communication</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Follow-Up</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technical</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+                <controllingFieldValues>Follow-Up</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Follow-Up</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial/Logistical</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+                <controllingFieldValues>Follow-Up</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F2F Training</fullName>
+                <default>false</default>
+                <controllingFieldValues>Training</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Office Time</fullName>
+                <default>false</default>
+                <controllingFieldValues>Internal</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team Meeting</fullName>
+                <default>false</default>
+                <controllingFieldValues>Internal</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F2F Training - Installer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Training</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F2F Training - Wholesaler</fullName>
+                <default>false</default>
+                <controllingFieldValues>Training</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>F2F Training - Consultant</fullName>
+                <default>false</default>
+                <controllingFieldValues>Training</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Complaint</controllingFieldValues>
+                <controllingFieldValues>Follow-Up</controllingFieldValues>
+                <controllingFieldValues>Training</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quote</fullName>
+                <default>false</default>
+                <controllingFieldValues>Follow-Up</controllingFieldValues>
+                <controllingFieldValues>Quote</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Custom field type to allow dependent drop down</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sales Visit</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VIP Trip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Uploaded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for triggering an email to the assignee for tasks created via upload. Should not appear on page layouts</description>
+        <externalId>false</externalId>
+        <label>Uploaded</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>UserID__c</fullName>
+        <externalId>false</externalId>
+        <formula>$User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>UserID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>allMID_relevant_information__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select &apos;Yes&apos; if the information contains AllMID relevant details that are not already covered in relation to an opportunity</inlineHelpText>
+        <label>AllMID Relevant</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>pi__pardot_source_id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Identifies the Pardot record that caused this activity to be created.</description>
+        <externalId>true</externalId>
+        <label>Pardot Source Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of hours the owner has been allocated to work on the Project Task</description>
+        <externalId>false</externalId>
+        <label>Hours</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

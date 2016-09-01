@@ -1,0 +1,33 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<P>{!Account.Name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{!Today}</P>
+<P>{!Account.ShippingAddress}</P>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<P>Dear {!Contact.FirstName},</P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoNormal><SPAN style="FONT-FAMILY: 'Garamond','serif'; FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt"></SPAN>&nbsp;</P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>I am excited to announce the release of a new program to allow you to build and service JS7000 joysticks.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>As one of our most successful business partners you will be one of a select few with access to this program in its initial stage.<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>The program will be similar in nature to the PVG Build program you are already familiar with, but with several nuances unique to this being an electronic product rather than hydraulic.<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>The initial investment required will include bench space, tooling, training and a minimum stocking order of $16,000 dollars for each location you choose to have included in the program.<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>I have attached a copy of the JS7000 Build center agreement for your review.<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>Should you wish to participate, please contact Tim Erickson at 515-239-6234 </FONT><A href="mailto:terickson@sauer-danfoss.com"><FONT color=#0000ff face=Verdana>terickson@sauer-danfoss.com</FONT></A><FONT face=Verdana>.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Tim can provide you with electronic copies of the parts list and pricing, and recommended parts lists for ordering your initial inventory.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Initial inventory orders and signed agreements should be sent through Tim.<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>Initial inventory delivery will be 18 weeks from receipt of order.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Subsequent deliveries will have a standard delivery of 6 weeks.<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>Entrants into the program will be trained at the location of their choice by Sauer-Danfoss personnel.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>The training schedule will be determined on a first come first served basis, based on the receipt of your signed agreement and inventory order.<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>We believe this is a great opportunity to grow our market share in the Joystick space.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Your ability to provide OEM’s prototypes with short lead times should provide a competitive advantage.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>The short lead time can be used to supply replacements to end users with failed joysticks even replacing competitors units to help gain market share.<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 10pt" class=MsoNormal><FONT face=Verdana>We look forward to partnering with you in this exciting program!<o:p></o:p></FONT></P>
+<P style="MARGIN: 0in 0in 0pt" class=MsoNormal></P>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal><SPAN style="FONT-FAMILY: 'Garamond','serif'; FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Arial; mso-ansi-language: EN-GB" lang=EN-GB>Sincerely,</SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal><SPAN style="FONT-FAMILY: 'Garamond','serif'; FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Arial; mso-ansi-language: EN-GB" lang=EN-GB></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal><SPAN style="FONT-FAMILY: 'Garamond','serif'; FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Arial; mso-ansi-language: EN-GB" lang=EN-GB><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN><IMG style="WIDTH: 179px; HEIGHT: 42px" border=0 alt="" align=left src="https://sd--c.na8.content.force.com/servlet/servlet.ImageServer?id=015C00000014SIG&amp;oid=00DC0000000Qm80" width=222 height=56>&nbsp;</P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal>&nbsp;</P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal>&nbsp;</P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal>&nbsp;</P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal><SPAN style="FONT-FAMILY: 'Garamond','serif'; FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Arial; mso-ansi-language: EN-GB" lang=EN-GB>Tim Erickson</SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0in 0in 0pt" class=MsoNormal><SPAN style="FONT-FAMILY: 'Garamond','serif'; FONT-SIZE: 14pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Arial; mso-ansi-language: EN-GB" lang=EN-GB>Sr Market Specialist</SPAN></P>]]></td>
+</tr>
+</table>

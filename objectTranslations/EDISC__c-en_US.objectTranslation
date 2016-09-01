@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>E-DISC</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>E-DISCs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Compliance --></label>
+        <name>Ccalculation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- E-DISCs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dominance --></label>
+        <name>Dcalculation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Influence --></label>
+        <name>Icalculation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- E-DISCs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Primary Profile --></label>
+        <name>Primary_Profile__c</name>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S</masterLabel>
+            <translation><!-- S --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is soft spoken --></label>
+        <name>Q1O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- speaks loudly --></label>
+        <name>Q1O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- speaks self-assuredly --></label>
+        <name>Q1O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- speaks unemotionally --></label>
+        <name>Q1O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- has a calm, friendly tone --></label>
+        <name>Q2O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- speaks rapidly --></label>
+        <name>Q2O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- cuts off small talk --></label>
+        <name>Q2O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- tries to control the conversation --></label>
+        <name>Q2O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- answers very quickly --></label>
+        <name>Q3O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is receptive and friendly --></label>
+        <name>Q3O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is lively and responds energetically --></label>
+        <name>Q3O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is very attentive to what others say --></label>
+        <name>Q3O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- inquires about feelings --></label>
+        <name>Q4O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- seeks key facts --></label>
+        <name>Q4O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- seeks more information --></label>
+        <name>Q4O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- asks &quot;how-to&quot; questions --></label>
+        <name>Q4O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- paces or moves around a lot --></label>
+        <name>Q5O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- gestures a lot with his or her hands --></label>
+        <name>Q5O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is more reserved in expressions --></label>
+        <name>Q5O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- maintains friendly eye contact --></label>
+        <name>Q5O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is enthusiastic --></label>
+        <name>Q6O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is relaxed --></label>
+        <name>Q6O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is restless --></label>
+        <name>Q6O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- keeps his or her distance --></label>
+        <name>Q6O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is friendly --></label>
+        <name>Q7O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- observes without interrupting --></label>
+        <name>Q7O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- tries to take charge --></label>
+        <name>Q7O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- expresses feelings openly --></label>
+        <name>Q7O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is spontaneous --></label>
+        <name>Q8O1__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- draws quick conclusions --></label>
+        <name>Q8O2__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- responds cautiously --></label>
+        <name>Q8O3__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- is cooperative and systematic --></label>
+        <name>Q8O4__c</name>
+        <picklistValues>
+            <masterLabel>Least</masterLabel>
+            <translation><!-- Least --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Most</masterLabel>
+            <translation><!-- Most --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Steadiness --></label>
+        <name>Scalculation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Profile --></label>
+        <name>Secondary_Profile__c</name>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D</masterLabel>
+            <translation><!-- D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I</masterLabel>
+            <translation><!-- I --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S</masterLabel>
+            <translation><!-- S --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Rating Category --></label>
+        <name>ccpt__Rating_Category__c</name>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rating Type --></label>
+        <name>ccpt__Rating_Type__c</name>
+        <picklistValues>
+            <masterLabel>Contribution</masterLabel>
+            <translation><!-- Contribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preparedness</masterLabel>
+            <translation><!-- Preparedness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punctuality</masterLabel>
+            <translation><!-- Punctuality --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rating --></label>
+        <name>ccpt__Rating__c</name>
+        <relationshipLabel><!-- Rating Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>ccpt__Score__c</name>
+    </fields>
+</CustomObjectTranslation>

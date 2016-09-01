@@ -1,0 +1,114 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif" size="3">Dear {!Case.Contact},</font>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073786111 9 0 415 0;}
+@font-face
+	{font-family:"Minion Pro";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:"Cambria Math";
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870225 1342201979 0 0 159 0;}
+@font-face
+	{font-family:"Myriad Pro";
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-alt:Arial;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612049 1342185547 0 0 159 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Minion Pro","serif";
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-size:11.0pt;
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Minion Pro","serif";
+	mso-ascii-font-family:"Minion Pro";
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:"Minion Pro";
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+
+
+
+
+
+<p class="MsoNormal"><font face="Verdana,Helvetica,Sans-Serif" size="3">Please find
+enclosed “Reverse Logistic Return Form” (RLR Form). This will support us to
+pick up the compressor from the respective site and conduct Tear Down Analysis
+(TDA).</font>
+
+</p><font face="Verdana,Helvetica,Sans-Serif" size="3"></font><p class="MsoNormal"><font face="Verdana,Helvetica,Sans-Serif" size="3">Kindly
+send us back the duly filled form for further actions from our end.</font></p><font face="Verdana,Helvetica,Sans-Serif" size="3">
+
+</font><p class="MsoNormalCxSpMiddle" style="line-height:normal;tab-stops:45.0pt"><font face="Verdana,Helvetica,Sans-Serif" size="3">In order to check the status of
+your case, please call us on </font><br><font face="Verdana,Helvetica,Sans-Serif" size="3"><b>0008001009289</b></font><font face="Verdana,Helvetica,Sans-Serif" size="3">
+
+</font></p><p class="MsoNormalCxSpMiddle" style="line-height:normal;tab-stops:45.0pt"><font face="Verdana,Helvetica,Sans-Serif" size="3">&nbsp;</font></p><font face="Verdana,Helvetica,Sans-Serif" size="3">
+
+</font><p class="MsoNormalCxSpMiddle" style="line-height:normal;tab-stops:45.0pt"><font face="Verdana,Helvetica,Sans-Serif" size="3">Best regards,</font></p><font face="Verdana,Helvetica,Sans-Serif" size="3">
+
+</font><p class="MsoNormalCxSpMiddle" style="line-height:normal;tab-stops:45.0pt"><font face="Verdana,Helvetica,Sans-Serif" size="3">Danfoss Customer Service Center</font></p><p class="MsoNormalCxSpMiddle" style="line-height:normal;tab-stops:45.0pt"><br></p><p class="MsoNormalCxSpMiddle" style="line-height:normal;tab-stops:45.0pt"><br></p><p class="MsoNormalCxSpMiddle" style="line-height:normal;tab-stops:45.0pt"><font face="Verdana,Helvetica,Sans-Serif" size="3"><b>N.B - Please reply back to this email for any further correspondence.</b></font></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="1" aEditID="c1r3" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif" size="3">*********Please Do Not Delete or Type below this Line*</font><font face="Verdana,Helvetica,Sans-Serif" size="3">********<br>[{!Case.Thread_Id}]</font>]]></td>
+</tr>
+</table>

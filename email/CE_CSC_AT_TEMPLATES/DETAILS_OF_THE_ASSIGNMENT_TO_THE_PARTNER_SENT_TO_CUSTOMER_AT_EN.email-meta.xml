@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>DETAILS OF THE ASSIGNMENT TO THE PARTNER - SENT TO CUSTOMER_AT_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_AT_LETTERHEAD</letterhead>
+    <name>DETAILS OF THE ASSIGNMENT TO THE PARTNER - SENT TO CUSTOMER_AT_EN</name>
+    <style>formalLetter</style>
+    <subject>Your inquiry {!Case.CaseNumber}</subject>
+    <textOnly>Dear Mr./Ms.:
+
+Case {!Case.CaseNumber} with no case subject has been transmitted to our partner.
+
+Information about our partner:
+
+Partner Name: {!Case.Assigned_To_Channel_Partner__c}
+{!Case.Assigned_To_Channel_Partner_Details__c}
+
+Our partner will contact you as soon as possible.
+
+Thank you and
+kind regards,
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: +43 1253 022 322
+E-Mail Austria: CS@danfoss.at</textOnly>
+    <type>html</type>
+</EmailTemplate>

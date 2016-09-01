@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to customer after sending PO case to Operations</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>PO PLACED</name>
+    <style>formalLetter</style>
+    <subject>PO Placed: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear {!Case.Contact},
+
+This is in reference to your case number {!Case.CaseNumber} registered with us.
+
+As we discussed over the phone, we have forwarded your request to our internal operation team to process it. You will get an update from our internal team.
+
+If you like to follow up, please call or email us with the case number. We will be happy to assist you.
+
+Thanking you and assuring our best services always.
+
+Best regards,
+Danfoss Customer Service Center
+Toll free: 0008001009289
+Email: danfoss.india@danfoss.com
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

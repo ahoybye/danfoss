@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Return_Request_HS_CH_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CH_LETTERHEAD</letterhead>
+    <name>Return_Request_HS_CH_EN</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>To: {!Case.Account}
+
+Att: {!Case.Contact}
+
+Return
+Your inquiry no.
+from
+
+We are happy to inform you of our redemption procedures.
+
+A withdrawal can be carried out under the following conditions:
+* The goods must be in their original state and not have been installet.
+
+* The goods must not be older than a maximum of 6 mont past the invoice date.
+
+* Redemption is subject to a review in our Service workshop.
+
+* Redemption fee is 20% of value of goods with a minimum of 20 €.
+
+Please provide a proof of delivery or enter a invoice number.
+
+Sincerely yours
+Customer Service Central Europe Region
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: +41 61 5880 114
+E-Mail: CS@danfoss.ch</textOnly>
+    <type>html</type>
+</EmailTemplate>

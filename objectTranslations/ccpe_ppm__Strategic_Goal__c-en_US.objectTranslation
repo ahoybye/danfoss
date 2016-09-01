@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Indicates that this is a currently active goal for the business --></help>
+        <label><!-- Active Goal --></label>
+        <name>ccpe_ppm__Active_Goal__c</name>
+    </fields>
+    <fields>
+        <help><!-- The long form description for the strategic goal --></help>
+        <label><!-- Long Form --></label>
+        <name>ccpe_ppm__Long_Form__c</name>
+    </fields>
+</CustomObjectTranslation>

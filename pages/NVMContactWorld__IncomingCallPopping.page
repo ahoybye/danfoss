@@ -1,0 +1,8 @@
+<apex:page Controller="NVMContactWorld.IncomingCallPoppingController" action="{!ProcessPop}" showHeader="false">
+	
+	<apex:outputPanel layout="none" rendered="{!showErrorMessage == true}">
+		<h1>An Error Has Occured</h1>
+		<p>{!errorMessage}</p>
+	</apex:outputPanel>
+
+</apex:page>

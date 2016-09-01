@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>34.0</apiVersion>
+    <available>false</available>
+    <description>TRANSFER CASE TO PARTNER - EMAIL_DE_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TRANSFER CASE TO PARTNER - EMAIL_DE_EN</name>
+    <style>none</style>
+    <subject>Case Assigned to you:  –  [ref:_00DC00Qm80._:ref]</subject>
+    <type>visualforce</type>
+</EmailTemplate>

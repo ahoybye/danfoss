@@ -1,0 +1,3611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ActivityDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+                <highPriority>true</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Normal</fullName>
+                <default>true</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price and Delivery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Expedite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technical Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Confirmation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Part # Verification</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Status</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dist. Ref</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Change</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tracking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acct Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AllMID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Applications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approve SPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing Engineer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts-Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricing Team</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Purchasing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality Engineer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <recordTypes>
+        <fullName>C_E_Task</fullName>
+        <active>true</active>
+        <description>Record type for C&amp;E Tasks</description>
+        <label>C&amp;E Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Building Societies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Climate Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Condensing Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contactors %26 Motor Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractor%2FInstaller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DHU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Link%E2%84%A2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentral Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Differential P and F Controllers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Hot Water Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filter Driers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Floor Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frequency Converters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Pumps and Water Heater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated Servo Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor%2F Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL02 - Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL03 - Residential Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL08 - District Energy Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL20 - %E2%80%AAHeat Recovery Vent %26 Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL21 - Electric Heating Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL22 - Heat Pumps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL28 - Hydronic Balancing %26 Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL31 - DEN Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL32 - DEN Heavy Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL33 - DEN Light Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL34 - Floor Heating Hydronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL35 - Energy Metering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pressure Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Institutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radiator Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refrigeration Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Room Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Integr%2FDesigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temperature Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesaler%2FDistributer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Category__c</picklist>
+            <values>
+                <fullName>Commercial%2FLogistical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exhibition%2FSeminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Collaboration_Task</fullName>
+        <active>true</active>
+        <description>For collaboration tasks on Contracts and PS Customer Requests - created to be able to remove the &quot;Send Email Notification&quot; checkbox</description>
+        <label>Collaboration Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AllMID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>CRPost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NPF</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>allMID_relevant_information__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Comatrol</fullName>
+        <active>true</active>
+        <description>Comatrol Record Types</description>
+        <label>Comatrol</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Acct Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dist%2E Ref</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Expedite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Status</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Part %23 Verification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price and Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tracking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contract_Expired_Task</fullName>
+        <active>true</active>
+        <label>Contract Expired Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AllMID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contract_Hard_Copy_Task</fullName>
+        <active>true</active>
+        <label>Contract Hard Copy Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AllMID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contract_Task</fullName>
+        <active>true</active>
+        <label>Contract Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AllMID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Customer_Request_BU_Task</fullName>
+        <active>true</active>
+        <label>Customer Request BU Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Building Societies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Climate Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Condensing Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contactors %26 Motor Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractor%2FInstaller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DHU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Link%E2%84%A2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentral Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Differential P and F Controllers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Hot Water Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filter Driers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Floor Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frequency Converters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Pumps and Water Heater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated Servo Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor%2F Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL02 - Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL03 - Residential Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL08 - District Energy Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL20 - %E2%80%AAHeat Recovery Vent %26 Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL21 - Electric Heating Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL22 - Heat Pumps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL28 - Hydronic Balancing %26 Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL31 - DEN Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL32 - DEN Heavy Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL33 - DEN Light Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL34 - Floor Heating Hydronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL35 - Energy Metering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pressure Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Institutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radiator Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refrigeration Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Room Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Integr%2FDesigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temperature Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesaler%2FDistributer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approve SPE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts-Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Engineer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>CRPost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Category__c</picklist>
+            <values>
+                <fullName>Commercial%2FLogistical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exhibition%2FSeminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Installer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Wholesaler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Meeting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Visit</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Service Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIP Trip</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>allMID_relevant_information__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Danfoss_Task</fullName>
+        <active>true</active>
+        <label>Danfoss Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>AllMID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>allMID_relevant_information__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Material_Extension_Task</fullName>
+        <active>true</active>
+        <description>used for tasks on Product2</description>
+        <label>Material Extension Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Building Societies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Climate Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Condensing Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contactors %26 Motor Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractor%2FInstaller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DHU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Link%E2%84%A2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentral Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Differential P and F Controllers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Hot Water Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filter Driers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Floor Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frequency Converters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Pumps and Water Heater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated Servo Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor%2F Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL02 - Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL03 - Residential Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL08 - District Energy Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL20 - %E2%80%AAHeat Recovery Vent %26 Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL21 - Electric Heating Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL22 - Heat Pumps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL28 - Hydronic Balancing %26 Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL31 - DEN Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL32 - DEN Heavy Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL33 - DEN Light Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL34 - Floor Heating Hydronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL35 - Energy Metering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pressure Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Institutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radiator Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refrigeration Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Room Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Integr%2FDesigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temperature Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesaler%2FDistributer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>11</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>13</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>14</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>17</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>18</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>19</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Accounting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approve SPE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturing Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Operations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts-Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purchasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Engineer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>CRPost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Category__c</picklist>
+            <values>
+                <fullName>Commercial%2FLogistical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exhibition%2FSeminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Installer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Wholesaler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Meeting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Visit</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Service Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIP Trip</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>allMID_relevant_information__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Stand_Alone_Task</fullName>
+        <active>true</active>
+        <description>Tasks for Turolla and Valmova</description>
+        <label>Stand Alone Task</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Acct Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dist%2E Ref</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Confirmation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Expedite</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Status</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Part %23 Verification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price and Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tracking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>project_cloud__Allocation</fullName>
+        <active>true</active>
+        <description>Any task of this type is an Allocation of time towards a Project Task</description>
+        <label>Allocation</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Building Societies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Climate Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Condensing Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting Engineer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contactors %26 Motor Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contractor%2FInstaller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DHU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Link%E2%84%A2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decentral Products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Differential P and F Controllers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Domestic Hot Water Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Filter Driers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Floor Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frequency Converters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heat Pumps and Water Heater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated Servo Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investor%2F Developer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL02 - Burner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL03 - Residential Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL08 - District Energy Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL20 - %E2%80%AAHeat Recovery Vent %26 Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL21 - Electric Heating Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL22 - Heat Pumps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL28 - Hydronic Balancing %26 Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL31 - DEN Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL32 - DEN Heavy Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL33 - DEN Light Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL34 - Floor Heating Hydronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL35 - Energy Metering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Options</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pressure Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Institutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radiator Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refrigeration Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Room Thermostats</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Soft Starters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Integr%2FDesigner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Temperature Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesaler%2FDistributer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Danfoss_Division__c</picklist>
+            <values>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Solutions</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Letter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Quote</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Category__c</picklist>
+            <values>
+                <fullName>Commercial%2FLogistical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exhibition%2FSeminar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Consultant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Installer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F2F Training - Wholesaler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone Call outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Meeting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Virtual Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Communication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Visit</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Service Visit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIP Trip</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Business_Area_Required_if_Type_DOW</fullName>
+        <active>true</active>
+        <description>Business Area and Comments Required if DOW is checked</description>
+        <errorConditionFormula>AND( 
+OR(
+ISNULL( Business_Area__c), 
+ ISBLANK(Description )),
+( Include_in_DOW__c ))</errorConditionFormula>
+        <errorMessage>Business Area and Comments required if &quot;Included in DOW&quot; is checked</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Comments_Required_if_Include_in_COW</fullName>
+        <active>true</active>
+        <description>Comments are required if Include in Weekly Report is checked</description>
+        <errorConditionFormula>AND( 
+ISBLANK(Description ), 
+( Include_in_Comatrol_Weekly__c  ))</errorConditionFormula>
+        <errorDisplayField>Description</errorDisplayField>
+        <errorMessage>Comments are required if Include in Comatrol Weekly is selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Comments_Required_if_Rejecting</fullName>
+        <active>true</active>
+        <description>Comments are required if rejecting a contract task</description>
+        <errorConditionFormula>AND( 
+ISBLANK(Description ), 
+ISPICKVAL(Status,&quot;Rejected&quot;))</errorConditionFormula>
+        <errorDisplayField>Description</errorDisplayField>
+        <errorMessage>Comments are required if you are rejecting a contract</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Prevent_Status_Change</fullName>
+        <active>true</active>
+        <description>Once a task for a Contract has been Approved or Rejected, do not allow changing the status</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Contract_Stage__c)), IsClosed = True, ISCHANGED(Status))</errorConditionFormula>
+        <errorDisplayField>Status</errorDisplayField>
+        <errorMessage>Status cannot be changed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Require_Expiration_Action</fullName>
+        <active>true</active>
+        <description>require extension end date when selected expiration action is Extend</description>
+        <errorConditionFormula>AND( NOT(ISNEW()),  ISPICKVAL( Contract_Expiration_Action__c , &apos;&apos;), CONTAINS( Contract_Stage__c, &apos;Expired&apos; ), ISPICKVAL(Status, &apos;Completed&apos;))</errorConditionFormula>
+        <errorDisplayField>Contract_Expiration_Action__c</errorDisplayField>
+        <errorMessage>You must select an Expiration Action</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contract_Require_Extension_End_Date</fullName>
+        <active>true</active>
+        <description>require extension end date when selected expiration action is Extend</description>
+        <errorConditionFormula>AND( ISPICKVAL( Contract_Expiration_Action__c , &apos;Extend&apos;), ISNULL( Contract_Extension_End_Date__c ))</errorConditionFormula>
+        <errorDisplayField>Contract_Extension_End_Date__c</errorDisplayField>
+        <errorMessage>For extended contracts you must enter a date when the extension will end for further review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PS_allMID_required_if_DOW_True</fullName>
+        <active>true</active>
+        <description>Require user to select value from allMID pick list if the task is marked for DOW</description>
+        <errorConditionFormula>AND(
+ISPICKVAL($User.Business_Org__c, &apos;Integrated&apos;), 
+ISPICKVAL(allMID_relevant_information__c, &quot;&quot;), 
+( Include_in_DOW__c))</errorConditionFormula>
+        <errorDisplayField>allMID_relevant_information__c</errorDisplayField>
+        <errorMessage>Please select if this is allMID relevant</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Material_Extension_Task</fullName>
+        <availability>online</availability>
+        <description>Used for Material Extension tasks on Product2 layout (PS only)</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Material Extension Task</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CustomerRequestNewBUTask?crID={!Product2.Id}&amp;crname={!Product2.Name}&amp;rectype=ME&amp;retURL=%2F{!Product2.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Review</fullName>
+        <availability>online</availability>
+        <description>Used for Material Extension tasks on Product2 layout (PS only)</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Submit for Review</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CustomerRequestBURouting?id={!Product2.Id}&amp;retURL=%2F{!Product2.Id}</url>
+    </webLinks>
+</CustomObject>

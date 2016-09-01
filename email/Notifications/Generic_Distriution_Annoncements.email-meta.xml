@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Generic Distribution Announcements</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Generic Distribution Annoucement</name>
+    <style>formalLetter</style>
+    <subject>Note:Customer request for new material number</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+Note:request for new material number
+
+
+Dear Danfoss Power Solutions Distributor
+
+
+Subject: - Availability of Danfoss Power Solutions Material Numbers
+
+Please see attachment.
+
+
+Please contact with any questions:
+
+Twila Brafford
+
+tbrafford@danfoss.com
+
+515-956-5002</textOnly>
+    <type>html</type>
+</EmailTemplate>

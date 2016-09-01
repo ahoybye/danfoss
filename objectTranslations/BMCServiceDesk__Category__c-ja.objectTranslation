@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>カテゴリ</value>
+    </caseValues>
+    <fields>
+        <help>このフィールドには、そのカテゴリに割り当てる短いラベルを入力します。 グラフまたはレポートを作成する場合は、グラフまたはレポート内にこのフィールドを表示する方法でカテゴリを表すことができます。</help>
+        <label><!-- Abbreviation --></label>
+        <name>BMCServiceDesk__Abbreviation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available for Chat --></label>
+        <name>BMCServiceDesk__AvailableForChat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incidents --></label>
+        <name>BMCServiceDesk__AvailableForIncidents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Requests --></label>
+        <name>BMCServiceDesk__AvailableForServiceCatalog__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、1000文字以内でカテゴリの説明を入力します。ユーザーが［カテゴリ］ツリーでこのカテゴリにマウスポインタを置いたままにすると、ツールチップとしてこの説明が表示されます。</help>
+        <label><!-- Category Description --></label>
+        <name>BMCServiceDesk__Category_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contains Incident children categories --></label>
+        <name>BMCServiceDesk__Contains_Incident_children_categories__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contains SR children categories --></label>
+        <name>BMCServiceDesk__Contains_SR_children_categories__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display In SelfService --></label>
+        <name>BMCServiceDesk__Display_In_SelfService__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドを選択すると、RF Category Migration Pentahoパッケージからレコードをエクスポートできます。</help>
+        <label><!-- Tag for Export --></label>
+        <name>BMCServiceDesk__Export__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストからカテゴリタイプを選択します。 カテゴリタイプは、通常はレポート用として関連カテゴリを分類するために使用されます。</help>
+        <label><!-- Category Type --></label>
+        <name>BMCServiceDesk__FKCategoryType__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Content Import --></label>
+        <name>BMCServiceDesk__FKContentImport__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>オプションのリストから、親カテゴリとして指定するカテゴリを選択します。 親カテゴリを選択すると、自動的に現在のカテゴリは、選択された親カテゴリの子カテゴリになります。</help>
+        <label><!-- Parent Category --></label>
+        <name>BMCServiceDesk__FKParentCategory__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>オプションのリストから、そのカテゴリのインシデント作成時に割り当てたい緊急度を選択します。 システム管理者はカテゴリの重要度に応じて、緊急度のレベルをカテゴリに割り当てます。</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Has Children --></label>
+        <name>BMCServiceDesk__HasChildren__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence Id --></label>
+        <name>BMCServiceDesk__Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Requests --></label>
+        <name>BMCServiceDesk__UnAvailableForChangeRequests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problems --></label>
+        <name>BMCServiceDesk__UnAvailableForProblems__c</name>
+    </fields>
+    <fields>
+        <label><!-- Releases --></label>
+        <name>BMCServiceDesk__UnAvailableForReleases__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tasks --></label>
+        <name>BMCServiceDesk__UnAvailableForTasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broadcasts --></label>
+        <name>BMCServiceDesk__UnAvailableforBroadcasts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Under Review --></label>
+        <name>BMCServiceDesk__UnderReview__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストからカテゴリタイプを選択します。 カテゴリタイプは、通常はレポート用として関連カテゴリを分類するために使用されます。</help>
+        <label><!-- Category Type~ --></label>
+        <name>BMCServiceDesk__categoryType_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Children --></label>
+        <name>BMCServiceDesk__children__c</name>
+    </fields>
+    <fields>
+        <help>このフィールドには、インシデントの完了後フォローアップを開始するまでの時間を入力します。 この情報は、現在のカテゴリを割り当てられているインシデントの完了データに自動的に追加されます。</help>
+        <label><!-- After --></label>
+        <name>BMCServiceDesk__followUpAfter__c</name>
+    </fields>
+    <fields>
+        <help>カテゴリレコードが無効になっていて、レコード保持ポリシーを遵守するためにレコードを保持する必要がある場合には、このフィールドを選択します。</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__inactive__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから、親カテゴリとして指定するカテゴリを選択します。 親カテゴリを選択すると、自動的に現在のカテゴリは、選択された親カテゴリの子カテゴリになります。</help>
+        <label><!-- Parent Category~ --></label>
+        <name>BMCServiceDesk__parentCategory_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Tree --></label>
+        <name>BMCServiceDesk__parentTree__c</name>
+    </fields>
+    <fields>
+        <help>現在のカテゴリがインシデントに割り当てられるときに、フォローアップのインシデントを指定するには、このフィールドを選択します。 このフィールドが選択されたインシデントは、完了するとフォローアップされます。 フォローアップの時間は[開始までの時間]フィールドで指定します。</help>
+        <label><!-- Follow Up --></label>
+        <name>BMCServiceDesk__requireFollowUp__c</name>
+    </fields>
+    <fields>
+        <help>オプションのリストから、そのカテゴリのインシデント作成時に割り当てたい緊急度を選択します。 システム管理者はカテゴリの重要度に応じて、緊急度のレベルをカテゴリに割り当てます。</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__urgency_Id__c</name>
+    </fields>
+    <nameFieldLabel>カテゴリ</nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- Please enter Category. --></errorMessage>
+        <name>BMCServiceDesk__CategoryId_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A record with this Category already exists. Enter a unique Category. --></errorMessage>
+        <name>BMCServiceDesk__Unique_Category_Id</name>
+    </validationRules>
+</CustomObjectTranslation>

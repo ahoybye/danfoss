@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpe_ppm__Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used for benefit calculations on the investment via roll ups</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How much is this benefit worth on this date to the business</inlineHelpText>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Benefit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The benefit this schedule item relates to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The benefit this schedule item relates to</inlineHelpText>
+        <label>Benefit</label>
+        <referenceTo>ccpe_ppm__Benefit__c</referenceTo>
+        <relationshipLabel>Financial Benefit Schedule</relationshipLabel>
+        <relationshipName>Financial_Benefit_Schedule</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used for the benefit calculation for the investment via rollups</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date of the expected benefit to be realized</inlineHelpText>
+        <label>Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used for measuring planned benefits against actual benefits over time</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Whether this is a planned or a realized benefit from the investment</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Planned</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Actual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <validationRules>
+        <fullName>ccpe_ppm__Actuals_Must_Be_Changed_After_Planning</fullName>
+        <active>true</active>
+        <description>Changes to actual benefits can only occur during the Maintenance and Execution stages.</description>
+        <errorConditionFormula>(ccpe_ppm__Benefit__r.ccpe_ppm__Investment__r.RecordType.Name == &apos;Planning&apos; &amp;&amp;
+   ISPICKVAL(ccpe_ppm__Status__c, &apos;Actual&apos;) &amp;&amp;
+   ISCHANGED(ccpe_ppm__Amount__c))</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Amount__c</errorDisplayField>
+        <errorMessage>Actual Benefits cannot be changed during the Planning Stage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_ppm__Date_Must_Match_Schedule_Type</fullName>
+        <active>true</active>
+        <description>Date must match the Benefit Schedule set on the parent Investment.</description>
+        <errorConditionFormula>DAY(ccpe_ppm__Date__c) != 1 ||
+    ((ISPICKVAL(ccpe_ppm__Benefit__r.ccpe_ppm__Investment__r.ccpe_ppm__Benefits_Schedule__c,&apos;Quarterly&apos;) &amp;&amp;
+     MOD(MONTH(ccpe_ppm__Date__c), 3) != 1) ||
+     (ISPICKVAL(ccpe_ppm__Benefit__r.ccpe_ppm__Investment__r.ccpe_ppm__Benefits_Schedule__c, &apos;Annual&apos;) &amp;&amp;
+      MONTH(ccpe_ppm__Date__c) != 1))</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Date__c</errorDisplayField>
+        <errorMessage>Date does not match the Benefit Schedule set on the Investment.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_ppm__Planned_Must_Be_Changed_During_Planning</fullName>
+        <active>true</active>
+        <description>Planned Benefits can only be changed during the Planning Stage.</description>
+        <errorConditionFormula>(ccpe_ppm__Benefit__r.ccpe_ppm__Investment__r.RecordType.Name == &apos;Maintenance&apos; ||
+ ccpe_ppm__Benefit__r.ccpe_ppm__Investment__r.RecordType.Name == &apos;Execution&apos;) &amp;&amp;
+ISPICKVAL(ccpe_ppm__Status__c, &apos;Planned&apos;) &amp;&amp;
+ISCHANGED(ccpe_ppm__Amount__c)</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Amount__c</errorDisplayField>
+        <errorMessage>Cannot change a planned benefit once the Planning Stage has concluded.</errorMessage>
+    </validationRules>
+</CustomObject>

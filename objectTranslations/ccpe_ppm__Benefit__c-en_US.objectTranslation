@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Area --></label>
+        <name>ccpe_ppm__Area__c</name>
+        <relationshipLabel><!-- Benefits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Field used for capturing what investment the benefit belongs to --></help>
+        <label><!-- Investment --></label>
+        <name>ccpe_ppm__Investment__c</name>
+        <relationshipLabel><!-- Benefits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Roll up summary of total planned benefits for this benefit --></help>
+        <label><!-- Total Planned Benefit --></label>
+        <name>ccpe_ppm__Total_Planned_Benefit__c</name>
+    </fields>
+    <fields>
+        <help><!-- How much benefit have we realized so far against the investment --></help>
+        <label><!-- Total Realized Benefit --></label>
+        <name>ccpe_ppm__Total_Realized_Benefit__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Benefits cannot be associated with parent areas. --></errorMessage>
+        <name>ccpe_ppm__Cannot_associate_with_parent_area</name>
+    </validationRules>
+</CustomObjectTranslation>

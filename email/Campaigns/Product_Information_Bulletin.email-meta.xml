@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>PIB  email template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Product Information Bulletin</name>
+    <style>formalLetter</style>
+    <subject>Product Information Bulletin:</subject>
+    <textOnly>Please find the attached Product Information Bulletin.  The products you have purchased affected by this change are listed on the last pages of this PIB.
+
+If you have questions, please contact your account manager.
+
+Thank you and have a great day</textOnly>
+    <type>html</type>
+</EmailTemplate>

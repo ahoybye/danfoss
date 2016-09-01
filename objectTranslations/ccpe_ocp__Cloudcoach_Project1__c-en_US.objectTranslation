@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account --></label>
+        <name>ccpe_ocp__Account__c</name>
+        <relationshipLabel><!-- Cloud Coach Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>ccpe_ocp__End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>ccpe_ocp__Opportunity__c</name>
+        <relationshipLabel><!-- Cloud Coach Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Owner --></label>
+        <name>ccpe_ocp__Project_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Status --></label>
+        <name>ccpe_ocp__Project_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>ccpe_ocp__Project__c</name>
+        <relationshipLabel><!-- Cloud Coach Projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>ccpe_ocp__Start_Date__c</name>
+    </fields>
+</CustomObjectTranslation>

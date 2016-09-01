@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Incidente</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Incidentes</value>
+    </caseValues>
+    <fields>
+        <label><!-- BCM Approval Status --></label>
+        <name>BMCServiceDesk__ACApprovalStatus__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation>Aprovado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation>Não aplicável</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation>Aprovação pendente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation>Rejeitado</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BCM Severity --></label>
+        <name>BMCServiceDesk__ACSeverity__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation>Erro</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information</masterLabel>
+            <translation>Informações</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warning</masterLabel>
+            <translation>Aviso</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Actual Outage Time (Hours) --></label>
+        <name>BMCServiceDesk__Actual_Outage_Time_Hours__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para adicionar informações ao e-mail, mesmo depois de selecionar o modelo de e-mail.</help>
+        <label><!-- Additional email information --></label>
+        <name>BMCServiceDesk__Additional_email_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Tasks Closed Controller --></label>
+        <name>BMCServiceDesk__AllTaskCloseController__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>BMCServiceDesk__Approval_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved --></label>
+        <name>BMCServiceDesk__Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- &lt;BLANK&gt; --></label>
+        <name>BMCServiceDesk__BLANK__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a categoria de incidente. As categorias permitem que você classifique o incidente usando classificações padrão, que podem ser facilmente rastreadas para fins de relatório.</help>
+        <label><!-- Category~ --></label>
+        <name>BMCServiceDesk__Category_ID__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a conta do cliente que enviou o incidente.</help>
+        <label><!-- Account~ --></label>
+        <name>BMCServiceDesk__Client_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Manager --></label>
+        <name>BMCServiceDesk__Client_Manager__c</name>
+        <relationshipLabel><!-- Incidents (Client Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Client Name --></label>
+        <name>BMCServiceDesk__Client_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Phone --></label>
+        <name>BMCServiceDesk__Client_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Type --></label>
+        <name>BMCServiceDesk__Client_Type__c</name>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation>Contato</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead</masterLabel>
+            <translation>Cliente potencial</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation>Usuário</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Apresenta o status do relógio que é usado para calcular o tempo de trabalho real de um incidente.</help>
+        <label><!-- Work Clock Status --></label>
+        <name>BMCServiceDesk__Clock_Status__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a ID de equipe da equipe conectada no momento. Se necessário, você pode usar este campo para selecionar uma equipe diferente da equipe conectada no momento.</help>
+        <label><!-- Closed By~ --></label>
+        <name>BMCServiceDesk__Closed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closure Category --></label>
+        <name>BMCServiceDesk__ClosureCategory__c</name>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation>Resolvido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved remotely, without the need for site visit.</masterLabel>
+            <translation>Resolvido remotamente, sem a necessidade de acesso ao site.</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to reproduce</masterLabel>
+            <translation>Não é possível reproduzir</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to solve or in conflict with standards or policy</masterLabel>
+            <translation>Não foi possível resolver ou está em conflito com as normas ou políticas</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn by requester</masterLabel>
+            <translation>Retirada pelo solicitante</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workaround</masterLabel>
+            <translation>Solução alternativa</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Compliant --></label>
+        <name>BMCServiceDesk__Compliant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliments and Complaints --></label>
+        <name>BMCServiceDesk__Compliments_and_Complaints__c</name>
+    </fields>
+    <fields>
+        <label><!-- SmartView (Beta) --></label>
+        <name>BMCServiceDesk__Deep_View__c</name>
+    </fields>
+    <fields>
+        <help>Exibe o status do incidente em um formato gráfico.</help>
+        <label><!-- Due Date Progress --></label>
+        <name>BMCServiceDesk__Due_Date_Progress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Service Address --></label>
+        <name>BMCServiceDesk__EmailServiceAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event ID --></label>
+        <name>BMCServiceDesk__Event_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>BMCServiceDesk__FKAccount__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Configuration Item /  Asset --></label>
+        <name>BMCServiceDesk__FKBMC_BaseElement__c</name>
+        <relationshipLabel><!-- Incident --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Broadcast --></label>
+        <name>BMCServiceDesk__FKBroadcast__c</name>
+        <relationshipLabel><!-- Linked Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Utilize este campo para vincular o incidente ao serviço que é afetado por ele.</help>
+        <label><!-- Service --></label>
+        <name>BMCServiceDesk__FKBusinessService__c</name>
+        <relationshipLabel><!-- Incidents (Business Service) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a categoria de incidente. As categorias permitem que você classifique o incidente usando classificações padrão, que podem ser facilmente rastreadas para fins de relatório.</help>
+        <label><!-- Category --></label>
+        <name>BMCServiceDesk__FKCategory__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Selecione o cliente para esse registro.</help>
+        <label><!-- Client ID --></label>
+        <name>BMCServiceDesk__FKClient__c</name>
+        <relationshipLabel><!-- Incidents (Client ID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a ID de equipe da equipe conectada no momento. Se necessário, você pode usar este campo para selecionar uma equipe diferente da equipe conectada no momento.</help>
+        <label><!-- Closed By --></label>
+        <name>BMCServiceDesk__FKClosedBy__c</name>
+        <relationshipLabel><!-- Incidents (Closed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>BMCServiceDesk__FKContact__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o nível de impacto do incidente. O nível de impacto e a urgência são usados​para calcular a prioridade do incidente.</help>
+        <label><!-- Impact --></label>
+        <name>BMCServiceDesk__FKImpact__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Incident --></label>
+        <name>BMCServiceDesk__FKIncident__c</name>
+        <relationshipLabel><!-- Linked Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>BMCServiceDesk__FKLead__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>BMCServiceDesk__FKOpenBy__c</name>
+        <relationshipLabel><!-- Incidents (Staff) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>A prioridade é calculada dependendo dos valores de urgência e impacto que você selecionou. Se necessário, use este campo para selecionar um valor de prioridade diferente do valor calculado.</help>
+        <label><!-- Priority --></label>
+        <name>BMCServiceDesk__FKPriority__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Selecione a definição de solicitação que deseja usar para criar uma solicitação de serviço.</help>
+        <label><!-- Request Definition --></label>
+        <name>BMCServiceDesk__FKRequestDefinition__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Detail --></label>
+        <name>BMCServiceDesk__FKRequestDetail__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Vincule uma oferta de serviço do serviço associado.</help>
+        <label><!-- Service Offering --></label>
+        <name>BMCServiceDesk__FKServiceOffering__c</name>
+        <relationshipLabel><!-- Incidents (Service Offering) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o status adequado para o incidente. O status é usado para exibir o progresso de um incidente durante suas fases da abertura ao fechamento.</help>
+        <label><!-- Status --></label>
+        <lookupFilter>
+            <errorMessage><!-- Select an active status that applies to incidents. --></errorMessage>
+        </lookupFilter>
+        <name>BMCServiceDesk__FKStatus__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Selecione o modelo que deseja aplicar ao registro. Os modelos permitem que você preencha previamente os campos normalmente usados em um formulário.</help>
+        <label><!-- Template --></label>
+        <name>BMCServiceDesk__FKTemplate__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a rapidez com que o incidente precisa ser resolvido. A urgência e o nível de impacto são usados para calcular a prioridade do incidente.</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Feedback Last Submitted --></label>
+        <name>BMCServiceDesk__Feedback_Last_Submitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feedback --></label>
+        <name>BMCServiceDesk__Feedback__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o nível de impacto do incidente. O nível de impacto e a urgência são usados​para calcular a prioridade do incidente.</help>
+        <label><!-- Impact~ --></label>
+        <name>BMCServiceDesk__Impact_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incident Type --></label>
+        <name>BMCServiceDesk__IncidentType__c</name>
+        <picklistValues>
+            <masterLabel>Complaint</masterLabel>
+            <translation>Reclamação</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compliment</masterLabel>
+            <translation>Elogio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incident</masterLabel>
+            <translation>Incidente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Request</masterLabel>
+            <translation>Solicitação de informação</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out of Scope</masterLabel>
+            <translation>Fora do escopo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request for Change</masterLabel>
+            <translation>Solicitação para alteração</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Request</masterLabel>
+            <translation>Solicitação de serviço</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Incorrect category --></label>
+        <name>BMCServiceDesk__Incorrect_category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incorrect owner --></label>
+        <name>BMCServiceDesk__Incorrect_owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is New Record --></label>
+        <name>BMCServiceDesk__Is_New_Record__c</name>
+    </fields>
+    <fields>
+        <help>O registro será aberto no Console de incidente ou na guia Console do Remedyforce</help>
+        <label><!-- Launch Console --></label>
+        <name>BMCServiceDesk__Launch_console__c</name>
+    </fields>
+    <fields>
+        <label><!-- LockedRecordTimestamp --></label>
+        <name>BMCServiceDesk__LockedRecordTimestamp__c</name>
+    </fields>
+    <fields>
+        <help>Indica se o incidente é novo.</help>
+        <label><!-- New Incident --></label>
+        <name>BMCServiceDesk__New_Incident__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Contact Method --></label>
+        <name>BMCServiceDesk__PreferredContactMethod__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation>E-mail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Phone</masterLabel>
+            <translation>Celular</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Phone</masterLabel>
+            <translation>Telefone comercial</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>A prioridade é calculada dependendo dos valores de urgência e impacto que você selecionou. Se necessário, use este campo para selecionar um valor de prioridade diferente do valor calculado.</help>
+        <label><!-- Priority~ --></label>
+        <name>BMCServiceDesk__Priority_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>BMCServiceDesk__Queue__c</name>
+    </fields>
+    <fields>
+        <help>Exibe o número de vezes que um registro é reatribuído a um usuário.</help>
+        <label><!-- Reassigned Count --></label>
+        <name>BMCServiceDesk__Reassigned_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurrence --></label>
+        <name>BMCServiceDesk__Recurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Parent Record ID --></label>
+        <name>BMCServiceDesk__RecurringParentRecordId__c</name>
+    </fields>
+    <fields>
+        <help>ID do detalhe de solicitação de serviço original usado para clonar a solicitação de serviço</help>
+        <label><!-- Request Detail Clone ID --></label>
+        <name>BMCServiceDesk__RequestDetailCloneId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Request --></label>
+        <name>BMCServiceDesk__ServiceRequest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Request Title --></label>
+        <name>BMCServiceDesk__Service_Request_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show DueDate Dialog --></label>
+        <name>BMCServiceDesk__ShowDueDateDialog__c</name>
+    </fields>
+    <fields>
+        <help>Armazena a data/hora em que o status de um incidente é alterado.</help>
+        <label><!-- Status Change Date --></label>
+        <name>BMCServiceDesk__StatusChangeDate__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o status adequado para o incidente. O status é usado para exibir o progresso de um incidente durante suas fases da abertura ao fechamento.</help>
+        <label><!-- Status~ --></label>
+        <name>BMCServiceDesk__Status_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Closed Controller --></label>
+        <name>BMCServiceDesk__Task_Closed_Controller__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Already Applied --></label>
+        <name>BMCServiceDesk__TemplateAlreadyApplied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Name --></label>
+        <name>BMCServiceDesk__TemplateName__c</name>
+    </fields>
+    <fields>
+        <help>Exibe o tempo total durante o qual um incidente é atribuído ao status atual. Este campo não considera as horas comerciais configuradas para uma organização.</help>
+        <label><!-- Time Spent In Current Status (minutes) --></label>
+        <name>BMCServiceDesk__TimeSpentInCurrentStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Remaining Percentage --></label>
+        <name>BMCServiceDesk__Time_Remaining_Percentage__c</name>
+    </fields>
+    <fields>
+        <help>Exibe o tempo total durante o qual uma equipe trabalhou em um incidente durante o horário comercial. Este campo calcula apenas o tempo gasto em um incidente quando o relógio está andando.</help>
+        <label><!-- Total Work Time (minutes) --></label>
+        <name>BMCServiceDesk__TotalWorkTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Duration (minutes) --></label>
+        <name>BMCServiceDesk__Total_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>BMCServiceDesk__Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Update Count --></label>
+        <name>BMCServiceDesk__UpdateCount__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a rapidez com que o incidente precisa ser resolvido. A urgência e o nível de impacto são usados para calcular a prioridade do incidente.</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__Urgency_ID__c</name>
+    </fields>
+    <fields>
+        <help>Indica se o cliente é VIP.</help>
+        <label><!-- VIP Client --></label>
+        <name>BMCServiceDesk__VIP_Client__c</name>
+    </fields>
+    <fields>
+        <label><!-- WorkflowController --></label>
+        <name>BMCServiceDesk__WorkflowController__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Duration --></label>
+        <name>BMCServiceDesk__actualDuration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Outage Time (Min) --></label>
+        <name>BMCServiceDesk__actualOutageDuration__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente incrementado em 1 quando você escolhe o comando do incremento de contagem de chamadas do menu Ações. Este campo permite controlar o número de vezes que o cliente de um incidente chamou a central de serviços.</help>
+        <label><!-- Call Count --></label>
+        <name>BMCServiceDesk__call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Email --></label>
+        <name>BMCServiceDesk__clientEmail__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para o nome do cliente que enviou o incidente.</help>
+        <label><!-- First Name --></label>
+        <name>BMCServiceDesk__clientFirstName__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a ID do cliente que enviou o incidente.</help>
+        <label><!-- Client ID~ --></label>
+        <name>BMCServiceDesk__clientId__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o sobrenome do cliente que enviou o incidente.</help>
+        <label><!-- Last Name --></label>
+        <name>BMCServiceDesk__clientLastName__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a data e hora em que o incidente é fechado.</help>
+        <label><!-- Closed Date --></label>
+        <name>BMCServiceDesk__closeDateTime__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se desejar fechar todas as tarefas vinculadas a esse incidente. Quando tiver resolvido o incidente, recomenda-se fechar todas as tarefas vinculadas, pois elas não serão mais necessárias.</help>
+        <label><!-- Close Tasks --></label>
+        <name>BMCServiceDesk__closeTasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>BMCServiceDesk__completedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incident Source --></label>
+        <name>BMCServiceDesk__contactType__c</name>
+        <picklistValues>
+            <masterLabel>Chat</masterLabel>
+            <translation><!-- Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chatter</masterLabel>
+            <translation><!-- Chatter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email Other</masterLabel>
+            <translation>Outro e-mail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email message</masterLabel>
+            <translation>Mensagem de e-mail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event</masterLabel>
+            <translation>Evento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax, Letter, Paper form, or Memo</masterLabel>
+            <translation>Fax, carta, formulário de papel ou memorando</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Listen</masterLabel>
+            <translation>Escuta de correio</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MyIT</masterLabel>
+            <translation><!-- MyIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Own observation</masterLabel>
+            <translation>Observação própria</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal visit</masterLabel>
+            <translation>Visita pessoal</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation>Telefone</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Service</masterLabel>
+            <translation><!-- Self Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walkup</masterLabel>
+            <translation><!-- Walkup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web request form</masterLabel>
+            <translation>Formulário de solicitação da Web</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a data e hora em que o incidente deve ser concluído com base na duração da prioridade. Se necessário, você pode usar este campo para selecionar uma data de vencimento diferente da calculada.</help>
+        <label><!-- Due Date --></label>
+        <name>BMCServiceDesk__dueDateTime__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se este incidente for resolvido no primeiro telefonema feito à equipe.</help>
+        <label><!-- First Call Resolution --></label>
+        <name>BMCServiceDesk__firstCallResolution__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para definir a data e a hora em que a ação de acompanhamento deve ser iniciada. Este campo é ativado quando você seleciona o campo Acompanhar.</help>
+        <label><!-- Follow Up Date --></label>
+        <name>BMCServiceDesk__followUpDateTime__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se um acompanhamento for necessário para este incidente depois de ter sido fechado.</help>
+        <label><!-- Follow Up --></label>
+        <name>BMCServiceDesk__followUp__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se o registro de incidente não for mais válido, mas tem que ser mantido para conformidade com a política de retenção de registros. Por exemplo, se um cliente deixar a conta, todos os registros de incidentes do cliente serão inválidos.</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incident #+ --></label>
+        <name>BMCServiceDesk__inc_console_detail_link__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir uma descrição do problema que o cliente está relatando.</help>
+        <label><!-- Description --></label>
+        <name>BMCServiceDesk__incidentDescription__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para especificar o que foi feito para resolver o incidente. Forneça instruções detalhadas da solução ou descreva porque o incidente não pode ser resolvido, se não for possível oferecer uma solução.</help>
+        <label><!-- Resolution --></label>
+        <name>BMCServiceDesk__incidentResolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Service Request --></label>
+        <name>BMCServiceDesk__isServiceRequest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maximum Duration --></label>
+        <name>BMCServiceDesk__maximumDuration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>BMCServiceDesk__note__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a data e hora em que o incidente foi criado.</help>
+        <label><!-- Opened Date --></label>
+        <name>BMCServiceDesk__openDateTime__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que a interrupção do serviço começar.</help>
+        <label><!-- Outage Start --></label>
+        <name>BMCServiceDesk__outageFrom__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que a interrupção do serviço terminar.</help>
+        <label><!-- Outage End --></label>
+        <name>BMCServiceDesk__outageTo__c</name>
+    </fields>
+    <fields>
+        <help>Exibe o nome da fila à qual o incidente foi atribuído por último.</help>
+        <label><!-- Last Queue --></label>
+        <name>BMCServiceDesk__queueName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recommended Fix Date &amp; Time --></label>
+        <name>BMCServiceDesk__recommendedFixDateTime__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a data e hora em que o comando &quot;Ações &gt; Respondido&quot; é executado. Este campo é utilizado para registrar a data e a hora em que a equipe comunicou ao cliente sobre o problema reportado.</help>
+        <label><!-- Responded Date --></label>
+        <name>BMCServiceDesk__respondedDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Date &amp; Time --></label>
+        <name>BMCServiceDesk__responseDateTime__c</name>
+    </fields>
+    <fields>
+        <help>Este campo conterá o valor dos primeiros 255 caracteres do campo de descrição.</help>
+        <label><!-- Short Description --></label>
+        <name>BMCServiceDesk__shortDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Open --></label>
+        <name>BMCServiceDesk__state__c</name>
+    </fields>
+    <fields>
+        <help>Este campo foi preterido e não é mais usado no Console do Remedyforce.</help>
+        <label><!-- Time Spent --></label>
+        <name>BMCServiceDesk__timeSpent__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Número</nameFieldLabel>
+    <sharingReasons>
+        <label><!-- Incident Clients Share for SS --></label>
+        <name>BMCServiceDesk__Incident_Clients_Share_for_SS</name>
+    </sharingReasons>
+    <validationRules>
+        <errorMessage><!-- This incident is closed. Reopen the incident to modify it. --></errorMessage>
+        <name>BMCServiceDesk__Cannot_Update_Closed_Incident</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Outage Start Date is required. --></errorMessage>
+        <name>BMCServiceDesk__Check_OutageStartDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Outage End Date must be later than Outage Start Date --></errorMessage>
+        <name>BMCServiceDesk__Check_OutageToDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the Follow Up Date. --></errorMessage>
+        <name>BMCServiceDesk__Follow_up_date_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can not edit Request Definition. --></errorMessage>
+        <name>BMCServiceDesk__Not_allow_Request_Definition_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To save the incident, select a value in any one of the following fields: Category, Template, or Request Definition. --></errorMessage>
+        <name>BMCServiceDesk__Select_Category_or_template_or_req_def</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To save the incident, select a value in any one of the following fields: Client ID, Contact or Lead. --></errorMessage>
+        <name>BMCServiceDesk__Select_Either_User_Lead_or_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Due Date must be later than the Opened Date --></errorMessage>
+        <name>BMCServiceDesk__dueDateMustBeAfterOpenedDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Follow Up Date must be later than the Close Date. Select a new Follow Up Date. --></errorMessage>
+        <name>BMCServiceDesk__followUpDateTimeValidation</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Assign_To_Suggested_Expert --></label>
+        <name>BMCServiceDesk__Assign_To_Suggested_Expert</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Back_to_list --></label>
+        <name>BMCServiceDesk__Back_to_list</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CI_Actions --></label>
+        <name>BMCServiceDesk__CI_Actions</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CI_Explorer --></label>
+        <name>BMCServiceDesk__CI_Explorer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Category_Tree --></label>
+        <name>BMCServiceDesk__Category_Tree</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close --></label>
+        <name>BMCServiceDesk__Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Copy --></label>
+        <name>BMCServiceDesk__Copy</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Incident_and_Link_to_Broadcast --></label>
+        <name>BMCServiceDesk__Create_Incident_and_Link_to_Broadcast</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Knowledge_Article --></label>
+        <name>BMCServiceDesk__Create_Knowledge_Article</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Incident_Management_Process --></label>
+        <name>BMCServiceDesk__Incident_Management_Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Incident_Manifest --></label>
+        <name>BMCServiceDesk__Incident_Manifest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Incident_Matching --></label>
+        <name>BMCServiceDesk__Incident_Matching</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Incidents_for_Category --></label>
+        <name>BMCServiceDesk__Incidents_for_Category</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Incidents_for_Client --></label>
+        <name>BMCServiceDesk__Incidents_for_Client</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Knowledge_Articles --></label>
+        <name>BMCServiceDesk__Knowledge_Articles</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_CI --></label>
+        <name>BMCServiceDesk__Link_CI</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_to_incident --></label>
+        <name>BMCServiceDesk__Link_to_incident</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>BMCServiceDesk__New</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Incident_Console --></label>
+        <name>BMCServiceDesk__New_Incident_Console</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Incident_Record --></label>
+        <name>BMCServiceDesk__New_Incident_Record</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Quick_Close --></label>
+        <name>BMCServiceDesk__Quick_Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reopen --></label>
+        <name>BMCServiceDesk__Reopen</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Responded --></label>
+        <name>BMCServiceDesk__Responded</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>BMCServiceDesk__Send_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Service_Targets --></label>
+        <name>BMCServiceDesk__Service_Targets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Standard_Description_and_Resolution --></label>
+        <name>BMCServiceDesk__Standard_Description_and_Resolution</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Suggested_Templates --></label>
+        <name>BMCServiceDesk__Suggested_Templates</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Project --></label>
+        <name>ccpe_bmc__Create_Project</name>
+    </webLinks>
+</CustomObjectTranslation>

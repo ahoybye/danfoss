@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__AccountType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>AccountType</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Regular</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Secure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__InstanceID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>InstanceID</label>
+        <length>38</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+</CustomObject>

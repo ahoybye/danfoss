@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Master_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Contact Merge Requests</relationshipLabel>
+        <relationshipName>Contact_Merge_Requests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Merged_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Merged Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Contact Merge Requests (Merged Contact)</relationshipLabel>
+        <relationshipName>Contact_Merge_Requests1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Request_processed__c</fullName>
+        <externalId>false</externalId>
+        <formula>Master_Contact__c =  Merged_Contact__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Request processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

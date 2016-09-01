@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SERVICE INQUIRY - GENERAL_CH_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CH_LETTERHEAD</letterhead>
+    <name>SERVICE INQUIRY - GENERAL_CH_EN</name>
+    <style>formalLetter</style>
+    <subject>Your inquiry {!Case.CaseNumber}</subject>
+    <textOnly>Dear Mr./Ms.:
+
+Attached please find the document for a return inquiry.
+Please do not hesitate to contact us by phone if you have any questions.
+
+Customer information:
+Name of contact person:
+Contact mobile:
+Contact email:
+
+Case information:
+Subject: {!Case.Subject}
+Description: {!Case.Description}
+Article number:
+Invoice number and invoice date:
+
+Kind regards,
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: +41 61 5880 114
+E-Mail: CS@danfoss.ch</textOnly>
+    <type>html</type>
+</EmailTemplate>

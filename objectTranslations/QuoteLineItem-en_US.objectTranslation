@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Additional Description</value>
+        </caseValues>
+        <name>quotelineitem_description</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Annual Quantity</value>
+        </caseValues>
+        <name>quotelineitem_quantity</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Unit Sales Price</value>
+        </caseValues>
+        <name>quotelineitem_salesprice</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Total Value</value>
+        </caseValues>
+        <name>quotelineitem_totalprice</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <help><!-- These comments will not appear on the quote - internal use only --></help>
+        <label><!-- Approval Comments --></label>
+        <name>ApprovalComments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Duration --></label>
+        <name>Approval_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Time --></label>
+        <name>Approved_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver Name --></label>
+        <name>Approver_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- BA - Decision Time --></label>
+        <name>BA_Decision_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- BA - Duration --></label>
+        <name>BA_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- BA Pending --></label>
+        <name>BA_Pending__c</name>
+    </fields>
+    <fields>
+        <label><!-- BA - Submitted Time --></label>
+        <name>BA_Submitted_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit Email --></label>
+        <name>Business_Area_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Area Lead - Email --></label>
+        <name>Business_Area_Lead_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- ClonedFlag --></label>
+        <name>ClonedFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- ConfigitQuoteLineId --></label>
+        <name>ConfigitQuoteLineId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Countered? --></label>
+        <name>Countered__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Match --></label>
+        <name>Currency_Match__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Part Number --></label>
+        <name>Customer_Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributor Sell Price --></label>
+        <name>Distributor_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email of Pricing --></label>
+        <name>Email_of_Pricing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email of Sales Manager --></label>
+        <name>Email_of_Sales_Manager__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this Line Item needs to be escalated to Pricing Review or Business Area Review, please select here. If approving this line item is within your authority, please Approve or Decline. --></help>
+        <label><!-- Line Item Approval Stage --></label>
+        <name>Line_Item_Approval_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Account Owner - Approved</masterLabel>
+            <translation><!-- Account Owner - Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Unit - Approved</masterLabel>
+            <translation><!-- Business Unit - Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Unit - Countered</masterLabel>
+            <translation><!-- Business Unit - Countered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Unit - Declined</masterLabel>
+            <translation><!-- Business Unit - Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Unit - Requires Review</masterLabel>
+            <translation><!-- Business Unit - Requires Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled by Account Owner</masterLabel>
+            <translation><!-- Cancelled by Account Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing Team - Approved</masterLabel>
+            <translation><!-- Pricing Team - Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing Team - Countered</masterLabel>
+            <translation><!-- Pricing Team - Countered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing Team - Requires Review</masterLabel>
+            <translation><!-- Pricing Team - Requires Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Manager - Approved</masterLabel>
+            <translation><!-- Sales Manager - Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Manager - Countered</masterLabel>
+            <translation><!-- Sales Manager - Countered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Manager - Requires Review</masterLabel>
+            <translation><!-- Sales Manager - Requires Review --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model Code --></label>
+        <name>Model_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Multiplier --></label>
+        <name>Multiplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Product Category --></label>
+        <name>PS_Customer_Product_Category__c</name>
+        <picklistValues>
+            <masterLabel>Production</masterLabel>
+            <translation><!-- Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prototype</masterLabel>
+            <translation><!-- Prototype --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Part Number --></label>
+        <name>Part_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- These comments will appear on the quote by line item --></help>
+        <label><!-- Comments Published To Customer --></label>
+        <name>Published_Customer_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- QuoteId --></label>
+        <name>QuoteId__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Currency --></label>
+        <name>SAP_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please note - This may not be a list Price - If this price and the Current SAP Price are the same then this is not a list price but a special net price. --></help>
+        <label><!-- SAP List Price --></label>
+        <name>SAP_List_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Material Number (CE) --></label>
+        <name>SAP_Material_Number_CE__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current SAP price for this customer is shown if a list and discount is in place. --></help>
+        <label><!-- Current SAP Price --></label>
+        <name>SAP_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted for Approval Time --></label>
+        <name>Submitted_for_Approval_Time__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Stage cannot be set to &quot;- - None- - &quot; --></errorMessage>
+        <name>Null_selection_not_allowed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This Line Item may only be editted in Configit --></errorMessage>
+        <name>Users_cannot_edit_configit_line_items</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Refresh_SAP_Price --></label>
+        <name>Refresh_SAP_Price</name>
+    </webLinks>
+</CustomObjectTranslation>

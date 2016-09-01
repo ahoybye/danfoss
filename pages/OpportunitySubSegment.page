@@ -1,0 +1,22 @@
+<apex:page standardController="Opportunity" extensions="OpportunitySubSegmentExtension">
+    <apex:form >
+        <apex:pageMessages />
+        <div style="width: 40%; margin: 0 auto;">
+            <apex:commandButton value="Use Primary SubSegment" action="{!PrimarySubSegment}" reRender="panel1"/>
+            <apex:commandButton value="Use Secondary SubSegment" action="{!SecondarySubSegment}" reRender="panel1"/>
+        </div>
+        <apex:outputPanel id="panel1" >
+            <apex:outputPanel rendered="{!renderdirect}">
+                Please Wait...
+                <script>
+                var oppID = '{!Opportunity.Id}';
+                if (window.sforce) {
+                    sforce.one.editRecord(oppID);
+                } else {
+                    top.location = '/' + oppID ;
+                }
+                </script>
+            </apex:outputPanel> 
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

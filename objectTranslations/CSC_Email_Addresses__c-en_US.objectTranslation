@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CSC Email Addresses</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CSC Email Addresses</value>
+    </caseValues>
+    <fields>
+        <label><!-- AustriaFlagID --></label>
+        <name>AustriaFlagID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Austria_Email_To_Case --></label>
+        <name>Austria_Email_To_Case__c</name>
+    </fields>
+    <fields>
+        <label><!-- GermanyFlagID --></label>
+        <name>GermanyFlagID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Germany_Email_To_Case --></label>
+        <name>Germany_Email_To_Case__c</name>
+    </fields>
+    <fields>
+        <label><!-- SwissFlagID --></label>
+        <name>SwissFlagID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Swiss_Email_To_Case --></label>
+        <name>Swiss_Email_To_Case__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

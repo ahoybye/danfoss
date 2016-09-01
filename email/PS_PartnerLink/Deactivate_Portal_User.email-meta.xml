@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Deactivate Portal User</name>
+    <style>formalLetter</style>
+    <subject>{!User.Name} has been deactivated</subject>
+    <textOnly>The Portal User {!User.Name} has been deactivated due to inactivity in the last 60-days.
+
+
+Company: {!Account.Account_Alias__c}
+
+Contact: {!User.FirstName} {!User.LastName}
+
+
+
+Here is the link to the user record.
+
+{!Contact.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

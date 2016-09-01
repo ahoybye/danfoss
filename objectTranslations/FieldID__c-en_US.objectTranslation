@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Field IDs</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Field IDs</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountPlanGraphID2 --></label>
+        <name>AccountPlanGraphID2__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountPlanGraphID3 --></label>
+        <name>AccountPlanGraphID3__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountPlanGraphID4 --></label>
+        <name>AccountPlanGraphID4__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountPlanGraphID5 --></label>
+        <name>AccountPlanGraphID5__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountPlanGraphID --></label>
+        <name>AccountPlanGraphID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ActivityDivision --></label>
+        <name>ActivityDivision__c</name>
+    </fields>
+    <fields>
+        <label><!-- ActivityType --></label>
+        <name>ActivityType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- CE_Opp_Project --></label>
+        <name>CE_Opp_Project__c</name>
+    </fields>
+    <fields>
+        <label><!-- CE_Opp_SalesModel --></label>
+        <name>CE_Opp_SalesModel__c</name>
+    </fields>
+    <fields>
+        <label><!-- CE_Opp_Status --></label>
+        <name>CE_Opp_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- CE_Opportunity_Division --></label>
+        <name>CE_Opportunity_Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallDivision --></label>
+        <name>CallDivision__c</name>
+    </fields>
+    <fields>
+        <label><!-- OppStageID --></label>
+        <name>OppStageID__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

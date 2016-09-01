@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DOW Report Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DOW Report Setting</value>
+    </caseValues>
+    <fields>
+        <label><!-- Document Folder --></label>
+        <name>Document_Folder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email To Contact --></label>
+        <name>Email_To_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email template --></label>
+        <name>Email_template__c</name>
+    </fields>
+    <fields>
+        <label><!-- OrgWideEmail --></label>
+        <name>OrgWideEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Email --></label>
+        <name>Send_Email__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

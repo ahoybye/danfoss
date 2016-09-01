@@ -1,0 +1,3010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpe_ppm__Benefits_Schedule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Benefits Schedule</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Benefits_Weighted_Impact__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Weighted Benefits of the investment</inlineHelpText>
+        <label>Benefits Weighted Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Business_Effort_Man_Days__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount of man days estimated for the business to implement this investment</inlineHelpText>
+        <label>Business Effort (Man Days)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>&lt; 25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt; 500</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Cost_Overrun_Likelihood__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used in cost score calculations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance</inlineHelpText>
+        <label>Cost Overrun - Likelihood</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Cost_Overrun_Risk__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment costs score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier</inlineHelpText>
+        <label>Cost Overrun - Risk</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Cost_Overrun_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Cost_Overrun_Risk__c, &apos;None&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Cost_Overrun_Risk__c, &apos;Low&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Cost_Overrun_Risk__c, &apos;Medium&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Cost_Overrun_Risk__c, &apos;High&apos;),3,0) 
+) 
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Cost_Overrun_Likelihood__c, &apos;Low&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Cost_Overrun_Likelihood__c, &apos;Medium&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Cost_Overrun_Likelihood__c, &apos;High&apos;), 2,0) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to cost overruns determined from risk and likelihood</inlineHelpText>
+        <label>Cost Overrun - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Costs_Schedule__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Costs Schedule</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Costs_Weighted_Impact__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total weighted impact of costs</inlineHelpText>
+        <label>Costs Weighted Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Customer_Perspective_Effect__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Effect on attracting more customers, growing customer loyalty, improving speed to market, improving customer satisfaction, increasing flexibility to react, improving company and brand reputation</inlineHelpText>
+        <label>Customer Perspective - Effect</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Customer_Perspective_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Customer_Perspective_Effect__c, &apos;None&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Customer_Perspective_Effect__c, &apos;Low&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Customer_Perspective_Effect__c, &apos;Medium&apos;), 2, 
+IF(ISPICKVAL(ccpe_ppm__Customer_Perspective_Effect__c, &apos;High&apos;), 3, 0)
+)
+)
+) +
+IF(ISPICKVAL(ccpe_ppm__Customer_Perspective_Users__c, &apos;Low&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Customer_Perspective_Users__c, &apos;Medium&apos;), 2, 
+IF(ISPICKVAL(ccpe_ppm__Customer_Perspective_Users__c, &apos;High&apos;), 3, 0)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to customer perspective determined from effect and users</inlineHelpText>
+        <label>Customer Perspective - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Customer_Perspective_Users__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors</inlineHelpText>
+        <label>Customer Perspective - Users</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Direct_Financial_Benefit_Justification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used in conjunction with validation rule to ensure that a justification is given for the direct financial benefit of the benefit to the business strategy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide any supporting information here for justifying the direct financial benefit numbers entered</inlineHelpText>
+        <label>Direct Financial Benefit - Justification</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Direct_Financial_cost_Justification__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide any supporting information here for justifying the direct financial benefit numbers entered</inlineHelpText>
+        <label>Direct Financial Cost - Justification</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Benefit_Impact__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The impact score of financial benefits calculated from the total amount of benefits input against this investment</inlineHelpText>
+        <label>Financial Benefit - Impact</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Benefit_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>$Setup.ccpe_ppm__Investment_Weightings__c.ccpe_ppm__Direct_Financial_Benefit__c</formula>
+        <inlineHelpText>The weighting of Direct Financial benefits to the overall investment (Value is drawn from the company standard values)</inlineHelpText>
+        <label>Financial Benefit - Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Benefit_Weighted_Impact__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The calculated impact of Direct Financial Benefits to the overall investment</inlineHelpText>
+        <label>Financial Benefit - Weighted Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Cost_Impact__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The impact score of financial costs calculated from the total amount of costs input against this investment</inlineHelpText>
+        <label>Financial Cost - Impact</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Cost_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>$Setup.ccpe_ppm__Investment_Weightings__c.ccpe_ppm__Direct_Financial_Cost__c</formula>
+        <inlineHelpText>The weighting of Direct Financial Costs to the overall investment (Value is drawn from the company standard values)</inlineHelpText>
+        <label>Financial Cost - Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Cost_Weighted_Impact__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The calculated impact of Direct Financial Costs to the overall investment</inlineHelpText>
+        <label>Financial Cost - Weighted Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__High_Level_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The high level description of the investment, this is typically populated by the initial request from the business</inlineHelpText>
+        <label>High Level Description</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Human_Capital_Effect__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Greater talent acquisition, improving employee retention, increasing employee satisfaction, improving knowledge management, improving leadership development</inlineHelpText>
+        <label>Human Capital - Effect</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Human_Capital_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Human_Capital_Effect__c, &apos;None&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Human_Capital_Effect__c, &apos;Low&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Human_Capital_Effect__c, &apos;Medium&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Human_Capital_Effect__c, &apos;High&apos;),3,0) 
+) 
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Human_Capital_Users__c, &apos;Low&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Human_Capital_Users__c, &apos;Medium&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Human_Capital_Users__c, &apos;High&apos;), 2,0) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to human captial determined from effect and users</inlineHelpText>
+        <label>Human Capital - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Human_Capital_Users__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors</inlineHelpText>
+        <label>Human Capital - Users</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__IT_Effort__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount of man days for IT needed to implement this investment</inlineHelpText>
+        <label>IT Effort (Man Days)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>&lt; 25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt; 500</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Internal_Process_Effect__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Improving product development, greater innovation and R&amp;D, improving data accuracy, increasing efficiency, reducing risk, increasing reliability</inlineHelpText>
+        <label>Internal Process - Effect</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Internal_Process_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Internal_Process_Effect__c, &apos;None&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Internal_Process_Effect__c, &apos;Low&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Internal_Process_Effect__c, &apos;Medium&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Internal_Process_Effect__c, &apos;High&apos;),3,0) 
+) 
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Internal_Process_Users__c, &apos;Low&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Internal_Process_Users__c, &apos;Medium&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Internal_Process_Users__c, &apos;High&apos;), 2,0) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to customer perspective determined from effect and users</inlineHelpText>
+        <label>Internal Process - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Internal_Process_Users__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors</inlineHelpText>
+        <label>Internal Process - Users</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Investment_Risks_Impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_ppm__Cost_Overrun_Score__c + ccpe_ppm__Management_User_Buy_In_Score__c + ccpe_ppm__Timeline_Delays_Score__c + ccpe_ppm__Technical_Competence_Score__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The summation of the investment risk scores (Cost Overrun, Management &amp; User Buy In, Timeline Delays and Technical Competence)</inlineHelpText>
+        <label>Investment Risks - Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Investment_Risks_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>$Setup.ccpe_ppm__Investment_Weightings__c.ccpe_ppm__investment_risks__c</formula>
+        <inlineHelpText>The weighting of Investment Risk Costs to the overall investment (Value is drawn from the company standard values)</inlineHelpText>
+        <label>Investment Risks - Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Investment_Risks_Weighted_impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_ppm__Investment_Risks_Impact__c  *  ccpe_ppm__Investment_Risks_Weight__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated impact of Investment Risks to the overall investment</inlineHelpText>
+        <label>Investment Risks - Weighted Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Investment_Risks_justification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used in conjunction with validation rule to ensure that a justification is given for the investment risk score&apos;s contribution to the business strategy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide justification for the investment risk values selected</inlineHelpText>
+        <label>Investment Risks - Justification</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Level_of_Effort_Impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__IT_Effort__c, &apos;&lt; 50&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__IT_Effort__c, &apos;25 to 50&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__IT_Effort__c, &apos;50 to 100&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__IT_Effort__c, &apos;100 to 250&apos;),3,
+IF(ISPICKVAL(ccpe_ppm__IT_Effort__c, &apos;250 to 500&apos;),4,
+IF(ISPICKVAL(ccpe_ppm__IT_Effort__c, &apos;&gt; 500&apos;),5,0) 
+) 
+)
+)
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Business_Effort_Man_Days__c, &apos;&lt; 50&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Business_Effort_Man_Days__c, &apos;25 to 50&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Business_Effort_Man_Days__c, &apos;50 to 100&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Business_Effort_Man_Days__c, &apos;100 to 250&apos;),3,
+IF(ISPICKVAL(ccpe_ppm__Business_Effort_Man_Days__c, &apos;250 to 500&apos;),4,
+IF(ISPICKVAL(ccpe_ppm__Business_Effort_Man_Days__c, &apos;&gt; 500&apos;),5,0)  
+) 
+)
+)
+)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The impact score of Level of Effort drawn from the IT and Business Effort value&apos;s selected</inlineHelpText>
+        <label>Level of Effort - Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Level_of_Effort_Justification__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide justification for the level of effort values selected</inlineHelpText>
+        <label>Level of Effort - Justification</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Level_of_Effort_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>$Setup.ccpe_ppm__Investment_Weightings__c.ccpe_ppm__Level_of_Effort__c</formula>
+        <inlineHelpText>The weighting of Level of Effort Costs to the overall investment (Value is drawn from the company standard values)</inlineHelpText>
+        <label>Level of Effort - Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Level_of_Effort_weighted_Impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_ppm__Level_of_Effort_Impact__c * ccpe_ppm__Level_of_Effort_Weight__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated impact of the Level of Effort cost to the overall investment</inlineHelpText>
+        <label>Level of Effort - Weighted_ Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Management_User_Buy_In_Likelyhood__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance</inlineHelpText>
+        <label>Management &amp; User Buy In - Likelihood</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Management_User_Buy_In_Risk__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment cost score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier</inlineHelpText>
+        <label>Management &amp; User Buy In - Risk</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Management_User_Buy_In_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Management_User_Buy_In_Risk__c, &apos;None&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Management_User_Buy_In_Risk__c, &apos;Low&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Management_User_Buy_In_Risk__c, &apos;Medium&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Management_User_Buy_In_Risk__c, &apos;High&apos;),3,0) 
+) 
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Management_User_Buy_In_Likelyhood__c, &apos;Low&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Management_User_Buy_In_Likelyhood__c, &apos;Medium&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Management_User_Buy_In_Likelyhood__c, &apos;High&apos;), 2,0) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to management and user buy in determined from risk and likelihood</inlineHelpText>
+        <label>Management &amp; User Buy In - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Planning_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked this indicates that the request has been approved to move into the execution phase of the investment</inlineHelpText>
+        <label>Planning Approved</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Portfolio__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Field used for capturing what portfolio if any the investment belongs to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The portfolio that this investment object belongs to</inlineHelpText>
+        <label>Portfolio</label>
+        <referenceTo>ccpe_ppm__Portfolio__c</referenceTo>
+        <relationshipLabel>Investments</relationshipLabel>
+        <relationshipName>Investments</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Qualitative_Benefit_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>$Setup.ccpe_ppm__Investment_Weightings__c.ccpe_ppm__Qualitative_Benefits__c</formula>
+        <inlineHelpText>The weighting of Qualitative Benefits to the overall investment (Value is drawn from the company standard values)</inlineHelpText>
+        <label>Qualitative Benefit - Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Qualitative_Benefits_Impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_ppm__Customer_Perspective_Score__c + ccpe_ppm__Human_Capital_Score__c + ccpe_ppm__Internal_Process_Score__c + ccpe_ppm__Supplier_Perspective_Score__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The summation of the qualitative benefits scores (Customer, Human Capital, Internal Process, &amp; Supplier)</inlineHelpText>
+        <label>Qualitative Benefits - Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Qualitative_Benefits_Justification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used in conjunction with validation rule to ensure that a justification is given for the alignment of the benefit to the business strategy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide justification for the qualitative values selected</inlineHelpText>
+        <label>Qualitative Benefits - Justification</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Qualitative_Benefits_Weighted_Impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_ppm__Qualitative_Benefits_Impact__c  *  ccpe_ppm__Qualitative_Benefit_Weight__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated impact of Qualitative Benefits to the overall investment</inlineHelpText>
+        <label>Qualitative Benefits - Weighted Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Request_Approved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked this indicates that the request has been approved to move into the planning phase of the investment</inlineHelpText>
+        <label>Request Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Strategic_Fit_Impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Strategic_Fit__c, &apos;No Strategic Benefits&apos;), 0,
+   IF(ISPICKVAL(ccpe_ppm__Strategic_Fit__c, &apos;No Measurable Benefits&apos;),1,
+       IF(ISPICKVAL(ccpe_ppm__Strategic_Fit__c, &apos;Minor Benefits&apos;),2,
+           IF(ISPICKVAL(ccpe_ppm__Strategic_Fit__c, &apos;Major Benefits&apos;),3,
+               IF(ISPICKVAL(ccpe_ppm__Strategic_Fit__c, &apos;Critical Benefits&apos;),4,0)
+           )
+       )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The impact score of Strategic Fit drawn from the Strategic Fit  value selected</inlineHelpText>
+        <label>Strategic Fit - Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Strategic_Fit_Justification__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used in conjunction with validation rule to ensure that a justification is given for the alignment of the benefit to the business strategy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provide justification for the strategic fit value selected</inlineHelpText>
+        <label>Strategic Fit - Justification</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Strategic_Fit_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>$Setup.ccpe_ppm__Investment_Weightings__c.ccpe_ppm__Strategic_Fit__c</formula>
+        <inlineHelpText>The weighting of Strategic Fit to the overall investment (Value is drawn from the company standard values)</inlineHelpText>
+        <label>Strategic Fit - Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Strategic_Fit_Weighted_impact__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_ppm__Strategic_Fit_Impact__c *  ccpe_ppm__Strategic_Fit_Weight__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated impact of Strategic Fit to the overall investment</inlineHelpText>
+        <label>Strategic Fit - Weighted Impact</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Strategic_Fit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How well would this investment help meet overall business strategy and strategic goals</inlineHelpText>
+        <label>Strategic Fit</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Strategic Benefits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Measurable Benefits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor Benefits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Major Benefits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Critical Benefits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Supplier_Perspective_Effect__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Improving order accuracy, speed, accuracy, simplicity of payments, improving inventory handling, order lead time, forecasting, and quality improvements</inlineHelpText>
+        <label>Supplier Perspective - Effect</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Supplier_Perspective_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Supplier_Perspective_Effect__c, &apos;None&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Supplier_Perspective_Effect__c, &apos;Low&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Supplier_Perspective_Effect__c, &apos;Medium&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Supplier_Perspective_Effect__c, &apos;High&apos;),3,0) 
+) 
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Supplier_Perspective_Users__c, &apos;Low&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Supplier_Perspective_Users__c, &apos;Medium&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Supplier_Perspective_Users__c, &apos;High&apos;), 2,0) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to supplier perspective determined from effect and users</inlineHelpText>
+        <label>Supplier Perspective - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Supplier_Perspective_Users__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment benefit score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors</inlineHelpText>
+        <label>Supplier Perspective - Users</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Technical_Competence_Likelihood__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used in cost scoring calculations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance</inlineHelpText>
+        <label>Technical Competence - Likelihood</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Technical_Competence_Risk__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment cost score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier</inlineHelpText>
+        <label>Technical Competence - Risk</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Technical_Competence_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Technical_Competence_Risk__c, &apos;None&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Technical_Competence_Risk__c, &apos;Low&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Technical_Competence_Risk__c, &apos;Medium&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Technical_Competence_Risk__c, &apos;High&apos;),3,0) 
+) 
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Technical_Competence_Likelihood__c, &apos;Low&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Technical_Competence_Likelihood__c, &apos;Medium&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Technical_Competence_Likelihood__c, &apos;High&apos;), 2,0) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to technical competence determined from risk and likelihood</inlineHelpText>
+        <label>Technical Competence - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Timeline_Delays_Likelihood__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used for scoring or risks</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance</inlineHelpText>
+        <label>Timeline Delays - Likelihood</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Timeline_Delays_Risk__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for calculating the overall investment cost score</description>
+        <externalId>false</externalId>
+        <inlineHelpText>None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier</inlineHelpText>
+        <label>Timeline Delays - Risk</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Timeline_Delays_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(ccpe_ppm__Timeline_Delays_Risk__c, &apos;None&apos;),0, 
+IF(ISPICKVAL(ccpe_ppm__Timeline_Delays_Risk__c, &apos;Low&apos;),1, 
+IF(ISPICKVAL(ccpe_ppm__Timeline_Delays_Risk__c, &apos;Medium&apos;),2, 
+IF(ISPICKVAL(ccpe_ppm__Timeline_Delays_Risk__c, &apos;High&apos;),3,0) 
+) 
+) 
+) + 
+IF(ISPICKVAL(ccpe_ppm__Timeline_Delays_Likelihood__c, &apos;Low&apos;), 0, 
+IF(ISPICKVAL(ccpe_ppm__Timeline_Delays_Likelihood__c, &apos;Medium&apos;), 1, 
+IF(ISPICKVAL(ccpe_ppm__Timeline_Delays_Likelihood__c, &apos;High&apos;), 2,0) 
+) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The calculated score with relation to timeline delays determined from risk and likelihood</inlineHelpText>
+        <label>Timeline Delays - Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Total_Actual_Costs__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total Actual Costs</label>
+        <summarizedField>ccpe_ppm__Cost__c.ccpe_ppm__Total_Actual_Cost__c</summarizedField>
+        <summaryForeignKey>ccpe_ppm__Cost__c.ccpe_ppm__Investment__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Total_Benefits__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Summary total of the amount of expected benefits for this investment</inlineHelpText>
+        <label>Total Benefits</label>
+        <summarizedField>ccpe_ppm__Benefit__c.ccpe_ppm__Total_Planned_Benefit__c</summarizedField>
+        <summaryForeignKey>ccpe_ppm__Benefit__c.ccpe_ppm__Investment__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Total_Costs__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount of direct costs for all items to spend on the investment</inlineHelpText>
+        <label>Total Costs</label>
+        <summarizedField>ccpe_ppm__Cost__c.ccpe_ppm__Total_Planned_Cost__c</summarizedField>
+        <summaryForeignKey>ccpe_ppm__Cost__c.ccpe_ppm__Investment__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Total_Investment_Score__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total calculated score for the investment after factoring in all the costs and benefits</inlineHelpText>
+        <label>Total Investment Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__What_alternative_solutions_considered__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Outline the alternative solutions that have been considered.</inlineHelpText>
+        <label>What alternative solutions considered?</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__What_is_causing_the_problem__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe how the problem has come about? How long have we been aware of the problem and any impacts.</inlineHelpText>
+        <label>What is causing the problem?</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__What_is_happening_today__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Briefly outline the current situation that needs to be changed.</inlineHelpText>
+        <label>What is happening today?</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__What_is_the_preferred_solution__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Describe the preferred solution targeted to address the problem / opportunity.</inlineHelpText>
+        <label>What is the preferred solution?</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Why_is_this_preferred__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Explain why it is the preferred solution and reference supporting evidence.</inlineHelpText>
+        <label>Why is this preferred?</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Why_is_this_problem__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Briefly describe why this is a problem to the business</inlineHelpText>
+        <label>Why is this a problem?</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <recordTypes>
+        <fullName>ccpe_ppm__Execution</fullName>
+        <active>true</active>
+        <description>The third stage of the investment process where projects are executed</description>
+        <label>Execution</label>
+        <picklistValues>
+            <picklist>ccpe_ppm__Benefits_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Business_Effort_Man_Days__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Costs_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__IT_Effort__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Likelyhood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Strategic_Fit__c</picklist>
+            <values>
+                <fullName>Critical Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Measurable Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Strategic Benefits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ccpe_ppm__Maintenance</fullName>
+        <active>true</active>
+        <description>The final stage of the investment process where any ongoing maintenance costs are captured</description>
+        <label>Maintenance</label>
+        <picklistValues>
+            <picklist>ccpe_ppm__Benefits_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Business_Effort_Man_Days__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Costs_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__IT_Effort__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Likelyhood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Strategic_Fit__c</picklist>
+            <values>
+                <fullName>Critical Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Measurable Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Strategic Benefits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ccpe_ppm__Planning</fullName>
+        <active>true</active>
+        <description>The second stage of the investment process where detailed analysis is carried out</description>
+        <label>Planning</label>
+        <picklistValues>
+            <picklist>ccpe_ppm__Benefits_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Business_Effort_Man_Days__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Costs_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__IT_Effort__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Likelyhood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Strategic_Fit__c</picklist>
+            <values>
+                <fullName>Critical Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Measurable Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Strategic Benefits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ccpe_ppm__Request</fullName>
+        <active>true</active>
+        <description>The first stage of the investment process where basic information is gathered</description>
+        <label>Request</label>
+        <picklistValues>
+            <picklist>ccpe_ppm__Benefits_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Business_Effort_Man_Days__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Cost_Overrun_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Costs_Schedule__c</picklist>
+            <values>
+                <fullName>Annual</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Customer_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Human_Capital_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__IT_Effort__c</picklist>
+            <values>
+                <fullName>%3C 25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100 to 250</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25 to 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>250 to 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 to 100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Internal_Process_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Likelyhood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Management_User_Buy_In_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Strategic_Fit__c</picklist>
+            <values>
+                <fullName>Critical Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Major Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Minor Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Measurable Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Strategic Benefits</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Effect__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Supplier_Perspective_Users__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Technical_Competence_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Likelihood__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ccpe_ppm__Timeline_Delays_Risk__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>ccpe_ppm__Cannot_Change_Schedule_After_Planning</fullName>
+        <active>true</active>
+        <description>Once the planning stage is completed, the Cost/Benefit Schedules cannot be changed</description>
+        <errorConditionFormula>RecordType.Name != &apos;Planning&apos; &amp;&amp;
+RecordType.Name != &apos;Request&apos; &amp;&amp;
+(ISCHANGED(ccpe_ppm__Costs_Schedule__c) || 
+ISCHANGED(ccpe_ppm__Benefits_Schedule__c))</errorConditionFormula>
+        <errorMessage>Investment schedules cannot be changed once the execution stage has begun.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_ppm__Strategic_Fit_Impact_over_2</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND((ccpe_ppm__Strategic_Fit_Impact__c &gt; 2),ISBLANK(ccpe_ppm__Strategic_Fit_Justification__c))</errorConditionFormula>
+        <errorMessage>Please fill in Strategic Fit Justification when Strategic Fit Impact is greater than 2.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>ccpe_ppm__View_Benefits</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>View Benefits</masterLabel>
+        <openType>sidebar</openType>
+        <page>ccpe_ppm__Direct_Financial_Benefits</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>ccpe_ppm__View_Costs</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>View Costs</masterLabel>
+        <openType>sidebar</openType>
+        <page>ccpe_ppm__Direct_Financial_Costs</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

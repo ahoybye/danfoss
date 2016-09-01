@@ -1,0 +1,10 @@
+Message: {!BMCServiceDesk__Broadcasts__c.BMCServiceDesk__broadcastMessage__c}
+
+Please Approve/Reject the Broadcast by replying with one of the following Key words
+
+approve
+approved
+yes
+reject
+rejected
+no

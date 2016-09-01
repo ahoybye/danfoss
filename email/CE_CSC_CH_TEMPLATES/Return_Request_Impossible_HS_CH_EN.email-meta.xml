@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Return_Request_Impossible_HS_CH_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CH_LETTERHEAD</letterhead>
+    <name>Return_Request_Impossible_HS_CH_EN</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>To: !Case.Account}
+
+Attn: {!Case.Contact}
+
+Return
+Your inquiry no.
+from
+Order no.
+From
+
+A return is not possible because:
+
+*The product is older than 6 months (see RG from....)
+
+Best regards
+Customer Service Central Europe Region
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: +41 61 5880 114
+E-Mail: CS@danfoss.ch</textOnly>
+    <type>html</type>
+</EmailTemplate>

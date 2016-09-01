@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>PartnerLink Request</name>
+    <style>freeForm</style>
+    <subject>Danfoss PartnerLink - {!Case.Subject}</subject>
+    <textOnly>{!IF( ISPICKVAL (Case.Type, &quot;Logo Design&quot;), &quot;Thank you for your request. A MarCom representative will process your request and contact you shortly. If you have any immediate needs, please contact your account manager directly.&quot;, IF( ISPICKVAL (Case.Type, &quot;Image Request&quot;), &quot;Thank you for your request. A MarCom representative will process your request and contact you shortly. If you have any immediate needs, please contact your account manager directly.&quot;, IF( ISPICKVAL (Case.Type, &quot;Marketing Question&quot;), &quot;Thank you for your request. A MarCom representative will review your question(s) and contact you shortly. If you have any immediate needs, please contact your account manager directly.&quot;, &quot;&quot; )))}
+
+{!Case.Description}
+
+Thanks again,
+
+Danfoss</textOnly>
+    <type>html</type>
+</EmailTemplate>

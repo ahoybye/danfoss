@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fieldSets>
+        <fullName>project_cloud__Record_Details</fullName>
+        <availableFields>
+            <field>project_cloud__Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>The details of the timesheet. currently used by the approvals page for columns, but could be used elsewhere</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Owner.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>project_cloud__Start__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>project_cloud__End__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>project_cloud__Worked_Hours__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Details</label>
+    </fieldSets>
+    <fields>
+        <fullName>project_cloud__End__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The end of the Timesheet is 7 days (including the start date) after the start of the Timesheet</description>
+        <externalId>false</externalId>
+        <formula>project_cloud__Start__c + 6</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The end of the Timesheet is 7 days (including the start date) after the start of the Timesheet</inlineHelpText>
+        <label>End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Hash__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is a hash of the OwnerId of the Timesheet and the start date, it is used by the validation rule to enforce unique timesheets</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(OwnerId) + TEXT(YEAR(project_cloud__Start__c)) + &apos;-&apos; + TEXT(MONTH(project_cloud__Start__c)) + &apos;-&apos; + TEXT(DAY(project_cloud__Start__c))</formula>
+        <inlineHelpText>This is a system field and should never be visible.</inlineHelpText>
+        <label>Hash</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Start__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date the Timesheet entries can begin</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The first day of the Timesheet</inlineHelpText>
+        <label>Start</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Worked_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Entered Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>project_cloud__Start_Date_Read_Only</fullName>
+        <active>true</active>
+        <description>The Start Date on a Timesheet is required and once set can not be changed.</description>
+        <errorConditionFormula>ISBLANK(project_cloud__Start__c) || ISCHANGED(project_cloud__Start__c)</errorConditionFormula>
+        <errorDisplayField>project_cloud__Start__c</errorDisplayField>
+        <errorMessage>The Start Date on a Timesheet is required and once set can not be changed.</errorMessage>
+    </validationRules>
+</CustomObject>

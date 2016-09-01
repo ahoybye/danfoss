@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SERVICE REQUEST_DE_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>SERVICE REQUEST_DE_DE</name>
+    <style>formalLetter</style>
+    <subject>Service request</subject>
+    <textOnly>Sehr geerhte Damen und Herren,
+
+anbei erhalten Sie das gewünschte Serviceformular.
+Sollten Sie hierzu Fragen haben, stehen wir Ihnen gerne zur Verfügung.
+
+Kind regards,
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+{!Case.Thread_Id}
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

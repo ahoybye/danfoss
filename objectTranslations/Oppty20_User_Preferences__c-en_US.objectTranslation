@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Oppty20 User Preferences</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Oppty20 User Preferences</value>
+    </caseValues>
+    <fields>
+        <help><!-- Json string with selected countries. --></help>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Id of the record in the CurrencyType object. --></help>
+        <label><!-- Currency --></label>
+        <name>Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Json string with selected regions. --></help>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- Json string with selected segments. --></help>
+        <label><!-- Segment --></label>
+        <name>Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Team__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Period --></label>
+        <name>Time_Period__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

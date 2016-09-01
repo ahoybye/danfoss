@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Danfoss Power Solutions Price Tools 2014</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Danfoss Power Solutions Price Tools 2014 (en)</name>
+    <style>formalLetter</style>
+    <subject>Danfoss Power Solutions Price Tools 2014</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+
+a new version (3.8) of the Product Selection Tool is available for you to download at our PartnerLink portal!&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+If you have not already subscribed to the Product Selection Tool on PartnerLink to be notified on any update of the tool, please do so to have always the latest version available on your computer.
+
+
+Other pricebooks/tools not integrated in the Product Selection Tool are available through the links below:
+
+
+Price Books
+
+
+
+Price Tools
+
+
+
+
+
+
+
+Electronic Components
+
+
+
+
+
+2014_EU_Pricebook_Electric_Components_V2
+
+2013-10-28
+
+
+2014_EU_Toolbox_JS1000_MMC_V5
+
+2014-01-07
+
+
+
+
+2014_EU_Toolbox_JS2000_MMC_V3
+
+2014-01-07
+
+
+
+
+2014_EU_Toolbox_JS6000_MMC_V3
+
+2014-01-07
+
+
+
+
+2014_EU_Toolbox_Prof1_MMC_V5
+
+2014-01-07
+
+LSHT
+
+
+
+
+
+
+
+
+see Product Selection Tool
+
+
+Propel
+
+
+
+
+
+
+
+
+2014_EU_Toolbox_LDU_Pumps_V1
+
+2013-09-27
+
+
+
+
+2014_EU_Toolbox_DDC20_V1
+
+2013-09-27
+
+2014_EU_Pricebook_Series_51_V1
+
+2013-09-27
+
+
+2014_EU_Toolbox_S51_Motors_V1
+
+2013-09-27
+
+2014_EU_Pricebook_Series_51-1_V1
+
+2013-09-27
+
+
+2014_EU_Toolbox_S51-1_Motors_V1
+
+2013-09-27
+
+Service Parts
+
+
+
+
+
+
+
+
+Not available
+
+
+Steering
+
+
+
+
+
+
+
+
+see Product Selection Tool
+
+
+Valves
+
+
+
+
+
+
+
+
+2014_EU_Toolbox_PVG_V1
+
+2013-10-22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Be aware the pricebooks/tools are for internal use only, the content is subject to be changed without notice!
+
+
+
+In case of questions do not hesitate to contact your Danfoss Power Solutions Distribution Sales Team!
+
+
+
+
+Have a great day!
+
+
+Your Distribution Sales Team,
+ {!Today}</textOnly>
+    <type>html</type>
+</EmailTemplate>

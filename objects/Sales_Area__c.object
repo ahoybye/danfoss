@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fieldSets>
+        <fullName>AccountRelatedListColumns</fullName>
+        <description>Determines the columns displayed on the related list of sales areas on the account page</description>
+        <displayedFields>
+            <field>Sub_Account__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SAP_Account_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Sales_Area__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Sales_Office__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Sub_Account_Inactive__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BI_Links__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>AccountRelatedListColumns</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>PricesForOpportunityColumns</fullName>
+        <description>Defines the columns used to select a sales area for an Opportunity when clicking &quot;Get Prices&quot; on the product selector, when a sales area is not chosen yet for the opportunity.</description>
+        <displayedFields>
+            <field>Sub_Account_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SAP_Account_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Sales_Area__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Sales_Office__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>PricesForOpportunityColumns</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sales Areas</relationshipLabel>
+        <relationshipName>Sales_Areas</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BI_Links__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/apex/BusinessWarehouseReport?id=&apos; &amp; Sub_Account__c, &apos;Show Salesman Report&apos;)</formula>
+        <label>Show Salesman Report</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Group_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Group_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Freight &amp; Small Order Surcharge</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Group_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Confirmation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Group_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Group_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoicing</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Sub_Account__r.Division__c)</formula>
+        <label>Division</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exchange_Rate_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Exchange Rate Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>001D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>002D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CZKE Sales Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DIR Aftalt Kurs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DIR Phillips Aftalt Kurs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drives Exchange Rate IPC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Type for York</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro-2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro-3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro for B Exchange Rates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate China CNCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Denmark CNCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Production</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Type AC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Type Fixed GM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HPP Specific Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India Customs Rates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal Bank Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intrastat Exchange Rate Type</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCFDDK Actual Trans. Rate for Valuation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCFDGB Customer Specific Exchange Rates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MXCO Investments Exch. Rate Type</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RUCO Internal Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russian Budget Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Std. Translation at Local Average Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UACO Indicative External Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kobskurs (Aktuel)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salgskurs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Incoterms_1_SAP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( CONTAINS( Incoterms_1__c, &quot; - &quot;),LEFT( Incoterms_1__c , FIND( &quot; -&quot;, Incoterms_1__c)), Incoterms_1__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Incoterms 1 SAP ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incoterms_1__c</fullName>
+        <description>INCO1</description>
+        <externalId>false</externalId>
+        <label>Incoterms 1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incoterms_2_SAP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Incoterms 2 SAP ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incoterms_2__c</fullName>
+        <description>INCO2</description>
+        <externalId>false</externalId>
+        <label>Incoterms 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Channel__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Area_Master__r.Channel__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Master_Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Division__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Area_Master__r.Division__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Master_Division</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Sales_Org__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Area_Master__r.Sales_Org__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Master_Sales_Org</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Payment_terms_SAP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( CONTAINS( Payment_terms__c, &quot; - &quot;),LEFT( Payment_terms__c, FIND( &quot; -&quot;, Payment_terms__c)), &quot; &quot;)</formula>
+        <label>Payment terms SAP ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_terms__c</fullName>
+        <description>ZTERM</description>
+        <externalId>false</externalId>
+        <label>Payment terms</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Account_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sub_Account__r.SAP_Account_ID__c</formula>
+        <label>SAP Account ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Area_Master__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Area Master</label>
+        <referenceTo>Sales_Area_Master__c</referenceTo>
+        <relationshipLabel>Sales Areas</relationshipLabel>
+        <relationshipName>Sales_Areas</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Area_SAP_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Sales Area SAP ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Area__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Area_Master__r.Sales_Area__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Area</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Group</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Office</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Account_Inactive__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sub_Account__r.Inactive__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sub_Account__r.Name</formula>
+        <label>Sub Account Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sub Account</label>
+        <referenceTo>Sub_Account__c</referenceTo>
+        <relationshipLabel>Sales Areas</relationshipLabel>
+        <relationshipName>Sales_Areas</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_SAP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( CONTAINS( Customer_Group_4__c , &quot; - &quot;),LEFT( Customer_Group_4__c , FIND( &quot; -&quot;, Customer_Group_4__c )), &quot; &quot;)</formula>
+        <label>Warranty SAP ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

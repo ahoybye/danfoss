@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Topic --></label>
+        <name>ccpt__Topic__c</name>
+        <relationshipLabel><!-- Topic Member --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>ccpt__User__c</name>
+        <relationshipLabel><!-- Topic Member --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

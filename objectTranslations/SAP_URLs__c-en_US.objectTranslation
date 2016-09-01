@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SAP URLs</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SAP URLs</value>
+    </caseValues>
+    <fields>
+        <help><!-- The deep link into SAP CRM to create a quote, where {SAPID} is used as the SAP account ID --></help>
+        <label><!-- Create SAP CRM Quote URL --></label>
+        <name>Create_SAP_CRM_Quote_URL__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template to send information for other category</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>OTHER CATEGORY TEMPLATE</name>
+    <style>formalLetter</style>
+    <subject>Case Number: {!Case.CaseNumber} – {!Case.Subject}  [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear Sir/Madam,
+
+Thank you for contacting Danfoss Customer Service Center.
+
+Please find the details of the concerned person below.
+
+HR: Please click on this link and apply
+https://krb-xjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=30033&amp;siteid=5636
+
+Marketing and Communications:
+Drives - Panner Selvam Satheesh Kannan (Email: satheeshkannan@danfoss.com ; Phone: +91 7358703982)
+Cooling - Dipu Jojo (Email: dipujojo@danfoss.com; Phone: +91 9840112832)
+
+Admin - Selvaraj Laxmi (Email: laxmi@danfoss.com; Phone: +91 9840493419)
+
+Procurement - Valluvan Aravind (Email : aravind@danfoss.com; Phone: +91-44-67151457
+
+Finance - Santhanam Balaji (Email: balaji.s@danfoss.com; Phone: +91 9940075643)
+
+Industry Affairs - Lokanadham Nagahari Krishna (Email: Nagahari@danfoss.com; Phone: +91 9500065867)
+
+Best regards,
+
+Danfoss Customer Service Center
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

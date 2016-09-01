@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Back-End System --></label>
+        <name>Back_end_System__c</name>
+        <picklistValues>
+            <masterLabel>Goldmine</masterLabel>
+            <translation><!-- Goldmine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kompas</masterLabel>
+            <translation><!-- Kompas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P02 (Drives - Factory)</masterLabel>
+            <translation><!-- P02 (Drives - Factory) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P08 (Global Sales)</masterLabel>
+            <translation><!-- P08 (Global Sales) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P16 (Drives - NAM)</masterLabel>
+            <translation><!-- P16 (Drives - NAM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PCM</masterLabel>
+            <translation><!-- PCM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siebel (Drives - Vacon)</masterLabel>
+            <translation><!-- Siebel (Drives - Vacon) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turbocor</masterLabel>
+            <translation><!-- Turbocor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Segment --></label>
+        <name>Danfoss_Segment__c</name>
+        <picklistValues>
+            <masterLabel>Cooling</masterLabel>
+            <translation><!-- Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives</masterLabel>
+            <translation><!-- Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Segment (Owner) --></label>
+        <name>Division__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goldmine # --></label>
+        <name>Goldmine__c</name>
+    </fields>
+    <fields>
+        <label><!-- Kompas # --></label>
+        <name>Kompas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Data Type --></label>
+        <name>Master_Data_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospect</masterLabel>
+            <translation><!-- Prospect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualified Prospect</masterLabel>
+            <translation><!-- Qualified Prospect --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- P02 # --></label>
+        <name>P02__c</name>
+    </fields>
+    <fields>
+        <label><!-- P16 # --></label>
+        <name>P16__c</name>
+    </fields>
+    <fields>
+        <label><!-- PCM # --></label>
+        <name>PCM__c</name>
+    </fields>
+    <fields>
+        <help><!-- SAP number created for this request --></help>
+        <label><!-- P08 # --></label>
+        <name>SAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel # --></label>
+        <name>Siebel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Turbocor # --></label>
+        <name>Turbocor__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must enter an ID for the back-end system selected. --></errorMessage>
+        <name>Customer_Request_Completed_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

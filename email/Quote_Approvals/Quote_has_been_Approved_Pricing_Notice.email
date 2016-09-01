@@ -1,0 +1,3 @@
+All prices in the Quote {!Quote.QuoteNumber} have been approved. Please take appropriate action to update the SAP system prior to receipt of any customer orders.
+
+Link to the Quote: {!Quote.Link}

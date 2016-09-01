@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case Assignment Violation – Mail to CSC Head</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>CASE ASSIGNMENT VIOLATION – MAIL TO CSC HEAD</name>
+    <style>formalLetter</style>
+    <subject>Escalation: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear {!Receiving_User.Name},
+Case {!Case.CaseNumber} is not accepted from Queue - {!Case.OwnerFullName} . Please take necessary action.
+
+Please follow the below link for more information
+
+{!Case.Link}
+
+
+Best regards,
+
+
+Danfoss Customer Service Center
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

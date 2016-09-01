@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Author__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.LastName + &apos;, &apos; +  CreatedBy.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Author</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail__c</fullName>
+        <externalId>false</externalId>
+        <label>Detail</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>50</visibleLines>
+    </fields>
+    <fields>
+        <fullName>E_mail__c</fullName>
+        <externalId>false</externalId>
+        <label>E-mail</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

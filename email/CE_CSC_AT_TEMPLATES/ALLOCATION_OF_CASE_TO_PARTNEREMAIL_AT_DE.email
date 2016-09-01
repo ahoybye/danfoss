@@ -1,0 +1,113 @@
+<messaging:emailTemplate subject="Case Assigned to you: {!relatedTo.CaseNumber} – {!relatedTo.Subject} [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]" 
+                         recipientType="Contact" 
+                         relatedToType="Case">
+
+<messaging:htmlEmailBody >
+    <html>
+        <apex:image id="Logo" value="https://danfoss--c.na8.content.force.com/servlet/servlet.ImageServer?id=015C0000001583h&oid=00DC0000000Qm80"/>
+                
+        <body>
+            <font face="verdana" size="3px">
+            <p>Sehr geehrte(r) Frau/Herr {!relatedTo.Assigned_To_Channel_Partner__r.Name},</p>
+            <p/>
+            <p>wir haben eine Anfrage von {!relatedTo.Contact.Name}, {!relatedTo.Account.Name} Firma erhalten. Wir leiten diese Anfrage hiermit an Sie weiter.<p/> 
+            Einzelheiten zu dem Vorgang finden Sie hier:</p>
+            <p/>
+            <p><B>Kunden-Information:</B></p>
+            <p>Name Kontaktperson: {!relatedTo.Contact.Name}<br/>
+            Kontakt Details: {!relatedTo.Contact.Phone}/ {!relatedTo.Contact.MobilePhone}<br/>
+            Kontakt Email: {!relatedTo.Contact.Email}</p>
+            <p></p>
+            <p/>
+            <p><B>Vorgang-Information:</B></p>
+            <p>Betreff: {!relatedTo.Subject}<br/>
+            Beschreibung: {!relatedTo.Description}<br/>
+            Danfoss Vertriebs-Person: {!relatedTo.Owner.Name}</p>
+            <p></p>
+            <p/>
+            <p><B>Produkt Details:</B></p>
+            <P/>
+            <table border="1" >
+                <tr>
+                    <th>Artikel-number</th>
+                    <th>Materialbeschreibung</th>
+                    <th>Bestellte Menge</th>
+                </tr>
+                <apex:repeat var="cp" value="{!relatedTo.Case_Products__r}">
+                <tr>
+                    <td>{!cp.Product__r.Name}</td>
+                    <td>{!cp.Product__r.Product_Line__c}</td>
+                    <td>{!cp.Quantity__c}</td>
+                </tr>
+                </apex:repeat> 
+            </table>
+            <p/>
+            <p>Bitte antworten Sie uns mit der gleichen E-Mail und lassen Sie uns eine Kopie des Angebotes zukommen, das Sie an den Kunden gegeben haben.</p>
+            <p/>
+            <p>NB: Bitte nicht den Betreff in der Antwort-Mail an uns ändern. </p>
+            <p>Danke und mit freundlichen Grüßen,<br/>
+            Danfoss Customer Service Center</p>
+            <br/><br/><br/><br/><br/>                  
+            <p>Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse: <br/>
+            Tel: +43 1253 022 322 <br/>
+            E-mail: CS@danfoss.ar </p>
+            <P/>
+            <P/>
+            <p>Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen<br/>
+            [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]</p>
+            
+            Danfoss GesmbH<br/>
+            Danfoss Straße 8, 2353 Guntramsdorf, Austria<br/>
+            Firma: Danfoss Gesellschaft m. b. H., Rechtsform: Gesellschaft mit<br/>
+            beschränkter Haftung, Sitz: Guntramsdorf, Firmenbuchnummer: FN 62804 i,<br/>
+            Firmenbuchgericht: Landesgericht Wiener Neustadt, DVR-Nr. 0586773 
+
+
+            </font>
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+    <messaging:plainTextEmailBody >
+    Sehr geehret(r) Frau/Herr {!relatedTo.Assigned_To_Channel_Partner__r.Name},
+    
+    Wir haben eine Anfrage von {!relatedTo.Contact.Name}, {!relatedTo.Account.Name} Firma erhalten. Wir leiten diese anfrage hiermit an Sie weiter. Einzelheiten zu dem Vorgang finden Sie hier.    
+    Kinden-Information:
+    Name Kontaktperson: {!relatedTo.Contact.Name}
+    Kontakt Details: {!relatedTo.Contact.Phone}/ {!relatedTo.Contact.MobilePhone}
+    Kontakt Email: {!relatedTo.Contact.Email}
+    
+    Vorgang-Information:
+    Betreff: {!relatedTo.RecordType.Name}
+    Beschreibung: {!relatedTo.Description}
+    Danfoss Vertriebs-Person: {!relatedTo.Owner.Name}
+    
+    Produkt Details:
+    [Artikel-Nummer]  -  [Materialbeschreibung]  -  [Bestellte Menge]
+    <apex:repeat var="cp" value="{!relatedTo.Case_Products__r}">
+      [ {!cp.Product__r.Name} ] - [ {!cp.Product__r.Product_Line__c} ] - [ {!cp.Quantity__c} ]
+    </apex:repeat>
+    
+    Bitte antworten Sie uns mit der gleichen E-Mail und lassen Sie uns eine Kopie des Angebotes zukommen, das Sie an den Kunden gegeben haben. 
+    
+    NB: Bitte nicht den Betreff in der Antwort-Mail an uns ändern.
+    
+    Danke und mit freundlichen Grüßen,
+    Danfoss Customer Service Center
+    
+    Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+    Tel: +43 1253 022 322
+    E-Mail: CS@danfoss.at
+
+    Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+    [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]
+    
+    Danfoss GesmbH
+    Danfoss Straße 8, 2353 Guntramsdorf, Austria
+    Firma: Danfoss Gesellschaft m. b. H., Rechtsform: Gesellschaft mit 
+    beschränkter Haftung, Sitz: Guntramsdorf, Firmenbuchnummer: FN 62804 i, 
+    Firmenbuchgericht: Landesgericht Wiener Neustadt, DVR-Nr. 0586773 
+
+
+
+    </messaging:plainTextEmailBody>
+</messaging:emailTemplate>

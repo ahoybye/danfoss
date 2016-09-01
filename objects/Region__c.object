@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Comatrol_Distributor_Quote_Footer__c</fullName>
+        <externalId>false</externalId>
+        <label>Comatrol Distributor Quote Footer</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comatrol_OEM_Quote_Footer__c</fullName>
+        <externalId>false</externalId>
+        <label>Comatrol OEM Quote Footer</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contract_Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ASEAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Korea</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Country Code</label>
+        <length>2</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Distributor_Quote_Footer__c</fullName>
+        <description>for use in Quote PDF</description>
+        <externalId>false</externalId>
+        <label>PS Distributor Quote Footer</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OEM_Quote_Footer__c</fullName>
+        <description>for use in the Quote PDF</description>
+        <externalId>false</externalId>
+        <label>PS OEM Quote Footer</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Turolla_Distributor_Quote_Footer__c</fullName>
+        <externalId>false</externalId>
+        <label>Turolla Distributor Quote Footer</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Turolla_OEM_Quote_Footer__c</fullName>
+        <externalId>false</externalId>
+        <label>Turolla OEM Quote Footer</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+</CustomObject>

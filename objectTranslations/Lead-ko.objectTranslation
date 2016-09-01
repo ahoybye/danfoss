@@ -1,0 +1,2295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label>계정 관리자</label>
+        <name>Account_Manager__c</name>
+        <relationshipLabel><!-- Leads (Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>ApplicationPS__c</name>
+        <relationshipLabel><!-- Leads --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <picklistValues>
+            <masterLabel>Agricultural</masterLabel>
+            <translation><!-- Agricultural --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Compressors</masterLabel>
+            <translation><!-- Air Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Conveyor</masterLabel>
+            <translation><!-- Air Conveyor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Dryers</masterLabel>
+            <translation><!-- Air Dryers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air compressor</masterLabel>
+            <translation><!-- Air compressor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air to Water Heat Pumps</masterLabel>
+            <translation><!-- Air to Water Heat Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arator</masterLabel>
+            <translation><!-- Arator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aseptic</masterLabel>
+            <translation><!-- Aseptic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Autoclaves/ Sterilizers</masterLabel>
+            <translation><!-- Autoclaves/ Sterilizers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Back Bar Equipment</masterLabel>
+            <translation><!-- Back Bar Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bakery Equipment</masterLabel>
+            <translation><!-- Bakery Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ball Mill</masterLabel>
+            <translation><!-- Ball Mill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Batch dyeing machinery</masterLabel>
+            <translation><!-- Batch dyeing machinery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beer &amp; Wine Cellar Coolers</masterLabel>
+            <translation><!-- Beer &amp; Wine Cellar Coolers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beverage Dispensers</masterLabel>
+            <translation><!-- Beverage Dispensers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blast Freezers &amp; Chillers</masterLabel>
+            <translation><!-- Blast Freezers &amp; Chillers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blender/blow-room (Fan)</masterLabel>
+            <translation><!-- Blender/blow-room (Fan) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blower</masterLabel>
+            <translation><!-- Blower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Boiler Systems</masterLabel>
+            <translation><!-- Boiler Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brewery</masterLabel>
+            <translation><!-- Brewery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bus &amp; Train Air Conditioning</masterLabel>
+            <translation><!-- Bus &amp; Train Air Conditioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Calender</masterLabel>
+            <translation><!-- Calender --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Washing</masterLabel>
+            <translation><!-- Car Washing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catering Equipment</masterLabel>
+            <translation><!-- Catering Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Centrifugal Pump</masterLabel>
+            <translation><!-- Centrifugal Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Centrifuge</masterLabel>
+            <translation><!-- Centrifuge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemical</masterLabel>
+            <translation><!-- Chemical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chillers</masterLabel>
+            <translation><!-- Chillers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clean Drive</masterLabel>
+            <translation><!-- Clean Drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clean room (fan)</masterLabel>
+            <translation><!-- Clean room (fan) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cleaning</masterLabel>
+            <translation><!-- Cleaning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Close Control Cooling</masterLabel>
+            <translation><!-- Close Control Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cold Rooms</masterLabel>
+            <translation><!-- Cold Rooms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cold Storage</masterLabel>
+            <translation><!-- Cold Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Ice Making Machines</masterLabel>
+            <translation><!-- Commercial Ice Making Machines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Refrigerators &amp; Freezers</masterLabel>
+            <translation><!-- Commercial Refrigerators &amp; Freezers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compressor</masterLabel>
+            <translation><!-- Compressor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compressors</masterLabel>
+            <translation><!-- Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condensing Units</masterLabel>
+            <translation><!-- Condensing Units --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation><!-- Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conveyor</masterLabel>
+            <translation><!-- Conveyor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooling Systems</masterLabel>
+            <translation><!-- Cooling Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooling compressor (Screw)</masterLabel>
+            <translation><!-- Cooling compressor (Screw) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooling compresssor (Piston)</masterLabel>
+            <translation><!-- Cooling compresssor (Piston) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crane</masterLabel>
+            <translation><!-- Crane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crawler cranes</masterLabel>
+            <translation><!-- Crawler cranes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crushers</masterLabel>
+            <translation><!-- Crushers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DEN</masterLabel>
+            <translation><!-- DEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dairy</masterLabel>
+            <translation><!-- Dairy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decanter</masterLabel>
+            <translation><!-- Decanter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dishwashing</masterLabel>
+            <translation><!-- Dishwashing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Displacement Pump</masterLabel>
+            <translation><!-- Displacement Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District Heating</masterLabel>
+            <translation><!-- District Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drilling, boring</masterLabel>
+            <translation><!-- Drilling, boring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ducted Split Systems</masterLabel>
+            <translation><!-- Ducted Split Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Earth moving machines</masterLabel>
+            <translation><!-- Earth moving machines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical System</masterLabel>
+            <translation><!-- Electrical System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Cabinet Cooling</masterLabel>
+            <translation><!-- Electronic Cabinet Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elevator</masterLabel>
+            <translation><!-- Elevator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engines</masterLabel>
+            <translation><!-- Engines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalator</masterLabel>
+            <translation><!-- Escalator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evaporator Coils</masterLabel>
+            <translation><!-- Evaporator Coils --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extruder</masterLabel>
+            <translation><!-- Extruder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FR Contractors &amp; Installers</masterLabel>
+            <translation><!-- FR Contractors &amp; Installers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FR End Users</masterLabel>
+            <translation><!-- FR End Users --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan</masterLabel>
+            <translation><!-- Fan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Filling machine (liquid)</masterLabel>
+            <translation><!-- Filling machine (liquid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire</masterLabel>
+            <translation><!-- Fire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fishery</masterLabel>
+            <translation><!-- Fishery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fluff suction</masterLabel>
+            <translation><!-- Fluff suction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flying saw (cut on the fly)</masterLabel>
+            <translation><!-- Flying saw (cut on the fly) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forestry</masterLabel>
+            <translation><!-- Forestry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frozen Food</masterLabel>
+            <translation><!-- Frozen Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gantry cranes</masterLabel>
+            <translation><!-- Gantry cranes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gas Turbines</masterLabel>
+            <translation><!-- Gas Turbines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gas compressor</masterLabel>
+            <translation><!-- Gas compressor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gearbox</masterLabel>
+            <translation><!-- Gearbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generators</masterLabel>
+            <translation><!-- Generators --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Geothermal</masterLabel>
+            <translation><!-- Geothermal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glass Door Merchandisers</masterLabel>
+            <translation><!-- Glass Door Merchandisers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grinder</masterLabel>
+            <translation><!-- Grinder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hoist</masterLabel>
+            <translation><!-- Hoist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot Water Heating</masterLabel>
+            <translation><!-- Hot Water Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Humidification</masterLabel>
+            <translation><!-- Humidification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - WS Branch</masterLabel>
+            <translation><!-- IA - WS Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - WS Headquarter</masterLabel>
+            <translation><!-- IA - WS Headquarter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID Fan (Induced Draft)</masterLabel>
+            <translation><!-- ID Fan (Induced Draft) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ice Cream &amp; Frozen Beverage Machines</masterLabel>
+            <translation><!-- Ice Cream &amp; Frozen Beverage Machines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ice Cream Cabinets</masterLabel>
+            <translation><!-- Ice Cream Cabinets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ice Merchandisers</masterLabel>
+            <translation><!-- Ice Merchandisers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial</masterLabel>
+            <translation><!-- Industrial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Laundry</masterLabel>
+            <translation><!-- Industrial Laundry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integral Display Cases</masterLabel>
+            <translation><!-- Integral Display Cases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiln</masterLabel>
+            <translation><!-- Kiln --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab &amp; Medical Refrigeration</masterLabel>
+            <translation><!-- Lab &amp; Medical Refrigeration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leak Protection</masterLabel>
+            <translation><!-- Leak Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine propulsion</masterLabel>
+            <translation><!-- Marine propulsion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine thrusters</masterLabel>
+            <translation><!-- Marine thrusters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maritime cranes</masterLabel>
+            <translation><!-- Maritime cranes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Handling</masterLabel>
+            <translation><!-- Material Handling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material handling equipment</masterLabel>
+            <translation><!-- Material handling equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium/ Heavy Vehicles</masterLabel>
+            <translation><!-- Medium/ Heavy Vehicles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milk Coolers</masterLabel>
+            <translation><!-- Milk Coolers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milk Tank Cooling</masterLabel>
+            <translation><!-- Milk Tank Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milling</masterLabel>
+            <translation><!-- Milling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mini Split Systems</masterLabel>
+            <translation><!-- Mini Split Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mining</masterLabel>
+            <translation><!-- Mining --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mixer</masterLabel>
+            <translation><!-- Mixer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Air Conditioning</masterLabel>
+            <translation><!-- Mobile Air Conditioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Coolers</masterLabel>
+            <translation><!-- Mobile Coolers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mortuary Cooling</masterLabel>
+            <translation><!-- Mortuary Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motion Control (sync, pos, CAM)</masterLabel>
+            <translation><!-- Motion Control (sync, pos, CAM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM</masterLabel>
+            <translation><!-- OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oil &amp; Gas</masterLabel>
+            <translation><!-- Oil &amp; Gas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oil/ Fuel Treatment</masterLabel>
+            <translation><!-- Oil/ Fuel Treatment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Split Systems</masterLabel>
+            <translation><!-- Other Split Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Unitary Systems</masterLabel>
+            <translation><!-- Other Unitary Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packaged Units</masterLabel>
+            <translation><!-- Packaged Units --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Packing machine (non liquid)</masterLabel>
+            <translation><!-- Packing machine (non liquid) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palletizer</masterLabel>
+            <translation><!-- Palletizer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paper treatment machine</masterLabel>
+            <translation><!-- Paper treatment machine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastic Processing</masterLabel>
+            <translation><!-- Plastic Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Displacement Blower</masterLabel>
+            <translation><!-- Positive Displacement Blower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Displacement Pump</masterLabel>
+            <translation><!-- Positive Displacement Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Generation</masterLabel>
+            <translation><!-- Power Generation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Packs</masterLabel>
+            <translation><!-- Power Packs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presses</masterLabel>
+            <translation><!-- Presses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Printing machine</masterLabel>
+            <translation><!-- Printing machine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Chillers</masterLabel>
+            <translation><!-- Process Chillers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Heating</masterLabel>
+            <translation><!-- Process Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing machine</masterLabel>
+            <translation><!-- Processing machine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Progressive Cavity Pump</masterLabel>
+            <translation><!-- Progressive Cavity Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pump Control/ Ballast Systems</masterLabel>
+            <translation><!-- Pump Control/ Ballast Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pump/ Ballast Systems</masterLabel>
+            <translation><!-- Pump/ Ballast Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RAC - WS Branch</masterLabel>
+            <translation><!-- RAC - WS Branch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RAC - WS Headquarter</masterLabel>
+            <translation><!-- RAC - WS Headquarter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rack/ Pack</masterLabel>
+            <translation><!-- Rack/ Pack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Railway</masterLabel>
+            <translation><!-- Railway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reefer Containers</masterLabel>
+            <translation><!-- Reefer Containers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Remote Display Cases</masterLabel>
+            <translation><!-- Remote Display Cases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Residential</masterLabel>
+            <translation><!-- Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reverse Osmosis Unit</masterLabel>
+            <translation><!-- Reverse Osmosis Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ringspinner</masterLabel>
+            <translation><!-- Ringspinner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roller</masterLabel>
+            <translation><!-- Roller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roller Table</masterLabel>
+            <translation><!-- Roller Table --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rooftops</masterLabel>
+            <translation><!-- Rooftops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rotational ovens</masterLabel>
+            <translation><!-- Rotational ovens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sea Water Reverse Osmosis</masterLabel>
+            <translation><!-- Sea Water Reverse Osmosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ships</masterLabel>
+            <translation><!-- Ships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slaughtering</masterLabel>
+            <translation><!-- Slaughtering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smoke Extract Fan</masterLabel>
+            <translation><!-- Smoke Extract Fan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialty Pumping</masterLabel>
+            <translation><!-- Specialty Pumping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spindle</masterLabel>
+            <translation><!-- Spindle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Textile machine</masterLabel>
+            <translation><!-- Textile machine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thruster</masterLabel>
+            <translation><!-- Thruster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Truck/ Trailer/ Van</masterLabel>
+            <translation><!-- Truck/ Trailer/ Van --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turbine Manufacturers</masterLabel>
+            <translation><!-- Turbine Manufacturers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacuum pump</masterLabel>
+            <translation><!-- Vacuum pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable Refrigerant Flow</masterLabel>
+            <translation><!-- Variable Refrigerant Flow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vending Machines</masterLabel>
+            <translation><!-- Vending Machines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washing machine</masterLabel>
+            <translation><!-- Washing machine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Winder</masterLabel>
+            <translation><!-- Winder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>지정 날짜</label>
+        <name>Assigned_Date__c</name>
+    </fields>
+    <fields>
+        <label>에 할당</label>
+        <name>Assigned_To__c</name>
+        <picklistValues>
+            <masterLabel>Account Manager</masterLabel>
+            <translation><!-- Account Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing Team</masterLabel>
+            <translation><!-- Marketing Team --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Manager Queue</masterLabel>
+            <translation><!-- Partner Manager Queue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>관심 상품</label>
+        <name>Authorized_Product_Lines__c</name>
+        <picklistValues>
+            <masterLabel>070 - Steering Units</masterLabel>
+            <translation><!-- 070 - Steering Units --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>073 - Steering Valve Blocks</masterLabel>
+            <translation><!-- 073 - Steering Valve Blocks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>078 - PVG32</masterLabel>
+            <translation><!-- 078 - PVG32 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>088 - PVG 100 VALVES</masterLabel>
+            <translation><!-- 088 - PVG 100 VALVES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>200 - Small Motors</masterLabel>
+            <translation><!-- 200 - Small Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201 - Large Motors</masterLabel>
+            <translation><!-- 201 - Large Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A01 - Controllers</masterLabel>
+            <translation><!-- A01 - Controllers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A20 - Series 45</masterLabel>
+            <translation><!-- A20 - Series 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A30 - Light Duty</masterLabel>
+            <translation><!-- A30 - Light Duty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A31 - Series 20</masterLabel>
+            <translation><!-- A31 - Series 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A33 - M46</masterLabel>
+            <translation><!-- A33 - M46 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A34 - Series 42</masterLabel>
+            <translation><!-- A34 - Series 42 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A36 - Series 51</masterLabel>
+            <translation><!-- A36 - Series 51 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A37 - Series 90</masterLabel>
+            <translation><!-- A37 - Series 90 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A58 - Other Products</masterLabel>
+            <translation><!-- A58 - Other Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A75 - LV / KV Motors</masterLabel>
+            <translation><!-- A75 - LV / KV Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A81 - Electrohydraulic Power Steering</masterLabel>
+            <translation><!-- A81 - Electrohydraulic Power Steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A85 - PCS Controllers</masterLabel>
+            <translation><!-- A85 - PCS Controllers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A86 - PCS Other Products</masterLabel>
+            <translation><!-- A86 - PCS Other Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A87 - PCS Positioning Sensors</masterLabel>
+            <translation><!-- A87 - PCS Positioning Sensors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A88 - PCS Displays</masterLabel>
+            <translation><!-- A88 - PCS Displays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A89 - PCS System Kits</masterLabel>
+            <translation><!-- A89 - PCS System Kits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B01 - Displays</masterLabel>
+            <translation><!-- B01 - Displays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B03 - Joystick</masterLabel>
+            <translation><!-- B03 - Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B83 - OSK S10/S15/S16/S18</masterLabel>
+            <translation><!-- B83 - OSK S10/S15/S16/S18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C06 - Custom Controllers</masterLabel>
+            <translation><!-- C06 - Custom Controllers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C26 - M35/44</masterLabel>
+            <translation><!-- C26 - M35/44 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C31 - LPV</masterLabel>
+            <translation><!-- C31 - LPV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C44 - LDU32/ 3232</masterLabel>
+            <translation><!-- C44 - LDU32/ 3232 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C51 - AS and EOS Software Solutions</masterLabel>
+            <translation><!-- C51 - AS and EOS Software Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C67 - US Motors</masterLabel>
+            <translation><!-- C67 - US Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C70 - H1-MP Pumps</masterLabel>
+            <translation><!-- C70 - H1-MP Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C71 - H1-MP Motors</masterLabel>
+            <translation><!-- C71 - H1-MP Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C73 - H1-HP Pumps</masterLabel>
+            <translation><!-- C73 - H1-HP Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C74 - H1-HP Motors</masterLabel>
+            <translation><!-- C74 - H1-HP Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C77 - System Development Tools</masterLabel>
+            <translation><!-- C77 - System Development Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C82 - PVG Hybrid</masterLabel>
+            <translation><!-- C82 - PVG Hybrid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C86 - PVG 16</masterLabel>
+            <translation><!-- C86 - PVG 16 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>사업 분야</label>
+        <name>Business_Area__c</name>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss Power Solutions</masterLabel>
+            <translation><!-- Danfoss Power Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Components</masterLabel>
+            <translation><!-- Electronic Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Drives</masterLabel>
+            <translation><!-- Fan Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power CC</masterLabel>
+            <translation><!-- High Power CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power OC</masterLabel>
+            <translation><!-- High Power OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrogear</masterLabel>
+            <translation><!-- Hydrogear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low Power</masterLabel>
+            <translation><!-- Low Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power CC</masterLabel>
+            <translation><!-- Medium Power CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power OC</masterLabel>
+            <translation><!-- Medium Power OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motors</masterLabel>
+            <translation><!-- Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Valves</masterLabel>
+            <translation><!-- PVG Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parts &amp; Service</masterLabel>
+            <translation><!-- Parts &amp; Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plus +1</masterLabel>
+            <translation><!-- Plus +1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering</masterLabel>
+            <translation><!-- Steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telematics</masterLabel>
+            <translation><!-- Telematics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valmova</masterLabel>
+            <translation><!-- Valmova --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>사업 조직</label>
+        <name>Business_Org__c</name>
+        <picklistValues>
+            <masterLabel>Climate and Energy</masterLabel>
+            <translation><!-- Climate and Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>CERegion__c</name>
+        <picklistValues>
+            <masterLabel>APA</masterLabel>
+            <translation><!-- APA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CER</masterLabel>
+            <translation><!-- CER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EER</masterLabel>
+            <translation><!-- EER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAM</masterLabel>
+            <translation><!-- LAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MEA</masterLabel>
+            <translation><!-- MEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAM</masterLabel>
+            <translation><!-- NAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NER</masterLabel>
+            <translation><!-- NER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SER</masterLabel>
+            <translation><!-- SER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMA</masterLabel>
+            <translation><!-- TMA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Add description of indirect lead --></help>
+        <label><!-- Channel Attributes --></label>
+        <name>Channel_Attributes__c</name>
+        <picklistValues>
+            <masterLabel>Competitor</masterLabel>
+            <translation><!-- Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM</masterLabel>
+            <translation><!-- OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press</masterLabel>
+            <translation><!-- Press --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service &amp; Repair</masterLabel>
+            <translation><!-- Service &amp; Repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student</masterLabel>
+            <translation><!-- Student --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor</masterLabel>
+            <translation><!-- Vendor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>Channel__c</name>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect</masterLabel>
+            <translation><!-- Indirect --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>도시</label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label>국가</label>
+        <name>Country__c</name>
+        <relationshipLabel><!-- Leads --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Current supplier --></label>
+        <name>Current_supplier__c</name>
+        <picklistValues>
+            <masterLabel>Bosch Rexroth</masterLabel>
+            <translation><!-- Bosch Rexroth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brevini</masterLabel>
+            <translation><!-- Brevini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bucher</masterLabel>
+            <translation><!-- Bucher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Casappa</masterLabel>
+            <translation><!-- Casappa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Command Controls</masterLabel>
+            <translation><!-- Command Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concentric</masterLabel>
+            <translation><!-- Concentric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danaher</masterLabel>
+            <translation><!-- Danaher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta</masterLabel>
+            <translation><!-- Delta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinamic Oil</masterLabel>
+            <translation><!-- Dinamic Oil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dynamatic</masterLabel>
+            <translation><!-- Dynamatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eaton</masterLabel>
+            <translation><!-- Eaton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPI</masterLabel>
+            <translation><!-- HPI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawe</masterLabel>
+            <translation><!-- Hawe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Horde</masterLabel>
+            <translation><!-- Horde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Husco</masterLabel>
+            <translation><!-- Husco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydac</masterLabel>
+            <translation><!-- Hydac --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyde</masterLabel>
+            <translation><!-- Hyde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraforce</masterLabel>
+            <translation><!-- Hydraforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HydroControl</masterLabel>
+            <translation><!-- HydroControl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrocontrols</masterLabel>
+            <translation><!-- Hydrocontrols --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Hydraulics</masterLabel>
+            <translation><!-- Integrated Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iskra</masterLabel>
+            <translation><!-- Iskra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kawasaki</masterLabel>
+            <translation><!-- Kawasaki --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kayaba</masterLabel>
+            <translation><!-- Kayaba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kersen</masterLabel>
+            <translation><!-- Kersen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LiKe</masterLabel>
+            <translation><!-- LiKe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifan</masterLabel>
+            <translation><!-- Lifan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord</masterLabel>
+            <translation><!-- Lord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M+S</masterLabel>
+            <translation><!-- M+S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marzocchi Pompe</masterLabel>
+            <translation><!-- Marzocchi Pompe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nimco</masterLabel>
+            <translation><!-- Nimco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nishina</masterLabel>
+            <translation><!-- Nishina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ognibene</masterLabel>
+            <translation><!-- Ognibene --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldsbergs</masterLabel>
+            <translation><!-- Oldsbergs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parker</masterLabel>
+            <translation><!-- Parker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poclain (Axial Pump)</masterLabel>
+            <translation><!-- Poclain (Axial Pump) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roquet</masterLabel>
+            <translation><!-- Roquet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKF</masterLabel>
+            <translation><!-- SKF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salami</masterLabel>
+            <translation><!-- Salami --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sam Hydraulic (Brevini)</masterLabel>
+            <translation><!-- Sam Hydraulic (Brevini) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sauer-Danfoss</masterLabel>
+            <translation><!-- Sauer-Danfoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shimadzu</masterLabel>
+            <translation><!-- Shimadzu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sinjin</masterLabel>
+            <translation><!-- Sinjin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun</masterLabel>
+            <translation><!-- Sun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ventury</masterLabel>
+            <translation><!-- Ventury --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walvoil</masterLabel>
+            <translation><!-- Walvoil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White</masterLabel>
+            <translation><!-- White --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zhenjiang</masterLabel>
+            <translation><!-- Zhenjiang --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Segment --></label>
+        <name>Danfoss_Segment__c</name>
+        <picklistValues>
+            <masterLabel>Cooling</masterLabel>
+            <translation><!-- Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives</masterLabel>
+            <translation><!-- Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Description --></label>
+        <name>Data_Quality_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Score --></label>
+        <name>Data_Quality_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributor --></label>
+        <name>Distributor__c</name>
+        <relationshipLabel><!-- Leads (Distributor) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Follow-up --></label>
+        <name>Follow_up__c</name>
+        <picklistValues>
+            <masterLabel>Account Owner to Contact</masterLabel>
+            <translation><!-- Account Owner to Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitive Info for Mktg</masterLabel>
+            <translation><!-- Competitive Info for Mktg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor to Contact</masterLabel>
+            <translation><!-- Distributor to Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Interest</masterLabel>
+            <translation><!-- General Interest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None Required</masterLabel>
+            <translation><!-- None Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send Catalog/Literature</masterLabel>
+            <translation><!-- Send Catalog/Literature --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Industry</name>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apparel</masterLabel>
+            <translation><!-- Apparel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banking</masterLabel>
+            <translation><!-- Banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biotechnology</masterLabel>
+            <translation><!-- Biotechnology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation><!-- Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation><!-- Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting</masterLabel>
+            <translation><!-- Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation><!-- Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy</masterLabel>
+            <translation><!-- Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food &amp; Beverage</masterLabel>
+            <translation><!-- Food &amp; Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance</masterLabel>
+            <translation><!-- Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Machinery</masterLabel>
+            <translation><!-- Machinery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not For Profit</masterLabel>
+            <translation><!-- Not For Profit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation</masterLabel>
+            <translation><!-- Recreation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecommunications</masterLabel>
+            <translation><!-- Telecommunications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation><!-- Utilities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+        <picklistValues>
+            <masterLabel>Chinese</masterLabel>
+            <translation><!-- Chinese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danish</masterLabel>
+            <translation><!-- Danish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French</masterLabel>
+            <translation><!-- French --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German</masterLabel>
+            <translation><!-- German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian</masterLabel>
+            <translation><!-- Italian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese</masterLabel>
+            <translation><!-- Portuguese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian</masterLabel>
+            <translation><!-- Russian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>LeadSource</name>
+        <picklistValues>
+            <masterLabel>Ads/Editoral/Press Release</masterLabel>
+            <translation><!-- Ads/Editoral/Press Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>App</masterLabel>
+            <translation><!-- App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Mail</masterLabel>
+            <translation><!-- Direct Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation><!-- External Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newsletter</masterLabel>
+            <translation><!-- Newsletter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner/Distributor</masterLabel>
+            <translation><!-- Partner/Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Network</masterLabel>
+            <translation><!-- Social Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation><!-- Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation><!-- Word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Market Segment --></label>
+        <name>Market_Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Validation --></label>
+        <name>Marketing_Validation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Click to dial Mobile Phone --></help>
+        <label><!-- NVM Mobile --></label>
+        <name>NVMContactWorld__NVM_Mobile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Click to dial Phone --></help>
+        <label><!-- NVM Phone --></label>
+        <name>NVMContactWorld__NVM_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Attribute --></label>
+        <name>Opportunity_Attribute__c</name>
+        <picklistValues>
+            <masterLabel>APR Leads</masterLabel>
+            <translation><!-- APR Leads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cold Chain India</masterLabel>
+            <translation><!-- Cold Chain India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RC Product Launch Plan China</masterLabel>
+            <translation><!-- RC Product Launch Plan China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Selling Opportunity</masterLabel>
+            <translation><!-- Value Selling Opportunity --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- For Distribution Partners to add comments. --></help>
+        <label><!-- Partner Comments --></label>
+        <name>Partner_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer&apos;s Project Stage --></label>
+        <name>Project_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Conceptual</masterLabel>
+            <translation><!-- Conceptual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Execution</masterLabel>
+            <translation><!-- Execution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planning</masterLabel>
+            <translation><!-- Planning --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comment/Request --></label>
+        <name>Question_Comment_Request__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of RDC customer is interested in. --></help>
+        <label><!-- RDC --></label>
+        <name>RDC__c</name>
+        <picklistValues>
+            <masterLabel>H1B Motors RDC</masterLabel>
+            <translation><!-- H1B Motors RDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Series 45 RDC</masterLabel>
+            <translation><!-- Series 45 RDC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Rating</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>관심 이유</label>
+        <name>Reason_for_Interest__c</name>
+        <picklistValues>
+            <masterLabel>Emissions</masterLabel>
+            <translation><!-- Emissions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Drive Demo</masterLabel>
+            <translation><!-- Fan Drive Demo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Functional Safety</masterLabel>
+            <translation><!-- Functional Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interested in Components</masterLabel>
+            <translation><!-- Interested in Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interested in Systems</masterLabel>
+            <translation><!-- Interested in Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead Times</masterLabel>
+            <translation><!-- Lead Times --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Markets</masterLabel>
+            <translation><!-- New Markets --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No follow up needed</masterLabel>
+            <translation><!-- No follow up needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parts &amp; Service</masterLabel>
+            <translation><!-- Parts &amp; Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulatory Changes</masterLabel>
+            <translation><!-- Regulatory Changes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship Building</masterLabel>
+            <translation><!-- Relationship Building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplier</masterLabel>
+            <translation><!-- Supplier --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- CorrelationID --></label>
+        <name>SFGA__CorrelationID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Correlation Data --></label>
+        <name>SFGA__Correlation_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Source --></label>
+        <name>SFGA__Web_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Age(In days) --></label>
+        <name>SLA_Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment --></label>
+        <name>Segment__c</name>
+        <picklistValues>
+            <masterLabel>AC - Commercial AC</masterLabel>
+            <translation><!-- AC - Commercial AC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AC - Heat Pumps</masterLabel>
+            <translation><!-- AC - Heat Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AC - Residential AC</masterLabel>
+            <translation><!-- AC - Residential AC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR - Food Service</masterLabel>
+            <translation><!-- CR - Food Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR - Refrigeration Subsystem Manufacturing</masterLabel>
+            <translation><!-- CR - Refrigeration Subsystem Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR - Speciality Cooling</masterLabel>
+            <translation><!-- CR - Speciality Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR - Transport</masterLabel>
+            <translation><!-- CR - Transport --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Air comp &amp; vac pumps</masterLabel>
+            <translation><!-- DD - Air comp &amp; vac pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Automotive &amp; other transport equipment</masterLabel>
+            <translation><!-- DD - Automotive &amp; other transport equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Basic Metal</masterLabel>
+            <translation><!-- DD - Basic Metal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Beverage</masterLabel>
+            <translation><!-- DD - Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Cement</masterLabel>
+            <translation><!-- DD - Cement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Chemical</masterLabel>
+            <translation><!-- DD - Chemical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Cranes</masterLabel>
+            <translation><!-- DD - Cranes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Distributors not assigned to SBA’s</masterLabel>
+            <translation><!-- DD - Distributors not assigned to SBA’s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Electric &amp; Electronics</masterLabel>
+            <translation><!-- DD - Electric &amp; Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Energy</masterLabel>
+            <translation><!-- DD - Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Food</masterLabel>
+            <translation><!-- DD - Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - HVAC Pump OEM’s</masterLabel>
+            <translation><!-- DD - HVAC Pump OEM’s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - HVAC exc. Pump OEM’s</masterLabel>
+            <translation><!-- DD - HVAC exc. Pump OEM’s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Lifts and escalators</masterLabel>
+            <translation><!-- DD - Lifts and escalators --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Machinery not elsewhere included</masterLabel>
+            <translation><!-- DD - Machinery not elsewhere included --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Marine &amp; Off Shore</masterLabel>
+            <translation><!-- DD - Marine &amp; Off Shore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Material Handling</masterLabel>
+            <translation><!-- DD - Material Handling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Metal Products</masterLabel>
+            <translation><!-- DD - Metal Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Mining &amp; Quarrying</masterLabel>
+            <translation><!-- DD - Mining &amp; Quarrying --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Oil &amp; Gas</masterLabel>
+            <translation><!-- DD - Oil &amp; Gas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Packaging</masterLabel>
+            <translation><!-- DD - Packaging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Paper &amp; Print</masterLabel>
+            <translation><!-- DD - Paper &amp; Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Refrigeration</masterLabel>
+            <translation><!-- DD - Refrigeration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Stone, Clay &amp; Glass</masterLabel>
+            <translation><!-- DD - Stone, Clay &amp; Glass --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Sugar &amp; Alcohol (Ethanol)</masterLabel>
+            <translation><!-- DD - Sugar &amp; Alcohol (Ethanol) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Textile</masterLabel>
+            <translation><!-- DD - Textile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Wash &amp; Cleaning</masterLabel>
+            <translation><!-- DD - Wash &amp; Cleaning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Water &amp; WW ex. Pump OEM</masterLabel>
+            <translation><!-- DD - Water &amp; WW ex. Pump OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Water Pump OEM’s</masterLabel>
+            <translation><!-- DD - Water Pump OEM’s --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Wind Power Generation</masterLabel>
+            <translation><!-- DD - Wind Power Generation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DD - Wood</masterLabel>
+            <translation><!-- DD - Wood --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Automotive</masterLabel>
+            <translation><!-- DSP - Automotive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Drives</masterLabel>
+            <translation><!-- DSP - Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Industries</masterLabel>
+            <translation><!-- DSP - Industries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Medical</masterLabel>
+            <translation><!-- DSP - Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Others</masterLabel>
+            <translation><!-- DSP - Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Power Stack</masterLabel>
+            <translation><!-- DSP - Power Stack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Power supplies</masterLabel>
+            <translation><!-- DSP - Power supplies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Renewable</masterLabel>
+            <translation><!-- DSP - Renewable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Transportation</masterLabel>
+            <translation><!-- DSP - Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSP - Welding</masterLabel>
+            <translation><!-- DSP - Welding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FR - Products &amp; Services</masterLabel>
+            <translation><!-- FR - Products &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - 1P Solution</masterLabel>
+            <translation><!-- HE - 1P Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - DEN Stations</masterLabel>
+            <translation><!-- HE - DEN Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Developer</masterLabel>
+            <translation><!-- HE - Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Heating</masterLabel>
+            <translation><!-- HE - Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Hotel</masterLabel>
+            <translation><!-- HE - Hotel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Industry</masterLabel>
+            <translation><!-- HE - Industry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Multi family houses</masterLabel>
+            <translation><!-- HE - Multi family houses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Non-residential</masterLabel>
+            <translation><!-- HE - Non-residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Office building</masterLabel>
+            <translation><!-- HE - Office building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - One family houses</masterLabel>
+            <translation><!-- HE - One family houses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Other</masterLabel>
+            <translation><!-- HE - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Public building</masterLabel>
+            <translation><!-- HE - Public building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Social building</masterLabel>
+            <translation><!-- HE - Social building --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HE - Trade Center</masterLabel>
+            <translation><!-- HE - Trade Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP - Oil &amp; Gas</masterLabel>
+            <translation><!-- HP - Oil &amp; Gas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP - Other</masterLabel>
+            <translation><!-- HP - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP - Reverse Osmosis</masterLabel>
+            <translation><!-- HP - Reverse Osmosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP - Ultra Pure Water</masterLabel>
+            <translation><!-- HP - Ultra Pure Water --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Air Compressor</masterLabel>
+            <translation><!-- IA - Air Compressor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Heating</masterLabel>
+            <translation><!-- IA - Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Industrial Engines</masterLabel>
+            <translation><!-- IA - Industrial Engines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Industrial Hydraulics</masterLabel>
+            <translation><!-- IA - Industrial Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Marine</masterLabel>
+            <translation><!-- IA - Marine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Mobile Hydraulics</masterLabel>
+            <translation><!-- IA - Mobile Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Other</masterLabel>
+            <translation><!-- IA - Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Water Pumps</masterLabel>
+            <translation><!-- IA - Water Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA - Wind Power</masterLabel>
+            <translation><!-- IA - Wind Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Air Conditioning</masterLabel>
+            <translation><!-- IC - Air Conditioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Commercial Refrigeration</masterLabel>
+            <translation><!-- IC - Commercial Refrigeration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Direct Served - Distributors</masterLabel>
+            <translation><!-- IC - Direct Served - Distributors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Direct Served - Partner</masterLabel>
+            <translation><!-- IC - Direct Served - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Direct Served - Premium Partner</masterLabel>
+            <translation><!-- IC - Direct Served - Premium Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Food Retail</masterLabel>
+            <translation><!-- IC - Food Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Indirect Served - Independent Retailers</masterLabel>
+            <translation><!-- IC - Indirect Served - Independent Retailers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Indirect Served - Wholesaler</masterLabel>
+            <translation><!-- IC - Indirect Served - Wholesaler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Industrial Automation</masterLabel>
+            <translation><!-- IC - Industrial Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IC - Industrial Refrigeration</masterLabel>
+            <translation><!-- IC - Industrial Refrigeration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR - Chemical/Petrochemical</masterLabel>
+            <translation><!-- IR - Chemical/Petrochemical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR - Food Processing &amp; Storage</masterLabel>
+            <translation><!-- IR - Food Processing &amp; Storage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR - Industrial Heat Pumps</masterLabel>
+            <translation><!-- IR - Industrial Heat Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR - Marine</masterLabel>
+            <translation><!-- IR - Marine --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>시 /도</label>
+        <name>State_Province__c</name>
+        <relationshipLabel><!-- Leads --></relationshipLabel>
+    </fields>
+    <fields>
+        <name>Status</name>
+        <picklistValues>
+            <masterLabel>Contacted</masterLabel>
+            <translation><!-- Contacted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Converted</masterLabel>
+            <translation><!-- Converted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualified</masterLabel>
+            <translation><!-- Qualified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unqualified</masterLabel>
+            <translation><!-- Unqualified --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>도로명</label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Tradeshow Use --></help>
+        <label><!-- Submitted By --></label>
+        <name>Submitted_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- Validate leads to ensure there are no duplicate contacts in the system before applying lead assignment rules. --></help>
+        <label><!-- Validated --></label>
+        <name>Validated__c</name>
+    </fields>
+    <fields>
+        <label>우편 번호</label>
+        <name>Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Needs Score Synced --></label>
+        <name>pi__Needs_Score_Synced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Last Scored At --></label>
+        <name>pi__Pardot_Last_Scored_At__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Campaign --></label>
+        <name>pi__campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Comments --></label>
+        <name>pi__comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Conversion Date --></label>
+        <name>pi__conversion_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Conversion Object Name --></label>
+        <name>pi__conversion_object_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Conversion Object Type --></label>
+        <name>pi__conversion_object_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Created Date --></label>
+        <name>pi__created_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot First Activity --></label>
+        <name>pi__first_activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot First Referrer Query --></label>
+        <name>pi__first_search_term__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot First Referrer Type --></label>
+        <name>pi__first_search_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot First Referrer --></label>
+        <name>pi__first_touch_url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Grade --></label>
+        <name>pi__grade__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Last Activity --></label>
+        <name>pi__last_activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Notes --></label>
+        <name>pi__notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Hard Bounced --></label>
+        <name>pi__pardot_hard_bounced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Score --></label>
+        <name>pi__score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot URL --></label>
+        <name>pi__url__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Analytics Campaign --></label>
+        <name>pi__utm_campaign__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Analytics Content --></label>
+        <name>pi__utm_content__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Analytics Medium --></label>
+        <name>pi__utm_medium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Analytics Source --></label>
+        <name>pi__utm_source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Analytics Term --></label>
+        <name>pi__utm_term__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Assign To cannot be distributor unless Parnter Manager is populated --></errorMessage>
+        <name>AssignToFieldRule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a state/province --></errorMessage>
+        <name>Require_State_Province_if_USA_or_Canada</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- AltavistaNews --></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Convert --></label>
+        <name>Convert</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HooversProfile --></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendGmail --></label>
+        <name>SendGmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Validate --></label>
+        <name>Validate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Email --></label>
+        <name>pi__Send_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Pardot_Emails --></label>
+        <name>pi__Send_Pardot_Emails</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Single_Pardot_Email --></label>
+        <name>pi__Send_Single_Pardot_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_to_Prospect_Insight --></label>
+        <name>pi__Send_to_Prospect_Insight</name>
+    </webLinks>
+</CustomObjectTranslation>

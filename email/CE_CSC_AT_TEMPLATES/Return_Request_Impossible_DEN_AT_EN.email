@@ -1,0 +1,27 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif" size="2">To: {!Case.Account}</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Attn: {!Case.Contact}</font></p><p><u></u><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><u><font face="Verdana,Helvetica,Sans-Serif" size="2">Return</font></u></p><p><u></u><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Your request</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">From</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Our invoice</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">From</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">A return is not possible becuase:</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><strong><font face="Verdana,Helvetica,Sans-Serif" size="2">*According to our Terms of Use a return is possible only within 14 days after invoicing.</font></strong></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">In exceptional cases of a commercial nature and with the prior consent of Danfoss GmbH exclusively bearing goods (A-items) on the price list are redeemed within 14 days of invoicing, which are in original and unopened packagin. Here a redemption fee will be charged.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Sincerely yours</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Customer Service Central Europe Region&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt;"><span lang="EN-US" style='color: black; font-family: "Verdana","sans-serif"; mso-bidi-font-family: Arial; mso-ansi-language: EN-US;'><font face="Verdana,Helvetica,Sans-Serif" size="2">*********Please
+Do Not Delete or Type below this Line*********<br>
+{!Case.Thread_Id}</font></span></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>Important note! We have a new central phone number and
+e-mail address</span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE; mso-fareast-language: EN-GB;'>Phone: +43 1253 022 322</span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>E-Mail Austria: </span><span lang="EN-US" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: EN-US;'><a href="mailto:CS@danfoss.at"><span lang="DE" style="color: windowtext; mso-ansi-language: DE;">CS@danfoss.at</span></a></span></p><font face="Times New Roman">
+
+</font>]]></td>
+</tr>
+</table>

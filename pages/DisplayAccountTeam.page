@@ -1,0 +1,10 @@
+<apex:page controller="DisplayAccountTeamController">
+<apex:pageblock title="Account Team Members">
+    <apex:pageBlockTable value="{!teamMembers}" var="team">
+        <apex:column headerValue="Name" value="{!team.name}"/>
+        <apex:column headerValue="Email" value="{!team.email}"/>
+        <apex:column headerValue="Title" value="{!team.title}"/>
+        <apex:column headerValue="Phone" value="{!team.phone}"/>                
+    </apex:pageBlockTable>
+</apex:pageblock>
+</apex:page>

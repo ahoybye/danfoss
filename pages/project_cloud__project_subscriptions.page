@@ -1,0 +1,350 @@
+<apex:page id="page" standardController="project_cloud__Project__c" extensions="project_cloud.ProjectSubscriptionsExtension,project_cloud.BetaHelper" title="{!project_cloud__Project__c.Name} - Project Subscriptions">
+	<apex:outputPanel rendered="{!isBeta}">
+		<apex:outputPanel rendered="{!NOT(isBetaWithConfirm)}">
+			<script>
+				window.location.href = '{!$Page.resourcing}?id={!project_cloud__Project__c.Id}#/quickallocate/{!project_cloud__Project__c.Id}';
+			</script>
+		</apex:outputPanel>
+		<apex:outputPanel rendered="{!isBetaWithConfirm}">
+			<apex:pageMessage summary="Resourcing Beta" severity="warning" strength="3" escape="false">You have specified that you still wish to access the old resourcing pages.<br />To access the new resourcing pages, please click <a href='{!$Page.resourcing}?id={!project_cloud__Project__c.Id}#/quickallocate/{!project_cloud__Project__c.Id}'>here</a></apex:pageMessage>
+		</apex:outputPanel>
+	</apex:outputPanel>
+	<c:walkme />
+	<c:include_jquery declareEsc="true" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_ui_zip, '/js/jquery-ui-1.10.2.custom.min.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.min.js')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.min.css')}" />
+	<style type="text/css">
+		#page\:form .user-image {
+			display: inline-block;
+			height: 45px;
+			margin-right: 4px;
+			width: 45px;
+			position:relative;
+		}
+		#page\:form .user-image > img{
+			height: 100%;
+			width: 100%;
+		}
+		
+		#page\:form .user-image > .user-name, .subscriptions-user-image-wrapper > .user-name{
+			position:absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			background: rgba(0,0,0,0.3);
+			color: white;
+			padding: 2px;
+			font-size:9px;
+			z-index: 100;
+		}
+		
+		.subscriptions-user-image-wrapper {
+			display: inline-block;
+			position: relative;
+			height: 45px;
+			position: relative;
+			width: 45px;
+			margin-right: 4px;
+		}
+		.subscriptions-delete-action {
+			border: none;
+			bottom: 0px;
+			height: 12px;
+			margin: 0px;
+			padding: 0px;
+			position: absolute;
+			right: 0px;
+			width: 12px;
+			z-index: 101;
+		}
+		
+		.ui-droppable {
+			padding-right: 36px;
+		}
+		.subscriptions-droppable-hover {
+			background-image: url("{!URLFOR($Resource.project_cloud__resourcing_resources_zip, '/icons/actions/add32.png')}");
+			background-position: right center;
+			background-repeat: no-repeat;
+		}
+
+		.headerInputRequired {
+			border-left: 3px solid #C00;
+			margin-left: -3px;
+			padding-left: 2px;
+		}
+		.helpOrbCustom {
+			background-image: url("/img/help/helpOrbs.gif");
+			background-position: 0 0;
+			height: 15px;
+			vertical-align: middle;
+			width: 20px;
+		}
+		.helpOrbCustom:hover {
+			background-position: right top;
+		}
+		.helpText {
+			display: none;
+		}
+
+		.empty-column-content {
+			display: none;
+		}
+	</style>
+
+	<c:tree projectId="{!project_cloud__Project__c.Id}" />
+
+	<apex:sectionHeader title="{!project_cloud__Project__c.Name}" subtitle="Quick Subscribe" />
+
+	<apex:pageMessages id="messages" />
+
+	<apex:form id="form" rendered="{!NOT(ISBLANK(subscriptionRows))}">
+		<apex:actionRegion >
+			<apex:pageBlock id="block">
+				<apex:actionStatus id="subscriptionsTableStatus" layout="block">
+					<apex:facet name="start">
+						<c:loading />
+					</apex:facet>
+					<apex:facet name="stop">
+						<apex:pageBlockTable id="subscriptionsTable" var="subRow" value="{!subscriptionRows}">
+							<apex:column id="workTypes" value="{!subRow.workTypesConcatenated}">
+								<apex:facet name="header">
+									<div>
+										Unique Work Types
+										<img class="helpOrbCustom" title="" alt="" src="/s.gif" />
+										<span class="helpText">This column displays all the unique Work Type / Skills that have been defined against this Project, each row could represent one or more Project Tasks with that Work Type / Skill</span>
+									</div>
+								</apex:facet>
+							</apex:column>
+							<apex:column id="projectTasks" headerValue="Matching Project Tasks">
+								<apex:dataList var="task" value="{!subRow.tasks}">
+									<apex:outputText value="{!task.Name}" />
+								</apex:dataList>
+							</apex:column>
+							<apex:column id="capable">
+								<apex:facet name="header">
+									<div>
+										Skill Matching Users
+										<img class="helpOrbCustom" title="" alt="" src="/s.gif" />
+										<span class="helpText">Any user who is capable of performing "{!subRow.workTypesConcatenated}" and who is not already subscribed is available in this column to drag &amp; drop onto the Subscribed column</span>
+									</div>
+								</apex:facet>
+								<apex:repeat var="user" value="{!subRow.capables}">
+									<div  class="user-image subscriptions-draggable-{!HTMLENCODE(subRow.rowId)}"  data-id="{!user.Id}">
+										<div class="user-name">{!user.Name}</div>
+										<img src="{!user.SmallPhotoUrl}" title="{!user.Name}" alt="{!user.Id}" />
+									</div>
+								</apex:repeat>
+							</apex:column>
+							<apex:column id="subscribers">
+								<apex:facet name="header">
+									<div>
+										Subscribed Users
+										<img class="helpOrbCustom" title="" alt="" src="/s.gif" />
+										<span class="helpText">Any user who is Subscribed to all "{!subRow.workTypesConcatenated}" Project Tasks is shown in this column. Drag Capable users here to subscribe them.</span>
+									</div>
+								</apex:facet>
+								<apex:repeat var="subscriber" value="{!subRow.subscribers}">
+									<div class="subscriptions-user-image-wrapper">
+										<div class="user-name">{!subscriber.user.Name}</div>
+										<img src="{!subscriber.user.SmallPhotoUrl}" title="{!subscriber.user.Name}" alt="{!subscriber.user.Id}" class="user-image subscriptions-draggable-{!HTMLENCODE(subRow.rowId)}" />
+										<img src="{!URLFOR($Resource.resourcing_resources_zip, '/icons/actions/delete.png')}" alt="{!subscriber.subscriptionIds}" class="subscriptions-delete-action" />
+									</div>
+								</apex:repeat>
+								<script type="text/javascript">
+									jQuery(document).ready(function($) {
+										$(".subscriptions-draggable-{!JSINHTMLENCODE(subRow.rowId)}").draggable({
+											revert: "invalid", // when not dropped, the item will revert back to its initial position
+											axis: "x",
+											helper: "clone",
+											cursor: "move",
+											scroll: false,
+											start: function(event, ui) {
+												refreshLoadRowsWrapper(event, ui);
+											}
+										});
+	
+										var deleteIconPath = "{!URLFOR($Resource.resourcing_resources_zip, '/icons/actions/delete.png')}";
+										esc$("{!$Component.page.form.block.subscriptionsTable.subscribers}").droppable({
+											accept: function(ui) {
+												return $(ui).hasClass("subscriptions-draggable-{!JSINHTMLENCODE(subRow.rowId)}");
+											},
+											activeClass: "subscriptions-droppable-active",
+											hoverClass: "subscriptions-droppable-hover",
+											drop: function(dropEvent, ui) {
+												clearLoadRows();
+												//This is the drop target where the elements actually need to be attached
+												var dropTarget = esc$("{!$Component.page.form.block.subscriptionsTable.subscribers}");
+												//this is a loading element that is
+												//attached and then removed when the
+												//reomting call has completed
+												var loadingEl = $('<img src="/img/loading.gif" />');
+												loadingEl.appendTo(dropTarget);
+												//This variable is used by the remoting call
+												var taskIds = <apex:outputText value="{!subRow.taskIdsJson}" />;
+												//perform the call to create the subscriptions
+												console.log($(ui.draggable).attr("data-id"));
+												console.log(taskIds);
+												Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ProjectSubscriptionsExtension.createSubscriptions}', $(ui.draggable).attr("data-id"), taskIds, function(subscriptionIds, remotingEvent) {
+													loadingEl.remove();
+													if (remotingEvent.status) {
+														var profileWrapper = $('<div class="subscriptions-user-image-wrapper" />');
+														ui.draggable.appendTo(profileWrapper);
+														$('<img src="' + deleteIconPath + '" alt="' + subscriptionIds + '" class="subscriptions-delete-action" />').appendTo(profileWrapper);
+														profileWrapper.appendTo(dropTarget);
+													} else if (remotingEvent.type === 'exception') {
+														alert(remotingEvent.message);
+													}
+												});
+											}
+										});
+	
+									});
+								</script>
+							</apex:column>
+							<apex:column id="fullySubscribe">
+								<apex:facet name="header">
+									<div>
+										Mark Fully Subscribed
+										<img class="helpOrbCustom" title="" alt="" src="/s.gif" />
+										<span class="helpText">Checking this box will mark all the tasks with this skill type as fully subscribed.</span>
+									</div>
+								</apex:facet>
+								<apex:inputCheckbox value="{!subRow.isAllFullySubscribed}" onchange="fullySubscribeUnsubscribe(this, '{!JSENCODE(subRow.taskIdsJson)}')" />
+							</apex:column>
+						</apex:pageBlockTable>
+					</apex:facet>
+				</apex:actionStatus>
+			</apex:pageBlock>
+		</apex:actionRegion>
+		<apex:actionRegion id="loadRegion">
+			<apex:actionStatus id="loadStatus" layout="block">
+				<apex:facet name="start">
+					<c:loading />
+				</apex:facet>
+				<apex:facet name="stop">
+					<apex:outputPanel id="loadPanel" layout="block">
+						<apex:pageBlock id="loadBlock" title="{!loadRowTitle}" rendered="{!NOT(ISBLANK(loadRows))}">
+							<apex:pageBlockTable id="loadTable" var="loadRow" value="{!loadRows}">
+								<apex:column id="user" headerValue="User">
+									<apex:outputLink value="/{!loadRow.owner.Id}">
+										{!loadRow.owner['Name']}
+									</apex:outputLink>
+								</apex:column>
+								<apex:repeat id="cells" var="cell" value="{!loadRow.cells}">
+									<apex:column styleClass="{!cell.styleClasses} tooltip-target">
+										<apex:outputText value="{0, number, #.##}">
+											<apex:param value="{!cell.hours}" />
+										</apex:outputText>
+										<apex:outputText value=" {0} {1, number, #.##} = {2, number, #.##}" rendered="{!cell.hoursDifference != 0}">
+											<apex:param value="{!IF(cell.hoursDifference > 0, '+', '-')}" />
+											<apex:param value="{!ABS(cell.hoursDifference)}" />
+											<apex:param value="{!cell.hours + cell.hoursDifference}" />
+										</apex:outputText>
+									</apex:column>
+								</apex:repeat>
+								<apex:repeat id="headers" var="header" value="{!headers}">
+									<apex:column id="header" headerValue="{!header}" styleClass="empty-column-content" />
+								</apex:repeat>
+							</apex:pageBlockTable>
+						</apex:pageBlock>
+					</apex:outputPanel>
+				</apex:facet>
+			</apex:actionStatus>
+		</apex:actionRegion>
+		<apex:actionFunction action="{!deleteSubscriptions}" name="deleteSubscriptions" rerender="messages">
+			<apex:param name="forDeleteSubscriptionIds" assignTo="{!forDeleteSubscriptionIds}" value="" />
+		</apex:actionFunction>
+		<apex:actionFunction action="{!refreshLoadRows}" name="refreshLoadRows" rerender="messages, loadPanel" status="loadStatus">
+			<apex:param name="loadRowId" assignTo="{!loadRowId}" value="" />
+			<apex:param name="loadUserIds" assignTo="{!loadUserIds}" value="" />
+		</apex:actionFunction>
+		<script type="text/javascript">
+
+			function fullySubscribeUnsubscribe(checkboxEl, taskIdsJSON) {
+				var jCheckboxEl = jQuery(checkboxEl);
+				jCheckboxEl.after('<img src="/img/loading.gif" />');
+				var taskIds = JSON.parse(taskIdsJSON);
+				Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ProjectSubscriptionsExtension.fullySubscribeUnsubscribe}', checkboxEl.checked, taskIds, function(voidReturnType, remotingEvent) {
+					jCheckboxEl.next().remove();
+					if (remotingEvent.status) {
+						//nothing required. Tasks are now fully subscribed
+					} else if (remotingEvent.type === 'exception') {
+						alert(remotingEvent.message);
+					}
+				});
+			}
+
+			var rowId = null;
+			var userIds = new Array();
+			function refreshLoadRowsWrapper(event, ui) {
+				var a = jQuery(event.currentTarget);
+				var userId = a.attr('data-id'); //a.prop("alt");
+				//rowIds are alphanumeric only worktype names, so the [a-z]+ regex is sufficient
+				var currentRowId = a.prop("class").match(/subscriptions-draggable-[a-z]+/i)[0].replace("subscriptions-draggable-", "");
+				//When a different row has been selected clear the cached values
+				if(currentRowId !== rowId) {
+					rowId = currentRowId;
+					userIds = new Array();
+				}
+				if(userIds.indexOf(userId) < 0) {
+					userIds.push(userId);
+				} else if(typeof ui === "undefined") {
+					//only remove the userId when clicking, not when dragging
+					userIds.remove(userId);
+				}
+				refreshLoadRows(rowId, userIds.join("|"));
+			}
+
+			function clearLoadRows() {
+				//reset the load javascript's rowId so the table is refreshed on the next selection.
+				rowId = null;
+				//hide the load rows, after a sucessful drop
+				esc$("{!$Component.page.form.loadStatus}.stop").hide();
+			}
+
+			jQuery(document).ready(function($) {
+
+				esc$("{!$Component.page.form.block}").on("click", ".subscriptions-delete-action", function(event) {
+					clearLoadRows();
+					var self = $(this);
+					//append the profile image to the capable column
+					self.prev().appendTo(esc$(self.parent().parent().prop("id").replace(":subscribers", ":capable")));
+					//remove the remaining markup from the subscribers column
+					self.parent().remove();
+					//call the function to delete the subscriptions
+					deleteSubscriptions(self.prop("alt"));
+				});
+
+				esc$("{!$Component.page.form.block}").on("click", ".user-image", function(event) {
+					refreshLoadRowsWrapper(event);
+				});
+
+				//delegate creation of the tooltip until the anchor is clicked
+				esc$("{!$Component.page.form.block}").on("mouseover", ".helpOrbCustom", function(event) {
+					var self = $(this);
+					if(!self.hasClass("helpOrbCustom-qtip")) {
+						//Bind the qTip within the event handler
+						self.qtip({
+							content: self.next(".helpText").contents(),
+							position: {
+								my: "bottom right",
+								at: "top center"
+							},
+							show: {
+								event: event.type, // Use the same show event as the one that triggered the event handler
+								ready: true // Show the tooltip as soon as it's bound, vital so it shows up the first time you hover!
+							},
+							style: {
+								classes: "ui-tooltip-shadow ui-tooltip-light"
+							}
+						//Pass through the original event to qTip
+						}, event);
+						self.hasClass("helpOrbCustom-qtip");
+					}
+				});
+			});
+		</script>
+	</apex:form>
+
+</apex:page>

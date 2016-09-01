@@ -1,0 +1,3 @@
+Opportunity {!Opportunity.Name} has been Won. Please confirm that the SAP system has been updated.
+
+Link to the Quote: {!Opportunity.Link}

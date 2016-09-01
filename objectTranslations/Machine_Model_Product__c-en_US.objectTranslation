@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Machine Model Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Machine Model Products</value>
+    </caseValues>
+    <fields>
+        <help><!-- How many % of this machine model utilize this product? --></help>
+        <label><!-- Adoption Rate % --></label>
+        <name>Adoption_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Material Number --></label>
+        <name>CMN_Display_Formula__c</name>
+    </fields>
+    <fields>
+        <help><!-- Your perceived competitiveness of Danfoss with regards to this product in this machine model --></help>
+        <label><!-- Danfoss Competitiveness --></label>
+        <name>Competitiveness__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Material Number --></label>
+        <name>Customer_Material_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsSAPPrice --></label>
+        <name>IsSAPPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Machine_Model_Product__c</name>
+        <relationshipLabel><!-- Machine Model Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Machine Model --></label>
+        <name>Machine_Model__c</name>
+        <relationshipLabel><!-- Machine Model Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Units per machine --></label>
+        <name>Number_per_machine__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price per unit --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Characteristic --></label>
+        <name>Product_Feature__c</name>
+        <picklistValues>
+            <masterLabel>Analog</masterLabel>
+            <translation><!-- Analog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAN bus</masterLabel>
+            <translation><!-- CAN bus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Center Non Reaction</masterLabel>
+            <translation><!-- Closed Center Non Reaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Center Reaction</masterLabel>
+            <translation><!-- Closed Center Reaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Displacment Control (DDC)</masterLabel>
+            <translation><!-- Direct Displacment Control (DDC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Displacement Control</masterLabel>
+            <translation><!-- Displacement Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric 2-position Control</masterLabel>
+            <translation><!-- Electric 2-position Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric Automotive/Load Dependent (AC, NFPE)</masterLabel>
+            <translation><!-- Electric Automotive/Load Dependent (AC, NFPE) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric Displacement Control (EDC)</masterLabel>
+            <translation><!-- Electric Displacement Control (EDC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric Proportional Control</masterLabel>
+            <translation><!-- Electric Proportional Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrical Actuation</masterLabel>
+            <translation><!-- Electrical Actuation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed</masterLabel>
+            <translation><!-- Fixed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forward/Neutral/Reverse (FNR)</masterLabel>
+            <translation><!-- Forward/Neutral/Reverse (FNR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic</masterLabel>
+            <translation><!-- Hydraulic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic 2-position Control</masterLabel>
+            <translation><!-- Hydraulic 2-position Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic Automotive/Load Dependent (DA, NFPH)</masterLabel>
+            <translation><!-- Hydraulic Automotive/Load Dependent (DA, NFPH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic Displacment Control (HDC)</masterLabel>
+            <translation><!-- Hydraulic Displacment Control (HDC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic Pilot Actuation</masterLabel>
+            <translation><!-- Hydraulic Pilot Actuation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic Proportional Control</masterLabel>
+            <translation><!-- Hydraulic Proportional Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Load Sensing</masterLabel>
+            <translation><!-- Load Sensing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Load Sensing Control</masterLabel>
+            <translation><!-- Load Sensing Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Load Sensing Reaction</masterLabel>
+            <translation><!-- Load Sensing Reaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual Actuation</masterLabel>
+            <translation><!-- Manual Actuation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual Displacement Control (MDC)</masterLabel>
+            <translation><!-- Manual Displacement Control (MDC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Center Non Reaction</masterLabel>
+            <translation><!-- Open Center Non Reaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Center Reaction</masterLabel>
+            <translation><!-- Open Center Reaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Beyond</masterLabel>
+            <translation><!-- Power Beyond --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pressure Control</masterLabel>
+            <translation><!-- Pressure Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Torque Control</masterLabel>
+            <translation><!-- Torque Control --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Set --></label>
+        <name>Product_Set__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+        <picklistValues>
+            <masterLabel>Controller</masterLabel>
+            <translation><!-- Controller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Display</masterLabel>
+            <translation><!-- Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrohydraulic Steering</masterLabel>
+            <translation><!-- Electrohydraulic Steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Drive Motor</masterLabel>
+            <translation><!-- Fan Drive Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Drive Pump</masterLabel>
+            <translation><!-- Fan Drive Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Drive Valve</masterLabel>
+            <translation><!-- Fan Drive Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic Steering Unit</masterLabel>
+            <translation><!-- Hydraulic Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Transmission</masterLabel>
+            <translation><!-- Integrated Transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joystick</masterLabel>
+            <translation><!-- Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Priority Valve</masterLabel>
+            <translation><!-- Priority Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering Amplifier</masterLabel>
+            <translation><!-- Steering Amplifier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telematics Solution</masterLabel>
+            <translation><!-- Telematics Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transmission Motor</masterLabel>
+            <translation><!-- Transmission Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transmission Pump</masterLabel>
+            <translation><!-- Transmission Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transmission Valve</masterLabel>
+            <translation><!-- Transmission Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valve</masterLabel>
+            <translation><!-- Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Function Motor</masterLabel>
+            <translation><!-- Working Function Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Function Pump</masterLabel>
+            <translation><!-- Working Function Pump --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SAP Material Number --></label>
+        <name>SAP_Material_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Price Retrieved Date --></label>
+        <name>SAP_Price_Retrieved_Date_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Price Retrieved Date --></label>
+        <name>SAP_Price_Retrieved_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Product Hierarchy Code --></label>
+        <name>SAP_Product_Hierarchy_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Product Line Code --></label>
+        <name>SAP_Product_Line_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Competitiveness - Reason --></label>
+        <name>SD_Competitiveness_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Delivery</masterLabel>
+            <translation><!-- Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual/Multiple Sourcing Strategy</masterLabel>
+            <translation><!-- Dual/Multiple Sourcing Strategy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Function</masterLabel>
+            <translation><!-- Function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product</masterLabel>
+            <translation><!-- Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Org --></label>
+        <name>Sales_Org_Display__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Org --></label>
+        <name>Sales_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Machine Function --></label>
+        <name>Subsystem__c</name>
+        <picklistValues>
+            <masterLabel>Fan Drive</masterLabel>
+            <translation><!-- Fan Drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMI and Electronics</masterLabel>
+            <translation><!-- HMI and Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering Function</masterLabel>
+            <translation><!-- Steering Function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transmission</masterLabel>
+            <translation><!-- Transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Function</masterLabel>
+            <translation><!-- Working Function --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supplier --></label>
+        <name>Supplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Product Potential (units) --></label>
+        <name>Total_Product_units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Product Potential --></label>
+        <name>Total_Product_value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Refresh_SAP_Price --></label>
+        <name>Refresh_SAP_Price</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CC_Business_Intelligence</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CC_Business_Intelligence</label>
+        <sharedTo>
+            <group>CC_Business_Intelligence</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>project_cloud__Type__c</field>
+            <operation>equals</operation>
+            <value>Business Intelligence</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CC_Corporate_Finance</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CC_Corporate_Finance</label>
+        <sharedTo>
+            <group>CC_Corporate_Finance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>project_cloud__Type__c</field>
+            <operation>equals</operation>
+            <value>Corporate Finance</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>DGIT_Project_Types</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>DGIT Project Types</label>
+        <sharedTo>
+            <group>IT_Staff</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>project_cloud__Type__c</field>
+            <operation>notEqual</operation>
+            <value>Internal,External,Corporate Finance</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>

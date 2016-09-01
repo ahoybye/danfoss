@@ -1,0 +1,22 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Arial,Sans-Serif" size="2">Dear&nbsp;{!Case.Contact},</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p><font face="Arial,Sans-Serif" size="2">This is in reference to your case number {!Case.CaseNumber} registered with us.</font></p><p><br><font face="Arial,Sans-Serif" size="2"></font></p><div class="WordSection1"><font face="Arial,Sans-Serif" size="2">Please
+find stock availability details as requested below:
+
+</font></div><p><font face="Arial,Sans-Serif" size="2">
+
+
+
+
+<br></font></p><p><font face="Arial,Sans-Serif" size="2">If you like to follow up, please call or email us with the case number. We will be happy to assist you.</font></p><p><br><font face="Arial,Sans-Serif" size="2"></font></p><p><font face="Arial,Sans-Serif" size="2">Thanking you and assuring our best services always.</font></p><p><b><br><font face="Arial,Sans-Serif" size="2"></font></b></p><p><b><font face="Arial,Sans-Serif" size="2">NOTE: Since we shared the details with you, we have closed this case. For any other query/follow up, please open a new case.</font></b></p><p><br><font face="Arial,Sans-Serif" size="2"></font></p><p><font face="Arial,Sans-Serif" size="2">Best regards,</font></p><p><font face="Arial,Sans-Serif" size="2">Danfoss Customer Service Center</font></p><p><font face="Arial,Sans-Serif" size="2">Toll free: 0008001009289</font></p><p><span style="font-family: Verdana, Helvetica, sans-serif; font-size: 16px;"><font face="Arial,Sans-Serif" size="2">Email: danfoss.india@danfoss.com</font></span></p><p style="font-family: arial;"><span style="font-family: Verdana, Helvetica, sans-serif; font-size: 16px;"><br></span></p><p style="font-family: arial;"><span style="font-family: Verdana, Helvetica, sans-serif; font-size: 16px;"><br></span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<font face="Arial,Sans-Serif" size="2">*********Please Do Not Delete or Type below this Line*********<br>[{!Case.Thread_Id}]</font>]]></td>
+</tr>
+</table>

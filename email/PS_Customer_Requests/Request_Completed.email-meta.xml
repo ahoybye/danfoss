@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify Initiator when Completed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Customer_Requests</letterhead>
+    <name>Request Completed</name>
+    <style>freeForm</style>
+    <subject>{!PS_Customer_Request__c.Type__c} Customer Request {!PS_Customer_Request__c.Name} for {!PS_Customer_Request__c.Account__c} - has been Completed</subject>
+    <textOnly>Completed Date: {!PS_Customer_Request__c.Completed_Date__c}
+Product: {!PS_Customer_Request__c.Material_Number__c} - {!PS_Customer_Request__c.Product__c}
+Comments: {!PS_Customer_Request__c.Additional_Comments__c}
+
+
+Customer Request</textOnly>
+    <type>html</type>
+</EmailTemplate>

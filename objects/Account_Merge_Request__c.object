@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Danfoss_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>Danfoss Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Master_Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Master_Account__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Master Account Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Master Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Merge Requests</relationshipLabel>
+        <relationshipName>Account_Merge_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Merged_Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Merged Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merged_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Merged Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Merge Requests (Merged Account)</relationshipLabel>
+        <relationshipName>Account_Merge_Requests1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Rejected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Rejected</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Request_processed__c</fullName>
+        <externalId>false</externalId>
+        <formula>Master_Account__c= Merged_Account__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Request processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>Cannot_merge_customer_into_prospect</fullName>
+        <active>true</active>
+        <errorConditionFormula>Master_Account__r.RecordType.DeveloperName = &quot;Prospect_CE&quot; &amp;&amp;  Merged_Account__r.RecordType.DeveloperName = &quot;Customer_CE&quot;</errorConditionFormula>
+        <errorMessage>You cannot merge an account of type Customer into an account of type Prospect</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Locked_after_merged</fullName>
+        <active>true</active>
+        <errorConditionFormula>Request_processed__c</errorConditionFormula>
+        <errorMessage>You cannot change the record after it has been processed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Must_be_different_accounts</fullName>
+        <active>true</active>
+        <errorConditionFormula>Master_Account__r.Id ==  Merged_Account__r.Id</errorConditionFormula>
+        <errorMessage>You must select different account to merge</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Only_CE_Business_Org</fullName>
+        <active>true</active>
+        <errorConditionFormula>Text(Master_Account__r.Business_Org__c) &lt;&gt; &apos;Climate and Energy&apos; ||  Text(Merged_Account__r.Business_Org__c) &lt;&gt; &apos;Climate and Energy&apos;</errorConditionFormula>
+        <errorMessage>Only accounts with Business Org = &apos;Climate and Energy&apos; can be merged</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Merge_Accounts</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Merge Accounts</masterLabel>
+        <openType>sidebar</openType>
+        <page>AccountMergeRun</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

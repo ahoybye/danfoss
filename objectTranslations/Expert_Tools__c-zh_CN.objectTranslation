@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Expert Tool --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Performance/Life Prediction</masterLabel>
+            <translation><!-- Performance/Life Prediction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing Tools</masterLabel>
+            <translation><!-- Pricing Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Configuration</masterLabel>
+            <translation><!-- Product Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sizing/Selection</masterLabel>
+            <translation><!-- Sizing/Selection --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>说明</label>
+        <name>Description__c</name>
+    </fields>
+    <nameFieldLabel><!-- Expert Tool Name --></nameFieldLabel>
+</CustomObjectTranslation>

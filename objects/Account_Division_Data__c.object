@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Division_Data_Config__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Division Data Config</label>
+        <referenceTo>Account_Division_Data_Config__c</referenceTo>
+        <relationshipName>Account_Attributes</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Marketing Attributes</relationshipLabel>
+        <relationshipName>Account_Division_Data</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Set_lkp__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Account_Division_Data_Config__r.Attribute_Set__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attribute Set</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attribute_lkp__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Division_Data_Config__r.Attribute__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attribute</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Marketing Attributes</relationshipLabel>
+        <relationshipName>Marketing_Attributes</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Division_lkp__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Account_Division_Data_Config__r.Division__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Division</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Has_Attribute_Value__c</fullName>
+        <description>Formula to check if a marketing value has a value. Returns &quot;Yes&quot; if it has, &quot;No&quot; if it doesnt</description>
+        <externalId>false</externalId>
+        <formula>IF((ISBLANK(Value__c)),False,True)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Formula to check if a marketing value has a value. Returns &quot;Yes&quot; if it has, &quot;No&quot; if it doesnt</inlineHelpText>
+        <label>Has Attribute Value</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ValueAgg__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (LEN(Value__c)=0,Text( ValueNumber__c ),Value__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Value</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ValueNumber__c</fullName>
+        <externalId>false</externalId>
+        <label>ValueNumber</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>must_be_related_to_a_record</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK(Account__c) &amp;&amp; ISBLANK(Contact__c)</errorConditionFormula>
+        <errorMessage>The marketing attribute must be related to a record</errorMessage>
+    </validationRules>
+</CustomObject>

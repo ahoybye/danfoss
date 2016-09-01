@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Share of Wallet</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Share of Wallet</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Share of Wallets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Defines the additional (incremental) turnover that Danfoss can earn on this customer in the CY (Current Year) compared to Last Year (LY) --></help>
+        <label><!-- CY incremental Turnover --></label>
+        <name>CY_Incremental_TO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines the turnover that Danfoss cannot address because of missing product/capabilities, or does not want to address because of strategic reason --></help>
+        <label><!-- CY Non-Addressable Turnover --></label>
+        <name>CY_Non_Address_TO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customers Supplier --></label>
+        <name>Competitor_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Supplier of the Account/Customer. For Danfoss typically a Competitor. --></help>
+        <label><!-- Customers Supplier --></label>
+        <name>Competitor_Name_picklist__c</name>
+        <picklistValues>
+            <masterLabel>ABB</masterLabel>
+            <translation><!-- ABB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AC Tech (Lenze)</masterLabel>
+            <translation><!-- AC Tech (Lenze) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AC&amp;R-Henry Technologies</masterLabel>
+            <translation><!-- AC&amp;R-Henry Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ACC</masterLabel>
+            <translation><!-- ACC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ALBERTS</masterLabel>
+            <translation><!-- ALBERTS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APV</masterLabel>
+            <translation><!-- APV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATLANT-SERVICE Sp. z o.o.</masterLabel>
+            <translation><!-- ATLANT-SERVICE Sp. z o.o. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AWP Revalco</masterLabel>
+            <translation><!-- AWP Revalco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adlee</masterLabel>
+            <translation><!-- Adlee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alco (Emerson Flow Controls)</masterLabel>
+            <translation><!-- Alco (Emerson Flow Controls) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alfa Laval</masterLabel>
+            <translation><!-- Alfa Laval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Allen Bradley</masterLabel>
+            <translation><!-- Allen Bradley --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alpha Laval</masterLabel>
+            <translation><!-- Alpha Laval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alstom</masterLabel>
+            <translation><!-- Alstom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amtech</masterLabel>
+            <translation><!-- Amtech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ansaldo Sistemi Industriali</masterLabel>
+            <translation><!-- Ansaldo Sistemi Industriali --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apotec</masterLabel>
+            <translation><!-- Apotec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arcelik</masterLabel>
+            <translation><!-- Arcelik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armatch</masterLabel>
+            <translation><!-- Armatch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B &amp; R</masterLabel>
+            <translation><!-- B &amp; R --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOCK</masterLabel>
+            <translation><!-- BOCK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baldor (Reliance)</masterLabel>
+            <translation><!-- Baldor (Reliance) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belimo</masterLabel>
+            <translation><!-- Belimo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bitzer</masterLabel>
+            <translation><!-- Bitzer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonfigilioli (Vectron)</masterLabel>
+            <translation><!-- Bonfigilioli (Vectron) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bosch</masterLabel>
+            <translation><!-- Bosch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brassen</masterLabel>
+            <translation><!-- Brassen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bristol</masterLabel>
+            <translation><!-- Bristol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broen</masterLabel>
+            <translation><!-- Broen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brunata</masterLabel>
+            <translation><!-- Brunata --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buderus</masterLabel>
+            <translation><!-- Buderus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bürkert</masterLabel>
+            <translation><!-- Bürkert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CIAT</masterLabel>
+            <translation><!-- CIAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caen</masterLabel>
+            <translation><!-- Caen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carel</masterLabel>
+            <translation><!-- Carel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carel spa</masterLabel>
+            <translation><!-- Carel spa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carlo Gavazzi</masterLabel>
+            <translation><!-- Carlo Gavazzi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carly</masterLabel>
+            <translation><!-- Carly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier/Carlyle</masterLabel>
+            <translation><!-- Carrier/Carlyle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Castel s.r.l</masterLabel>
+            <translation><!-- Castel s.r.l --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chongqing Jialing</masterLabel>
+            <translation><!-- Chongqing Jialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chunhui</masterLabel>
+            <translation><!-- Chunhui --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chunlan</masterLabel>
+            <translation><!-- Chunlan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chyn Tec</masterLabel>
+            <translation><!-- Chyn Tec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clorius Controls</masterLabel>
+            <translation><!-- Clorius Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Converteam</masterLabel>
+            <translation><!-- Converteam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooltech Finland</masterLabel>
+            <translation><!-- Cooltech Finland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cubigel</masterLabel>
+            <translation><!-- Cubigel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Own Solution</masterLabel>
+            <translation><!-- Customer Own Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DAF Energy</masterLabel>
+            <translation><!-- DAF Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daewoo International Corporation</masterLabel>
+            <translation><!-- Daewoo International Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daikin Industries Ltd.</masterLabel>
+            <translation><!-- Daikin Industries Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daikin/McQuay/J&amp;E Hall</masterLabel>
+            <translation><!-- Daikin/McQuay/J&amp;E Hall --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dalian Bingshan</masterLabel>
+            <translation><!-- Dalian Bingshan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decon</masterLabel>
+            <translation><!-- Decon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delphi</masterLabel>
+            <translation><!-- Delphi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta</masterLabel>
+            <translation><!-- Delta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeltaTec</masterLabel>
+            <translation><!-- DeltaTec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dongboo Daewoo</masterLabel>
+            <translation><!-- Dongboo Daewoo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donper</masterLabel>
+            <translation><!-- Donper --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dorin</masterLabel>
+            <translation><!-- Dorin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dunan</masterLabel>
+            <translation><!-- Dunan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dunham Bush</masterLabel>
+            <translation><!-- Dunham Bush --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELREHA Elektronische Regelungen GmbH</masterLabel>
+            <translation><!-- ELREHA Elektronische Regelungen GmbH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESCO (Toshiba)</masterLabel>
+            <translation><!-- ESCO (Toshiba) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUROHEAT</masterLabel>
+            <translation><!-- EUROHEAT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EVERY CONTROL</masterLabel>
+            <translation><!-- EVERY CONTROL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EWERS</masterLabel>
+            <translation><!-- EWERS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eaton (Cutler Hammer/Moeller)</masterLabel>
+            <translation><!-- Eaton (Cutler Hammer/Moeller) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ebara</masterLabel>
+            <translation><!-- Ebara --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eckelmann</masterLabel>
+            <translation><!-- Eckelmann --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrolux</masterLabel>
+            <translation><!-- Electrolux --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elettronica Santerno</masterLabel>
+            <translation><!-- Elettronica Santerno --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elgin</masterLabel>
+            <translation><!-- Elgin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eliwell</masterLabel>
+            <translation><!-- Eliwell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Embraco/Aspera</masterLabel>
+            <translation><!-- Embraco/Aspera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emerson (Control Techniques)</masterLabel>
+            <translation><!-- Emerson (Control Techniques) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emerson Climate Technology</masterLabel>
+            <translation><!-- Emerson Climate Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emerson/CPC</masterLabel>
+            <translation><!-- Emerson/CPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emotron</masterLabel>
+            <translation><!-- Emotron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FUNKE</masterLabel>
+            <translation><!-- FUNKE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fasteco</masterLabel>
+            <translation><!-- Fasteco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Femiks BB</masterLabel>
+            <translation><!-- Femiks BB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fenix</masterLabel>
+            <translation><!-- Fenix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finetec Century</masterLabel>
+            <translation><!-- Finetec Century --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frascold</masterLabel>
+            <translation><!-- Frascold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fratelli Guerra</masterLabel>
+            <translation><!-- Fratelli Guerra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fuji</masterLabel>
+            <translation><!-- Fuji --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fujikoki Corporation</masterLabel>
+            <translation><!-- Fujikoki Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fujitsu General</masterLabel>
+            <translation><!-- Fujitsu General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fusheng</masterLabel>
+            <translation><!-- Fusheng --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GAR</masterLabel>
+            <translation><!-- GAR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GEA</masterLabel>
+            <translation><!-- GEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GEA Grasso</masterLabel>
+            <translation><!-- GEA Grasso --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GFRAN</masterLabel>
+            <translation><!-- GFRAN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GIA</masterLabel>
+            <translation><!-- GIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GMC</masterLabel>
+            <translation><!-- GMC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GMCC</masterLabel>
+            <translation><!-- GMCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GRUNDFOS</masterLabel>
+            <translation><!-- GRUNDFOS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gebwell</masterLabel>
+            <translation><!-- Gebwell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gems Sensors</masterLabel>
+            <translation><!-- Gems Sensors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gree/Landa</masterLabel>
+            <translation><!-- Gree/Landa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guangzhou Wanbao Refrigerator Co., Ltd.</masterLabel>
+            <translation><!-- Guangzhou Wanbao Refrigerator Co., Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPB Motion Control</masterLabel>
+            <translation><!-- HPB Motion Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Habekost/Habo</masterLabel>
+            <translation><!-- Habekost/Habo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hanbell</masterLabel>
+            <translation><!-- Hanbell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hansa</masterLabel>
+            <translation><!-- Hansa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hansen Technologies Corp.</masterLabel>
+            <translation><!-- Hansen Technologies Corp. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heatcraft</masterLabel>
+            <translation><!-- Heatcraft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heimeier</masterLabel>
+            <translation><!-- Heimeier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heldon</masterLabel>
+            <translation><!-- Heldon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heli Controls</masterLabel>
+            <translation><!-- Heli Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Henry Technologies, Inc.</masterLabel>
+            <translation><!-- Henry Technologies, Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Herz</masterLabel>
+            <translation><!-- Herz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hitachi</masterLabel>
+            <translation><!-- Hitachi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hitachi/Highly</masterLabel>
+            <translation><!-- Hitachi/Highly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Holter</masterLabel>
+            <translation><!-- Holter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honeywell</masterLabel>
+            <translation><!-- Honeywell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honeywell International Inc.</masterLabel>
+            <translation><!-- Honeywell International Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HuayiGrp</masterLabel>
+            <translation><!-- HuayiGrp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Huba Control</masterLabel>
+            <translation><!-- Huba Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Huyai/Cubigel</masterLabel>
+            <translation><!-- Huyai/Cubigel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydac - HQ</masterLabel>
+            <translation><!-- Hydac - HQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyundai</masterLabel>
+            <translation><!-- Hyundai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Högfors GST</masterLabel>
+            <translation><!-- Högfors GST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IMI</masterLabel>
+            <translation><!-- IMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infoss</masterLabel>
+            <translation><!-- Infoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invertek</masterLabel>
+            <translation><!-- Invertek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ita Kom</masterLabel>
+            <translation><!-- Ita Kom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JAF</masterLabel>
+            <translation><!-- JAF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JUMO GmbH &amp; Co. KG - HQ</masterLabel>
+            <translation><!-- JUMO GmbH &amp; Co. KG - HQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Johnson Controls Inc. (Penn)</masterLabel>
+            <translation><!-- Johnson Controls Inc. (Penn) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>K + P (Kieback + Peter)</masterLabel>
+            <translation><!-- K + P (Kieback + Peter) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KEB</masterLabel>
+            <translation><!-- KEB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KK</masterLabel>
+            <translation><!-- KK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kaishan/Kerry</masterLabel>
+            <translation><!-- Kaishan/Kerry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kamo</masterLabel>
+            <translation><!-- Kamo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kamstrup</masterLabel>
+            <translation><!-- Kamstrup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kangpusi Refrigeration Engineering</masterLabel>
+            <translation><!-- Kangpusi Refrigeration Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kavlico</masterLabel>
+            <translation><!-- Kavlico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keller AG - HQ</masterLabel>
+            <translation><!-- Keller AG - HQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kesab</masterLabel>
+            <translation><!-- Kesab --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kistler Instrumente AG</masterLabel>
+            <translation><!-- Kistler Instrumente AG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kobelco (Kobe Steel)</masterLabel>
+            <translation><!-- Kobelco (Kobe Steel) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kring</masterLabel>
+            <translation><!-- Kring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kulthorn Kirby</masterLabel>
+            <translation><!-- Kulthorn Kirby --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kulthorn Kirby Public Company Limited</masterLabel>
+            <translation><!-- Kulthorn Kirby Public Company Limited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAE Electronic srl</masterLabel>
+            <translation><!-- LAE Electronic srl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDM</masterLabel>
+            <translation><!-- LDM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG</masterLabel>
+            <translation><!-- LG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LG Electronics Inc.</masterLabel>
+            <translation><!-- LG Electronics Inc. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LS (LG)</masterLabel>
+            <translation><!-- LS (LG) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LTI (Lust)</masterLabel>
+            <translation><!-- LTI (Lust) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local RC/CC Competitor</masterLabel>
+            <translation><!-- Local RC/CC Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loher</masterLabel>
+            <translation><!-- Loher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Luvata</masterLabel>
+            <translation><!-- Luvata --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MIKOM</masterLabel>
+            <translation><!-- MIKOM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magnetek</masterLabel>
+            <translation><!-- Magnetek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Masterflux</masterLabel>
+            <translation><!-- Masterflux --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayekawa/Mycom</masterLabel>
+            <translation><!-- Mayekawa/Mycom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meibes</masterLabel>
+            <translation><!-- Meibes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meiyo</masterLabel>
+            <translation><!-- Meiyo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metawa</masterLabel>
+            <translation><!-- Metawa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midea</masterLabel>
+            <translation><!-- Midea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitsubishi</masterLabel>
+            <translation><!-- Mitsubishi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitsubishi Electric/SCI</masterLabel>
+            <translation><!-- Mitsubishi Electric/SCI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitsubishi Heavy Industries</masterLabel>
+            <translation><!-- Mitsubishi Heavy Industries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitsubishi Heavy Industries, Ltd.</masterLabel>
+            <translation><!-- Mitsubishi Heavy Industries, Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mueller Industries, Inc</masterLabel>
+            <translation><!-- Mueller Industries, Inc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NICHIDEN Corporation</masterLabel>
+            <translation><!-- NICHIDEN Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NS Koncept</masterLabel>
+            <translation><!-- NS Koncept --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagano Keiki HQ</masterLabel>
+            <translation><!-- Nagano Keiki HQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Naval</masterLabel>
+            <translation><!-- Naval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Widetech</masterLabel>
+            <translation><!-- New Widetech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nord Gear</masterLabel>
+            <translation><!-- Nord Gear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OFFENWANGER GmbH</masterLabel>
+            <translation><!-- OFFENWANGER GmbH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Omron</masterLabel>
+            <translation><!-- Omron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunistic</masterLabel>
+            <translation><!-- Opportunistic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oprema</masterLabel>
+            <translation><!-- Oprema --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oventrop</masterLabel>
+            <translation><!-- Oventrop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEWO</masterLabel>
+            <translation><!-- PEWO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIREKO</masterLabel>
+            <translation><!-- PIREKO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panasonic Compressor MY Sdn. Bhd. (Matsu</masterLabel>
+            <translation><!-- Panasonic Compressor MY Sdn. Bhd. (Matsu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parker Hannifin</masterLabel>
+            <translation><!-- Parker Hannifin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parker Sporlan</masterLabel>
+            <translation><!-- Parker Sporlan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Electronics</masterLabel>
+            <translation><!-- Power Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Priwa</masterLabel>
+            <translation><!-- Priwa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qing&apos;an</masterLabel>
+            <translation><!-- Qing&apos;an --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quingdao Pacific</masterLabel>
+            <translation><!-- Quingdao Pacific --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>R-Squared Puckett</masterLabel>
+            <translation><!-- R-Squared Puckett --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RC/CC Local Competitor</masterLabel>
+            <translation><!-- RC/CC Local Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RDM</masterLabel>
+            <translation><!-- RDM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REBARO</masterLabel>
+            <translation><!-- REBARO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFF Le Robinet Frigorifique Francais</masterLabel>
+            <translation><!-- RFF Le Robinet Frigorifique Francais --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ranco</masterLabel>
+            <translation><!-- Ranco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rechi</masterLabel>
+            <translation><!-- Rechi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reel</masterLabel>
+            <translation><!-- Reel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RefComp</masterLabel>
+            <translation><!-- RefComp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rehau</masterLabel>
+            <translation><!-- Rehau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rivacold</masterLabel>
+            <translation><!-- Rivacold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rockwell Automation</masterLabel>
+            <translation><!-- Rockwell Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roth</masterLabel>
+            <translation><!-- Roth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAGINOMIYA SEISAKUSHO, INC.</masterLabel>
+            <translation><!-- SAGINOMIYA SEISAKUSHO, INC. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SANYO Electric Co., Ltd.</masterLabel>
+            <translation><!-- SANYO Electric Co., Ltd. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SBT</masterLabel>
+            <translation><!-- SBT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SEW-EURODRIVE</masterLabel>
+            <translation><!-- SEW-EURODRIVE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIMON</masterLabel>
+            <translation><!-- SIMON --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SWEP</masterLabel>
+            <translation><!-- SWEP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samson</masterLabel>
+            <translation><!-- Samson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samsung</masterLabel>
+            <translation><!-- Samsung --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanhua</masterLabel>
+            <translation><!-- Sanhua --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanken</masterLabel>
+            <translation><!-- Sanken --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sanyo/Panasonic</masterLabel>
+            <translation><!-- Sanyo/Panasonic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sauermann</masterLabel>
+            <translation><!-- Sauermann --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sauter</masterLabel>
+            <translation><!-- Sauter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schneider</masterLabel>
+            <translation><!-- Schneider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schneider Electric</masterLabel>
+            <translation><!-- Schneider Electric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sensata</masterLabel>
+            <translation><!-- Sensata --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shanghai Thermostat</masterLabel>
+            <translation><!-- Shanghai Thermostat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siemens</masterLabel>
+            <translation><!-- Siemens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siemens (Robicon/Flender)</masterLabel>
+            <translation><!-- Siemens (Robicon/Flender) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siemens AG - HQ</masterLabel>
+            <translation><!-- Siemens AG - HQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simplex</masterLabel>
+            <translation><!-- Simplex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Snowkey</masterLabel>
+            <translation><!-- Snowkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sondex</masterLabel>
+            <translation><!-- Sondex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stöber</masterLabel>
+            <translation><!-- Stöber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superfreeze India</masterLabel>
+            <translation><!-- Superfreeze India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superior Controls</masterLabel>
+            <translation><!-- Superior Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systherm</masterLabel>
+            <translation><!-- Systherm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TA</masterLabel>
+            <translation><!-- TA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TAC</masterLabel>
+            <translation><!-- TAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TE Connectivity</masterLabel>
+            <translation><!-- TE Connectivity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TEE</masterLabel>
+            <translation><!-- TEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TSI Technologies</masterLabel>
+            <translation><!-- TSI Technologies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTO</masterLabel>
+            <translation><!-- TTO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technoblock S.p.A.</masterLabel>
+            <translation><!-- Technoblock S.p.A. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teco</masterLabel>
+            <translation><!-- Teco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tecumseh</masterLabel>
+            <translation><!-- Tecumseh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teddington</masterLabel>
+            <translation><!-- Teddington --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thermocomplect</masterLabel>
+            <translation><!-- Thermocomplect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toshiba</masterLabel>
+            <translation><!-- Toshiba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toshiba Carrier</masterLabel>
+            <translation><!-- Toshiba Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traco</masterLabel>
+            <translation><!-- Traco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trafag AG HQ</masterLabel>
+            <translation><!-- Trafag AG HQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trane</masterLabel>
+            <translation><!-- Trane --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tranter</masterLabel>
+            <translation><!-- Tranter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uponor</masterLabel>
+            <translation><!-- Uponor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacon (TB Woods/Berges)</masterLabel>
+            <translation><!-- Vacon (TB Woods/Berges) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valvugas</masterLabel>
+            <translation><!-- Valvugas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vesper (Becnep)</masterLabel>
+            <translation><!-- Vesper (Becnep) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vexve</masterLabel>
+            <translation><!-- Vexve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WEG</masterLabel>
+            <translation><!-- WEG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WIKA Alexander Wiegand GmbH &amp; Co. KG</masterLabel>
+            <translation><!-- WIKA Alexander Wiegand GmbH &amp; Co. KG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wanbao/ACC</masterLabel>
+            <translation><!-- Wanbao/ACC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wurm GmbH. KG Elektronische Systeme</masterLabel>
+            <translation><!-- Wurm GmbH. KG Elektronische Systeme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yados</masterLabel>
+            <translation><!-- Yados --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yantai Moon</masterLabel>
+            <translation><!-- Yantai Moon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yaskawa</masterLabel>
+            <translation><!-- Yaskawa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>York</masterLabel>
+            <translation><!-- York --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yuanbao</masterLabel>
+            <translation><!-- Yuanbao --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zehnder</masterLabel>
+            <translation><!-- Zehnder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zener</masterLabel>
+            <translation><!-- Zener --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zenny</masterLabel>
+            <translation><!-- Zenny --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zhejiang Zhongbao Industry Holding Co.</masterLabel>
+            <translation><!-- Zhejiang Zhongbao Industry Holding Co. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ziehl-Abegg</masterLabel>
+            <translation><!-- Ziehl-Abegg --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Competitor/Supplier Name --></label>
+        <name>Competitor_Supplier_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future Addressable Turnover --></label>
+        <name>Future_Addressable_TO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the turnover that can be earned in the future ((Total Potential TO-(Target TO CY - CY Non-Addressable TO)) --></help>
+        <label><!-- Future Addressable Turnover --></label>
+        <name>Future_Addressable_Turnover__c</name>
+    </fields>
+    <fields>
+        <help><!-- What has Danfoss or Supplier earned on this customer in the Last Year --></help>
+        <label><!-- LY Turnover --></label>
+        <name>LY_TO_Baseline__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product Line --></help>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+        <picklistValues>
+            <masterLabel>PL01 Automatic Controls</masterLabel>
+            <translation><!-- PL01 Automatic Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL38 Vacon</masterLabel>
+            <translation><!-- PL38 Vacon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL40 Industrial Refrigeration Products</masterLabel>
+            <translation><!-- PL40 Industrial Refrigeration Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪02‪ ‪Burner Components</masterLabel>
+            <translation><!-- PL‪02‪ ‪Burner Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪03‪ ‪Residential Heating</masterLabel>
+            <translation><!-- PL‪03‪ ‪Residential Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪04‪ ‪Industrial Automation</masterLabel>
+            <translation><!-- PL‪04‪ ‪Industrial Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪06‪ ‪Household Compressors</masterLabel>
+            <translation><!-- PL‪06‪ ‪Household Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪07‪ ‪Appliance Controls</masterLabel>
+            <translation><!-- PL‪07‪ ‪Appliance Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪08‪ ‪District Energy Controls</masterLabel>
+            <translation><!-- PL‪08‪ ‪District Energy Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪09‪ ‪VLT Drives</masterLabel>
+            <translation><!-- PL‪09‪ ‪VLT Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪10‪ ‪Venture Components</masterLabel>
+            <translation><!-- PL‪10‪ ‪Venture Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪14‪ ‪High-Pressure Systems</masterLabel>
+            <translation><!-- PL‪14‪ ‪High-Pressure Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪15‪ ‪Non Danfoss business areas</masterLabel>
+            <translation><!-- PL‪15‪ ‪Non Danfoss business areas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪16‪ ‪Water valves</masterLabel>
+            <translation><!-- PL‪16‪ ‪Water valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪17‪ ‪Commercial Compressors</masterLabel>
+            <translation><!-- PL‪17‪ ‪Commercial Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪18‪ ‪Gearmotors</masterLabel>
+            <translation><!-- PL‪18‪ ‪Gearmotors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪20‪ ‪Heat Recovery Ventilation &amp; Solutions</masterLabel>
+            <translation><!-- PL‪20‪ ‪Heat Recovery Ventilation &amp; Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪21‪ ‪Electric Heating Systems</masterLabel>
+            <translation><!-- PL‪21‪ ‪Electric Heating Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪22‪ ‪Heat Pumps</masterLabel>
+            <translation><!-- PL‪22‪ ‪Heat Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪23‪ ‪Danfoss Silicon Power</masterLabel>
+            <translation><!-- PL‪23‪ ‪Danfoss Silicon Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪24‪ ‪Heat Exchangers</masterLabel>
+            <translation><!-- PL‪24‪ ‪Heat Exchangers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪25‪ ‪Electronic Controllers &amp; Services</masterLabel>
+            <translation><!-- PL‪25‪ ‪Electronic Controllers &amp; Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪26‪ ‪Solar Inverters</masterLabel>
+            <translation><!-- PL‪26‪ ‪Solar Inverters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪28‪ ‪Hydronic Balancing &amp; Control</masterLabel>
+            <translation><!-- PL‪28‪ ‪Hydronic Balancing &amp; Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪30‪ ‪Customised Drives</masterLabel>
+            <translation><!-- PL‪30‪ ‪Customised Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪31‪ ‪District Energy Heat Exchangers</masterLabel>
+            <translation><!-- PL‪31‪ ‪District Energy Heat Exchangers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪32‪ ‪District Energy Heavy Duty Stations</masterLabel>
+            <translation><!-- PL‪32‪ ‪District Energy Heavy Duty Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪33‪ ‪District Energy Light Duty Stations</masterLabel>
+            <translation><!-- PL‪33‪ ‪District Energy Light Duty Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪34‪ ‪Floor Heating Hydronics</masterLabel>
+            <translation><!-- PL‪34‪ ‪Floor Heating Hydronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪35‪ ‪Energy Metering</masterLabel>
+            <translation><!-- PL‪35‪ ‪Energy Metering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪36‪ ‪Power Stacks</masterLabel>
+            <translation><!-- PL‪36‪ ‪Power Stacks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪37‪ ‪Danfoss Turbocor</masterLabel>
+            <translation><!-- PL‪37‪ ‪Danfoss Turbocor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL‪89‪ ‪NonDanfoss PL09</masterLabel>
+            <translation><!-- PL‪89‪ ‪NonDanfoss PL09 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Displays the existing SoW (%) in the addresable customer basket, excluding the Non-Addresable TO ((Last year TO /(Total Potential TO -Current Non-Addresable TO))*100 --></help>
+        <label><!-- SoW Total Addressable Turnover --></label>
+        <name>SoW_Total_Addressable_Turnover__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the existing SoW (%) of the total customer basket, including the Non-addresable TO (Last year TO /Total Potential TO)*100 --></help>
+        <label><!-- SoW Total Potential Turnover --></label>
+        <name>SoW_Total_Pot_TO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Share of Wallet for...Danfoss or Supplier. --></help>
+        <label><!-- SoW for --></label>
+        <name>SoW_for__c</name>
+    </fields>
+    <fields>
+        <help><!-- The costs for changing the supplier and the suppliers position. --></help>
+        <label><!-- Supplier Position --></label>
+        <name>Supplier_Position__c</name>
+        <picklistValues>
+            <masterLabel>1.  High Switching Cost and Entrenched Competition</masterLabel>
+            <translation><!-- 1.  High Switching Cost and Entrenched Competition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2. High Switching Cost but Competition Vulnerable</masterLabel>
+            <translation><!-- 2. High Switching Cost but Competition Vulnerable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. Low Switching Cost and Competition Vulnerable</masterLabel>
+            <translation><!-- 3. Low Switching Cost and Competition Vulnerable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4. Low Switching Cost and Competition Disliked</masterLabel>
+            <translation><!-- 4. Low Switching Cost and Competition Disliked --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Displays the turnover that Danfoss aims to earn in the current year on this specific account for this specific PL (Last Year TO + CY Incremental TO) --></help>
+        <label><!-- CY Target Turnover --></label>
+        <name>Targer_Turnover_Current_Year__c</name>
+    </fields>
+    <fields>
+        <help><!-- Targer Turnover Current Year --></help>
+        <label><!-- CY Target Turnover --></label>
+        <name>Target_TO_CY__c</name>
+    </fields>
+    <fields>
+        <help><!-- Defines the total basket of the customer (for all customer’s suppliers /all products*/all technologies) --></help>
+        <label><!-- Total Potential Turnover --></label>
+        <name>Total_Potential_TO__c</name>
+    </fields>
+    <fields>
+        <help><!-- Share Of Wallet Type --></help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Competitor</masterLabel>
+            <translation><!-- Competitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss</masterLabel>
+            <translation><!-- Danfoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Total</masterLabel>
+            <translation><!-- Total --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- UniqueChecker --></label>
+        <name>UniqueChecker__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Danfoss Share of Wallet --></label>
+        <name>Danfoss_Share_of_Wallet</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Supplier Share of Wallet --></label>
+        <name>Supplier_Share_of_Wallet</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Share of Wallets should be in the same currency as the account --></errorMessage>
+        <name>CE_ShareofWallet_Currency_Consistency_Ch</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change Product Line once the record is saved, as this affects the un-allocated amount functionality --></errorMessage>
+        <name>CE_SoW_CANNOT_CHANGE_PRODUCTLINE</name>
+    </validationRules>
+</CustomObjectTranslation>

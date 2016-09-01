@@ -1,0 +1,17 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif" size="3">Dear Sir/ Madam,</font>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif" size="3">This is to update you
+ that there has been a SLA breach for case {!Case.Subject} with 
+{!Case.CaseNumber}. It was 
+assigned to {!Case.OwnerFullName}. Please take necessary action<br><br>Please follow the below link for more information<br>{!Case.Link}<br><br>Best regards,<br>Danfoss Customer Service Center</font>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="1" aEditID="c1r3" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif" size="3">*********Please Do Not Delete or Type below this Line*</font><font face="Verdana,Helvetica,Sans-Serif" size="3">********<br>[{!Case.Thread_Id}]</font>]]></td>
+</tr>
+</table>

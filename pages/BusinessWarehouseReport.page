@@ -1,0 +1,9 @@
+<apex:page standardController="Sub_Account__c" extensions="BusinessWarehouseReportExtension" showHeader="false">
+    <apex:pageBlock title="Select report to run for {!Sub_Account__c.Name}">
+        <ul>
+            <apex:repeat value="{!Reports}" var="report">
+                <li><a href="{!SUBSTITUTE(report.Report_URL__c, '{ID}', Sub_Account__c.SAP_Account_ID__c)}">{!report.Name}</a></li>
+            </apex:repeat>
+        </ul>
+    </apex:pageBlock>
+</apex:page>

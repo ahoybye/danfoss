@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CASE CRATED - EMAIL TO CUSTOMER_AT_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_AT_LETTERHEAD</letterhead>
+    <name>CASE CRATED - EMAIL TO CUSTOMER_AT_EN</name>
+    <style>formalLetter</style>
+    <subject>Create new case {!Case.CaseNumber}</subject>
+    <textOnly>Dear Mr./Ms.:
+
+Many thanks for your inquiry about the Danfoss Customer Service Center.
+Your case number is {!Case.CaseNumber}.
+We are busy processing your inquiry and will respond as soon as possible.
+
+You can check the status of your case by phone on +43 1253 022 322.
+To do so, please have your case-number to hand.
+
+Kind regards,
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]
+
+Important note! We have a new central phone number and e-mail address
+Phone: +43 1253 022 322
+E-Mail Austria: CS@danfoss.at</textOnly>
+    <type>html</type>
+</EmailTemplate>

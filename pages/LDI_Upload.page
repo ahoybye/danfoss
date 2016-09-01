@@ -1,0 +1,63 @@
+<apex:page sidebar="true" controller="LDIUploadController" readonly="true">
+   <apex:form >
+   <head>   
+    <style>
+        #phSearchForm {
+            display: none !important;
+        }
+    </style>
+    </head>
+<!--      <apex:sectionHeader title="Upload inventory from CSV file"/>-->
+      <apex:pageMessages id="errors" />
+      <table width = "100%">
+          <tr>
+            <td colspan="7"><p>Upload text file with the format "Material,Quantity" with no header row.</p></td></tr>
+          <tr>
+              <td> 
+                    <apex:inputFile value="{!contentFile}" filename="{!nameFile}"  rendered="{!IsPortalUser}"/>
+                    <br/><br/>
+                    <apex:commandButton style="padding: 4px 4px 4px 4px" action="{!ReadFile}" value="Upload File" id="btnUpload" rendered="{!IsPortalUser}"/>
+                    <apex:outputText value="Files can only be uploaded through the portal." rendered="{!NOT(IsPortalUser)}" /> 
+              </td>
+              <td valign="top" style="text-align: right">
+                    <apex:commandLink action="{!gotoSearch}" value="Return to Search page" id="Search" />
+              </td>
+          </tr>
+      </table>    
+    <apex:pageBlock rendered="{!showResults}">
+        <apex:commandButton action="{!ProceedWithUpload}" value="Proceed with upload" id="btnProceed"/>                 
+        <apex:commandButton action="{!cancel}" value="Cancel" id="btnCancel"/>                 
+        <br/><br/>
+        <table width = "100%">
+          <tr>
+            <td width="20%" >
+                 <apex:outputText style="color: #9C052C; font-weight: bold;" value="{0} record(s) did not find a match"  rendered="{!NOT(ISNULL(NoMatches))}">
+                    <apex:param value="{!NoMatches.size}" />
+                 </apex:outputText>
+                <apex:pageblocktable value="{!NoMatches}" var="inv" rendered="{!NOT(ISNULL(NoMatches))}">
+                        <apex:column headerValue="Part Number">
+                            <apex:outputLabel value="{!inv}"/>
+                        </apex:column>
+                </apex:pageblocktable>
+            </td>
+            <td> &nbsp;</td>
+            <td>
+             <apex:outputText style="color: #9C052C; font-weight: bold;" value="{0} record(s) will upload successfully" rendered="{!NOT(ISNULL(uploadedInventory))}">
+                <apex:param value="{!uploadedInventory.size}" />
+            </apex:outputText>
+            <apex:pageblocktable value="{!uploadedInventory}" var="inv" rendered="{!NOT(ISNULL(uploadedInventory))}">
+                <apex:column width="20%" headerValue="Part Number">
+                <apex:outputLabel value="{!inv.Name}"/>
+                </apex:column>
+                <apex:column headerValue="On Hand">
+                <apex:outputLabel value="{!inv.Quantity__c}"/>
+                </apex:column>
+            </apex:pageblocktable>  
+            </td>
+          </tr>
+        </table>  
+<!--        <apex:outputLabel value="<br/><br/>" escape="false" rendered="{!AND(NOT(ISNULL(NoMatches)), NOT(ISNULL(uploadedInventory)))}"/>-->
+       
+      </apex:pageBlock>       
+   </apex:form>   
+</apex:page>

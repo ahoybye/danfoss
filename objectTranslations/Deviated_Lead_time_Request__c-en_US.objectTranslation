@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deviated Lead-time Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deviated Lead-time Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Owner --></label>
+        <name>Account_Owner__c</name>
+        <relationshipLabel><!-- Deviated Lead-time Requests (Account Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Deviated Lead-time Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Additional Comment related to this request.  Specific information such as part number, nomenclature, quantity, etc should be entered bottom by individual &quot;Deviated Request Line Item&quot;. --></help>
+        <label><!-- Additional Comments --></label>
+        <name>Additional_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Best delivery date for your request as determined by your Customer Service Representative --></help>
+        <label><!-- Best Delivery --></label>
+        <name>Best_Delivery__c</name>
+    </fields>
+    <fields>
+        <label><!-- CSR --></label>
+        <name>CSR__c</name>
+        <relationshipLabel><!-- Deviated Lead-time Requests (CSR) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Initial Acknowledge Date --></label>
+        <name>Initial_Acknowledge_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If known, please list the opportunity associated with this request. --></help>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Deviated Lead-time Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Your company&apos;s purchase order number --></help>
+        <label><!-- PO Number --></label>
+        <name>PO_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account --></label>
+        <name>Parent_Account__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check box if a short lead-time premium is charged. --></help>
+        <label><!-- Premium Charged --></label>
+        <name>Premium_Charged__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check if purchase order you have sent or will send to Danfoss Power Solutions already includes an expedite premium. --></help>
+        <label><!-- PO does/will include expedite fee --></label>
+        <name>Purchase_order_premium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Other --></label>
+        <name>Reason_Other__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the reason for the request --></help>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+        <picklistValues>
+            <masterLabel>Interchange, direct competitor replacement</masterLabel>
+            <translation><!-- Interchange, direct competitor replacement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No local inventory for this customer</masterLabel>
+            <translation><!-- No local inventory for this customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prototype</masterLabel>
+            <translation><!-- Prototype --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unplanned aftermarket/service</masterLabel>
+            <translation><!-- Unplanned aftermarket/service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unplanned production increase</masterLabel>
+            <translation><!-- Unplanned production increase --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If premium is waived, please list the reason why --></help>
+        <label><!-- Reason for Premium Waiver --></label>
+        <name>Reason_for_Premium_Waiver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Specialist --></label>
+        <name>Sales_Specialist__c</name>
+        <relationshipLabel><!-- Deviated Lead-time Requests (Sales Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the standard lead time in weeks --></help>
+        <label><!-- Standard Lead Time --></label>
+        <name>Standard_Lead_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- An opportunity must be selected if reason is Prototype. --></errorMessage>
+        <name>Prototype_requires_Opportunity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter the other reason --></errorMessage>
+        <name>ReasonOtherRequired</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- DLR_Standard_Work --></label>
+        <name>DLR_Standard_Work</name>
+    </webLinks>
+</CustomObjectTranslation>

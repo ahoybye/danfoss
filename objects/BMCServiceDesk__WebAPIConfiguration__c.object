@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__Call_Web_API_on_Task_Closed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Call Web API on closed tasks</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this check box to allow the service call for the closed tasks.</inlineHelpText>
+        <label>Call Web API on Task Closed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Certificate_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify certificate name to call a service.</inlineHelpText>
+        <label>Certificate Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__HTTPBody__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify the request body of the service.</inlineHelpText>
+        <label>Request Body</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__HTTPHeaders__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify HTTP headers of the request.</inlineHelpText>
+        <label>Request Headers</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__HTTP_Content_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>HTTP Request Content Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify HTTP content type of the service.</inlineHelpText>
+        <label>Request Content Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>JSON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XML</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of hours allowed for an API call to be made after a task is closed.</inlineHelpText>
+        <label>Hours</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__HttpMethod__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the REST method to be called for the service.</inlineHelpText>
+        <label>Request Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>GET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>POST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PUT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DELETE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Is_Sandbox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this field if you are using a sandbox.</inlineHelpText>
+        <label>Is Sandbox</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Request_Target_Namespace__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specify target namespace of the service.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SOAP Target Namespace</inlineHelpText>
+        <label>Request Target Namespace</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Required_Certificate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this check box if the web API call needs certificate.</inlineHelpText>
+        <label>Required Certificate</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__SOAP_Method_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specify SOAP Method Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify SOAP Method Name</inlineHelpText>
+        <label>SOAP Method Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Security_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify security type of the service.</inlineHelpText>
+        <label>Security Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Basic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Service_Identity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify user name to authenticate the service.</inlineHelpText>
+        <label>User Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Service_Pass_phrase__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify password to authenticate the service.</inlineHelpText>
+        <label>Password</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Service_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the service type.</inlineHelpText>
+        <label>Service Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>SoapBasic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RestService</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SoapAdvance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Service_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Specify the end-point URL of the service.</inlineHelpText>
+        <label>Service URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>BMCServiceDesk__UniqueWebAPIConfigIdCheck</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISNEW(),
+NOT(ISBLANK(VLOOKUP(  $ObjectType.BMCServiceDesk__WebAPIConfiguration__c.Fields.Name , $ObjectType.BMCServiceDesk__WebAPIConfiguration__c.Fields.Name,NULLVALUE(Name, Name)))),
+IF(ISCHANGED(Name),
+IF((LOWER(Name) = LOWER(VLOOKUP($ObjectType.BMCServiceDesk__WebAPIConfiguration__c.Fields.Name, $ObjectType.BMCServiceDesk__WebAPIConfiguration__c.Fields.Name,Name))&amp;&amp;LOWER(PRIORVALUE(Name)) != Lower(Name)), TRUE, FALSE),
+FALSE))</errorConditionFormula>
+        <errorMessage>Web API Configuration name already exists. Enter a unique name.</errorMessage>
+    </validationRules>
+</CustomObject>

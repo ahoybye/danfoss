@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplicationComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buttonText>Cases With Unread Email</buttonText>
+    <height>450</height>
+    <isHeightFixed>true</isHeightFixed>
+    <isHidden>false</isHidden>
+    <isWidthFixed>false</isWidthFixed>
+    <visualforcePage>CasesWithNewUnreadEmails</visualforcePage>
+    <width>400</width>
+</CustomApplicationComponent>

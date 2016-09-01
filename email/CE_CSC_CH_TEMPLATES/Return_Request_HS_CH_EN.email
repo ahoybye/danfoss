@@ -1,0 +1,29 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif" size="2">To: {!Case.Account}</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Att: {!Case.Contact}</font></p><p><u></u><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><u><font face="Verdana,Helvetica,Sans-Serif" size="2">Return</font></u></p><p><u></u><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Your inquiry no.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">from</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">We are happy to inform you of our redemption procedures.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">A withdrawal can be carried out under the following conditions:</font></p><p><font face="Verdana,Helvetica,Sans-Serif"><font size="2">* <em>The goods must be in their original state and not have been installet.</em></font></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif"><font size="2">* <em>The goods must not be older than a maximum of 6 mont past the invoice date.</em></font></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif"><font size="2">* <em>Redemption is subject to a review in our Service workshop.</em></font></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif"><font size="2">* <em>Redemption fee is 20% of value of goods with a minimum of 20 €.</em></font></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Please provide a proof of delivery or enter a invoice number.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Sincerely yours</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">&nbsp;</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Customer Service Central Europe Region</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt;"><span lang="EN-US" style='color: black; font-family: "Verdana","sans-serif"; mso-bidi-font-family: Arial; mso-ansi-language: EN-US;'><font face="Verdana,Helvetica,Sans-Serif" size="2">*********Please
+Do Not Delete or Type below this Line*********<br>
+{!Case.Thread_Id}</font></span></p><p><font face="Times New Roman">
+
+<br></font></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>Important note! We have a new central phone number and
+e-mail address</span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>Phone: +41 61 5880 114</span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>E-Mail: </span><span lang="EN-US" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: EN-US;'><a href="mailto:CS@danfoss.ch"><span lang="DE" style="color: windowtext; mso-ansi-language: DE;">CS@danfoss.ch</span></a></span></p><font face="Times New Roman">
+
+</font>]]></td>
+</tr>
+</table>

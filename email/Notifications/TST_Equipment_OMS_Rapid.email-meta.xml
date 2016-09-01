@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>OMS Rapid Delivery Center Update</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>TST Equipment OMS Rapid Delivery Center Update</name>
+    <style>formalLetter</style>
+    <subject>OMS Rapid Delivery Center Update September 2012</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+
+{!Account.ShippingAddress}
+Dear {!Contact.FirstName},
+
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+We have been reviewing our long term sales strategies for LSHT motors for both OEM , Distribution, and Aftermarket business in the Americas. We are pleased to announce improvements to the OMS Rapid Delivery Center program.
+
+
+Effective immediately, we are reducing the list prices of all OMS Rapid Delivery Center modules to help you increase sales in the market (see attached new list Prices).
+
+
+We think there are great opportunities to increase market share in this category of LSHT motors and are announcing an updated OMS price structure for 2012 and 2013 to support your sales efforts. For your open orders, we ask that you send updated purchase orders to reflect these new prices.
+
+
+Because you are a strong supporter of Sauer-Danfoss and have already begun to build up stock of OMS modules to promote your Rapid Delivery Center, we want to offer you a one-time rebate to align your OMS module inventory with this new structure and allow you to capture market share faster.
+
+
+Our records show you have purchases totaling $24,811.82 OMS RDC products in 2012.  We would like to offer a $2,687.12 rebate on your next $9,000 or greater OMS module stocking order received on or before October 15th. Please write “OMS 2012 Rebate” on the order and we will apply a $2,687.12 “short pay approval” equal to the rebate amount for this one invoice.  With the updated OMS list prices and the rebate, your inventory should position you well to gain new customers and new motor business.
+
+
+We are very excited about the potential and opportunities to support the aftermarket and look forward to working with you to continue strong LSHT motor growth in 2013. If you have any additional questions, please contact your Sauer-Danfoss account manager.
+Sincerely,
+
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+
+Thomas A. Rosskopf
+
+Director-Distribution and Aftermarket</textOnly>
+    <type>html</type>
+</EmailTemplate>

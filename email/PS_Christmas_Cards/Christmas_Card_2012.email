@@ -1,0 +1,22 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p>Dear &nbsp;{!Contact.FirstName},</p>
+<p>&nbsp;</p>
+<p>Happy Holidays!</p>
+<p>&nbsp;</p>
+<p>Please&nbsp;click the below link to view a greeting from your friends at Sauer-Danfoss.</p>
+<p>&nbsp;</p><p><a href="http://www.youtube.com/watch?v=95c3XnlQoj4&amp;feature=youtu.be">
+<img border="0" alt="" align="left" src="https://sd--c.na8.content.force.com/servlet/servlet.ImageServer?id=015C00000014XKb&amp;oid=00DW0000008pmC7"></a></p><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>]]></td>
+</tr>
+</table>

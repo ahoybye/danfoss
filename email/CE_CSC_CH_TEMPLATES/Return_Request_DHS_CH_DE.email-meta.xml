@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Return_Request_DHS_CH_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CH_LETTERHEAD</letterhead>
+    <name>Return_Request_DHS_CH_DE</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>An: {!Case.Account}
+
+z.Hd. {!Case.Contact}
+
+W E R K S R Ü C K G A B E
+
+Ihre anfrage Nr.
+vom
+
+Gerne teilen wir Ihnen unsere Rücknahmebedingungen mit.
+
+Eine Rücknahme kann unter folgenden Voraussetzungen erfolgen:
+* die Ware muss im Originalzustand sein / die Ware darf nich Eingebaut gewesen sein.
+
+* die Ware darf nicht älter als max. 6 Monate Rechnungsdatum sein.
+
+* Rücknahme erfolgt vorbehaltlich einer Überprüfung in unserer servicewerkstatt.
+
+* Rücknahmegebühren betragen 20% vom Warenwert, mind.jedoch 20€
+
+Bitte legen Sie einen Liefernachweis bei oder geben Sie eine Rechnungsnummer an.
+
+Mit freundlichen Grüßen
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+{!Case.Thread_Id}
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel: +41 61 5880 114
+E-Mail: CS@danfoss.ch</textOnly>
+    <type>html</type>
+</EmailTemplate>

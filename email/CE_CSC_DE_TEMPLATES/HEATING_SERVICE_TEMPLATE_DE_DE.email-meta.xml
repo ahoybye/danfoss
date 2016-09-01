@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>HEATING SERVICE TEMPLATE_DE_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>HEATING SERVICE TEMPLATE_DE_DE</name>
+    <style>formalLetter</style>
+    <subject>Ihre Anfrage Vorgang {!Case.CaseNumber}</subject>
+    <textOnly>Sehr geehrte(r) Frau  Herr,
+
+Sie möchten den Werkskundendienst anfordern?
+
+Bitte klicken Sie auf den Link und öffnen Sie das Formular mit einem Doppelklick, dann speichern
+
+Sie das Formular bitte ab.
+
+Bitte füllen Sie die erforderlichen Felder aus und senden uns das Formular per E-Mail an:
+
+Folgende E-Mail-Adresse:
+
+(E-Mail-Adresse)
+
+Möchten Sie das Formular per Fax schicken? Dann benötigen wir bitte Ihre Unterschrift.
+
+Hier finden Sie die Preisliste und das Formular zur Serviceanforderung.
+Weitere Informationen über unsere Produkte und Dienstleistungen finden sie unter www.fernwaerme.danfoss.de
+
+Vielen Dank
+
+Best regards / Mit freundlichen Grüßen
+
+Werkskundendienst
+Heizung-, Warmwasser und Fernwärme-Komponenten und System
+
+Danfoss GmbH
+Heating Segment
+Kolumbusstraße 14, D-22113 Hamburg, Germany
+
+Tel.: +49 (40) 736751-60 | Fax: +49 (69) 8902466-430
+service-fw@danfoss.com | http://www.fernwaerme.danfoss.de
+
+Geschäftsführer: Ole Moller-Jensen
+Amtsgericht Offenbach am Main,Handelsregister HRB 41812
+Steuer-Nr. 035 225 07148, USt-Id. DE811179653
+
+Diesem Auftrag liegen unsere Allgemeinen Geschäftsbedingungen (AGB) zugrunde.
+Die AGBs der Danfoss GmbH finden Sie im Internet unter www.danfoss.com/germany
+Auf Wunsch senden wir Ihnen unsere AGBs auch gerne Zu.
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

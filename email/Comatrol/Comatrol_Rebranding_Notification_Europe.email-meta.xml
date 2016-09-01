@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is a customer communication concerning the rebranding</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Comatrol_Logo</letterhead>
+    <name>Comatrol Rebranding Notification Europe</name>
+    <style>freeForm</style>
+    <subject>Comatrol Rebranding Europe</subject>
+    <type>html</type>
+</EmailTemplate>

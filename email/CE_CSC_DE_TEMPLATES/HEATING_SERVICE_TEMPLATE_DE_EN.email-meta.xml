@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>HEATING SERVICE TEMPLATE_DE_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>HEATING SERVICE TEMPLATE_DE_EN</name>
+    <style>formalLetter</style>
+    <subject>Your inquiry {!Case.CaseNumber}</subject>
+    <textOnly>Dear Mr./Ms.:
+
+Would you like to get in touch with our factory service center?
+
+Please click on the link and open the form by double clicking on it, then save
+
+the form.
+
+Please complete the required fields and email it to us at:
+
+The following email address:
+
+(Email address)
+
+Would you prefer to fax the form? In this case we will need your signature.
+
+Here you will find the price list and the form to request a service.
+For more information about our products and services, please see www.fernwaerme.danfoss.de
+
+Thank you!
+
+Best regards / Mit freundlichen Grüßen
+
+Factory service center
+Heating, hot water and district heat components and systems
+
+Danfoss GmbH
+Heating Segment
+Kolumbusstraße 14, D-22113 Hamburg, Germany
+
+Tel: +49 (40) 736751-60 | Fax: +49 (69) 8902466-430
+service-fw@danfoss.com | http://www.fernwaerme.danfoss.de
+
+Managing Director Ole Moller-Jensen
+Local Court Offenbach am Main,Commercial Register HRB 41812
+Tax no. 035 225 07148, VAT no. DE811179653
+
+This order is based on our General Terms and Conditions (GTC).
+The general terms and conditions of Danfoss GmbH are available on the Internet at www.danfoss.com/germany
+We will also be happy to send you our general terms and conditions upon request.
+
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

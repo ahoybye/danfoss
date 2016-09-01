@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Danfoss_Material_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Product_Description__r.SAP_Material_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Danfoss Material Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>All expedited deliveries are approximate, and based on manufacturing capacity at time of order/change order.</inlineHelpText>
+        <label>Estimated Ship Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Click on the &quot;Lookup&quot; icon to the right to find the appropriate part number you would like expedited, including generic product codes.</inlineHelpText>
+        <label>Product Description</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.SAP_Material_Code__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Deviated Request Line Items</relationshipLabel>
+        <relationshipName>Request_Line_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the quantity of items you would like expedited.</inlineHelpText>
+        <label>Quantity Expediting</label>
+        <precision>6</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request__c</fullName>
+        <externalId>false</externalId>
+        <label>Request</label>
+        <referenceTo>Deviated_Lead_time_Request__c</referenceTo>
+        <relationshipName>Request_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Requested_Ship_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date you would like to receive these goods.</inlineHelpText>
+        <label>Requested Ship Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Standard_Lead_Time__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Standard lead time of this item in weeks</inlineHelpText>
+        <label>Standard Lead Time</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

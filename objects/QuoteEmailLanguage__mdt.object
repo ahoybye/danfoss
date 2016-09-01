@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>IsoLanguageCode__c</fullName>
+        <description>ISO 639-1 language code</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>ISO 639-1 language code (2 characters)</inlineHelpText>
+        <label>IsoLanguageCode</label>
+        <length>2</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesOrg__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>SalesOrg</label>
+        <length>4</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>QuoteEmailLanguage</label>
+    <pluralLabel>QuoteEmailLanguages</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,16 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<FONT face=Verdana,Helvetica,Sans-Serif>Estimado/a&nbsp;{!Contact.FirstName}</FONT>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<P><FONT face=Verdana,Helvetica,Sans-Serif>Adjuntamos un Boletín de Información de Producto (PIB). En las últimas páginas del documento, se encuentran los productos que usted ha comprado, y que están afectados por este “PIB”.</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>Si tiene alguna duda, rogamos contacte con el responsable de su cuenta.</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>Gracias y que tenga un buen día!<BR></FONT></P>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<FONT face=Verdana,Helvetica,Sans-Serif>{!Today}</FONT>]]></td>
+</tr>
+</table>

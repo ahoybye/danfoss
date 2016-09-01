@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Autosignature AT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_Letterhead_Logo_Only</letterhead>
+    <name>Autosignature AT</name>
+    <style>formalLetter</style>
+    <subject>*</subject>
+    <textOnly>Mit freundlichen Grüßen
+{!Case.OwnerFirstName} {!Case.OwnerLastName}
+Customer Service Central European Region
+
+Danfoss Ges.m.b.H
+Danfoss-Strasse 8, 2353 Guntramsdorf, Österreich
+_______________________________________________
+Achtung, neue Kontaktdaten!!!
+Tel.:     +43 1253 022 322
+E-Mail: CS@danfoss.at
+_______________________________________________
+http://www.danfoss.at
+............
+Firma: Danfoss Gesellschaft m.b.H., Rechtsform: Gesellschaft mit beschränkter Haftung, Sitz: Guntramsdorf, Firmenbuchnummer: FN 62804 i, Firmenbuchgericht: Landesgericht Wiener Neustadt, DVR-Nr. 0586773
+............
+P   Go green - keep it on the screen   J
+
+Please consider the environment before printing this e-mail.
+*****
+This message and any files transmitted with it may be confidential and are intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system.
+*****
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen {!Case.Thread_Id}</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin: 2pt 0in; font-size: 12pt;"><font face="Arial,Sans-Serif" size="3"><strong>Release to Production:&nbsp;</strong>{!PS_Customer_Request__c.Release_to_Production__c}</font></p><p class="MsoNormal" style="margin: 2pt 0in;"><font style="font-size: 12pt;"><font face="Arial,Sans-Serif"><b>Reason if No:</b>&nbsp;</font></font><font face="Arial, sans-serif">{!PS_Customer_Request__c.Rejected_Reason__c}</font></p><p class="MsoNormal" style="margin: 2pt 0in; font-size: 12pt;"><font size="3"><font face="Arial,Sans-Serif"><b>Product:</b>&nbsp;{!PS_Customer_Request__c.Material_Number__c} - {!PS_Customer_Request__c.Product__c}&nbsp;<br><b>Comments:</b>&nbsp;{!PS_Customer_Request__c.Additional_Comments__c}<span style="color: green;"></span></font></font></p><div><font size="3"><font face="Arial,Sans-Serif"><a href="{!PS_Customer_Request__c.Link}"><br></a></font></font></div><div><strong style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><a href="{!PS_Customer_Request__c.Link}">Customer Request</a></strong></div>]]></td>
+</tr>
+</table>

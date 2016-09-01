@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Solicitação de alteração</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Solicitações de alteração</value>
+    </caseValues>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que a solicitação de alteração será concluída. Este campo é usado para rastrear as solicitações de alteração que não foram concluídas antes da data de término agendada.</help>
+        <label><!-- Actual End Date --></label>
+        <name>BMCServiceDesk__Actual_End_Date__c</name>
+    </fields>
+    <fields>
+        <help>Selecione a data na qual você começará a implementar a solicitação de alteração. Este campo é usado para rastrear as solicitações de alteração que não foram iniciadas na data de início programada.</help>
+        <label><!-- Actual Start Date --></label>
+        <name>BMCServiceDesk__Actual_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para adicionar informações ao e-mail, mesmo depois de selecionar o modelo de e-mail.</help>
+        <label><!-- Additional email information --></label>
+        <name>BMCServiceDesk__Additional_email_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Tasks Closed Controller --></label>
+        <name>BMCServiceDesk__AllTaskCloseController__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se quiser criar uma solicitação de alteração pré-aprovada para assegurar a implementação rápida.</help>
+        <label><!-- Approved --></label>
+        <name>BMCServiceDesk__Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- &lt;BLANK&gt; --></label>
+        <name>BMCServiceDesk__BLANK__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir o plano de retorno para restaurar o item de configuração para seu estado inicial antes de a solicitação de alteração ser implementada.</help>
+        <label><!-- Back-out Plan --></label>
+        <name>BMCServiceDesk__Back_Out_Plan__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir detalhes do plano de retorno para restaurar o item de configuração para seu estado inicial antes de a solicitação de alteração ser implementada.</help>
+        <label><!-- Back-out Plan Details --></label>
+        <name>BMCServiceDesk__Back_out_Plan_Details__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a categoria de solicitação de alteração. As categorias permitem que você classifique a solicitação de alteração usando classificações padrão, que podem ser facilmente rastreadas para fins de relatório.</help>
+        <label><!-- Category~ --></label>
+        <name>BMCServiceDesk__Category__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a categoria de alteração para indicar se a solicitação de alteração é Secundária, Significativa ou Principal.</help>
+        <label><!-- Change Category --></label>
+        <name>BMCServiceDesk__Change_Category__c</name>
+        <picklistValues>
+            <masterLabel>Major</masterLabel>
+            <translation>Principal</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation>Secundário</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Significant</masterLabel>
+            <translation>Significativo</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir uma descrição da solicitação de alteração.</help>
+        <label><!-- Description --></label>
+        <name>BMCServiceDesk__Change_Description__c</name>
+    </fields>
+    <fields>
+        <help>Mostra o tipo de alteração em um formato gráfico.</help>
+        <label><!-- Change Flag --></label>
+        <name>BMCServiceDesk__Change_Flag__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o tipo de alteração para indicar que a solicitação de alteração seja Padrão, Normal e de Emergência.</help>
+        <label><!-- Change Type --></label>
+        <name>BMCServiceDesk__Change_Type__c</name>
+        <picklistValues>
+            <masterLabel>Emergency</masterLabel>
+            <translation>Emergência</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation>Padrão</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Change Request #+ --></label>
+        <name>BMCServiceDesk__Change_console_detail_link__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para registrar as razões para fechar a solicitação de alteração.</help>
+        <label><!-- Close Comments --></label>
+        <name>BMCServiceDesk__Close_Comments__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que a solicitação de alteração foi fechada.</help>
+        <label><!-- Closed Date --></label>
+        <name>BMCServiceDesk__Closed_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closure Category --></label>
+        <name>BMCServiceDesk__ClosureCategory__c</name>
+        <picklistValues>
+            <masterLabel>Implemented</masterLabel>
+            <translation>Implementado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partially Implemented</masterLabel>
+            <translation>Parcialmente implementado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation>Rejeitado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rolled back</masterLabel>
+            <translation>Revertido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn by requester</masterLabel>
+            <translation>Retirada pelo solicitante</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Collision Detection State --></label>
+        <name>BMCServiceDesk__CollisionDetectionState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collision --></label>
+        <name>BMCServiceDesk__Collision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliant --></label>
+        <name>BMCServiceDesk__Compliant__c</name>
+    </fields>
+    <fields>
+        <label><!-- SmartView (Beta) --></label>
+        <name>BMCServiceDesk__Deep_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Controller --></label>
+        <name>BMCServiceDesk__Dummy_Update__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a categoria de solicitação de alteração. As categorias permitem que você classifique a solicitação de alteração usando classificações padrão, que podem ser facilmente rastreadas para fins de relatório.</help>
+        <label><!-- Category --></label>
+        <name>BMCServiceDesk__FKCategory__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed By --></label>
+        <name>BMCServiceDesk__FKClosed_By__c</name>
+        <relationshipLabel><!-- Change Requests (Closed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o nível de impacto da solicitação de alteração. O nível de impacto e a urgência são usados​para calcular a prioridade da solicitação de alteração.</help>
+        <label><!-- Impact --></label>
+        <name>BMCServiceDesk__FKImpact__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Selecione o iniciador para esse registro.</help>
+        <label><!-- Initiator ID --></label>
+        <name>BMCServiceDesk__FKInitiator__c</name>
+        <relationshipLabel><!-- Change Requests (Initiator ID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>A prioridade é calculada em função dos valores de urgência e impacto que você selecionou.</help>
+        <label><!-- Priority --></label>
+        <name>BMCServiceDesk__FKPriority__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Request # --></label>
+        <name>BMCServiceDesk__FKServiceRequest__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>BMCServiceDesk__FKStaff__c</name>
+        <relationshipLabel><!-- Change Requests (Staff) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o status adequado para a solicitação de alteração. O status é usado para exibir o progresso de uma solicitação de alteração durante suas fases da abertura ao fechamento.</help>
+        <label><!-- Status --></label>
+        <lookupFilter>
+            <errorMessage><!-- Select an active status that applies to change request. --></errorMessage>
+        </lookupFilter>
+        <name>BMCServiceDesk__FKStatus__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Selecione o modelo que deseja aplicar ao registro. Os modelos permitem que você preencha previamente os campos normalmente usados em um formulário.</help>
+        <label><!-- Template --></label>
+        <name>BMCServiceDesk__FKTemplate__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a rapidez com que a solicitação de alteração precisa ser concluída. A urgência e o nível de impacto são usados para calcular a prioridade da solicitação de alteração.</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Change Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o nível de impacto da solicitação de alteração. O nível de impacto e a urgência são usados​para calcular a prioridade da solicitação de alteração.</help>
+        <label><!-- Impact~ --></label>
+        <name>BMCServiceDesk__Impact__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se a solicitação de alteração não for mais válida, mas seu registro precisar ser mantido para a conformidade com a política de retenção de registros.</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__Inactive__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para o nome do iniciador que está criando a solicitação de alteração.</help>
+        <label><!-- Initiator First Name --></label>
+        <name>BMCServiceDesk__Initiator_First_Name__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a ID de iniciador que está criando a solicitação de alteração.</help>
+        <label><!-- Initiator ID~ --></label>
+        <name>BMCServiceDesk__Initiator_ID__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o sobrenome do iniciador que está criando a solicitação de alteração.</help>
+        <label><!-- Initiator Last Name --></label>
+        <name>BMCServiceDesk__Initiator_Last_Name__c</name>
+    </fields>
+    <fields>
+        <help>O registro será aberto no Console de solicitação de alteração ou na guia Console do Remedyforce</help>
+        <label><!-- Launch Console --></label>
+        <name>BMCServiceDesk__Launch_Console__c</name>
+    </fields>
+    <fields>
+        <label><!-- LockedRecordTimestamp --></label>
+        <name>BMCServiceDesk__LockedRecordTimestamp__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a data e hora em que a solicitação de alteração foi criada.</help>
+        <label><!-- Opened Date --></label>
+        <name>BMCServiceDesk__Open_Date_Time__c</name>
+    </fields>
+    <fields>
+        <help>A prioridade é calculada em função dos valores de urgência e impacto que você selecionou.</help>
+        <label><!-- Priority~ --></label>
+        <name>BMCServiceDesk__Priority__c</name>
+    </fields>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>BMCServiceDesk__Queue__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir detalhes da razão pela qual você está criando a solicitação de alteração.</help>
+        <label><!-- Reason Details --></label>
+        <name>BMCServiceDesk__Reason_for_Change_Details__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir a razão pela qual você está criando a solicitação de alteração.</help>
+        <label><!-- Reasons --></label>
+        <name>BMCServiceDesk__Reason_for_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurrence --></label>
+        <name>BMCServiceDesk__Recurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Parent Record ID --></label>
+        <name>BMCServiceDesk__RecurringParentRecordId__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a data e hora em que o comando &quot;Ações &gt; Respondido&quot; é executado. Este campo é utilizado para registrar a data e a hora em que a equipe comunicou ao iniciador sobre a solicitação de alteração.</help>
+        <label><!-- Responded Date --></label>
+        <name>BMCServiceDesk__Responded_Date__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir detalhes de algum comentário que deseje acompanhar com a solicitação de alteração atual com base em sua revisão. Estas anotações podem incluir razões pelas quais a alteração falhou e como a falha pode ser evitada no futuro.</help>
+        <label><!-- Review Details --></label>
+        <name>BMCServiceDesk__Review_Comments_Details__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir algum comentário que deseje acompanhar com a solicitação de alteração atual com base em sua revisão. Estas anotações podem incluir razões pelas quais a alteração falhou e como a falha pode ser evitada no futuro.</help>
+        <label><!-- Review Comments --></label>
+        <name>BMCServiceDesk__Review_Comments__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que a solicitação de alteração está programada para ser revisada após a solicitação de alteração ser fechada.</help>
+        <label><!-- Review Date --></label>
+        <name>BMCServiceDesk__Review_Date__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir detalhes dos procedimentos da implementação da solicitação de alteração.</help>
+        <label><!-- Rollout Plan Details --></label>
+        <name>BMCServiceDesk__Roll_Out_Plan_Details__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir os procedimentos da implementação da solicitação de alteração.</help>
+        <label><!-- Rollout Plan --></label>
+        <name>BMCServiceDesk__Roll_Out_Plan__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que a solicitação de alteração deve ser concluída.</help>
+        <label><!-- Scheduled End --></label>
+        <name>BMCServiceDesk__Scheduled_End_Date__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que a solicitação de alteração deve ser implementada.</help>
+        <label><!-- Scheduled Start --></label>
+        <name>BMCServiceDesk__Scheduled_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled During Blackout --></label>
+        <name>BMCServiceDesk__Scheduled_during_Blackout__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a ID de equipe da equipe conectada no momento. Se necessário, você pode usar este campo para selecionar uma equipe diferente da equipe conectada no momento.</help>
+        <label><!-- Staff ID Closed By~ --></label>
+        <name>BMCServiceDesk__Staff_ID_Closed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>BMCServiceDesk__State__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o status adequado para a solicitação de alteração. O status é usado para exibir o progresso de uma solicitação de alteração durante suas fases da abertura ao fechamento.</help>
+        <label><!-- Status~ --></label>
+        <name>BMCServiceDesk__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Already Applied --></label>
+        <name>BMCServiceDesk__TemplateAlreadyApplied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Name --></label>
+        <name>BMCServiceDesk__TemplateName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Duration (minutes) --></label>
+        <name>BMCServiceDesk__Total_Duration_minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Update Count --></label>
+        <name>BMCServiceDesk__UpdateCount__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a rapidez com que a solicitação de alteração precisa ser concluída. A urgência e o nível de impacto são usados para calcular a prioridade da solicitação de alteração.</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__Urgency__c</name>
+    </fields>
+    <fields>
+        <help>Exibe o nome da fila à qual a solicitação de alteração foi atribuída por último.</help>
+        <label><!-- Last Queue --></label>
+        <name>BMCServiceDesk__queueName__c</name>
+    </fields>
+    <fields>
+        <help>Este campo conterá o valor dos primeiros 255 caracteres do campo de descrição.</help>
+        <label><!-- Short Description --></label>
+        <name>BMCServiceDesk__shortDescription__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Solicitação de alteração #</nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- This change request is closed. Reopen the change request to modify it. --></errorMessage>
+        <name>BMCServiceDesk__Cannot_Update_Closed_Change_Request</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Actual End Date must be later than Actual Start Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ActualEndDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Review Date must be later than the Actual End Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ReviewDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Scheduled End Date must be later than Scheduled Start Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ScheduledEndDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Actual End Date must be later than the Scheduled Start Date --></errorMessage>
+        <name>BMCServiceDesk__Check_ScheduledStartDate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Back_to_List --></label>
+        <name>BMCServiceDesk__Back_to_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Category_Tree --></label>
+        <name>BMCServiceDesk__Category_Tree</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_Management_Process --></label>
+        <name>BMCServiceDesk__Change_Management_Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_Manifest --></label>
+        <name>BMCServiceDesk__Change_Manifest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Change_Schedule --></label>
+        <name>BMCServiceDesk__Change_Schedule</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close --></label>
+        <name>BMCServiceDesk__Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Knowledge_Article --></label>
+        <name>BMCServiceDesk__Create_Knowledge_Article</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Knowledge_Articles --></label>
+        <name>BMCServiceDesk__Knowledge_Articles</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Launch_CI_Explorer --></label>
+        <name>BMCServiceDesk__Launch_CI_Explorer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>BMCServiceDesk__New</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Change_Record --></label>
+        <name>BMCServiceDesk__New_Change_Record</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reopen_Change --></label>
+        <name>BMCServiceDesk__Reopen_Change</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Responded --></label>
+        <name>BMCServiceDesk__Responded</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>BMCServiceDesk__Send_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Service_Targets --></label>
+        <name>BMCServiceDesk__Service_Targets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Project --></label>
+        <name>ccpe_bmc__Create_Project</name>
+    </webLinks>
+</CustomObjectTranslation>

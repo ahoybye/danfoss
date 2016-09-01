@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification for Requestor of Change after Case has been closed.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DPS_Letterhead</letterhead>
+    <name>*PS: Case Notification - Closed</name>
+    <style>freeForm</style>
+    <subject>Salesforce Case {!Case.CaseNumber} has been closed.</subject>
+    <textOnly>Hi {!Case.Requestor_of_Change__c},
+
+You requested the following change in Salesforce, Case Number {!Case.CaseNumber}.  This email is to notify you that the case has been closed.
+
+Subject: {!Case.Subject}
+
+It is listed as:
+Type: {!Case.Type}
+Priority: {!Case.Priority}
+Effecting: {!Case.Related_Object__c}
+
+
+To review your original request, please follow the link below.
+
+{!Case.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

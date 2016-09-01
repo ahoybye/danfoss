@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>RLR Form – Mail to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>RLR FORM - MAIL TO CUSTOMER</name>
+    <style>formalLetter</style>
+    <subject>Case Number: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear {!Case.Contact},
+
+Please find enclosed “Reverse Logistic Return Form” (RLR Form). This will support us to pick up the compressor from the respective site and conduct Tear Down Analysis (TDA).
+
+Kindly send us back the duly filled form for further actions from our end.
+
+In order to check the status of your case, please call us on
+0008001009289
+
+
+Best regards,
+Danfoss Customer Service Center
+
+N.B - Please reply back to this email for any further correspondence.
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

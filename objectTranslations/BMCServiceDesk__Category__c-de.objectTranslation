@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Kategorie</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Kategorien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Kategorie</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Kategorien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Kategorie</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Kategorien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Kategorie</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Kategorien</value>
+    </caseValues>
+    <fields>
+        <help>Geben Sie in diesem Feld eine kurze Bezeichnung für die Kategorie ein. Bei der Erstellung von Diagrammen oder Berichten können Sie mit diesem Feld einen Kategorie-Record im Diagramm oder Bericht darstellen.</help>
+        <label><!-- Abbreviation --></label>
+        <name>BMCServiceDesk__Abbreviation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available for Chat --></label>
+        <name>BMCServiceDesk__AvailableForChat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incidents --></label>
+        <name>BMCServiceDesk__AvailableForIncidents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Requests --></label>
+        <name>BMCServiceDesk__AvailableForServiceCatalog__c</name>
+    </fields>
+    <fields>
+        <help>Geben Sie in diesem Feld eine Kategoriebeschreibung mit nicht mehr als 1000 Zeichen ein. Beim Zeigen auf diese Kategorie in der Kategoriestruktur wird eine Beschreibung als Quickinfo angezeigt.</help>
+        <label><!-- Category Description --></label>
+        <name>BMCServiceDesk__Category_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contains Incident children categories --></label>
+        <name>BMCServiceDesk__Contains_Incident_children_categories__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contains SR children categories --></label>
+        <name>BMCServiceDesk__Contains_SR_children_categories__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display In SelfService --></label>
+        <name>BMCServiceDesk__Display_In_SelfService__c</name>
+    </fields>
+    <fields>
+        <help>Wählen Sie dieses Feld, um den Record aus dem  RF Category Migration Pentaho Paket zu exportieren</help>
+        <label><!-- Tag for Export --></label>
+        <name>BMCServiceDesk__Export__c</name>
+    </fields>
+    <fields>
+        <help>Wählen Sie in der Liste der Optionen den Kategorietyp der Nachricht aus. Der Kategorietyp dient zum Gruppieren ähnlicher Kategorien, die häufig für Berichte verwendet werden.</help>
+        <label><!-- Category Type --></label>
+        <name>BMCServiceDesk__FKCategoryType__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Content Import --></label>
+        <name>BMCServiceDesk__FKContentImport__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Wählen Sie in der Liste der Optionen die Kategorie, die als übergeordnete Kategorie definiert werden soll. Nach Auswahl einer übergeordneten Kategorie wird die aktuelle Kategorie ihr automatisch untergeordnet.</help>
+        <label><!-- Parent Category --></label>
+        <name>BMCServiceDesk__FKParentCategory__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Wählen Sie in der Liste der Optionen die Dringlichkeit, die Sie bei der Erstellung eines Incident mit der Kategorie zuweisen möchten. Der Systemadministrator weist der Kategorie abhängig von ihrer Wichtigkeit eine Dringlichkeitsstufe zu.</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Has Children --></label>
+        <name>BMCServiceDesk__HasChildren__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence Id --></label>
+        <name>BMCServiceDesk__Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Requests --></label>
+        <name>BMCServiceDesk__UnAvailableForChangeRequests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problems --></label>
+        <name>BMCServiceDesk__UnAvailableForProblems__c</name>
+    </fields>
+    <fields>
+        <label><!-- Releases --></label>
+        <name>BMCServiceDesk__UnAvailableForReleases__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tasks --></label>
+        <name>BMCServiceDesk__UnAvailableForTasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broadcasts --></label>
+        <name>BMCServiceDesk__UnAvailableforBroadcasts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Under Review --></label>
+        <name>BMCServiceDesk__UnderReview__c</name>
+    </fields>
+    <fields>
+        <help>Wählen Sie in der Liste der Optionen den Kategorietyp der Nachricht aus. Der Kategorietyp dient zum Gruppieren ähnlicher Kategorien, die häufig für Berichte verwendet werden.</help>
+        <label><!-- Category Type~ --></label>
+        <name>BMCServiceDesk__categoryType_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Children --></label>
+        <name>BMCServiceDesk__children__c</name>
+    </fields>
+    <fields>
+        <help>Geben Sie in diesem Feld an, nach wie vielen Stunden ein geschlossener Incident erneut vorgelegt werden soll. Diese Informationen werden automatisch den Daten hinzugefügt, die beim Schließen eines Incident mit der aktuellen Kategorie gespeichert werden.</help>
+        <label><!-- After --></label>
+        <name>BMCServiceDesk__followUpAfter__c</name>
+    </fields>
+    <fields>
+        <help>Wählen Sie dieses Feld, wenn der Kategorie-Record nicht mehr gültig ist, jedoch aus Gründen der Konformität mit den Archivierungsrichtlinien erhalten bleiben muss.</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__inactive__c</name>
+    </fields>
+    <fields>
+        <help>Wählen Sie in der Liste der Optionen die Kategorie, die als übergeordnete Kategorie definiert werden soll. Nach Auswahl einer übergeordneten Kategorie wird die aktuelle Kategorie ihr automatisch untergeordnet.</help>
+        <label><!-- Parent Category~ --></label>
+        <name>BMCServiceDesk__parentCategory_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Tree --></label>
+        <name>BMCServiceDesk__parentTree__c</name>
+    </fields>
+    <fields>
+        <help>Wählen Sie dieses Feld zur Wiedervorlage eines Incidents, wenn ihm die aktuelle Kategorie zugewiesen ist. Diese Incidents werden nach dem Schließen erneut vorgelegt. Im Feld &quot;Nach Stunden&quot; wird angegeben, wann dies geschieht.</help>
+        <label><!-- Follow Up --></label>
+        <name>BMCServiceDesk__requireFollowUp__c</name>
+    </fields>
+    <fields>
+        <help>Wählen Sie in der Liste der Optionen die Dringlichkeit, die Sie bei der Erstellung eines Incident mit der Kategorie zuweisen möchten. Der Systemadministrator weist der Kategorie abhängig von ihrer Wichtigkeit eine Dringlichkeitsstufe zu.</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__urgency_Id__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Kategorie</nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- Please enter Category. --></errorMessage>
+        <name>BMCServiceDesk__CategoryId_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A record with this Category already exists. Enter a unique Category. --></errorMessage>
+        <name>BMCServiceDesk__Unique_Category_Id</name>
+    </validationRules>
+</CustomObjectTranslation>

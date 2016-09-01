@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Additional Field Values --></label>
+        <name>NVMContactWorld__AdditionalFieldValues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agent --></label>
+        <name>NVMContactWorld__Agent__c</name>
+        <relationshipLabel><!-- Interaction Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CallObjectIdentifier --></label>
+        <name>NVMContactWorld__CallObjectIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Object Id --></label>
+        <name>NVMContactWorld__CustomObjectId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Search Results --></label>
+        <name>NVMContactWorld__InitialSearchResults__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related To --></label>
+        <name>NVMContactWorld__RelatedTo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Stamp --></label>
+        <name>NVMContactWorld__TimeStamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>NVMContactWorld__Type__c</name>
+        <picklistValues>
+            <masterLabel>Consult</masterLabel>
+            <translation><!-- Consult --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deliver</masterLabel>
+            <translation><!-- Deliver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transfer</masterLabel>
+            <translation><!-- Transfer --></translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Event type must be either &apos;Deliver&apos;, &apos;Transfer&apos; or &apos;Consult&apos; --></errorMessage>
+        <name>NVMContactWorld__Event_Type_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

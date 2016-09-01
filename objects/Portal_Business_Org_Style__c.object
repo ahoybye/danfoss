@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Business_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Org</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NumberOfItems__c</fullName>
+        <description>number of items to show in each panel on the home page. Used in PartnerPortalHomeComponentCtrl</description>
+        <externalId>false</externalId>
+        <label>NumberOfItems</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stylesheet_Resource__c</fullName>
+        <externalId>false</externalId>
+        <label>Stylesheet Resource</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Terms_and_Conditions_Visualforce_Page__c</fullName>
+        <externalId>false</externalId>
+        <label>Terms and Conditions Visualforce Page</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

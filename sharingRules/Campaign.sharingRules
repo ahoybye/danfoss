@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>PS_Sharing_All_Power_Solutions_Read_Only</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>PS: Sharing All Power Solutions Read Only</label>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Danfoss_PS</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>PS_Sharing_Marcom_Read_Write</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>PS: Sharing Marcom Read/Write</label>
+        <sharedTo>
+            <role>CRM_MarketingPS</role>
+        </sharedTo>
+        <sharedFrom>
+            <group>Danfoss_PS</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

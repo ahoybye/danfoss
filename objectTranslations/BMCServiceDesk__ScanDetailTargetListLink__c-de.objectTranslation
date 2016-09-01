@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Scan Detail Target List Link --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Scan Detail --></label>
+        <name>BMCServiceDesk__FKScanDetail__c</name>
+        <relationshipLabel><!-- Scan Detail Target List Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Scan Target List --></label>
+        <name>BMCServiceDesk__FKScanTargetList__c</name>
+        <relationshipLabel><!-- Scan Detail Links --></relationshipLabel>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Name --></nameFieldLabel>
+</CustomObjectTranslation>

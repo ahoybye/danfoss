@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>CC_Beta_Access__c</fullName>
+        <externalId>false</externalId>
+        <label>CC_Beta_Access</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Allocated_Override_Load__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Allocated Override Load</label>
+        <summarizedField>project_cloud__Allocation_Group__c.project_cloud__Load_Override__c</summarizedField>
+        <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Allocation_Group_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Allocation Groups</label>
+        <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Available_Load__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>MAX(1 - project_cloud__Allocated_Override_Load__c, 0.0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Available Load</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Balanced_Allocations_Test__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Deprecated field - Do not use</description>
+        <externalId>false</externalId>
+        <label>Deprecated</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Balanced_Allocations__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of allocation groups that do not have a load override</description>
+        <externalId>false</externalId>
+        <label>Balanced Allocations</label>
+        <summaryFilterItems>
+            <field>project_cloud__Allocation_Group__c.project_cloud__Load_Override__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Balanced_Hours_Day__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>(project_cloud__Project_Task__r.project_cloud__Estimated_Hours__c * project_cloud__Available_Load__c) / project_cloud__Project_Task__r.project_cloud__Working_Total__c /*(Project_Task__r.Length__c - Project_Task__r.Non_Working__c)*/</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Balanced Hours Per Day (Calculated)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>project_cloud__End__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>project_cloud__Project_Task__r.project_cloud__End__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Fully_Allocated_Groups__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Fully Allocated Groups</label>
+        <summaryFilterItems>
+            <field>project_cloud__Allocation_Group__c.project_cloud__Fully_Allocated__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Fully_Allocated__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>project_cloud__Allocation_Group_Count__c &gt; 0 &amp;&amp; project_cloud__Fully_Allocated_Groups__c == project_cloud__Allocation_Group_Count__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fully Allocated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Hours_Day__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>project_cloud__Project_Task__r.project_cloud__Estimated_Hours__c / project_cloud__Project_Task__r.project_cloud__Working_Total__c /*(Project_Task__r.Length__c - Project_Task__r.Non_Working__c)*/</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Per Day (Calculated)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Hours_Worked__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hours Worked</label>
+        <summarizedField>project_cloud__Allocation_Group__c.project_cloud__Hours_Worked__c</summarizedField>
+        <summaryForeignKey>project_cloud__Allocation_Group__c.project_cloud__Allocation_Summary__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Load_Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(project_cloud__Balanced_Allocations__c &gt; 0.0, project_cloud__Available_Load__c / project_cloud__Balanced_Allocations__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Load Per Unit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Project_Task__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Project Task</label>
+        <referenceTo>project_cloud__Project_Task__c</referenceTo>
+        <relationshipLabel>Allocation Summaries</relationshipLabel>
+        <relationshipName>Allocation_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Project__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Project</label>
+        <referenceTo>project_cloud__Project__c</referenceTo>
+        <relationshipLabel>Allocation Summaries</relationshipLabel>
+        <relationshipName>Allocation_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>project_cloud__Start__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>project_cloud__Project_Task__r.project_cloud__Start__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start (Calculated)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+</CustomObject>

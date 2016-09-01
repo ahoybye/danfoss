@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__Approval_Method__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Generate Exceptions</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Approved_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Approved Count</label>
+        <summaryFilterItems>
+            <field>BMCServiceDesk__Normalization_Transaction_Master__c.BMCServiceDesk__Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </summaryFilterItems>
+        <summaryForeignKey>BMCServiceDesk__Normalization_Transaction_Master__c.BMCServiceDesk__FKNormalization_Metadata__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Field_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Field Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Object_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Object Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Pending_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pending Count</label>
+        <summaryFilterItems>
+            <field>BMCServiceDesk__Normalization_Transaction_Master__c.BMCServiceDesk__Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </summaryFilterItems>
+        <summaryForeignKey>BMCServiceDesk__Normalization_Transaction_Master__c.BMCServiceDesk__FKNormalization_Metadata__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+</CustomObject>

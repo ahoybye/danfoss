@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpe_r__Current_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The running total of how many hours the client has used in the time period</description>
+        <externalId>false</externalId>
+        <label>Current Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Current_Spend__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The running total of how much spend the client has had in the time period</description>
+        <externalId>false</externalId>
+        <label>Current Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Hours_Balance_Remaining__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Line_Item_Total_Hours__c - ccpe_r__Current_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours Balance Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Hours_From_Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The retainer hours taken from the client account at the start of the time period</description>
+        <externalId>false</externalId>
+        <label>Hours From Criteria</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Line_Item_Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The line item criteria record this line item was generated from</description>
+        <externalId>false</externalId>
+        <label>Line Item Criteria</label>
+        <referenceTo>ccpe_r__Line_Item_Criteria__c</referenceTo>
+        <relationshipLabel>Retainer Line Items</relationshipLabel>
+        <relationshipName>Retainer_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Line_Item_Total_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total amount of retainer hours available for the time period including any rolled over hours</description>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Hours_From_Criteria__c + ccpe_r__Rolled_Over_Hours__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Line Item Total Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Line_Item_Total_Spend__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total amount of the retainer available for the time period including any rolled over amounts</description>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Spend_From_Criteria__c + ccpe_r__Rolled_Over_Spend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Line Item Total Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Previous_Line_Item__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Line Item from which this was rolled over</description>
+        <externalId>false</externalId>
+        <label>Previous Line Item</label>
+        <referenceTo>ccpe_r__Retainer_Line_Item__c</referenceTo>
+        <relationshipLabel>Retainer Line Items</relationshipLabel>
+        <relationshipName>Retainer_Line_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Retainer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The retainer that the line item is related to</description>
+        <externalId>false</externalId>
+        <label>Retainer</label>
+        <referenceTo>ccpe_r__Retainer__c</referenceTo>
+        <relationshipLabel>Retainer Line Items</relationshipLabel>
+        <relationshipName>Retainer_Line_Items</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Rolled_Over_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The hours of retainer rolled over from the previous time period if any</description>
+        <externalId>false</externalId>
+        <label>Rolled Over Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Rolled_Over_Spend__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount of retainer rolled over from the previous time period if any</description>
+        <externalId>false</externalId>
+        <label>Rolled Over Spend</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Spend_Balance_Remaining__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Line_Item_Total_Spend__c -  ccpe_r__Current_Spend__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Spend Balance Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Spend_From_Criteria__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount taken from the line item criteria at the start of the time period</description>
+        <externalId>false</externalId>
+        <label>Spend From Criteria</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date signifies the start date of the retainer line item record, this is recommended to be set to the first day of the week, month or quarter</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__isActive__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ccpe_r__Start_Date__c &lt;= TODAY() &amp;&amp;
+IF(ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&apos;Week&apos;),
+   ( TODAY() &lt; (ccpe_r__Start_Date__c + 7) ),
+   IF(ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&apos;Month&apos;),
+      ( MONTH(ccpe_r__Start_Date__c) == MONTH(TODAY())  &amp;&amp; YEAR(ccpe_r__Start_Date__c) == Year(TODAY())),
+      IF(ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&apos;Quarter&apos;),
+         ( 0 &lt;= ( MONTH(TODAY()) - MONTH(ccpe_r__Start_Date__c) ) &amp;&amp; ( MONTH(TODAY()) - MONTH(ccpe_r__Start_Date__c) ) &lt; 3),
+         ISPICKVAL(ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__r.ccpe_r__Time_Period__c,&apos;One Time&apos;)
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>ccpe_r__Cannot_Reference_Newer_Line_Item</fullName>
+        <active>true</active>
+        <description>The Previous Line Item must have started at an earlier date than this Line Item</description>
+        <errorConditionFormula>ccpe_r__Previous_Line_Item__r.ccpe_r__Start_Date__c &gt;= ccpe_r__Start_Date__c</errorConditionFormula>
+        <errorDisplayField>ccpe_r__Previous_Line_Item__c</errorDisplayField>
+        <errorMessage>Cannot reference a newer Line Item</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_r__Cannot_Reference_Self</fullName>
+        <active>true</active>
+        <description>Line Items cannot reference themselves</description>
+        <errorConditionFormula>ccpe_r__Previous_Line_Item__c == Id &amp;&amp; Id != null</errorConditionFormula>
+        <errorDisplayField>ccpe_r__Previous_Line_Item__c</errorDisplayField>
+        <errorMessage>A Line Item cannot reference itself as the previous Line Item</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpe_r__Retainer_Must_Be_Parent_Of_Criteria</fullName>
+        <active>true</active>
+        <description>The referenced Retainer must be the parent of the referenced Line Item Criteria</description>
+        <errorConditionFormula>ccpe_r__Retainer__c != null &amp;&amp; (ccpe_r__Retainer__c != ccpe_r__Line_Item_Criteria__r.ccpe_r__Retainer__c)</errorConditionFormula>
+        <errorDisplayField>ccpe_r__Retainer__c</errorDisplayField>
+        <errorMessage>Only the parent Retainer of the Line Item Criteria may be selected</errorMessage>
+    </validationRules>
+</CustomObject>

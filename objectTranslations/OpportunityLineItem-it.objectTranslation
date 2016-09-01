@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label>Concorrente Prezzo approssimativo</label>
+        <name>Approx_Competitor_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comp Pricing Percentage --></label>
+        <name>Comp_Pricing_Percentage__c</name>
+    </fields>
+    <fields>
+        <label>Concorrente</label>
+        <name>Competitor__c</name>
+        <picklistValues>
+            <masterLabel>3B6</masterLabel>
+            <translation><!-- 3B6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Actia</masterLabel>
+            <translation><!-- Actia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amca</masterLabel>
+            <translation><!-- Amca --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arens</masterLabel>
+            <translation><!-- Arens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Axiomatic</masterLabel>
+            <translation><!-- Axiomatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bauser</masterLabel>
+            <translation><!-- Bauser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bondioli &amp; Pavesi</masterLabel>
+            <translation><!-- Bondioli &amp; Pavesi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bosch Rexroth</masterLabel>
+            <translation><!-- Bosch Rexroth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brevini</masterLabel>
+            <translation><!-- Brevini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brosa</masterLabel>
+            <translation><!-- Brosa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bucher</masterLabel>
+            <translation><!-- Bucher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH Products</masterLabel>
+            <translation><!-- CH Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caldaro</masterLabel>
+            <translation><!-- Caldaro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Captive</masterLabel>
+            <translation><!-- Captive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Casappa</masterLabel>
+            <translation><!-- Casappa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Command Controls</masterLabel>
+            <translation><!-- Command Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concentric</masterLabel>
+            <translation><!-- Concentric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CrossControl</masterLabel>
+            <translation><!-- CrossControl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Curtis Instruments</masterLabel>
+            <translation><!-- Curtis Instruments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danaher</masterLabel>
+            <translation><!-- Danaher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>David Brown</masterLabel>
+            <translation><!-- David Brown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta</masterLabel>
+            <translation><!-- Delta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeltaTech Controls</masterLabel>
+            <translation><!-- DeltaTech Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinamic Oil</masterLabel>
+            <translation><!-- Dinamic Oil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dynamatic</masterLabel>
+            <translation><!-- Dynamatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EIA Electronics</masterLabel>
+            <translation><!-- EIA Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Easy Control</masterLabel>
+            <translation><!-- Easy Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eaton</masterLabel>
+            <translation><!-- Eaton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elobau</masterLabel>
+            <translation><!-- Elobau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europarts (EP)</masterLabel>
+            <translation><!-- Europarts (EP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FW Murphy</masterLabel>
+            <translation><!-- FW Murphy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flucom</masterLabel>
+            <translation><!-- Flucom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FluidPress</masterLabel>
+            <translation><!-- FluidPress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Galtech</masterLabel>
+            <translation><!-- Galtech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gessmann</masterLabel>
+            <translation><!-- Gessmann --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gidroprivod</masterLabel>
+            <translation><!-- Gidroprivod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gomel Hydroprivod</masterLabel>
+            <translation><!-- Gomel Hydroprivod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Graf-Syteco</masterLabel>
+            <translation><!-- Graf-Syteco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grayhill</masterLabel>
+            <translation><!-- Grayhill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guizhou Fengyang</masterLabel>
+            <translation><!-- Guizhou Fengyang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guorui Hydraulic Control (GRH)</masterLabel>
+            <translation><!-- Guorui Hydraulic Control (GRH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HED</masterLabel>
+            <translation><!-- HED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPI</masterLabel>
+            <translation><!-- HPI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hansa TMP</masterLabel>
+            <translation><!-- Hansa TMP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawe</masterLabel>
+            <translation><!-- Hawe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hefei Changyuan (HCHC)</masterLabel>
+            <translation><!-- Hefei Changyuan (HCHC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hefei SJ Hydraulic</masterLabel>
+            <translation><!-- Hefei SJ Hydraulic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hema</masterLabel>
+            <translation><!-- Hema --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hesmor</masterLabel>
+            <translation><!-- Hesmor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Country Tek</masterLabel>
+            <translation><!-- High Country Tek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High-Tech Fluid Power</masterLabel>
+            <translation><!-- High-Tech Fluid Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hirschmann</masterLabel>
+            <translation><!-- Hirschmann --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Horde</masterLabel>
+            <translation><!-- Horde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Huade</masterLabel>
+            <translation><!-- Huade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Huai’an Guoye</masterLabel>
+            <translation><!-- Huai’an Guoye --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Husco</masterLabel>
+            <translation><!-- Husco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydac</masterLabel>
+            <translation><!-- Hydac --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyde</masterLabel>
+            <translation><!-- Hyde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraforce</masterLabel>
+            <translation><!-- Hydraforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydreco</masterLabel>
+            <translation><!-- Hydreco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HydroControl</masterLabel>
+            <translation><!-- HydroControl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrocontrols</masterLabel>
+            <translation><!-- Hydrocontrols --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrosila</masterLabel>
+            <translation><!-- Hydrosila --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyest Corporation</masterLabel>
+            <translation><!-- Hyest Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Hydraulics</masterLabel>
+            <translation><!-- Integrated Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inter Control</masterLabel>
+            <translation><!-- Inter Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intermot (NHM)</masterLabel>
+            <translation><!-- Intermot (NHM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iskra</masterLabel>
+            <translation><!-- Iskra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J.R. Merritt</masterLabel>
+            <translation><!-- J.R. Merritt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jeil Hydraulics (Eaton)</masterLabel>
+            <translation><!-- Jeil Hydraulics (Eaton) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jetter</masterLabel>
+            <translation><!-- Jetter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jihostroj</masterLabel>
+            <translation><!-- Jihostroj --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jinjiang Huayuan</masterLabel>
+            <translation><!-- Jinjiang Huayuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kar-Tech</masterLabel>
+            <translation><!-- Kar-Tech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kawasaki</masterLabel>
+            <translation><!-- Kawasaki --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kayaba</masterLabel>
+            <translation><!-- Kayaba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kersen</masterLabel>
+            <translation><!-- Kersen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kersen Hydraulic</masterLabel>
+            <translation><!-- Kersen Hydraulic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kongsberg</masterLabel>
+            <translation><!-- Kongsberg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kovrov KMZ</masterLabel>
+            <translation><!-- Kovrov KMZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOG</masterLabel>
+            <translation><!-- LOG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leica</masterLabel>
+            <translation><!-- Leica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LiKe</masterLabel>
+            <translation><!-- LiKe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liebherr</masterLabel>
+            <translation><!-- Liebherr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifan</masterLabel>
+            <translation><!-- Lifan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linde</masterLabel>
+            <translation><!-- Linde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liyuan</masterLabel>
+            <translation><!-- Liyuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord</masterLabel>
+            <translation><!-- Lord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M+S</masterLabel>
+            <translation><!-- M+S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marchesini</masterLabel>
+            <translation><!-- Marchesini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marzocchi Pompe</masterLabel>
+            <translation><!-- Marzocchi Pompe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitron</masterLabel>
+            <translation><!-- Mitron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moba</masterLabel>
+            <translation><!-- Moba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morey</masterLabel>
+            <translation><!-- Morey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Müller Elektronik</masterLabel>
+            <translation><!-- Müller Elektronik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nabtesco</masterLabel>
+            <translation><!-- Nabtesco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nachi-Fujikoshi</masterLabel>
+            <translation><!-- Nachi-Fujikoshi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nimco</masterLabel>
+            <translation><!-- Nimco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ningbo Donghai</masterLabel>
+            <translation><!-- Ningbo Donghai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ningbo Yuzhou</masterLabel>
+            <translation><!-- Ningbo Yuzhou --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nishina</masterLabel>
+            <translation><!-- Nishina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM Controls</masterLabel>
+            <translation><!-- OEM Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ognibene</masterLabel>
+            <translation><!-- Ognibene --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oilgear</masterLabel>
+            <translation><!-- Oilgear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldsbergs</masterLabel>
+            <translation><!-- Oldsbergs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Olsbergs</masterLabel>
+            <translation><!-- Olsbergs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Supplier</masterLabel>
+            <translation><!-- Other Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Otto</masterLabel>
+            <translation><!-- Otto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P-Q Controls</masterLabel>
+            <translation><!-- P-Q Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMP Industries</masterLabel>
+            <translation><!-- PMP Industries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSM Hydraulics</masterLabel>
+            <translation><!-- PSM Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pal-FIn</masterLabel>
+            <translation><!-- Pal-FIn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parker</masterLabel>
+            <translation><!-- Parker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Penny+Giles</masterLabel>
+            <translation><!-- Penny+Giles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phoenix International</masterLabel>
+            <translation><!-- Phoenix International --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poclain</masterLabel>
+            <translation><!-- Poclain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poclain (Axial Pump)</masterLabel>
+            <translation><!-- Poclain (Axial Pump) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT Fluid</masterLabel>
+            <translation><!-- QT Fluid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RM Michaelides</masterLabel>
+            <translation><!-- RM Michaelides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radk-Tech</masterLabel>
+            <translation><!-- Radk-Tech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roquet</masterLabel>
+            <translation><!-- Roquet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKF</masterLabel>
+            <translation><!-- SKF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPN</masterLabel>
+            <translation><!-- SPN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STW Technic</masterLabel>
+            <translation><!-- STW Technic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salami</masterLabel>
+            <translation><!-- Salami --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sam Hydraulic (Brevini)</masterLabel>
+            <translation><!-- Sam Hydraulic (Brevini) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sauer-Danfoss</masterLabel>
+            <translation><!-- Sauer-Danfoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shimadzu</masterLabel>
+            <translation><!-- Shimadzu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sichuan Changyuan</masterLabel>
+            <translation><!-- Sichuan Changyuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sinjin</masterLabel>
+            <translation><!-- Sinjin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smart Control</masterLabel>
+            <translation><!-- Smart Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun</masterLabel>
+            <translation><!-- Sun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun Hydraulics</masterLabel>
+            <translation><!-- Sun Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SunBun</masterLabel>
+            <translation><!-- SunBun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunsource</masterLabel>
+            <translation><!-- Sunsource --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sure Grip</masterLabel>
+            <translation><!-- Sure Grip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTCONTROL</masterLabel>
+            <translation><!-- TTCONTROL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tecnord</masterLabel>
+            <translation><!-- Tecnord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teleflex</masterLabel>
+            <translation><!-- Teleflex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Topcon</masterLabel>
+            <translation><!-- Topcon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trimble</masterLabel>
+            <translation><!-- Trimble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultra-MSI</masterLabel>
+            <translation><!-- Ultra-MSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown Supplier</masterLabel>
+            <translation><!-- Unknown Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valmova</masterLabel>
+            <translation><!-- Valmova --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ventury</masterLabel>
+            <translation><!-- Ventury --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wachendorff</masterLabel>
+            <translation><!-- Wachendorff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walvoil</masterLabel>
+            <translation><!-- Walvoil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White</masterLabel>
+            <translation><!-- White --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Williams Controls</masterLabel>
+            <translation><!-- Williams Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xiangtan Ruilong</masterLabel>
+            <translation><!-- Xiangtan Ruilong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yongquing</masterLabel>
+            <translation><!-- Yongquing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zhenjiang</masterLabel>
+            <translation><!-- Zhenjiang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ifm</masterLabel>
+            <translation><!-- ifm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ziHYD (Thoth)</masterLabel>
+            <translation><!-- ziHYD (Thoth) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Material Number --></label>
+        <name>Customer_Material_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Requests --></label>
+        <name>Customer_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Percent --></label>
+        <name>Discount_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distributor Sell Price --></label>
+        <name>Distributor_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Establish Schedule --></label>
+        <name>Establish_Schedule__c</name>
+    </fields>
+    <fields>
+        <label><!-- In Progress Amount --></label>
+        <name>In_Progress_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inquiry Number --></label>
+        <name>Inquiry_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lost Amount --></label>
+        <name>Lost_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mark as Lost --></label>
+        <name>Mark_as_Lost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Net Win Oppty Line Item --></label>
+        <name>Net_Win_Oppty_Line_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Amount --></label>
+        <name>Open_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PO Receipt Date --></label>
+        <name>PO_Receipt_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Projected Win Oppty Line Item --></label>
+        <name>Projected_Win_Oppty_Line_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Price --></label>
+        <name>Proposed_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Currency --></label>
+        <name>SAP_Currency__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please note - This may not be a list Price - If this price and the Current SAP Price are the same then this is not a list price but a special net price. --></help>
+        <label><!-- SAP List Price --></label>
+        <name>SAP_List_Price__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current SAP price for this customer is shown if a list and discount is in place. --></help>
+        <label><!-- SAP Price --></label>
+        <name>SAP_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Won Amount --></label>
+        <name>Won_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Phase --></label>
+        <name>ccpe_ocp__Project_Phase__c</name>
+        <relationshipLabel><!-- Opportunity Products --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- The Product Quantity should not be negative. Please enter a positive value. --></errorMessage>
+        <name>CE_Opp_Product_Quantity_Positive_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Sales Price should not be negative. Please enter a positive value. --></errorMessage>
+        <name>CE_Opp_Sales_Price_Positive_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- It is not possible to edit the Quantity or Sales Price on a Closed Opportunity. --></errorMessage>
+        <name>Opportunity_Closed_No_Edit_Quantity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot have a Product containing &quot;TBD&quot; when Opportunity is Closed Won or Closed Lost --></errorMessage>
+        <name>TBD_Product</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Filter_Customer_Requests_OLI --></label>
+        <name>Filter_Customer_Requests_OLI</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Manage_Product_Groups --></label>
+        <name>Manage_Product_Groups</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Manage_Products --></label>
+        <name>Manage_Products</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Refresh_SAP_Price --></label>
+        <name>Refresh_SAP_Price</name>
+    </webLinks>
+</CustomObjectTranslation>

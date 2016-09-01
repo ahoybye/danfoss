@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Account_Manager</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Manager Name</shortDescription>
+        <value>Account Manager</value>
+    </labels>
+    <labels>
+        <fullName>Additional_Description</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Additional Description</shortDescription>
+        <value>Additional Description</value>
+    </labels>
+    <labels>
+        <fullName>Annual_Quantity</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Annual Quantity</shortDescription>
+        <value>Annual Quantity</value>
+    </labels>
+    <labels>
+        <fullName>Back</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>Bulletin_Delivery_Job_Processed</fullName>
+        <categories>Bulletin Delivery Job Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bulletin Delivery Job Processed</shortDescription>
+        <value>Bulletin Delivery job has been processed.</value>
+    </labels>
+    <labels>
+        <fullName>CancelButton</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>CloseButton</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Close Button</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>Comatrol_Part_Number</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Comatrol Part Number</shortDescription>
+        <value>Comatrol Part Number</value>
+    </labels>
+    <labels>
+        <fullName>Comments</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Comments</shortDescription>
+        <value>Comments</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Part_Number</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Part Number</shortDescription>
+        <value>Customer Part Number</value>
+    </labels>
+    <labels>
+        <fullName>Customer_Product_Category</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Customer Product Category</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>Danfoss_Part_Number</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Danfoss Part Number</shortDescription>
+        <value>Danfoss Part Number</value>
+    </labels>
+    <labels>
+        <fullName>Danfoss_segment</fullName>
+        <categories>Opportunity</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Danfoss segment</shortDescription>
+        <value>Danfoss segment</value>
+    </labels>
+    <labels>
+        <fullName>Description</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Description</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>Design</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Design</shortDescription>
+        <value>Design</value>
+    </labels>
+    <labels>
+        <fullName>DesignTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Design Topic</shortDescription>
+        <value>Design</value>
+    </labels>
+    <labels>
+        <fullName>Distributor_Sell_Price</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Distributor Sell Price</shortDescription>
+        <value>Distributor Sell Price</value>
+    </labels>
+    <labels>
+        <fullName>Download</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Download</shortDescription>
+        <value>Download</value>
+    </labels>
+    <labels>
+        <fullName>Email_template_not_defined</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email template not defined</shortDescription>
+        <value>Email Template is not defined for this account</value>
+    </labels>
+    <labels>
+        <fullName>Err1Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Err1Message</shortDescription>
+        <value>Error: Your search results 100 or more items. Please narrow your search.</value>
+    </labels>
+    <labels>
+        <fullName>Err2Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Err2Message</shortDescription>
+        <value>No records to display.</value>
+    </labels>
+    <labels>
+        <fullName>Err3Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Err3Message</shortDescription>
+        <value>Material is exclusive to another customer.</value>
+    </labels>
+    <labels>
+        <fullName>Error_Msg_For_Multiple_Portal_Widget_Record_Match_Found_For_Same_Component_Type</fullName>
+        <categories>Portal Widget Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Msg For Multiple Portal Widget Record Match Found For Same Component Type</shortDescription>
+        <value>There is another panel record for the [Region] region displaying the component type [Component Type].  Please contact partnerlink@danfoss.com for assistance.</value>
+    </labels>
+    <labels>
+        <fullName>Error_Msg_For_No_Portal_Widget_Record_Match_Found_Portal_Home_Page</fullName>
+        <categories>Portal Widget Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No match found</shortDescription>
+        <value>There no widget records for the Position = [Position], Region = default or Region = [Region], Business Org = [Business Org], Component Type = [Component Type] and record type = panel. There should be one record for the [Position] position for this region/business org. Please contact partnerlink@danfoss.com for assistance</value>
+    </labels>
+    <labels>
+        <fullName>FAQ</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Title</shortDescription>
+        <value>FAQ</value>
+    </labels>
+    <labels>
+        <fullName>FAQSearchPlaceholder</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Search Placeholder</shortDescription>
+        <value>What are you looking for?</value>
+    </labels>
+    <labels>
+        <fullName>FAQSubmitLink</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Submit Link</shortDescription>
+        <value>Didn&apos;t find what you were looking for?</value>
+    </labels>
+    <labels>
+        <fullName>FAQSubmitTitle</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Submit Title</shortDescription>
+        <value>Didn&apos;t find what you were looking for?</value>
+    </labels>
+    <labels>
+        <fullName>FAQTextPlaceholder</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Text Placeholder</shortDescription>
+        <value>Please ask your question here after selecting a topic</value>
+    </labels>
+    <labels>
+        <fullName>FAQThanksText</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Thanks Text</shortDescription>
+        <value>Thank you for your question!</value>
+    </labels>
+    <labels>
+        <fullName>FAQThanksTitle</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Thanks Title</shortDescription>
+        <value>Thanks</value>
+    </labels>
+    <labels>
+        <fullName>FindProductsLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FindProductsLabel</shortDescription>
+        <value>Find Products</value>
+    </labels>
+    <labels>
+        <fullName>ImageBank</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ImageBank</shortDescription>
+        <value>Product Images</value>
+    </labels>
+    <labels>
+        <fullName>ImageBankPageSummary</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Image Bank Page Summary</shortDescription>
+        <value>Use this image bank to request product and application photos for use in your promotional materials.</value>
+    </labels>
+    <labels>
+        <fullName>ImageRequestInfo</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Image Request Info</shortDescription>
+        <value>Please provide details about where you will use these requested images, and upload your document for approval. Details may include the type of promotional material (brochures, flyer, poster, etc.), the timing of distribution, the audience, etc.</value>
+    </labels>
+    <labels>
+        <fullName>ImageRequestPlaceholder</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Image Request Placeholder</shortDescription>
+        <value>Tell us about your intended use for the images</value>
+    </labels>
+    <labels>
+        <fullName>ImageRequestUpload</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Image Request Upload</shortDescription>
+        <value>Please upload your document that you plan to use Danfoss images, graphics or logos on.</value>
+    </labels>
+    <labels>
+        <fullName>ImagesTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Images Topic</shortDescription>
+        <value>Images</value>
+    </labels>
+    <labels>
+        <fullName>InfoHubTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ InfoHub Topic</shortDescription>
+        <value>Information Hub</value>
+    </labels>
+    <labels>
+        <fullName>Information_Hub</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Information Hub</shortDescription>
+        <value>Information Hub</value>
+    </labels>
+    <labels>
+        <fullName>LiteratureTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Literature Topic</shortDescription>
+        <value>Literature</value>
+    </labels>
+    <labels>
+        <fullName>LogoBankPageSummary</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Logo Bank Page Summary</shortDescription>
+        <value>Lorem ipsum dolor sit amet, magna sed. Et vel fuga vivamus elementum velit amet, libero nulla, porttitor neque litora. Tincidunt luctus sed nec non ut, ante nonummy interdum lorem sed curabitur aenean, vitae ultrices ante porttitor sed doloremque ipsum, viverra nec magna culpa inceptos. Libero quisque venenatis nunc vestibulum ac ligula, elit erat gravida vitae mauris, pellentesque amet laboris ac tristique neque sapien, volutpat nulla quam, in vel. Integer dui vivamus. Malesuada et sed cras, odio ut et ipsum dui bibendum vivamus, eget neque urna elit eleifend suscipit nulla, lacinia lobortis eget vitae mauris id vestibulum.</value>
+    </labels>
+    <labels>
+        <fullName>LogoBankSubmitButton</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Logo Bank Submit Button</shortDescription>
+        <value>Submit a design for approval</value>
+    </labels>
+    <labels>
+        <fullName>Logos</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Logos</shortDescription>
+        <value>Logos</value>
+    </labels>
+    <labels>
+        <fullName>LogosTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Logos Topic</shortDescription>
+        <value>Logos</value>
+    </labels>
+    <labels>
+        <fullName>Mail_Send_Successful</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Mail_Send_Successful</shortDescription>
+        <value>Mail Send Successful</value>
+    </labels>
+    <labels>
+        <fullName>MarketingTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Marketing Topic</shortDescription>
+        <value>Marketing</value>
+    </labels>
+    <labels>
+        <fullName>Marketing_Toolbox</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Marketing Toolbox</shortDescription>
+        <value>Marketing Toolbox</value>
+    </labels>
+    <labels>
+        <fullName>MaterialNumberLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MaterialNumberLabel</shortDescription>
+        <value>Part Number</value>
+    </labels>
+    <labels>
+        <fullName>Model_Code</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Model Code</shortDescription>
+        <value>Model Code</value>
+    </labels>
+    <labels>
+        <fullName>MoreInfo</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>More Info Title</shortDescription>
+        <value>More info</value>
+    </labels>
+    <labels>
+        <fullName>No_Contacts_Found</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Contacts Found</shortDescription>
+        <value>There are no contacts on this account as per filter criteria</value>
+    </labels>
+    <labels>
+        <fullName>Ok</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ok Button</shortDescription>
+        <value>Ok</value>
+    </labels>
+    <labels>
+        <fullName>OtherImages</fullName>
+        <categories>Marketing Toolbox, Image Bank</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Other Images</shortDescription>
+        <value>Other Images:</value>
+    </labels>
+    <labels>
+        <fullName>Partner_Portal_Button_View_All</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Portal Button View All</shortDescription>
+        <value>View all</value>
+    </labels>
+    <labels>
+        <fullName>Partner_Portal_Content_Not_Available</fullName>
+        <categories>Portal Banner Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Portal Content Not Available</shortDescription>
+        <value>Content not available</value>
+    </labels>
+    <labels>
+        <fullName>Partner_Portal_Ideas_Not_Available</fullName>
+        <categories>Portal Banner Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Portal Ideas Not Available</shortDescription>
+        <value>Ideas not available</value>
+    </labels>
+    <labels>
+        <fullName>Partner_Portal_Welcome</fullName>
+        <categories>Portal Banner Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner Portal Welcome</shortDescription>
+        <value>Welcome</value>
+    </labels>
+    <labels>
+        <fullName>PortalBannerExistForComponentType</fullName>
+        <categories>Portal Banner Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Msg For Portal Banner Record Exist For Same Component Type</shortDescription>
+        <value>There is widget record already exist for the Component Type = [Component Type], Business Org = [Business Org], Region = [Region], and Record Type = Panel</value>
+    </labels>
+    <labels>
+        <fullName>PortalBannerExistForPosition</fullName>
+        <categories>Portal Banner Message</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error Msg For Portal Banner Record Exist For Same Position</shortDescription>
+        <value>There is widget record already exist for the Position = [Position], Business Org = [Business Org], Region = [Region], and Record Type = Panel</value>
+    </labels>
+    <labels>
+        <fullName>Proceed</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Proceed Button</shortDescription>
+        <value>Proceed</value>
+    </labels>
+    <labels>
+        <fullName>ProductSelectText</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Selection Text</shortDescription>
+        <value>Please select any other product images needed</value>
+    </labels>
+    <labels>
+        <fullName>PromoItemsTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ PromoItems Topic</shortDescription>
+        <value>Promotional Items</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Contact_Name</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Contact Name</shortDescription>
+        <value>Contact Name</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Created_Date</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Created Date</shortDescription>
+        <value>Created Date</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Customer</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Customer</shortDescription>
+        <value>Customer</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Customer_Number</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Customer Number</shortDescription>
+        <value>Customer Number</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Email</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Expiration_Date</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Expiration Date</shortDescription>
+        <value>Expiration Date</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Final_Customer</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Final Customer</shortDescription>
+        <value>Final Customer</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Incoterms</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Incoterms</shortDescription>
+        <value>Incoterms</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Name</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Name</shortDescription>
+        <value>Quote Name</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Number</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Number</shortDescription>
+        <value>Quote Number</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Payment_Terms</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Payment Terms</shortDescription>
+        <value>Payment Terms</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Phone</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>RequestPlaceholder</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request Placeholder Text</shortDescription>
+        <value>Tell us about your request</value>
+    </labels>
+    <labels>
+        <fullName>RequestTitle</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Request Modal Title</shortDescription>
+        <value>Submit Request</value>
+    </labels>
+    <labels>
+        <fullName>RequestedImages</fullName>
+        <categories>Marketing Toolbox, Image Bank</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Requested Images</shortDescription>
+        <value>Requested Images:</value>
+    </labels>
+    <labels>
+        <fullName>SelectFile</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select File</shortDescription>
+        <value>Select File</value>
+    </labels>
+    <labels>
+        <fullName>SelectQuestionTopicText</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Question Topic Text</shortDescription>
+        <value>Use the drop down menu to tell us which part of the Marketing Toolbox you have questions on.</value>
+    </labels>
+    <labels>
+        <fullName>SelectTopic</fullName>
+        <categories>Marketing Toolbox, FAQ</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FAQ Select Topic</shortDescription>
+        <value>--Select Question Topic--</value>
+    </labels>
+    <labels>
+        <fullName>Submit</fullName>
+        <categories>Marketing Toolbox</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Turolla_Part_Number</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Turolla Part Number</shortDescription>
+        <value>Turolla Part Number</value>
+    </labels>
+    <labels>
+        <fullName>Unit_Sales_Price</fullName>
+        <categories>Quotes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unit Sales Price</shortDescription>
+        <value>Unit Sales Price (Net)</value>
+    </labels>
+</CustomLabels>

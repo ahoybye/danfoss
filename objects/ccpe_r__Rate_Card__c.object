@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpe_r__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Rate Cards</relationshipLabel>
+        <relationshipName>Rate_Cards</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_r__Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this is an active rate card or not.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting is only used for assigning rate cards, time can still be billed on an inactive rate card if it is assigned to the project</inlineHelpText>
+        <label>Active</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <webLinks>
+        <fullName>ccpe_r__Clone</fullName>
+        <availability>online</availability>
+        <description>Clones the Rate Card</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/RateCardDetails?id={!ccpe_r__Rate_Card__c.Id}&amp;retURL=%2F{!ccpe_r__Rate_Card__c.Id}&amp;clone=true</url>
+    </webLinks>
+</CustomObject>

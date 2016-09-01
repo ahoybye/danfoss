@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__MarkAsDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>To check if the scan target list has been deleted or not.</description>
+        <externalId>false</externalId>
+        <label>Mark As Deleted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__TargeListName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the name of the scan target list.</description>
+        <externalId>false</externalId>
+        <label>Targe List Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__TargetListId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the Id of the scan target list.</description>
+        <externalId>false</externalId>
+        <label>Target List Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

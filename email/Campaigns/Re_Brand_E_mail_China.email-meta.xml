@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder for Re-branding China Survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Re-Brand E-mail (China)</name>
+    <style>freeForm</style>
+    <subject>在此提醒您分享您的专业意见</subject>
+    <textOnly>&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+亲爱的顾客
+
+，
+
+
+最近我们向您发出了邀请，希望您参加有关Danfoss未来沟通方式的问卷调查。
+
+
+今年九月Sauer-Danfoss即将更名为Danfoss，所成立的Danfoss Power Solutions 即将成为Danfoss 集团的一部分，我们非常希望听取您的专业意见，我们在此诚恳提醒您参与问卷调查，因为您的反馈对我们而言非常重要。
+
+
+以下是该问卷调查的链接：
+
+http://new.kunde.dk/cgi-bin/ciwweb.pl?studyname=Storydf_CHmedie&amp;clt=4
+
+
+
+如果该问卷调查的浏览器窗口无法打开，请把该链接复制到浏览器的地址栏中。
+
+
+请在2013年8月21日 之前为我们提供您的反馈
+
+
+在此提前感谢您的参与。
+
+
+谨致敬意，
+
+Sauer-Danfoss</textOnly>
+    <type>html</type>
+</EmailTemplate>

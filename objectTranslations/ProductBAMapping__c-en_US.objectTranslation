@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ProductBAMapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ProductBAMapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- BA Group/Email --></label>
+        <name>BA_Group_Email__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

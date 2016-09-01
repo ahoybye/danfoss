@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>C&amp;E field
+Survey History</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Survey History</relationshipLabel>
+        <relationshipName>Survey_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Danfoss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEVI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thermia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comment__c</fullName>
+        <description>C&amp;E field
+Survey History</description>
+        <externalId>false</externalId>
+        <label>Comment</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>C&amp;E Field.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Survey History</relationshipLabel>
+        <relationshipName>Survey_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Danfoss Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Danfoss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employee_Responsible__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>C&amp;E field
+Survey History</description>
+        <externalId>false</externalId>
+        <label>Employee Responsible</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Survey_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SAP_External_Key__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>SAP External Key</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <description>C&amp;E field
+Survey History</description>
+        <externalId>false</externalId>
+        <label>Score</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Type__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Survey Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CLI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Year__c</fullName>
+        <description>C&amp;E field
+Survey hsitory</description>
+        <externalId>false</externalId>
+        <label>Survey Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2010</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2011</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2012</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2013</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

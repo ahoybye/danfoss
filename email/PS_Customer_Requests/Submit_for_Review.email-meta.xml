@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify BU Reviewers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Customer_Requests</letterhead>
+    <name>Submit for Review</name>
+    <style>freeForm</style>
+    <subject>{!PS_Customer_Request__c.Type__c} Customer Request {!PS_Customer_Request__c.Name} is ready for your review</subject>
+    <textOnly>A new task has been assigned to you.  Please review and complete.
+
+
+
+Customer Request</textOnly>
+    <type>html</type>
+</EmailTemplate>

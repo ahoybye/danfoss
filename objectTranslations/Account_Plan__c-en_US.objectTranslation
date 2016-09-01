@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Plans</value>
+    </caseValues>
+    <fields>
+        <help><!-- Account --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Competitor VP --></label>
+        <name>Competitor_VP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Position --></label>
+        <name>Current_Position__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Market Position --></label>
+        <name>Customer_Market_Position__c</name>
+        <picklistValues>
+            <masterLabel>Industry leader, innovative products</masterLabel>
+            <translation><!-- Industry leader, innovative products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industry leader, mature products</masterLabel>
+            <translation><!-- Industry leader, mature products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not an industry leader</masterLabel>
+            <translation><!-- Not an industry leader --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not industry leader but innovative</masterLabel>
+            <translation><!-- Not industry leader but innovative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EXTERNAL TO CUSTOMER
+O- think about the market…what changes do you anticipate that could spur business opportunities for the customer, technology changes, etc. --></help>
+        <label><!-- Opportunities --></label>
+        <name>Customer_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Strategy --></label>
+        <name>Customer_Strategy__c</name>
+    </fields>
+    <fields>
+        <help><!-- INTERNAL TO CUSTOMER: 
+- S- think about what they do well, what is unique about their organization, products functionally, service, etc. --></help>
+        <label><!-- Strengths --></label>
+        <name>Customer_Strengths__c</name>
+    </fields>
+    <fields>
+        <help><!-- EXTERNAL TO CUSTOMER
+T- thinking about the market.  What changes could hurt the customer, what problems do they have that competitors can solve better, what market forces could put pressure on them, etc. --></help>
+        <label><!-- Threats --></label>
+        <name>Customer_Threats__c</name>
+    </fields>
+    <fields>
+        <help><!-- INTERNAL TO CUSTOMER
+W- think about what they do worse than competitors, what they need to do better, product gaps or technical challenges, etc. --></help>
+        <label><!-- Weaknesses --></label>
+        <name>Customer_Weaknesses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer needs --></label>
+        <name>Customer_needs__c</name>
+        <picklistValues>
+            <masterLabel>Explicit</masterLabel>
+            <translation><!-- Explicit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation><!-- Hidden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Implicit</masterLabel>
+            <translation><!-- Implicit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- EXTERNAL TO DANFOSS
+O- think about the market…what changes do you anticipate that could spur business opportunities, what problems do customers have or will they have that we could help with, what technology changes can we take advantage of, etc. --></help>
+        <label><!-- Opportunities --></label>
+        <name>Danfoss_Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Strategy --></label>
+        <name>Danfoss_Strategy__c</name>
+    </fields>
+    <fields>
+        <help><!-- INTERNAL TO DANFOSS: 
+- S- think about what we do well, what is unique about us as an organization, about our products functionally, about what your customer likes about you and what you bring them, etc. --></help>
+        <label><!-- Strengths --></label>
+        <name>Danfoss_Strengths__c</name>
+    </fields>
+    <fields>
+        <help><!-- EXTERNAL TO DANFOSS
+T- thinking about the market.  What changes could hurt us, what problems do customers have that competitors can solve better than us, what market forces could put pressure on us, etc. --></help>
+        <label><!-- Threats --></label>
+        <name>Danfoss_Threats__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss VP --></label>
+        <name>Danfoss_VP__c</name>
+    </fields>
+    <fields>
+        <help><!-- INTERNAL TO DANFOSS
+W- think about what we do worse than competitors, what customers tell us that we need to do better (honestly, not unrealistically), product gaps or technical challenges, etc. --></help>
+        <label><!-- Weaknesses --></label>
+        <name>Danfoss_Weaknesses__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- CUSTOMER &apos;s KRAJLIC VIEW of DANFOSS
+See link with &quot;Kraljic Model Explained&quot;. --></help>
+        <label><!-- Customer Sourcing Strategy --></label>
+        <name>Kraljic_View_is_defined__c</name>
+        <picklistValues>
+            <masterLabel>Bottleneck</masterLabel>
+            <translation><!-- Bottleneck --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leverage</masterLabel>
+            <translation><!-- Leverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-critical</masterLabel>
+            <translation><!-- Non-critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic</masterLabel>
+            <translation><!-- Strategic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Years Turnover for Potential/SoW --></label>
+        <name>Last_years_Turnover_for_Potential_SoW__c</name>
+    </fields>
+    <fields>
+        <help><!-- Account Plan Objective --></help>
+        <label><!-- Objective --></label>
+        <name>Objective__c</name>
+    </fields>
+    <fields>
+        <help><!-- SWOT Opportunities --></help>
+        <label><!-- Opportunities --></label>
+        <name>Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Conditions --></label>
+        <name>Special_Conditions__c</name>
+        <picklistValues>
+            <masterLabel>Key Account</masterLabel>
+            <translation><!-- Key Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NDA</masterLabel>
+            <translation><!-- NDA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- SWOT Strength --></help>
+        <label><!-- Strength --></label>
+        <name>Strength__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Account --></label>
+        <name>SubAccount__c</name>
+        <relationshipLabel><!-- Account Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- SWOT Threats --></help>
+        <label><!-- Threats --></label>
+        <name>Threats__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Bottleneck</masterLabel>
+            <translation><!-- Bottleneck --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leverage</masterLabel>
+            <translation><!-- Leverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-critical</masterLabel>
+            <translation><!-- Non-critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic</masterLabel>
+            <translation><!-- Strategic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Visibility of Account Plan --></help>
+        <label><!-- Visibility --></label>
+        <name>Visibility__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BA only</masterLabel>
+            <translation><!-- BA only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Division only</masterLabel>
+            <translation><!-- Division only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team only</masterLabel>
+            <translation><!-- Team only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- SWOT Weaknesses --></help>
+        <label><!-- Weaknesses --></label>
+        <name>Weaknesses__c</name>
+    </fields>
+    <fields>
+        <label><!-- 12 Month Target --></label>
+        <name>X12_month__c</name>
+        <picklistValues>
+            <masterLabel>-11-(-25%)</masterLabel>
+            <translation><!-- -11-(-25%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0-(-10%)</masterLabel>
+            <translation><!-- 0-(-10%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1-10%</masterLabel>
+            <translation><!-- 1-10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11-25%</masterLabel>
+            <translation><!-- 11-25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat (0%)</masterLabel>
+            <translation><!-- Flat (0%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More than 26%</masterLabel>
+            <translation><!-- More than 26% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>more than -26%)</masterLabel>
+            <translation><!-- more than -26%) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 24 Month Target --></label>
+        <name>X24_Month_Target__c</name>
+        <picklistValues>
+            <masterLabel>-11-(-25%)</masterLabel>
+            <translation><!-- -11-(-25%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0-(-10%)</masterLabel>
+            <translation><!-- 0-(-10%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1-10%</masterLabel>
+            <translation><!-- 1-10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11-25%</masterLabel>
+            <translation><!-- 11-25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat (0%)</masterLabel>
+            <translation><!-- Flat (0%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More than 26%</masterLabel>
+            <translation><!-- More than 26% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>more than -26%</masterLabel>
+            <translation><!-- more than -26% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 36 Month Target --></label>
+        <name>X36_Month_Target__c</name>
+        <picklistValues>
+            <masterLabel>-11-(-25%)</masterLabel>
+            <translation><!-- -11-(-25%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0-(-10%)</masterLabel>
+            <translation><!-- 0-(-10%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1-10%</masterLabel>
+            <translation><!-- 1-10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11-25%</masterLabel>
+            <translation><!-- 11-25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat (0%)</masterLabel>
+            <translation><!-- Flat (0%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More than 26%</masterLabel>
+            <translation><!-- More than 26% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>more than -26%</masterLabel>
+            <translation><!-- more than -26% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 48 Month Target --></label>
+        <name>X48_Month_Target__c</name>
+        <picklistValues>
+            <masterLabel>-11-(-25%)</masterLabel>
+            <translation><!-- -11-(-25%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0-(-10%)</masterLabel>
+            <translation><!-- 0-(-10%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1-10%</masterLabel>
+            <translation><!-- 1-10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11-25%</masterLabel>
+            <translation><!-- 11-25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flat (0%)</masterLabel>
+            <translation><!-- Flat (0%) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>More than 26%</masterLabel>
+            <translation><!-- More than 26% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>more than -26%</masterLabel>
+            <translation><!-- more than -26% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Account Planning Year --></help>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019</masterLabel>
+            <translation><!-- 2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2021</masterLabel>
+            <translation><!-- 2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2022</masterLabel>
+            <translation><!-- 2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2023</masterLabel>
+            <translation><!-- 2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2024</masterLabel>
+            <translation><!-- 2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2025</masterLabel>
+            <translation><!-- 2025 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- test --></label>
+        <name>test__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Kraljic_View_Link --></label>
+        <name>Kraljic_View_Link</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ShareOfWalletReportLink --></label>
+        <name>ShareOfWalletReportLink</name>
+    </webLinks>
+</CustomObjectTranslation>

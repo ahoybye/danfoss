@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>DETAILS OF THE ASSIGNMENT TO THE PARTNER - SENT TO CUSTOMER_CH_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CH_LETTERHEAD</letterhead>
+    <name>DETAILS OF THE ASSIGNMENT TO THE PARTNER - SENT TO CUSTOMER_CH_DE</name>
+    <style>formalLetter</style>
+    <subject>Ihre Anfrage Vorgang {!Case.CaseNumber</subject>
+    <textOnly>Sehr geehrte(r) Frau/Herr,
+
+Vorgang  {!Case.CaseNumber} mit Vorgang-Betreff {!Case.Subject} wird weitergeleitet an unseren Partner.
+Informationen zu unserem Partner:
+
+Partner Name: {!Case.Assigned_To_Channel_Partner__c}
+{!Case.Assigned_To_Channel_Partner_Details__c}
+
+Unser Partner kontaktiert Sie schnellstmöglich.
+
+Vielen Dank,
+Mit freundlichen Grüßen,
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+{!Case.Thread_Id}
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel: +41 61 5880 114
+E-Mail: CS@danfoss.ch</textOnly>
+    <type>html</type>
+</EmailTemplate>

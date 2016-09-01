@@ -1,0 +1,6 @@
+<apex:page tabStyle="SDEHOME__tab">
+<br/>
+  <apex:outputPanel >
+ {!JSENCODE($Label.BMCServiceDesk__NoAccessErrorMessage)}
+  </apex:outputPanel>
+</apex:page>

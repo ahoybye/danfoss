@@ -1,0 +1,22 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<P><FONT face=Verdana,Helvetica,Sans-Serif>Dear {!Contact.FirstName},</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>&nbsp;</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>Please find attached&nbsp;a document containing information regarding&nbsp;</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>PVG16 Authorized Build Center Price Changes</FONT></P>
+<P>&nbsp;</P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>For more information, please contact your Sauer-Danfoss Account Manager.</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>&nbsp;</FONT></P>
+<P><FONT face=Verdana,Helvetica,Sans-Serif>Best regards,</FONT></P>
+<P><IMG border=0 alt="" align=left src="https://sd--c.na8.content.force.com/servlet/servlet.ImageServer?id=015C00000014QuS&amp;oid=00DC0000000Qm80"></P>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

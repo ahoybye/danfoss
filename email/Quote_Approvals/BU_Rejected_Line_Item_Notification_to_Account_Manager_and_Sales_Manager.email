@@ -1,0 +1,4 @@
+The Quote {!Quote.QuoteNumber} for {!Quote.Merge_Formula_Account_Name__c} contains Line Items that have been declined by a Business Unit. To see details, click the link below and scroll down to the Line Item list on the Quote.
+
+
+Link to the Quote: {!Quote.Link}

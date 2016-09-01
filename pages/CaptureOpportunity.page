@@ -1,0 +1,22 @@
+<apex:page controller="CaptureOpportunityController" showHeader="false" sidebar="false">
+  <apex:composition template="PortalTemplate">
+   <apex:define name="middle-content">
+   <apex:form >
+    <apex:pageBlock >
+    	<apex:pageMessages />
+        <apex:pageBlockButtons location="bottom" rendered="{!ISBLANK(opportunity.id)}">
+            <apex:commandButton value="Submit" action="{!save}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Opportunity Information" collapsible="false">
+           <apex:inputField value="{!opportunity.Name}"/>
+           <apex:outputField value="{!opportunity.accountID}"/>
+           
+        </apex:pageBlockSection>   
+        <apex:pageBlockSection columns="1">
+        	<apex:inputField value="{!opportunity.Description}" style="width:70%;height:70px;"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>  
+    </apex:form>     
+   </apex:define>
+  </apex:composition>
+</apex:page>

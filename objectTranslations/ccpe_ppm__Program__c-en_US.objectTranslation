@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Description --></label>
+        <name>ccpe_ppm__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Project End --></label>
+        <name>ccpe_ppm__End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portfolio --></label>
+        <name>ccpe_ppm__Portfolio__c</name>
+        <relationshipLabel><!-- Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Earliest Project Start --></label>
+        <name>ccpe_ppm__Start__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Display_Program_Gantt --></label>
+        <name>Display_Program_Gantt</name>
+    </webLinks>
+</CustomObjectTranslation>

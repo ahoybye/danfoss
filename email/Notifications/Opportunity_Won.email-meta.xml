@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Opportunity Won</name>
+    <style>formalLetter</style>
+    <subject>{!Opportunity.Name} has been Closed Won</subject>
+    <textOnly>Congratulations!
+
+
+The following {!Opportunity.Type} Opportunity for {!Opportunity.Account} has been Closed Won:
+
+
+Opportunity Owner: {!Opportunity.OwnerFullName}
+Parent Account: {!Opportunity.Parent_Account__c}
+Opportunity Name: {!Opportunity.Name}
+Production Start Date: {!Opportunity.Production_Start_Date__c}
+Application(s): {!Opportunity.00NC0000005M0j9}
+
+Notes:
+{!Opportunity.Description}
+
+
+As a reminder please verify the following are complete (if needed) prior to the receipt of the order:
+
+
+Cross reference file updated
+Material determination
+ISIR inquiry
+Drawing(s) sent to customer
+Master quote updated
+
+
+Click here to view the record.</textOnly>
+    <type>html</type>
+</EmailTemplate>

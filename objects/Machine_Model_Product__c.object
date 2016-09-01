@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Adoption_Rate__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>How many % of this machine model utilize this product?</inlineHelpText>
+        <label>Adoption Rate %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CMN_Display_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer_Material_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Material Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competitiveness__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Your perceived competitiveness of Danfoss with regards to this product in this machine model</inlineHelpText>
+        <label>Danfoss Competitiveness</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Material_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Material Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsSAPPrice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>set by Product Picker code (AddLineItems class) if an SAP price is returned</description>
+        <externalId>false</externalId>
+        <label>IsSAPPrice</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Machine_Model_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Product2.SAP_Material_Code__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Machine Model Products</relationshipLabel>
+        <relationshipName>Machine_Model_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Machine_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Machine Model</label>
+        <referenceTo>Machine_Model__c</referenceTo>
+        <relationshipLabel>Machine Model Products</relationshipLabel>
+        <relationshipName>Machine_Model_Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Number_per_machine__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <label>Units per machine</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Price per unit</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model_Product__r.Family__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Family</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Feature__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Characteristic</label>
+        <picklist>
+            <controllingField>Product_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Closed Center Non Reaction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Center Reaction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open Center Non Reaction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open Center Reaction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Load Sensing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Load Sensing Reaction</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power Beyond</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electrical Actuation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Valve</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic Pilot Actuation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Valve</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manual Actuation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Valve</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Motor</controllingFieldValues>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+                <controllingFieldValues>Working Function Motor</controllingFieldValues>
+                <controllingFieldValues>Working Function Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic 2-position Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Motor</controllingFieldValues>
+                <controllingFieldValues>Working Function Motor</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic Proportional Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Motor</controllingFieldValues>
+                <controllingFieldValues>Working Function Motor</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric 2-position Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Motor</controllingFieldValues>
+                <controllingFieldValues>Working Function Motor</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric Proportional Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Motor</controllingFieldValues>
+                <controllingFieldValues>Working Function Motor</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric Displacement Control (EDC)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manual Displacement Control (MDC)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic Displacment Control (HDC)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Displacment Control (DDC)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forward/Neutral/Reverse (FNR)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric Automotive/Load Dependent (AC, NFPE)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic Automotive/Load Dependent (DA, NFPH)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pressure Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Working Function Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Load Sensing Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Working Function Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Torque Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Working Function Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Displacement Control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Working Function Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic</fullName>
+                <default>false</default>
+                <controllingFieldValues>Joystick</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Analog</fullName>
+                <default>false</default>
+                <controllingFieldValues>Joystick</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAN bus</fullName>
+                <default>false</default>
+                <controllingFieldValues>Joystick</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+                <controllingFieldValues>Joystick</controllingFieldValues>
+                <controllingFieldValues>Transmission Motor</controllingFieldValues>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+                <controllingFieldValues>Valve</controllingFieldValues>
+                <controllingFieldValues>Working Function Motor</controllingFieldValues>
+                <controllingFieldValues>Working Function Pump</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic Steering Unit</controllingFieldValues>
+                <controllingFieldValues>Joystick</controllingFieldValues>
+                <controllingFieldValues>Transmission Motor</controllingFieldValues>
+                <controllingFieldValues>Transmission Pump</controllingFieldValues>
+                <controllingFieldValues>Valve</controllingFieldValues>
+                <controllingFieldValues>Working Function Motor</controllingFieldValues>
+                <controllingFieldValues>Working Function Pump</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model_Product__r.Product_Line__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Line</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Set__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model_Product__r.Product_Set__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Set</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <picklist>
+            <controllingField>Subsystem__c</controllingField>
+            <picklistValues>
+                <fullName>Transmission Pump</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transmission Motor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integrated Transmission</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transmission Valve</fullName>
+                <default>false</default>
+                <controllingFieldValues>Transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic Steering Unit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Steering Function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Priority Valve</fullName>
+                <default>false</default>
+                <controllingFieldValues>Steering Function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steering Amplifier</fullName>
+                <default>false</default>
+                <controllingFieldValues>Steering Function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electrohydraulic Steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Steering Function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drive Pump</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fan Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drive Motor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fan Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valve</fullName>
+                <default>false</default>
+                <controllingFieldValues>Working Function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Working Function Pump</fullName>
+                <default>false</default>
+                <controllingFieldValues>Working Function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Working Function Motor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Working Function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joystick</fullName>
+                <default>false</default>
+                <controllingFieldValues>HMI and Electronics</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Display</fullName>
+                <default>false</default>
+                <controllingFieldValues>HMI and Electronics</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Controller</fullName>
+                <default>false</default>
+                <controllingFieldValues>HMI and Electronics</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drive Valve</fullName>
+                <default>false</default>
+                <controllingFieldValues>Fan Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telematics Solution</fullName>
+                <default>false</default>
+                <controllingFieldValues>HMI and Electronics</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Material_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model_Product__r.ProductCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SAP Material Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Price_Retrieved_Date_Display__c</fullName>
+        <externalId>false</externalId>
+        <formula>SAP_Price_Retrieved_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SAP Price Retrieved Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Price_Retrieved_Date__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <externalId>false</externalId>
+        <label>SAP Price Retrieved Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Product_Hierarchy_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model_Product__r.SAP_Product_Set_Code__c</formula>
+        <label>SAP Product Hierarchy Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Product_Line_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model_Product__r.SAP_Product_Line_Code__c</formula>
+        <label>SAP Product Line Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SD_Competitiveness_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Danfoss Competitiveness - Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dual/Multiple Sourcing Strategy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Org_Display__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Org__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Org</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Org</label>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subsystem__c</fullName>
+        <externalId>false</externalId>
+        <label>Machine Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Steering Function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Working Function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HMI and Electronics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Supplier__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Machine_Model_Product__r.Business_Org__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Supplier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Product_units__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model__r.Annual_Production_Volume_Plus3__c * Number_per_machine__c * Adoption_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Product Potential (units)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Product_value__c</fullName>
+        <externalId>false</externalId>
+        <formula>Machine_Model__r.Annual_Production_Volume_Plus3__c * Number_per_machine__c * Price__c * Adoption_Rate__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Product Potential</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <webLinks>
+        <fullName>Refresh_SAP_Price</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Refresh SAP Price</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/RefreshMachineSAPPrice?id={!Machine_Model__c.Id}&amp;mmprodId={!Machine_Model_Product__c.Id}</url>
+    </webLinks>
+</CustomObject>

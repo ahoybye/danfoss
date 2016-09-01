@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Survey History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Survey History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Survey History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Brand --></label>
+        <name>Brand__c</name>
+        <picklistValues>
+            <masterLabel>DEVI</masterLabel>
+            <translation><!-- DEVI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss</masterLabel>
+            <translation><!-- Danfoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thermia</masterLabel>
+            <translation><!-- Thermia --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comment --></label>
+        <name>Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Survey History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Segment --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>Cooling</masterLabel>
+            <translation><!-- Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss</masterLabel>
+            <translation><!-- Danfoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives</masterLabel>
+            <translation><!-- Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Employee Responsible --></label>
+        <name>Employee_Responsible__c</name>
+        <relationshipLabel><!-- Survey History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP External Key --></label>
+        <name>SAP_External_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Score --></label>
+        <name>Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Survey Type --></label>
+        <name>Survey_Type__c</name>
+        <picklistValues>
+            <masterLabel>CLI</masterLabel>
+            <translation><!-- CLI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CPS</masterLabel>
+            <translation><!-- CPS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Survey Year --></label>
+        <name>Survey_Year__c</name>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

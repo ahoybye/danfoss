@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Sequence Id</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__color__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Color</label>
+        <length>7</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__dateTimeField__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>FKDateTimeField</label>
+        <referenceTo>BMCServiceDesk__SYSQVFieldInfo__c</referenceTo>
+        <relationshipLabel>SYSQVCalendarViews (DATETIMEFIELD)</relationshipLabel>
+        <relationshipName>Calendar_DateTimeField</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__displayField__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>FKDisplayField</label>
+        <referenceTo>BMCServiceDesk__SYSQVFieldInfo__c</referenceTo>
+        <relationshipLabel>SYSQVCalendarViews (DISPLAYFIELD)</relationshipLabel>
+        <relationshipName>SYSQVCalendarViewDisplayField</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__sysQVQuery__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>FKQVQuery</label>
+        <referenceTo>BMCServiceDesk__SYSQVQuery__c</referenceTo>
+        <relationshipLabel>SYSQVCalendarViews</relationshipLabel>
+        <relationshipName>SYSQVCalendarViewQVQuery</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__viewType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>View Type</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

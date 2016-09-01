@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Authorized Product Lines --></label>
+        <name>Authorized_Product_Lines__c</name>
+        <picklistValues>
+            <masterLabel>070 - Steering Units</masterLabel>
+            <translation><!-- 070 - Steering Units --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>073 - Steering Valve Blocks</masterLabel>
+            <translation><!-- 073 - Steering Valve Blocks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>074 - DCV Spool Valves</masterLabel>
+            <translation><!-- 074 - DCV Spool Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>078 - PVG32/120</masterLabel>
+            <translation><!-- 078 - PVG32/120 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>088 - PVG 100</masterLabel>
+            <translation><!-- 088 - PVG 100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>200 - Small Motors</masterLabel>
+            <translation><!-- 200 - Small Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201 - Large Motors</masterLabel>
+            <translation><!-- 201 - Large Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A01 - Controllers</masterLabel>
+            <translation><!-- A01 - Controllers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A20 - Series 45</masterLabel>
+            <translation><!-- A20 - Series 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A30 - Light Duty</masterLabel>
+            <translation><!-- A30 - Light Duty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A31 - Series 20</masterLabel>
+            <translation><!-- A31 - Series 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A33 - M46</masterLabel>
+            <translation><!-- A33 - M46 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A34 - Series 42</masterLabel>
+            <translation><!-- A34 - Series 42 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A36 - Series 51</masterLabel>
+            <translation><!-- A36 - Series 51 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A37 - Series 90</masterLabel>
+            <translation><!-- A37 - Series 90 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A58 - Other Products</masterLabel>
+            <translation><!-- A58 - Other Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A65 - TMP/TMM</masterLabel>
+            <translation><!-- A65 - TMP/TMM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A75 - LV/KV Motors</masterLabel>
+            <translation><!-- A75 - LV/KV Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A81 - Electrohydraulic Power Steering</masterLabel>
+            <translation><!-- A81 - Electrohydraulic Power Steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A85 - PCS Controllers</masterLabel>
+            <translation><!-- A85 - PCS Controllers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A86 - PCS Other Products</masterLabel>
+            <translation><!-- A86 - PCS Other Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A87 - PCS Positioning Sensors</masterLabel>
+            <translation><!-- A87 - PCS Positioning Sensors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A88 - PCS Displays</masterLabel>
+            <translation><!-- A88 - PCS Displays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A89 - PCS System Kits</masterLabel>
+            <translation><!-- A89 - PCS System Kits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B01 - Displays</masterLabel>
+            <translation><!-- B01 - Displays --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B03 - Joystick</masterLabel>
+            <translation><!-- B03 - Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B83 - OSK S10/S15/S16/S18</masterLabel>
+            <translation><!-- B83 - OSK S10/S15/S16/S18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C06 - Custom Controllers</masterLabel>
+            <translation><!-- C06 - Custom Controllers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C15 - SV Shared Parts</masterLabel>
+            <translation><!-- C15 - SV Shared Parts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C26 - M35/44</masterLabel>
+            <translation><!-- C26 - M35/44 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C31 - LPV</masterLabel>
+            <translation><!-- C31 - LPV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C44 - LDU32/3232</masterLabel>
+            <translation><!-- C44 - LDU32/3232 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C51 - AS and EOS Software Solutions</masterLabel>
+            <translation><!-- C51 - AS and EOS Software Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C58 - Large Open Circuit Axial Piston Pumps</masterLabel>
+            <translation><!-- C58 - Large Open Circuit Axial Piston Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C67 - US Motors</masterLabel>
+            <translation><!-- C67 - US Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C68 - MP1 Pumps</masterLabel>
+            <translation><!-- C68 - MP1 Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C69 - MP1 Pumps (Daikin)</masterLabel>
+            <translation><!-- C69 - MP1 Pumps (Daikin) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C70 - H1-MP Pumps</masterLabel>
+            <translation><!-- C70 - H1-MP Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C71 - H1-MP Motors</masterLabel>
+            <translation><!-- C71 - H1-MP Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C73 - H1-HP Pumps</masterLabel>
+            <translation><!-- C73 - H1-HP Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C74 - H1-HP Motors</masterLabel>
+            <translation><!-- C74 - H1-HP Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C77 - System Development Tools</masterLabel>
+            <translation><!-- C77 - System Development Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C82 - PVG Hybrid</masterLabel>
+            <translation><!-- C82 - PVG Hybrid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C86 - PVG 16</masterLabel>
+            <translation><!-- C86 - PVG 16 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel Attributes --></label>
+        <name>Channel_Attributes__c</name>
+        <picklistValues>
+            <masterLabel>Authorized Service Partner</masterLabel>
+            <translation><!-- Authorized Service Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build Center - JS7000</masterLabel>
+            <translation><!-- Build Center - JS7000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build Center - OMS</masterLabel>
+            <translation><!-- Build Center - OMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build Center - PVG 100</masterLabel>
+            <translation><!-- Build Center - PVG 100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build Center - PVG 16</masterLabel>
+            <translation><!-- Build Center - PVG 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build Center - PVG 32/120</masterLabel>
+            <translation><!-- Build Center - PVG 32/120 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Build Center - VMP/VMR</masterLabel>
+            <translation><!-- Build Center - VMP/VMR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCV Legacy Partner</masterLabel>
+            <translation><!-- DCV Legacy Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineered Systems</masterLabel>
+            <translation><!-- Engineered Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Line National (AU)</masterLabel>
+            <translation><!-- Full Line National (AU) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Line Regional (AU)</masterLabel>
+            <translation><!-- Full Line Regional (AU) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full-Line (AM)</masterLabel>
+            <translation><!-- Full-Line (AM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM</masterLabel>
+            <translation><!-- OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial Line</masterLabel>
+            <translation><!-- Partial Line --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partial Line Regional (AU)</masterLabel>
+            <translation><!-- Partial Line Regional (AU) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rapid Delivery Center - H1B</masterLabel>
+            <translation><!-- Rapid Delivery Center - H1B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rapid Delivery Center - PVG</masterLabel>
+            <translation><!-- Rapid Delivery Center - PVG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rapid Delivery Center - Series 45</masterLabel>
+            <translation><!-- Rapid Delivery Center - Series 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service &amp; Repair</masterLabel>
+            <translation><!-- Service &amp; Repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Delivery Center - DH/DS</masterLabel>
+            <translation><!-- Service Delivery Center - DH/DS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Delivery Center - OMS</masterLabel>
+            <translation><!-- Service Delivery Center - OMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Delivery Center - VMP/VMR</masterLabel>
+            <translation><!-- Service Delivery Center - VMP/VMR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Line</masterLabel>
+            <translation><!-- Single Line --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Function</masterLabel>
+            <translation><!-- Work Function --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>Channel__c</name>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect</masterLabel>
+            <translation><!-- Indirect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter the Publication Number of the Document you are loading, if one is available. --></help>
+        <label><!-- Content ID --></label>
+        <name>Content_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Content Type --></label>
+        <name>Content_Type__c</name>
+        <picklistValues>
+            <masterLabel>Announcement</masterLabel>
+            <translation><!-- Announcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assembly Specification</masterLabel>
+            <translation><!-- Assembly Specification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Presentations</masterLabel>
+            <translation><!-- Customer Presentations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interactive Content</masterLabel>
+            <translation><!-- Interactive Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Let&apos;s Torque</masterLabel>
+            <translation><!-- Let&apos;s Torque --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logo</masterLabel>
+            <translation><!-- Logo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press Release</masterLabel>
+            <translation><!-- Press Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price File</masterLabel>
+            <translation><!-- Price File --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricebook</masterLabel>
+            <translation><!-- Pricebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing tool</masterLabel>
+            <translation><!-- Pricing tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Graphic</masterLabel>
+            <translation><!-- Product Graphic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Image</masterLabel>
+            <translation><!-- Product Image --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Information Bulletin</masterLabel>
+            <translation><!-- Product Information Bulletin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Bulletin</masterLabel>
+            <translation><!-- Service Bulletin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Literature</masterLabel>
+            <translation><!-- Technical Literature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Specification</masterLabel>
+            <translation><!-- Test Specification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tools</masterLabel>
+            <translation><!-- Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unique Selling Points Handbook</masterLabel>
+            <translation><!-- Unique Selling Points Handbook --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Content Viewers --></label>
+        <name>Content_Viewers__c</name>
+    </fields>
+    <fields>
+        <label>Land</label>
+        <name>Country__c</name>
+        <picklistValues>
+            <masterLabel>Afghanistan</masterLabel>
+            <translation><!-- Afghanistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Argentina</masterLabel>
+            <translation><!-- Argentina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aruba</masterLabel>
+            <translation><!-- Aruba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia</masterLabel>
+            <translation><!-- Australia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austria</masterLabel>
+            <translation><!-- Austria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahamas</masterLabel>
+            <translation><!-- Bahamas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangladesh</masterLabel>
+            <translation><!-- Bangladesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belarus</masterLabel>
+            <translation><!-- Belarus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belgium</masterLabel>
+            <translation><!-- Belgium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belize</masterLabel>
+            <translation><!-- Belize --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhutan</masterLabel>
+            <translation><!-- Bhutan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolivia</masterLabel>
+            <translation><!-- Bolivia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil</masterLabel>
+            <translation><!-- Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bulgaria</masterLabel>
+            <translation><!-- Bulgaria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cambodia</masterLabel>
+            <translation><!-- Cambodia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada</masterLabel>
+            <translation><!-- Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chile</masterLabel>
+            <translation><!-- Chile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colombia</masterLabel>
+            <translation><!-- Colombia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congo</masterLabel>
+            <translation><!-- Congo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costa Rica</masterLabel>
+            <translation><!-- Costa Rica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cote D&apos;Ivoire</masterLabel>
+            <translation><!-- Cote D&apos;Ivoire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Croatia</masterLabel>
+            <translation><!-- Croatia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyprus</masterLabel>
+            <translation><!-- Cyprus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Czech Republic</masterLabel>
+            <translation><!-- Czech Republic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denmark</masterLabel>
+            <translation><!-- Denmark --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecuador</masterLabel>
+            <translation><!-- Ecuador --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Egypt</masterLabel>
+            <translation><!-- Egypt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estonia</masterLabel>
+            <translation><!-- Estonia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faroe Islands</masterLabel>
+            <translation><!-- Faroe Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finland</masterLabel>
+            <translation><!-- Finland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation><!-- France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frenc.Polynesi</masterLabel>
+            <translation><!-- Frenc.Polynesi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gabon</masterLabel>
+            <translation><!-- Gabon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ghana</masterLabel>
+            <translation><!-- Ghana --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greece</masterLabel>
+            <translation><!-- Greece --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greenland</masterLabel>
+            <translation><!-- Greenland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guadeloupe</masterLabel>
+            <translation><!-- Guadeloupe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guatemala</masterLabel>
+            <translation><!-- Guatemala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guinea</masterLabel>
+            <translation><!-- Guinea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hong Kong</masterLabel>
+            <translation><!-- Hong Kong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hungary</masterLabel>
+            <translation><!-- Hungary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iceland</masterLabel>
+            <translation><!-- Iceland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indonesia</masterLabel>
+            <translation><!-- Indonesia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ireland</masterLabel>
+            <translation><!-- Ireland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Israel</masterLabel>
+            <translation><!-- Israel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italy</masterLabel>
+            <translation><!-- Italy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japan</masterLabel>
+            <translation><!-- Japan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jordan</masterLabel>
+            <translation><!-- Jordan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kenya</masterLabel>
+            <translation><!-- Kenya --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kuwait</masterLabel>
+            <translation><!-- Kuwait --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latvia</masterLabel>
+            <translation><!-- Latvia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lebanon</masterLabel>
+            <translation><!-- Lebanon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lithuania</masterLabel>
+            <translation><!-- Lithuania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Luxembourg</masterLabel>
+            <translation><!-- Luxembourg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Macau</masterLabel>
+            <translation><!-- Macau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malaysia</masterLabel>
+            <translation><!-- Malaysia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malta</masterLabel>
+            <translation><!-- Malta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mauritius</masterLabel>
+            <translation><!-- Mauritius --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mexico</masterLabel>
+            <translation><!-- Mexico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morocco</masterLabel>
+            <translation><!-- Morocco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation><!-- Netherlands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Zealand</masterLabel>
+            <translation><!-- New Zealand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niger</masterLabel>
+            <translation><!-- Niger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norway</masterLabel>
+            <translation><!-- Norway --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pakistan</masterLabel>
+            <translation><!-- Pakistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panama</masterLabel>
+            <translation><!-- Panama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraguay</masterLabel>
+            <translation><!-- Paraguay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peru</masterLabel>
+            <translation><!-- Peru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Philippines</masterLabel>
+            <translation><!-- Philippines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poland</masterLabel>
+            <translation><!-- Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portugal</masterLabel>
+            <translation><!-- Portugal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puerto Rico</masterLabel>
+            <translation><!-- Puerto Rico --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qatar</masterLabel>
+            <translation><!-- Qatar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Romania</masterLabel>
+            <translation><!-- Romania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ruanda</masterLabel>
+            <translation><!-- Ruanda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian Fed.</masterLabel>
+            <translation><!-- Russian Fed. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saudi Arabia</masterLabel>
+            <translation><!-- Saudi Arabia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singapore</masterLabel>
+            <translation><!-- Singapore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slovakia</masterLabel>
+            <translation><!-- Slovakia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slovenia</masterLabel>
+            <translation><!-- Slovenia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa</masterLabel>
+            <translation><!-- South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Korea</masterLabel>
+            <translation><!-- South Korea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spain</masterLabel>
+            <translation><!-- Spain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sri Lanka</masterLabel>
+            <translation><!-- Sri Lanka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Svalbard</masterLabel>
+            <translation><!-- Svalbard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sweden</masterLabel>
+            <translation><!-- Sweden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switzerland</masterLabel>
+            <translation><!-- Switzerland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taiwan</masterLabel>
+            <translation><!-- Taiwan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thailand</masterLabel>
+            <translation><!-- Thailand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkey</masterLabel>
+            <translation><!-- Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkmenistan</masterLabel>
+            <translation><!-- Turkmenistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>USA</masterLabel>
+            <translation><!-- USA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ukraine</masterLabel>
+            <translation><!-- Ukraine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Kingdom</masterLabel>
+            <translation><!-- United Kingdom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uruguay</masterLabel>
+            <translation><!-- Uruguay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utd.Arab Emir.</masterLabel>
+            <translation><!-- Utd.Arab Emir. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venezuela</masterLabel>
+            <translation><!-- Venezuela --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vietnam</masterLabel>
+            <translation><!-- Vietnam --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SECORE Segment --></label>
+        <name>Customer_Segment__c</name>
+        <picklistValues>
+            <masterLabel>Customer Segment 1</masterLabel>
+            <translation><!-- Customer Segment 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Segment 2</masterLabel>
+            <translation><!-- Customer Segment 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Segment 3</masterLabel>
+            <translation><!-- Customer Segment 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Segment 4</masterLabel>
+            <translation><!-- Customer Segment 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Segment 5</masterLabel>
+            <translation><!-- Customer Segment 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Segment 6</masterLabel>
+            <translation><!-- Customer Segment 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International Acc</masterLabel>
+            <translation><!-- International Acc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier1 Distributor</masterLabel>
+            <translation><!-- Tier1 Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier2 Distributor</masterLabel>
+            <translation><!-- Tier2 Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier3 Distributor</masterLabel>
+            <translation><!-- Tier3 Distributor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Installation Instructions --></label>
+        <name>Expert_Tool__c</name>
+        <relationshipLabel><!-- Content --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expiry Date --></label>
+        <name>Expiry_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Library IDs --></label>
+        <name>Library_Ids__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Schedule --></label>
+        <name>Price_Schedule__c</name>
+        <picklistValues>
+            <masterLabel>100</masterLabel>
+            <translation><!-- 100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100/115</masterLabel>
+            <translation><!-- 100/115 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>115</masterLabel>
+            <translation><!-- 115 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Published --></label>
+        <name>Published__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Americas</masterLabel>
+            <translation><!-- Americas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe</masterLabel>
+            <translation><!-- Europe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Revision --></label>
+        <name>Revision__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Type --></label>
+        <name>User_Type__c</name>
+        <picklistValues>
+            <masterLabel>Generic</masterLabel>
+            <translation><!-- Generic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restricted</masterLabel>
+            <translation><!-- Restricted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- VersionNumberInteger --></label>
+        <name>VersionNumberInteger__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Announcement --></label>
+        <name>Announcement</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Assembly Specification --></label>
+        <name>Assembly_Specification</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Comatrol Content --></label>
+        <name>Comatrol_Content</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Customer Presentations --></label>
+        <name>Customer_Presentations</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Interactive Content --></label>
+        <name>Interactive_Content</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Let&apos;s Torque --></label>
+        <name>Let_s_Torque</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Logo --></label>
+        <name>Logos</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Marketing --></label>
+        <name>Marketing</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Press Release --></label>
+        <name>Press_Release</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Price File --></label>
+        <name>Price_File</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Price Book --></label>
+        <name>Pricebook</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Pricing Tool --></label>
+        <name>Pricing_tool</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Product Graphic --></label>
+        <name>Product_Graphic</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Product Image --></label>
+        <name>Product_Image</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Product Information Bulletin --></label>
+        <name>Product_Information_Bulletin</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service Bulletin --></label>
+        <name>Service_Bulletin</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Technical Literature --></label>
+        <name>Technical_Literature</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Test Specification --></label>
+        <name>Test_Specification</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Tools --></label>
+        <name>Tools</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Training --></label>
+        <name>Training</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Unique Selling Points Handbook --></label>
+        <name>Unique_Selling_Points_Handbook</name>
+    </recordTypes>
+</CustomObjectTranslation>

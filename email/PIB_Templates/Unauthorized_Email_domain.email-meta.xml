@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This e-mail is sent when a contact is added or updated and the e-mail address contains an unauthorized domain.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Unauthorized Email domain</name>
+    <style>none</style>
+    <subject>Personal Email Domain Entered</subject>
+    <type>text</type>
+</EmailTemplate>

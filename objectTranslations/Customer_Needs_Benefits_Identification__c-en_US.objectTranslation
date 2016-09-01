@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer Needs - Benefits Identification</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Needs - Benefits Identification</value>
+    </caseValues>
+    <fields>
+        <label><!-- Benefit Classification --></label>
+        <name>Benefit_Classification__c</name>
+        <picklistValues>
+            <masterLabel>Functional</masterLabel>
+            <translation><!-- Functional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process</masterLabel>
+            <translation><!-- Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Customer Needs - Benefits Identification --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- What does customer need?  What is Customer&apos;s Pain Point?  Use SIIS to describe customer need:
+Start your sentence by: To save cost in …, To increase productivity of …
+Enter One Need at a time --></help>
+        <label><!-- Customer Need --></label>
+        <name>Customer_Needs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Formulated Difference in Benefits between Danfoss and NBA
+Description of the calculation PRINCIPLE for what is the Danfoss&apos; value created 
+(i.e.what is the basis for calculation the economical value created by Danfoss over the NBA?) --></help>
+        <label><!-- Formulated Difference in BENEFITS --></label>
+        <name>Formulated_Difference_in_BENEFITS_betwee__c</name>
+    </fields>
+    <fields>
+        <help><!-- General basis for benefits (Basis for total EVC)
+Denominator for calulation of EVC on the general basis, i.e. per year, per unit, per lifetime --></help>
+        <label><!-- General Basis for Benefits --></label>
+        <name>General_basis_for_Benefits__c</name>
+    </fields>
+    <fields>
+        <help><!-- Why does customer need it?
+Use SIIS to describe customer need. --></help>
+        <label><!-- Key Buying Factors --></label>
+        <name>Key_Buying_Factors__c</name>
+    </fields>
+    <fields>
+        <help><!-- Monetizing of Benefits (Input to Waterfall)
+Total EVC quantification in currency --></help>
+        <label><!-- Monetizing of Benefits --></label>
+        <name>Monetizing_of_Benefits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Need Type --></label>
+        <name>Need_Type__c</name>
+        <picklistValues>
+            <masterLabel>Explicit</masterLabel>
+            <translation><!-- Explicit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation><!-- Hidden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Implicit</masterLabel>
+            <translation><!-- Implicit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Choose Assumed Need if you have yet to verify the need with the customer. Choose Customer Verified Need - Yes if customer agrees this is a need. Choose Customer Verified Need - No if customer says this is not a need. --></help>
+        <label><!-- Need Verified --></label>
+        <name>Need_Verified__c</name>
+        <picklistValues>
+            <masterLabel>Assumed Need</masterLabel>
+            <translation><!-- Assumed Need --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Verified Need - No</masterLabel>
+            <translation><!-- Customer Verified Need - No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Verified Need - Yes</masterLabel>
+            <translation><!-- Customer Verified Need - Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Customer Needs - Benefits Identification --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Role in Buying Center --></label>
+        <name>Role_in_Buying_Center__c</name>
+        <picklistValues>
+            <masterLabel>Operator</masterLabel>
+            <translation><!-- Operator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Screener</masterLabel>
+            <translation><!-- Screener --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate Approver</masterLabel>
+            <translation><!-- Ultimate Approver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the feature and advantage of Danfoss offering that leads to customer benefit? --></help>
+        <label><!-- What does Danfoss do to solve the need? --></label>
+        <name>What_does_Danfoss_do_to_solve_the_need__c</name>
+    </fields>
+    <fields>
+        <help><!-- NBA is Next Best Alternative  
+What is the feature and/or advantage of NBA offering that may to customer benefit? --></help>
+        <label><!-- What does NBA do to solve the need? --></label>
+        <name>What_does_NBA_do_to_solve_the_need__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the product, if known, that the NBA is proposing as a solution --></help>
+        <label><!-- What is the NBA&apos;s Product? --></label>
+        <name>What_is_the_NBA_s_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the name Next Best Alternative into this field --></help>
+        <label><!-- Who is the Next Best Alternative (NBA)? --></label>
+        <name>Who_is_the_Next_Best_Alternative_NBA__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

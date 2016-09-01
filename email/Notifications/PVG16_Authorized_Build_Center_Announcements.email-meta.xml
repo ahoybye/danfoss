@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Template can be useed for any PVG Authorized Build Center Communications, just remember to remove the attachment and change the subject</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>PVG16 Authorized Build Center Announcements</name>
+    <style>formalLetter</style>
+    <subject>Sauer-Danfoss PVG16 Authorized Build Center Price Changes</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+Please find attached a document containing information regarding
+
+PVG16 Authorized Build Center Price Changes
+
+
+For more information, please contact your Sauer-Danfoss Account Manager.
+
+
+Best regards,</textOnly>
+    <type>html</type>
+</EmailTemplate>

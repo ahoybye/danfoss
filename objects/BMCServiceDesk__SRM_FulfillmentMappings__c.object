@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__FKFulfillmentInputs__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Fulfillment Input</label>
+        <referenceTo>BMCServiceDesk__SRM_FulfillmentInputs__c</referenceTo>
+        <relationshipLabel>Fulfillment Mappings</relationshipLabel>
+        <relationshipName>Fulfillment_Mappings</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKProcessTemplate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Process Template</label>
+        <referenceTo>BMCServiceDesk__SRM_ProcessTemplate__c</referenceTo>
+        <relationshipLabel>Fulfillment Mappings</relationshipLabel>
+        <relationshipName>Fulfillment_Mappings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKTemplate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Template</label>
+        <referenceTo>BMCServiceDesk__SYSTemplate__c</referenceTo>
+        <relationshipLabel>Fulfillment Mappings</relationshipLabel>
+        <relationshipName>Fulfillment_Mappings</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ProcessVariable__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Process variable</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2013 Holiday Schedule</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>General Communications for Holidays</name>
+    <style>formalLetter</style>
+    <subject>2013 Holiday Schedule</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+Attached is a notification of the Danfoss Power Solutions 2013 Holiday Schedule.
+
+
+Best regards,
+
+
+Danfoss Power Solutions
+Danfoss Power Solutions (US)  2800 East 13th Street, Ames, IA 50010</textOnly>
+    <type>html</type>
+</EmailTemplate>

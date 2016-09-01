@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label>Distriktsleder</label>
+        <name>Account_Owner__c</name>
+        <relationshipLabel><!-- Quotes (Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Additional Contacts --></label>
+        <name>Additional_Contacts__c</name>
+        <picklistValues>
+            <masterLabel>x</masterLabel>
+            <translation><!-- x --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Date --></label>
+        <name>Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Approval Stage --></label>
+        <name>Approval_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preliminary</masterLabel>
+            <translation><!-- Preliminary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Reason (DHS) --></label>
+        <name>CE_HS_Sub_reason__c</name>
+        <picklistValues>
+            <masterLabel>Better Price</masterLabel>
+            <translation><!-- Better Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial terms</masterLabel>
+            <translation><!-- Commercial terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funding</masterLabel>
+            <translation><!-- Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics</masterLabel>
+            <translation><!-- Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulation</masterLabel>
+            <translation><!-- Regulation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales terms</masterLabel>
+            <translation><!-- Sales terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service terms</masterLabel>
+            <translation><!-- Service terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specifications</masterLabel>
+            <translation><!-- Specifications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Reason (DDS) --></label>
+        <name>CE_PE_Sub_reason__c</name>
+        <picklistValues>
+            <masterLabel>Active Front End</masterLabel>
+            <translation><!-- Active Front End --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Better Price</masterLabel>
+            <translation><!-- Better Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial terms</masterLabel>
+            <translation><!-- Commercial terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer application requires Liquid cooling</masterLabel>
+            <translation><!-- Customer application requires Liquid cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EC technique</masterLabel>
+            <translation><!-- EC technique --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funding</masterLabel>
+            <translation><!-- Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harmonic solution</masterLabel>
+            <translation><!-- Harmonic solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liquid cooling</masterLabel>
+            <translation><!-- Liquid cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics</masterLabel>
+            <translation><!-- Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overload capability</masterLabel>
+            <translation><!-- Overload capability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulation</masterLabel>
+            <translation><!-- Regulation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safety requirements</masterLabel>
+            <translation><!-- Safety requirements --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales terms</masterLabel>
+            <translation><!-- Sales terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service terms</masterLabel>
+            <translation><!-- Service terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Size</masterLabel>
+            <translation><!-- Size --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specifications</masterLabel>
+            <translation><!-- Specifications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System supplier/Package deals</masterLabel>
+            <translation><!-- System supplier/Package deals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Reason (DCS) --></label>
+        <name>CE_RC_Sub_reason__c</name>
+        <picklistValues>
+            <masterLabel>Better Price</masterLabel>
+            <translation><!-- Better Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial terms</masterLabel>
+            <translation><!-- Commercial terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Funding</masterLabel>
+            <translation><!-- Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics</masterLabel>
+            <translation><!-- Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regulation</masterLabel>
+            <translation><!-- Regulation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales terms</masterLabel>
+            <translation><!-- Sales terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service terms</masterLabel>
+            <translation><!-- Service terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specifications</masterLabel>
+            <translation><!-- Specifications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cloned Quote Number --></label>
+        <name>Cloned_Quote_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Configit Quote Id --></label>
+        <name>ConfigitQuoteId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quick Reference Id --></label>
+        <name>ConfigitQuoteRef__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Revision --></label>
+        <name>ConfigitQuoteRevDisplay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Configit Revision Number --></label>
+        <name>ConfigitQuoteRev__c</name>
+    </fields>
+    <fields>
+        <label><!-- Configit Sync Message --></label>
+        <name>ConfigitSyncMessage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Configit Sync Status --></label>
+        <name>ConfigitSyncStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Address --></label>
+        <name>Contact_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Email --></label>
+        <name>Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Phone --></label>
+        <name>Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Specific Footer --></label>
+        <name>Country_Specific_Template__c</name>
+        <relationshipLabel><!-- Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Created By (Configit) --></label>
+        <name>CreatedBy_Configit__c</name>
+        <relationshipLabel><!-- Quotes (Created By (Configit)) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Created Date (Configit) --></label>
+        <name>CreatedDate_Configit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account (Quote) --></label>
+        <name>Custom_Account_Lookup__c</name>
+        <relationshipLabel><!-- Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Hierarchy Name --></label>
+        <name>Customer_Hierarchy_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Hierarchy --></label>
+        <name>Customer_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <help><!-- If left blank will default to +5 days --></help>
+        <label><!-- Customer Request Date --></label>
+        <name>Customer_Request_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Sales Org --></label>
+        <name>External_Sales_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Footer Comments --></label>
+        <name>Footer_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incoterms --></label>
+        <name>Incoterms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By (Configit) --></label>
+        <name>Last_ModifiedBy_Configit__c</name>
+        <relationshipLabel><!-- Quotes (Last Modified By (Configit)) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Last Modified Date (Configit) --></label>
+        <name>Last_ModifiedDate_Configit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified By Me? --></label>
+        <name>Last_Modified_By_Me__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Approved --></label>
+        <name>Lines_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Cancelled --></label>
+        <name>Lines_Cancelled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Countered by BU --></label>
+        <name>Lines_Countered_by_Business_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Countered by Pricing --></label>
+        <name>Lines_Countered_by_Pricing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Countered by Sales Mgr --></label>
+        <name>Lines_Countered_by_Sales_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Declined by BU --></label>
+        <name>Lines_Declined_by_BA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Pending with BU --></label>
+        <name>Lines_Pending_Business_Area_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Pending with Pricing --></label>
+        <name>Lines_Pending_Pricing_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines Pending with Sales Mgr --></label>
+        <name>Lines_Pending_Sales_Manager_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lines With Undefined Approver --></label>
+        <name>Lines_Undefined_Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>MergeFormulaParentAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Formula - Account Name --></label>
+        <name>Merge_Formula_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Formula - BusOrg --></label>
+        <name>Merge_Formula_BusOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Formula - Country --></label>
+        <name>Merge_Formula_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Merge_Formula_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Merge Formula - SAP ID --></label>
+        <name>Merge_Formula_SAP_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Now --></label>
+        <name>Now__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ratio On Time v Total --></label>
+        <name>On_Time_Quote__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity/Quote Status --></label>
+        <name>Opportunity_Quote_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Quote Number --></label>
+        <name>Original_Quote_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Quote --></label>
+        <name>Original_Quote__c</name>
+        <relationshipLabel><!-- Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Originating_Case__c</name>
+        <relationshipLabel><!-- Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>Parent_City__c</name>
+    </fields>
+    <fields>
+        <label>Betalingsbetingelser</label>
+        <name>Payment_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Price Status --></label>
+        <name>Price_Status__c</name>
+        <picklistValues>
+            <masterLabel>Creating SAP Customer</masterLabel>
+            <translation><!-- Creating SAP Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No SAP Material ID_Proposal</masterLabel>
+            <translation><!-- No SAP Material ID_Proposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price loaded into SAP</masterLabel>
+            <translation><!-- Price loaded into SAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Hold</masterLabel>
+            <translation><!-- Sales Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong SAP Customer</masterLabel>
+            <translation><!-- Wrong SAP Customer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price Valid From --></label>
+        <name>Price_Valid_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Valid To --></label>
+        <name>Price_Valid_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pricing Team Group Email --></label>
+        <name>Pricing_Team_Group_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Price Review Date --></label>
+        <name>Pricing_Updated_in_SAP__c</name>
+    </fields>
+    <fields>
+        <label><!-- QLInumbers --></label>
+        <name>QLInumbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Turn Around Time --></label>
+        <name>Quote_Turn_Around_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- RFQ Number --></help>
+        <label><!-- Customer Request Number --></label>
+        <name>RFQ_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+        <picklistValues>
+            <masterLabel>Commercial terms</masterLabel>
+            <translation><!-- Commercial terms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics</masterLabel>
+            <translation><!-- Logistics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Relationship</masterLabel>
+            <translation><!-- Relationship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stopped by customer</masterLabel>
+            <translation><!-- Stopped by customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stopped by third party</masterLabel>
+            <translation><!-- Stopped by third party --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stopped by us</masterLabel>
+            <translation><!-- Stopped by us --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Proposition</masterLabel>
+            <translation><!-- Value Proposition --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Responsible --></label>
+        <name>Responsible__c</name>
+        <relationshipLabel><!-- Quotes (Responsible) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SAP Price Update Cycle Days --></label>
+        <name>SAP_Price_Update_Cycle_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Quote ID --></label>
+        <name>SAP_Quote_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Mgr of Account --></label>
+        <name>Sales_Manager_of_Account__c</name>
+        <relationshipLabel><!-- Quotes (Sales Mgr of Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Org --></label>
+        <name>Sales_Org__c</name>
+    </fields>
+    <fields>
+        <name>Status</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In progress</masterLabel>
+            <translation><!-- In progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal approval</masterLabel>
+            <translation><!-- Internal approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stopped</masterLabel>
+            <translation><!-- Stopped --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Account --></label>
+        <lookupFilter>
+            <errorMessage><!-- The Sub Account must belong to the selected account --></errorMessage>
+        </lookupFilter>
+        <name>Sub_Account__c</name>
+        <relationshipLabel><!-- Quotes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sub Account --></label>
+        <name>Sub_Account_formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Surcharge Description --></label>
+        <name>Surcharge_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task due date --></label>
+        <name>Task_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Sent to Business Area for Approval --></label>
+        <name>Time_Sent_to_Business_Area_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Sent to Pricing Team for Approval --></label>
+        <name>Time_Sent_to_Pricing_Team_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Sent to Sales Manager Approval --></label>
+        <name>Time_Sent_to_Sales_Manager_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Valid From --></label>
+        <name>Valid_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Valid To --></label>
+        <name>Valid_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manual assigned opportunity --></label>
+        <lookupFilter>
+            <errorMessage><!-- You cannot only select Climate and Energy opportunities 
+- which are not shadow opportunities --></errorMessage>
+        </lookupFilter>
+        <name>opportunity__c</name>
+        <relationshipLabel><!-- Manual Re-assigned Quotes --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <label><!-- Approved Quote --></label>
+        <name>Approved_Quote</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Auto-Approved Quote --></label>
+        <name>Auto_Approved_Quote</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CE Quote --></label>
+        <name>CE_Quote</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- New Quote --></label>
+        <name>New_Quote</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Not Routed Quote --></label>
+        <name>Not_Routed_Quote</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t select a Contact from an Indirect Account. --></errorMessage>
+        <name>No_Contact_from_Indirect_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- SAP Price Status cannot be changed --></errorMessage>
+        <name>Prevent_Price_Status_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Quote Line Items can only be changed from Configit --></errorMessage>
+        <name>Total_can_only_be_changed_by_Configit</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Clone --></label>
+        <name>Clone</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Configit_Quote --></label>
+        <name>Configit_Quote</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_PDF --></label>
+        <name>Create_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Custom_Create_PDF --></label>
+        <name>Custom_Create_PDF</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Email_Quote --></label>
+        <name>Email_Quote</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Generic_Code_Master_List --></label>
+        <name>Generic_Code_Master_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Configit_Quote_Account --></label>
+        <name>New_Configit_Quote_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Configit_Quote_Contact --></label>
+        <name>New_Configit_Quote_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Configit_Quote_Opportunity --></label>
+        <name>New_Configit_Quote_Opportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

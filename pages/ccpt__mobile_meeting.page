@@ -1,0 +1,84 @@
+<!--<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false"  docType="html-5.0">
+	<apex:composition template="mobile_template">
+		<apex:define name="setup">
+			CONST_PAGE_DEFAULT = 'meeting.list';
+            CONST_PAGE_DEFAULT_PARAMS = {displayType : 'upcoming', arg1 : null, arg2 : null};
+		</apex:define>
+	</apex:composition>
+</apex:page>-->
+<!-- 
+Provider of the main template for all core pages in productivity.  Provides navigation controls, search ability, and includes all common stylesheets / javascript.
+@author brentgorton
+@todo add support for notifications, improve search capabilities
+@apex TemplateExtension provides search capability via RemoteAction {@method TemplateExtension getMenuSearchResults}, also provides current page detection and display of nav items accordingly
+-->
+<apex:page sidebar="false" showHeader="false" controller="ccpt.AngularExtension" extensions="ccpt.BetaHelper,ccpt.MeetingRemoting,ccpt.ActionFormComponentController,ccpt.RelatedToComponentController,ccpt.JavascriptRemoting,ccpt.Webservices" standardStylesheets="false">
+	<html>
+		<head>
+			<title>Productivity Fox</title>
+			<base href="#/"></base>
+			<style>
+				.splash{
+					position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background: #3d3d3d; z-index: 5000;
+					display:none;
+					text-align:center;
+					vertical-align: middle;
+					-webkit-transition:0.3s linear all;
+					transition:0.3s linear all;
+				}
+
+				[ng-cloak].splash {
+					display: block !important;
+				}
+				[ng-cloak] {display: none;}
+			</style>
+		</head>
+		<body ng-class="headerClass" ng-app="meetings">
+			<div ng-cloak="true" class="splash">
+				<img src="{!URLFOR($Resource.productivity_frameworks, '/img/prod-fox-transparent-compressed.png')}" style="width: 150px; height: 150px; position: fixed;top: 50%;left: 50%;margin-left: -75px;margin-top: -75px;" />
+			</div>
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/bootstrap/css/bootstrap.min.css')}" />
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/fonts/raleway/raleway.css')}" />
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_sf1_assets,'/meetings/css/ionic.css')}" />
+			<link rel="stylesheet" href="{!URLFOR($Resource.productivity_sf1_assets,'/meetings/css/style.css')}" />
+			<script src="{!URLFOR($Resource.productivity_sf1_assets,'/meetings/js/ionic/ionic.bundle.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/angular-touch.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/plugins/angular-ui-router.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/angularjs/plugins/angular-ui-router-helper.min.js')}"></script>
+			<script src="{!URLFOR($Resource.productivity_frameworks,'/js/frameworks/ui-bootstrap-tpls.min.js')}"></script>
+			<style>
+				.sub-header-menu-icon{
+					padding: 0px;
+				}
+			</style>
+			<script>
+				var CONST_RESOURCE_URL = '{!$Resource.productivity_sf1_assets}/meetings/';
+				var CONST_NAMESPACE = '{!fieldNamespace}';
+				var NAMESPACE = '{!fieldNamespace}';
+				var JS_NAMESPACE = '{!jsNamespace}'
+				var CONST_PAGE_DEFAULT = 'dashboard';
+                var CONST_PAGE_DEFAULT_PARAMS = {};
+				var CONST_ACTION_SCHEMA = {!actionLookups};
+				var CONST_MEETING_SCHEMA = {!meetingLookups};
+				var CONST_DEFAULT_USER = { id : '{!$User.Id}', name : "{!JSENCODE($User.FirstName)} {!JSENCODE($User.LastName)}" };
+				var GROUPING_PREFIX = '{!groupingPrefix}';
+				var BOARD_PREFIX = '{!boardPrefix}';
+				var PERMISSIONS = JSON.parse('{!permissions}');
+				var CONST_BETA = {!isBeta};
+				var CONST_SETUP = {!hasSetup};
+				var LABELS = {!labels};
+				var CHATTER_ENABLED = {!isChatterEnabled};
+				var IS_SF1 = true;
+			</script>
+			<script>
+				<apex:insert name="setup"></apex:insert>
+			</script>
+			<script src="{!URLFOR($Resource.productivity_sf1_assets,'/meetings/js/productivity.js')}"></script>
+			<div>
+			    <ion-nav-bar class="bar-meeting" align-title="center"></ion-nav-bar>
+			    <ion-nav-view></ion-nav-view>
+			</div>
+			<toast></toast>
+		</body>
+	</html>
+</apex:page>

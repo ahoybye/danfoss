@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Change Request Approval HTML</name>
+    <style>none</style>
+    <subject>Change Request Approval</subject>
+    <textOnly>Description: {!BMCServiceDesk__Change_Request__c.BMCServiceDesk__Change_Description__c}
+
+{!BMCServiceDesk__Change_Request__c.Link}
+
+Please Approve/Reject the Change Request by replying with one of the following Key words
+
+approve
+approved
+yes
+reject
+rejected
+no</textOnly>
+    <type>custom</type>
+</EmailTemplate>

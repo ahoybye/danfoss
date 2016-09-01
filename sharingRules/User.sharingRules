@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>PS_APAC_PartnerLink</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>PS: APAC PartnerLink</label>
+        <sharedTo>
+            <group>PS_Partner_Users_APAC</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_PartnerLink_Internal_APAC</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>PS_Americas_ParnterLink</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>PS Americas ParnterLink</label>
+        <sharedTo>
+            <group>PS_Partner_Users_AMER</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_PartnerLink_Internal_AMER</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>PS_China_PartnerLink</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing appropriate internal contacts with PartnerLink Users in China</description>
+        <label>PS: China PartnerLink</label>
+        <sharedTo>
+            <group>PS_Partner_Users_CHINA</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_PartnerLink_Internal_China</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>PS_Europe_PartnerLink</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Sharing with Europe internal with Europe partners.</description>
+        <label>PS: Europe PartnerLink</label>
+        <sharedTo>
+            <group>PS_Partner_Users_EU</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_PartnerLink_Internal_EU</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

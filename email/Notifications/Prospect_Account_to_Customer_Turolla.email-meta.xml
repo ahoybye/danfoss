@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Turolla_Logo</letterhead>
+    <name>Prospect Account to Customer Turolla</name>
+    <style>formalLetter</style>
+    <subject>Action Requested: {!Account.Name} from Prospect to Customer</subject>
+    <textOnly>Hello,
+
+{!Account.Name} should be updated from Prospect type to Customer type in Salesforce.com.
+
+Please complete the attached form and send to Customer Master Administrator.
+
+Account details:
+Reason for Becoming an Account: {!Account.Reason_For_Becoming_a_Direct_Account__c}
+Language:  {!Account.Language__c}
+Supplier / Vendor Code:  {!Account.Supplier_Code_Vendor_Code__c}
+Vat Number: {!Account.VAT_Reg_No__c}
+
+Billing Address
+{!Account.Name}
+{!Account.BillingAddress}
+{!Account.BillingCity}, {!Account.BillingState}  {!Account.BillingPostalCode}
+
+Sales Orgs
+{!Account.Sales_Org__c}
+
+Link to {!Account.Name} here.
+
+Thank you,
+{!Account.OwnerFullName}</textOnly>
+    <type>html</type>
+</EmailTemplate>

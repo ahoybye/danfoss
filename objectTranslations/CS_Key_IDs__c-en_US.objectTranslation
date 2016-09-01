@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Key IDs</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Key IDs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Allowed values - &quot;Enable&quot;, &quot;Disable&quot; --></help>
+        <label><!-- Flag --></label>
+        <name>Flag__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,174 @@
+<apex:page Controller="BMCServiceDesk.BroadcastWidgetController" showheader="false" cache="true" sidebar="false" standardStylesheets="false">
+    <head>
+      <link rel="stylesheet" type="text/css" href="{!$Resource.SDEFExtJS}/resources/css/ext-all.css" id="ext-all-css"/>  
+        <link rel="stylesheet" type="text/css" href="{!$Resource.SDEFStyles}/stdcalalog.css"/>
+      <link rel="stylesheet" type="text/css" href="{!$Resource.SDEFExtJS}/ex/ux/css/Portal.css"/>
+      <link rel="stylesheet" type="text/css" href="{!$Resource.SDEFStyles}/BroadcastWidget.css"/>
+    </head>
+    <c:CommonIncludes2 />
+    <script type="text/javascript" src="{!$Resource.SDEFCommonJS}/BroadcastWidgetPage.js"/> 
+    <apex:outputPanel id="dataPanel">
+        <script>
+            var isFromSS = '{!JSENCODE($CurrentPage.parameters.fromSS)}';
+            var isfromconsole = '{!JSENCODE($CurrentPage.parameters.fromconsole)}';
+			var isfromRFconsole = '{!JSENCODE($CurrentPage.parameters.fromRFconsole)}';
+            var islinktobroadcast=false;
+            if('{!JSENCODE($CurrentPage.parameters.linktobroadcast)}'== 'true')
+            {
+                islinktobroadcast=true;
+            } 
+            var isPortalUser = '{!isPortalUser}';
+            var showSubmitIncIcon = {!showSubmitIncIcon};
+            var listData;
+            
+            function setData() {
+                listData = [{!listData}];
+                setDataJS(listData);
+            }
+            Ext.ns("BroadcastWidget");
+            BroadcastWidget.Labels = {
+                NavigatorBroadcast: '{!JSENCODE($Label.Navigator_Broadcasts)}'
+            }
+            setData();
+            window.onload = getIncidentIdsTOBroadcast
+        </script>
+    </apex:outputPanel>
+    <script>
+        var labelBroadcastWindowHeaderSearchPage = '{!JSENCODE($Label.broadcastWindowHeaderSearchPage)}';
+        function renderIcon(image,metadata, record, rowIndex, columnIndex, store) {
+            return '<span class="clsImageA" rowIndex="'+ rowIndex +'" columnIndex="'+ columnIndex +'" ><img src="' + "{!$Resource.SDEFStyles}/SDEFimages/" +image + '"/> </span>';
+        }
+        
+        var follow = '{!JSENCODE($Label.followBroadcast)}';
+        var unFollow = '{!JSENCODE($Label.unFollowBroadcast)}';
+        var submitTktLbl = '{!JSENCODE($Label.SS_IncidentHome)}';
+        var SSIfIncidentAlreadyCreatedForBrd = '{!JSENCODE($Label.SSIfIncidentAlreadyCreatedForBrd)}';
+        var NoRecordsFound ='{!JSENCODE($Label.NoRecordsFound)}';
+    </script>
+    
+    <apex:outputPanel id="stylePanel" rendered="{!IF($CurrentPage.parameters.fromSS == 'true',true,false)}" >
+        <style>
+            div,textarea { font:12px arial !important; }
+           
+        </style>
+    </apex:outputPanel>
+ 
+    <apex:outputPanel id="errorId">
+        <script>
+           errormsg = '{!JSENCODE(messageString)}';
+        </script>
+        </apex:outputPanel>
+        
+    <apex:form id="theForm">
+        <apex:actionfunction name="getBroadcastDetails" action="{!setBroadcastList}" rerender="detailcontainer,dataPanel" />
+        <apex:actionFunction name="handleRowClick" action="{!getBroadcastDetails}" reRender="detailcontainer">
+            <apex:param name="BroadcastId" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="handleRowClickWithFollow" action="{!getBroadcastDetailsWithFollow}" reRender="detailcontainer,errorId" oncomplete="showError();changeImages();">
+            <apex:param name="BroadcastId" value="" />
+            <apex:param name="follow" value="" />
+        </apex:actionFunction>
+        <apex:actionFunction name="handleColumnClick" action="{!handleColumnClick}" oncomplete="" reRender="detailcontainer,dataPanel,bottomPanel">
+            <apex:param name="sortColumn" value="" assignTo="{!sortColumn}"/>
+        </apex:actionFunction>
+        <apex:actionFunction name="passincidentidstocontroller" reRender="errorId"  >
+            <apex:param name="IncidentIds" value="" assignTo="{!raw_incidentIDs}"/>
+            </apex:actionFunction>
+        <div id="tableDiv" tabindex="-1">
+            <table class="clsTable1" cellspacing="0" cellpadding="0" tabindex="-1">
+            </table>
+        </div>
+        <div class="clsTemplateGridPanel" id="GridPanel" style="margin:0px" tabindex="-1">
+            <div class="clsTemplateGridPanel" id="extGridPanel" style="margin:0px" tabindex="-1"></div>
+        </div>
+        <apex:outputpanel id="bottomPanel">
+            <div class="prevNextDiv" tabindex="-1">
+               <table align="center" tabindex="-1">
+                   <tr>
+                    <td tabindex="-1">
+                            <apex:commandbutton tabindex="{!IF(hasPrevious,'0','-1')}" action="{!handleFirstClick}" id="firstPageBTN" styleClass="{!IF(hasPrevious, 'clsImage1', 'clsDisImage1')}" title="{!$Label.BMCServiceDesk__FirstPage}" disabled="{!IF(hasPrevious,false,true)}"/>
+                    </td>
+                    <td tabindex="-1">  
+                            <apex:commandbutton tabindex="{!IF(hasPrevious,'0','-1')}" action="{!handlePreviousClick}"  id="previousPageBTN" styleClass="{!IF(hasPrevious, 'clsImage2', 'clsDisImage2')}" title="{!$Label.BMCServiceDesk__PreviousPage}" disabled="{!IF(hasPrevious,false,true)}"/>
+                    </td>
+                    <td align="center" class="clsPaginationLabel" tabindex="-1">    
+                      <apex:outputText value="{!$Label.Page} {!currentPage} {!$Label.Of} {!totalpage }"
+                        id="pageInfoText"/>
+                    </td>
+                    <td tabindex="-1" >
+                           <apex:commandbutton tabindex="{!IF(hasNext,'0','-1')}" action="{!handleNextClick}" id="nextPageBTN" styleClass="{!IF(hasNext, 'clsImage3 flRight', 'clsDisImage3 flRight')}" title="{!$Label.BMCServiceDesk__NextPage}" disabled="{!IF(hasNext,false,true)}"/>
+                    </td>
+                    <td tabindex="-1">
+                            <apex:commandbutton tabindex="{!IF(hasNext,'0','-1')}" action="{!handleLastClick}" id="lastPageBTN" styleClass="{!IF(hasNext, 'clsImage4 flRight', 'clsDisImage4 flRight')}" title="{!$Label.BMCServiceDesk__LastPage}" disabled="{!IF(hasNext,false,true)}"/>
+                   </td> 
+                   </tr>
+                 </table>   
+            </div>
+            <tr>
+                <td tabindex="-1">
+                    <div class="div10pxVspacing" style="{!IF($CurrentPage.parameters.fromSS == 'true','background-color:#F7F7F7','background-color: white')}"/>
+                </td>
+            </tr>
+            <div style="{!IF($CurrentPage.parameters.fromSS == 'true','background-color:#F7F7F7; height:113px;','background-color: white; height:113px;')}">
+                <apex:outputpanel id="detailcontainer">
+                    <apex:outputPanel rendered="{!IF($CurrentPage.parameters.fromSS == 'true',false,true)}">
+                <table>
+                    <tr>
+                        <td>
+                            <apex:outputText styleClass="clsTbw3" value="{!postDate}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="clsPanelInputCheckboxTDS">
+                            <apex:inputTextArea value="{!broadcastMessage}" readonly="true" styleClass="clsTbw5"/>
+                        </td>
+                    </tr>
+                   </table>
+                </apex:outputpanel>
+                    
+                    <apex:outputPanel rendered="{!IF($CurrentPage.parameters.fromSS == 'true',true,false)}">
+                       <table>
+                            <tr>
+                                <td >
+                                    <apex:outputText style="font:12px arial; font-weight:bold;" styleClass="clsTbw3" value="{!$Label.BMCServiceDesk__SSBroadcasted}"/>:
+                                    <apex:outputText style="font:12px arial; padding-left:5px;" styleClass="clsTbw3" value="{!postDate}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="clsPanelInputCheckboxTDS">
+                                    <apex:inputTextArea value="{!broadcastMessage}" readonly="true" onkeydown="focusFirstRow();" styleClass="clsTbw5" style=" margin-right:0px; width:590px; height:65px;" tabindex="0"/> 
+                                </td>
+                            </tr>
+                       </table>
+                    </apex:outputpanel>
+                </apex:outputpanel>
+            </div>
+            <!--  for link Incidents to Broadcast button --> 
+             <apex:outputpanel rendered="{!IF($CurrentPage.parameters.linktobroadcast == 'true',true,false)}">
+            <div class="prevNextDiv" style="height:25px;">
+                          <table align="left">
+               <tr>
+                <td>
+                    <apex:commandbutton id="linktobroadcast"  style="height:25px;width:50px;" styleClass="btn" disabled="{!if(listIsNull == false, false, true)}" reRender="errorId" value="{!$Label.BMCServiceDesk__Link}" action="{!LinkIncidentsTOBroadcast}" oncomplete="showError();showSucessmsg();" status="PleaseWait"/>
+                    <apex:actionStatus onStart="showMask();" onstop="hideMask();" id="PleaseWait"/>
+                    <div id="overlay" class="overlay"><div align="center" id="divmsg" class="divmsg">
+                        <div style="position:relative; " id="mask" class="mask"> <apex:outputtext style="font-weight: bold;font-size: 12px;" value="{!JSENCODE($Label.BMCServiceDesk__PleaseWait)}"></apex:outputtext>
+                            </div>
+                            </div>
+                    </div>
+                </td>
+               
+                </tr>
+             </table>   
+            </div>
+            </apex:outputpanel> 
+        </apex:outputpanel>
+    </apex:form>
+ 
+<script>      
+    if(Sarissa._SARISSA_IS_IE && (navigator.userAgent.indexOf("Trident/6")>-1)){  
+        window.XMLSerializer = function(){};      
+        window.XMLSerializer.prototype.serializeToString=function(oNode){return oNode.xml;}    
+    }
+ </script>   
+</apex:page>

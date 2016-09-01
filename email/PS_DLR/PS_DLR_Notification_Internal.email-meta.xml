@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Internal notification that DL Request needs to be processed</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DPS_Letterhead</letterhead>
+    <name>*PS: DLR notification Internal</name>
+    <style>formalLetter</style>
+    <subject>Urgent: Deviated Lead-time Request review required</subject>
+    <textOnly>Please review the following Deviated Lead-time request as soon as possible.
+
+Created By: {!Deviated_Lead_time_Request__c.CreatedBy}
+Created Date: {!Deviated_Lead_time_Request__c.CreatedDate}
+Account: {!Deviated_Lead_time_Request__c.Account__c}
+Reason: {!Deviated_Lead_time_Request__c.Reason__c}
+
+Associated Opportunity (if applicable): {!Deviated_Lead_time_Request__c.Opportunity__c}
+
+{!Deviated_Lead_time_Request__c.Link}
+
+Thank you!</textOnly>
+    <type>html</type>
+</EmailTemplate>

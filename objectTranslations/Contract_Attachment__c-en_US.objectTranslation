@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract Attachment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract Attachments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contract --></label>
+        <name>Contract__c</name>
+        <relationshipLabel><!-- Contract Attachments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>1. Rough Drafts/Supporting Documents</masterLabel>
+            <translation><!-- 1. Rough Drafts/Supporting Documents --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2. Final Draft</masterLabel>
+            <translation><!-- 2. Final Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3. Signed Document(s)</masterLabel>
+            <translation><!-- 3. Signed Document(s) --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- New --></label>
+        <name>New</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

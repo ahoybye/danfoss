@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>C&amp;E Guideline</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>C&amp;E Guidelines</value>
+    </caseValues>
+    <fields>
+        <label><!-- Author --></label>
+        <name>Author__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail --></label>
+        <name>Detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- E-mail --></label>
+        <name>E_mail__c</name>
+    </fields>
+    <fields>
+        <name>ValidationStatus</name>
+        <picklistValues>
+            <masterLabel>Not Validated</masterLabel>
+            <translation><!-- Not Validated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validated external use</masterLabel>
+            <translation><!-- Validated external use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validated internal use</masterLabel>
+            <translation><!-- Validated internal use --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

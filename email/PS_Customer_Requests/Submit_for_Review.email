@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin: 2pt 0in; font-family: Calibri, sans-serif; font-size: 11pt;"><font face="Arial,Sans-Serif" size="3">A new task has been assigned to you.&nbsp; Please review and complete.</font></p><p class="MsoNormal" style="margin: 2pt 0in; font-family: Calibri, sans-serif; font-size: 11pt;"><font size="3"><font face="Arial,Sans-Serif"><br></font></font></p><p class="MsoNormal" style="margin: 2pt 0in; font-family: Calibri, sans-serif; font-size: 11pt;"><strong style="font-family: Arial, sans-serif; font-size: 16px; background-color: rgb(255, 255, 255);"><a href="{!PS_Customer_Request__c.Link}">Customer Request</a></strong></p>]]></td>
+</tr>
+</table>

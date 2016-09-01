@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__AssignId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store assign Id of the scan target list member.</description>
+        <externalId>false</externalId>
+        <label>Assign Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ExcludedMembers__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the excluded members of the scan target list member.</description>
+        <externalId>false</externalId>
+        <label>Excluded Members</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKScanTargetList__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Scan Target List</label>
+        <referenceTo>BMCServiceDesk__ScanTargetList__c</referenceTo>
+        <relationshipLabel>Scan Target List Members</relationshipLabel>
+        <relationshipName>ScanTargetListMembers</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__IncludedMembers__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the included members of the scan target list member.</description>
+        <externalId>false</externalId>
+        <label>Included Members</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+</CustomObject>

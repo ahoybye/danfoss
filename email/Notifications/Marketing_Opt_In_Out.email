@@ -1,0 +1,26 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt"><STRONG><FONT color=#cc0000>URGENT:</FONT></STRONG></SPAN></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt"></SPAN>&nbsp;</DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt">{!Contact.Name} has requested to unsubscribe from {template.Name}</SPAN><FONT face=arial><BR></FONT></DIV>
+<DIV>
+<DIV><FONT face=arial>First Name : {!Contact.FirstName}&nbsp;</FONT></DIV>
+<DIV><FONT face=arial>Last Name : {!Contact.LastName}&nbsp;</FONT></DIV>
+<DIV><FONT face=arial>Account Name : {!Account.Name}&nbsp;</FONT></DIV>
+<DIV><FONT face=arial>Template Name: {template.Name}</FONT></DIV>
+<DIV><FONT face=arial><BR></FONT></DIV>
+<DIV><FONT face=arial>Click on following link to update the <STRONG>MarComm Section</STRONG> of the Contact record.&nbsp;</FONT></DIV>
+<DIV><FONT face=arial><BR></FONT></DIV>
+<DIV><FONT face=arial><BR></FONT></DIV>
+<DIV><FONT face=arial>{!Contact.Link}</FONT></DIV></DIV>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

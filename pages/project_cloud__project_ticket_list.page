@@ -1,0 +1,52 @@
+<apex:page id="page" standardController="project_cloud__Project__c" extensions="project_cloud.ProjectTicketListExtension" title="{!project_cloud__Project__c.Name} - {!subtitle}">
+
+	<c:walkme />
+	<c:include_jquery />
+	<c:tree projectId="{!project_cloud__Project__c.Id}"/>
+
+	<apex:sectionHeader title="{!project_cloud__Project__c.Name}" subtitle="{!subtitle}" />
+
+	<apex:pageMessages id="messages" />
+
+	<apex:form id="form" rendered="{!NOT(ISBLANK(tickets))}">
+		<apex:pageBlock id="block">
+			<apex:pageBlockButtons id="buttons" location="top">
+				<apex:commandButton value="New Ticket" action="{!URLFOR($Action.Ticket__c.New)}" />
+				<apex:commandButton id="saveTickets" value="Save" action="{!saveTickets}" style="display: none;" />
+				<c:list_search tableSelector="{!$Component.page.form.block.section.ticketsTable}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection id="section" columns="1">
+				<apex:pageBlockTable id="ticketsTable" var="ticket" value="{!tickets}">
+					<apex:column headerValue="Ticket Number">
+						<apex:outputLink value="/{!ticket.Id}">
+							{!ticket.Name}
+						</apex:outputLink>
+					</apex:column>
+					<apex:column headerValue="Name">
+						<apex:outputField value="{!ticket.project_cloud__Ticket_Name__c}">
+							<apex:inlineEditSupport event="ondblclick" showOnEdit="saveTickets" />
+						</apex:outputField>
+					</apex:column>
+					<apex:column headerValue="Status">
+						<apex:outputField value="{!ticket.project_cloud__Status__c}">
+							<apex:inlineEditSupport event="ondblclick" showOnEdit="saveTickets" />
+						</apex:outputField>
+					</apex:column>
+					<apex:column headerValue="Type">
+						<apex:outputField value="{!ticket.project_cloud__Type__c}">
+							<apex:inlineEditSupport event="ondblclick" showOnEdit="saveTickets" />
+						</apex:outputField>
+					</apex:column>
+					<apex:repeat var="f" value="{!$ObjectType.project_cloud__Ticket__c.FieldSets.project_cloud__Project_Ticket_List}">
+						<apex:column headerValue="{!f.Label}">
+							<apex:outputField value="{!ticket[f]}">
+								<apex:inlineEditSupport event="ondblclick" showOnEdit="saveTickets" />
+							</apex:outputField>
+						</apex:column>
+					</apex:repeat>
+				</apex:pageBlockTable>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+
+</apex:page>

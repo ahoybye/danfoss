@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Influencer Grid</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Influencer Grids</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccountId --></label>
+        <name>AccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Influencer Grids --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Evaluate stakeholder&apos;s attitude toward Danfoss --></help>
+        <label><!-- Danfoss --></label>
+        <name>Danfoss__c</name>
+        <picklistValues>
+            <masterLabel>Enthusiastic</masterLabel>
+            <translation><!-- Enthusiastic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hostile</masterLabel>
+            <translation><!-- Hostile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negative</masterLabel>
+            <translation><!-- Negative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neutral</masterLabel>
+            <translation><!-- Neutral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive</masterLabel>
+            <translation><!-- Positive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Danger Signal --></label>
+        <name>Danger_Signal__c</name>
+        <picklistValues>
+            <masterLabel>! - Improve Relations</masterLabel>
+            <translation><!-- ! - Improve Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>!! - Remove Roadblocks</masterLabel>
+            <translation><!-- !! - Remove Roadblocks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>0 - OK</masterLabel>
+            <translation><!-- 0 - OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>= - Stay in Touch</masterLabel>
+            <translation><!-- = - Stay in Touch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- E-DISC --></label>
+        <name>EDISC__c</name>
+        <relationshipLabel><!-- Influencer Grids --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Friend: Likes us and helps us to move forwards. Typically they have good experience with us. Other stakeholders listen to our friends. Invaluable if they have high degree of influence.
+Enemy: The opposite of a friend. Fights against us but is often nice --></help>
+        <label><!-- Friend/Enemy --></label>
+        <name>Friend_Enemy__c</name>
+        <picklistValues>
+            <masterLabel>Enemy</masterLabel>
+            <translation><!-- Enemy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend</masterLabel>
+            <translation><!-- Friend --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Influence on purchasing decision --></label>
+        <name>Influence_on_purchasing_decision__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- List Influencer&apos;s KPI&apos;s and, if known, personal goals --></help>
+        <label><!-- Influencer&apos;s KPIs --></label>
+        <name>Influencers_KPIs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Free text -EXECUTIVE SUMMARY
+Based on your findings from interviews with this stakeholder, what would be the main selling message?
+This should be used as a basis for preparation of negotiation and delivery of Value Proposition. --></help>
+        <label><!-- Key Message in Value Proposition --></label>
+        <name>Key_Message_Value_Prop__c</name>
+    </fields>
+    <fields>
+        <help><!-- Evaluate stakeholder&apos;s attitude towards Next Best Alternative (NBA) --></help>
+        <label><!-- NBA --></label>
+        <name>NBA__c</name>
+        <picklistValues>
+            <masterLabel>Enthusiastic</masterLabel>
+            <translation><!-- Enthusiastic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hostile</masterLabel>
+            <translation><!-- Hostile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negative</masterLabel>
+            <translation><!-- Negative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neutral</masterLabel>
+            <translation><!-- Neutral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive</masterLabel>
+            <translation><!-- Positive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Amount --></label>
+        <name>Opportunity_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Close Date --></label>
+        <name>Opportunity_Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Influencer Grids --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Ultimate Approver: Agenda is composed by Financials-Can OVERRULE all other decision makers 
+Screener: Focused on requirements and is setting the rules of the game 
+Operator: Focused on getting the “Job Done&quot;. Is either user or supervisor of us --></help>
+        <label><!-- Role In The Buying Center --></label>
+        <name>Role_In_The_Buying_Center__c</name>
+        <picklistValues>
+            <masterLabel>Operator</masterLabel>
+            <translation><!-- Operator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Screener</masterLabel>
+            <translation><!-- Screener --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultimate Approver</masterLabel>
+            <translation><!-- Ultimate Approver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- How quickly does the stakeholder need to take action? --></help>
+        <label><!-- Urgency --></label>
+        <name>Urgency__c</name>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mandatory</masterLabel>
+            <translation><!-- Mandatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Significant</masterLabel>
+            <translation><!-- Significant --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visit Priority --></label>
+        <name>Visit_Priority__c</name>
+        <picklistValues>
+            <masterLabel>HIGH</masterLabel>
+            <translation><!-- HIGH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOW</masterLabel>
+            <translation><!-- LOW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MED</masterLabel>
+            <translation><!-- MED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,5 @@
+<apex:page controller="UnsbuscribeCampaignController" showHeader="false" sidebar="false" action="{!sendEmail}">
+<apex:pageBlock >
+	<apex:pageMessages /> 
+</apex:pageBlock>
+</apex:page>

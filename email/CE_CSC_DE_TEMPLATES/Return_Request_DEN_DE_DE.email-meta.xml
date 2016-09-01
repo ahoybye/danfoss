@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Return_Request_DEN_DE_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>Return_Request_DEN_DE_DE</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>An: {!Case.Account}
+
+Z.Hd. {!Case.Contact}
+
+W E R K S R Ü C K G A B E
+
+Ihre Anfrage
+vom
+Unsere Rechnung
+vom
+
+Eine Rücknahme ist möglich.
+
+Gemäß unseren AGB´s berechnen wir Ihnen für zurückgesandte Ware Rücknahmekosten in Höhe von 25 % des Rechnungswertes.
+Vorraussetzung ist, die Ware ist original und ungeöffnet verpackt.
+Wurde die Verpackung beschädigt oder geöffnet, behält Danfoss 50 % vom Rechnungspreis, mindestens jedoch 100 EUR ein.
+
+Bitte schicken Sie die Ware unverzüglich zurück an:
+
+Danfoss GmbH
+z. Hd. Herrn Yigit
+Carl-Legien-Str. 8
+63073 Offenbach
+
+Legen Sie bitte eine Kopie dieses Schreibens bei.
+*
+Nach Eingang und Prüfung der Ware erhalten Sie eine Gutschrift.
+
+Mit freundlichen Grüßen
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+{!Case.Thread_Id}
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

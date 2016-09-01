@@ -1,0 +1,17 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[Dear Sir,]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p class="MsoListParagraph" style="font-family: arial; font-size: 12pt;"><span style="font-family: Arial, sans-serif; font-size: 12pt;">Kindly find attached invoice copy with LR details for the
+materials dispatched from our Chennai Warehouse against your order</span><span style="font-family: Arial, sans-serif; font-size: 10pt;">.</span></p><p class="MsoListParagraph" style="font-family: arial; font-size: 12pt;"><span style="font-family: Arial, sans-serif; font-size: 10pt;"><br></span></p><p class="MsoListParagraph" style="font-family: arial;"><font face="Arial, sans-serif">Invoice Number:</font></p><p class="MsoListParagraph" style="font-family: arial;"><font face="Arial, sans-serif">Invoice Date:</font></p><p class="MsoListParagraph" style="font-family: arial;"><font face="Arial, sans-serif"><br></font></p><p class="MsoListParagraph" style="font-family: arial;"><font face="Arial, sans-serif"><br></font></p><p class="MsoNormalCxSpMiddle" style="font-family: arial;"><font face="Verdana,Helvetica,Sans-Serif" size="3">Thanking you and assuring our best services always.</font></p><p class="MsoNormalCxSpMiddle" style="font-family: arial;"><font face="Verdana,Helvetica,Sans-Serif" size="3">&nbsp;</font></p><p class="MsoNormalCxSpMiddle" style="font-family: arial;"><font face="Verdana,Helvetica,Sans-Serif" size="3">Best regards,</font></p><p class="MsoListParagraph" style="font-family: arial;"><font face="Verdana,Helvetica,Sans-Serif"></font><font face="Verdana,Helvetica,Sans-Serif"></font><font face="Verdana,Helvetica,Sans-Serif"></font></p><p class="MsoNormalCxSpMiddle" style="font-family: arial;"><font face="Verdana,Helvetica,Sans-Serif" size="3">Danfoss Customer Service Center</font></p>
+
+<p class="MsoListParagraph" style="font-family: arial; font-size: 12pt; color: rgb(0, 0, 0);"><br></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif">*********Please Do Not Delete or Type below this Line*</font><font face="Verdana,Helvetica,Sans-Serif">********<br>[{!Case.Thread_Id}]</font>]]></td>
+</tr>
+</table>

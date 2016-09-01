@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Rejected Change Request sent an Email Alert to CI Owner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Rejected Email to CI Owner</name>
+    <style>none</style>
+    <subject>Reply on Change Approval Request for {!BMCServiceDesk__Change_Request__c.Name}</subject>
+    <type>text</type>
+</EmailTemplate>

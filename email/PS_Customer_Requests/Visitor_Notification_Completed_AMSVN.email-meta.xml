@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Customer_Requests</letterhead>
+    <name>Visitor Notification Completed - AMSVN</name>
+    <style>freeForm</style>
+    <subject>{!PS_Customer_Request__c.Type__c} {!PS_Customer_Request__c.Name} for {!PS_Customer_Request__c.Account__c}</subject>
+    <textOnly>Announcement of Customer Visit
+
+
+
+
+
+Purpose of Visit:  {!PS_Customer_Request__c.Purpose_of_Visit__c}
+
+Plant of Visit: {!PS_Customer_Request__c.Plant_of_Visit__c}
+
+Customer Visit in Date: {!PS_Customer_Request__c.Customer_Visit_In_Date__c}
+
+
+
+Customer Request</textOnly>
+    <type>html</type>
+</EmailTemplate>

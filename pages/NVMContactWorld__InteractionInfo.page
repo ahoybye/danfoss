@@ -1,0 +1,111 @@
+<apex:page id="interactionInfo" Controller="NVMContactWorld.InteractionInfoController" action="{!Init}" showHeader="true" applyBodyTag="true" applyHtmlTag="true" standardStylesheets="true" >
+
+    <apex:stylesheet value="{!URLFOR($Resource.NVMContactWorld__Assets, 'assets/Styles-NVM.css')}"/>
+    <script src="/support/console/29.0/integration.js" type="text/javascript"></script>
+
+    <apex:outputPanel layout="block" styleClass="notesPanelPage" >
+
+        <apex:outputPanel id="searchResultsPanel" layout="block">
+            <apex:form >
+
+                <apex:pageBlock title="Accounts" rendered="{!HasAccounts}" tabStyle="Account">
+                    <apex:dataTable value="{!MatchingAccounts}" var="match">
+                        <apex:column >
+                            <apex:facet name="header">Name</apex:facet>
+                            <apex:commandLink action="{!SetObject}" rerender="{!$Component.interactionInfo.objectDetails}, {!$Component.interactionInfo.SearchHeader}, searchResultsPanel" value="{!match.Name}">
+                                <apex:param name="objId" assignTo="{!ObjectToSet}" value="{!match.id}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                    </apex:dataTable>
+                </apex:pageBlock>
+
+                <apex:pageBlock title="Contacts" rendered="{!HasContacts}" tabStyle="Contact">
+                    <apex:dataTable value="{!MatchingContacts}" var="match">
+                        <apex:column >
+                            <apex:facet name="header">Name</apex:facet>
+                            <apex:commandLink action="{!SetObject}" rerender="{!$Component.interactionInfo.objectDetails}, {!$Component.interactionInfo.SearchHeader}, searchResultsPanel" value="{!match.Firstname} {!match.Lastname}">
+                                <apex:param name="objId" assignTo="{!ObjectToSet}" value="{!match.id}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                    </apex:dataTable>
+                </apex:pageBlock>
+
+                <apex:pageBlock title="Leads" rendered="{!HasLeads}" tabStyle="Lead">
+                    <apex:dataTable value="{!MatchingLeads}" var="match">
+                        <apex:column >
+                            <apex:facet name="header">Name</apex:facet>
+                            <apex:commandLink action="{!SetObject}" rerender="{!$Component.interactionInfo.objectDetails}, {!$Component.interactionInfo.SearchHeader}, searchResultsPanel" value="{!match.Firstname} {!match.Lastname}">
+                                <apex:param name="objId" assignTo="{!ObjectToSet}" value="{!match.id}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                    </apex:dataTable>
+                </apex:pageBlock>
+
+                <apex:pageBlock title="Opportunities" rendered="{!HasOpportunities}" tabStyle="Opportunity">
+                    <apex:dataTable value="{!MatchingOpportunities}" var="match">
+                        <apex:column >
+                            <apex:facet name="header">Name</apex:facet>
+                            <apex:commandLink action="{!SetObject}" rerender="{!$Component.interactionInfo.objectDetails}, {!$Component.interactionInfo.SearchHeader}, searchResultsPanel" value="{!match.Name}">
+                                <apex:param name="objId" assignTo="{!ObjectToSet}" value="{!match.id}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Amount</apex:facet>
+                            <apex:outputText value="{!match.Amount}" />
+                        </apex:column>
+                    </apex:dataTable>
+                </apex:pageBlock>
+
+                <apex:pageBlock title="Cases" rendered="{!HasCases}" tabStyle="Case">
+                    <apex:dataTable value="{!MatchingCases}" var="match">
+                        <apex:column >
+                            <apex:facet name="header">Name</apex:facet>
+                            <apex:commandLink action="{!SetObject}" rerender="{!$Component.interactionInfo.objectDetails}, {!$Component.interactionInfo.SearchHeader}, searchResultsPanel" value="{!match.CaseNumber}">
+                                <apex:param name="objId" assignTo="{!ObjectToSet}" value="{!match.id}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                    </apex:dataTable>
+                </apex:pageBlock>
+
+            </apex:form>
+
+        </apex:outputPanel>
+
+        <apex:outputPanel id="noMatch" styleClass="infoNoMatchForCall">
+            <apex:outputText rendered="{!RenderNoAutoSearchMatches}">
+                <h3 id="noMatchMsg">No matches found for this call.</h3>
+            </apex:outputText>
+        </apex:outputPanel>
+
+        <script type="text/javascript">
+            
+
+            var isInConsole = sforce.console.isInConsole();
+
+            if (isInConsole) {
+                sforce.console.setTabTitle('{!TabDisplayText}');
+            }
+
+            var singleObjectId = '{!SingleMatchObjectId}';
+
+            var additionalObjectId = '{!SubTabObjectId}';
+            if (additionalObjectId !== '' && isInConsole) {
+                sforce.console.getEnclosingPrimaryTabId(function(result){
+                    sforce.console.openSubtab(result.id, '/' + additionalObjectId, false, 'Call Object', null, function(){
+                        if (singleObjectId !== '') {
+                            loadObjectIntoTab(singleObjectId);
+                        }
+                    });
+                });
+            } else if (singleObjectId !== '') {
+                loadObjectIntoTab(singleObjectId);
+            }
+
+            function loadObjectIntoTab(objectId) {
+                window.location = '/' + objectId + (sforce.console.isInConsole() ? '?isdtp=vw' : '');
+            }
+
+        </script>
+
+    </apex:outputPanel>
+</apex:page>

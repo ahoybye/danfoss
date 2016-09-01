@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contracts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contract Creator Comments --></label>
+        <name>Account_Manager_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+        <relationshipLabel><!-- Contracts (Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Does the contract type and template correlate to the content of the contract document? --></help>
+        <label><!-- Contract type &amp; template match content --></label>
+        <name>Accurate_Contract_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- ActiveContractEmailSent --></label>
+        <name>ActiveContractEmailSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount (USD) --></label>
+        <name>Amount__c</name>
+        <picklistValues>
+            <masterLabel>10,000,001 - 15,000,000</masterLabel>
+            <translation><!-- 10,000,001 - 15,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15,000,001 - 17,000,000</masterLabel>
+            <translation><!-- 15,000,001 - 17,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5,000,001 - 10,000,000</masterLabel>
+            <translation><!-- 5,000,001 - 10,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>500,001 - 5,000,000</masterLabel>
+            <translation><!-- 500,001 - 5,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt;500,001</masterLabel>
+            <translation><!-- &lt;500,001 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt;17,000,000</masterLabel>
+            <translation><!-- &gt;17,000,000 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Such as: On-Highway, Aerospace, Oil &amp; Gas, Nuclear --></help>
+        <label><!-- Is application high risk? --></label>
+        <name>Application_High_Risk__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Awaiting From Group/User --></label>
+        <name>Approval_Awaiting_From_Group_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Bypass --></label>
+        <name>Approval_Bypass__c</name>
+    </fields>
+    <fields>
+        <help><!-- Has the business impact been reviewed with the applicable stakeholders within the business prior to Submitting for Approval and Signature? --></help>
+        <label><!-- Business Impact has been reviewed --></label>
+        <name>Business_Impact_Reviewed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contract contains provision to cancel within maximum 12 months’ notice (all Danfoss templates have a cancellation clause) --></help>
+        <label><!-- Is there a cancellation clause? --></label>
+        <name>Cancellation_Clause__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Comments upto 255 characters only. --></help>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Highlights of the agreement, differences/changes to existing agreements, main elements needing attention --></help>
+        <label><!-- Contract Details --></label>
+        <name>Contract_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Duration --></label>
+        <name>Contract_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Contract --></label>
+        <name>Contract_New__c</name>
+        <relationshipLabel><!-- Contracts (New Contract) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Old Contract --></label>
+        <name>Contract_Old__c</name>
+        <relationshipLabel><!-- Contracts (Old Contract) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Specialist --></label>
+        <name>Contract_Specialist__c</name>
+        <relationshipLabel><!-- Contracts (Contract Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract Status --></label>
+        <name>Contract_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collaboration</masterLabel>
+            <translation><!-- Collaboration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent to Customer</masterLabel>
+            <translation><!-- Sent to Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed</masterLabel>
+            <translation><!-- Signed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Type --></label>
+        <name>Contract_Type__c</name>
+        <picklistValues>
+            <masterLabel>Appointed Service Partner Agreement (ASP)</masterLabel>
+            <translation><!-- Appointed Service Partner Agreement (ASP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Service Centre Agreement (ASC)</masterLabel>
+            <translation><!-- Authorised Service Centre Agreement (ASC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development Agreement</masterLabel>
+            <translation><!-- Development Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution Agreement</masterLabel>
+            <translation><!-- Distribution Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General / Other Sales Agreement</masterLabel>
+            <translation><!-- General / Other Sales Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter of Intent</masterLabel>
+            <translation><!-- Letter of Intent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Sales Agreement (LTA)</masterLabel>
+            <translation><!-- Long Term Sales Agreement (LTA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Disclosure Agreement - Exception</masterLabel>
+            <translation><!-- Non-Disclosure Agreement - Exception --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Disclosure Agreement - Standard</masterLabel>
+            <translation><!-- Non-Disclosure Agreement - Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Improvement Programs</masterLabel>
+            <translation><!-- Product Improvement Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain/Logistics Agreement</masterLabel>
+            <translation><!-- Supply Chain/Logistics Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Agreement - Exception</masterLabel>
+            <translation><!-- Warranty Agreement - Exception --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Agreement - Standard</masterLabel>
+            <translation><!-- Warranty Agreement - Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Voucher Agreement</masterLabel>
+            <translation><!-- Warranty Voucher Agreement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Channel --></label>
+        <name>Customer_Channel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Country --></label>
+        <name>Customer_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Example:  Parker, Honeywell, Bosch, Hydra-Force --></help>
+        <label><!-- Customer is competitor to Danfoss Group --></label>
+        <name>Customer_is_a_Competitor__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- EC Approval Required --></label>
+        <name>EC_Approval_Reqd__c</name>
+    </fields>
+    <fields>
+        <label><!-- EC Approval Required --></label>
+        <name>EC_Approval_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Electronic Components BA Approved On --></label>
+        <name>Electronic_Components_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Electronic Components BA Approval --></label>
+        <name>Electronic_Components_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Electronic Components BA Approver --></label>
+        <name>Electronic_Components_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Electronic Components BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expected Approver --></label>
+        <name>Expected_Approver__c</name>
+        <relationshipLabel><!-- Contracts (Expected Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Expected Approvers --></label>
+        <name>Expected_Approvers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Role --></label>
+        <name>Expected_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Action --></label>
+        <name>Expiration_Action__c</name>
+        <picklistValues>
+            <masterLabel>Do Not Renew</masterLabel>
+            <translation><!-- Do Not Renew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extend</masterLabel>
+            <translation><!-- Extend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renew</masterLabel>
+            <translation><!-- Renew --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expiring Extension In 90 Days --></label>
+        <name>Expiring_Extension_In_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiring In 90 Days --></label>
+        <name>Expiring_In_90_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Attached ? --></label>
+        <name>File_Attached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filed --></label>
+        <name>Filed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finance Approved On --></label>
+        <name>Finance_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Finance Approval --></label>
+        <name>Finance_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Finance Approver --></label>
+        <name>Finance_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Finance Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- FullyApprovedEmailSent --></label>
+        <name>FullyApprovedEmailSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- HPCC BA Approved On --></label>
+        <name>HPCC_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- HPCC BA Approval --></label>
+        <name>HPCC_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HPCC BA Approver --></label>
+        <name>HPCC_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (HPCC BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- HPOC BA Approved On --></label>
+        <name>HPOC_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- HPOC BA Approval --></label>
+        <name>HPOC_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HPOC BA Approver --></label>
+        <name>HPOC_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (HPOC BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Hard Copy Done --></label>
+        <name>Hard_Copy_Done__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hard Copy Status --></label>
+        <name>Hard_Copy_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Sales Approver --></label>
+        <name>Last_Sales_Approver__c</name>
+        <relationshipLabel><!-- Contracts (Last Sales Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legacy --></label>
+        <name>Legacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Counsel Approved On --></label>
+        <name>Legal_Counsel_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Counsel Approval --></label>
+        <name>Legal_Counsel_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legal Counsel Approver --></label>
+        <name>Legal_Counsel_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Legal Counsel Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legal Review Required --></label>
+        <name>Legal_Review_Reqd__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Review Required --></label>
+        <name>Legal_Review_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- MP-CC BA Approved On --></label>
+        <name>MP_CC_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- MP-CC BA Approval --></label>
+        <name>MP_CC_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MP-CC BA Approver --></label>
+        <name>MP_CC_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (MP-CC BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MP-OC BA Approved On --></label>
+        <name>MP_OC_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- MP-OC BA Approval --></label>
+        <name>MP_OC_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MP-OC BA Approver --></label>
+        <name>MP_OC_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (MP-OC BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Answer to the best of your knowledge --></help>
+        <label><!-- Is market dominated by Danfoss Group? --></label>
+        <name>Market_Dominated_By_Danfoss__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MissingStuff --></label>
+        <name>MissingStuff__c</name>
+    </fields>
+    <fields>
+        <help><!-- If contract duration is 3 years or longer, legal review AND PSLT and EC Approval is required before signing --></help>
+        <label><!-- Is contract duration more than 3 years? --></label>
+        <name>More_Than_3_Years__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Motors BA Approved On --></label>
+        <name>Motors_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Motors BA Approval --></label>
+        <name>Motors_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Motors BA Approver --></label>
+        <name>Motors_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Motors BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- New or Updated Contract --></label>
+        <name>New_Update__c</name>
+        <picklistValues>
+            <masterLabel>New Agreement</masterLabel>
+            <translation><!-- New Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision / Update</masterLabel>
+            <translation><!-- Revision / Update --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PS CEO Approval Required --></label>
+        <name>PS_CEO_Approval_Reqd__c</name>
+    </fields>
+    <fields>
+        <label><!-- PS CEO Approval Required --></label>
+        <name>PS_CEO_Approval_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- PVG Valves BA Approved On --></label>
+        <name>PVG_Valves_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- PVG Valves BA Approval --></label>
+        <name>PVG_Valves_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PVG Valves BA Approver --></label>
+        <name>PVG_Valves_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (PVG Valves BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <picklistValues>
+            <masterLabel>Electronic Components</masterLabel>
+            <translation><!-- Electronic Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPCC</masterLabel>
+            <translation><!-- HPCC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPOC</masterLabel>
+            <translation><!-- HPOC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP-CC</masterLabel>
+            <translation><!-- MP-CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP-OC</masterLabel>
+            <translation><!-- MP-OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motors</masterLabel>
+            <translation><!-- Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Valves</masterLabel>
+            <translation><!-- PVG Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering</masterLabel>
+            <translation><!-- Steering --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Why are we asked to enter this agreement --></help>
+        <label><!-- Reason / Driver for this contract --></label>
+        <name>Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- RejectedFlag --></label>
+        <name>RejectedFlag__c</name>
+    </fields>
+    <fields>
+        <label><!-- RejectionEmailSent --></label>
+        <name>RejectionEmailSent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Example: &quot;Rapid Delivery Center&quot; linked to &quot;Distributor Agreement&quot; --></help>
+        <label><!-- Related Contract(s) --></label>
+        <name>Related_Contracts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resubmitted --></label>
+        <name>Resubmitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Returned --></label>
+        <name>Returned__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date to review extended contract --></help>
+        <label><!-- Extension End Date --></label>
+        <name>Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed with legal --></label>
+        <name>Reviewed_With_Legal__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Account Id --></label>
+        <name>SAP_Account_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Director Approved On --></label>
+        <name>Sales_Director_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Director Approval --></label>
+        <name>Sales_Director_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Director Approver --></label>
+        <name>Sales_Director_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Sales Director Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Executive Approved On --></label>
+        <name>Sales_Executive_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Executive Approval --></label>
+        <name>Sales_Executive_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Executive Approver --></label>
+        <name>Sales_Executive_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Sales Executive Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Approved On --></label>
+        <name>Sales_Manager_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Approval --></label>
+        <name>Sales_Manager_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager Approver --></label>
+        <name>Sales_Manager_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Sales Manager Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Manager_of_Account__c</name>
+        <relationshipLabel><!-- Contracts (Sales Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Stage --></label>
+        <name>Sales_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Approval-Complete</masterLabel>
+            <translation><!-- Approval-Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Director</masterLabel>
+            <translation><!-- Sales Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Executive</masterLabel>
+            <translation><!-- Sales Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Manager</masterLabel>
+            <translation><!-- Sales Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales VP</masterLabel>
+            <translation><!-- Sales VP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales VP Approved On --></label>
+        <name>Sales_VP_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales VP Approval --></label>
+        <name>Sales_VP_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales VP Approver --></label>
+        <name>Sales_VP_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Sales VP Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sent to Customer --></label>
+        <name>Sent_to_Customer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Signed --></label>
+        <name>Signed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Steering BA Approved On --></label>
+        <name>Steering_BA_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Steering BA Approval --></label>
+        <name>Steering_BA_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Steering BA Approver --></label>
+        <name>Steering_BA_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Steering BA Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Submit for Approval --></label>
+        <name>Submit_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted for Stakeholder Review --></label>
+        <name>SubmittedForStakeholderReview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submitted for Stakeholder Review --></label>
+        <name>Submitted_for_Stakeholder_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Technical Director Approved On --></label>
+        <name>Technical_Director_ADT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Technical Director Approval --></label>
+        <name>Technical_Director_Apl__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Technical Director Approver --></label>
+        <name>Technical_Director_Apr__c</name>
+        <relationshipLabel><!-- Contracts (Technical Director Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Template --></label>
+        <name>Template__c</name>
+        <picklistValues>
+            <masterLabel>Danfoss Approved Template</masterLabel>
+            <translation><!-- Danfoss Approved Template --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special / Customer</masterLabel>
+            <translation><!-- Special / Customer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Valid From --></label>
+        <name>Valid_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid To --></label>
+        <name>Valid_To__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Approval Bypass --></label>
+        <name>Approval_Bypass</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Approval Locked --></label>
+        <name>Approval_Locked</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Legacy Contract --></label>
+        <name>Legacy_Contract</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The selected account must have a channel selected. --></errorMessage>
+        <name>Account_Channel_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For extended contracts you must enter a date when the extension will end for further review. --></errorMessage>
+        <name>Require_Extension_End_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The selected account must have a sales manager entered. --></errorMessage>
+        <name>Sales_Manager_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Edit --></label>
+        <name>Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_for_Approval --></label>
+        <name>Submit_for_Approval</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_for_Stakeholder_Review --></label>
+        <name>Submit_for_Stakeholder_Review</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Terminate_Contract --></label>
+        <name>Terminate_Contract</name>
+    </webLinks>
+</CustomObjectTranslation>

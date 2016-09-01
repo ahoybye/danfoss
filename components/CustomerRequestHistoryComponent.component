@@ -1,0 +1,12 @@
+<apex:component controller="CustomerRequestHistoryComponentCtrl">
+<apex:attribute name="cId" description="Id for Customer Request" type="Id" required="true" assignTo="{!CRId}" />
+	<apex:pageBlock title="PS Customer Request History">
+    <div style="margin: 0px -6px;">
+		<apex:pageBlockTable value="{!histories}" var="History" >
+			<apex:column headerValue="Date" value="{!History.thedate}"/>
+			<apex:column headerValue="User"> <apex:outputLink value="/{!History.userId}"> {!History.who} </apex:outputLink></apex:column>
+			<apex:column headerValue="Action"><apex:outputText escape="false" value="{!History.action}"/></apex:column>
+		</apex:pageBlockTable>
+	</div>
+	</apex:pageBlock>
+</apex:component>

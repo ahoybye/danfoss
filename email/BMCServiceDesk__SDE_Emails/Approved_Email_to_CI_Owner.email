@@ -1,0 +1,6 @@
+Hello, 
+
+Change Request {!BMCServiceDesk__Change_Request__c.Name} has been Approved. 
+ 
+Description:
+{!BMCServiceDesk__Change_Request__c.BMCServiceDesk__Change_Description__c}

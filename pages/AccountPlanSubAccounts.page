@@ -1,0 +1,20 @@
+<apex:page standardController="Account_Plan__c" extensions="AccountPlanSubAccountsExtension">
+    <script>        
+    function breakOut() {    
+          var e = window.event;
+          var target = e.target || e.srcElement;
+          if (target.nodeName === 'A') {
+              top.location.replace(target.href);
+          }
+    }
+    window.onclick = breakOut;
+    </script>
+    <base target="_parent"/>
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!salesAreas}" var="sa">
+            <apex:repeat value="{!$ObjectType.Sales_Area__c.FieldSets.AccountRelatedListColumns}" var="field">
+                <apex:column value="{!sa[field.FieldPath]}"/>
+            </apex:repeat>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

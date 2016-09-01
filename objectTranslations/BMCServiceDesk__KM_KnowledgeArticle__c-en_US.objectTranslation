@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Answer --></label>
+        <name>BMCServiceDesk__Answer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article # --></label>
+        <name>BMCServiceDesk__Article_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Type --></label>
+        <name>BMCServiceDesk__Article_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category~ --></label>
+        <name>BMCServiceDesk__Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checked out --></label>
+        <name>BMCServiceDesk__Checked_out__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retired Date --></label>
+        <name>BMCServiceDesk__Closed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Create Change Request --></label>
+        <name>BMCServiceDesk__CreateChangeRequest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error --></label>
+        <name>BMCServiceDesk__Error_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>BMCServiceDesk__FKCategory__c</name>
+        <relationshipLabel><!-- Knowledge Articles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Linked Accounts --></label>
+        <name>BMCServiceDesk__KA_Account_Links__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keywords --></label>
+        <name>BMCServiceDesk__Keywords__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Knowledge Article --></label>
+        <name>BMCServiceDesk__Original_Knowledge_Article__c</name>
+        <relationshipLabel><!-- Checked Out Draft Knowledge Article --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Problem --></label>
+        <name>BMCServiceDesk__Problem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Published Date --></label>
+        <name>BMCServiceDesk__PublishedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Question --></label>
+        <name>BMCServiceDesk__Question__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relevance --></label>
+        <name>BMCServiceDesk__Relevance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review Date --></label>
+        <name>BMCServiceDesk__Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Root Cause --></label>
+        <name>BMCServiceDesk__Root_Cause__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution --></label>
+        <name>BMCServiceDesk__Solution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>BMCServiceDesk__Status__c</name>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Review</masterLabel>
+            <translation><!-- In Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Published</masterLabel>
+            <translation><!-- Published --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>BMCServiceDesk__Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of times used in Self Service --></help>
+        <label><!-- Used in Self Service # --></label>
+        <name>BMCServiceDesk__Used_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used by Staff Members # --></label>
+        <name>BMCServiceDesk__Used_by_Staff_Members_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used by Staff # --></label>
+        <name>BMCServiceDesk__Used_by_Staff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used in Change # --></label>
+        <name>BMCServiceDesk__Used_in_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used in Problem # --></label>
+        <name>BMCServiceDesk__Used_in_Problem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Viewed in Self Service # --></label>
+        <name>BMCServiceDesk__View_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display in Self Service --></label>
+        <name>BMCServiceDesk__Visible_in_Self_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workaround --></label>
+        <name>BMCServiceDesk__Workaround__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- FAQ --></label>
+        <name>FAQ</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- How To --></label>
+        <name>How_To</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Known Error --></label>
+        <name>Known_Error</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Problem Solution --></label>
+        <name>Problem_Solution</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please enter the Category. --></errorMessage>
+        <name>BMCServiceDesk__Category_Is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the status of the draft version of a knowledge article. --></errorMessage>
+        <name>BMCServiceDesk__CheckedOut_Draft_KA_Status_Cannot_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Review date must be a future date. --></errorMessage>
+        <name>BMCServiceDesk__Review_date_must_be_a_future_date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Knowledge_Management_Process --></label>
+        <name>BMCServiceDesk__Knowledge_Management_Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Preview --></label>
+        <name>BMCServiceDesk__Preview</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Publish --></label>
+        <name>BMCServiceDesk__Publish</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Retire --></label>
+        <name>BMCServiceDesk__Retire</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,62 @@
+<apex:page standardController="Account" extensions="SearchAccountExtension" tabStyle="Search_Account__tab">
+    <apex:form id="form">
+        <apex:pageMessages />
+        <apex:pageBlock mode="edit" title="Please enter Account Name">
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.Country_MainAddress__c}"/>
+                <apex:inputField value="{!Account.ShippingCity}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel />
+                    <apex:outputPanel >
+                        <apex:commandButton value="Search" action="{!search}" rerender="form,acclists" status="createAccStatus"/>
+                        <apex:commandButton value="Create New" action="{!createNew}" rerender="form,acclists" rendered="{!createpossible}" status="createAccStatus"/>
+                        <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                            <apex:actionStatus id="createAccStatus" startText="Loading..."/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Results" columns="1" rendered="{!setCon != null}">
+                <apex:pageBlockTable value="{!results}" var="a" >
+                    <apex:column headerValue="Account Name" value="{!a.Name}"/>
+                    <apex:column value="{!a.id}" rendered="false"/>                    
+                    <apex:column headerValue="Phone" value="{!a.phone}"/>
+                    <apex:column headerValue="Customer Type" value="{!a.RecordType.Name}"/>
+                    <apex:column headerValue="Shipping Street" value="{!a.ShippingStreet}"/> 
+                    <apex:column headerValue="Shipping City" value="{!a.ShippingCity}"/>
+                    <apex:column headerValue="Shipping Zip" value="{!a.ShippingPostalCode}"/>
+                    <apex:column headerValue="Shipping Country" value="{!a.ShippingCountry}"/>                    
+                    <apex:column headerValue="Owner" value="{!a.Owner.Name}"/>
+                    <apex:column headerValue="Local Account Name" value="{!a.Local_Account_Name__c}"/>
+                    <apex:column >
+                        <apex:commandlink value="Go" action="{!GoToAccount}">
+                            <apex:param name="accID" value="{!a.id}" assignTo="{!selectedAccount}"/>
+                        </apex:commandlink>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:panelGrid columns="3">
+                    <c:PrevNextLinks setCon="{!setCon}" rerender="form" status="fetchStatus"/>
+                    <c:PageNumber setCon="{!setCon}"/>
+                    <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                        <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                    </apex:outputPanel>
+                </apex:panelGrid>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputPanel rendered="{!navigateToEditAcc}">
+            Loading...
+            <script>
+            var accID = '{!Account.Id}';
+            if (window.sforce) {
+                sforce.one.editRecord(accID);
+            } else {
+                location = "/" + accID + "/e?retURL="+ accID;
+            }
+            </script>
+        </apex:outputPanel>
+    </apex:form>
+    <apex:outputPanel id="acclists">
+        <apex:enhancedList type="Account" listID="{!myAccounts}" height="240" rowsPerPage="10" rendered="{!setCon = null}"></apex:enhancedList>         
+    </apex:outputPanel>
+</apex:page>

@@ -1,0 +1,79 @@
+<apex:page controller="BMCServiceDesk.AcRestActionsController" showHeader="false" standardStylesheets="false" title="{!JSENCODE($Label.BMCServiceDesk__ACActions)}">
+<head><title>{!JSENCODE($Label.CIAction)}</title></head>
+<script type="text/javascript" src="{!$Resource.ExtJS4_1_3}/ext-all.js"></script>
+<script type="text/javascript" src="{!$Resource.SDEFCommonJS}/AcRestActions.js" />
+<link rel="stylesheet" type="text/css" href="{!$Resource.ExtJS4_1_3}/resources/css/ext-all.css" />
+<style>
+.x-panel-body-default,#tabId{ 
+    border-top: none !important;
+}
+.x-border-layout-ct {
+    background-color: #FFFFFF !important;
+}
+.rf-tab-div {
+    padding: 5px 0px 0px !important;
+}
+</style>
+<script>
+var wikiUrl = '{!wikiUrl}';
+var toolbarItem,tabTitle='',mapDeviceIdVsInstanceName = JSON.parse('{!JSENCODE(mapDeviceIdVsInstanceName)}'),tabToolTip='',
+    actionContext = '{!JSENCODE(actionContext)}',
+    link = '', 
+    assemblyIdParam='{!JSENCODE(assemblyId)}',
+    CIPagelink,
+    PageBEId = '{!JSENCODE($CurrentPage.parameters.selectedBEId)}',
+    incidentId = '{!JSENCODE($CurrentPage.parameters.incidentId)}',
+    proxyData = JSON.parse('{!JSENCODE(CIGridData)}'),
+    strFields = {!strFields},
+    strColumns = {!strColumns};
+if(incidentId != '' && incidentId != null && incidentId != 'undefined') 
+    CIPagelink = 'AcDevices?incidentId='+incidentId+'&IsMenurequired=false&isPaginationRequired=false&assemblyId='+assemblyIdParam+'&isActionMenuMapAlreadyFilled=true';
+else
+    CIPagelink = 'AcDevices?selectedBEId='+PageBEId+'&IsMenurequired=false&isPaginationRequired=false&assemblyId='+assemblyIdParam+'&isActionMenuMapAlreadyFilled=true';
+	
+var maxTabLimit = '{!maxTabLimit}',
+    ConfigurationItems="{!JSENCODE($Label.CIsAndAssets)}",
+    pleasewait = "{!JSENCODE($Label.pleasewait)}...",
+    Event="{!JSENCODE($Label.ACEvents)}", 
+    Services="{!JSENCODE($Label.ACService)}", 
+    TabLimitCrossed="{!JSENCODE($Label.ACTabLimitCrossed)}",
+    registry="{!JSENCODE($Label.ACRegistry)}",
+    processes="{!JSENCODE($Label.ACProcesses)}",
+    assetSummary="{!JSENCODE($Label.DeviceSummary)}",
+    noLinkedCiLbl="{!JSENCODE($Label.ACNoLinkedCI)}",
+    showJapaneseHelp='{!JSENCODE($CurrentPage.parameters.showJapaneseHelp)}',
+    helpResource = '{!$Resource.SDEFHelp}',
+    helpJapResource= '{!$Resource.SDEFHelp_JA}',
+    stdHelpResource = '{!$Resource.StdFormHelp}',
+    stdHelpJapResource = '{!$Resource.StdFormHelp_JA}',
+	useStdHelp='{!useStdHelp}',
+    LabelYes = "{!JSENCODE($Label.ExtjsMessageYes)}",
+    LabelNo = "{!JSENCODE($Label.ExtjsMessageNo)}",
+    ACConfimMessageForWakeupDevice = "{!JSENCODE($Label.ACConfimMessageForWakeupDevice)}",
+    ACConfimMessageForRebootDevice = "{!JSENCODE($Label.ACConfimMessageForRebootDevice)}",
+    ACConfimMessageForShutdownDevice = "{!JSENCODE($Label.ACConfimMessageForShutdownDevice)}";
+</script>
+    <body>
+        <apex:form id="TabPanelForm">
+        
+    <apex:outputPanel > 
+    <apex:actionRegion >
+     <apex:actionFunction Name="directConnectDevice" action="{!callXMLRPC}" rerender="acErrorPanel" onComplete="stopWaitMsgBar();showACError();">
+        <apex:param name="actionContext" value="" assignTo="{!actionContext}"/>
+        <apex:param name="deviceId" value="" assignTo="{!deviceId}"/>
+        <apex:param name="contextId" value="" assignTo="{!reqContexId}"/>
+    </apex:actionFunction>
+    </apex:actionRegion>
+    <apex:actionRegion >
+    <apex:actionFunction Name="launchConsole" action="{!launchConsole}" />
+    </apex:actionRegion>
+    </apex:outputPanel>
+    </apex:form>
+    <apex:outputPanel id="acErrorPanel"> 
+            <script>
+              errorStr= '{!errorString}';
+            </script>
+    </apex:outputPanel> 
+    </body>
+	<script type="text/javascript" src="{!$Resource.SDEFCommonJS}/WikiHelp.js" />
+</apex:page>

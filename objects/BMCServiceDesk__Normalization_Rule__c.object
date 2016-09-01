@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <fullName>BMCServiceDesk__LinkRecords</fullName>
+        <availableFields>
+            <field>BMCServiceDesk__Rule_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>To configure columns displayed in Normalization Rule list view in &apos;Rf-Administration&apos; tab</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__FKNormalization_Metadata__r.BMCServiceDesk__Object_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__FKNormalization_Metadata__r.BMCServiceDesk__Field_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__Field_Value__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__FKNormalization_Metadata__r.BMCServiceDesk__Approval_Method__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BMCServiceDesk__Inactive__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Column Headers</label>
+    </fieldSets>
+    <fields>
+        <fullName>BMCServiceDesk__FKNormalization_Metadata__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Normalization Metadata</label>
+        <referenceTo>BMCServiceDesk__Normalization_Metadata__c</referenceTo>
+        <relationshipLabel>Normalization Rules</relationshipLabel>
+        <relationshipName>Normalization_Rules</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Field_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Field Value</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Master_Rule__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Master Rule</label>
+        <referenceTo>BMCServiceDesk__Normalization_Rule__c</referenceTo>
+        <relationshipLabel>Master Rules</relationshipLabel>
+        <relationshipName>Master_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Rule_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Rule Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Normalization Rule</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ignored Value Rule</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

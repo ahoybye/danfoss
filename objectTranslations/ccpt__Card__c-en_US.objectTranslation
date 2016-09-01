@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account --></label>
+        <name>ccpt__Account__c</name>
+        <relationshipLabel><!-- Card --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Board Changed Date --></label>
+        <name>ccpt__Board_Changed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Checklist --></label>
+        <name>ccpt__Checklist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Column --></label>
+        <name>ccpt__Column__c</name>
+        <relationshipLabel><!-- Card --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>ccpt__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>ccpt__Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>ccpt__Opportunity__c</name>
+        <relationshipLabel><!-- Card --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>ccpt__Position__c</name>
+    </fields>
+    <fields>
+        <label><!-- System - Related To --></label>
+        <name>ccpt__RelatedTo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tag --></label>
+        <name>ccpt__Tag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Task --></label>
+        <name>ccpt_ccpx__Project_Task__c</name>
+        <relationshipLabel><!-- Card --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Change Request --></label>
+        <name>ccpt_rfx__Change_Request__c</name>
+        <relationshipLabel><!-- Card --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Incident --></label>
+        <name>ccpt_rfx__Incident__c</name>
+        <relationshipLabel><!-- Card --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

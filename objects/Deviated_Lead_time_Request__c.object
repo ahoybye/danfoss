@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Deviated_Lead_time_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Deviated Lead-time Requests</relationshipLabel>
+        <relationshipName>Deviated_Lead_time_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional Comment related to this request.  Specific information such as part number, nomenclature, quantity, etc should be entered bottom by individual &quot;Deviated Request Line Item&quot;.</inlineHelpText>
+        <label>Additional Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Best_Delivery__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Best delivery date for your request as determined by your Customer Service Representative</inlineHelpText>
+        <label>Best Delivery</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CSR__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CSR</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Deviated_Lead_time_Requests1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Initial_Acknowledge_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Initial Acknowledge Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If known, please list the opportunity associated with this request.</inlineHelpText>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Deviated Lead-time Requests</relationshipLabel>
+        <relationshipName>Deviated_Lead_time_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PO_Number__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Your company&apos;s purchase order number</inlineHelpText>
+        <label>PO Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Parent.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premium_Charged__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check box if a short lead-time premium is charged.</inlineHelpText>
+        <label>Premium Charged</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_order_premium__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check if purchase order you have sent or will send to Danfoss Power Solutions already includes an expedite premium.</inlineHelpText>
+        <label>PO does/will include expedite fee</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Other</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the reason for the request</inlineHelpText>
+        <label>Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Interchange, direct competitor replacement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No local inventory for this customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prototype</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unplanned aftermarket/service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unplanned production increase</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Premium_Waiver__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If premium is waived, please list the reason why</inlineHelpText>
+        <label>Reason for Premium Waiver</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Specialist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Specialist</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Deviated_Lead_time_Requests2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Standard_Lead_Time__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the standard lead time in weeks</inlineHelpText>
+        <label>Standard Lead Time</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>Prototype_requires_Opportunity</fullName>
+        <active>false</active>
+        <description>If reason = prototype, then opportunity field must be filled in.</description>
+        <errorConditionFormula>IF( AND( ISPICKVAL( Reason__c , &apos;Prototype&apos;) , Opportunity__c =null), true, false)</errorConditionFormula>
+        <errorDisplayField>Opportunity__c</errorDisplayField>
+        <errorMessage>An opportunity must be selected if reason is Prototype.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ReasonOtherRequired</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISPICKVAL(Reason__c, &apos;Other&apos;) &amp;&amp; Reason_Other__c == &apos;&apos;, true, false)</errorConditionFormula>
+        <errorDisplayField>Reason_Other__c</errorDisplayField>
+        <errorMessage>You must enter the other reason</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>DLR_Standard_Work</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>DLR Standard Work</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://danfoss.secure.force.com/PartnerLink/sfc/#version?selectedDocumentId=069C0000001QasK</url>
+    </webLinks>
+</CustomObject>

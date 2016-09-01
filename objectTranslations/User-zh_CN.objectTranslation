@@ -1,0 +1,3078 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Opportunity Average Amount --></label>
+        <name>Average_Opportunity_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account ID --></label>
+        <name>BMCServiceDesk__Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>BMCServiceDesk__Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>BMCServiceDesk__Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Asset Management View --></label>
+        <name>BMCServiceDesk__AssetManagementView__c</name>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation><!-- Hidden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read-Only</masterLabel>
+            <translation><!-- Read-Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update</masterLabel>
+            <translation><!-- Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update and Delete</masterLabel>
+            <translation><!-- Update and Delete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select this check box to assign Remedyforce seat license. --></help>
+        <label><!-- Assign Remedyforce License --></label>
+        <name>BMCServiceDesk__AssignRemedyforceLic__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter a value between 1 and 10,where 1=Slow and 10=Fast --></help>
+        <label><!-- Broadcast ticker speed --></label>
+        <name>BMCServiceDesk__Broadcast_ticker_speed__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Building --></label>
+        <name>BMCServiceDesk__Building__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Hours ID --></label>
+        <name>BMCServiceDesk__Business_Hours_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the shift in which the staff member works. --></help>
+        <label><!-- Business Hours --></label>
+        <name>BMCServiceDesk__Business_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- CI Management View --></label>
+        <name>BMCServiceDesk__CIManagementView__c</name>
+        <picklistValues>
+            <masterLabel>Hidden</masterLabel>
+            <translation><!-- Hidden --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Read-Only</masterLabel>
+            <translation><!-- Read-Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update</masterLabel>
+            <translation><!-- Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update and Delete</masterLabel>
+            <translation><!-- Update and Delete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the chat status. --></help>
+        <label><!-- Chat Status --></label>
+        <name>BMCServiceDesk__ChatStatus__c</name>
+        <picklistValues>
+            <masterLabel>Available</masterLabel>
+            <translation><!-- Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Busy</masterLabel>
+            <translation><!-- Busy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offline</masterLabel>
+            <translation><!-- Offline --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ContactId --></label>
+        <name>BMCServiceDesk__ContactId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this check box to enable the user to chat. --></help>
+        <label><!-- Enable Chat --></label>
+        <name>BMCServiceDesk__EnableChat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extension --></label>
+        <name>BMCServiceDesk__Extension__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field stores the Login ID of the validated BMC Client Management user. --></help>
+        <label><!-- BCM Login ID --></label>
+        <name>BMCServiceDesk__FPLoginID__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCM Login Validated --></label>
+        <name>BMCServiceDesk__FP_Login_Validated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image Name --></label>
+        <name>BMCServiceDesk__ImageName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Out of Office --></label>
+        <name>BMCServiceDesk__IsOutOfOffice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remedyforce Administrator --></label>
+        <name>BMCServiceDesk__IsRemedyforceAdministrator__c</name>
+    </fields>
+    <fields>
+        <label><!-- ServiceDesk Staff --></label>
+        <name>BMCServiceDesk__IsStaffUser__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the last time when the user Status was Available. --></help>
+        <label><!-- Last Available Time --></label>
+        <name>BMCServiceDesk__LastAvailableTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Displays the time when the last chat ended. --></help>
+        <label><!-- Last Chat End Time --></label>
+        <name>BMCServiceDesk__LastChatEndTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manage QuickViews --></label>
+        <name>BMCServiceDesk__Manage_QV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manage ServiceDesk Staff Member --></label>
+        <name>BMCServiceDesk__Manage_ServiceDesk_Staff_Member__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>BMCServiceDesk__Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Picture --></label>
+        <name>BMCServiceDesk__Picture__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remedyforce Knowledge User --></label>
+        <name>BMCServiceDesk__Remedyforce_Knowledge_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Room --></label>
+        <name>BMCServiceDesk__Room__c</name>
+    </fields>
+    <fields>
+        <help><!-- Allows to schedule change requests during a blackout and create a blackout when change requests exists for that duration. --></help>
+        <label><!-- Override Blackouts --></label>
+        <name>BMCServiceDesk__Schedule_CR_and_Blackouts_During_Overlap__c</name>
+    </fields>
+    <fields>
+        <label><!-- SelfService Preferences --></label>
+        <name>BMCServiceDesk__SelfService_Preferences__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique User ID in Source --></label>
+        <name>BMCServiceDesk__UniqueUserIDInSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- User License --></label>
+        <name>BMCServiceDesk__User_License__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the user is VIP. --></help>
+        <label><!-- VIP --></label>
+        <name>BMCServiceDesk__VIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pager --></label>
+        <name>BMCServiceDesk__pager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remarks --></label>
+        <name>BMCServiceDesk__remarks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Skip QV Wizard Introduction screen --></label>
+        <name>BMCServiceDesk__skipQVWizIntro__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+        <picklistValues>
+            <masterLabel>Climate and Energy</masterLabel>
+            <translation><!-- Climate and Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss</masterLabel>
+            <translation><!-- Danfoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valmova</masterLabel>
+            <translation><!-- Valmova --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Team --></label>
+        <name>Business_Segment__c</name>
+        <picklistValues>
+            <masterLabel>DCS - AC Direct</masterLabel>
+            <translation><!-- DCS - AC Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - ACR</masterLabel>
+            <translation><!-- DCS - ACR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Arab Emirates</masterLabel>
+            <translation><!-- DCS - Arab Emirates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - CC</masterLabel>
+            <translation><!-- DCS - CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - DR</masterLabel>
+            <translation><!-- DCS - DR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - DSFRE</masterLabel>
+            <translation><!-- DCS - DSFRE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - EAE</masterLabel>
+            <translation><!-- DCS - EAE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - FR</masterLabel>
+            <translation><!-- DCS - FR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - FRL</masterLabel>
+            <translation><!-- DCS - FRL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Food Retail</masterLabel>
+            <translation><!-- DCS - Food Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - HPP</masterLabel>
+            <translation><!-- DCS - HPP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - IA</masterLabel>
+            <translation><!-- DCS - IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - ID</masterLabel>
+            <translation><!-- DCS - ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - IDS</masterLabel>
+            <translation><!-- DCS - IDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - IR</masterLabel>
+            <translation><!-- DCS - IR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - IRF</masterLabel>
+            <translation><!-- DCS - IRF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Indirect Channel</masterLabel>
+            <translation><!-- DCS - Indirect Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Regional</masterLabel>
+            <translation><!-- DCS - Regional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - SE</masterLabel>
+            <translation><!-- DCS - SE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - South Africa</masterLabel>
+            <translation><!-- DCS - South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Team Madhur</masterLabel>
+            <translation><!-- DCS - Team Madhur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Team Maniam</masterLabel>
+            <translation><!-- DCS - Team Maniam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Team Partha</masterLabel>
+            <translation><!-- DCS - Team Partha --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Team Sivakumar</masterLabel>
+            <translation><!-- DCS - Team Sivakumar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Team Sunil</masterLabel>
+            <translation><!-- DCS - Team Sunil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Turkey</masterLabel>
+            <translation><!-- DCS - Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCS - Users (EER)</masterLabel>
+            <translation><!-- DCS - Users (EER) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Adriatic</masterLabel>
+            <translation><!-- DDS - Adriatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Arab Emirates</masterLabel>
+            <translation><!-- DDS - Arab Emirates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Business Development</masterLabel>
+            <translation><!-- DDS - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Canada</masterLabel>
+            <translation><!-- DDS - Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Czech Republic &amp; Slovak</masterLabel>
+            <translation><!-- DDS - Czech Republic &amp; Slovak --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Global Key Account Sales</masterLabel>
+            <translation><!-- DDS - Global Key Account Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Hungary</masterLabel>
+            <translation><!-- DDS - Hungary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Other (EER)</masterLabel>
+            <translation><!-- DDS - Other (EER) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Poland</masterLabel>
+            <translation><!-- DDS - Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Romania</masterLabel>
+            <translation><!-- DDS - Romania --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SEA</masterLabel>
+            <translation><!-- DDS - SEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SED</masterLabel>
+            <translation><!-- DDS - SED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SEE</masterLabel>
+            <translation><!-- DDS - SEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SEF</masterLabel>
+            <translation><!-- DDS - SEF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SEG</masterLabel>
+            <translation><!-- DDS - SEG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SEI</masterLabel>
+            <translation><!-- DDS - SEI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SEM</masterLabel>
+            <translation><!-- DDS - SEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SES</masterLabel>
+            <translation><!-- DDS - SES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SGH</masterLabel>
+            <translation><!-- DDS - SGH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SGICI</masterLabel>
+            <translation><!-- DDS - SGICI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - SGIWS</masterLabel>
+            <translation><!-- DDS - SGIWS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Silicon Power</masterLabel>
+            <translation><!-- DDS - Silicon Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - South Africa</masterLabel>
+            <translation><!-- DDS - South Africa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Team Gopal</masterLabel>
+            <translation><!-- DDS - Team Gopal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Team Hemant</masterLabel>
+            <translation><!-- DDS - Team Hemant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Team Nazeer</masterLabel>
+            <translation><!-- DDS - Team Nazeer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Team Palani</masterLabel>
+            <translation><!-- DDS - Team Palani --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Team Raina</masterLabel>
+            <translation><!-- DDS - Team Raina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Team Ramasub</masterLabel>
+            <translation><!-- DDS - Team Ramasub --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Team Vinod</masterLabel>
+            <translation><!-- DDS - Team Vinod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Turkey</masterLabel>
+            <translation><!-- DDS - Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - USA</masterLabel>
+            <translation><!-- DDS - USA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS - Ukraine</masterLabel>
+            <translation><!-- DDS - Ukraine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS-CN-Team Business &amp; Channel drives</masterLabel>
+            <translation><!-- DDS-CN-Team Business &amp; Channel drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS-CN-Team East</masterLabel>
+            <translation><!-- DDS-CN-Team East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS-CN-Team GKA</masterLabel>
+            <translation><!-- DDS-CN-Team GKA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS-CN-Team North</masterLabel>
+            <translation><!-- DDS-CN-Team North --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDS-CN-Team South</masterLabel>
+            <translation><!-- DDS-CN-Team South --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - ABQM</masterLabel>
+            <translation><!-- DHS - ABQM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Arab Emirates</masterLabel>
+            <translation><!-- DHS - Arab Emirates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Baltics</masterLabel>
+            <translation><!-- DHS - Baltics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - CEE</masterLabel>
+            <translation><!-- DHS - CEE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - EMNSI</masterLabel>
+            <translation><!-- DHS - EMNSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Electrical</masterLabel>
+            <translation><!-- DHS - Electrical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - HBC D</masterLabel>
+            <translation><!-- DHS - HBC D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Hydronic Comfort Controls</masterLabel>
+            <translation><!-- DHS - Hydronic Comfort Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - KAM Multi-Family House</masterLabel>
+            <translation><!-- DHS - KAM Multi-Family House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Non-Residential</masterLabel>
+            <translation><!-- DHS - Non-Residential --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Poland</masterLabel>
+            <translation><!-- DHS - Poland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - RVL East</masterLabel>
+            <translation><!-- DHS - RVL East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - RVL North</masterLabel>
+            <translation><!-- DHS - RVL North --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - RVL South East</masterLabel>
+            <translation><!-- DHS - RVL South East --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - RVL South West</masterLabel>
+            <translation><!-- DHS - RVL South West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - RVL West</masterLabel>
+            <translation><!-- DHS - RVL West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SD/SDB</masterLabel>
+            <translation><!-- DHS - SD/SDB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SE/AT</masterLabel>
+            <translation><!-- DHS - SE/AT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SEDI/DE</masterLabel>
+            <translation><!-- DHS - SEDI/DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SEH/AT</masterLabel>
+            <translation><!-- DHS - SEH/AT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SI/AT</masterLabel>
+            <translation><!-- DHS - SI/AT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SO/AT</masterLabel>
+            <translation><!-- DHS - SO/AT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SP/CH</masterLabel>
+            <translation><!-- DHS - SP/CH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SPF</masterLabel>
+            <translation><!-- DHS - SPF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SPO</masterLabel>
+            <translation><!-- DHS - SPO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - SSM/DE</masterLabel>
+            <translation><!-- DHS - SSM/DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Sales Germany</masterLabel>
+            <translation><!-- DHS - Sales Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Abhishek</masterLabel>
+            <translation><!-- DHS - Team Abhishek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Atul</masterLabel>
+            <translation><!-- DHS - Team Atul --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Madhur</masterLabel>
+            <translation><!-- DHS - Team Madhur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Mohit</masterLabel>
+            <translation><!-- DHS - Team Mohit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Sabysachi</masterLabel>
+            <translation><!-- DHS - Team Sabysachi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Sandesh</masterLabel>
+            <translation><!-- DHS - Team Sandesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Sanjay</masterLabel>
+            <translation><!-- DHS - Team Sanjay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Team Shankar</masterLabel>
+            <translation><!-- DHS - Team Shankar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Turkey</masterLabel>
+            <translation><!-- DHS - Turkey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHS - Ukraine</masterLabel>
+            <translation><!-- DHS - Ukraine --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Centre Default Email --></label>
+        <name>Call_Centre_Default_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created for CE Migration --></label>
+        <name>Created_for_CE_Migration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Print Logo --></label>
+        <name>Default_Print_Logo__c</name>
+        <picklistValues>
+            <masterLabel>DEVI</masterLabel>
+            <translation><!-- DEVI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss</masterLabel>
+            <translation><!-- Danfoss --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Segment --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>Cooling</masterLabel>
+            <translation><!-- Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives</masterLabel>
+            <translation><!-- Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Solutions</masterLabel>
+            <translation><!-- Power Solutions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Call Event Timestamp --></label>
+        <name>NVMContactWorld__MostRecentCallEventTimestamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Call Is Active --></label>
+        <name>NVMContactWorld__MostRecentCallIsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Call --></label>
+        <name>NVMContactWorld__MostRecentCall__c</name>
+    </fields>
+    <fields>
+        <help><!-- NVM Agent Id for Contact World for Salesforce. This should be set to the correct NVM Agent Id to make sure that call tasks are assigned to the correct Salesforce user. --></help>
+        <label><!-- NVM Agent Id --></label>
+        <name>NVMContactWorld__NVM_Agent_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Click to dial Cell Phone --></help>
+        <label><!-- NVM Cell --></label>
+        <name>NVMContactWorld__NVM_Cell__c</name>
+    </fields>
+    <fields>
+        <help><!-- Click to dial Extension Phone --></help>
+        <label><!-- NVM Extension --></label>
+        <name>NVMContactWorld__NVM_Extension__c</name>
+    </fields>
+    <fields>
+        <help><!-- Click to dial Phone --></help>
+        <label><!-- NVM Phone --></label>
+        <name>NVMContactWorld__NVM_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Users --></label>
+        <name>No_of_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Average Age Lost --></label>
+        <name>Opportunity_Average_Age_Lost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Average Age Won --></label>
+        <name>Opportunity_Average_Age_Won__c</name>
+    </fields>
+    <fields>
+        <label><!-- PS Sales Group --></label>
+        <name>PS_Sales_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- PS Sales Office --></label>
+        <name>PS_Sales_Office__c</name>
+    </fields>
+    <fields>
+        <help><!-- 8-digital personnel number. --></help>
+        <label><!-- PersNo --></label>
+        <name>PersNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Country Code --></label>
+        <name>Phone_Country_Code__c</name>
+        <picklistValues>
+            <masterLabel>AD: Andorra (+376)</masterLabel>
+            <translation><!-- AD: Andorra (+376) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AE: Unit. Arab Emir. (+971)</masterLabel>
+            <translation><!-- AE: Unit. Arab Emir. (+971) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AF: Afghanistan (+93)</masterLabel>
+            <translation><!-- AF: Afghanistan (+93) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AG: Antigua/Barbuda (+268)</masterLabel>
+            <translation><!-- AG: Antigua/Barbuda (+268) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AI: Anguilla (+264)</masterLabel>
+            <translation><!-- AI: Anguilla (+264) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL: Albania (+355)</masterLabel>
+            <translation><!-- AL: Albania (+355) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AM: Armenia (+374)</masterLabel>
+            <translation><!-- AM: Armenia (+374) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AN: Dutch Antilles (+599)</masterLabel>
+            <translation><!-- AN: Dutch Antilles (+599) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO: Angola (+244)</masterLabel>
+            <translation><!-- AO: Angola (+244) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AQ: Antarica (+672)</masterLabel>
+            <translation><!-- AQ: Antarica (+672) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR: Argentina (+54)</masterLabel>
+            <translation><!-- AR: Argentina (+54) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS: Samoa American (+685)</masterLabel>
+            <translation><!-- AS: Samoa American (+685) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AT: Austria (+43)</masterLabel>
+            <translation><!-- AT: Austria (+43) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AU: Australia (+61)</masterLabel>
+            <translation><!-- AU: Australia (+61) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AW: Aruba (+297)</masterLabel>
+            <translation><!-- AW: Aruba (+297) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ: Azerbaijan (+994)</masterLabel>
+            <translation><!-- AZ: Azerbaijan (+994) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BA: Bosnia-Herz (+387)</masterLabel>
+            <translation><!-- BA: Bosnia-Herz (+387) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BB: Barbados (+246)</masterLabel>
+            <translation><!-- BB: Barbados (+246) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BD: Bangladesh (+880)</masterLabel>
+            <translation><!-- BD: Bangladesh (+880) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BE: Belgium (+32)</masterLabel>
+            <translation><!-- BE: Belgium (+32) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BF: Burkina-Faso (+226)</masterLabel>
+            <translation><!-- BF: Burkina-Faso (+226) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BG: Bulgaria (+359)</masterLabel>
+            <translation><!-- BG: Bulgaria (+359) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BH: Bahrain (+973)</masterLabel>
+            <translation><!-- BH: Bahrain (+973) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI: Burundi (+257)</masterLabel>
+            <translation><!-- BI: Burundi (+257) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BJ: Benin (+229)</masterLabel>
+            <translation><!-- BJ: Benin (+229) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BL: BL (+)</masterLabel>
+            <translation><!-- BL: BL (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BM: Bermuda (+1)</masterLabel>
+            <translation><!-- BM: Bermuda (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BN: Brunei-Daruessa (+673)</masterLabel>
+            <translation><!-- BN: Brunei-Daruessa (+673) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BO: Bolivia (+591)</masterLabel>
+            <translation><!-- BO: Bolivia (+591) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR: Brazil (+55)</masterLabel>
+            <translation><!-- BR: Brazil (+55) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BS: Bahamas (+242)</masterLabel>
+            <translation><!-- BS: Bahamas (+242) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BT: Bhutan (+975)</masterLabel>
+            <translation><!-- BT: Bhutan (+975) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BU: Bouvet Island (+47)</masterLabel>
+            <translation><!-- BU: Bouvet Island (+47) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BV: BV (+1)</masterLabel>
+            <translation><!-- BV: BV (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BW: Botswana (+267)</masterLabel>
+            <translation><!-- BW: Botswana (+267) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BY: Belarus (+375)</masterLabel>
+            <translation><!-- BY: Belarus (+375) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BZ: Belize (+501)</masterLabel>
+            <translation><!-- BZ: Belize (+501) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA: Canada (+1)</masterLabel>
+            <translation><!-- CA: Canada (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC: Cocos Islands (+61)</masterLabel>
+            <translation><!-- CC: Cocos Islands (+61) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD: CD (+)</masterLabel>
+            <translation><!-- CD: CD (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CF: Centr. Afr. Rep. (+236)</masterLabel>
+            <translation><!-- CF: Centr. Afr. Rep. (+236) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CG: Congo (+242)</masterLabel>
+            <translation><!-- CG: Congo (+242) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH: Switzerland (+41)</masterLabel>
+            <translation><!-- CH: Switzerland (+41) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CI: Ivory Coast (+225)</masterLabel>
+            <translation><!-- CI: Ivory Coast (+225) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CK: Cook Islands (+682)</masterLabel>
+            <translation><!-- CK: Cook Islands (+682) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CL: Chile (+56)</masterLabel>
+            <translation><!-- CL: Chile (+56) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CM: Cameroon (+237)</masterLabel>
+            <translation><!-- CM: Cameroon (+237) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CN: China (+86)</masterLabel>
+            <translation><!-- CN: China (+86) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO: Colombia (+57)</masterLabel>
+            <translation><!-- CO: Colombia (+57) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR: Costa Rica (+506)</masterLabel>
+            <translation><!-- CR: Costa Rica (+506) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CS: Serbia (+381)</masterLabel>
+            <translation><!-- CS: Serbia (+381) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CV: Cape Verdian (+238)</masterLabel>
+            <translation><!-- CV: Cape Verdian (+238) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CX: Christmas Islnd (+53)</masterLabel>
+            <translation><!-- CX: Christmas Islnd (+53) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CY: Cyprus (+357)</masterLabel>
+            <translation><!-- CY: Cyprus (+357) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CZ: The Czech Rep. (+420)</masterLabel>
+            <translation><!-- CZ: The Czech Rep. (+420) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE: Germany (+49)</masterLabel>
+            <translation><!-- DE: Germany (+49) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DK: Denmark (+45)</masterLabel>
+            <translation><!-- DK: Denmark (+45) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM: Dominica (+1)</masterLabel>
+            <translation><!-- DM: Dominica (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DO: Dominican Rep. (+1)</masterLabel>
+            <translation><!-- DO: Dominican Rep. (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DZ: Algeria (+213)</masterLabel>
+            <translation><!-- DZ: Algeria (+213) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EC: Ecuador (+593)</masterLabel>
+            <translation><!-- EC: Ecuador (+593) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EE: Estonia (+372)</masterLabel>
+            <translation><!-- EE: Estonia (+372) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EG: Egypt (+20)</masterLabel>
+            <translation><!-- EG: Egypt (+20) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EH: EH (+)</masterLabel>
+            <translation><!-- EH: EH (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ER: Eritrea (+291)</masterLabel>
+            <translation><!-- ER: Eritrea (+291) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ES: Spain (+34)</masterLabel>
+            <translation><!-- ES: Spain (+34) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ET: Ethiopia (+251)</masterLabel>
+            <translation><!-- ET: Ethiopia (+251) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EU: EU (+)</masterLabel>
+            <translation><!-- EU: EU (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FI: Finland (+358)</masterLabel>
+            <translation><!-- FI: Finland (+358) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FJ: Fiji (+679)</masterLabel>
+            <translation><!-- FJ: Fiji (+679) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FK: Falkland Islnds (+500)</masterLabel>
+            <translation><!-- FK: Falkland Islnds (+500) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FM: Micronesia (+691)</masterLabel>
+            <translation><!-- FM: Micronesia (+691) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FO: Faroe Islands (+298)</masterLabel>
+            <translation><!-- FO: Faroe Islands (+298) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FR: France (+33)</masterLabel>
+            <translation><!-- FR: France (+33) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA: Gabon (+241)</masterLabel>
+            <translation><!-- GA: Gabon (+241) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GB: Great Britain (+44)</masterLabel>
+            <translation><!-- GB: Great Britain (+44) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GD: Grenada (+1)</masterLabel>
+            <translation><!-- GD: Grenada (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GE: Georgia (+995)</masterLabel>
+            <translation><!-- GE: Georgia (+995) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GF: French Guinea (+594)</masterLabel>
+            <translation><!-- GF: French Guinea (+594) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GH: Ghana (+233)</masterLabel>
+            <translation><!-- GH: Ghana (+233) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GI: Gibraltar (+350)</masterLabel>
+            <translation><!-- GI: Gibraltar (+350) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GL: Greenland (+299)</masterLabel>
+            <translation><!-- GL: Greenland (+299) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GM: Gambia (+220)</masterLabel>
+            <translation><!-- GM: Gambia (+220) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GN: Guinea (+224)</masterLabel>
+            <translation><!-- GN: Guinea (+224) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GP: Guadeloupe (+590)</masterLabel>
+            <translation><!-- GP: Guadeloupe (+590) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GQ: Equatorial Gui. (+240)</masterLabel>
+            <translation><!-- GQ: Equatorial Gui. (+240) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GR: Greece (+30)</masterLabel>
+            <translation><!-- GR: Greece (+30) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GS: GS (+)</masterLabel>
+            <translation><!-- GS: GS (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GT: Guatemala (+502)</masterLabel>
+            <translation><!-- GT: Guatemala (+502) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GU: Guam (+1)</masterLabel>
+            <translation><!-- GU: Guam (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GW: Guinea-Bissau (+245)</masterLabel>
+            <translation><!-- GW: Guinea-Bissau (+245) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GY: Guyana (+592)</masterLabel>
+            <translation><!-- GY: Guyana (+592) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HK: Hong Kong (+852)</masterLabel>
+            <translation><!-- HK: Hong Kong (+852) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HM: HM (+)</masterLabel>
+            <translation><!-- HM: HM (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HN: Honduras (+504)</masterLabel>
+            <translation><!-- HN: Honduras (+504) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR: Croatia (+385)</masterLabel>
+            <translation><!-- HR: Croatia (+385) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HT: Haiti (+509)</masterLabel>
+            <translation><!-- HT: Haiti (+509) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HU: Hungary (+36)</masterLabel>
+            <translation><!-- HU: Hungary (+36) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID: Indonesia (+62)</masterLabel>
+            <translation><!-- ID: Indonesia (+62) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE: Ireland (+353)</masterLabel>
+            <translation><!-- IE: Ireland (+353) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL: Israel (+972)</masterLabel>
+            <translation><!-- IL: Israel (+972) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IM: Isle of Man (+44)</masterLabel>
+            <translation><!-- IM: Isle of Man (+44) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN: India (+91)</masterLabel>
+            <translation><!-- IN: India (+91) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO: IO (+)</masterLabel>
+            <translation><!-- IO: IO (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ: Iraq (+964)</masterLabel>
+            <translation><!-- IQ: Iraq (+964) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR: Iran (+98)</masterLabel>
+            <translation><!-- IR: Iran (+98) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IS: Iceland (+354)</masterLabel>
+            <translation><!-- IS: Iceland (+354) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT: Italy (+39)</masterLabel>
+            <translation><!-- IT: Italy (+39) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JM: Jamaica (+1)</masterLabel>
+            <translation><!-- JM: Jamaica (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JO: Jordan (+962)</masterLabel>
+            <translation><!-- JO: Jordan (+962) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JP: Japan (+81)</masterLabel>
+            <translation><!-- JP: Japan (+81) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KE: Kenya (+254)</masterLabel>
+            <translation><!-- KE: Kenya (+254) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KG: Kirghistan (+996)</masterLabel>
+            <translation><!-- KG: Kirghistan (+996) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KH: Cambodia (+855)</masterLabel>
+            <translation><!-- KH: Cambodia (+855) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KI: Kiribati (+686)</masterLabel>
+            <translation><!-- KI: Kiribati (+686) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KM: Comorin (+269)</masterLabel>
+            <translation><!-- KM: Comorin (+269) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KN: St. Chr., Nevis (+1)</masterLabel>
+            <translation><!-- KN: St. Chr., Nevis (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KR: Korea (+82)</masterLabel>
+            <translation><!-- KR: Korea (+82) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KW: Kuwait (+965)</masterLabel>
+            <translation><!-- KW: Kuwait (+965) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY: Cayman Islands (+1)</masterLabel>
+            <translation><!-- KY: Cayman Islands (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KZ: Kazakhstan (+7)</masterLabel>
+            <translation><!-- KZ: Kazakhstan (+7) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA: Laos (+856)</masterLabel>
+            <translation><!-- LA: Laos (+856) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LB: Lebanon (+961)</masterLabel>
+            <translation><!-- LB: Lebanon (+961) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LC: St. Lucia (+1)</masterLabel>
+            <translation><!-- LC: St. Lucia (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LI: Liechtenstein (+423)</masterLabel>
+            <translation><!-- LI: Liechtenstein (+423) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LK: Sri Lanka (+94)</masterLabel>
+            <translation><!-- LK: Sri Lanka (+94) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LS: Lesotho (+266)</masterLabel>
+            <translation><!-- LS: Lesotho (+266) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LT: Lithuania (+370)</masterLabel>
+            <translation><!-- LT: Lithuania (+370) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LU: Luxembourg (+352)</masterLabel>
+            <translation><!-- LU: Luxembourg (+352) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LV: Latvia (+371)</masterLabel>
+            <translation><!-- LV: Latvia (+371) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA: Morocco (+212)</masterLabel>
+            <translation><!-- MA: Morocco (+212) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MC: Monaco (+377)</masterLabel>
+            <translation><!-- MC: Monaco (+377) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD: Moldavia (+373)</masterLabel>
+            <translation><!-- MD: Moldavia (+373) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME: Montenegro (+382)</masterLabel>
+            <translation><!-- ME: Montenegro (+382) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG: Madagascar (+261)</masterLabel>
+            <translation><!-- MG: Madagascar (+261) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MH: Marshall Islnds (+692)</masterLabel>
+            <translation><!-- MH: Marshall Islnds (+692) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MK: Macedonia (+389)</masterLabel>
+            <translation><!-- MK: Macedonia (+389) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ML: Mali (+223)</masterLabel>
+            <translation><!-- ML: Mali (+223) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MM: Myanmar (+95)</masterLabel>
+            <translation><!-- MM: Myanmar (+95) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN: Mongolia (+976)</masterLabel>
+            <translation><!-- MN: Mongolia (+976) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO: Macau (+853)</masterLabel>
+            <translation><!-- MO: Macau (+853) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP: N. Mariana Islnd (+670)</masterLabel>
+            <translation><!-- MP: N. Mariana Islnd (+670) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MQ: Martinique (+596)</masterLabel>
+            <translation><!-- MQ: Martinique (+596) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR: Mauretania (+222)</masterLabel>
+            <translation><!-- MR: Mauretania (+222) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS: Montserrat (+1)</masterLabel>
+            <translation><!-- MS: Montserrat (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT: Malta (+356)</masterLabel>
+            <translation><!-- MT: Malta (+356) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MU: Mauritius (+230)</masterLabel>
+            <translation><!-- MU: Mauritius (+230) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MV: Maldives (+960)</masterLabel>
+            <translation><!-- MV: Maldives (+960) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MW: Malawi (+265)</masterLabel>
+            <translation><!-- MW: Malawi (+265) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MX: Mexico (+52)</masterLabel>
+            <translation><!-- MX: Mexico (+52) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MY: Malaysia (+60)</masterLabel>
+            <translation><!-- MY: Malaysia (+60) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MZ: Mozambique (+258)</masterLabel>
+            <translation><!-- MZ: Mozambique (+258) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA: Namibia (+264)</masterLabel>
+            <translation><!-- NA: Namibia (+264) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC: New Caledonia (+687)</masterLabel>
+            <translation><!-- NC: New Caledonia (+687) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE: Niger (+227)</masterLabel>
+            <translation><!-- NE: Niger (+227) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NF: Birfolk Island (+)</masterLabel>
+            <translation><!-- NF: Birfolk Island (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NG: Nigeria (+234)</masterLabel>
+            <translation><!-- NG: Nigeria (+234) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NI: Nicaragua (+505)</masterLabel>
+            <translation><!-- NI: Nicaragua (+505) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NL: Netherlands (+31)</masterLabel>
+            <translation><!-- NL: Netherlands (+31) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NO: Norway (+47)</masterLabel>
+            <translation><!-- NO: Norway (+47) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NP: Nepal (+977)</masterLabel>
+            <translation><!-- NP: Nepal (+977) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NR: Nauru (+674)</masterLabel>
+            <translation><!-- NR: Nauru (+674) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NT: NT (+)</masterLabel>
+            <translation><!-- NT: NT (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NU: Niue Islands (+683)</masterLabel>
+            <translation><!-- NU: Niue Islands (+683) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NZ: New Zealand (+64)</masterLabel>
+            <translation><!-- NZ: New Zealand (+64) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OM: Oman (+968)</masterLabel>
+            <translation><!-- OM: Oman (+968) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR: OR (+)</masterLabel>
+            <translation><!-- OR: OR (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA: Panama (+507)</masterLabel>
+            <translation><!-- PA: Panama (+507) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE: Peru (+51)</masterLabel>
+            <translation><!-- PE: Peru (+51) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PF: Frrenc Polynesia (+689)</masterLabel>
+            <translation><!-- PF: Frrenc Polynesia (+689) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PG: Papau NW Guinea (+675)</masterLabel>
+            <translation><!-- PG: Papau NW Guinea (+675) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PH: Phillippines (+63)</masterLabel>
+            <translation><!-- PH: Phillippines (+63) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PK: Pakistan (+92)</masterLabel>
+            <translation><!-- PK: Pakistan (+92) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL: Poland (+48)</masterLabel>
+            <translation><!-- PL: Poland (+48) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM: St. Pier Miguel (+508)</masterLabel>
+            <translation><!-- PM: St. Pier Miguel (+508) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PN: PN (+)</masterLabel>
+            <translation><!-- PN: PN (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR: Puerto Rico (+1)</masterLabel>
+            <translation><!-- PR: Puerto Rico (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS: PS (+)</masterLabel>
+            <translation><!-- PS: PS (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT: Portugal (+351)</masterLabel>
+            <translation><!-- PT: Portugal (+351) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PW: Palau (+680)</masterLabel>
+            <translation><!-- PW: Palau (+680) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PY: Paraguay (+595)</masterLabel>
+            <translation><!-- PY: Paraguay (+595) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA: Qatar (+974)</masterLabel>
+            <translation><!-- QA: Qatar (+974) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RE: Reunion (+262)</masterLabel>
+            <translation><!-- RE: Reunion (+262) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RO: Romania (+40)</masterLabel>
+            <translation><!-- RO: Romania (+40) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RS: Serbia (+381)</masterLabel>
+            <translation><!-- RS: Serbia (+381) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RU: Russian Fed. (+7)</masterLabel>
+            <translation><!-- RU: Russian Fed. (+7) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RW: Rwanda (+250)</masterLabel>
+            <translation><!-- RW: Rwanda (+250) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA: Saudi Arabia (+966)</masterLabel>
+            <translation><!-- SA: Saudi Arabia (+966) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SB: Solomon Islands (+677)</masterLabel>
+            <translation><!-- SB: Solomon Islands (+677) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC: Seychelles (+248)</masterLabel>
+            <translation><!-- SC: Seychelles (+248) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SE: Sweden (+46)</masterLabel>
+            <translation><!-- SE: Sweden (+46) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SG: Singapore (+65)</masterLabel>
+            <translation><!-- SG: Singapore (+65) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SH: St. Helena (+290)</masterLabel>
+            <translation><!-- SH: St. Helena (+290) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI: Slovenia (+386)</masterLabel>
+            <translation><!-- SI: Slovenia (+386) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SJ: SJ (+)</masterLabel>
+            <translation><!-- SJ: SJ (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SK: Slovakia (+421)</masterLabel>
+            <translation><!-- SK: Slovakia (+421) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SL: Sierra Leone (+232)</masterLabel>
+            <translation><!-- SL: Sierra Leone (+232) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SM: San Marino (+378)</masterLabel>
+            <translation><!-- SM: San Marino (+378) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SN: Senegal (+221)</masterLabel>
+            <translation><!-- SN: Senegal (+221) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO: Somalia (+252)</masterLabel>
+            <translation><!-- SO: Somalia (+252) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SR: Suriname (+597)</masterLabel>
+            <translation><!-- SR: Suriname (+597) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST: S. Tome, Pricnipe (+239)</masterLabel>
+            <translation><!-- ST: S. Tome, Pricnipe (+239) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STL: Stateless (+)</masterLabel>
+            <translation><!-- STL: Stateless (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SV: El Salvador (+503)</masterLabel>
+            <translation><!-- SV: El Salvador (+503) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SY: Syria (+963)</masterLabel>
+            <translation><!-- SY: Syria (+963) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SZ: Swaziland (+268)</masterLabel>
+            <translation><!-- SZ: Swaziland (+268) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC: Turkish Caicosin (+)</masterLabel>
+            <translation><!-- TC: Turkish Caicosin (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TD: Chad (+235)</masterLabel>
+            <translation><!-- TD: Chad (+235) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TF: TF (+)</masterLabel>
+            <translation><!-- TF: TF (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TG: Togo (+228)</masterLabel>
+            <translation><!-- TG: Togo (+228) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TH: Thailand (+66)</masterLabel>
+            <translation><!-- TH: Thailand (+66) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJ: Tadzhistan (+992)</masterLabel>
+            <translation><!-- TJ: Tadzhistan (+992) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TK: TK (+)</masterLabel>
+            <translation><!-- TK: TK (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TL: TL (+)</masterLabel>
+            <translation><!-- TL: TL (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM: Turkmenistan (+993)</masterLabel>
+            <translation><!-- TM: Turkmenistan (+993) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN: Tunisia (+216)</masterLabel>
+            <translation><!-- TN: Tunisia (+216) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TO: Tonga (+676)</masterLabel>
+            <translation><!-- TO: Tonga (+676) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TP: TP (+)</masterLabel>
+            <translation><!-- TP: TP (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TR: Turkey (+90)</masterLabel>
+            <translation><!-- TR: Turkey (+90) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TT: Trinidad Tobago (+1)</masterLabel>
+            <translation><!-- TT: Trinidad Tobago (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV: Tuvalu (+688)</masterLabel>
+            <translation><!-- TV: Tuvalu (+688) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TW: Taiwan (+886)</masterLabel>
+            <translation><!-- TW: Taiwan (+886) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TZ: Tanzania (+255)</masterLabel>
+            <translation><!-- TZ: Tanzania (+255) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UA: Ukraine (+380)</masterLabel>
+            <translation><!-- UA: Ukraine (+380) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UG: Uganda (+256)</masterLabel>
+            <translation><!-- UG: Uganda (+256) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UM: Minor Out. Ins. (+)</masterLabel>
+            <translation><!-- UM: Minor Out. Ins. (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UN: UN (+)</masterLabel>
+            <translation><!-- UN: UN (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US: USA (+1)</masterLabel>
+            <translation><!-- US: USA (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UY: Uruguay (+598)</masterLabel>
+            <translation><!-- UY: Uruguay (+598) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UZ: Uzbekistan (+998)</masterLabel>
+            <translation><!-- UZ: Uzbekistan (+998) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA: Vatican City (+39)</masterLabel>
+            <translation><!-- VA: Vatican City (+39) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VC: St. Vincent (+784)</masterLabel>
+            <translation><!-- VC: St. Vincent (+784) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VE: Venezuela (+58)</masterLabel>
+            <translation><!-- VE: Venezuela (+58) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VG: Brit. Virgin Isl (+1)</masterLabel>
+            <translation><!-- VG: Brit. Virgin Isl (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VI: Amer. Virgin Isl (+1)</masterLabel>
+            <translation><!-- VI: Amer. Virgin Isl (+1) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VN: Vietnam (+84)</masterLabel>
+            <translation><!-- VN: Vietnam (+84) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VU: Vanuatu (+678)</masterLabel>
+            <translation><!-- VU: Vanuatu (+678) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WF: Wallis, Futuna (+681)</masterLabel>
+            <translation><!-- WF: Wallis, Futuna (+681) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WS: Western Somoa (+685)</masterLabel>
+            <translation><!-- WS: Western Somoa (+685) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XC: XC (+)</masterLabel>
+            <translation><!-- XC: XC (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XK: Kosovo (+381)</masterLabel>
+            <translation><!-- XK: Kosovo (+381) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XL: XL (+)</masterLabel>
+            <translation><!-- XL: XL (+) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XM: Montenegro (+382)</masterLabel>
+            <translation><!-- XM: Montenegro (+382) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XS: Serbia (+381)</masterLabel>
+            <translation><!-- XS: Serbia (+381) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YE: Yemen (+967)</masterLabel>
+            <translation><!-- YE: Yemen (+967) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YT: Mayotte (+269)</masterLabel>
+            <translation><!-- YT: Mayotte (+269) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YU: Yugoslavia (+381)</masterLabel>
+            <translation><!-- YU: Yugoslavia (+381) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZA: South Africa (+27)</masterLabel>
+            <translation><!-- ZA: South Africa (+27) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZM: Zambia (+260)</masterLabel>
+            <translation><!-- ZM: Zambia (+260) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZR: Zaire (+243)</masterLabel>
+            <translation><!-- ZR: Zaire (+243) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APA</masterLabel>
+            <translation><!-- APA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CER</masterLabel>
+            <translation><!-- CER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EER</masterLabel>
+            <translation><!-- EER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAM</masterLabel>
+            <translation><!-- LAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAM</masterLabel>
+            <translation><!-- NAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NER</masterLabel>
+            <translation><!-- NER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS: APAC</masterLabel>
+            <translation><!-- PS: APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS: Americas</masterLabel>
+            <translation><!-- PS: Americas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS: China</masterLabel>
+            <translation><!-- PS: China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS: Europe</masterLabel>
+            <translation><!-- PS: Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SER</masterLabel>
+            <translation><!-- SER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMA</masterLabel>
+            <translation><!-- TMA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sales Org --></label>
+        <name>Sales_Org__c</name>
+        <picklistValues>
+            <masterLabel>1010</masterLabel>
+            <translation><!-- 1010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1130</masterLabel>
+            <translation><!-- 1130 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1160</masterLabel>
+            <translation><!-- 1160 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1200</masterLabel>
+            <translation><!-- 1200 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1250</masterLabel>
+            <translation><!-- 1250 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1310</masterLabel>
+            <translation><!-- 1310 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1350</masterLabel>
+            <translation><!-- 1350 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1400</masterLabel>
+            <translation><!-- 1400 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1410</masterLabel>
+            <translation><!-- 1410 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1420</masterLabel>
+            <translation><!-- 1420 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1430</masterLabel>
+            <translation><!-- 1430 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1450</masterLabel>
+            <translation><!-- 1450 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1470</masterLabel>
+            <translation><!-- 1470 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1480</masterLabel>
+            <translation><!-- 1480 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1500</masterLabel>
+            <translation><!-- 1500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1550</masterLabel>
+            <translation><!-- 1550 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1710</masterLabel>
+            <translation><!-- 1710 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1900</masterLabel>
+            <translation><!-- 1900 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2000</masterLabel>
+            <translation><!-- 2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2025</masterLabel>
+            <translation><!-- 2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2030</masterLabel>
+            <translation><!-- 2030 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2040</masterLabel>
+            <translation><!-- 2040 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2050</masterLabel>
+            <translation><!-- 2050 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2060</masterLabel>
+            <translation><!-- 2060 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2070</masterLabel>
+            <translation><!-- 2070 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6010</masterLabel>
+            <translation><!-- 6010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6310</masterLabel>
+            <translation><!-- 6310 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6320</masterLabel>
+            <translation><!-- 6320 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6330</masterLabel>
+            <translation><!-- 6330 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6340</masterLabel>
+            <translation><!-- 6340 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6510</masterLabel>
+            <translation><!-- 6510 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6520</masterLabel>
+            <translation><!-- 6520 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6530</masterLabel>
+            <translation><!-- 6530 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Time when Terms And Conditions was accepted by User from Portal --></help>
+        <label><!-- Terms And Conditions --></label>
+        <name>Terms_And_Conditions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms and Conditions Status --></label>
+        <name>Terms_and_Conditions_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The users main working country area - picklist values for Accounts &amp; Contacts will default to this. --></help>
+        <label><!-- User Country --></label>
+        <name>User_Country__c</name>
+        <picklistValues>
+            <masterLabel>AD</masterLabel>
+            <translation><!-- AD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AE</masterLabel>
+            <translation><!-- AE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AF</masterLabel>
+            <translation><!-- AF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AG</masterLabel>
+            <translation><!-- AG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AI</masterLabel>
+            <translation><!-- AI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL</masterLabel>
+            <translation><!-- AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AM</masterLabel>
+            <translation><!-- AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AN</masterLabel>
+            <translation><!-- AN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AO</masterLabel>
+            <translation><!-- AO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AQ</masterLabel>
+            <translation><!-- AQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS</masterLabel>
+            <translation><!-- AS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AT</masterLabel>
+            <translation><!-- AT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AU</masterLabel>
+            <translation><!-- AU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AW</masterLabel>
+            <translation><!-- AW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BA</masterLabel>
+            <translation><!-- BA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BB</masterLabel>
+            <translation><!-- BB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BD</masterLabel>
+            <translation><!-- BD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BE</masterLabel>
+            <translation><!-- BE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BF</masterLabel>
+            <translation><!-- BF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BG</masterLabel>
+            <translation><!-- BG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BH</masterLabel>
+            <translation><!-- BH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BJ</masterLabel>
+            <translation><!-- BJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BL</masterLabel>
+            <translation><!-- BL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BM</masterLabel>
+            <translation><!-- BM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BN</masterLabel>
+            <translation><!-- BN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BO</masterLabel>
+            <translation><!-- BO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BR</masterLabel>
+            <translation><!-- BR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BS</masterLabel>
+            <translation><!-- BS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BT</masterLabel>
+            <translation><!-- BT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BU</masterLabel>
+            <translation><!-- BU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BV</masterLabel>
+            <translation><!-- BV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BW</masterLabel>
+            <translation><!-- BW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BY</masterLabel>
+            <translation><!-- BY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BZ</masterLabel>
+            <translation><!-- BZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CC</masterLabel>
+            <translation><!-- CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CD</masterLabel>
+            <translation><!-- CD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CF</masterLabel>
+            <translation><!-- CF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CG</masterLabel>
+            <translation><!-- CG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH</masterLabel>
+            <translation><!-- CH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CI</masterLabel>
+            <translation><!-- CI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CK</masterLabel>
+            <translation><!-- CK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CL</masterLabel>
+            <translation><!-- CL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CM</masterLabel>
+            <translation><!-- CM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CN</masterLabel>
+            <translation><!-- CN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CR</masterLabel>
+            <translation><!-- CR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CS</masterLabel>
+            <translation><!-- CS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CV</masterLabel>
+            <translation><!-- CV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CX</masterLabel>
+            <translation><!-- CX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CY</masterLabel>
+            <translation><!-- CY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CZ</masterLabel>
+            <translation><!-- CZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE</masterLabel>
+            <translation><!-- DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DK</masterLabel>
+            <translation><!-- DK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DM</masterLabel>
+            <translation><!-- DM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DO</masterLabel>
+            <translation><!-- DO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DZ</masterLabel>
+            <translation><!-- DZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EC</masterLabel>
+            <translation><!-- EC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EE</masterLabel>
+            <translation><!-- EE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EG</masterLabel>
+            <translation><!-- EG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EH</masterLabel>
+            <translation><!-- EH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ER</masterLabel>
+            <translation><!-- ER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ES</masterLabel>
+            <translation><!-- ES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ET</masterLabel>
+            <translation><!-- ET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EU</masterLabel>
+            <translation><!-- EU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FI</masterLabel>
+            <translation><!-- FI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FJ</masterLabel>
+            <translation><!-- FJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FK</masterLabel>
+            <translation><!-- FK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FM</masterLabel>
+            <translation><!-- FM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FO</masterLabel>
+            <translation><!-- FO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FR</masterLabel>
+            <translation><!-- FR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA</masterLabel>
+            <translation><!-- GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GB</masterLabel>
+            <translation><!-- GB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GD</masterLabel>
+            <translation><!-- GD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GE</masterLabel>
+            <translation><!-- GE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GF</masterLabel>
+            <translation><!-- GF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GH</masterLabel>
+            <translation><!-- GH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GI</masterLabel>
+            <translation><!-- GI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GL</masterLabel>
+            <translation><!-- GL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GM</masterLabel>
+            <translation><!-- GM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GN</masterLabel>
+            <translation><!-- GN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GP</masterLabel>
+            <translation><!-- GP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GQ</masterLabel>
+            <translation><!-- GQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GR</masterLabel>
+            <translation><!-- GR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GS</masterLabel>
+            <translation><!-- GS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GT</masterLabel>
+            <translation><!-- GT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GU</masterLabel>
+            <translation><!-- GU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GW</masterLabel>
+            <translation><!-- GW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GY</masterLabel>
+            <translation><!-- GY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HK</masterLabel>
+            <translation><!-- HK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HM</masterLabel>
+            <translation><!-- HM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HN</masterLabel>
+            <translation><!-- HN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HT</masterLabel>
+            <translation><!-- HT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HU</masterLabel>
+            <translation><!-- HU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID</masterLabel>
+            <translation><!-- ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE</masterLabel>
+            <translation><!-- IE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IM</masterLabel>
+            <translation><!-- IM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IO</masterLabel>
+            <translation><!-- IO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQ</masterLabel>
+            <translation><!-- IQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IR</masterLabel>
+            <translation><!-- IR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IS</masterLabel>
+            <translation><!-- IS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JM</masterLabel>
+            <translation><!-- JM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JO</masterLabel>
+            <translation><!-- JO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JP</masterLabel>
+            <translation><!-- JP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KE</masterLabel>
+            <translation><!-- KE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KG</masterLabel>
+            <translation><!-- KG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KH</masterLabel>
+            <translation><!-- KH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KI</masterLabel>
+            <translation><!-- KI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KM</masterLabel>
+            <translation><!-- KM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KN</masterLabel>
+            <translation><!-- KN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KR</masterLabel>
+            <translation><!-- KR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KW</masterLabel>
+            <translation><!-- KW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY</masterLabel>
+            <translation><!-- KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KZ</masterLabel>
+            <translation><!-- KZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LB</masterLabel>
+            <translation><!-- LB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LC</masterLabel>
+            <translation><!-- LC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LI</masterLabel>
+            <translation><!-- LI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LK</masterLabel>
+            <translation><!-- LK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LS</masterLabel>
+            <translation><!-- LS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LT</masterLabel>
+            <translation><!-- LT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LU</masterLabel>
+            <translation><!-- LU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LV</masterLabel>
+            <translation><!-- LV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MC</masterLabel>
+            <translation><!-- MC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD</masterLabel>
+            <translation><!-- MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MG</masterLabel>
+            <translation><!-- MG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MH</masterLabel>
+            <translation><!-- MH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MK</masterLabel>
+            <translation><!-- MK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ML</masterLabel>
+            <translation><!-- ML --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MM</masterLabel>
+            <translation><!-- MM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN</masterLabel>
+            <translation><!-- MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO</masterLabel>
+            <translation><!-- MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP</masterLabel>
+            <translation><!-- MP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MQ</masterLabel>
+            <translation><!-- MQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR</masterLabel>
+            <translation><!-- MR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MU</masterLabel>
+            <translation><!-- MU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MV</masterLabel>
+            <translation><!-- MV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MW</masterLabel>
+            <translation><!-- MW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MX</masterLabel>
+            <translation><!-- MX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MY</masterLabel>
+            <translation><!-- MY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MZ</masterLabel>
+            <translation><!-- MZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE</masterLabel>
+            <translation><!-- NE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NF</masterLabel>
+            <translation><!-- NF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NG</masterLabel>
+            <translation><!-- NG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NI</masterLabel>
+            <translation><!-- NI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NL</masterLabel>
+            <translation><!-- NL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NO</masterLabel>
+            <translation><!-- NO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NP</masterLabel>
+            <translation><!-- NP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NR</masterLabel>
+            <translation><!-- NR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NT</masterLabel>
+            <translation><!-- NT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NU</masterLabel>
+            <translation><!-- NU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NZ</masterLabel>
+            <translation><!-- NZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OM</masterLabel>
+            <translation><!-- OM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE</masterLabel>
+            <translation><!-- PE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PF</masterLabel>
+            <translation><!-- PF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PG</masterLabel>
+            <translation><!-- PG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PH</masterLabel>
+            <translation><!-- PH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PK</masterLabel>
+            <translation><!-- PK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL</masterLabel>
+            <translation><!-- PL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PM</masterLabel>
+            <translation><!-- PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PN</masterLabel>
+            <translation><!-- PN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR</masterLabel>
+            <translation><!-- PR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PS</masterLabel>
+            <translation><!-- PS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT</masterLabel>
+            <translation><!-- PT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PW</masterLabel>
+            <translation><!-- PW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PY</masterLabel>
+            <translation><!-- PY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA</masterLabel>
+            <translation><!-- QA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RE</masterLabel>
+            <translation><!-- RE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RO</masterLabel>
+            <translation><!-- RO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RS</masterLabel>
+            <translation><!-- RS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RU</masterLabel>
+            <translation><!-- RU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RW</masterLabel>
+            <translation><!-- RW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA</masterLabel>
+            <translation><!-- SA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SB</masterLabel>
+            <translation><!-- SB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SE</masterLabel>
+            <translation><!-- SE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SG</masterLabel>
+            <translation><!-- SG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SH</masterLabel>
+            <translation><!-- SH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SI</masterLabel>
+            <translation><!-- SI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SJ</masterLabel>
+            <translation><!-- SJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SK</masterLabel>
+            <translation><!-- SK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SL</masterLabel>
+            <translation><!-- SL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SM</masterLabel>
+            <translation><!-- SM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SN</masterLabel>
+            <translation><!-- SN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SO</masterLabel>
+            <translation><!-- SO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SR</masterLabel>
+            <translation><!-- SR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ST</masterLabel>
+            <translation><!-- ST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STL</masterLabel>
+            <translation><!-- STL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SV</masterLabel>
+            <translation><!-- SV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SY</masterLabel>
+            <translation><!-- SY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SZ</masterLabel>
+            <translation><!-- SZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TC</masterLabel>
+            <translation><!-- TC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TD</masterLabel>
+            <translation><!-- TD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TF</masterLabel>
+            <translation><!-- TF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TG</masterLabel>
+            <translation><!-- TG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TH</masterLabel>
+            <translation><!-- TH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TJ</masterLabel>
+            <translation><!-- TJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TK</masterLabel>
+            <translation><!-- TK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TL</masterLabel>
+            <translation><!-- TL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TM</masterLabel>
+            <translation><!-- TM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN</masterLabel>
+            <translation><!-- TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TO</masterLabel>
+            <translation><!-- TO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TP</masterLabel>
+            <translation><!-- TP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TR</masterLabel>
+            <translation><!-- TR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TT</masterLabel>
+            <translation><!-- TT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TW</masterLabel>
+            <translation><!-- TW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TZ</masterLabel>
+            <translation><!-- TZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UA</masterLabel>
+            <translation><!-- UA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UG</masterLabel>
+            <translation><!-- UG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UM</masterLabel>
+            <translation><!-- UM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UN</masterLabel>
+            <translation><!-- UN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US</masterLabel>
+            <translation><!-- US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UY</masterLabel>
+            <translation><!-- UY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UZ</masterLabel>
+            <translation><!-- UZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VC</masterLabel>
+            <translation><!-- VC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VE</masterLabel>
+            <translation><!-- VE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VG</masterLabel>
+            <translation><!-- VG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VI</masterLabel>
+            <translation><!-- VI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VN</masterLabel>
+            <translation><!-- VN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vu</masterLabel>
+            <translation><!-- Vu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WF</masterLabel>
+            <translation><!-- WF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WS</masterLabel>
+            <translation><!-- WS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XC</masterLabel>
+            <translation><!-- XC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XK</masterLabel>
+            <translation><!-- XK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XL</masterLabel>
+            <translation><!-- XL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XM</masterLabel>
+            <translation><!-- XM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XS</masterLabel>
+            <translation><!-- XS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YE</masterLabel>
+            <translation><!-- YE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YT</masterLabel>
+            <translation><!-- YT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YU</masterLabel>
+            <translation><!-- YU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZA</masterLabel>
+            <translation><!-- ZA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZM</masterLabel>
+            <translation><!-- ZM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZR</masterLabel>
+            <translation><!-- ZR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>用户名</label>
+        <name>User_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost ($/hour) --></label>
+        <name>ccpe_r__Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the standard hourly rate of the User --></help>
+        <label><!-- Rate ($/hour) --></label>
+        <name>ccpe_r__Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- API_URL --></label>
+        <name>copado__API_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- The visibility of the message asking users to rate &amp; feedback Copado on the AppExchange is controlled here. --></help>
+        <label><!-- Hide Copado feedback --></label>
+        <name>copado__Hide_Copado_feedback__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can View Not Assigned Prospects --></label>
+        <name>pi__Can_View_Not_Assigned_Prospects__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Api Key --></label>
+        <name>pi__Pardot_Api_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot Api Version --></label>
+        <name>pi__Pardot_Api_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot User Id --></label>
+        <name>pi__Pardot_User_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot User Key --></label>
+        <name>pi__Pardot_User_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pardot User Role --></label>
+        <name>pi__Pardot_User_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allocatable --></label>
+        <name>project_cloud__Allocatable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last, First &amp; User Name --></label>
+        <name>project_cloud__Sorting_Hash__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- You can delete a BMC Client Management Login ID from here but you cannot edit it. --></errorMessage>
+        <name>BMCServiceDesk__Validate_FootPrints_Login</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Changing business org on a user will cause significant data access issues due to inherited sharing. Please follow the appropriate process by inactivating the current user and creating a new user in the correct business org. --></errorMessage>
+        <name>Do_not_allow_Business_Org_change</name>
+    </validationRules>
+</CustomObjectTranslation>

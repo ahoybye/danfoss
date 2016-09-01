@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Portfolio --></label>
+        <name>ccpe_ppm__Portfolio__c</name>
+        <relationshipLabel><!-- Tickets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>ccpe_ppm__Program__c</name>
+        <relationshipLabel><!-- Tickets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Calculated Cost --></label>
+        <name>ccpe_r__Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calculated Rate --></label>
+        <name>ccpe_r__Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retainer --></label>
+        <name>ccpe_r__Retainer__c</name>
+        <relationshipLabel><!-- Tickets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Utilization Category --></label>
+        <name>ccpe_r__Utilization_Category__c</name>
+        <picklistValues>
+            <masterLabel>Billable</masterLabel>
+            <translation><!-- Billable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exempt</masterLabel>
+            <translation><!-- Exempt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Billable</masterLabel>
+            <translation><!-- Non-Billable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A description of what the ticket is about --></help>
+        <label><!-- Description --></label>
+        <name>project_cloud__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>project_cloud__Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Hours --></label>
+        <name>project_cloud__Estimated_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed --></label>
+        <name>project_cloud__IsComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>project_cloud__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Project (Rollup) --></label>
+        <name>project_cloud__Project_CCPE_Ignore__c</name>
+        <relationshipLabel><!-- Ticket (Rollup) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project Phase (Rollup) --></label>
+        <name>project_cloud__Project_Phase_CCPE_Ignore__c</name>
+        <relationshipLabel><!-- Ticket (Rollup) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Project Phase that this ticket is related to. Each ticket can only be related to a single object. --></help>
+        <label><!-- Project Phase --></label>
+        <name>project_cloud__Project_Phase__c</name>
+        <relationshipLabel><!-- Tickets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Project Task that this ticket is related to. Each ticket can only be related to a single object. --></help>
+        <label><!-- Project Task --></label>
+        <name>project_cloud__Project_Task__c</name>
+        <relationshipLabel><!-- Tickets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Project that this ticket is related to. Each ticket can only be related to a single object. --></help>
+        <label><!-- Project --></label>
+        <name>project_cloud__Project__c</name>
+        <relationshipLabel><!-- Tickets --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Display the name of the Project, Phase or Task the ticket is related to, or &apos;No Parent&apos; --></help>
+        <label><!-- Related To --></label>
+        <name>project_cloud__Related_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resolution --></label>
+        <name>project_cloud__Resolution__c</name>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The current status of the ticket --></help>
+        <label><!-- Status --></label>
+        <name>project_cloud__Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- A brief explanation of the ticket. See the description for more detail --></help>
+        <label><!-- Name --></label>
+        <name>project_cloud__Ticket_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>project_cloud__Type__c</name>
+        <picklistValues>
+            <masterLabel>Action Item</masterLabel>
+            <translation><!-- Action Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change Request</masterLabel>
+            <translation><!-- Change Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Issue</masterLabel>
+            <translation><!-- Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk</masterLabel>
+            <translation><!-- Risk --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This is a system object and should not be visible --></help>
+        <label><!-- Entered Hours --></label>
+        <name>project_cloud__Worked_Hours__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Please select only one of: Project, Phase or Task --></errorMessage>
+        <name>project_cloud__One_Project_Phase_or_Task</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Project --></label>
+        <name>project_cloud__Create_Project</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Time_Entry --></label>
+        <name>project_cloud__Create_Time_Entry</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Quick_Entry --></label>
+        <name>project_cloud__Quick_Entry</name>
+    </webLinks>
+</CustomObjectTranslation>

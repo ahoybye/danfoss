@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Plans</relationshipLabel>
+        <relationshipName>Account_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Competitor_VP__c</fullName>
+        <externalId>false</externalId>
+        <label>Competitor VP</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Current_Position__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Position</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Market_Position__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Market Position</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Industry leader, innovative products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industry leader, mature products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not an industry leader</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not industry leader but innovative</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Opportunities__c</fullName>
+        <description>Customer Opportunities</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EXTERNAL TO CUSTOMER
+O- think about the market…what changes do you anticipate that could spur business opportunities for the customer, technology changes, etc.</inlineHelpText>
+        <label>Opportunities</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Strategy__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Strategy</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Strengths__c</fullName>
+        <description>Customer Strengths</description>
+        <externalId>false</externalId>
+        <inlineHelpText>INTERNAL TO CUSTOMER: 
+- S- think about what they do well, what is unique about their organization, products functionally, service, etc.</inlineHelpText>
+        <label>Strengths</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Threats__c</fullName>
+        <description>Customer Threats</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EXTERNAL TO CUSTOMER
+T- thinking about the market.  What changes could hurt the customer, what problems do they have that competitors can solve better, what market forces could put pressure on them, etc.</inlineHelpText>
+        <label>Threats</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_Weaknesses__c</fullName>
+        <description>Customer Weaknesses</description>
+        <externalId>false</externalId>
+        <inlineHelpText>INTERNAL TO CUSTOMER
+W- think about what they do worse than competitors, what they need to do better, product gaps or technical challenges, etc.</inlineHelpText>
+        <label>Weaknesses</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Customer_needs__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer needs</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Explicit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Implicit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hidden</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Opportunities__c</fullName>
+        <description>Danfoss Opportunities</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EXTERNAL TO DANFOSS
+O- think about the market…what changes do you anticipate that could spur business opportunities, what problems do customers have or will they have that we could help with, what technology changes can we take advantage of, etc.</inlineHelpText>
+        <label>Opportunities</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Strategy__c</fullName>
+        <externalId>false</externalId>
+        <label>Danfoss Strategy</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Strengths__c</fullName>
+        <description>Danfoss Strengths INTERNAL TO DANFOSS</description>
+        <externalId>false</externalId>
+        <inlineHelpText>INTERNAL TO DANFOSS: 
+- S- think about what we do well, what is unique about us as an organization, about our products functionally, about what your customer likes about you and what you bring them, etc.</inlineHelpText>
+        <label>Strengths</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Threats__c</fullName>
+        <description>Danfoss Threats</description>
+        <externalId>false</externalId>
+        <inlineHelpText>EXTERNAL TO DANFOSS
+T- thinking about the market.  What changes could hurt us, what problems do customers have that competitors can solve better than us, what market forces could put pressure on us, etc.</inlineHelpText>
+        <label>Threats</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Danfoss_VP__c</fullName>
+        <externalId>false</externalId>
+        <label>Danfoss VP</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Weaknesses__c</fullName>
+        <description>Danfoss Weaknesses</description>
+        <externalId>false</externalId>
+        <inlineHelpText>INTERNAL TO DANFOSS
+W- think about what we do worse than competitors, what customers tell us that we need to do better (honestly, not unrealistically), product gaps or technical challenges, etc.</inlineHelpText>
+        <label>Weaknesses</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Kraljic_View_is_defined__c</fullName>
+        <description>CUSTOMER &apos;s KRAJLIC VIEW of DANFOSS</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CUSTOMER &apos;s KRAJLIC VIEW of DANFOSS
+See link with &quot;Kraljic Model Explained&quot;.</inlineHelpText>
+        <label>Customer Sourcing Strategy</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Non-critical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bottleneck</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_years_Turnover_for_Potential_SoW__c</fullName>
+        <externalId>false</externalId>
+        <formula>SubAccount__r.BI_Links__c</formula>
+        <label>Last Years Turnover for Potential/SoW</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Objective__c</fullName>
+        <description>Account Plan Objective</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account Plan Objective</inlineHelpText>
+        <label>Objective</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunities__c</fullName>
+        <description>SWOT Opportunities</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SWOT Opportunities</inlineHelpText>
+        <label>Opportunities</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Conditions__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Conditions</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NDA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Key Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Strength__c</fullName>
+        <description>SWOT Strength</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SWOT Strength</inlineHelpText>
+        <label>Strength</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SubAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sub Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Sub_Account__c.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Sub_Account__c</referenceTo>
+        <relationshipLabel>Account Plans</relationshipLabel>
+        <relationshipName>Account_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Threats__c</fullName>
+        <description>SWOT Threats</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SWOT Threats</inlineHelpText>
+        <label>Threats</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Non-critical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bottleneck</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Visibility__c</fullName>
+        <description>Visibility of Account Plan NOT USED TO BE DELETED</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Visibility of Account Plan</inlineHelpText>
+        <label>Visibility</label>
+        <picklist>
+            <picklistValues>
+                <fullName>All</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BA only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Division only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Team only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Weaknesses__c</fullName>
+        <description>SWOT Weaknesses</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SWOT Weaknesses</inlineHelpText>
+        <label>Weaknesses</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>X12_month__c</fullName>
+        <externalId>false</externalId>
+        <label>12 Month Target</label>
+        <picklist>
+            <picklistValues>
+                <fullName>More than 26%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flat (0%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>0-(-10%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>-11-(-25%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>more than -26%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>X24_Month_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>24 Month Target</label>
+        <picklist>
+            <picklistValues>
+                <fullName>More than 26%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flat (0%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>0-(-10%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>-11-(-25%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>more than -26%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>X36_Month_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>36 Month Target</label>
+        <picklist>
+            <picklistValues>
+                <fullName>More than 26%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flat (0%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>0-(-10%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>-11-(-25%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>more than -26%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>X48_Month_Target__c</fullName>
+        <externalId>false</externalId>
+        <label>48 Month Target</label>
+        <picklist>
+            <picklistValues>
+                <fullName>More than 26%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11-25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1-10%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flat (0%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>0-(-10%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>-11-(-25%)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>more than -26%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <description>Account Planning Year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account Planning Year</inlineHelpText>
+        <label>Year</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2014</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2015</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2016</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2017</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2018</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2019</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2020</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2021</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2022</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2023</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2024</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2025</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>test__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>test</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <webLinks>
+        <fullName>Kraljic_View_Link</fullName>
+        <availability>online</availability>
+        <description>Link to slide explaining the Kraljic model.</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>false</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Kraljic Model Explained</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/resource/KraljicModel</url>
+        <width>847</width>
+    </webLinks>
+    <webLinks>
+        <fullName>ShareOfWalletReportLink</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Supplier Share Of Wallet Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/{!$Setup.FieldID__c.AccountPlanGraphID5__c}?pv0={!Account_Plan__c.AccountId__c}</url>
+    </webLinks>
+</CustomObject>

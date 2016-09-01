@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__ExecutionStatusType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the execution status keyword of the scan.</description>
+        <externalId>false</externalId>
+        <label>Execution Status Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ExecutionStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(BMCServiceDesk__ExecutionStatusType__c,
+&apos;_STATUS_ASSIGNPAUSED_&apos;, $Label.BMCServiceDesk__StatusAssignmentPaused, 
+&apos;_STATUS_ASSIGNWAITING_&apos;, $Label.BMCServiceDesk__StatusAssignmentWaiting,
+&apos;_STATUS_ASSIGNSENT_&apos;, $Label.BMCServiceDesk__StatusAssignmentSent,
+&apos;_STATUS_ASSIGNOK_&apos;, $Label.BMCServiceDesk__StatusAssigned,
+&apos;_STATUS_REASSIGNWAITING_&apos;, $Label.BMCServiceDesk__StatusReassignmentWaiting,
+&apos;_STATUS_UNASSIGNEDPAUSED_&apos;, $Label.BMCServiceDesk__StatusUnassignmentPaused,
+&apos;_STATUS_UNASSIGNEDWAITING_&apos;, $Label.BMCServiceDesk__StatusUnassignmentWaiting,
+&apos;_STATUS_UNASSIGNEDSENT_&apos;, $Label.BMCServiceDesk__StatusUnassignmentSent,
+&apos;_STATUS_UNASSIGNEDOK_&apos;, $Label.BMCServiceDesk__StatusUnassigned,
+&apos;_STATUS_UPDATEPAUSED_&apos;, $Label.BMCServiceDesk__StatusUpdatePaused,
+&apos;_STATUS_UPDATEWAITING_&apos;, $Label.BMCServiceDesk__StatusUpdateWaiting,
+&apos;_STATUS_UPDATESENT_&apos;, $Label.BMCServiceDesk__StatusUpdateSent,
+&apos;_STATUS_UPDATEOK_&apos;, $Label.BMCServiceDesk__StatusUpdated,
+&apos;_STATUS_EXECUTEDOK_&apos;, $Label.BMCServiceDesk__StatusExecuted,
+&apos;_STATUS_EXECUTEFAILED_&apos;, $Label.BMCServiceDesk__StatusExecutionFailed,
+&apos;_STATUS_ASSIGNPLANNED_&apos;, $Label.BMCServiceDesk__StatusAssignmentPlanned,
+&apos;_STATUS_UPDATEPLANNED_&apos;, $Label.BMCServiceDesk__StatusUpdatePlanned,
+&apos;_STATUS_REASSIGNPLANNED_&apos;, $Label.BMCServiceDesk__StatusReassignmentPlanned,
+&apos;_STATUS_CONFIGUREFAILURE_&apos;, $Label.BMCServiceDesk__StatusConfigurationFailed,
+&apos;_STATUS_CONFIGUREDOK_&apos;, $Label.BMCServiceDesk__StatusConfigurationOk,
+&apos;_STATUS_EXECUTESCHEDULED_&apos;, $Label.BMCServiceDesk__ScanStatusExecutionScheduled,
+&apos;_STATUS_EXECUTING_&apos;, $Label.BMCServiceDesk__StatusExecuting,
+&apos;_STATUS_EXECUTEPENDING_&apos;, $Label.BMCServiceDesk__StatusExecutionPending,
+&apos;&apos;, $Label.BMCServiceDesk__NotConfigured,
+$Label.BMCServiceDesk__PSATNotApplicable)</formula>
+        <label>Execution Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKScanConfiguration__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>To store the reference of the scan configuration associated with the scan.</description>
+        <externalId>false</externalId>
+        <label>Scan Configuration</label>
+        <referenceTo>BMCServiceDesk__ScanConfiguration__c</referenceTo>
+        <relationshipLabel>Scan Configurations</relationshipLabel>
+        <relationshipName>Scan_Configurations</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKScanner__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the reference of the scanner device for which the scan was created.</description>
+        <externalId>false</externalId>
+        <label>Scanner</label>
+        <referenceTo>BMCServiceDesk__Scanner__c</referenceTo>
+        <relationshipLabel>Scan Details</relationshipLabel>
+        <relationshipName>Scan_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__IsUpdated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>To check if the scan execution status and last status update time were synced during the synchronization cycle.</description>
+        <externalId>false</externalId>
+        <label>Is Updated</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__LastStatusUpdateTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store last status update time of the scan.</description>
+        <externalId>false</externalId>
+        <label>Last Status Update Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ScanId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store  Id of the scan.</description>
+        <externalId>false</externalId>
+        <label>Scan Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ScanName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the name of the scan.</description>
+        <externalId>false</externalId>
+        <label>Scan Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+</CustomObject>

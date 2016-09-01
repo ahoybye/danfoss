@@ -1,0 +1,204 @@
+<apex:page standardController="Quote" extensions="QuotePDFExtension" doctype="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" applyBodyTag="false" renderAs="pdf">
+    <head>
+        <style type="text/css" media="print, screen">
+            body {font-family: 'Arial Unicode MS';}
+            @page {
+                size: landscape;
+                @top-center {content: element(header);}
+                @bottom-right {content: element(footer_pagenumber);}
+                @bottom-center {content: element(footer);} 
+                margin-top: 90px ;                         
+                margin-bottom: 180px ;
+            }
+            div.header {
+                padding: 15px 0px 30px 7px;
+                position: running(header);
+            }
+            div.footer{
+                display: block;
+                padding: 3px;
+                position: running(footer);
+            }
+            .pagenumber:before {
+                content: counter(page);
+            }
+            .pagecount:before {
+                content: counter(pages);
+            }
+            div.label{
+                font-size: 7pt;font-family: sans-serif; color: black;font-weight:bold; text-align:left;
+            }
+            div.field{
+                font-size: 7pt;font-family: sans-serif; color: black; text-align:left;
+                page-break-inside:avoid;
+            }
+            table {
+                width="100%";
+                table-layout: fixed; 
+                -fs-table-paginate: paginate;
+            }
+            table tr {
+                page-break-inside:avoid;
+            }  
+            table#lineitems th {         
+                text-align: left;
+                border: 1px; 
+                border-left-style: solid; 
+                border-color: white;
+            }
+            table#lineitems td#comments2, td#comments3, td#comments4 {   
+                border-bottom-width: 1px; 
+                border-bottom-style: solid; 
+                border-bottom-color: black;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        </style>
+    </head>
+
+    <div class="header">
+        <table width="100%" cellspacing="0"> 
+            <tr>
+                <td style="text-align:left">
+                    <apex:outputText value="{!curUser.CompanyName}"/><br/>
+                    <apex:outputText value="{!curUser.Street}"/><br/>
+                    <apex:outputText value="{!curUser.City}, {!curUser.State} {!curUser.PostalCode}  {!curUser.Country}"/><br /> <br />
+                </td>
+                
+                <td valign="top" style="text-align:right"><apex:image url="{!DocumentLogoUrl}"/><br /> <br /></td>
+            </tr>
+        </table>
+    </div>
+    <div class="footer"> 
+        <div style="font-size: 8pt; font-family: 'Arial Unicode MS'; color: black;">
+            <apex:outputText id="footer" escape="false" value="{!footertext}"/>
+        </div>
+        <div style="font-size: 9pt; font-family: 'Arial Unicode MS'; color: black; text-align:right"><span class="pagenumber"></span> of <span class="pagecount"></span></div>
+    </div>
+    <br />
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="37%" valign="top">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="35%">
+                            <div class="label"><apex:outputLabel value="{!$Label.Quote_Number}"/></div>
+                        </td>
+                        <td >
+                            <div class="field"><apex:outputText value="{!quote.quotenumber}"/></div>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <div class="label"><apex:outputLabel value="{!$Label.Quote_Name}"/></div>
+                        </td>
+                        <td>
+                            <div class="field"><apex:outputText value="{!quote.Name}"/></div>
+                        </td>
+                    </tr><tr>
+                        <td valign="top">
+                            <div class="label"><apex:outputLabel value="{!$Label.Quote_Customer}" /></div>
+                        </td>
+                        <td>
+                            <div class="field">
+                            <apex:outputText escape="false" rendered="{!isIndirect}" value="{!acctAddress}"/>
+                            <apex:outputText escape="false" rendered="{!NOT(isIndirect)}" value="{!acctAddress}"/>
+                            </div>
+                        </td>
+                    </tr><tr>
+                         <td>
+                            <div class="label"><apex:outputLabel rendered="{!isIndirect}" value="{!$Label.Quote_Final_Customer}"/></div>
+                            <div class="label"><apex:outputLabel rendered="{!NOT(isIndirect)}" value="{!$Label.Quote_Customer_Number}"/></div>
+                        </td>
+                        <td>
+                            <div class="field">
+                            <apex:outputText rendered="{!isIndirect}" value="{!quote.Opportunity.Account.Name} - {!quote.Opportunity.Account.SAP_Account_ID__c}"/>
+                            <apex:outputText rendered="{!NOT(isIndirect)}" value="{!quote.Opportunity.Account.SAP_Account_ID__c}"/></div>
+                        </td> 
+                    </tr>
+                </table>
+            </td>
+            <td width="30%" valign="top" style="padding-left:10px;">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                    <td width="40%">
+                        <div class="label"><apex:outputLabel value="{!$Label.Quote_Contact_Name}"/></div>
+                    </td>
+                    <td >
+                        <div class="field">{!quote.contact.Name}</div>
+                    </td>
+                        </tr><tr>
+                    <td>
+                        <div class="label"><apex:outputLabel value="{!$Label.Quote_Phone}"/></div>
+                    </td>
+                    <td>
+                        <div class="field">{!quote.Phone}</div>
+                    </td>
+                    </tr><tr>
+                     <td>
+                        <div class="label"><apex:outputLabel value="{!$Label.Quote_Email}"/></div>
+                    </td>
+                    <td>
+                        <div class="field">{!quote.Email}</div>
+                    </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="33%"  valign="top">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="45%">
+                            <div class="label"><apex:outputLabel value="{!$Label.Account_Manager}"/></div>
+                        </td>
+                        <td >
+                            <div class="field"><apex:outputText value="{!quote.Opportunity.Account.Owner.Name}"/></div>
+                        </td>
+                            </tr><tr>
+                         <td>
+                            <div class="label"><apex:outputLabel value="{!$Label.Quote_Created_Date}"/></div>
+                        </td>
+                        <td>
+                            <div class="field"><apex:outputText value="{0,date,dd-MMM-yyyy}"><apex:param value="{!quote.CreatedDate}" /></apex:outputText></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="bottom">
+                            <div class="label"><apex:outputLabel value="{!$Label.Quote_Expiration_Date}"/></div>
+                        </td>
+                        <td valign="bottom">
+                            <div class="field"><apex:outputText value="{0,date,dd-MMM-yyyy}"><apex:param value="{!quote.ExpirationDate}" /></apex:outputText></div>
+                        </td>
+                        </tr><tr>
+                        <td valign="top">
+                            <div class="label"><apex:outputLabel value="{!$Label.Quote_Payment_Terms}"/></div>
+                        </td>
+                        <td valign="top">
+                            <div class="field"><apex:outputText value="{!quote.Payment_Terms__c}"/></div>
+                        </td>
+                        </tr><tr>
+                        <td valign="top">
+                            <div class="label"><apex:outputLabel value="{!$Label.Quote_Incoterms}"/></div>
+                        </td>
+                        <td valign="top">
+                            <div class="field"><apex:outputText value="{!quote.Incoterms__c}"/> </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>        
+    </table>
+    <div style="font-family: 'Arial Unicode MS';padding-top:10px;padding-bottom:10px;" class="field">{!quote.Description}</div>
+    <div>
+        <apex:image rendered="{!showWatermark}" url="{!URLFOR($Resource.PreliminaryWatermark)}" width="100%" height="100%" 
+         style="position: fixed;background-repeat:repeat;left: 0cm; top:0cm; z-index:0"/>
+    </div>
+    <div style="font-size: 7pt;font-family: 'Arial Unicode MS';" >
+        <c:QuotePDFLineItems />
+    </div>
+    <div style="padding-top:10px;font-family: 'Arial Unicode MS';" class="field">{!quote.Footer_Comments__c}</div>
+    <apex:outputText style="font-size:11px" value="{!quote.Country_Specific_Template__r.OEM_Quote_Footer__c}" rendered="false"/>
+    <apex:outputText style="font-size:11px" value="{!quote.Country_Specific_Template__r.Distributor_Quote_Footer__c}" rendered="false"/>
+    <apex:outputText style="font-size:11px" value="{!quote.Country_Specific_Template__r.Comatrol_OEM_Quote_Footer__c}" rendered="false"/>
+    <apex:outputText style="padding-bottom: 100px;font-size:11px" value="{!quote.Country_Specific_Template__r.Comatrol_Distributor_Quote_Footer__c}" rendered="false"/>
+    <apex:outputText style="font-size:11px" value="{!quote.Country_Specific_Template__r.Turolla_OEM_Quote_Footer__c}" rendered="false"/>
+    <apex:outputText style="padding-bottom: 100px;font-size:11px" value="{!quote.Country_Specific_Template__r.Turolla_Distributor_Quote_Footer__c}" rendered="false"/>
+</apex:page>

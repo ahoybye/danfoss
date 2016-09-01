@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Summer shut-down announcement for Americas customers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Americas Summer Shutdown 2012</name>
+    <style>formalLetter</style>
+    <subject>Sauer-Danfoss Information</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+In the attached document, please find information regarding the 2012 Sauer-Danfoss production schedules.
+
+
+For more information, please contact your Sauer-Danfoss Account Manager.
+
+
+Best regards,
+
+
+Sauer-Danfoss</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Version_1_7 --></label>
+        <name>NVMContactWorld__Version_1_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version_1_8 --></label>
+        <name>NVMContactWorld__Version_1_8__c</name>
+    </fields>
+</CustomObjectTranslation>

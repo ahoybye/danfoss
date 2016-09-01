@@ -1,0 +1,10 @@
+Dear Pricing Team,
+
+Please update the following Opportunity's price in SAP, then check the "Pricing Entered Final Price into SAP" box.
+
+Please verify that the list price is established in SAP.
+
+{!Opportunity.Link}
+
+Thanks,
+Jay

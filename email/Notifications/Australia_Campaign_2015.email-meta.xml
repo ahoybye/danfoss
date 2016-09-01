@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Australia Campaign 2015</name>
+    <style>none</style>
+    <subject>Learn more about our extensive line of mobile hydraulic products!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Danfoss Power Solutions is a world-class provider of mobile hydraulics for construction, agriculture, material-handling and other off-highway vehicle markets, and we have some important information to share with you about our five major product lines:
+
+Orbital Motors | Valves | Piston Pumps &amp; Motors | Steering | Mobile Electronics
+
+Learn how we are Engineering Tomorrow through development of products and systems for the mobile hydraulic markets. We would like to ask you to fill out the following form to begin receiving your electronic communications from Danfoss Power Solutions.
+
+http://www2.powersolutions.danfoss.com/australia2015
+
+
+Best regards,
+Danfoss Power Solutions
+
+
+Danfoss Power Solutions (US) Company
+2800 E. 13th Street
+Ames, IA 50010, USA
+
+Danfoss Power Solutions ApS
+Nordborvej 81
+DK-6430 Nordborg, Denmark
+
+Danfoss Power Solutions GmbH &amp; Co. OHG
+Krokamp 35
+D-24539 Neumunster, Germany
+
+Danfoss Power Solutions (Shanghai) Co. Ltd
+Building #22, No. 1000 Jin Hai Rd
+Jin Qiao, Pudong New District
+Shanghai, China 201206
+
+© 2015 | All rights reserved Danfoss | powersolutions.danfoss.com</textOnly>
+    <type>custom</type>
+</EmailTemplate>

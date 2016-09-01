@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>PartnerLink Requests</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <booleanFilter>1 AND 2</booleanFilter>
+            <criteriaItems>
+                <field>Case.Origin</field>
+                <operation>equals</operation>
+                <value>PartnerLink</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Image Request,Logo Design,Marketing Question</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <replyToEmail>partnerlink@danfoss.com</replyToEmail>
+            <senderEmail>partnerlink@danfoss.com</senderEmail>
+            <senderName>Danfoss PartnerLink</senderName>
+            <template>PS_PartnerLink/PartnerLink_Request</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

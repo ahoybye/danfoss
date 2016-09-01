@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder for Re-branding Russian Survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Re-Brand E-mail (Russia)</name>
+    <style>freeForm</style>
+    <subject>Напоминание о необходимости поделиться Вашим профессиональным мнением</subject>
+    <textOnly>&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+
+Уважаемый клиент,
+
+
+Недавно мы присылали Вам приглашение на участие в опросе, посвященном развитию осуществляемого компанией Danfoss процесса информационного обмена в будущем.
+
+
+Поскольку в сентябре этого года компания Sauer-Danfoss меняет название на Danfoss и становится Danfoss Power Solutions, т. е. частью Danfoss Group, мы будем очень признательны, если Вы примете участие в этом опросе и сообщите нам свое мнение, которое является исключительно важным для нас. Даже если вы не знаете бренда Danfoss, Ваше мнение всё равно очень ценно для нас в плане Ваших общих ожиданий и требований к компаниям в Вашей области занятости.
+
+Вы можете перейти к опросу, воспользовавшись этой ссылкой:
+
+http://new.kunde.dk/cgi-bin/ciwweb.pl?studyname=Storydf_RUmedie&amp;clt=4
+
+
+Если окно с опросом не открывается, скопируйте эту ссылку и вставьте ее в адресную строку браузера.
+
+
+Пожалуйста, предоставьте Ваше мнение до 2013-08-21
+
+
+Мы заранее благодарим Вас за участие.
+
+
+С уважением,
+
+Sauer-Danfoss</textOnly>
+    <type>html</type>
+</EmailTemplate>

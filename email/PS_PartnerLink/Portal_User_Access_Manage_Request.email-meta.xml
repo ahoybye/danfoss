@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Portal User Access Manage Request</name>
+    <style>formalLetter</style>
+    <subject>{!Contact.Name} requests PartnerLink changes by {!User.Name}</subject>
+    <textOnly>{!Contact.Name} of {!Account.Name} has requested PartnerLink login changes through {!User.Name}. Please click on here to view record and manually disable/enable this user.</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,230 @@
+<apex:page standardStylesheets="false" sidebar="true" tabStyle="RemedyforceConsole__tab" showHeader="true" showChat="true" controller="BMCServiceDesk.RemedyforceConsole" extensions="BMCServiceDesk.ChatService" title="{!JSENCODE($Label.BMCServiceDesk__RemedyForce_Console)}">
+	<c:ConsoleComponent ConsoleObjectName="{!objectName}" isForRFConsoleRequest="true" rendered="{!IF((isRFConsoleEnabled && showViewMenu),true, false)}"/>
+<head>
+	
+	<link rel="stylesheet" href="{!$Resource.SDEFStyles}/RemedyForceConsole.css" type="text/css" />
+	<script src="{!$Resource.CustomerExperience}/js/CustExpPopupWindow.js"></script>
+</head>
+	<apex:form >
+	<apex:actionFunction action="{!deleteQuery}" name="deleteQuery" rerender="qvListPanel" onComplete="updateMenuItems();">
+        <apex:param assignTo="{!nodeId}" name="nodeId" value=""/>
+    </apex:actionFunction>
+    <apex:actionFunction action="{!updateMyQVList}" name="updateMyQVList" rerender="qvListPanel" onComplete="updateMenuItems();">
+    </apex:actionFunction>
+    <apex:actionFunction action="{!copyQuery}" name="copyQuery" rerender="qvListPanel" onComplete="updateMenuItems('copy');">
+        <apex:param assignTo="{!nodeId}" name="nodeId" value=""/>
+        <apex:param assignTo="{!queryName}" name="queryName" value=""/>
+    </apex:actionFunction>
+ <apex:pageMessages id="pageMessage" escape="false" />
+ <apex:outputPanel rendered="{!isRFConsoleEnabled}">  
+<table  id="rf-table-main" >
+<tr>  
+    <td>
+         <a href="#" onclick="toggleSFHeader();">
+        <div class="ShowSFheader" id="divToggleView" title="{!JSENCODE($Label.TooltipMaximize)}">
+        </div>
+         </a>
+     </td>
+</tr>
+
+    <tr>
+        <td>
+         <div id="rf-ticker"  class="rf-ticker-div">
+		   <table width="100%" border="0" cellpadding="0" cellspacing="0" height="30">
+           	<tr>
+           		
+           		<td>
+           		
+                 <div id="viewOptions"     title="{!JSENCODE($Label.SwitchModule)}" class="rf-view-div" >{!JSENCODE($Label.mspAdminView)}
+           		 
+           		 <span class="rf-view-arrow"></span>
+           		 </div> 
+           	     
+           		</td>
+           		<td id="broadcast-ticker-parentd" width="94%">
+           		</td>
+           		<td width="1%" style="min-width:30px !important;">
+           			<img id="view-brd-msg" src="{!$Resource.SSThemes}/SSDefaultTheme/SDEFicons/ViewBroadcasts24.png" class="sprite-ViewBroadcasts24" style="cursor:pointer;" title="{!$Label.viewBroadcast}" onclick="showBroadcast();"/>
+           		</td>
+           		<td width="1%" style="{!IF(isCustomerExperienceEnabled,'display:table-cell;min-width:30px !important;','display:none')}">
+                    <img id="cust-survey-link" src="{!$Resource.CustomerExperience}/images/survey_console.png" class="sprite-SubmitSurvey" style="cursor:pointer;height:27px; padding: 1px; margin: 0 -10px 0 4px;" title="{!$Label.PSATRateYourExperience}" onclick="popupSurveyWindow();"/>
+                </td>
+           	</tr>
+           </table>
+		   </div>
+        </td>
+   </tr>
+    <tr>
+        <td style="vertical-align:top;" >
+            <apex:outputPanel rendered="{!showViewMenu}">
+            	<div id="tabs" class="rf-tab-div" ></div>
+           </apex:outputPanel> 
+        </td>
+       
+    </tr>
+</table>
+  </apex:outputPanel>
+ </apex:form> 
+<script>
+var enableWalkthroughFlow = '{!enableWalkthroughFlow }';
+var userLanguage = '{!userLanguage}';
+var userLastName = '{!JSENCODE($User.LastName)}';
+var wikiUrl = '{!wikiUrl}';
+var isRFConsoleEnabled = {!isRFConsoleEnabled},
+isConsoleDashboardEnabled = {!isConsoleDashboardEnabled};
+var showViewMenu = {!showViewMenu},
+isOnlyConsoleDashboardEnabled = {!isOnlyConsoleDashboardEnabled};
+var searchAndLinkPage = '{!$Page.SearchAndLink}';
+var isRFHotkeysDisabled ={!isRFHotkeysDisabled};
+var isAZERTYKeyBoard = {!isAZERTYKeyBoard};
+
+var isShowManagePermissionIcon = {!isShowManagePermissionIcon};
+if({!IF((isRFConsoleEnabled && showViewMenu),true, false)})
+{
+   
+	var _RFServerValues = <apex:outputText value="{!RFServerValues}" escape="false"></apex:outputText> 
+	var ActionItemIndexValues;
+	var broadcastIcon = '{!$Resource.SSThemes}/SSDefaultTheme/SDEFicons/ViewBroadcasts24.png';
+	var broadcastPage = '{!$Page.BroadcastWidgetPage}';
+	var isRfConsole = true;
+    var isRFChatEnabled = {!isRFChatEnabled};
+	var objectName = '{!JSENCODE(objectName)}';
+	var MaxRecordTabCount = {!MaxRecordTabCount}; 
+	var myQVlist='';
+	var sharedQVlist='';
+	var myQVFolderId = '';
+	Ext.ns("SingleConsolePage");
+   	SingleConsolePage.Labels = {
+   		viewIncidentConsole : '{!JSENCODE($Label.IncidentAndServiceRequests)}', 
+		ServiceRequestPrefix : '{!JSENCODE($Label.ServiceRequestPrefix)}', 
+        viewTaskConsole : '{!JSENCODE($Label.Navigator_Tasks)}',
+        viewChangeConsole : '{!JSENCODE($Label.ChangeRequests)}',
+        viewProblemConsole : '{!JSENCODE($Label.Navigator_Problems)}',
+        viewReleseConsole : '{!JSENCODE($Label.Releases)}',
+        viewBroadcastConsole : '{!JSENCODE($Label.Navigator_Broadcasts)}',
+        viewIncidentsOnly : '{!JSENCODE($Label.Navigator_Incidents)}',
+        viewServiceRequestsOnly : '{!JSENCODE($Label.SSMyHelpRequests)}',
+		viewChangeScheduleConsole : '{!JSENCODE($Label.Navigator_ChangeSchedule)}',
+		newServiceRequest : '{!JSENCODE($Label.New)}'+' '+'{!JSENCODE($Label.SSHelpRequest)}',
+        IncidentRecordPrefix : '{!JSENCODE($Label.IncidentRecordPrefix)}',
+        TaskRecordPrefix : '{!JSENCODE($Label.TaskRecordPrefix)}',
+        ProblemRecordPrefix : '{!JSENCODE($Label.ProblemRecordPrefix)}',
+        ReleaseRecordPrefix : '{!JSENCODE($Label.ReleaseRecordPrefix)}',
+        ChangeRecordPrefix : '{!JSENCODE($Label.ChangeRecordPrefix)}',
+        BroadcastRecordPrefix : '{!JSENCODE($Label.BroadcastRecordPrefix)}',
+        Loading : '{!JSENCODE($Label.SSLoading)}',
+        Task : '{!JSENCODE($Label.Task)}',
+        Problem : '{!JSENCODE($Label.Problem)}',
+        ChangeRequest : '{!JSENCODE($Label.Change_Request)}',
+        Release : '{!JSENCODE($Label.Release)}',
+        Incident : '{!JSENCODE($Label.Incident)}',
+        Broadcast : '{!JSENCODE($Label.Broadcast1)}',
+        New : '{!JSENCODE($Label.New)}',
+        New_Release : '{!JSENCODE($Label.New_Release)}',
+        New_Task : '{!JSENCODE($Label.New_Task)}',
+        New_Problem : '{!JSENCODE($Label.New_Problem)}',
+        New_ChangeRequest : '{!JSENCODE($Label.New_ChangeRequest)}',
+        New_Incident : '{!JSENCODE($Label.New_Incident)}',
+        New_Broadcast : '{!JSENCODE($Label.New_Broadcast)}',
+		labelcloseWindow : '{!JSENCODE($Label.closeWindow)}',
+		labelcloseWindowLabel : '{!JSENCODE($Label.closeWindowLabel)}',
+		RFTabLimitExceedMsg : '{!JSENCODE($Label.RFTabLimitExceedMsg)}',
+		ConfirmAction: '{!JSENCODE($Label.Confirm_Action)}',
+		Yes: '{!JSENCODE($Label.ExtjsMessageYes)}',
+		No: '<div style="height:16px" class="x-btn-default-small-focus">{!JSENCODE($Label.ExtjsMessageNo)}</div>',
+		MyDashboard: '{!JSENCODE($Label.MyDashboardTitle)}',
+		MyQuickViews: '{!JSENCODE($Label.Navigator_MyQuickViews)}',
+		CreateNewQV : '{!JSENCODE($Label.CreateNewQV)}',
+		labelDelete : '{!JSENCODE($Label.Delete)}',
+		DeleteQV : '{!JSENCODE($Label.DeleteSelectedQuerySkyWalkerPage)}',
+		labelAddQuery : '{!JSENCODE($Label.AddQuery)}',
+		labelEnterQVname : '{!JSENCODE($Label.ValidateQueryNameSkyWalkerPage)}',
+		labelReenterQVName : '{!JSENCODE($Label.ReenterQVName)}',
+		labelWarning : '{!JSENCODE($Label.Warning)}',
+		labelQueryNameExisting : '{!JSENCODE($Label.ConsoleUniqueQVValidationErrorMsg)}',
+		labelError : '{!JSENCODE($Label.Error)}',
+		labelQVEditor : '{!JSENCODE($Label.QuickViewEditor)}',
+        SharedQuickViews:'{!JSENCODE($Label.SharedQuickViews)}',
+        DeleteQuery:'{!JSENCODE($Label.DeleteQuery)}',
+        CopyQuery:'{!JSENCODE($Label.CopyQuery)}',
+        EditQVQuery:'{!JSENCODE($Label.EditQVQuery+ ' '+$Label.andForChatter+' '+$Label.ManagePermissions)}',
+        defaultForSystemQV:'{!JSENCODE($Label.Default)}',
+        managePermissions:'{!JSENCODE($Label.ManagePermissions)}'
+    }  
+   } 
+        _RFRemotingActions={}
+        _RFRemotingActions.ChatAction = "{!$RemoteAction.ChatService.chatAction}";
+        _RFRemotingActions.CheckForChatInitialisation = "{!$RemoteAction.ChatService.checkForChatInitialisation}";
+        _RFRemotingActions.setAgentAvailability = "{!$RemoteAction.ChatService.setAgentAvailability}";
+        _RFRemotingActions.makeAgentAvailable = "{!$RemoteAction.ChatService.makeAgentAvailable}";
+        _RFRemotingActions.ChatActionLink = "{!$RemoteAction.ChatService.chatActions}";
+        _RFRemotingActions.unlockRecord = "{!$RemoteAction.ChatService.unlockRecord}";
+        _RFRemotingActions.unlockRecordWithName = "{!$RemoteAction.ChatService.unlockRecordWithName}"; 
+        /*Chat related changes*/
+       
+       
+        /*Chat related changes*/
+</script>
+<c:ChatComponent />
+<script id="detailPageJs" src="{!IF(isRFConsoleEnabled, $Resource.SDEFCommonJS, '')}{!IF(isRFConsoleEnabled, '/RemedyForceConsole.js', '')}">
+
+ </script>
+ <apex:outputPanel id="qvListPanel">
+ <script>
+ 
+ var tempQVList = new Array();
+ var jsonArray=new Object();
+ 	var i=0; 
+    <apex:repeat value="{!myQVList}" var="thing">
+            var myqvName='{!JSENCODE(thing.name__c)}';         
+            myqvName='{!JSINHTMLENCODE(thing.name__c)}';
+            var x=new Array();
+            x.push({"id":'{!JSENCODE(thing.id)}'});
+            x.push({"name":myqvName.length > 30 ? myqvName.substring(0, 30)+'...' : myqvName});
+            x.push({"system":'{!thing.System__c}'});
+            x.push({"optimized":'{!thing.isQVOptimized__c}'});
+ 			x.push({"tooltip":'{!JSENCODE(thing.name__c)}'});
+ 			x.push({"tooltipType":'title'});
+ 			tempQVList.push(x);
+    	i++;
+    </apex:repeat>
+    
+    var j=0;
+    var tempSharedQVList=new Array();
+    <apex:repeat value="{!sharedQVList}" var="thing">
+            var sharedqvName='{!JSENCODE(thing.name__c)}';
+            var shortqvName=sharedqvName.length > 30?sharedqvName.substring(0, 30)+'...' : '{!JSENCODE(thing.name__c)}';
+            var ownerName='{!JSENCODE(thing.Owner.Name)}';
+            var shortOwnerName=ownerName.length > 30?ownerName.substring(0, 30)+'...' : '{!JSENCODE(thing.Owner.Name)}';
+ 			var x=new Array();
+ 			x.push({"id":'{!JSENCODE(thing.id)}'});
+			if({!thing.System__c} == true)
+				x.push({"name":shortqvName+' ('+SingleConsolePage.Labels.defaultForSystemQV+')'});
+			else
+				x.push({"name":shortqvName+' ('+ownerName+')'});
+            x.push({"system":'{!thing.System__c}'});
+            x.push({"optimized":'{!thing.isQVOptimized__c}'});
+            if({!thing.System__c} == true)
+				x.push({"tooltip":'{!JSENCODE(thing.name__c)}'+' ('+SingleConsolePage.Labels.defaultForSystemQV+')'});
+			else
+				x.push({"tooltip":'{!JSENCODE(thing.name__c)}'+' ('+ownerName+')'});
+ 			x.push({"tooltipType":'title'});
+ 			tempSharedQVList.push(x);
+    	j++;
+    </apex:repeat>
+ var isAdmin={!IF(isAdmin, "true", "false")};
+ myQVFolderId = "{!myQVFolderId}";
+ var isToShowMsg="{!isQueryInFolder}";
+ var copiedQVId = "{!copiedQVId}";
+ var copiedQVName = "{!copiedQVName}";
+  var recordLock = "{!JSENCODE(recordLock)}";
+ </script>
+ </apex:outputPanel>
+<script type="text/javascript" src="{!IF(enableWalkthroughFlow, $Resource.SDEFCommonJS, '')}{!IF(enableWalkthroughFlow, '/RFWhatFixFlow.js', '')}"/>
+<script type="text/javascript" src="{!$Resource.SDEFCommonJS}/WhatFixScript.js"></script>
+<script>
+	if(enableWalkthroughFlow=='true') {
+		handleLocalizationForRFConsole();
+	}
+</script>
+</apex:page>

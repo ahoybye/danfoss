@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Comatrol_Logo</letterhead>
+    <name>Comatrol Weekly Report</name>
+    <style>formalLetter</style>
+    <subject>Comatrol Weekly Report</subject>
+    <textOnly>Attached is the current weekly report.  If you have any questions regarding an entry or wish to discuss, please contact the appropriate Comatrol Account Manager. 
+
+Please do not copy or print this document.  This is company confidential information. </textOnly>
+    <type>html</type>
+</EmailTemplate>

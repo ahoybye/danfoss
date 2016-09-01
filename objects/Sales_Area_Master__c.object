@@ -1,0 +1,1089 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Channel_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel Description</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0: Common Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1: AG Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7: MX Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8: PLIC Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10: CNRC Distrb. Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11: DIR Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18: CNCD Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19: CNCC Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20: CNWV Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>23: DKAP Thermostatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24: DKAP Surface:</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25: DKAP Presswork</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>26: DKAP Plastic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>27: PLCD Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>31: DESC Refrigeration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>32: DESC Burners</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>33: DESC Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>34: DESC Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>35: DESC NESSIE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>36: DESC Analytical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>46: KZSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>53: CNIC Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>54: CNDH Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>57: PLRC (D. Saginomiya)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>60: RUCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>64: CNCCS Distribution Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>65: PLRC Producer Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Division_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Division Description</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0: Common Division</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1: AC-R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2: Burner Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3: Comfort Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4: AG-Central</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5: AC-O Staff Organizat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6: RADEHC PL06</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7: MXRCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8: DEC Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9: PL09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10: CNRC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11: DIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12: MCFD PL12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14: High Pressure Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16: PL16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17: RAFRCC PL17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18: Gearmotors PL 18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19: CNCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20: CNWV - DKFH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21: DKFE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>22: Heat Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>23: DKAP Thermostatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24: DKAP Surface</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25: DKAP Presswork</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>26: Solar Inverters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>27: PLCD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>28: Hydronic Balancing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>29: PL29</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>30: PLHP (Thermia)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>31: DEH Heat Exchangers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>32: Heavy Duty Stations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>33: Light Duty Stations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>34: Floor Heating Hydron</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>35: Energy Metering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>37: Danfoss Turbocor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>39: Qinbao</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>42: MXAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>43: DKAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>44: DKHC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>45: DKCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>46: KZSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>51: CNSCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>52: CNSCM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>53: CNIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>54: CNDH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>55: CNAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>57: PLRCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>58: DIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>59: CNDD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>60: RUCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>61: DKIC Nordborg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>62: DKIC Kolding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>63: PLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>64: CNCCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>65: PLRCA Producer Br.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>66: HKSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>67: BRAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>68: MXCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>69: DEIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>70: BRCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>71: USRA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>72: RAV-CO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>74: MXCU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75: MXHC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>76: MXRCI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>77: MCHX (RA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>81: PL81</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>83: PL83</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>84: PL84</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>85: PL85</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>89: PL89</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>90: HES-AV - Ventilation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>92: PL92</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>94: PL94</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>96: PL96</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>97: PL97</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>98: PL98</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>99: PL99</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Area_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Sales Area ID</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Area__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Org__c + &quot;-&quot; +  Channel__c + &quot;-&quot; +  Division__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Area</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Org_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Org Description</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1: DKRC/IC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4: MCFDGBO Sales Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5: MCFDDK Sales Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6: MCFDGBS Sales Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11: DIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13: RAV-CO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>41: RA Sales &amp; Logistics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>55: DKAP Thermostats</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>56: DKAP Surface</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>57: Pressworks A/S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>58: DKAP Plastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>101: MX Sales Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>102: PLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>103: USRA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>104: CNRC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>105: DEIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>107: Not used now 0101</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>109: PLCD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>110: CNCD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>111: CNCC (Next Gen)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>112: CNWV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>113: CNCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>114: HKSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>116: CNDD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>117: CNSCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>118: CNSCM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>119: CNIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>144: RUSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>146: KZSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>150: CNCCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>151: CNAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>153: SGSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>160: BRAP Sales Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>161: BRCO Sales Org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>168: PLRC (D. Saginomiya)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>169: PLRC Producer Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>171: MXCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>172</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>780: DKHEL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1000: HEATING SEGMENT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1101: MC Central CRM divis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1103: RA Central CRM divis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1105: HE Central CRM divis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1107: DEN Central CRM divi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1109: CNRCI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1110: CNDH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1116: CNDD 1116</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1117: CNRCC Line Comp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1121: CNRC Alfa valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1260: Secop Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1350: Danfoss LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1401: MXRC in CC 0171</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1402: MXSC in CC 0171</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1407: MXAP in CC 0171</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1470: HAGO sales org.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1490: SEHP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1620: BRSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1750: FRCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1780: DEGM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1781: OGD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178A: BAU - ATSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178B: BAU - BESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178C: BAU - CZSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178D: BAU - DESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178E: BAU - ESSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178F: BAU - FRSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178H: BAU - CHSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178I: BAU - ITSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178K: BAU - DKSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178N: BAU - NLSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178S: BAU - SKSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>178U: BAU - UACO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1990: DKDENR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2010: ATSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2020: HRSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2030: HUSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2040: SKSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2041: SKAPZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2042: SKGM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2050: CZSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2060: CSSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2080: ROSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2090: SISC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2100: FRSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2110: UACO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2120: GBSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2140: NLSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2160: BESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2170: CHSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2190: IESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2200: ESSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2210</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2220: ITSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2230: DKSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2240: NOSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2250: SESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2260: FISC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2270: LTSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2280: EESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2290: LVSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2300: DESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2310: DEIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2370: BGSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2380: PLSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2381: PLSZ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2382: PLFH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2390: ISSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2400: ZASC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2410: SGSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2420: PHSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2430: MYSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2450: NZSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2460: INSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2470: TWSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2480: THSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2490: KRSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2500: AUSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2510: VESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2520: COSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2530: CLSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2550: ARSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2560: MXSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2580: USSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2590: TRSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2600: AESC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2610: CNSCS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3080: BAU - OGD - OLD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3081: BAU - OGD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3090: SKGM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3120: GS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3150: CNDDH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3180: CNSE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3310: Solar Inverters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3430: DKEH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3480: Veria (DKSCV)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3610: INRC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3611: INIR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3650: IDSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8700: PLDH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8800: FIDH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8820: RODEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8860: CNDHA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8870: CNDENH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9160: BAU - FISC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9170: BAU - GBSC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9180: Altra LLC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Org</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

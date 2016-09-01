@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>CE_Dashboard_Component</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>CE_Dashboard_Component</value>
+    </caseValues>
+    <fields>
+        <label><!-- DD_Sales_Engineer_1 --></label>
+        <name>DD_Sales_Engineer_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DD_Sales_Engineer_2 --></label>
+        <name>DD_Sales_Engineer_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DD_Sales_Engineer_3 --></label>
+        <name>DD_Sales_Engineer_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- DD_Sales_Manager_1 --></label>
+        <name>DD_Sales_Manager_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DD_Sales_Manager_2 --></label>
+        <name>DD_Sales_Manager_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEN_Sales_Engineer_1 --></label>
+        <name>DEN_Sales_Engineer_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEN_Sales_Engineer_2 --></label>
+        <name>DEN_Sales_Engineer_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEN_Sales_Engineer_3 --></label>
+        <name>DEN_Sales_Engineer_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEN_Sales_Manager_1 --></label>
+        <name>DEN_Sales_Manager_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DEN_Sales_Manager_2 --></label>
+        <name>DEN_Sales_Manager_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- HS_Sales_Engineer_1 --></label>
+        <name>HS_Sales_Engineer_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- HS_Sales_Engineer_2 --></label>
+        <name>HS_Sales_Engineer_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- HS_Sales_Engineer_3 --></label>
+        <name>HS_Sales_Engineer_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- HS_Sales_Manager_1 --></label>
+        <name>HS_Sales_Manager_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- HS_Sales_Manager_2 --></label>
+        <name>HS_Sales_Manager_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- RCCC_Sales_Engineer_1 --></label>
+        <name>RCCC_Sales_Engineer_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- RCCC_Sales_Engineer_2 --></label>
+        <name>RCCC_Sales_Engineer_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- RCCC_Sales_Engineer_3 --></label>
+        <name>RCCC_Sales_Engineer_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- RCCC_Sales_Manager_1 --></label>
+        <name>RCCC_Sales_Manager_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- RCCC_Sales_Manager_2 --></label>
+        <name>RCCC_Sales_Manager_2__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

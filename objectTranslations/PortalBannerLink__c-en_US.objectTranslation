@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Portal Banner Link</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Portal Banner Links</value>
+    </caseValues>
+    <fields>
+        <label><!-- Pop-up Text --></label>
+        <name>DisplayPopText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Pop-up --></label>
+        <name>DisplayPop__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Pop-up Text --></label>
+        <name>DisplayPopupText__c</name>
+    </fields>
+    <fields>
+        <label><!-- Portal Banner --></label>
+        <name>PortalBanner__c</name>
+        <relationshipLabel><!-- Portal Banner Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sequence --></label>
+        <name>Sequence__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target --></label>
+        <name>Target__c</name>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self</masterLabel>
+            <translation><!-- Self --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation><!-- Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External</masterLabel>
+            <translation><!-- External --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>URL__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

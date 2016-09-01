@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>SIGNATURE ONLY - EMAIL TO CUSTOMER_DE_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_Letterhead_Logo_Only</letterhead>
+    <name>SIGNATURE ONLY - EMAIL TO CUSTOMER_DE_DE</name>
+    <style>formalLetter</style>
+    <subject>[Enter Subject]</subject>
+    <textOnly>Mit freundlichen Grüßen,
+Danfoss Customer Service Center CER
+
+Danfoss GmbH
+
+Carl-Legien-Straße 8, 63073 Offenbach/Main, Germany
+
+Geschäftsführer: Ole Moller-Jensen
+
+Amtsgericht Offenbach am Main, Handelsregister HRB 41812
+
+Steuer-Nr. 035 225 07148, USt-ID. DE811179653
+
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel.: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

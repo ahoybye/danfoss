@@ -1,0 +1,60 @@
+<apex:page controller="BMCServiceDesk.AcDeviceProcessesController" sidebar="false" showHeader="false" standardStylesheets="false">
+<c:AcRestCommon isGridRequired="true"/>
+
+        <apex:form id="AssetCoreForm">
+            <div id="btnToolbar" width="100%" height="30%"></div></apex:form>
+    
+        <apex:outputPanel id="msgPanel">
+            <apex:pageMessages />
+            <script>
+            msgStr = '{!msgStr}';
+            isAuthRequired={!isAuthRequired};
+            </script>
+        </apex:outputPanel>
+         <apex:outputPanel id="gridPanel">
+<script>
+proxyData = {!proxyData};
+strFields = {!strFields};
+strColumns = {!strColumns};
+var tabOutImg = "{!$Resource.SDEFExtJS}/resources/images/default/shared/blue-loading.gif";
+var warning='{!$Label.ACEndProcess_warning}';
+var ACEmptyparameters='{!$Label.ACEmptyparameters}';
+var endprocess='{!$Label.ACEndProcess}';
+var newProcess='{!$Label.ACNewProcess}';
+var RunProcess='{!$Label.ACRunProcess}';
+var processPath='{!$Label.ACProcesspath}';
+var processContext='{!$Label.ACProcesscontext}';
+var processattributes='{!$Label.ACProcessattributes}';
+var yes='{!$Label.ExtjsMessageYes}';
+var no='<div style="height:16px" class="x-btn-default-small-focus">{!$Label.ExtjsMessageNo}</div>';
+var runProcess='{!$Label.Run}';
+var ErrorTitle='{!$Label.Error}';
+var Cancel='{!JSENCODE($Label.Cancel)}';
+
+</script></apex:outputPanel>
+         <apex:form >
+  <apex:actionFunction name="updateACSetting" action="{!updateSessionSetting}" oncomplete="return false;"/>
+  <apex:actionFunction name="EndProcess" action="{!EndProcessoperation}" reRender="gridPanel,msgPanel,updateSession" onComplete="fillGrid();stopWaitMask();ShowMessageBox();checkUserAuth();">
+ <apex:param name="pid" value="" assignTo="{!processid}"/>
+ <apex:param name="pname" value="" assignTo="{!processName}"/>
+ </apex:actionFunction>
+   <apex:actionFunction name="NewProcess" action="{!StartNewProcess}" reRender="gridPanel,msgPanel,updateSession" onComplete="fillGrid();stopWaitMask();ShowMessageBox();checkUserAuth();">
+ <apex:param name="path" value="" assignTo="{!path}"/>
+ <apex:param name="context" value="" assignTo="{!context}"/>
+  <apex:param name="attributes" value="" assignTo="{!attributes}"/>
+ </apex:actionFunction>
+ </apex:form>
+<script type="text/javascript" src="{!$Resource.SDEFCommonJS}/AcDeviceProcesses.js" />
+<apex:outputPanel id="updateSession">
+    <script>
+        updateSessionInCS={!updateSessionInCS};
+        if(updateSessionInCS)
+        {
+            updateACSetting();
+        }
+    </script>
+    <script>
+        window.parent.stopWaitMsgBar();
+    </script>
+</apex:outputPanel>
+</apex:page>

@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Business_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Org</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss Power Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Metric_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Metric Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Daily</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Metric__c</fullName>
+        <externalId>false</externalId>
+        <label>Metric</label>
+        <picklist>
+            <controllingField>Metric_Frequency__c</controllingField>
+            <picklistValues>
+                <fullName>Daily Order Book Value Current Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Order Book Value Next Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Order Book Value Month Two</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Order Book Value Month Three</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales MTD</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Average Per Day Needed to Meet Forecast</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Planned Current Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Sales</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily PCS Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily PCS On Time</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MTD PCS Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MTD PCS On Time</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intercompany PCS Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intercompany PCS On Time</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lines Past Due ESL to REM</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lines Past Due ESL to SHA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lines Past Due ESL to SHB</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lines Past Due REM to ESL</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lines Past Due REM to SHA</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lines Past Due REM to SHB</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Past Due 1-10 Days</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Past Due 11-20 Days</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Past Due 21-30 Days</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Past Due 31-40 Days</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Past Due 41-50 Days</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Past Due Greater than 50 Days</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Value Released to the Floor (7 Days)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due in Assembly</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due in Cartridge</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due in Lathe</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due in Machining</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due in Purchasing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rework Cartridge</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due in Supplier Quality</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HIC Assy</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valve Assy</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KIT Assy</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Released (QTY)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Total to be Released (QTY)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Released (Value)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recommit Once</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recommit Twice</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recommit Three Times</fullName>
+                <default>false</default>
+                <controllingFieldValues>Weekly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales (EUR) Planned</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past due recovery on Request Date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daily Order Book Value</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due to Confirm Date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipping Performance to ESL</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipping Performance to SHB</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Total Value to be Released</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Total Value Released</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Total Pieces to be Released</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Total Pieces Released</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due Recovery</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On time on Request Date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Early on Request Date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expected Past Due on Request Date</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YTD Pieces Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YTD On Time</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MTD Distributor Pieces Due</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MTD Distributor PCS On Time</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Past Due Daily Lines - Total</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity Yield Rate</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monthly Yield Rate Goal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orders Booked 2012</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orders Booked 2013</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orders Booked Goal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Current Month Goal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Month One Goal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Month Two Goal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Month Three Goal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Daily</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales for the Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forecast/Budget for the Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Month to Date Sales Plan</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Current Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Next Month</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Month Two</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Month Three</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Budget Current Month for OrderBook</fullName>
+                <default>false</default>
+                <controllingFieldValues>Monthly</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Plant__c</fullName>
+        <externalId>false</externalId>
+        <label>Plant</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1321</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1520</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2021</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global Comatrol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1301</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global Turolla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <precision>12</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

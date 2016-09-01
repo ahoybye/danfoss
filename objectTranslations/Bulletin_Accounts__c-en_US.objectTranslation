@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bulletin Accounts</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bulletin Accounts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Manager Name --></label>
+        <name>Account_Manager_Name__c</name>
+        <relationshipLabel><!-- Bulletin Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Bulletin Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Bulletin Number --></label>
+        <name>Bulletin_Delivery_Job__c</name>
+        <relationshipLabel><!-- Bulletin Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Criteria --></label>
+        <name>Criteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generic Attachment ID --></label>
+        <name>Generic_Attachment_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Generic Attachment --></label>
+        <name>Generic_Attachment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Type --></label>
+        <name>Job_Type__c</name>
+        <picklistValues>
+            <masterLabel>PIB Non-Sensitive</masterLabel>
+            <translation><!-- PIB Non-Sensitive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIB Sensitive</masterLabel>
+            <translation><!-- PIB Sensitive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Bulletin</masterLabel>
+            <translation><!-- Service Bulletin --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PIB Number --></label>
+        <name>PIB_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SAP Account ID --></label>
+        <name>SAP_Account_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Does not meet criteria</masterLabel>
+            <translation><!-- Does not meet criteria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Cancelled Notice</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Cancelled Notice</name>
+    <style>none</style>
+    <subject>{!Quote.Merge_Formula_Region__c} Region Quote {!Quote.QuoteNumber} for {!Quote.Merge_Formula_Account_Name__c} has been Cancelled</subject>
+    <type>text</type>
+</EmailTemplate>

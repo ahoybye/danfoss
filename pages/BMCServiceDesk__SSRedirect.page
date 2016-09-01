@@ -1,0 +1,106 @@
+<apex:page action="{!validateUser}" controller="BMCServiceDesk.SSRedirectController" showHeader="false" cache="false"  >
+<meta HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE" />
+<script>
+    function redirectMe()
+    {
+    	var fromSiteUrl = "{!JSENCODE($CurrentPage.parameters.fromSiteUrl)}";
+    	var sURL = 'BMCServiceDesk__SelfServiceHome?fromSiteUrl='+fromSiteUrl ;
+		var isNewSSUI ='{!isNewSSUI}';
+		var ShowKA = false;
+		var ShowSR = false;
+		var ShowInc = false;
+		var ShowSE = false;
+		
+        if(isNewSSUI.toLowerCase()=='true')
+			sURL = 'BMCServiceDesk__SSLandingpage?fromSiteUrl='+fromSiteUrl ;
+    	var sinc = "{!JSENCODE($CurrentPage.parameters.inc)}";  	
+    	if(sinc != '')
+    		sURL = sURL + '&inc=' + sinc ;
+        var recordId = "{!JSENCODE($CurrentPage.parameters.id)}";  	        
+    	if(recordId != '')
+    		sURL = sURL + '&id=' + recordId;
+        var typeStr = "{!JSENCODE($CurrentPage.parameters.type)}";  	
+    	if(typeStr != '')
+    		sURL = sURL + '&type=' + typeStr;
+        var isCalledFromLink = "{!JSENCODE($CurrentPage.parameters.isCalledFromLink)}";      
+        if(isCalledFromLink != '')
+            sURL = sURL + '&isCalledFromLink=' + isCalledFromLink;
+        var iscalledFromEmail = "{!JSENCODE($CurrentPage.parameters.iscalledFromEmail)}";      
+        if(iscalledFromEmail != '')
+            sURL = sURL + '&iscalledFromEmail=true';    
+        var keywordStr = "{!JSENCODE($CurrentPage.parameters.keyword)}";  	
+    	if(keywordStr != '')
+    		sURL = sURL + '&keyword=' + keywordStr;
+
+        var componentStr = "{!JSENCODE($CurrentPage.parameters.component)}";  	
+   		var srPreviewEnabled = {!srPreviewEnabled};  
+		var formAssigned = '{!JSENCODE(formAssigned)}';
+		var namespace = 'BMCServiceDesk__'; 
+    	if(componentStr!='' && isNewSSUI.toLowerCase()=='true'){
+    		if(componentStr.toLowerCase()=='incform'){
+	    		if(formAssigned.toLowerCase()=='std')
+	    			sURL = namespace + 'SelfServiceIncident?isComponent=true';
+	    		else if(formAssigned.toLowerCase()=='custom')
+	    			sURL = namespace + 'SelfServiceIncidentCustom?isCustom=true&isComponent=true';
+	    		else if(formAssigned!='')
+	    			sURL = namespace + 'SSTicketLayout?isComponent=true';
+	    	}else if(componentStr.toLowerCase()=='srform' && recordId!=''){
+	    		if(srPreviewEnabled)
+	    			sURL = namespace + 'SSServiceRequestPreview?isComponent=true&reqDefId='+recordId;
+	    		else
+	   				sURL = namespace + 'SelfServiceIncidentCustom?isServiceRequest=true&reqDefId='+recordId+'&isComponent=true';
+	   		}else if(componentStr.toLowerCase()=='approval'){
+	   			    sURL =  namespace + 'SSApprovalListPage?'+'IsComponent=true' ;
+	   		}else if(componentStr.toLowerCase() == 'listview'){
+			
+	   			    var Id= recordId.split(",");
+	   			    for(var i=0;i<Id.length;i++)
+        			{        	
+        				if(Id[i]=='KA')
+        				ShowKA = true;
+        				      	
+       				 	if(Id[i]=='SR')
+        				ShowSR = true;
+        	
+        				if(Id[i]=='SE')
+        				ShowSE = true;
+        	
+        				if(Id[i]=='INC')
+        				ShowInc = true;        
+        			}        
+        		    sURL =  namespace + 'SSLandingPage?IsComponent=true'+'&ShowKnowledgeArticles='+ShowKA+'&ShowServiceRequests='+ShowSR+'&ShowSearch='+ShowSE+'&ShowTickets='+ShowInc;
+              		    
+		   	}else if(componentStr.toLowerCase() == 'incsrlist'){
+		   		sURL =  namespace + 'SSRequestListPage?isComponent=true';
+            }
+            else if(componentStr.toLowerCase() == 'search'){
+                sURL =  namespace + 'SelfServiceSearch?isComponent=true';   
+                if(keywordStr != '')
+                  sURL += '&keywords=' + keywordStr;
+                var Id= recordId.split(",");
+                    for(var i=0;i<Id.length;i++)
+                    {           
+                        if(Id[i]=='KA')
+                        ShowKA = true;
+                                
+                        if(Id[i]=='SR')
+                        ShowSR = true;
+		   	
+                        if(Id[i]=='INC')
+                        ShowInc = true;        
+                    }        
+                    sURL += '&ShowKnowledgeArticles='+ShowKA+'&ShowServiceRequests='+ShowSR+'&ShowTickets='+ShowInc;
+		   	}
+	   		else{	
+	   				sURL =  namespace + 'SSLandingpage?fromSiteUrl='+fromSiteUrl ;
+			}
+	    }	
+    	window.location.assign(sURL);
+    }
+    function init()
+    {
+        setTimeout("redirectMe()",100);
+    }
+    window.onload = init;
+</script>
+</apex:page>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Portal Business Org Style</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Portal Business Org Style</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- NumberOfItems --></label>
+        <name>NumberOfItems__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stylesheet Resource --></label>
+        <name>Stylesheet_Resource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terms and Conditions Visualforce Page --></label>
+        <name>Terms_and_Conditions_Visualforce_Page__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

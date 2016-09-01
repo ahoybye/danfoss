@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case closure - Mail to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>CASE CLOSURE - MAIL TO CUSTOMER</name>
+    <style>formalLetter</style>
+    <subject>Case closed: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear {!Case.Contact},
+
+Your {!Case.RecordType} is closed and believe we are able to serve your request to your satisfaction.
+
+Thanking you and assuring our best services always.
+
+Best regards,
+Danfoss Customer Service Center
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

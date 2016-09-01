@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Approval Flow By Contract Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Approval Flow By Contract Types</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Amount --></label>
+        <name>Amount__c</name>
+        <picklistValues>
+            <masterLabel>10,000,001 - 15,000,000</masterLabel>
+            <translation><!-- 10,000,001 - 15,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15,000,001 - 17,000,000</masterLabel>
+            <translation><!-- 15,000,001 - 17,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5,000,001 - 10,000,000</masterLabel>
+            <translation><!-- 5,000,001 - 10,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>500,001 - 5,000,000</masterLabel>
+            <translation><!-- 500,001 - 5,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt;500,001</masterLabel>
+            <translation><!-- &lt;500,001 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt;17,000,000</masterLabel>
+            <translation><!-- &gt;17,000,000 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Type --></label>
+        <name>Contract_Type__c</name>
+        <picklistValues>
+            <masterLabel>Appointed Service Partner Agreement (ASP)</masterLabel>
+            <translation><!-- Appointed Service Partner Agreement (ASP) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Service Centre Agreement (ASC)</masterLabel>
+            <translation><!-- Authorised Service Centre Agreement (ASC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development Agreement</masterLabel>
+            <translation><!-- Development Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution Agreement</masterLabel>
+            <translation><!-- Distribution Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General / Other Sales Agreement</masterLabel>
+            <translation><!-- General / Other Sales Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Letter of Intent</masterLabel>
+            <translation><!-- Letter of Intent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Sales Agreement (LTA)</masterLabel>
+            <translation><!-- Long Term Sales Agreement (LTA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Disclosure Agreement - Exception</masterLabel>
+            <translation><!-- Non-Disclosure Agreement - Exception --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Disclosure Agreement - Standard</masterLabel>
+            <translation><!-- Non-Disclosure Agreement - Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Improvement Programs</masterLabel>
+            <translation><!-- Product Improvement Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supply Chain/Logistics Agreement</masterLabel>
+            <translation><!-- Supply Chain/Logistics Agreement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Agreement - Exception</masterLabel>
+            <translation><!-- Warranty Agreement - Exception --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Agreement - Standard</masterLabel>
+            <translation><!-- Warranty Agreement - Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty Voucher Agreement</masterLabel>
+            <translation><!-- Warranty Voucher Agreement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Stage --></label>
+        <name>Current_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Approval Start</masterLabel>
+            <translation><!-- Approval Start --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Director</masterLabel>
+            <translation><!-- Sales Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Executive</masterLabel>
+            <translation><!-- Sales Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Manager</masterLabel>
+            <translation><!-- Sales Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales VP</masterLabel>
+            <translation><!-- Sales VP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Next_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Sales Director</masterLabel>
+            <translation><!-- Sales Director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Executive</masterLabel>
+            <translation><!-- Sales Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Manager</masterLabel>
+            <translation><!-- Sales Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales VP</masterLabel>
+            <translation><!-- Sales VP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

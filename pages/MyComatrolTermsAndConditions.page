@@ -1,0 +1,536 @@
+<apex:page controller="TermAndConditionController" showHeader="false" sidebar="false">
+<head>
+    <apex:stylesheet value="{!URLFOR($Resource.ComatrolHomePageResource , 'css/styles.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ComatrolHomePageResource  , 'js/jquery.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.ComatrolHomePageResource  , 'js/nivo.slider.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.ComatrolHomePageResource , 'css/nivo-slider.css')}"/>
+</head>
+<div class="container">
+    <div id="header">
+        <div class="logo"><span class="hidden">Comatrol</span></div>
+    </div>  
+<apex:form id="frm" >
+<apex:pageBlock Id="pb" title="Please accept below Terms and Conditions of Use">
+<apex:pageblockButtons location="bottom" rendered="{!NOT(hideButtons)}">
+      <apex:commandButton value="Accept" action="{!acceptConditions}"/>
+      <apex:commandButton value="Decline" action="{!declineConditions}"/>
+</apex:pageblockButtons>
+<div class="WordSection1">
+
+<p class="MsoNormal"><b><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>TERMS OF USE</span></b></p>
+
+<p class="MsoNormal"><b><span style='color:#595959'>&nbsp;</span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>Welcome to the customer web
+site (the “Web Site”) of Comatrol (the “Company”).  This web site provides
+information about the Company for its current customers and distributors. </span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>All users of the Web Site are
+subject to the following terms and conditions of use (these “Terms of Use”).</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>Please read these Terms of
+Use carefully before accessing or using any part of the Web Site.</span><span
+style='color:#595959'>  </span><b><span style='font-size:8.5pt;font-family:
+"Verdana","sans-serif";color:#595959'>By accessing or using the Web Site, or
+other</span></b><b><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'> Company software, services, web sites or any of the Company’s
+licenses, services or software (collectively “Services”), you agree that you
+have read, understand and agree to be bound by these Terms of Use, as amended
+from time to time, as well as the Company </span></b><a
+href="http://www.sauer-danfoss.com/AboutUs/PrivacyPolicy/index.htm"><b><span
+style='font-size:8.5pt;font-family:"Verdana","sans-serif";color:#595959'>Privacy
+Policy</span></b></a><b><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>, which is hereby incorporated into these Terms of Use.  </span></b><span
+style='font-size:8.5pt;font-family:"Verdana","sans-serif";color:#595959'>If you
+do not wish to agree to these Terms of Use, do not access or use any part of
+the Web Site.</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>The Company may revise and
+update these Terms of Use at any time without notice by posting the amended Terms
+of Use to the Web Site.  Your continued use of the Web Site means that you
+accept and agree to the revised Terms of Use.  If you disagree with the Terms
+of Use (as amended from time to time) or are dissatisfied with the Web Site,
+your sole and exclusive remedy is to discontinue using the Web Site. THE MOST
+CURRENT VERSION OF THIS AGREEMENT, WHICH SUPERSEDES ALL PREVIOUS VERSIONS, CAN
+BE REVIEWED BY CLICKING ON THE “TERMS OF USE” HYPERLINK LOCATED AT THE BOTTOM OF
+THE WEB SITE.</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>1. ACCESS TO THE WEB SITE</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>In order to use the Services, you must be a current customer or
+distributor of the Company.  You must be invited by the Company to receive
+access to the Web Site.  If at any time, you or your company ceases to be a
+customer or distributor of the Company, your access may be terminated.  Additionally,
+your employer may restrict your access to the Web Site upon written request to
+the Company. </span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>You are responsible for the security of your passwords and for
+any use of your account.  You will not divulge your user name and password to
+other parties either on or off the Web Site, and you must immediately notify
+the Company of any unauthorized use of your password or account by sending an
+email to partnerlink@sauer-danfoss.com.</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>2.  THESE TERMS ARE NOT
+APPLICABLE TO COMPANY PRODUCTS OR SERVICES</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>For purposes of clarification, these Terms of Use are only
+applicable to your use of the Web Site and the content available hereon.  Any
+products or services purchased from the Company, including any products and
+services that you may be able to purchase through this Web Site, are subject to
+the Company’s then current terms and conditions for such products and services
+unless otherwise expressly agreed in writing between the parties. </span></p>
+
+<p class="MsoNormal"><b><span style='color:#595959'>&nbsp;</span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>3. USE OF THE WEB SITE  </span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Web Site may contain forums, bulletin board services, live
+chat areas, message boards, news groups, communities, calendars, and/or other
+message or communication facilities designed to allow you to communicate with
+the Company and other customers of the Company. </span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<h1 style='margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:
+0in'><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959;font-weight:normal'>You agree to use the Web Site only for lawful
+purposes:</span></h1>
+
+<p class="MsoNormal" style='text-indent:.5in'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>(a)        Specifically you
+agree not to do any of the following:  (1)&nbsp;upload to or transmit on the
+Web Site any defamatory, indecent, obscene, harassing, violent or otherwise
+objectionable material, or any material that is, or may be, protected by
+copyright, without permission from the copyright owner; (2)&nbsp;use the Web
+Site to violate the legal rights (including the rights of publicity and
+privacy) of others or to violate the laws of any jurisdiction;
+(3)&nbsp;intercept or attempt to intercept electronic mail not intended for
+you; (4)&nbsp;misrepresent an individual or an affiliation with any person or
+organization; (5)&nbsp;upload to or transmit on the Web Site any advertisements
+or solicitations of business; (6)&nbsp;restrict or inhibit use of the Web Site
+by others, including disrupting the normal flow of dialogue, causing a screen
+to scroll faster than other users are able to type, or otherwise acting in a
+way which affects the ability of other people to engage in real time activities
+via the Web Site; (7)&nbsp;upload or otherwise transmit files that contain a
+virus or corrupted data; (8)&nbsp;collect information about others (including
+e-mail addresses) without their consent; (9)&nbsp;download a file or software
+or include in a message any software, files or links that you know, or have reason
+to believe, cannot be distributed legally over the Web Site or that you have a
+contractual obligation to keep confidential (notwithstanding its availability
+on the Web Site); (10)&nbsp;post “spam,” transmit chain letters or engage in
+other similar activities; (11) advocate illegal activity or discuss an intent
+to commit an illegal act; (12) disobey any policy or regulations, including any
+code of conduct or other guidelines, established from time to time regarding
+use of the Web Site or any networks connected to the Web Site; (13) falsify or
+delete any author attributions, legal or other proper notices or proprietary
+designations or labels of the origin or source of software or other material
+contained in a file that is permissibly uploaded; or (14) engage in any other
+conduct that restricts or inhibits anyone’s use or enjoyment of the Web Site,
+or which, as determined by the Company, may harm the Company or users of the
+Web Site or expose them to liability.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal" style='text-indent:.5in'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>(b)        Any content and/or
+opinions uploaded, expressed or submitted to a message board, blog, chat room
+or any other publicly available section of the Web Site (including
+password-protected areas), and all articles and responses to questions, other
+than the content provided by the Company, are solely the opinions and responsibility
+of the person or entity submitting them and do not necessarily reflect the
+opinions of the Company. You understand and acknowledge that you are
+responsible for whatever content you submit, and you, not the Company, have
+full responsibility for such content, including its legality, reliability and
+appropriateness. By uploading or otherwise transmitting material to any area of
+the Web Site, you warrant that the material is your own, is in the public
+domain or otherwise free of proprietary or other restrictions and that you have
+the right to post it to the Web Site. You grant to the Company the right to use
+all content you upload or otherwise transmit to the Web Site in any manner the
+Company chooses, including, but not limited, to copying, displaying, performing
+or publishing it in any format whatsoever, modifying it, incorporating it into
+other material or making a derivative work based on it.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>            (c)        To access the Web Site or some of the
+resources it offers, you may be asked to provide certain registration details
+or other information. It is a condition of your use of the Web Site that all
+the information you provide on the Web Site will be correct, current and
+complete. </span></p>
+
+<p class="MsoNormal" style='text-indent:.5in'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>(d)        The Company
+reserves the right, but does not assume any responsibility, to (1)&nbsp;remove
+any material posted on the Web Site which the Company, in its sole discretion,
+deems inconsistent with the foregoing commitments, including any material the
+Company has been notified, or has reason to believe, constitutes a copyright infringement;
+and (2)&nbsp;terminate any user’s access to all or part of the Web Site.
+However, the Company can neither review all material before it is posted on the
+Web Site nor ensure prompt removal of objectionable material after it has been
+posted. Accordingly, the Company assumes no liability for any action or
+inaction regarding transmissions, communications or content provided by third
+parties. The Company reserves the right to take any action it deems necessary
+to protect the personal safety of users of the Web Site and the public;
+however, the Company has no liability or responsibility to anyone for
+performance or nonperformance of the activities described in this paragraph.</span></p>
+
+<h5 style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>&nbsp;</span></h5>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>            (e)        Your failure to comply with the
+provisions of (a) (b) or (c) above may result in the termination of your access
+to the Web Site and may expose you to civil and/or criminal liability.</span></p>
+
+<p class="MsoNormal" style='page-break-after:avoid'><b><span style='color:#595959'>&nbsp;</span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>4. COPYRIGHT RESTRICTIONS/USE
+OF CONTENT</span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>The entire contents of the
+Web Site (including all information, software, text, displays, images and
+audio) (collectively, the “Content”) and the design, selection and arrangement
+thereof, are proprietary to the Company or its affiliates or licensors and are
+protected by United States and international laws regarding copyrights,
+trademarks, trade secrets and other proprietary rights. You are authorized only
+to use the Content on the Web Site for a legitimate business purposes related
+to your role as a customer or distributor of the Company. You may not copy,
+modify, create derivative works of, publicly display or perform, republish,
+store, transmit or distribute any of the Content on the Web Site without the
+prior written consent of the Company, except to: (a)&nbsp;store copies of the
+Content temporarily in RAM, (b)&nbsp;store files that are automatically cached
+by your web browser for display enhancement purposes, and (c)&nbsp;print a
+reasonable number of pages of the Web Site; provided in each case that you do
+not alter or remove any copyright or other proprietary notices included in such
+Content.  Neither the title nor any intellectual property rights to any
+information or material in the Web Site are transferred to you, but remain with
+the Company or the applicable owner of such Content. Except as expressly
+authorized by the Company in writing, you may not reproduce, sell or exploit
+for any commercial purposes (i) any part of the Web Site, (ii) access to the
+Web Site or (iii) use of the Web Site or of any Services or Content available
+through the Web Site.</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>You may not (and may not
+authorize any party to) (A) co-brand the Web Site, or (B) frame the Web Site,
+or (C) hyperlink to the Web Site, without the express prior written permission
+of an authorized representative of the Company. For purposes of these Terms of
+Use, “co-branding” means to display a name, logo, trademark, or other means of
+attribution or identification of any party in such a manner as is reasonably
+likely to give a user the impression that such other party has the right to
+display, publish, or distribute the Web Site or Content accessible within the
+Web Site. You agree to cooperate with the Company in causing any unauthorized
+co-branding, framing or hyperlinking immediately to cease. In addition, you may
+not use the Web Site in any manner which could disable, overburden, damage or
+impair the Web Site or interfere with any other party's use and enjoyment of
+the Web Site. You may not obtain or attempt to obtain any Content through any
+means not intentionally made available or provided for through the Web Site.</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>5. TRADEMARKS </span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>The Company name, the terms
+“SAUER,” “DANFOSS,” “PARTNERLINK,” “WHAT REALLY MATTERS IS INSIDE”, the “S”
+logo and all related names, logos, product and service names, designs and
+slogans are trademarks of the Company and/or its affiliates or licensors.  You
+may not use such marks without the prior written permission of the Company. 
+All other names, brands and marks are used for identification purposes only and
+may be the trademarks or registered trademarks of their respective owners. The
+Company and any party that provided trademarks and logos, to the Company retain
+all rights with respect to any of their respective trademarks and logos appearing
+on the Web Site.  </span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>6. DISCLAIMER</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>You understand that the Company cannot and does not guarantee or
+warrant that files available for downloading from the Internet will be free of
+viruses, worms, Trojan horses or other code that may manifest contaminating or
+destructive properties. You are responsible for implementing sufficient
+procedures and checkpoints to satisfy your particular requirements for accuracy
+of data input and output, and for maintaining a means external to the Web Site
+for any reconstruction of any lost data. The Company does not assume any
+responsibility or risk for your use of the Internet.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>If other users of the Web Site post suggestions or ideas for the
+use or maintenance of Company products, such suggestions are not endorsed by,
+and do not represent the opinions of the Company.  The Company has the right,
+but not the obligation, to review and comment on, correct, or approve any
+suggestions or ideas by users.  You are solely responsible for, and the Company
+shall have no liability in connection with, your use of the comments or
+suggestions provided by any other user.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>YOUR USE OF THE WEB SITE IS AT YOUR OWN RISK. THE CONTENT IS
+PROVIDED “AS IS” AND WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+THE COMPANY DISCLAIMS ALL WARRANTIES, INCLUDING ANY IMPLIED WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+ THE COMPANY DOES NOT WARRANT THAT THE FUNCTIONS OR CONTENT CONTAINED IN THE
+WEB SITE WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED OR
+THAT THE WEB SITE OR THE SERVER THAT MAKES IT AVAILABLE ARE FREE OF VIRUSES OR
+OTHER HARMFUL COMPONENTS. THE COMPANY DOES NOT WARRANT OR MAKE ANY
+REPRESENTATION REGARDING USE, OR THE RESULT OF USE, OF THE CONTENT IN TERMS OF
+ACCURACY, RELIABILITY OR OTHERWISE. THE CONTENT MAY INCLUDE TECHNICAL
+INACCURACIES OR TYPOGRAPHICAL ERRORS, AND THE COMPANY MAY MAKE CHANGES OR
+IMPROVEMENTS AT ANY TIME. YOU, AND NOT THE COMPANY, ASSUME THE ENTIRE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION IN THE EVENT OF ANY LOSS OR
+DAMAGE ARISING FROM THE USE OF THE WEB SITE OR ITS CONTENT. THE COMPANY MAKES
+NO WARRANTIES THAT YOUR USE OF THE CONTENT WILL NOT INFRINGE THE RIGHTS OF
+OTHERS AND ASSUMES NO LIABILITY OR RESPONSIBILITY FOR ERRORS OR OMISSIONS IN THE
+CONTENT.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>All of the information in the Web Site, whether historical in
+nature or forward-looking, speaks only as of the date the information is posted
+on the Web Site, and the Company does not undertake any obligation to update
+such information after it is posted or to remove such information from the Web
+Site if it is not, or is no longer accurate or complete.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>Some of the Content on the Web Site has been translated from
+English into other language as a convenience to users.  The Company has used
+commercially reasonable efforts to accurately translate the Content, but it is
+possible that errors may have occurred during this process.  The Company does
+not warrant that the translation is error-free, and the Company shall not be
+liable to anyone due to errors in translation. </span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>7. LIABILITY OF THE COMPANY
+AND ITS LICENSORS</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Company does not assume any liability for the Content
+provided on, or available through, the Web Site.  Reliance on the Content is
+solely at your own risk.  The Company disclaims any liability for injury or
+damages resulting from the use of any the Content.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>IN NO EVENT WILL THE COMPANY OR ITS LICENSORS OR CONTRACTORS BE
+LIABLE FOR ANY DAMAGES OF ANY KIND, UNDER ANY LEGAL THEORY, ARISING OUT OF OR
+IN CONNECTION WITH YOUR USE OF, OR INABILITY TO USE, THE WEB SITE, THE CONTENT,
+ANY SERVICES PROVIDED ON OR THROUGH THE WEB SITE OR ANY LINKED SITE, INCLUDING
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES,
+INCLUDING, BUT NOT LIMITED TO, PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL
+DISTRESS, LOST PROFITS OR DAMAGES RESULTING FROM DELAY, INTERRUPTION IN
+SERVICE, VIRUSES, DELETION OF FILES OR ELECTRONIC COMMUNICATIONS, OR ERRORS,
+OMISSIONS OR OTHER INACCURACIES IN THE WEB SITE, THE CONTENT OR SERVICES,
+WHETHER OR NOT THERE IS NEGLIGENCE BY THE COMPANY AND WHETHER OR NOT THE
+COMPANY HAS BEEN ADVISED OF THE POSSIBILITY OF ANY SUCH DAMAGES.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>IN NO EVENT WILL THE COLLECTIVE LIABILITY OF THE COMPANY AND ITS
+SUBSIDIARIES, AFFILIATES, LICENSORS, SERVICE PROVIDERS, CONTENT PROVIDERS,
+EMPLOYEES, AGENTS, OFFICERS AND DIRECTORS TO ANY PARTY (REGARDLESS OF THE FORM
+OF ACTION, WHETHER IN CONTRACT, TORT, OR OTHERWISE) EXCEED THE GREATER OF $100
+OR THE AMOUNT YOU HAVE PAID TO THE COMPANY FOR THE APPLICABLE CONTENT OR
+SERVICE OUT OF WHICH LIABILITY AROSE.</span></p>
+
+<p class="MsoNormal"><span style='color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>8. INDEMNIFICATION</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>You agree to indemnify and hold harmless the Company and its
+officers, directors, employees, agents, affiliates, third party information
+providers, licensors, contractors and others involved in the Web Site or the
+delivery of products, services or information over the Web Site, from any
+breach of these Terms of Use by you, including any use of the Content other
+than as expressly authorized in these Terms of Use. You agree that the
+Indemnified Parties will have no liability in connection with any such breach
+or unauthorized use, and you agree to indemnify any and all resulting losses,
+damages, judgments, awards, costs, expenses and attorneys' fees of the
+Indemnified Parties in connection therewith. You will also indemnify and hold
+the Indemnified Parties harmless from and against any claims brought by third
+parties arising out of your use of the information accessed from the Web Site.</span></p>
+
+<p class="MsoNormal"><b><span style='color:#595959'>&nbsp;</span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>9. PRIVACY, PROTECTION OF
+PERSONAL INFORMATION AND SECURITY</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Company’s use of your personal information and your
+responsibilities in connection with protecting your privacy are described in
+the Company</span><span style='color:#595959'> </span><a
+href="http://www.sauer-danfoss.com/AboutUs/PrivacyPolicy/index.htm"><b><span
+style='font-size:8.5pt;font-family:"Verdana","sans-serif";color:#595959'>Privacy
+Policy</span></b></a><b><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>,</span></b><span style='color:#595959'> </span><span
+style='font-size:8.5pt;font-family:"Verdana","sans-serif";color:#595959'>which
+is incorporated by reference into these Terms of Use.  All information
+collected through this Web Site will be stored in the United States.</span></p>
+
+<p class="MsoNormal"><span style='color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>You are prohibited from using any services or facilities
+provided in connection with the Web Site to compromise security or tamper with
+system resources and/or accounts. The use or distribution of tools designed for
+compromising security (e.g., password guessing programs, cracking tools or
+network probing tools) is strictly prohibited. If you become involved in any
+violation of system security, the Company reserves the right to release your
+details to system administrators at other web sites in order to assist them in
+resolving security incidents. The Company reserves the right to investigate
+suspected violations of these Terms of Use.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Company reserves the right to fully cooperate with any law
+enforcement authorities or court order requesting or directing the Company to disclose
+the identity of anyone posting any e-mail messages, or publishing or otherwise
+making available any materials that are believed to violate these Terms of Use.
+BY ACCEPTING THIS AGREEMENT YOU WAIVE AND HOLD HARMLESS THE COMPANY FROM ANY
+CLAIMS RESULTING FROM ANY ACTION TAKEN BY THE COMPANY DURING OR AS A RESULT OF
+ITS INVESTIGATIONS AND/OR FROM ANY ACTIONS TAKEN AS A CONSEQUENCE OF
+INVESTIGATIONS BY EITHER THE COMPANY OR LAW ENFORCEMENT AUTHORITIES.</span></p>
+
+<p class="MsoNormal" style='page-break-after:avoid'><b><span style='color:#595959'>&nbsp;</span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>10. COMMENTS AND SUBMISSIONS</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Company welcomes your comments.  All comments, suggestions
+or other information sent by you via the Web Site will become the Company’s
+property and you agree that all intellectual property rights therein are
+transferred to the Company.  You understand that any postings, or content
+submitted for posting, to publicly available portions of the Web Site are non&#8209;confidential
+for all purposes.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>By sending the Company any information, comment, suggestion or
+material (each, a “Submission”), you agree that the Company may use, reproduce,
+display, perform, modify, transmit, and distribute such Submission, and you
+also agree that the Company is free to use any ideas, concepts, know-how or
+techniques that you send the Company for any purpose, including, but not
+limited to, developing, manufacturing, and marketing products incorporating
+such ideas, concepts, know-how, or techniques in any form, media, or technology
+now known or later developed. The Company will not be required to treat any
+Submission as confidential, and may (but is not obligated to) use any
+Submission in its business (including without limitation, for products or
+advertising) without incurring any liability for royalties or any other
+consideration of any kind, and will not incur any liability as a result of any
+similarities that may appear in future Company operations. </span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Web Site is not currently intended for complaints,
+questions, returns, or warranty issues regarding the Company products.  Unless
+otherwise modified in these Terms of Use, if you need to contact the Company
+for any of the foregoing reasons, you should contact your normal Company
+representative. </span></p>
+
+<p class="MsoNormal"><span style='color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>11. CONTACT</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>If you believe that your work has been copied in a way that
+constitutes copyright infringement, please provide the Company with written
+notice detailing the possible infringement by emailing the Company at partnerlink@sauer-danfoss.com.</span></p>
+
+<p class="MsoNormal" style='page-break-after:avoid'><b><span style='color:#595959'>&nbsp;</span></b></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>12.  GOVERNING LAW, VENUE</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>These Terms of Use shall be governed in all respects by and
+construed in accordance with the laws of the State of Iowa, USA, without regard
+to its conflicts of law principles, and exclusive jurisdiction over any cause
+of action arising out of these Terms of Use or your use of the Web Site shall
+be in the state or federal courts located in Iowa. You agree to submit to the
+jurisdiction of such courts.</span></p>
+
+<p class="MsoNormal"><span style='color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><b><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>13. MISCELLANEOUS</span></b></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>These Terms of Use, as they may be amended from time to time,
+completely and exclusively state the agreement between you and the Company with
+respect to the Web Site, and no other terms that may have been communicated to
+you orally or in any other manner shall have any force or effect. Any cause of
+action you may have with respect to the Web Site must be commenced within one
+(1) year after the claim or cause of action arises or such claim or cause of
+action is barred.  </span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal" style='margin-bottom:12.0pt'><span style='font-size:8.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>If any part of these Terms of
+Use is unenforceable, the unenforceable part shall be construed to reflect, as
+nearly as possible, the original intentions of the parties.  The other
+provisions of these Terms of Use shall remain in full force and effect.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Company’s failure to insist upon or enforce strict
+performance of any provision of these Terms of Use shall not constitute a
+waiver of the provision. Neither a course of dealing or conduct between you and
+the Company nor any trade practices shall be deemed to modify these Terms of
+Use.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>&nbsp;</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>You agree that no joint venture, partnership, or agency
+relationship exists between you and the Company as a result of these Terms of
+Use or use of the Web Site.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>A printed version of these Terms of Use and of any notice given
+in electronic form shall be admissible in judicial or administrative
+proceedings based upon or relating to these Terms of Use to the same extent and
+subject to the same conditions as other business documents and records
+originally generated and maintained in printed form.</span></p>
+
+<p class="MsoNormal"><span style='font-size:8.5pt;font-family:"Verdana","sans-serif";
+color:#595959'>The Company may revise these Terms of Use at any time by
+updating this posting. These Terms were last updated on December 7, 2012. </span></p>
+
+<p class="MsoNormal" style='line-height:10.0pt'><span style='font-size:6.5pt;
+font-family:"Verdana","sans-serif";color:#595959'>CH01/ 25989032.2 </span></p>
+
+</div>
+<!--<apex:outputField value="{!termAndCondition.Description__c}"/>-->
+</apex:pageBlock>
+</apex:form>
+</div>
+</apex:page>

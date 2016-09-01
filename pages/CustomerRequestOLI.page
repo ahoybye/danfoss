@@ -1,0 +1,74 @@
+<apex:page standardController="OpportunityLineItem" extensions="CustomerRequestExtension" showHeader="false" title="Customer Requests: {!OpportunityLineItem.Name}" rendered="{!$ObjectType.PS_Customer_Request__c.createable}">
+    <head>
+        <base target="_parent" />
+    </head>
+    <apex:form >
+    <apex:actionFunction action="{!doSort}" name="sortData" status="sortStatus" rerender="pbRequests">
+        <apex:param name="sortField" assignTo="{!sortField}" value="" />  
+    </apex:actionFunction>   
+    <br/>
+    <apex:pageBlock title="PS Customer Requests" tabStyle="PS_Customer_Request__c">
+        <apex:pageBlockButtons location="top">
+            <apex:outputLink target="_top" styleClass="btn" style="text-decoration:none;padding:4px;" value="/apex/CustomerRequestNew?id={!OpportunityLineItem.Id}">New Request</apex:outputLink>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!CRs}" var="c" rendered="{!NOT(ISNULL(CRs))}" id="pbRequests">
+            <apex:column headerValue="Action"> 
+                        <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.PS_Customer_Request__c.Edit, c.Id, [retURL='/'+c.OpptyLineItemID__c])}">Edit</apex:outputLink>
+                        <apex:outputpanel style="color:#015ba7;text-decoration:none;" rendered="{!$ObjectType.PS_Customer_Request__c.Deletable}">
+                        &nbsp;|&nbsp;
+                        </apex:outputpanel>
+                        <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.PS_Customer_Request__c.Delete, c.Id, [retURL='/'+c.OpptyLineItemID__c])}" rendered="{!$ObjectType.PS_Customer_Request__c.Deletable}">Del</apex:outputLink>  
+                    </apex:column> 
+            <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);" onclick="sortData('Name');">Request Number
+                        <img src="{!IF(sortField = 'Name',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                     <apex:outputLink value="/{!c.Id}" target="_top">{!c.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);" onclick="sortData('RecordType.Name');">Type
+                        <img src="{!IF(sortField = 'RecordType.Name',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!c.RecordType.Name}" />
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);" onclick="sortData('CreatedDate');">Created Date
+                        <img src="{!IF(sortField = 'CreatedDate',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!c.CreatedDate}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);" onclick="sortData('Customer_Requested_Date__c');">Customer Requested Date
+                        <img src="{!IF(sortField = 'Customer_Requested_Date__c',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!c.Customer_Requested_Date__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);" onclick="sortData('Status__c');">Status
+                        <img src="{!IF(sortField = 'Status__c',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!c.Status__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">
+                        <apex:outputLink value="javascript:void(0);" onclick="sortData('Owner.Name');">Owner
+                        <img src="{!IF(sortField = 'Owner.Name',IF(isAscending = true, '/img/sort_asc_arrow.gif','/img/sort_desc_arrow.gif'),'/s.gif')}" />
+                        </apex:outputLink>
+                    </apex:facet>
+                    <apex:outputField value="{!c.Owner.Name}"/>
+                </apex:column>
+        </apex:pageBlockTable>
+        <apex:outputLabel value="No records to display" rendered="{!ISNULL(CRs)}" styleClass="noRowsHeader"></apex:outputLabel>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,211 @@
+<apex:page controller="CreateCaseWithContactExtension" title="Create Case with new Contact" tabStyle="Case">
+    <apex:includeScript value="/support/console/33.0/integration.js"/>
+    <script>
+    sforce.console.setTabTitle('Search');
+    </script>
+    <apex:form id="form">
+        <apex:sectionHeader title="Un-matched Caller" />
+        <apex:pageMessages />
+        <apex:outputPanel rendered="{!createCaseUrl != null}">
+             <script>
+              
+            var targetUrl = '{!createCaseUrl}';
+            var casenumber = '{!thecase.casenumber}';
+            if (casenumber = '')
+                {
+                casenumber = 'Case:' + '{!contact.lastname}';
+                }
+            
+            if (sforce.console.isInConsole()) {
+                // It is not enough to set the location of the page, since then the tab name will not be updated
+                targetUrl += (targetUrl.indexOf("?") == -1 ? "?" : "&") + "&isdtp=vw";
+                
+                sforce.console.getEnclosingPrimaryTabId(function(result) {
+                    var primaryTabId = result.id;
+                    sforce.console.getEnclosingTabId(function(result) {
+                        var tabId = result.id;
+                            sforce.console.getSubtabIds(primaryTabId, function(result) {
+                                    var subTabIds = result.ids;
+                                        if (tabId == subTabIds[0]) {
+                                                sforce.console.openPrimaryTab(null, targetUrl, true, casenumber,tabId, name);
+                                            sforce.console.closeTab(primaryTabId);
+                                                
+                            } else {
+                               
+                                                sforce.console.openSubtab(primaryTabId, targetUrl, true, undefined, tabId);
+                                
+                            }
+                        });
+                    });
+                });
+            
+            
+            
+            } else {
+                location = targetUrl;
+            }
+                
+            
+            </script>
+        </apex:outputPanel>
+        <apex:pageBlock mode="edit" title="Do you want to update the phone number?" rendered="{!createCaseUrl = null && oldContact != null}">
+            <apex:pageBlockSection columns="1">
+                <apex:outputField value="{!oldContact.Name}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Update {!$ObjectType.Contact.fields.Phone.label}" columns="1">
+                <apex:outputField label="Existing {!$ObjectType.Contact.fields.Phone.label}" value="{!oldContact.Phone}"/>
+                <apex:outputText label="New {!$ObjectType.Contact.fields.Phone.label}" value="{!Phone}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel />
+                    <apex:commandButton value="Update {!$ObjectType.Contact.fields.Phone.label}" action="{!updateContactPhone}" rerender="form"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Update {!$ObjectType.Contact.fields.MobilePhone.label}" columns="1">
+                <apex:outputField label="Existing {!$ObjectType.Contact.fields.MobilePhone.label}" value="{!oldContact.MobilePhone}"/>
+                <apex:outputText label="New {!$ObjectType.Contact.fields.MobilePhone.label}" value="{!Phone}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel />
+                    <apex:commandButton value="Update {!$ObjectType.Contact.fields.MobilePhone.label}" action="{!updateContactMobile}" rerender="form"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Don't update number" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel />
+                    <apex:commandButton value="Don't update number" action="{!createCase}" rerender="form"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock mode="edit" rendered="{!createCaseUrl = null && oldContact = null}">
+            <apex:pageBlockSection title="Case details" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Reason Customer Called</apex:outputLabel>
+                    <apex:selectList value="{!selectedCaseRecordType}" size="1">
+                        <apex:selectOptions value="{!caseRecordTypes}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!theCase.Subject}" required="true" style="width: 100%; height: 20px"/>
+                <apex:inputField value="{!theCase.Description}"  style="width: 100%; height: 200px" />
+                </apex:pageBlockSection>
+                
+            <apex:pageBlockSection title="Contact details" columns="2">
+                <apex:inputField value="{!contact.FirstName}"/>
+                  <apex:inputField value="{!contact.Phone_Country__c}"/>
+                <apex:inputField value="{!contact.LastName}"/>
+                <apex:inputField value="{!contact.Phone_Local__c}"/>
+               <!-- <apex:inputField value="{!account.Name}"/> -->
+                <apex:inputText value="{!account.Name_2__c}" 
+                    label="Account Name Search"/>
+                
+                <apex:inputField value="{!contact.Email}"/>
+                
+              
+                
+           
+                <apex:pageBlockSectionItem >
+                    <apex:actionStatus startText="Searching..." id="searchStatus"/>
+                    <apex:commandButton value="Search" rerender="form" action="{!search}" status="searchStatus"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+
+             <apex:pageBlockSection title="Please Complete Account Details" columns="2" rendered="{!completeAcc}">
+                 <apex:inputField value="{!account.Name}"/>
+                 <apex:inputField value="{!account.ownerid}"/>
+                 <apex:inputField value="{!account.ShippingStreet}"/>
+                 <apex:inputField value="{!account.ShippingCity}"/>
+                 <apex:inputField value="{!account.ShippingPostalCode}"/>
+  
+               
+           
+       <!-- padding to space the button       <apex:pageBlockSectionItem/> -->
+                 
+                 
+                 <apex:pageBlockSectionItem >
+                         <apex:actionStatus startText="Creating Account..." id="accCreateStatus"/>
+                         <apex:commandButton action="{!selectNothing}" value="Save Account and Continue to Case" rerender="form"/>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+        
+         
+            
+            
+            <apex:pageBlockSection title="Results" rendered="{!didSearch}" columns="1">
+                
+                <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel">
+  
+                    <apex:tab label="Contacts ({!contactsCon.Resultsize})"  name="Contacts" id="tabContacts">
+                        <apex:pageBlockTable value="{!contacts}" var="c">
+                    <apex:column headerValue="Matching contacts">
+                        <apex:commandButton value="Create Case" action="{!selectContact}" rerender="form">
+                            <apex:param value="{!c.Id}" assignTo="{!selectedContactId}" name="toSelect"/>
+                        </apex:commandButton>
+                    </apex:column>
+                    <apex:repeat value="{!$ObjectType.Contact.FieldSets.CreateCaseWithContactResults}" var="field">
+                        <apex:column value="{!c[field.FieldPath]}"/>
+                    </apex:repeat>
+                </apex:pageBlockTable>
+                <apex:panelGrid columns="3">
+                    <c:PrevNextLinks setCon="{!contactsCon}" rerender="form" status="contactsStatus"/>
+                    <c:PageNumber setCon="{!contactsCon}"/>
+                    <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                        <apex:actionStatus id="contactsStatus" startText="Fetching..." stopText=""/>
+                    </apex:outputPanel>
+                </apex:panelGrid>
+                    </apex:tab>
+                    
+                    <apex:tab label="Accounts ({!accountsCon.Resultsize})" name="Accounts" id="tabAccounts" rendered="{!accountNameSearched}">
+                <apex:pageBlockTable value="{!accounts}" var="a">
+                    <apex:column headerValue="Matching accounts">
+                        <apex:commandButton value="Create Contact and Case" action="{!selectAccount}" rerender="form">
+                            <apex:param value="{!a.Id}" assignTo="{!selectedAccountId}" name="toSelect"/>
+                        </apex:commandButton>
+                    </apex:column>
+                    <apex:repeat value="{!$ObjectType.Account.FieldSets.CreateCaseWithContactResults}" var="field">
+                        <apex:column value="{!a[field.FieldPath]}"/>
+                    </apex:repeat>
+                </apex:pageBlockTable>
+                <apex:panelGrid columns="3">
+                    <c:PrevNextLinks setCon="{!accountsCon}" rerender="form" status="accountsStatus"/>
+                    <c:PageNumber setCon="{!accountsCon}"/>
+                    <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                        <apex:actionStatus id="accountsStatus" startText="Fetching..." stopText=""/>
+                    </apex:outputPanel>
+                </apex:panelGrid>
+                    </apex:tab>
+                    
+                    <apex:tab label="Cases ({!casesCon.Resultsize})" name="Cases" id="tabCases"> 
+                <apex:pageBlockTable value="{!cases}" var="c">
+                    <apex:column headerValue="Matching cases">
+                        <apex:commandButton value="Go To Case" action="{!selectCase}" rerender="form">
+                            <apex:param value="{!c.Id}" assignTo="{!selectedCaseId}" name="toSelect"/>
+                        </apex:commandButton>
+                    </apex:column>
+                    <apex:repeat value="{!$ObjectType.Case.FieldSets.CreateCaseWithContactResults}" var="field">
+                        <apex:column value="{!c[field.FieldPath]}"/>
+                    </apex:repeat>
+                </apex:pageBlockTable>
+                    
+                    
+                <apex:panelGrid columns="3">
+                    <c:PrevNextLinks setCon="{!casesCon}" rerender="form" status="casesStatus"/>
+                    <c:PageNumber setCon="{!casesCon}"/>
+                    <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                        <apex:actionStatus id="casesStatus" startText="Fetching..." stopText=""/>
+                    </apex:outputPanel>
+                </apex:panelGrid>
+                
+                        </apex:tab> 
+                    
+                     <apex:tab label="Other Options" name="Other " id="tabOther">
+                <apex:commandButton value="Create Account, Contact and Case" action="{!selectNothingAdv}" rendered="{!accountNameSearched && !completeAcc}" rerender="form"/> 
+                <apex:commandButton value="Create Case without a Contact" action="{!selectNoContact}" rerender="form"/>
+                    </apex:tab>
+                    
+                      
+                    
+                     </apex:tabPanel>   
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

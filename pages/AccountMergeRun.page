@@ -1,0 +1,3 @@
+<apex:page standardController="Account_Merge_Request__c" action="{!runBatch}" extensions="AccountMergeRunController">
+    <apex:messages />
+</apex:page>

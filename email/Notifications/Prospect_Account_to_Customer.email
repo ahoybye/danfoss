@@ -1,0 +1,40 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="1" aEditID="c1r2" >
+<![CDATA[<font class="Apple-style-span" face="arial" size="3" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);">Hello,</font> 
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><br></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">{!Account.Name} should be updated from Prospect type to Customer type in Salesforce.com.</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><b><u>Account details:</u></b></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><b>Reason for Becoming an Account:&nbsp;</b>{!Account.Reason_For_Becoming_a_Direct_Account__c}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><b>Language:&nbsp;</b>&nbsp;{!Account.Language__c}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><b>Supplier / Vendor Code:&nbsp;</b>&nbsp;{!Account.Supplier_Code_Vendor_Code__c}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);">
+<div style="font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><b>Vat Number: &nbsp;</b>{!Account.VAT_Reg_No__c}</font></div>
+<div style="font-size: 12pt; background-color: rgb(255, 255, 255);">&nbsp;</div>
+<div style="font-size: 12pt; background-color: rgb(255, 255, 255);"><strong>Parent Account:</strong> {!Account.Parent}</div></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><strong><u>Shipping Address</u></strong></font></div>{!Account.Name}
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);">{!Account.ShippingAddress}</div>
+<p>&nbsp;</p>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><u><b>Billing Address</b></u></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">{!Account.Name}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">{!Account.BillingAddress}</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"></font>&nbsp;</div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><b><u>Sales Orgs</u></b></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">{!Account.Sales_Org__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);">&nbsp;</div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><b><u>Terms</u></b></font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><strong>Suggested Payment Terms: </strong>{!Account.Suggested_Payment_Terms__c}</font></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><strong>Suggested Incoterms: </strong>{!Account.Suggested_Incoterms__c}</font></div></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><br></font></div>
+<div style="background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><font size="3">Link to&nbsp;{!Account.Name}&nbsp;</font><font color="#0000ee"><u>{!Account.Link}</u></font><font size="3">.</font></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial"><br></font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">Thank you,</font></div>
+<div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);"><font class="Apple-style-span" face="arial">{!Account.OwnerFullName}</font></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

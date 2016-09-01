@@ -1,0 +1,17 @@
+<apex:page standardController="Quote" extensions="UserLanguage">
+
+<apex:form >
+    <table>
+        <tr>
+            <td style="width: 200px">
+                <div style="font-family: Arial; font-size: 8.5pt; color: #4a4a56;"><apex:outputLabel ><b>Change Language</b></apex:outputLabel></div>
+                <apex:inputField id="name" value="{!newLanguage.LanguageLocaleKey}"/>
+                <apex:commandButton value="Update" action="{!getUpdateLanguage}" oncomplete="window.top.location='/{!Quote.id}'; return false" />
+            </td>
+            <td style="font-family: Arial; font-size: 8.5pt; color: #4a4a56; font-weight:bold">
+                To Change the language of the quote template, select language here and press update.<br/>Once the PDF is printed do the same to return it to your standard language setting.
+            </td>
+        </tr>
+    </table>
+    </apex:form>
+</apex:page>

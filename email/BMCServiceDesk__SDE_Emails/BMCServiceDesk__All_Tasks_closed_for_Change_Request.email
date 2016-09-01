@@ -1,0 +1,16 @@
+<messaging:emailTemplate subject="All Tasks Linked To Change Request <{!relatedto.Name}> are Closed" recipientType="User" relatedToType="BMCServiceDesk__Change_Request__c">
+<messaging:htmlEmailBody >
+<html>
+<body>
+Hello, <br></br>
+<br></br>
+All Tasks linked to Change Request<i>#{!relatedto.Name}</i> are closed. 
+<br></br>
+<br/>
+
+
+&nbsp;&nbsp;Description: {!relatedto.BMCServiceDesk__Change_Description__c} <br/>
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

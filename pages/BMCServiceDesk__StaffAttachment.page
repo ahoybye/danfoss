@@ -1,0 +1,134 @@
+<apex:page controller="BMCServiceDesk.StaffAttachmentController" sidebar="false" showHeader="false">
+<head>
+  <title>{!HTMLENCODE($Label.AttachViewFiles)}</title>
+  <link rel="stylesheet" type="text/css" href="{!$Resource.ExtJS4_1_3}/resources/css/ext-all.css" />
+  <link rel="stylesheet" type="text/css" href="{!$Resource.BMCRFSDEFStyles}/LinkMultipleCIPage.css" />               
+  <link href="{!$Resource.BMCRFSDEFStyles}/Images" />
+</head>
+<script>
+      window.onunload = refreshParent;
+      function refreshParent() {
+            if(parentID != null && parentID != '' && refreshParentWin) {
+                  window.opener.refreshRelatedLists();
+            }
+      }
+</script>
+
+<style>
+#file-add-btn{margin-left:40px;}
+.progressbar-cls{
+background: url("{!$Resource.SDEFStyles}/SDEFimages/custom-bar.gif") repeat-x scroll 0 0 transparent;
+}
+.fileNameColumn{max-width:550px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+</style>
+  <apex:form id="mainFormId" style="min-width:500px;" >
+        <apex:actionFunction name="attachFile"  action="{!attachFile}"   />
+        <apex:actionFunction name="first"  action="{!Beginning}" />
+        <apex:actionFunction name="previous"  action="{!Previous}"   />  
+        <apex:actionFunction name="next"  action="{!Next}"   /> 
+        <apex:actionFunction name="end"  action="{!End}"   /> 
+        <apex:actionFunction action="{!createAttRefGenerator}" name="createAttRefGenerator"/>
+        <apex:actionRegion >
+        <apex:actionFunction action="{!deleteAttachment}" name="deleteAttachment" reRender="pgeBlkId,refreshAfterDelete" >
+          <apex:param name="attachId" assignTo="{!attachmentId}" value=""/>
+        </apex:actionFunction>
+        </apex:actionRegion>
+        <table border="0"  id="attacheHeaderId" style="height:50px;width:100%;background:#EBEBEB;border: 1px solid #AEBAC1;"> 
+          <tr>
+            <td width="30" ><img   style="padding-left:10px;" id="file-info-icon" src="{!$Resource.SSThemes}/SSDefaultTheme/SDEFicons/status-16-information.png" title="{!$Label.SS_AttachmentLimit}" /></td>
+            <td width="40"><apex:outputLabel style="width:40px;" value="{!$Label.BMCServiceDesk__File}"  /></td>
+            <td width="350" ><apex:inputFile id="inputFile" style="min-height:/*\**/20px\9; vertical-align: middle;" fileName="{!attachment.name}"  fileSize="{!filesize}" value="{!attachment.body}"  size="40"  onchange="AddAttachment();" disabled="{!isReadonly}" /></td>
+            <td>
+                <div id="loading_img" style="height:15px;border:1px solid #000;display:none;width:20%;" class="progressbar-cls" />
+            </td>
+          </tr>
+        </table>
+       
+       <apex:pageBlock title="{!JSENCODE($Label.BMCServiceDesk__Attachments)}" >
+       <apex:outputPanel layout="block" style="height: 270px;">
+          <apex:pageBlockTable value="{!AttachmentData}" var="item" style="min-width:150px;" id="pgeBlkId" columnsWidth="20%,40%,20%,20%">
+            <apex:column headerValue="{!JSENCODE($Label.BMCServiceDesk__Action)}">
+              <a  style="color:#015BA7;cursor:pointer;"  class="actionLink" onClick="openAttchment('{!item.Id}');" >{!JSENCODE($Label.View)}</a>
+              <apex:outputpanel rendered="{!IF(isReadonly == true,false,true)}"> <span style="color:#999999">|</span>
+              <a  style="color:#015BA7;cursor:pointer;"  class="actionLink" onClick="deleteAttachmentHandler('{!item.Id}');" >{!JSENCODE($Label.Del)}</a>
+              </apex:outputpanel>
+              </apex:column>
+             
+              <apex:column headerValue="{!JSENCODE($Label.BMCServiceDesk__File)}">
+                  <div class="fileNameColumn"><apex:outputText value="{!item.name}" title="{!item.name}"/></div>
+              </apex:column>        
+              <apex:column headerValue="{!JSENCODE($Label.BMCServiceDesk__DateAndTime)}" value="{!item.LastModifiedDate}"/>   
+              <apex:column onmouseover="return false;" value="{!item.CreatedById}"/> 
+          </apex:pageBlockTable>
+    </apex:outputPanel>
+      <div id="toolbarDiv" class="border1px" style="position:relative;">
+            <div id="innertoolbar" align="center" class="padding5px">
+          <span class="paginatorClass">                                  
+          <span >
+              <apex:outputPanel rendered="{!IF(!disablePrevious == true,true,false)}">
+              <img class="firstPageEnableClass" title="{!$Label.FirstPage}" src="/s.gif"  onClick="first();"/> 
+                <span class="prevClass" onClick="return previous();">
+                      <img class="previousPageEnableClass" title="{!$Label.PreviousPage}" src="/s.gif"/>                                                                                                                           
+                         <apex:outputText value="{!$Label.BMCServiceDesk__Previous}" styleclass="prevLinkEnableClass"/> 
+                  </span >
+              </apex:outputPanel>
+              <apex:outputPanel rendered="{!IF(!disablePrevious == false,true,false)}">
+                <span >
+                    <img class="firstPageDisableClass" title="{!$Label.FirstPage}" src="/s.gif"/> 
+                      <img class="previousPageDisableClass" title="{!$Label.PreviousPage}" src="/s.gif"/>                                                                                               
+                        <apex:outputText value="{!$Label.BMCServiceDesk__Previous}" styleClass="prevLinkDisableClass"/> 
+                  </span >
+              </apex:outputPanel>
+          </span >
+          &nbsp;&nbsp;                    
+          <span >
+            <apex:outputPanel rendered="{!IF(!disableNext == true,true,false)}">
+                <span class="nextClass" onClick="return next();">                                                                                                                                                           
+                    <apex:outputText value="{!$Label.BMCServiceDesk__Next}" styleclass="nextLinkEnableClass"/>
+                    <img class="nextPageEnableClass" title="{!$Label.NextPage}" src="/s.gif"/>
+                  </span >
+                  <img class="lastPageEnableClass" title="{!$Label.LastPage}" src="/s.gif"  onClick="end();"/> 
+              </apex:outputPanel>
+              <apex:outputPanel rendered="{!IF(!disableNext == false,true,false)}">
+                <span >                                
+                    <apex:outputText value="{!$Label.BMCServiceDesk__Next}" styleClass="nextLinkDisableClass"/> 
+                      <img class="nextPageDisableClass" title="{!$Label.NextPage}" src="/s.gif"/> 
+                      <img class="lastPageDisableClass" title="{!$Label.LastPage}" src="/s.gif"/> 
+                  </span >
+              </apex:outputPanel>
+          </span>
+          </span>
+      </div>
+      </div>
+      </apex:pageBlock> 
+    
+      <button type="button" class="btn" onclick="closeWindow();" style="float:left;margin-left:15px;">{!JSENCODE($Label.Close)}</button>
+      
+    <apex:outputpanel id="refreshAttRefGeneratorId">
+        <script>
+        var message = '{!validateUrlAndAttachment}';
+        if(message != null && message != '')
+          alert(message);
+        
+        var confirmationMessage = '{!JSENCODE($Label.DeleteConfirmMessage)}';
+        var inputfileid = '{!$Component.mainFormId.inputFile}';
+        var MaxSizeLimit = '{!JSENCODE($Label.SSDocumentSizeLimitExceedsMessage)}';
+        var AttRefGeneratorID='{!JSENCODE(AttRefGeneratorID)}';
+        var parentID = '{!JSENCODE(parentId)}';
+        var maxAttachmentSizeInBytes = {!MaxAttachmentSize};
+        if(AttRefGeneratorID != null && AttRefGeneratorID != '')
+        {
+            window.opener.AttRefGeneratorID=AttRefGeneratorID;
+            window.opener.setAttRefGeneratorId(AttRefGeneratorID);
+        }
+       </script>
+    </apex:outputpanel>
+      <apex:outputpanel id="refreshAfterDelete">
+      <script>
+      var refreshParentWin={!refreshParent};
+      </script>
+      </apex:outputpanel>
+  </apex:form>
+  <script src="{!$Resource.ExtJS4_1_3}/ext-all.js" type="text/javascript" />
+  <script src="{!$Resource.SDEFCommonJS}/StaffAttachment.js"  type="text/javascript" />
+</apex:page>

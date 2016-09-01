@@ -1,0 +1,9 @@
+Description: {!BMCServiceDesk__Change_Request__c.BMCServiceDesk__Change_Description__c} 
+Please Approve/Reject the Change Request  
+   Approve by replying on this mail with the word: yes  
+   Reject by replying to this mail with the word: no  
+  
+You can add a comment to your reply by putting it directly after yes/no 
+e.g.: no this is not good enough. 
+ 
+For more information about the Change Request, please go directly to the Change Request by this link {!BMCServiceDesk__Change_Request__c.Link}

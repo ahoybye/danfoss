@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Marketing Attribute Setup</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Marketing Attribute Setup</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attribute Set --></label>
+        <name>Attribute_Set__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooling</masterLabel>
+            <translation><!-- Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District Energy</masterLabel>
+            <translation><!-- District Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives</masterLabel>
+            <translation><!-- Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating Solutions</masterLabel>
+            <translation><!-- Heating Solutions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attribute --></label>
+        <name>Attribute__c</name>
+    </fields>
+    <fields>
+        <help><!-- The API name of the controlling field --></help>
+        <label><!-- Controlling Field --></label>
+        <name>Controlling_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- When the controlling field has this value, the picklist values given in this row will be available --></help>
+        <label><!-- Controlling Value --></label>
+        <name>Controlling_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooling</masterLabel>
+            <translation><!-- Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives</masterLabel>
+            <translation><!-- Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ID --></label>
+        <name>ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Type --></label>
+        <name>Object_Type__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Picklist Values --></label>
+        <name>Picklist_Values__c</name>
+    </fields>
+    <fields>
+        <label><!-- Synch to Account --></label>
+        <name>Synch_to_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>multivalue picklist</masterLabel>
+            <translation><!-- multivalue picklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>number</masterLabel>
+            <translation><!-- number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>picklist</masterLabel>
+            <translation><!-- picklist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>text</masterLabel>
+            <translation><!-- text --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

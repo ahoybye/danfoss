@@ -1,0 +1,3833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>Alt__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Alt text will be used for the Spots images.</inlineHelpText>
+        <label>Alt</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Banner_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Banner Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Top Banner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MarComm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Business_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Org</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Component_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Component Type</label>
+        <picklist>
+            <controllingField>Object__c</controllingField>
+            <picklistValues>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Presentation Archives</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Design Kit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>e-Signature Guidelines</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Explore Ideas</fullName>
+                <default>false</default>
+                <controllingFieldValues>Idea</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Image Bank</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Information Hub</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Literature</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing Handbook</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Need A Logo?</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Press Releases</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricing &amp; Tools</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Promotional Items</fullName>
+                <default>false</default>
+                <controllingFieldValues>Static</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unique Selling Points Handbooks</fullName>
+                <default>false</default>
+                <controllingFieldValues>Content</controllingFieldValues>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Content_Type_to_Query__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Type to Query</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assembly Specification</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Presentations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interactive Content</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Let&apos;s Torque</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Press Release</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price Book</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price File</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricing Tool</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Bulletin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test Specification</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unique Selling Points Handbook</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Object__c</fullName>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Idea</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Content</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Static</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Page__c</fullName>
+        <description>Page where the record will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Page</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ImageBank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>InformationHub</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LogoBank</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MarketingToolbox</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PartnerPortalHome</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Left</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Middle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Right</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Top Left</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Top Right</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bottom Left</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bottom Right</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Products__c</fullName>
+        <externalId>false</externalId>
+        <label>Products</label>
+        <picklist>
+            <picklistValues>
+                <fullName>24 PIN Transparent Microcontrollers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50 PIN Transparent Microcontrollers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CG150 CAN/USB gateway interface communicator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CS1000 Slope Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss Reverse Displacement Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DDC20 20cm3 Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DH 80cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DS 160cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSW Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EHF Electrohydraulic Boxes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EHPS-2 Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EHPS OLS320 Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EHPS Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EHSC Electrohydraulic Boxes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EHS Electrohydraulic Boxes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EH Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMD Speed Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drive Controller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drive Controller - mounted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 110cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 115cm3 Pump AC with wire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 115cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 147/165cm3 Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 147/165cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 147/165cm3 Pump with ISL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 160cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 250cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 250cm3 Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 45/53cm3 and 69/78cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 45/53cm3 Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 45/53cm3 Pump with FDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 45/53cm3 Tandem Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 45cm3 and 53cm3 Tandem Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 45cm3 Pump with AC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 45cm3 Pump with FDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 53cm3 Tandem Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 60cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 60cm3 Pump with AC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 78cm3 Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 78cm3 Pump with AC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 78cm3 Pump with AC and wire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 78cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 80cm3 Bent Axis Motor DIN Housing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 89cm3 Pump AC with wire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 89cm3 Pump with AC and Extra Connector</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 89cm3 Pump with AC and Speed Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 89cm3 Pump with AC wire - Close-up</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 89cm³ Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 Remote Filter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1 Tandem Charge Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>J1939 PROF 1 Joystick - 3 Proportional 6 CAN Left Hand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS1000 Joystck Ball-Grip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS1000 Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS1000 Joystick Progrip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS1000 Joystick Progrip XY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS1000 Joystick Rocker Switch Grip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS1000 L Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS100 Joystick Progrip XY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS120 Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS2000 Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS2000 Joystick E1-E5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS6000 Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS6000 Joystick A Grip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS6000 Joystick MG-Grip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JS7000 Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KEP Foot Pedal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LDU20 20cm3 U Style Transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>L Frame Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LK Frame Motor with Speed Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LPV Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LV/KV Frame Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MBS2250 Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCH Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCX103 400 Slope Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCX104-CAN Slope Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MSS100 Multi Sonic Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MSS100 Multi Sonic Sensor - Ceramic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLS 120 l/m Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLS 160 l/m Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLS 320 l/m Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLS 320 l/m Steering Valve with EHPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLS 80 l/m Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLSA 80 l/m Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OLSP 80 l/m Steering Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMEW 200cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMH 315 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OML 8cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMM 20cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMM 32cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMM 32cm3 Orbital Motor (end ports)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMM 50cm3 Orbital Motor with EMD Speed Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMM 50cm3 Orbital Motor with EMD Speed Sensor (back view)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMP 100 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMP 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMP 315cm3 EMD-2 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMP 315cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMP 50cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMPV 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMR 160 cm3 FL Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMR 200 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMR 200 cm3 Orbital Motor Sectional View</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMR Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMRS 200cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMR-WN50 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMS 200cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMS 500cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMS 80 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMSH Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMS Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMSS 250 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMSW 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMSW 250cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMT 160 cm3 Orbital Motor Sectional View</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMT 200 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMT 315 cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMTS 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMV 315cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMV Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPC 315cm3 LS Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPC 50cm3 OLSA40 Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPD 100-200cm3 Steering unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPDF EHA Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPE EH Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSP EH Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPE Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPF 230cm3 LS Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPF 250cm3 LS Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPF EH PVED SASA Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPF SASA Steering Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPL 1000cm3 Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPM 100cm3 Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPM 320N Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPMS Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPQ 160-320 LS Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSP SASA x Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSPU 70-200 LS Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OSQA OLSQ 80 Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OVPL 240 Steering Valve Block</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP200 Display</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP200 Display with color screen on</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP200 Display with screen on</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP210 Display</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP250 Display</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP570 display front view with color screen on</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP600 Display</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP600 Display with color screen on</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP600 Display with screen on</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 DP700 Display front view with color screen on</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC24 Microcontrollers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC50 24 PIN Microcontrollers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC50 Microcontrollers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC88 Microcontrollers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC90 Microcontrollers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC Controller 12 PIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC Controller 24 PIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC Controller 50 PIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 MC Controller 88 PIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 SC Controller 24 PIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 SC Controller 50 PIN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLUS+1 SC Controller 50 PIN 055</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pressure Transmitter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PROF 1 Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PROF 1 Joystick Right Hand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVBM Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVBZ 32-2 SEC Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVBZ-HD Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVBZ-HS Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVBZ M22x15 Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVBZ Manifold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVED-CX Back</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVED-CX Front</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVE-NP Electrohydraulic Actuator Cable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVEP Electrohydraulic Actuator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 100-32 Backhoe Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 100 Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 100 Valve High Flow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 120-32 Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 120 Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 16 Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32-100 Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32 2x2 SEC-PVBZ Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG-32-4 SEC PVBZ Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32-4 SEC Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32-5 SEC-PVB Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32-5 SEC-Series Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG-32-6 SEC Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32-8 SEC Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32 Hitch Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32 Hitch Group 4 SEC Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32-PVBZZ-6 SEC Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG 32 Valve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG and HIC Combination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG H1C 5-Function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVHC Electrohydraulic Actuator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVRE Joystick Series 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVREL Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVRES Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVRET Joystick Series 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVRHH Joystick 155N0001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVRHH Joystick 155N0005</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reverse Displacement Motor update</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S42 28cm³ HC-EDC Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S45 Pump Frame E</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S45 Pump Frame F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S45 Pump Frame G</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S45 Pump Frame J</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S45 Pump Frame J with EPC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S45 Pump Frame K</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51 110cm3 Motor with P7P7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51 160cm3 Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51-1 Motor E1-E1-F1-F2 Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51-1 Motor L1-L2-L3-L7 Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51-1 Motor P7-P7-P8-P8 Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51 80cm3 Motor with ADA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51 Motor DAM4 or DAM6 Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S51 Motor THD7 Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 100cm3 Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 130cm3 Pump BF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 130cm3 Pump KAI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 75cm3 Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 75cm3 Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 75cm3 Pump KA2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 75cm3 Pump NFPE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S90 DC-DD Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SASA Steering Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Speedsensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Speed Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steering Sensor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telematics WS403 Remote Solution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TME Electronic Remote Station</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMG Gear Box</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMG Gear Box 61.2kNm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMK 160 cm3 FL Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMK 400 cm3 FL Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMKW 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMKW 400 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMM 89cm3 Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMP 89cm3 Pump EDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMP 89cm3 Pump MDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMP 89cm3 Pump NFPE 24-02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMT 315 cm3 EMD-2 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMT 315 cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMT315 cm3 FLV2 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMT 470 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMT 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMTH 570 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMTHW 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMTU 470 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMVW 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tracker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transit Mixer Controller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ultrasonic Auger Feeder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VMR 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VSP 100cm3 ON 1 Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VSP 100cm3 ON 2 Steering Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yoyo 388</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Americas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>default</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <recordTypes>
+        <fullName>Marketing_Panel</fullName>
+        <active>true</active>
+        <description>Panel used on the Marketing Toolbox Page</description>
+        <label>Marketing Panel</label>
+        <picklistValues>
+            <picklist>Banner_Type__c</picklist>
+            <values>
+                <fullName>MarComm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Banner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Component_Type__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentation Archives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Explore Ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Image Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Handbook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need A Logo%3F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Releases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing %26 Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbooks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>e-Signature Guidelines</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Type_to_Query__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assembly Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Let%27s Torque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Release</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price Book</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbook</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Static</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page__c</picklist>
+            <values>
+                <fullName>InformationHub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MarketingToolbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PartnerPortalHome</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Yoyo 388</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Americas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>default</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Page_Information</fullName>
+        <active>true</active>
+        <description>Stores information displayed on a VisualForce Page in the portal</description>
+        <label>Page Information</label>
+        <picklistValues>
+            <picklist>Banner_Type__c</picklist>
+            <values>
+                <fullName>MarComm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Banner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Component_Type__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentation Archives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Explore Ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Image Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Handbook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need A Logo%3F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Releases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing %26 Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbooks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>e-Signature Guidelines</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Type_to_Query__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assembly Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Let%27s Torque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Release</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price Book</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbook</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Static</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page__c</picklist>
+            <values>
+                <fullName>ImageBank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LogoBank</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Yoyo 388</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Americas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>default</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Panel</fullName>
+        <active>true</active>
+        <description>Configure panel widgets on a portal custom visual force home page</description>
+        <label>Panel</label>
+        <picklistValues>
+            <picklist>Banner_Type__c</picklist>
+            <values>
+                <fullName>MarComm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Banner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Component_Type__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentation Archives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Explore Ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Image Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Handbook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need A Logo%3F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Releases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing %26 Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbooks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>e-Signature Guidelines</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Type_to_Query__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assembly Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Let%27s Torque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Release</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price Book</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbook</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Static</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page__c</picklist>
+            <values>
+                <fullName>InformationHub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MarketingToolbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PartnerPortalHome</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position__c</picklist>
+            <values>
+                <fullName>Bottom Left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bottom Right</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Right</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Yoyo 388</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Americas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>default</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Spots</fullName>
+        <active>true</active>
+        <description>Spots - Marketing call outs</description>
+        <label>Spots</label>
+        <picklistValues>
+            <picklist>Banner_Type__c</picklist>
+            <values>
+                <fullName>MarComm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Banner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Component_Type__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Explore Ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing %26 Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page__c</picklist>
+            <values>
+                <fullName>PartnerPortalHome</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position__c</picklist>
+            <values>
+                <fullName>Left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Right</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Yoyo 388</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Americas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>default</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Tools</fullName>
+        <active>true</active>
+        <description>Portal Banner used for the Tools VisualForce Page</description>
+        <label>Tools</label>
+        <picklistValues>
+            <picklist>Banner_Type__c</picklist>
+            <values>
+                <fullName>MarComm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Banner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Component_Type__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentation Archives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Design Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Explore Ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Image Bank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Handbook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Need A Logo%3F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Releases</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing %26 Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promotional Items</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbooks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>e-Signature Guidelines</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Content_Type_to_Query__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assembly Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Presentations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interactive Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Let%27s Torque</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Release</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price Book</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price File</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing Tool</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Specification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unique Selling Points Handbook</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Object__c</picklist>
+            <values>
+                <fullName>Content</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Idea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Static</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page__c</picklist>
+            <values>
+                <fullName>ImageBank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>InformationHub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LogoBank</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MarketingToolbox</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PartnerPortalHome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tools</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bottom Left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bottom Right</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Right</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Right</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>24 PIN Transparent Microcontrollers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 PIN Transparent Microcontrollers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CG150 CAN%2FUSB gateway interface communicator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS1000 Slope Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DDC20 20cm3 Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DH 80cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DS 160cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DSW Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Danfoss Reverse Displacement Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EH Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EHF Electrohydraulic Boxes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EHPS OLS320 Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EHPS Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EHPS-2 Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EHS Electrohydraulic Boxes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EHSC Electrohydraulic Boxes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EMD Speed Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fan Drive Controller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fan Drive Controller - mounted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 110cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 115cm3 Pump AC with wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 115cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 147%2F165cm3 Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 147%2F165cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 147%2F165cm3 Pump with ISL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 160cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 250cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 250cm3 Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 45%2F53cm3 Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 45%2F53cm3 Pump with FDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 45%2F53cm3 Tandem Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 45%2F53cm3 and 69%2F78cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 45cm3 Pump with AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 45cm3 Pump with FDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 45cm3 and 53cm3 Tandem Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 53cm3 Tandem Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 60cm3 Bent Axis Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 60cm3 Pump with AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 78cm3 Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 78cm3 Pump with AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 78cm3 Pump with AC and wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 78cm3 Pump with EDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 80cm3 Bent Axis Motor DIN Housing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 89cm%C2%B3 Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 89cm3 Pump AC with wire</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 89cm3 Pump with AC and Extra Connector</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 89cm3 Pump with AC and Speed Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 89cm3 Pump with AC wire - Close-up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 Remote Filter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>H1 Tandem Charge Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>J1939 PROF 1 Joystick - 3 Proportional 6 CAN Left Hand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS100 Joystick Progrip XY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS1000 Joystck Ball-Grip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS1000 Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS1000 Joystick Progrip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS1000 Joystick Progrip XY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS1000 Joystick Rocker Switch Grip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS1000 L Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS120 Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS2000 Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS2000 Joystick E1-E5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS6000 Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS6000 Joystick A Grip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS6000 Joystick MG-Grip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JS7000 Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KEP Foot Pedal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>L Frame Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDU20 20cm3 U Style Transmission</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LK Frame Motor with Speed Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LPV Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LV%2FKV Frame Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MBS2250 Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCH Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCX103 400 Slope Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MCX104-CAN Slope Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSS100 Multi Sonic Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MSS100 Multi Sonic Sensor - Ceramic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLS 120 l%2Fm Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLS 160 l%2Fm Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLS 320 l%2Fm Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLS 320 l%2Fm Steering Valve with EHPS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLS 80 l%2Fm Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLSA 80 l%2Fm Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OLSP 80 l%2Fm Steering Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMEW 200cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMH 315 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OML 8cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMM 20cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMM 32cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMM 32cm3 Orbital Motor %28end ports%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMM 50cm3 Orbital Motor with EMD Speed Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMM 50cm3 Orbital Motor with EMD Speed Sensor %28back view%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMP 100 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMP 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMP 315cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMP 315cm3 EMD-2 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMP 50cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMPV 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMR 160 cm3 FL Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMR 200 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMR 200 cm3 Orbital Motor Sectional View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMR Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMR-WN50 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMRS 200cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMS 200cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMS 500cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMS 80 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMS Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMSH Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMSS 250 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMSW 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMSW 250cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMT 160 cm3 Orbital Motor Sectional View</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMT 200 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMT 315 cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMTS 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMV 315cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OMV Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSP EH Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSP SASA x Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPC 315cm3 LS Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPC 50cm3 OLSA40 Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPD 100-200cm3 Steering unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPDF EHA Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPE EH Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPE Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPF 230cm3 LS Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPF 250cm3 LS Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPF EH PVED SASA Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPF SASA Steering Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPL 1000cm3 Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPM 100cm3 Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPM 320N Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPMS Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPQ 160-320 LS Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSPU 70-200 LS Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OSQA OLSQ 80 Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OVPL 240 Steering Valve Block</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP200 Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP200 Display with color screen on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP200 Display with screen on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP210 Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP250 Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP570 display front view with color screen on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP600 Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP600 Display with color screen on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP600 Display with screen on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 DP700 Display front view with color screen on</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC Controller 12 PIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC Controller 24 PIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC Controller 50 PIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC Controller 88 PIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC24 Microcontrollers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC50 24 PIN Microcontrollers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC50 Microcontrollers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC88 Microcontrollers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 MC90 Microcontrollers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 SC Controller 24 PIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 SC Controller 50 PIN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PLUS%2B1 SC Controller 50 PIN 055</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROF 1 Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PROF 1 Joystick Right Hand</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVBM Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVBZ 32-2 SEC Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVBZ M22x15 Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVBZ Manifold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVBZ-HD Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVBZ-HS Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVE-NP Electrohydraulic Actuator Cable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVED-CX Back</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVED-CX Front</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVEP Electrohydraulic Actuator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 100 Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 100 Valve High Flow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 100-32 Backhoe Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 120 Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 120-32 Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 16 Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32 2x2 SEC-PVBZ Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32 Hitch Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32 Hitch Group 4 SEC Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32 Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32-100 Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32-4 SEC Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32-5 SEC-PVB Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32-5 SEC-Series Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32-8 SEC Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG 32-PVBZZ-6 SEC Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG H1C 5-Function</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG and HIC Combination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG-32-4 SEC PVBZ Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG-32-6 SEC Valve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVHC Electrohydraulic Actuator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVRE Joystick Series 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVREL Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVRES Joystick</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVRET Joystick Series 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVRHH Joystick 155N0001</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVRHH Joystick 155N0005</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pressure Transmitter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reverse Displacement Motor update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S42 28cm%C2%B3 HC-EDC Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S45 Pump Frame E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S45 Pump Frame F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S45 Pump Frame G</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S45 Pump Frame J</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S45 Pump Frame J with EPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S45 Pump Frame K</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51 110cm3 Motor with P7P7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51 160cm3 Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51 80cm3 Motor with ADA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51 Motor DAM4 or DAM6 Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51 Motor THD7 Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51-1 Motor E1-E1-F1-F2 Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51-1 Motor L1-L2-L3-L7 Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S51-1 Motor P7-P7-P8-P8 Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 100cm3 Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 130cm3 Pump BF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 130cm3 Pump KAI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 75cm3 Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 75cm3 Pump</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 75cm3 Pump KA2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 75cm3 Pump NFPE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S90 DC-DD Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SASA Steering Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speed Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speedsensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering Sensor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TME Electronic Remote Station</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMG Gear Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMG Gear Box 61%2E2kNm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMK 160 cm3 FL Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMK 400 cm3 FL Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMKW 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMKW 400 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMM 89cm3 Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMP 89cm3 Pump EDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMP 89cm3 Pump MDC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMP 89cm3 Pump NFPE 24-02</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMT 315 cm3 EMD Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMT 315 cm3 EMD-2 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMT 470 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMT 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMT315 cm3 FLV2 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMTH 570 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMTHW 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMTU 470 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TMVW 500 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telematics WS403 Remote Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tracker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transit Mixer Controller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultrasonic Auger Feeder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VMR 160 cm3 Orbital Motor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VSP 100cm3 ON 1 Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VSP 100cm3 ON 2 Steering Unit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yoyo 388</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Americas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>default</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Top_Banner</fullName>
+        <active>true</active>
+        <description>Top Banner by Region</description>
+        <label>Top Banner</label>
+        <picklistValues>
+            <picklist>Banner_Type__c</picklist>
+            <values>
+                <fullName>MarComm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top Banner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Component_Type__c</picklist>
+            <values>
+                <fullName>Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Explore Ideas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing %26 Tools</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Information Bulletin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical Literature</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page__c</picklist>
+            <values>
+                <fullName>PartnerPortalHome</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position__c</picklist>
+            <values>
+                <fullName>Left</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Middle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Right</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Products__c</picklist>
+            <values>
+                <fullName>Yoyo 388</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Region__c</picklist>
+            <values>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Americas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>default</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Must_Select_one_or_more_values</fullName>
+        <active>true</active>
+        <description>Must Select one or more values for ‘Content Type to Query’ if ‘Object’ = Content</description>
+        <errorConditionFormula>AND(ISBLANK(Content_Type_to_Query__c), TEXT(Object__c) == &apos;Content&apos;)</errorConditionFormula>
+        <errorDisplayField>Content_Type_to_Query__c</errorDisplayField>
+        <errorMessage>Please specify Content Type to Query.</errorMessage>
+    </validationRules>
+</CustomObject>

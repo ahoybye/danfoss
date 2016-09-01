@@ -1,0 +1,283 @@
+<apex:page standardController="ccpe_ppm__Program__c" extensions="ccpe_ppm.ProgramGanttController">
+
+	<apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+	<c:tree parentId="{!ccpe_ppm__Program__c.Id}" parentName="{!ccpe_ppm__Program__c.Name}" />
+
+	<apex:sectionHeader title="{!ccpe_ppm__Program__c.Name}" subtitle="Program Gantt View"/>
+
+	<apex:pageMessages />
+
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__ext_js, '/ext-all.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__ext_js_plugins, '/bryntum/gantt/gnt-all-debug.js')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ext_js, '/resources/css/ext-all.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ext_js_plugins, '/bryntum/gantt/resources/css/sch-gantt-all.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__ccprojex_customui,'/pulse/font-awesome/css/font-awesome.css')}" />
+
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/jquery.colorbox.js')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/colorbox.css')}" />
+
+	<script type="text/javascript">
+
+		Ext.ns('ProjectsGantt');
+		Ext.ns('DetailGantt');
+		Ext.QuickTips.init(); 
+
+		Ext.require([
+			'Sch.plugin.Pan'
+		]);
+
+		Ext.onReady(function() {
+			ProjectsGantt.Gantt.init();
+		});
+
+		ProjectsGantt.Gantt = {
+		
+			// Initialize application
+			init: function (serverCfg) {
+				Ext.QuickTips.init(); 
+				
+				var projectsJson = '{!projectsJson}';
+				  
+				var projectObj = '';
+				if(projectsJson != null && projectsJson != ''){
+					//To convert a JSON text into an object
+					var projectObj = JSON.parse(projectsJson); 
+				}
+				
+				var taskStore = Ext.create("Gnt.data.TaskStore", {
+					model : 'Gnt.model.Task',
+					autoLoad: true,
+					proxy : {
+						data : projectObj,
+						type : 'memory',
+						reader: {
+							type : 'json'
+						}
+					}
+				});
+		
+				var colSlider = Ext.create("Ext.slider.Single", {
+					width: 120,
+					value: 100, // TODO Sch.PresetManager.getPreset('weekAndDayLetter').timeColumnWidth,
+					minValue: 80,
+					maxValue: 240,
+					increment: 10
+				});
+				
+				var start = '';
+				if('{!startDate}' != null) {
+					//<!-- Formats the date in yyyy, M, d format which when rendered becomes the 3 parameters for the javascript date object constructor -->
+					start = new Date( <apex:outputText value="{0,date,yyyy',' M',' d}"><apex:param value="{!startDate}" /></apex:outputText>);
+				}
+				
+				var end = '';
+				if('{!endDate}' != null){
+					end = new Date( <apex:outputText value="{0,date,yyyy',' M',' d}"><apex:param value="{!endDate}" /></apex:outputText>);
+				}
+				
+		
+				var g = Ext.create('Gnt.panel.Gantt', {
+					height: 600,
+					width: 'fit',
+					renderTo: Ext.get('projectsGantt'),
+					leftLabelField: 'Name',
+					highlightWeekends: false,
+					loadMask: true,
+					enableProgressBarResize: false,
+					enableDependencyDragDrop: false,
+					toggleParentTasksOnClick: false,
+					cascadeChanges : false,
+				   
+					startDate   : start,
+					endDate	 	: end,
+					
+					viewPreset: 'monthAndYear',
+					
+					eventRenderer: function (taskRecord) {
+						return {
+							ctcls : taskRecord.get('Id') // Add a CSS class to the task element
+						};
+					},
+		
+					tooltipTpl: new Ext.XTemplate(
+						'<ul class="taskTip">',
+							'<li><strong>Project:</strong>{Name}</li>',
+							'<li><strong>Start:</strong>{[Ext.Date.format(values.StartDate, "y-m-d")]}</li>',
+							'<li><strong>End:</strong>{[Ext.Date.format(values.EndDate, "y-m-d")]}</li>',
+						'</ul>'
+					).compile(),
+		
+					// Setup your static columns
+					columns: [
+						{xtype : 'treecolumn', header: 'Project', dataIndex: 'Name'},
+					],
+		
+					taskStore: taskStore,
+					plugins : {
+						ptype : 'pan'
+					},
+					tbar: [
+						'->',
+						{
+							xtype: 'label',
+							text: 'Column Width'
+						},
+						' ',
+						colSlider
+					]
+				});
+	
+				// set gantt read only
+				g.setReadOnly(true);
+				colSlider.on({
+					change: function (s, v) {
+						g.setTimeColumnWidth(v, true);
+					},
+					changecomplete: function (s, v) {
+						g.setTimeColumnWidth(v);
+					}
+				});
+				g.on('taskclick', function (g, task) {
+					var detailGanttCB = jQuery("#detailGantt");
+					//Get the detail element and delete any children before reloading a new gantt
+					detailGanttCB.empty();
+					//This is the result form the javascript remoting
+					var ganttObj = null;
+					//Create the colorbox element for the all gantt details popup
+					detailGanttCB.colorbox({
+						inline: true,
+						href:"#detailGantt",
+						width: "98%",
+						height: "98%",
+						open: true,
+						speed: 500,
+						opacity: 0.4,
+						title: task.get('Name'),
+						onComplete: function() {
+							jQuery(this).show();
+							jQuery('#cboxLoadingGraphic').show();
+							//The Project has been clicked, display the gant chart with the details of that project
+							//either: project_cloud. or nothing if running in a development org
+							Visualforce.remoting.Manager.invokeAction(
+								'{!$RemoteAction.ProgramGanttController.getGantt}',
+								task.internalId, 
+								function(result, event){
+									if (event.status) {
+										refreshGantt(result);
+									} else if (event.type === 'exception') {
+										jQuery(this).colorbox.close();
+										alert(event.message);
+									} else {
+										jQuery(this).colorbox.close();
+										alert(event.message);
+									}
+								},
+								//We don't want to escape the results because it is json data
+								{escape: false}
+							);
+						}
+					});
+				});
+			}
+		};
+
+		function refreshGantt(ganttObj) {
+			if(ganttObj.phasesTasksJson != null && ganttObj.phasesTasksJson != '' &&
+				ganttObj.dependenciesJson != null && ganttObj.dependenciesJson != '') {
+
+				var detailStart = new Date(ganttObj.startDate);
+				var detailEnd = new Date(ganttObj.endDate);
+
+				var detailTaskStore = Ext.create("Gnt.data.TaskStore", {
+					model : 'Gnt.model.Task',
+					autoLoad: true,
+					proxy : {
+						data : JSON.parse(ganttObj.phasesTasksJson),
+						type : 'memory',
+						reader: {
+							type : 'json'
+						}
+					}
+				});
+
+				var detailDependencyStore = Ext.create("Gnt.data.DependencyStore", {
+					autoLoad	: true,
+					model		: 'Gnt.model.Dependency',
+					proxy		: {
+						data 	: Ext.JSON.decode(ganttObj.dependenciesJson),
+						type	: 'memory',
+						reader	: {
+						type	: 'json',
+						}
+				   }
+				});
+
+				var detailGantt = Ext.create('Gnt.panel.Gantt', {
+					height: 600,
+					width: 'fit',
+					renderTo: Ext.get('detailGantt'),
+					leftLabelField: 'Name',
+					highlightWeekends: true,
+					loadMask: true,
+					cascadeChanges : true,
+					enableTaskDragDrop: false,
+
+					startDate   : detailStart,
+					endDate	 	: detailEnd,
+
+					viewPreset: 'weekAndDayLetter',
+
+					eventRenderer: function (taskRecord) {
+						return {
+							ctcls : taskRecord.get('Id') // Add a CSS class to the task element
+						};
+					},
+
+					tooltipTpl: new Ext.XTemplate(
+						'<ul class="taskTip">',
+							'<li><strong>Task:</strong>{Name}</li>',
+							'<li><strong>Start:</strong>{[Ext.Date.format(values.StartDate, "y-m-d")]}</li>',
+							'<li><strong>Progress:</strong>{PercentDone}%</li>',
+						'</ul>'
+					).compile(),
+
+					// Setup your static columns
+					columns: [
+						{
+							xtype : 'treecolumn',
+							header: 'Tasks',
+							sortable: true,
+							dataIndex: 'Name',
+							width: 200,
+							field: {
+								allowBlank: false
+							}
+						}
+					],
+
+					taskStore: detailTaskStore,
+					dependencyStore: detailDependencyStore,
+				});
+
+				// set gantt read only
+				detailGantt.setReadOnly(false);
+				detailGantt.zoomToFit();
+			}
+			jQuery('#cboxLoadingGraphic').hide();
+		}
+	</script>
+
+	<apex:pageBlock >
+		<div id="projectsGantt"></div>
+	</apex:pageBlock>
+	<div id="detailGantt" style="display: none;"></div>
+	
+	<script>
+		jQuery(document).ready(function($) {
+			$(document).bind('cbox_closed', function(){
+				$('#detailGantt').css('display','none');
+			});
+		});
+	</script>
+ 
+</apex:page>

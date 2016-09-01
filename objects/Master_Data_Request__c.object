@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Master_Data_Requests</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Back_end_System__c</fullName>
+        <externalId>false</externalId>
+        <label>Back-End System</label>
+        <picklist>
+            <picklistValues>
+                <fullName>P08 (Global Sales)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P02 (Drives - Factory)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P16 (Drives - NAM)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Goldmine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kompas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PCM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siebel (Drives - Vacon)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turbocor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>Danfoss Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text($User.Division__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Danfoss Segment (Owner)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Goldmine__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>Goldmine #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Kompas__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>Kompas #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Master_Data_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Master Data Type</label>
+        <picklist>
+            <controllingField>Back_end_System__c</controllingField>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Goldmine</controllingFieldValues>
+                <controllingFieldValues>Kompas</controllingFieldValues>
+                <controllingFieldValues>P02 (Drives - Factory)</controllingFieldValues>
+                <controllingFieldValues>P08 (Global Sales)</controllingFieldValues>
+                <controllingFieldValues>P16 (Drives - NAM)</controllingFieldValues>
+                <controllingFieldValues>PCM</controllingFieldValues>
+                <controllingFieldValues>Siebel (Drives - Vacon)</controllingFieldValues>
+                <controllingFieldValues>Turbocor</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qualified Prospect</fullName>
+                <default>false</default>
+                <controllingFieldValues>P08 (Global Sales)</controllingFieldValues>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>P02__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>P02 #</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>P16__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>P16 #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PCM__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>PCM #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SAP__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>SAP number created for this request</inlineHelpText>
+        <label>P08 #</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Siebel__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>Siebel #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Turbocor__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>false</externalId>
+        <label>Turbocor #</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <validationRules>
+        <fullName>Customer_Request_Completed_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status__c,&quot;Completed&quot;), 
+OR(
+AND(Left(Text(Back_end_System__c),3)=&quot;P08&quot;,ISBLANK(SAP__c)),
+AND(Left(Text(Back_end_System__c),3)=&quot;P02&quot;,ISBLANK(P02__c)),
+AND(Left(Text(Back_end_System__c),3)=&quot;P16&quot;,ISBLANK(P16__c)),
+AND(Left(Text(Back_end_System__c),6)=&quot;Siebel&quot;,ISBLANK(Siebel__c)),
+AND(Left(Text(Back_end_System__c),7)=&quot;Turbocor&quot;, ISBLANK(Turbocor__c )),
+AND(Left(Text(Back_end_System__c),8)=&quot;Goldmine&quot;,ISBLANK(Goldmine__c)),
+AND(Left(Text(Back_end_System__c),6)=&quot;Kompas&quot;,ISBLANK(Kompas__c)),
+AND(Left(Text(Back_end_System__c),3)=&quot;PCM&quot;,ISBLANK(PCM__c))
+))</errorConditionFormula>
+        <errorMessage>You must enter an ID for the back-end system selected.</errorMessage>
+    </validationRules>
+</CustomObject>

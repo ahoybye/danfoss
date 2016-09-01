@@ -1,0 +1,6 @@
+In the following Quote, the price has been entered in SAP.
+
+Link to Quote:
+{!Quote.Link}
+
+Please remember to update orders/process IDOCs as necessary.

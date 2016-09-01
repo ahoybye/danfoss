@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Content Components --></label>
+        <name>ccpt__Content_Components__c</name>
+    </fields>
+    <fields>
+        <label><!-- Content Styling --></label>
+        <name>ccpt__Content_Styling__c</name>
+    </fields>
+    <fields>
+        <label><!-- Html Footer --></label>
+        <name>ccpt__Html_Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Html Header --></label>
+        <name>ccpt__Html_Header__c</name>
+    </fields>
+</CustomObjectTranslation>

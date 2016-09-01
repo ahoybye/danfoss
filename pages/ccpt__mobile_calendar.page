@@ -1,0 +1,7 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false"  docType="html-5.0">
+	<apex:composition template="ccpt__mobile_template">
+		<apex:define name="setup">
+			CONST_PAGE_DEFAULT = 'dashboard';
+		</apex:define>
+	</apex:composition>
+</apex:page>

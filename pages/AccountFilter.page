@@ -1,0 +1,23 @@
+<apex:page standardController="Account" extensions="AccountFilterExtension" showHeader="false">  
+  	<apex:form id="form">
+        <apex:pageBlock title="Division Account Filter">
+            <apex:pageblockTable value="{!SAP}" var="s">
+                <apex:repeat value="{!$ObjectType.Sub_Account__c.FieldSets.AccountFilterFields}" var="f">
+                    <apex:column value="{!s[f]}" />
+                </apex:repeat>       
+            </apex:pageblockTable>
+            <apex:panelGrid columns="5">
+                <c:PrevNextLinks setCon="{!setCon}" rerender="form" status="fetchStatus"/>
+                <apex:selectList id="myselect" size="1" label="Value" value="{!selectedDivision}">
+                    <apex:selectOptions value="{!divisionOptions}"/>
+                    <apex:actionSupport event="onchange" action="{!filterSAP}" reRender="form" status="fetchStatus"/>
+                </apex:selectList>
+                <apex:commandButton action="{!filterSAP}" value="Filter" reRender="form" status="fetchStatus"/>
+                <c:PageNumber setCon="{!setCon}"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

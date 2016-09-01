@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tâche</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tâches</value>
+    </caseValues>
+    <fields>
+        <label><!-- BCM Device ID --></label>
+        <name>BMCServiceDesk__ACDeviceID__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCM Execute --></label>
+        <name>BMCServiceDesk__ACExecute__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCM Operational Rule --></label>
+        <name>BMCServiceDesk__ACOpRuleID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operational Rule Status Description --></label>
+        <name>BMCServiceDesk__ACOpRuleStatusDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- BCM Operational Rule Status --></label>
+        <name>BMCServiceDesk__ACOpRuleStatus__c</name>
+        <picklistValues>
+            <masterLabel>Approval Rejected</masterLabel>
+            <translation>Approbation refusée</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Execution Error</masterLabel>
+            <translation>Erreur d&apos;exécution</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation>Sans objet</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Error</masterLabel>
+            <translation>Erreur de demande</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Pending</masterLabel>
+            <translation>Demande en attente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Request Successful</masterLabel>
+            <translation>Demande effectuée</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation>Demandé</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BCM Requires Approval --></label>
+        <name>BMCServiceDesk__ACRequiresApproval__c</name>
+    </fields>
+    <fields>
+        <help>Utilisez ce champ pour ajouter des informations supplémentaires à l&apos;e-mail même après sélection du modèle d&apos;e-mail.</help>
+        <label><!-- Additional email information --></label>
+        <name>BMCServiceDesk__Additional_email_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- &lt;BLANK&gt; --></label>
+        <name>BMCServiceDesk__BLANK__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez la catégorie de la tâche depuis la liste des options. Les catégories vous permettent de classifier la tâche à l&apos;aide de classifications standard que vous pouvez facilement contrôler en vue de la création de rapports.</help>
+        <label><!-- Category~ --></label>
+        <name>BMCServiceDesk__Category_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Account --></label>
+        <name>BMCServiceDesk__Client_Account__c</name>
+    </fields>
+    <fields>
+        <help>Ce champ renseigne automatiquement le prénom du client à l&apos;origine de la tâche.</help>
+        <label><!-- First Name --></label>
+        <name>BMCServiceDesk__Client_First_Name__c</name>
+    </fields>
+    <fields>
+        <help>Ce champ renseigne automatiquement l&apos;ID de client du client à l&apos;origine de la tâche.</help>
+        <label><!-- Client ID~ --></label>
+        <name>BMCServiceDesk__Client_ID__c</name>
+    </fields>
+    <fields>
+        <help>Depuis la liste des options, sélectionnez le nom du client à l&apos;origine de la tâche.</help>
+        <label><!-- Last Name --></label>
+        <name>BMCServiceDesk__Client_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Name --></label>
+        <name>BMCServiceDesk__Client_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Type --></label>
+        <name>BMCServiceDesk__Client_Type__c</name>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lead</masterLabel>
+            <translation>Piste</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation>Utilisateur</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Ce champ est automatiquement réglé sur l&apos;ID personnel du personnel actuellement connecté. Si besoin, vous pouvez utiliser ce champ pour sélectionner un personnel autre que le personnel actuellement connecté.</help>
+        <label><!-- Closed By~ --></label>
+        <name>BMCServiceDesk__Closed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliant --></label>
+        <name>BMCServiceDesk__Compliant__c</name>
+    </fields>
+    <fields>
+        <label><!-- SmartView (Beta) --></label>
+        <name>BMCServiceDesk__Deep_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display in Self Service --></label>
+        <name>BMCServiceDesk__DisplayInSS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Controller --></label>
+        <name>BMCServiceDesk__Dummy_Update__c</name>
+    </fields>
+    <fields>
+        <help>Cette case à cocher est utilisée pour la programmation.</help>
+        <label><!-- ExistsInManifest --></label>
+        <name>BMCServiceDesk__ExistsInManifest__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez la catégorie de la tâche depuis la liste des options. Les catégories vous permettent de classifier la tâche à l&apos;aide de classifications standard que vous pouvez facilement contrôler en vue de la création de rapports.</help>
+        <label><!-- Category --></label>
+        <name>BMCServiceDesk__FKCategory__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Change Request --></label>
+        <name>BMCServiceDesk__FKChange__c</name>
+        <relationshipLabel><!-- Linked Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Sélectionnez le client pour cet enregistrement.</help>
+        <label><!-- Client ID --></label>
+        <name>BMCServiceDesk__FKClient__c</name>
+        <relationshipLabel><!-- Tasks (Client ID) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Ce champ est automatiquement réglé sur l&apos;ID personnel du personnel actuellement connecté. Si besoin, vous pouvez utiliser ce champ pour sélectionner un personnel autre que le personnel actuellement connecté.</help>
+        <label><!-- Closed By --></label>
+        <name>BMCServiceDesk__FKClosedBy__c</name>
+        <relationshipLabel><!-- Tasks (Closed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>BMCServiceDesk__FKContact__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Sélectionnez le niveau d&apos;impact de la tâche depuis la liste des options. Le niveau d&apos;impact et la valeur d&apos;urgence servent à calculer la priorité de la tâche.</help>
+        <label><!-- Impact --></label>
+        <name>BMCServiceDesk__FKImpact__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Incident --></label>
+        <name>BMCServiceDesk__FKIncident__c</name>
+        <relationshipLabel><!-- Linked Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>BMCServiceDesk__FKLead__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>BMCServiceDesk__FKOpenBy__c</name>
+        <relationshipLabel><!-- Tasks (Staff) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>La priorité est calculée selon les valeurs d&apos;urgence et d&apos;impact que vous avez sélectionnées. Si besoin, vous pouvez utiliser ce champ pour sélectionner une valeur de priorité autre que la valeur calculée.</help>
+        <label><!-- Priority --></label>
+        <name>BMCServiceDesk__FKPriority__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Problem --></label>
+        <name>BMCServiceDesk__FKProblem__c</name>
+        <relationshipLabel><!-- Linked Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Release --></label>
+        <name>BMCServiceDesk__FKRelease__c</name>
+        <relationshipLabel><!-- Linked Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Depuis la liste des options, sélectionnez l&apos;état approprié pour la tâche. L&apos;état permet d&apos;afficher les stades de progression d&apos;une tâche depuis son ouverture jusqu&apos;à sa fermeture.</help>
+        <label><!-- Status --></label>
+        <lookupFilter>
+            <errorMessage><!-- Select an active status that applies to tasks. --></errorMessage>
+        </lookupFilter>
+        <name>BMCServiceDesk__FKStatus__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Sélectionnez le modèle à appliquer à l&apos;enregistrement. Les modèles permettent de préremplir les champs couramment utilisés dans les formulaires.</help>
+        <label><!-- Template --></label>
+        <name>BMCServiceDesk__FKTemplate__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Sélectionnez la vitesse de résolution de la tâche depuis la liste des options. Le niveau d&apos;impact et la valeur d&apos;urgence servent à calculer la priorité de la tâche.</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Sélectionnez le niveau d&apos;impact de la tâche depuis la liste des options. Le niveau d&apos;impact et la valeur d&apos;urgence servent à calculer la priorité de la tâche.</help>
+        <label><!-- Impact~ --></label>
+        <name>BMCServiceDesk__Impact_ID__c</name>
+    </fields>
+    <fields>
+        <help>L&apos;enregistrement s&apos;ouvrira dans l&apos;onglet de la console des tâches ou de la console Remedyforce</help>
+        <label><!-- Launch Console --></label>
+        <name>BMCServiceDesk__Launch_console__c</name>
+    </fields>
+    <fields>
+        <label><!-- LockedRecordTimestamp --></label>
+        <name>BMCServiceDesk__LockedRecordTimestamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opened Date~ --></label>
+        <name>BMCServiceDesk__Opened_DateTime__c</name>
+    </fields>
+    <fields>
+        <help>La priorité est calculée selon les valeurs d&apos;urgence et d&apos;impact que vous avez sélectionnées. Si besoin, vous pouvez utiliser ce champ pour sélectionner une valeur de priorité autre que la valeur calculée.</help>
+        <label><!-- Priority~ --></label>
+        <name>BMCServiceDesk__Priority_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>BMCServiceDesk__Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurrence --></label>
+        <name>BMCServiceDesk__Recurrence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recurring Parent Record ID --></label>
+        <name>BMCServiceDesk__RecurringParentRecordId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled End --></label>
+        <name>BMCServiceDesk__Scheduled_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled Start --></label>
+        <name>BMCServiceDesk__Scheduled_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Request Process --></label>
+        <name>BMCServiceDesk__Service_Request_Process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show DueDate Dialog --></label>
+        <name>BMCServiceDesk__ShowDueDateDialog__c</name>
+    </fields>
+    <fields>
+        <help>Depuis la liste des options, sélectionnez l&apos;état approprié pour la tâche. L&apos;état permet d&apos;afficher les stades de progression d&apos;une tâche depuis son ouverture jusqu&apos;à sa fermeture.</help>
+        <label><!-- Status~ --></label>
+        <name>BMCServiceDesk__Status_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task #+ --></label>
+        <name>BMCServiceDesk__Task_console_detail_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Already Applied --></label>
+        <name>BMCServiceDesk__TemplateAlreadyApplied__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Name --></label>
+        <name>BMCServiceDesk__TemplateName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Duration (minutes) --></label>
+        <name>BMCServiceDesk__Total_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Update Count --></label>
+        <name>BMCServiceDesk__UpdateCount__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez la vitesse de résolution de la tâche depuis la liste des options. Le niveau d&apos;impact et la valeur d&apos;urgence servent à calculer la priorité de la tâche.</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__Urgency_ID__c</name>
+    </fields>
+    <fields>
+        <help>Saisir les noms de configuration API Web</help>
+        <label><!-- Web API Configuration --></label>
+        <name>BMCServiceDesk__WebAPIConfiguration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bus Assessment --></label>
+        <name>BMCServiceDesk__busAssessment__c</name>
+    </fields>
+    <fields>
+        <help>Ce champ est automatiquement réglé à la date et l&apos;heure à laquelle la tâche a été fermée.</help>
+        <label><!-- Closed Date --></label>
+        <name>BMCServiceDesk__closeDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Profile --></label>
+        <name>BMCServiceDesk__closedProfile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>BMCServiceDesk__comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>BMCServiceDesk__completedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Type --></label>
+        <name>BMCServiceDesk__contactType__c</name>
+        <picklistValues>
+            <masterLabel>Email Other</masterLabel>
+            <translation>E-mail autres</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mail Listen</masterLabel>
+            <translation>Ecoute d&apos;e-mail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation>Téléphone</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Service</masterLabel>
+            <translation>Libre service</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walkup</masterLabel>
+            <translation>Aller</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost Estimate --></label>
+        <name>BMCServiceDesk__costEstimate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created On --></label>
+        <name>BMCServiceDesk__createdOn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision --></label>
+        <name>BMCServiceDesk__decision__c</name>
+    </fields>
+    <fields>
+        <help>Ce champ est automatiquement réglé à la date et l&apos;heure d&apos;échéance de la tâche selon la durée de la priorité. Si besoin, vous pouvez utiliser ce champ pour sélectionner une date d&apos;échéance autre que la valeur calculée.</help>
+        <label><!-- Due Date --></label>
+        <name>BMCServiceDesk__dueDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>BMCServiceDesk__duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- EMail Originator --></label>
+        <name>BMCServiceDesk__eMailOriginator__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>BMCServiceDesk__endDate__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez ce champ si l&apos;enregistrement de tâche n&apos;est plus valide, mais qu&apos;il doit être conservé conformément à la politique de rétention des enregistrements. Si par exemple un client a quitté le compte, toutes les tâches associées seront invalides.</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- isReopened --></label>
+        <name>BMCServiceDesk__isReopened__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>BMCServiceDesk__note__c</name>
+    </fields>
+    <fields>
+        <help>Ce champ est automatiquement réglé à la date et l&apos;heure à laquelle la tâche a été créée.</help>
+        <label><!-- Opened Date --></label>
+        <name>BMCServiceDesk__openDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opened Profile --></label>
+        <name>BMCServiceDesk__openedProfile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>BMCServiceDesk__phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Template Order --></label>
+        <name>BMCServiceDesk__processTemplateOrder__c</name>
+    </fields>
+    <fields>
+        <help>Affiche le nom de la file d&apos;attente à laquelle la tâche a été affectée pour la dernière fois.</help>
+        <label><!-- Last Queue --></label>
+        <name>BMCServiceDesk__queueName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recommendations --></label>
+        <name>BMCServiceDesk__recommendations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recommended Fix Date &amp; Time --></label>
+        <name>BMCServiceDesk__recommendedFixDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resource Description --></label>
+        <name>BMCServiceDesk__resourceDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Date &amp; Time --></label>
+        <name>BMCServiceDesk__responseDateTime__c</name>
+    </fields>
+    <fields>
+        <help>Ce champ contiendra la valeur du champ Brève description et est limité à 255 caractères.</help>
+        <label><!-- Short Description --></label>
+        <name>BMCServiceDesk__shortDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>BMCServiceDesk__startDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Open --></label>
+        <name>BMCServiceDesk__state__c</name>
+    </fields>
+    <fields>
+        <help>Utilisez ce champ pour saisir une description de la tâche à conclure.</help>
+        <label><!-- Description --></label>
+        <name>BMCServiceDesk__taskDescription__c</name>
+    </fields>
+    <fields>
+        <help>Utilisez ce champ pour indiquer les démarches mises en oeuvre pour conclure la tâche. Détaillez les mesures à mettre en oeuvre pour conclure la tâche ou, à défaut, indiquez pourquoi la tâche ne peut pas être conclue.</help>
+        <label><!-- Resolution --></label>
+        <name>BMCServiceDesk__taskResolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Type --></label>
+        <name>BMCServiceDesk__taskType__c</name>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation>Général</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operational Rule</masterLabel>
+            <translation>Règle opérationnelle</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing</masterLabel>
+            <translation>Test</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tech Assessment --></label>
+        <name>BMCServiceDesk__techAssessment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Template Order --></label>
+        <name>BMCServiceDesk__templateOrder__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time Spent --></label>
+        <name>BMCServiceDesk__timeSpent__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Numéro de tâche</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Approver --></label>
+        <name>Approver</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Assessor --></label>
+        <name>Assessor</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Tasks --></label>
+        <name>Tasks</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This task is closed. Reopen the task to modify it. --></errorMessage>
+        <name>BMCServiceDesk__Cannot_Update_Closed_Task</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To save the task, select a value in any one of the following fields: Client ID, Contact or Lead. --></errorMessage>
+        <name>BMCServiceDesk__Select_Either_User_Lead_or_Contact</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A task can be linked to only one object (Incident or Change Request or Problem or Release) at a time --></errorMessage>
+        <name>BMCServiceDesk__TaskLinkingValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Due Date must be later than the Opened Date --></errorMessage>
+        <name>BMCServiceDesk__dueDateMustBeAfterOpenedDate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Assign_To_Suggested_Expert --></label>
+        <name>BMCServiceDesk__Assign_To_Suggested_Expert</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Back_to_list --></label>
+        <name>BMCServiceDesk__Back_to_list</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Category_Tree --></label>
+        <name>BMCServiceDesk__Category_Tree</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close --></label>
+        <name>BMCServiceDesk__Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Task_and_Link_to_Problem --></label>
+        <name>BMCServiceDesk__Create_Task_and_Link_to_Problem</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Task_and_Link_to_Release --></label>
+        <name>BMCServiceDesk__Create_Task_and_Link_to_Release</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_and_Link_Task --></label>
+        <name>BMCServiceDesk__Create_and_Link_Task</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_and_Link_Task_Change_Request --></label>
+        <name>BMCServiceDesk__Create_and_Link_Task_Change_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Knowledge_Articles --></label>
+        <name>BMCServiceDesk__Knowledge_Articles</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Launch_CI_Explorer --></label>
+        <name>BMCServiceDesk__Launch_CI_Explorer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_Task_to_Change --></label>
+        <name>BMCServiceDesk__Link_Task_to_Change</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_Task_to_Incident --></label>
+        <name>BMCServiceDesk__Link_Task_to_Incident</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_Task_to_Problem --></label>
+        <name>BMCServiceDesk__Link_Task_to_Problem</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Link_Task_to_Release --></label>
+        <name>BMCServiceDesk__Link_Task_to_Release</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>BMCServiceDesk__New</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Task_Record --></label>
+        <name>BMCServiceDesk__New_Task_Record</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Task_console --></label>
+        <name>BMCServiceDesk__New_Task_console</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Quick_Close --></label>
+        <name>BMCServiceDesk__Quick_Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reopen_Task --></label>
+        <name>BMCServiceDesk__Reopen_Task</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>BMCServiceDesk__Send_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Service_Targets --></label>
+        <name>BMCServiceDesk__Service_Targets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Standard_Description_and_Resolution --></label>
+        <name>BMCServiceDesk__Standard_Description_and_Resolution</name>
+    </webLinks>
+</CustomObjectTranslation>

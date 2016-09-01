@@ -1,0 +1,3 @@
+<apex:page standardController="Associated_Account__c" extensions="SetAsMainAccountExtension" action="{!gotoOpp}">
+    <apex:pageMessages />
+</apex:page>

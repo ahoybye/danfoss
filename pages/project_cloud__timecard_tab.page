@@ -1,0 +1,436 @@
+<apex:page id="page" controller="project_cloud.TimecardController2" action="{!createMissingTimesheet}" tabStyle="Time_Card__tab" title="Timecard: {!timesheet.Name}">
+
+	<c:walkme />
+	<c:include_jquery />
+	<c:include_jquery_helper disableOnClick="disableOnClick" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/jquery.colorbox.js')}" />
+	<apex:includeScript value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.min.js')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/colorbox/colorbox.css')}" />
+	<apex:stylesheet value="{!URLFOR($Resource.project_cloud__jquery_plugins_zip, '/qtip/jquery.qtip.min.css')}" />
+
+	<style type="text/css">
+		.empty-column-content,
+		.tooltip-content {
+			display: none;
+		}
+		span.next-prev-link {
+			color: #E3E3D7;
+		}
+		input.hours-input {
+			max-width: 60px;
+		}
+		/*Keep the reasons more compact*/
+		ul.times_timecard_Reasons {
+			margin: 0;
+			padding: 0;
+		}
+
+		a.timecardCellAnchor {
+			/*Block display so the padding in the approval cells is applied*/
+			display: block;
+		}
+
+		/*Cell Background styling for indicating approved or rejected time*/
+		div.approval-before {
+			/*no styling*/
+		}
+		div.approval-during {
+			background-color: #ffd74b;/*yellow*/
+			padding: 0 0 2px 2px;
+		}
+		div.approval-approved {
+			background-color: #a1f78d;/*green*/
+			padding: 0 0 2px 2px;
+		}
+		div.approval-rejected {
+			background-color: #fb8a8c;/*red*/
+			padding: 0 0 2px 2px;
+		}
+
+		#times_cellEntriesPageBlockSections > .apexp {
+			float: left;
+			margin-right: 1%;
+			width: 24%;
+		}
+
+		/*Firefox has terrible disabled styling. This is to standardise the look of the disabled inputs*/		
+		input:disabled {
+			background-color: #CCC;
+			border: 1px solid #AAA;
+		}
+
+		#page\:suggestionForm\:suggestionBlock .pbSubsection select {
+			width: 350px;
+		}
+	</style>
+
+	<c:tree collaborationMode="true" />
+
+	<apex:sectionHeader title="Timecard" subtitle="{!timesheet.Name}: {!timesheet.project_cloud__Start__c} - {!timesheet.project_cloud__End__c}" />
+
+	<apex:pageMessages id="messages" escape="false" />
+
+	<!-- Don't render anything if there is no timesheet (there has been an error) -->
+	<apex:outputPanel rendered="{!NOT(ISBLANK(timesheet))}" layout="block">
+		<apex:form id="existingForm">
+			<apex:pageBlock id="existingBlock" title="Time Entries Created This Week">
+				<apex:pageBlockButtons location="top">
+					<input id="createTimeEntryButton" type="button" class="btn" value="Create New Time Entry" />
+					<apex:commandButton id="submitForApproval" action="{!submitForApproval}" value="Submit For Approval" rendered="{!NOT($Setup.project_cloud__Time_Options__c.project_cloud__Automatically_Approve_Time_Entries__c) && $Setup.project_cloud__Time_Options__c.project_cloud__Show_Approvals__c}" styleClass="disableOnClick" />
+					&nbsp;
+					<apex:commandLink value="Previous" action="{!previous}" />
+					<apex:outputText value=" | " />
+					<apex:commandLink value="Next" action="{!next}" />
+					&nbsp;
+					<c:list_search tableSelector=".timcardEntriesTable" tableSelectorUsesEsc="false" />
+				</apex:pageBlockButtons>
+				<apex:pageBlockSection id="existingBlockSection" title="Time Entries Created This Week" columns="1" collapsible="false">
+					<apex:pageBlockTable id="existingTable" var="existingRow" value="{!existingRows}" styleClass="timcardEntriesTable">
+						<apex:column headerValue="Time Recorded Against">
+							<c:lookup_hover_detail recordId="{!existingRow.parentId}" prefix="times_timecard_existingRow_">
+								{!existingRow.parentDescription}
+							</c:lookup_hover_detail>
+						</apex:column>
+						<apex:repeat var="existingCell" value="{!existingRow.cells}">
+							<apex:column >
+								<apex:outputPanel styleClass="{!existingCell.approvalStatus}" layout="block">
+									<apex:outputLink value="#times_cellEntriesContent" rel="{!existingRow.parentId}{!existingCell.cellSOQLDate}" styleClass="timecardCellAnchor">
+										<apex:outputText value="{0, number, #.##}">
+											<apex:param value="{!existingCell.sum}" />
+										</apex:outputText>
+									</apex:outputLink>
+								</apex:outputPanel>
+							</apex:column>
+						</apex:repeat>
+						<apex:repeat var="column" value="{!columns}">
+							<apex:column headerValue="{!column.label}" styleClass="empty-column-content">
+								<apex:facet name="footer">
+									<apex:outputText value="{0, number, #.##}">
+										<apex:param value="{!column.total}" />
+									</apex:outputText>
+								</apex:facet>
+							</apex:column>
+						</apex:repeat>
+						<apex:column headerValue="Total">
+							<apex:outputText value="{0, number, #.##}">
+								<apex:param value="{!existingRow.sum}" />
+							</apex:outputText>
+							<apex:facet name="footer">
+								<apex:outputText value="{0, number, #.##}">
+									<apex:param value="{!existingGrandTotal}" />
+								</apex:outputText>
+							</apex:facet>
+						</apex:column>
+					</apex:pageBlockTable>
+				</apex:pageBlockSection>
+			</apex:pageBlock>
+		</apex:form>
+		<apex:form id="suggestionForm" rendered="{!NOT(isLocked)}">
+			<apex:pageBlock id="suggestionBlock" title="Suggested Time Entries">
+				<apex:pageBlockButtons location="top">
+					<apex:commandButton action="{!save}" value="Save New Time Entries" styleClass="disableOnClick" />
+					&nbsp;
+					<!-- Slice the array so the first subsection (the existing rows section) is not collapsed or expanded -->
+					<a href="#" onclick="twistSuggestionSections(false);">Collapse All</a>
+					<apex:outputText value=" | " />
+					<a href="#" onclick="twistSuggestionSections(true);">Expand All</a>
+				</apex:pageBlockButtons>
+				<apex:actionRegion >
+					<apex:pageBlockSection id="AssignmentsBlockSection" title="Suggestions From Assignments This Week" columns="1">
+						<apex:panelGrid columns="1">
+							<apex:commandButton action="{!save}" value="Save New Time Entries" styleClass="disableOnClick" />
+							<apex:selectList id="assignmentProjectFilterId" value="{!assignmentProjectFilterId}" size="1">
+								<apex:selectOptions value="{!assignmentProjectOptions}" />
+								<apex:actionSupport event="onchange"  action="{!changeAssignmentFilter}" rerender="assignmentTable, assignmentPhaseFilterId" status="assignmentTableStatus" />
+							</apex:selectList>
+							<apex:selectList id="assignmentPhaseFilterId" value="{!assignmentPhaseFilterId}" size="1">
+								<apex:selectOptions value="{!assignmentPhaseOptions}" />
+								<apex:actionSupport event="onchange"  action="{!changeAssignmentFilter}" rerender="assignmentTable" status="assignmentTableStatus" />
+							</apex:selectList>
+						</apex:panelGrid>
+						<apex:actionStatus id="assignmentTableStatus" layout="block">
+							<apex:facet name="start">
+								<c:loading />
+							</apex:facet>
+							<apex:facet name="stop">
+								<apex:pageBlockTable id="assignmentTable" var="assignmentRow" value="{!assignmentRows}" styleClass="timcardEntriesTable">
+									<apex:column headerValue="Record Time Against">
+										<c:lookup_hover_detail recordId="{!assignmentRow.parentId}" prefix="times_timecard_assignmentRow_">
+											{!assignmentRow.parentDescription}
+										</c:lookup_hover_detail>
+									</apex:column>
+									<apex:repeat var="assignmentCell" value="{!assignmentRow.cells}">
+										<apex:column >
+											<apex:inputText id="first" value="{!assignmentCell.project_cloud__HHmm__c}" styleClass="hours-input" />
+											<apex:outputPanel styleClass="tooltip-content">
+												<apex:repeat value="{!$ObjectType.project_cloud__Work__c.FieldSets.project_cloud__Quick_Entry}" var="f"> 
+													<apex:inputField value="{!assignmentCell[f]}" required="false" />
+												</apex:repeat>
+											</apex:outputPanel>
+										</apex:column>
+									</apex:repeat>
+									<apex:repeat var="column" value="{!columns}">
+										<apex:column headerValue="{!column.label}" styleClass="empty-column-content" />
+									</apex:repeat>
+								</apex:pageBlockTable>
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:pageBlockSection>
+				</apex:actionRegion>
+				<apex:actionRegion >
+					<apex:pageBlockSection id="geniusBlockSection" title="Timecard Genius Suggestions" columns="1">
+						<apex:panelGrid columns="1">
+							<apex:commandButton action="{!save}" value="Save New Time Entries" styleClass="disableOnClick" />
+							<apex:selectList id="geniusObjectFilter" value="{!geniusObjectFilter}" size="1">
+								<apex:selectOptions value="{!objectFilterOptions}" />
+								<apex:actionSupport event="onchange"  action="{!changeGeniusFilter}" rerender="geniusTable" status="geniusTableStatus" />
+							</apex:selectList>
+							<apex:selectList id="geniusDayFilter" value="{!geniusDayFilter}" size="1">
+								<apex:selectOptions value="{!geniusDayFilterOptions}" />
+								<apex:actionSupport event="onchange"  action="{!changeGeniusFilter}" rerender="geniusTable" status="geniusTableStatus" />
+							</apex:selectList>
+						</apex:panelGrid>
+						<apex:actionStatus id="geniusTableStatus" layout="block">
+							<apex:facet name="start">
+								<c:loading />
+							</apex:facet>
+							<apex:facet name="stop">
+								<apex:pageBlockTable id="geniusTable" var="geniusRow" value="{!geniusRows}" styleClass="timcardEntriesTable">
+									<apex:column headerValue="Record Time Against">
+										<c:lookup_hover_detail recordId="{!geniusRow.parentId}" prefix="times_timecard_geniusRow_">
+											{!geniusRow.parentDescription}
+										</c:lookup_hover_detail>
+									</apex:column>
+									<apex:repeat var="geniusCell" value="{!geniusRow.cells}">
+										<apex:column >
+											<apex:inputText id="first" value="{!geniusCell.entry.project_cloud__HHmm__c}" styleClass="hours-input" disabled="{!ISBLANK(geniusCell.entry.RecordTypeId)}" />
+											<apex:outputPanel styleClass="tooltip-content">
+												Showing Because:<br/>
+												<apex:dataList var="reason" value="{!geniusCell.reasons}" styleClass="times_timecard_Reasons">
+													<apex:outputText value="{!reason}"/>
+												</apex:dataList>
+												<br/>
+												<apex:repeat value="{!$ObjectType.project_cloud__Work__c.FieldSets.project_cloud__Quick_Entry}" var="f"> 
+													<apex:inputField value="{!geniusCell.entry[f]}" required="false" />
+												</apex:repeat>
+											</apex:outputPanel>
+										</apex:column>
+									</apex:repeat>
+									<apex:repeat var="column" value="{!columns}">
+										<apex:column headerValue="{!column.label}" styleClass="empty-column-content" />
+									</apex:repeat>
+								</apex:pageBlockTable>
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:pageBlockSection>
+				</apex:actionRegion>
+				<apex:actionRegion >
+					<apex:pageBlockSection id="copyLastWeekBlockSection" title="Suggestions From Time Entries Created Last Week" columns="1">
+						<apex:panelGrid columns="1">
+							<apex:commandButton action="{!save}" value="Save New Time Entries" styleClass="disableOnClick" />
+							<apex:selectList id="copyLastWeekObjectFilter" value="{!copyLastWeekObjectFilter}" size="1">
+								<apex:selectOption itemLabel=" -- Don't Display Time Entries Created Last Week -- " itemValue="___" />
+								<apex:selectOptions value="{!objectFilterOptions}" />
+								<apex:actionSupport event="onchange"  action="{!changeCopyLastWeekFilter}" rerender="copyLastWeekTable" status="copyLastWeekTableStatus" />
+							</apex:selectList>
+						</apex:panelGrid>
+						<apex:actionStatus id="copyLastWeekTableStatus" layout="block">
+							<apex:facet name="start">
+								<c:loading />
+							</apex:facet>
+							<apex:facet name="stop">
+								<apex:pageBlockTable id="copyLastWeekTable" var="copyLastWeekRow" value="{!copyLastWeekRows}" styleClass="timcardEntriesTable">
+									<apex:column headerValue="Record Time Against">
+										<c:lookup_hover_detail recordId="{!copyLastWeekRow.parentId}" prefix="times_timecard_copyLastWeekRow_">
+											{!copyLastWeekRow.parentDescription}
+										</c:lookup_hover_detail>
+									</apex:column>
+									<apex:repeat var="copyLastWeekCell" value="{!copyLastWeekRow.cells}">
+										<apex:column >
+											<apex:inputText id="first" value="{!copyLastWeekCell.project_cloud__HHmm__c}" styleClass="hours-input" />
+											<apex:outputPanel styleClass="tooltip-content">
+												<apex:repeat value="{!$ObjectType.project_cloud__Work__c.FieldSets.project_cloud__Quick_Entry}" var="f"> 
+													<apex:inputField value="{!copyLastWeekCell[f]}" required="false" />
+												</apex:repeat>
+											</apex:outputPanel>
+										</apex:column>
+									</apex:repeat>
+									<apex:repeat var="column" value="{!columns}">
+										<apex:column headerValue="{!column.label}" styleClass="empty-column-content" />
+									</apex:repeat>
+								</apex:pageBlockTable>
+							</apex:facet>
+						</apex:actionStatus>
+					</apex:pageBlockSection>
+				</apex:actionRegion>
+			</apex:pageBlock>
+		</apex:form>
+		<!-- This is the inline colobox content that should always been hidden from showing on the page -->
+		<div style="display:none;">
+			<div id="times_cellEntriesContent">
+				<apex:form id="cellEntriesForm">
+					<apex:actionRegion >
+						<apex:actionStatus id="cellEntriesStatus" layout="block">
+							<apex:facet name="start">
+								<c:loading />
+							</apex:facet>
+							<apex:facet name="stop">
+								<apex:outputPanel id="cellEntriesPanel" layout="block" styleClass="times_cellEntriesPanel">
+									<apex:sectionHeader title="{!cellEntriesTitle}" subtitle="Time Entries" />
+									<apex:pageBlock >
+										<apex:pageBlockButtons location="top">
+											<apex:commandButton value="Save" action="{!saveCellEntries}" styleClass="disableOnClick" />
+										</apex:pageBlockButtons>
+									</apex:pageBlock>
+									<div id="times_cellEntriesPageBlockSections">
+										<apex:repeat var="cell" value="{!cellEntries}">
+											<apex:pageBlock >
+												<apex:pageBlockSection columns="1">
+													<apex:inputField value="{!cell.work.project_cloud__HHmm__c}" />
+													<apex:repeat value="{!$ObjectType.project_cloud__Work__c.FieldSets.project_cloud__Quick_Entry}" var="f"> 
+														<apex:inputField value="{!cell.work[f]}" required="false" />
+													</apex:repeat>
+													<apex:pageBlockSectionItem >
+														<apex:outputLabel for="approvalStatus" value="Approval Status" />
+														<apex:outputText id="approvalStatus" value="{!cell.approvalStatus}" />
+													</apex:pageBlockSectionItem>
+												</apex:pageBlockSection>
+											</apex:pageBlock>
+										</apex:repeat>
+										<apex:pageBlock rendered="{!NOT(isLocked)}">
+											<apex:pageBlockSection columns="1">
+												<apex:inputField value="{!timeEntry.project_cloud__HHmm__c}" />
+												<apex:repeat value="{!$ObjectType.project_cloud__Work__c.FieldSets.project_cloud__Quick_Entry}" var="f"> 
+													<apex:inputField value="{!timeEntry[f]}" required="false" />
+												</apex:repeat>
+											</apex:pageBlockSection>
+										</apex:pageBlock>
+									</div>
+								</apex:outputPanel>
+							</apex:facet>
+						</apex:actionStatus>
+						<apex:actionFunction name="loadCellEntries" action="{!loadCellEntries}" rerender="cellEntriesPanel, parentType, parentValueLookup, messages" status="cellEntriesStatus">
+							<apex:param name="cellParentId" value="" assignTo="{!cellParentId}"/>
+							<apex:param name="cellDate" value="" assignTo="{!cellDate}"/>
+						</apex:actionFunction>
+					</apex:actionRegion>
+				</apex:form>
+			</div>
+			<div id="times_standaloneEntryContent">
+				<apex:form id="standaloneEntryForm">
+					<apex:pageBlock id="timeEntryBlock" title="Create Time Entry">
+						<apex:pageBlockButtons id="timeEntryButtons">
+							<apex:commandButton action="{!saveStandaloneEntry}" value="Save" styleClass="disableOnClick" />
+						</apex:pageBlockButtons>
+						<apex:actionRegion >
+							<apex:pageBlockSection columns="1">
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="Type" for="parentType" />
+									<apex:selectList id="parentType" value="{!timeEntryRelatedToField}" size="1">
+										<apex:selectOptions value="{!relationshipOptions}" />
+										<apex:actionSupport event="onchange" action="{!resetTimeEntryRelatedTo}" rerender="parentValueLookup, messages" status="parentValueLookupStatus" />
+									</apex:selectList>
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="Related To" />
+									<apex:actionStatus id="parentValueLookupStatus" startText="Refreshing...">
+										<apex:facet name="stop">
+											<apex:outputPanel id="parentValueLookup">
+												<apex:repeat value="{!relationshipOptions}" var="option">
+													<apex:inputField label="Related To" value="{!timeEntry[option.value]}" rendered="{!timeEntryRelatedToField == option.value}" />
+												</apex:repeat>
+											</apex:outputPanel>
+										</apex:facet>
+									</apex:actionStatus>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+						</apex:actionRegion>
+						<apex:pageBlockSection columns="1">
+							<apex:inputField value="{!timeEntry.project_cloud__Date__c}" />
+							<apex:inputField value="{!timeEntry.project_cloud__HHmm__c}" />
+							<apex:repeat value="{!$ObjectType.project_cloud__Work__c.FieldSets.project_cloud__Quick_Entry}" var="f"> 
+								<apex:inputField value="{!timeEntry[f]}" />
+							</apex:repeat>
+						</apex:pageBlockSection>
+					</apex:pageBlock>
+				</apex:form>
+			</div>
+		</div>
+	
+		<script type="text/javascript">
+	
+			function twistSuggestionSections(opt_ExpandOrCollapse) {
+				jQuery(opt_ExpandOrCollapse ? ".showListButton" : ".hideListButton").each(function(index, el) {
+					twistSection(el);
+				});
+			}
+	
+			jQuery(document).ready(function($) {
+				try {
+					//collapse all the sections by default
+					twistSuggestionSections(false);
+	
+					esc$("{!$Component.page.existingForm.existingBlock.existingBlockSection}").delegate(".timecardCellAnchor", "click", function(clickEvent) {
+						$.colorbox({
+							inline: true,
+							href: "#times_cellEntriesContent",
+							width: "80%",
+							height: "80%",
+							open: true,
+							transition: "elastic",
+							speed: 300,
+							opacity: 0.4,
+							onOpen: function() {
+								var relValue = $(clickEvent.target).prop("rel");
+								console.log(relValue);
+								if(relValue.length >= 18) {
+									loadCellEntries(relValue.substring(0,18), relValue.substring(18));
+								}
+							}
+						});
+					});
+	
+					$("#createTimeEntryButton").colorbox({
+						inline: true,
+						href: "#times_standaloneEntryContent",
+						width: "400px",
+						height: "80%",
+						open: {!NOT(ISBLANK($CurrentPage.parameters.workParentId))},
+						transition: "elastic",
+						speed: 300,
+						//title: popupTaskName,
+						opacity: 0.4
+					});
+	
+					esc$("{!$Component.page.suggestionForm.suggestionBlock}").on("click", "input.hours-input", function(clickEvent) {
+						// Bind the qTip within the event handler
+						$(this).qtip({
+							overwrite: false, // Make sure the tooltip won't be overridden once created
+							content: $(this).next(".tooltip-content").contents(),
+							position: {
+								my: "top right", 
+								at: "bottom right",
+								container: esc$("{!$Component.page.suggestionForm}")
+							},
+							show: {
+								event: clickEvent.type, // Use the same show event as the one that triggered the event handler
+								ready: true // Show the tooltip as soon as it's bound, vital so it shows up the first time you hover!
+							},
+							hide: {
+								event: "unfocus"
+							},
+							events: {
+								show: function(showEvent, api) {
+									$(".qtip.ui-tooltip").qtip("hide");
+								}
+							},
+							style: {
+								classes: 'ui-tooltip-light ui-tooltip-rounded ui-tooltip-shadow'
+							}
+						}, clickEvent); // Pass through our original event to qTip
+					});
+				} catch(err) {} //noop just play nice with jquery document ready
+			});
+		</script>
+	</apex:outputPanel>
+</apex:page>

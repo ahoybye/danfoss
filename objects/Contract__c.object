@@ -1,0 +1,3494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Manager_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Creator Comments</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts33</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Accurate_Contract_Type__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Does the contract type and template correlate to the content of the contract document?</inlineHelpText>
+        <label>Contract type &amp; template match content</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ActiveContractEmailSent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used in WF rule</description>
+        <externalId>false</externalId>
+        <label>ActiveContractEmailSent</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount (USD)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>&lt;500,001</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>500,001 - 5,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5,000,001 - 10,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10,000,001 - 15,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15,000,001 - 17,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt;17,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_High_Risk__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Such as: On-Highway, Aerospace, Oil &amp; Gas, Nuclear</inlineHelpText>
+        <label>Is application high risk?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Awaiting_From_Group_User__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Awaiting From Group/User</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Approval_Bypass__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>set in ContractTriggerHandler</description>
+        <externalId>false</externalId>
+        <label>Approval Bypass</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Business_Impact_Reviewed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Has the business impact been reviewed with the applicable stakeholders within the business prior to Submitting for Approval and Signature?</inlineHelpText>
+        <label>Business Impact has been reviewed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cancellation_Clause__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Contract contains provision to cancel within maximum 12 months’ notice (all Danfoss templates have a cancellation clause)</inlineHelpText>
+        <label>Is there a cancellation clause?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Comments upto 255 characters only.</inlineHelpText>
+        <label>Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Highlights of the agreement, differences/changes to existing agreements, main elements needing attention</inlineHelpText>
+        <label>Contract Details</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Contract_Duration__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Valid_To__c - Valid_From__c) + 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_New__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>New Contract</label>
+        <referenceTo>Contract__c</referenceTo>
+        <relationshipName>ContractNew</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Old__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Old Contract</label>
+        <referenceTo>Contract__c</referenceTo>
+        <relationshipName>ContractOld</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Specialist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contract Specialist</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>ContractSpecs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Collaboration</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Signed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent to Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Appointed Service Partner Agreement (ASP)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Service Centre Agreement (ASC)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distribution Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General / Other Sales Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter of Intent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Long Term Sales Agreement (LTA)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Disclosure Agreement - Exception</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Disclosure Agreement - Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Improvement Programs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supply Chain/Logistics Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warranty Agreement - Exception</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warranty Agreement - Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warranty Voucher Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Channel__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Customer__r.Channel__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Channel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer__r.Country__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer__r.Name</formula>
+        <label>Customer Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Contracts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_is_a_Competitor__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Example:  Parker, Honeywell, Bosch, Hydra-Force</inlineHelpText>
+        <label>Customer is competitor to Danfoss Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EC_Approval_Reqd__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+    EC_Approval_Required__c = TRUE, 
+    IMAGE( &quot;/img/func_icons/util/checkmark16.gif&quot;, &quot;True image&quot;),
+    IMAGE( &quot;/img/func_icons/remove12.gif&quot;, &quot;False image&quot;)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EC Approval Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EC_Approval_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set in ContractTriggerHandler</description>
+        <externalId>false</externalId>
+        <label>EC Approval Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Electronic_Components_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Electronic Components BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Electronic_Components_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Electronic Components BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Electronic_Components_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Electronic Components BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts77</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Expected Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts3</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Approvers__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Approvers</label>
+        <length>400</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Expected_Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Role</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiration_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Expiration Action</label>
+        <picklist>
+            <controllingField>Contract_Status__c</controllingField>
+            <picklistValues>
+                <fullName>Renew</fullName>
+                <default>false</default>
+                <controllingFieldValues>Expired</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extend</fullName>
+                <default>false</default>
+                <controllingFieldValues>Active</controllingFieldValues>
+                <controllingFieldValues>Expired</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+                <controllingFieldValues>Expired</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Expiring_Extension_In_90_Days__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Expiring Extension In 90 Days</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expiring_In_90_Days__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked in Contract Expiration in 90 Days Email workflow rule and used in ContractTriggerHandler class to create expiration task. Is unchecked again in the same class after task is created.</description>
+        <externalId>false</externalId>
+        <label>Expiring In 90 Days</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>File_Attached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>File Attached ?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Filed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>indicates the paper copy has been filed by the librarian</description>
+        <externalId>false</externalId>
+        <label>Filed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Finance_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Finance_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Finance Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Finance_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Finance Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts5</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FullyApprovedEmailSent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used in WF rule criteria</description>
+        <externalId>false</externalId>
+        <label>FullyApprovedEmailSent</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HPCC_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>HPCC BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>HPCC_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>HPCC BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>HPCC_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>HPCC BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts73</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HPOC_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>HPOC BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>HPOC_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>HPOC BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>HPOC_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>HPOC BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts75</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Hard_Copy_Done__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hard Copy Done</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hard_Copy_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Filed__c, &quot;Filed&quot;, 
+  IF(Returned__c, &quot;Returned&quot;, 
+    IF(Sent_to_Customer__c, &quot;Sent to customer&quot;, 
+      IF(Signed__c, &quot;Signed&quot;, &quot;&quot;
+      )
+    )
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hard Copy Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Sales_Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>captures name of highest level of sales approval for create hard copy status tasks</description>
+        <externalId>false</externalId>
+        <label>Last Sales Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contract</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To indicate the record was created prior to version 3 (deployed Feb 2015)</description>
+        <externalId>false</externalId>
+        <label>Legacy</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Counsel_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Legal Counsel Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Counsel_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Legal Counsel Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Counsel_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Legal Counsel Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts52</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legal_Review_Reqd__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+Legal_Review_Required__c = TRUE, 
+IMAGE( &quot;/img/func_icons/util/checkmark16.gif&quot;, &quot;True image&quot;), 
+IMAGE( &quot;/img/func_icons/remove12.gif&quot;, &quot;False image&quot;) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Legal Review Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legal_Review_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set in ContractTriggerHandler</description>
+        <externalId>false</externalId>
+        <label>Legal Review Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MP_CC_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>MP-CC BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MP_CC_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>MP-CC BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MP_CC_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MP-CC BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts71</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MP_OC_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>MP-OC BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MP_OC_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>MP-OC BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MP_OC_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>MP-OC BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts8</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Market_Dominated_By_Danfoss__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Answer to the best of your knowledge</inlineHelpText>
+        <label>Is market dominated by Danfoss Group?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MissingStuff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MissingStuff</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>More_Than_3_Years__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If contract duration is 3 years or longer, legal review AND PSLT and EC Approval is required before signing</inlineHelpText>
+        <label>Is contract duration more than 3 years?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Motors_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Motors BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Motors_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Motors BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Motors_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Motors BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts81</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>New_Update__c</fullName>
+        <externalId>false</externalId>
+        <label>New or Updated Contract</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New Agreement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revision / Update</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PS_CEO_Approval_Reqd__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+PS_CEO_Approval_Required__c = TRUE, 
+IMAGE( &quot;/img/func_icons/util/checkmark16.gif&quot;, &quot;True image&quot;), 
+IMAGE( &quot;/img/func_icons/remove12.gif&quot;, &quot;False image&quot;) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PS CEO Approval Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PS_CEO_Approval_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set in ContractTriggerHandler</description>
+        <externalId>false</externalId>
+        <label>PS CEO Approval Required</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PVG_Valves_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>PVG Valves BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PVG_Valves_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>PVG Valves BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PVG_Valves_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>PVG Valves BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts79</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HPCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HPOC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MP-OC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MP-CC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Why are we asked to enter this agreement</inlineHelpText>
+        <label>Reason / Driver for this contract</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Customer__r.Country__r.Contract_Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RejectedFlag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>when checked this indicates the contract has been rejected. used for reference when resubmitting for approval to check the Resubmitted checkbox field.</description>
+        <externalId>false</externalId>
+        <label>RejectedFlag</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RejectionEmailSent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used in WF rule criteria</description>
+        <externalId>false</externalId>
+        <label>RejectionEmailSent</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Related_Contracts__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Example: &quot;Rapid Delivery Center&quot; linked to &quot;Distributor Agreement&quot;</inlineHelpText>
+        <label>Related Contract(s)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resubmitted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Resubmitted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Returned__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>indicates the paper copy has been returned from the customer</description>
+        <externalId>false</externalId>
+        <label>Returned</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date to review extended contract</inlineHelpText>
+        <label>Extension End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Reviewed_With_Legal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reviewed with legal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Account_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer__r.SAP_Account_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SAP Account Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Director_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Director Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Director_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Director Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Director_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Director Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Executive_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Executive Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Executive_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Executive Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Executive_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Executive Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts51</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Manager_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Manager Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Manager_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Manager Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Manager_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Manager Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts00</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Manager_of_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Stage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sales Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Director</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales VP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Executive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval-Complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_VP_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales VP Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sales_VP_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales VP Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_VP_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales VP Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts2</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sent_to_Customer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>indicates the signed hard copies have been sent to customer</description>
+        <externalId>false</externalId>
+        <label>Sent to Customer</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Signed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>indicates the paper copy has been printed and signed</description>
+        <externalId>false</externalId>
+        <label>Signed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Steering_BA_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Steering BA Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Steering_BA_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Steering BA Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Steering_BA_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Steering BA Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts83</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Submit_for_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Submit for Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SubmittedForStakeholderReview__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set in custom button</description>
+        <externalId>false</externalId>
+        <label>Submitted for Stakeholder Review</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_for_Stakeholder_Review__c</fullName>
+        <externalId>false</externalId>
+        <formula>SubmittedForStakeholderReview__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Submitted for Stakeholder Review</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Technical_Director_ADT__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Director Approved On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Technical_Director_Apl__c</fullName>
+        <externalId>false</externalId>
+        <label>Technical Director Approval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Technical_Director_Apr__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Technical Director Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Contracts4</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Template__c</fullName>
+        <externalId>false</externalId>
+        <label>Template</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Danfoss Approved Template</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special / Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Valid_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Valid From</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Valid_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Valid To</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <recordTypes>
+        <fullName>Approval_Bypass</fullName>
+        <active>true</active>
+        <description>Uploading signed contract that already went through approval process</description>
+        <label>Approval Bypass</label>
+        <picklistValues>
+            <picklist>Amount__c</picklist>
+            <values>
+                <fullName>%3C500%2C001</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10%2C000%2C001 - 15%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2C000%2C001 - 17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2C000%2C001 - 10%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500%2C001 - 5%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Application_High_Risk__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cancellation_Clause__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Appointed Service Partner Agreement %28ASP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Service Centre Agreement %28ASC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribution Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General %2F Other Sales Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter of Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Sales Agreement %28LTA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Improvement Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain%2FLogistics Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Voucher Agreement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_is_a_Competitor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Electronic_Components_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Finance_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPCC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPOC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Counsel_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_CC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_OC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_Dominated_By_Danfoss__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Motors_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>New_Update__c</picklist>
+            <values>
+                <fullName>New Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision %2F Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PVG_Valves_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Executive_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Manager_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Stage__c</picklist>
+            <values>
+                <fullName>Approval-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales VP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_VP_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Steering_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Technical_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Template__c</picklist>
+            <values>
+                <fullName>Danfoss Approved Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special %2F Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Approval_Locked</fullName>
+        <active>true</active>
+        <label>Approval Locked</label>
+        <picklistValues>
+            <picklist>Amount__c</picklist>
+            <values>
+                <fullName>%3C500%2C001</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10%2C000%2C001 - 15%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2C000%2C001 - 17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2C000%2C001 - 10%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500%2C001 - 5%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Application_High_Risk__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cancellation_Clause__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collaboration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Appointed Service Partner Agreement %28ASP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Service Centre Agreement %28ASC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribution Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General %2F Other Sales Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter of Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Sales Agreement %28LTA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Improvement Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain%2FLogistics Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Voucher Agreement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_is_a_Competitor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Electronic_Components_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Finance_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPCC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPOC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Counsel_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_CC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_OC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_Dominated_By_Danfoss__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Motors_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>New_Update__c</picklist>
+            <values>
+                <fullName>New Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision %2F Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PVG_Valves_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Executive_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Manager_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Stage__c</picklist>
+            <values>
+                <fullName>Approval-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales VP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_VP_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Steering_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Technical_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Template__c</picklist>
+            <values>
+                <fullName>Danfoss Approved Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special %2F Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Legacy_Contract</fullName>
+        <active>true</active>
+        <description>For Contracts that existed prior to v3 (deployed March 2015)</description>
+        <label>Legacy Contract</label>
+        <picklistValues>
+            <picklist>Amount__c</picklist>
+            <values>
+                <fullName>%3C500%2C001</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10%2C000%2C001 - 15%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2C000%2C001 - 17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2C000%2C001 - 10%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500%2C001 - 5%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Appointed Service Partner Agreement %28ASP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Service Centre Agreement %28ASC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribution Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General %2F Other Sales Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter of Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Sales Agreement %28LTA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Improvement Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain%2FLogistics Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Voucher Agreement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Electronic_Components_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Finance_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPCC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPOC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Counsel_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_CC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_OC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Motors_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PVG_Valves_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Executive_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Manager_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Stage__c</picklist>
+            <values>
+                <fullName>Approval-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales VP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_VP_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Steering_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Technical_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <description>Standard</description>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Amount__c</picklist>
+            <values>
+                <fullName>%3C500%2C001</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10%2C000%2C001 - 15%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15%2C000%2C001 - 17%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5%2C000%2C001 - 10%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>500%2C001 - 5%2C000%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Application_High_Risk__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cancellation_Clause__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Collaboration</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Appointed Service Partner Agreement %28ASP%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Service Centre Agreement %28ASC%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribution Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General %2F Other Sales Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Letter of Intent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Sales Agreement %28LTA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Disclosure Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Improvement Programs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supply Chain%2FLogistics Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Exception</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Agreement - Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty Voucher Agreement</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Customer_is_a_Competitor__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Electronic_Components_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expiration_Action__c</picklist>
+            <values>
+                <fullName>Do Not Renew</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renew</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Finance_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPCC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HPOC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Legal_Counsel_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_CC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>MP_OC_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_Dominated_By_Danfoss__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Motors_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>New_Update__c</picklist>
+            <values>
+                <fullName>New Agreement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revision %2F Update</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PVG_Valves_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPOC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP-OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Executive_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Manager_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Stage__c</picklist>
+            <values>
+                <fullName>Approval-Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Executive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales VP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_VP_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Steering_BA_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Technical_Director_Apl__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Template__c</picklist>
+            <values>
+                <fullName>Danfoss Approved Template</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special %2F Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Account_Channel_Required</fullName>
+        <active>true</active>
+        <description>The selected account must have a channel selected</description>
+        <errorConditionFormula>ISPICKVAL( Customer__r.Channel__c, &apos;&apos;)</errorConditionFormula>
+        <errorMessage>The selected account must have a channel selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Extension_End_Date</fullName>
+        <active>true</active>
+        <description>require extension end date when selected expiration action is Extend</description>
+        <errorConditionFormula>AND( ISPICKVAL(Expiration_Action__c , &apos;Extend&apos;), ISNULL(Review_Date__c))</errorConditionFormula>
+        <errorDisplayField>Review_Date__c</errorDisplayField>
+        <errorMessage>For extended contracts you must enter a date when the extension will end for further review.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Manager_Required</fullName>
+        <active>true</active>
+        <description>The selected account must have a sales manager entered</description>
+        <errorConditionFormula>OR(ISNULL( Customer__r.Sales_Manager__c ), Customer__r.Sales_Manager__c == &apos;&apos;)</errorConditionFormula>
+        <errorMessage>The selected account must have a sales manager entered.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Edit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/23.0/connection.js&quot;)}
+ 
+sforce.connection.sessionId = &apos;{!$Api.Session_ID}&apos;;
+var user = sforce.connection.getUserInfo();
+var rec=  new sforce.SObject(&quot;Contract__c&quot;);
+rec.Creator = &apos;{!Contract__c.CreatedById}&apos;;
+rec.Id = &apos;{!Contract__c.Id}&apos;;
+if (&apos;{!Contract__c.CreatedById}&apos;!=user.userId.substring(0, 15) &amp;&amp; &apos;{!Contract__c.Account_Manager__c}&apos;!=user.userFullName &amp;&amp; &apos;{!Contract__c.Sales_Manager_of_Account__c}&apos;!=user.userFullName &amp;&amp;  &apos;{!Contract__c.Contract_Specialist__c}&apos; != user.userFullName &amp;&amp;
+user.profileId != &apos;00eC0000001f4zQIAQ&apos; &amp;&amp; user.profileId != &apos;00eC000000192RWIAY&apos;)
+{
+	alert(&apos;Insufficient privileges to edit.&apos;);
+}
+else
+{
+	try
+	{
+		
+		navigateToUrl(&apos;/{!Contract__c.Id}/e?retURL=%2F{!Contract__c.Id}&apos;);		
+	}
+	catch (err)
+		{
+			alert(&apos;Error:&apos; + err);
+		}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Approval</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit for Approval</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/23.0/connection.js&quot;)}
+ 
+sforce.connection.sessionId = &apos;{!$Api.Session_ID}&apos;;
+var user = sforce.connection.getUserInfo();
+var rec = new sforce.SObject(&quot;Contract__c&quot;);
+rec.Id = &apos;{!Contract__c.Id}&apos;;
+if (&apos;{!Contract__c.Contract_Specialist__c}&apos; != user.userFullName &amp;&amp; user.profileId != &apos;00eC0000001f4zQIAQ&apos; &amp;&amp; user.profileId != &apos;00eC000000192RWIAY&apos;)
+{
+    alert(&apos;Contract must go through stakeholder review before submitting for approval. Only Contract Specialists can submit for approval. Please contact your regional Contract Specialist to submit for approval.&apos;);
+}
+else if (&apos;{!Contract__c.SubmittedForStakeholderReview__c}&apos; == false)
+{
+    alert(&apos;Contract must be submitted for stakeholder review before submitting for approval.&apos;);
+}
+else if ((&apos;{!Contract__c.Reviewed_With_Legal__c}&apos; == false &amp;&amp; &apos;{!Contract__c.Legal_Review_Required__c}&apos; == true) || &apos;{!Contract__c.Business_Impact_Reviewed__c}&apos; == false || &apos;{!Contract__c.Accurate_Contract_Type__c}&apos; == false)
+{
+    alert(&apos;The Risk Assessment section must be completed per the requirements shown in the yellow box before submitting.&apos;);
+}
+else if (&apos;{!Contract__c.Submit_for_Approval__c}&apos; == &apos;1&apos;)
+{
+    alert(&apos;Approval in progress.&apos;);
+}
+else
+{
+    try
+    {
+        rec.Submit_For_Approval__c = true;
+
+        var saveResult = sforce.connection.update([rec]);
+
+        if (saveResult[0].success != &apos;true&apos;)
+        {
+            alert(&quot;Unable to update : &quot; + saveResult[0].errors.message + &quot;, &quot; + saveResult[0].errors.statusCode);
+        }
+        else
+        {
+            navigateToUrl(&apos;/{!Contract__c.Id}&apos;);
+        }
+
+    }
+    catch (err)
+    {
+        alert(&apos;Error:&apos; + err);
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Stakeholder_Review</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit for Stakeholder Review</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/23.0/connection.js&quot;)}
+ 
+sforce.connection.sessionId = &apos;{!$Api.Session_ID}&apos;;
+
+var rec = new sforce.SObject(&quot;Contract__c&quot;);
+rec.Id = &apos;{!Contract__c.Id}&apos;;
+if (&apos;{!Contract__c.SubmittedForStakeholderReview__c}&apos; == &apos;1&apos;)
+{
+    alert(&apos;Contract has already been submitted to the Conract Specialist for audit.&apos;);
+}
+else if (&apos;{!Contract__c.File_Attached__c}&apos; == &apos;0&apos;)
+{
+    alert(&apos;There must be a least one document attached before submitting.&apos;);
+}
+else
+{
+    try
+    {
+        rec.SubmittedForStakeholderReview__c= true;
+
+        var saveResult = sforce.connection.update([rec]);
+
+        if (saveResult[0].success != &apos;true&apos;)
+        {
+            alert(&quot;Unable to update : &quot; + saveResult[0].errors.message + &quot;, &quot; + saveResult[0].errors.statusCode);
+        }
+        else
+        {
+            alert(&apos;Contract has been submitted for Stakeholder Review.&apos;);
+            navigateToUrl(&apos;/{!Contract__c.Id}&apos;);
+        }
+
+    }
+    catch (err)
+    {
+        alert(&apos;Error:&apos; + err);
+    }
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Terminate_Contract</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Terminate Contract</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!requireScript(&quot;/soap/ajax/23.0/connection.js&quot;)}
+ 
+sforce.connection.sessionId = &apos;{!$Api.Session_ID}&apos;;
+
+	try
+	{
+		var rec=  new sforce.SObject(&quot;Contract__c&quot;);
+		rec.Id = &apos;{!Contract__c.Id}&apos;;
+
+		rec.Contract_Status__c = &apos;Terminated&apos;;
+		 
+		var saveResult = sforce.connection.update([rec]); 
+		   
+		if (saveResult[0].success != &apos;true&apos;)
+		{
+			alert(&quot;Unable to update : &quot; + saveResult[0].errors.message + &quot;, &quot; + saveResult[0].errors.statusCode); 
+		}
+		else
+		{
+			//alert(&apos;Successfully updated Test&apos;);
+			navigateToUrl(&apos;/{!Contract__c.Id}&apos;);
+		}
+		
+	}
+	catch (err)
+		{
+			alert(&apos;Error:&apos; + err);
+		}</url>
+    </webLinks>
+</CustomObject>

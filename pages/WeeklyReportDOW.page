@@ -1,0 +1,59 @@
+<apex:page showHeader="false" sidebar="false" controller="WeeklyReportDOWController" renderAs="pdf">
+<head><style type="text/css" media="print">
+@page {
+@top-center {content: element(header);}
+@bottom-left {content: element(footer);}
+}
+div.header {
+padding: 10px;
+position: running(header);
+}
+div.footer{
+display: block;
+padding: 5px;
+position: running(footer);
+}
+.pagenumber:before {
+content: counter(page);
+}
+.pagecount:before {
+content: counter(pages);
+}
+</style>
+</head>
+<div class="header">
+<div style="text-align:center; font-size: 13pt; font-family: 'Garamond'; color: navy;font-weight:Bold" width="100%">{!mainHeader}</div>
+<div style="text-align:center; font-size: 13pt; font-family: 'Garamond'; color: navy;font-weight:Bold" width="100%">Week  # {!startDateSTR}</div>
+</div>
+
+<div class="footer">
+    <div style="font-size: 9pt; font-family: Arial; color: black;">Note This report is Company Confidential - do not print.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+    <div></div>
+</div>
+
+
+<div></div><br/>
+
+
+<apex:repeat value="{!ListOfReion}" var="Reg">
+<div style="font-size: 17pt;font-family: 'Arial'; color: navy;font-weight:Bold; text-align:center">{!Reg.regionName} </div>
+    <apex:repeat value="{!Reg.ListOfChannels}" var="Channel">
+        <div style="font-size: 17pt; font-family: 'Arial'; color: maroon;font-weight:Bold">{!Channel.ChannelName}:</div>
+        <apex:repeat value="{!Channel.taskList}" var="task">
+            <table width="100%"><tr><td width="50%">
+                <div style="font-family: 'Arial'; color: black;font-weight:Bold"><apex:outputlink value="/{!task.acctId}" target="_parent">{!task.CompanyName}</apex:outputlink></div>
+                <apex:outputPanel rendered="{!task.showParent}">
+                    <div style="font-family: Arial; color: black;">Parent : {!task.parentCompany}</div>
+                </apex:outputPanel>
+            </td><td width="50%" style="text-align:right">
+                <div>{!task.ShippingAddress}</div>
+            </td></tr></table>
+            
+            <div style="font-size: 11pt; font-family: Arial; color: navy;font-weight:Bold">{!task.ownername}</div>
+            <div style="font-size: 10pt; font-family: Arial; color: black;">{!task.startDateSTR}</div>
+            <div style="font-size: 10pt; font-family: Arial; color: black;">{!task.comments}</div>
+            <br/>
+        </apex:repeat>
+    </apex:repeat>
+</apex:repeat>
+</apex:page>

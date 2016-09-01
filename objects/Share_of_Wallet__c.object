@@ -1,0 +1,2903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Share of Wallets</relationshipLabel>
+        <relationshipName>Share_of_Wallets</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CY_Incremental_TO__c</fullName>
+        <description>Defines the additional (incremental) turnover that Danfoss can earn on this customer in the CY (Current Year) compared to Last Year (LY)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the additional (incremental) turnover that Danfoss can earn on this customer in the CY (Current Year) compared to Last Year (LY)</inlineHelpText>
+        <label>CY incremental Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CY_Non_Address_TO__c</fullName>
+        <description>Defines the turnover that Danfoss cannot address because of missing product/capabilities, or does not want to address because of strategic reason</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the turnover that Danfoss cannot address because of missing product/capabilities, or does not want to address because of strategic reason</inlineHelpText>
+        <label>CY Non-Addressable Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Competitor_Name__c</fullName>
+        <defaultValue>IF ($RecordType.DeveloperName = &quot;Supplier_Share_of_Wallet&quot;, &quot;&quot;, &quot;Danfoss&quot;)</defaultValue>
+        <description>Not Used CAN BE DELETED</description>
+        <externalId>false</externalId>
+        <label>Customers Supplier</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competitor_Name_picklist__c</fullName>
+        <description>Customers Supplier</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Supplier of the Account/Customer. For Danfoss typically a Competitor.</inlineHelpText>
+        <label>Customers Supplier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ABB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AC&amp;R-Henry Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ACC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AC Tech (Lenze)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adlee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ALBERTS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alco (Emerson Flow Controls)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alfa Laval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Allen Bradley</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alpha Laval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alstom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amtech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ansaldo Sistemi Industriali</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apotec</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arcelik</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Armatch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ATLANT-SERVICE Sp. z o.o.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AWP Revalco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B &amp; R</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baldor (Reliance)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Belimo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bitzer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BOCK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bonfigilioli (Vectron)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bosch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brassen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bristol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brunata</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Buderus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bürkert</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carel spa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carlo Gavazzi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrier/Carlyle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Castel s.r.l</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chongqing Jialing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chunhui</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chunlan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chyn Tec</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CIAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clorius Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Converteam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooltech Finland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cubigel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Own Solution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daewoo International Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DAF Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daikin/McQuay/J&amp;E Hall</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daikin Industries Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dalian Bingshan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delphi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DeltaTec</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dongboo Daewoo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Donper</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dorin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dunan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dunham Bush</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eaton (Cutler Hammer/Moeller)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ebara</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eckelmann</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electrolux</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elettronica Santerno</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elgin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eliwell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ELREHA Elektronische Regelungen GmbH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Embraco/Aspera</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emerson/CPC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emerson (Control Techniques)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emerson Climate Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emotron</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ESCO (Toshiba)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EUROHEAT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EVERY CONTROL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EWERS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fasteco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Femiks BB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fenix</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finetec Century</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Frascold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fratelli Guerra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fuji</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fujikoki Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fujitsu General</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FUNKE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fusheng</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GEA Grasso</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gebwell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gems Sensors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GFRAN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GMC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GMCC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gree/Landa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GRUNDFOS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guangzhou Wanbao Refrigerator Co., Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Habekost/Habo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hanbell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hansa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hansen Technologies Corp.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heatcraft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heimeier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heldon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heli Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Henry Technologies, Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Herz</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hitachi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hitachi/Highly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Högfors GST</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Holter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeywell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeywell International Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HPB Motion Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HuayiGrp</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Huba Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Huyai/Cubigel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydac - HQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hyundai</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IMI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infoss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invertek</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ita Kom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JAF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Johnson Controls Inc. (Penn)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JUMO GmbH &amp; Co. KG - HQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>K + P (Kieback + Peter)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kaishan/Kerry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kamo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kamstrup</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kangpusi Refrigeration Engineering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kavlico</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KEB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keller AG - HQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kesab</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kistler Instrumente AG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kobelco (Kobe Steel)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kring</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kulthorn Kirby</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kulthorn Kirby Public Company Limited</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LAE Electronic srl</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LDM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LG Electronics Inc.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Local RC/CC Competitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LS (LG)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LTI (Lust)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Luvata</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Magnetek</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Masterflux</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mayekawa/Mycom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meibes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meiyo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metawa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Midea</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MIKOM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mitsubishi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mitsubishi Electric/SCI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mitsubishi Heavy Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mitsubishi Heavy Industries, Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mueller Industries, Inc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nagano Keiki HQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Naval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Widetech</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NICHIDEN Corporation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nord Gear</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NS Koncept</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OFFENWANGER GmbH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Omron</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunistic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oprema</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oventrop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Panasonic Compressor MY Sdn. Bhd. (Matsu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parker Hannifin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parker Sporlan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PEWO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PIREKO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power Electronics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Priwa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qing&apos;an</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quingdao Pacific</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ranco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RC/CC Local Competitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RDM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>REBARO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rechi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RefComp</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rehau</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFF Le Robinet Frigorifique Francais</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rivacold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rockwell Automation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R-Squared Puckett</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAGINOMIYA SEISAKUSHO, INC.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Samson</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Samsung</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sanhua</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sanken</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sanyo/Panasonic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SANYO Electric Co., Ltd.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sauermann</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sauter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SBT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Schneider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Schneider Electric</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sensata</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SEW-EURODRIVE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shanghai Thermostat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siemens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siemens (Robicon/Flender)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siemens AG - HQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SIMON</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Simplex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Snowkey</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sondex</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stöber</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Superfreeze India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Superior Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SWEP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systherm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technoblock S.p.A.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TE Connectivity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tecumseh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teddington</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TEE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thermocomplect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Toshiba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Toshiba Carrier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Traco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trafag AG HQ</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trane</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tranter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TSI Technologies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Uponor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacon (TB Woods/Berges)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valvugas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vesper (Becnep)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vexve</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wanbao/ACC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WEG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WIKA Alexander Wiegand GmbH &amp; Co. KG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wurm GmbH. KG Elektronische Systeme</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yados</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yantai Moon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yaskawa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>York</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yuanbao</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zehnder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zener</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zenny</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zhejiang Zhongbao Industry Holding Co.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ziehl-Abegg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Competitor_Supplier_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(TEXT(Type__c), 
+      &apos;Competitor&apos;, TEXT( Competitor_Name_picklist__c ), 
+      &apos;Danfoss&apos;, &apos;Danfoss&apos;,
+      &apos;Unallocated&apos;, &apos;Unallocated&apos;,
+      &apos;Other&apos;)</formula>
+        <label>Competitor/Supplier Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Future_Addressable_TO__c</fullName>
+        <externalId>false</externalId>
+        <label>Future Addressable Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Future_Addressable_Turnover__c</fullName>
+        <description>Displays the turnover that can be earned in the future ((Total Potential TO-(Target TO CY - CY Non-Addressable TO))</description>
+        <externalId>false</externalId>
+        <formula>Total_Potential_TO__c -(Targer_Turnover_Current_Year__c + CY_Non_Address_TO__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the turnover that can be earned in the future ((Total Potential TO-(Target TO CY - CY Non-Addressable TO))</inlineHelpText>
+        <label>Future Addressable Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LY_TO_Baseline__c</fullName>
+        <description>What has Danfoss or Supplier earned on this customer in the Last Year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What has Danfoss or Supplier earned on this customer in the Last Year</inlineHelpText>
+        <label>LY Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <description>Product Line</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product Line</inlineHelpText>
+        <label>Product Line</label>
+        <picklist>
+            <picklistValues>
+                <fullName>PL01 Automatic Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪02‪ ‪Burner Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪03‪ ‪Residential Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪04‪ ‪Industrial Automation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪06‪ ‪Household Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪07‪ ‪Appliance Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪08‪ ‪District Energy Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪09‪ ‪VLT Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪10‪ ‪Venture Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪14‪ ‪High-Pressure Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪15‪ ‪Non Danfoss business areas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪16‪ ‪Water valves</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪17‪ ‪Commercial Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪18‪ ‪Gearmotors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪20‪ ‪Heat Recovery Ventilation &amp; Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪21‪ ‪Electric Heating Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪22‪ ‪Heat Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪23‪ ‪Danfoss Silicon Power</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪24‪ ‪Heat Exchangers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪25‪ ‪Electronic Controllers &amp; Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪26‪ ‪Solar Inverters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪28‪ ‪Hydronic Balancing &amp; Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪30‪ ‪Customised Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪31‪ ‪District Energy Heat Exchangers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪32‪ ‪District Energy Heavy Duty Stations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪33‪ ‪District Energy Light Duty Stations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪34‪ ‪Floor Heating Hydronics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪35‪ ‪Energy Metering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪36‪ ‪Power Stacks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪37‪ ‪Danfoss Turbocor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL38 Vacon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL‪89‪ ‪NonDanfoss PL09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PL40 Industrial Refrigeration Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SoW_Total_Addressable_Turnover__c</fullName>
+        <description>Displays the existing SoW (%) in the addresable customer basket, excluding the Non-Addresable TO ((Last year TO /(Total Potential TO -Current Non-Addresable TO))*100</description>
+        <externalId>false</externalId>
+        <formula>IF(
+(Total_Potential_TO__c - CY_Non_Address_TO__c) &gt;0,
+LY_TO_Baseline__c /(Total_Potential_TO__c - CY_Non_Address_TO__c),
+0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the existing SoW (%) in the addresable customer basket, excluding the Non-Addresable TO ((Last year TO /(Total Potential TO -Current Non-Addresable TO))*100</inlineHelpText>
+        <label>SoW Total Addressable Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>SoW_Total_Pot_TO__c</fullName>
+        <description>Displays the existing SoW (%) of the total customer basket, including the Non-addresable TO (Last year TO /Total Potential TO)*100</description>
+        <externalId>false</externalId>
+        <formula>IF(
+    Total_Potential_TO__c &gt; 0, 
+    (LY_TO_Baseline__c  /  Total_Potential_TO__c),
+    0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the existing SoW (%) of the total customer basket, including the Non-addresable TO (Last year TO /Total Potential TO)*100</inlineHelpText>
+        <label>SoW Total Potential Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>SoW_for__c</fullName>
+        <description>Share of Wallet for...Danfoss or Supplier.</description>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Type__c, &quot;Competitor&quot;)   ,  Competitor_Name__c ,  IF( ISPICKVAL(Type__c, &quot;Danfoss&quot;) , &quot;Danfoss&quot;, &quot;&quot;) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Share of Wallet for...Danfoss or Supplier.</inlineHelpText>
+        <label>SoW for</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supplier_Position__c</fullName>
+        <description>The costs for changing the supplier and the suppliers position.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The costs for changing the supplier and the suppliers position.</inlineHelpText>
+        <label>Supplier Position</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1.  High Switching Cost and Entrenched Competition</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2. High Switching Cost but Competition Vulnerable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3. Low Switching Cost and Competition Vulnerable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4. Low Switching Cost and Competition Disliked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Targer_Turnover_Current_Year__c</fullName>
+        <description>Displays the turnover that Danfoss aims to earn in the current year on this specific account for this specific PL (Last Year TO + CY Incremental TO)</description>
+        <externalId>false</externalId>
+        <formula>LY_TO_Baseline__c +  CY_Incremental_TO__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the turnover that Danfoss aims to earn in the current year on this specific account for this specific PL (Last Year TO + CY Incremental TO)</inlineHelpText>
+        <label>CY Target Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Target_TO_CY__c</fullName>
+        <description>Targer Turnover Current Year</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Targer Turnover Current Year</inlineHelpText>
+        <label>CY Target Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Potential_TO__c</fullName>
+        <description>Total Potential in terms of Turnover</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the total basket of the customer (for all customer’s suppliers /all products*/all technologies)</inlineHelpText>
+        <label>Total Potential Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Share Of Wallet Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Share Of Wallet Type</inlineHelpText>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Total</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>UniqueChecker__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Field used when creating Share Of Wallet...not shown i Salesforce</description>
+        <externalId>false</externalId>
+        <label>UniqueChecker</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <recordTypes>
+        <fullName>Danfoss_Share_of_Wallet</fullName>
+        <active>true</active>
+        <description>Used for creating Danfoss Share of Wallet</description>
+        <label>Danfoss Share of Wallet</label>
+        <picklistValues>
+            <picklist>Competitor_Name_picklist__c</picklist>
+            <values>
+                <fullName>ABB</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Line__c</picklist>
+            <values>
+                <fullName>PL%E2%80%AA02%E2%80%AA %E2%80%AABurner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA03%E2%80%AA %E2%80%AAResidential Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA04%E2%80%AA %E2%80%AAIndustrial Automation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA06%E2%80%AA %E2%80%AAHousehold Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA07%E2%80%AA %E2%80%AAAppliance Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA08%E2%80%AA %E2%80%AADistrict Energy Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA09%E2%80%AA %E2%80%AAVLT Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA10%E2%80%AA %E2%80%AAVenture Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA14%E2%80%AA %E2%80%AAHigh-Pressure Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA15%E2%80%AA %E2%80%AANon Danfoss business areas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA16%E2%80%AA %E2%80%AAWater valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA17%E2%80%AA %E2%80%AACommercial Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA18%E2%80%AA %E2%80%AAGearmotors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA20%E2%80%AA %E2%80%AAHeat Recovery Ventilation %26 Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA21%E2%80%AA %E2%80%AAElectric Heating Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA22%E2%80%AA %E2%80%AAHeat Pumps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA23%E2%80%AA %E2%80%AADanfoss Silicon Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA24%E2%80%AA %E2%80%AAHeat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA25%E2%80%AA %E2%80%AAElectronic Controllers %26 Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA26%E2%80%AA %E2%80%AASolar Inverters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA28%E2%80%AA %E2%80%AAHydronic Balancing %26 Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA30%E2%80%AA %E2%80%AACustomised Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA31%E2%80%AA %E2%80%AADistrict Energy Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA32%E2%80%AA %E2%80%AADistrict Energy Heavy Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA33%E2%80%AA %E2%80%AADistrict Energy Light Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA34%E2%80%AA %E2%80%AAFloor Heating Hydronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA35%E2%80%AA %E2%80%AAEnergy Metering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA36%E2%80%AA %E2%80%AAPower Stacks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA37%E2%80%AA %E2%80%AADanfoss Turbocor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA89%E2%80%AA %E2%80%AANonDanfoss PL09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL01 Automatic Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL38 Vacon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL40 Industrial Refrigeration Products</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Supplier_Position__c</picklist>
+            <values>
+                <fullName>3%2E Low Switching Cost and Competition Vulnerable</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Danfoss</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Supplier_Share_of_Wallet</fullName>
+        <active>true</active>
+        <description>Used for creating Supplier Share of Wallet</description>
+        <label>Supplier Share of Wallet</label>
+        <picklistValues>
+            <picklist>Competitor_Name_picklist__c</picklist>
+            <values>
+                <fullName>ABB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AC Tech %28Lenze%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AC%26R-Henry Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ACC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALBERTS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ATLANT-SERVICE Sp%2E z o%2Eo%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AWP Revalco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adlee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alco %28Emerson Flow Controls%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alfa Laval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allen Bradley</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alpha Laval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alstom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amtech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ansaldo Sistemi Industriali</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Apotec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arcelik</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armatch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B %26 R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOCK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baldor %28Reliance%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belimo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bitzer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bonfigilioli %28Vectron%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bosch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brassen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bristol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brunata</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Buderus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bürkert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CIAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Caen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carel spa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carlo Gavazzi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Carrier%2FCarlyle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Castel s%2Er%2El</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chongqing Jialing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chunhui</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chunlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chyn Tec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clorius Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Converteam</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cooltech Finland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cubigel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Own Solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DAF Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daewoo International Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daikin Industries Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Daikin%2FMcQuay%2FJ%26E Hall</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dalian Bingshan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Decon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delphi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DeltaTec</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dongboo Daewoo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dorin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dunan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dunham Bush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELREHA Elektronische Regelungen GmbH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESCO %28Toshiba%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EUROHEAT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EVERY CONTROL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EWERS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eaton %28Cutler Hammer%2FMoeller%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ebara</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eckelmann</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electrolux</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elettronica Santerno</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elgin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eliwell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Embraco%2FAspera</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emerson %28Control Techniques%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emerson Climate Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emerson%2FCPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emotron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FUNKE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fasteco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Femiks BB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fenix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finetec Century</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Frascold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fratelli Guerra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fuji</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fujikoki Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fujitsu General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fusheng</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GAR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GEA Grasso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GFRAN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GIA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GMCC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GRUNDFOS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gebwell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gems Sensors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gree%2FLanda</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Guangzhou Wanbao Refrigerator Co%2E%2C Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HPB Motion Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Habekost%2FHabo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hanbell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hansa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hansen Technologies Corp%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heatcraft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heimeier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heldon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Heli Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Henry Technologies%2C Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Herz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hitachi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hitachi%2FHighly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Holter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honeywell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Honeywell International Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HuayiGrp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Huba Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Huyai%2FCubigel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hydac - HQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hyundai</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Högfors GST</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IMI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infoss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invertek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ita Kom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JAF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JUMO GmbH %26 Co%2E KG - HQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Johnson Controls Inc%2E %28Penn%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>K %2B P %28Kieback %2B Peter%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KEB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kaishan%2FKerry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kamo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kamstrup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kangpusi Refrigeration Engineering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kavlico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keller AG - HQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kesab</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kistler Instrumente AG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kobelco %28Kobe Steel%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kulthorn Kirby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kulthorn Kirby Public Company Limited</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LAE Electronic srl</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LDM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LG Electronics Inc%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LS %28LG%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LTI %28Lust%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local RC%2FCC Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loher</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luvata</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MIKOM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Magnetek</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Masterflux</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mayekawa%2FMycom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meibes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meiyo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Metawa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Midea</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitsubishi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitsubishi Electric%2FSCI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitsubishi Heavy Industries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mitsubishi Heavy Industries%2C Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mueller Industries%2C Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NICHIDEN Corporation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NS Koncept</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nagano Keiki HQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Naval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New Widetech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nord Gear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OFFENWANGER GmbH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunistic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oprema</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oventrop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PEWO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PIREKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Panasonic Compressor MY Sdn%2E Bhd%2E %28Matsu</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parker Hannifin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parker Sporlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Priwa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Qing%27an</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quingdao Pacific</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R-Squared Puckett</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RC%2FCC Local Competitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RDM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>REBARO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFF Le Robinet Frigorifique Francais</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ranco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rechi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RefComp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rehau</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rivacold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rockwell Automation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Roth</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAGINOMIYA SEISAKUSHO%2C INC%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SANYO Electric Co%2E%2C Ltd%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SBT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SEW-EURODRIVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SIMON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWEP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Samson</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Samsung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sanhua</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sanken</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sanyo%2FPanasonic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sauermann</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sauter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schneider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schneider Electric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sensata</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shanghai Thermostat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Siemens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Siemens %28Robicon%2FFlender%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Siemens AG - HQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Simplex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Snowkey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sondex</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stöber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Superfreeze India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Superior Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Systherm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TE Connectivity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TEE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TSI Technologies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technoblock S%2Ep%2EA%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tecumseh</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teddington</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermocomplect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toshiba</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Toshiba Carrier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Traco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trafag AG HQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tranter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Uponor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacon %28TB Woods%2FBerges%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Valvugas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vesper %28Becnep%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vexve</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WEG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WIKA Alexander Wiegand GmbH %26 Co%2E KG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wanbao%2FACC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wurm GmbH%2E KG Elektronische Systeme</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yados</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yantai Moon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yaskawa</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>York</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yuanbao</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zehnder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zener</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zenny</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zhejiang Zhongbao Industry Holding Co%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ziehl-Abegg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Line__c</picklist>
+            <values>
+                <fullName>PL%E2%80%AA02%E2%80%AA %E2%80%AABurner Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA03%E2%80%AA %E2%80%AAResidential Heating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA04%E2%80%AA %E2%80%AAIndustrial Automation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA06%E2%80%AA %E2%80%AAHousehold Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA07%E2%80%AA %E2%80%AAAppliance Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA08%E2%80%AA %E2%80%AADistrict Energy Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA09%E2%80%AA %E2%80%AAVLT Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA10%E2%80%AA %E2%80%AAVenture Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA14%E2%80%AA %E2%80%AAHigh-Pressure Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA15%E2%80%AA %E2%80%AANon Danfoss business areas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA16%E2%80%AA %E2%80%AAWater valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA17%E2%80%AA %E2%80%AACommercial Compressors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA18%E2%80%AA %E2%80%AAGearmotors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA20%E2%80%AA %E2%80%AAHeat Recovery Ventilation %26 Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA21%E2%80%AA %E2%80%AAElectric Heating Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA22%E2%80%AA %E2%80%AAHeat Pumps</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA23%E2%80%AA %E2%80%AADanfoss Silicon Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA24%E2%80%AA %E2%80%AAHeat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA25%E2%80%AA %E2%80%AAElectronic Controllers %26 Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA26%E2%80%AA %E2%80%AASolar Inverters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA28%E2%80%AA %E2%80%AAHydronic Balancing %26 Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA30%E2%80%AA %E2%80%AACustomised Drives</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA31%E2%80%AA %E2%80%AADistrict Energy Heat Exchangers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA32%E2%80%AA %E2%80%AADistrict Energy Heavy Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA33%E2%80%AA %E2%80%AADistrict Energy Light Duty Stations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA34%E2%80%AA %E2%80%AAFloor Heating Hydronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA35%E2%80%AA %E2%80%AAEnergy Metering</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA36%E2%80%AA %E2%80%AAPower Stacks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA37%E2%80%AA %E2%80%AADanfoss Turbocor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL%E2%80%AA89%E2%80%AA %E2%80%AANonDanfoss PL09</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL01 Automatic Controls</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL38 Vacon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PL40 Industrial Refrigeration Products</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Supplier_Position__c</picklist>
+            <values>
+                <fullName>1%2E  High Switching Cost and Entrenched Competition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%2E High Switching Cost but Competition Vulnerable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E Low Switching Cost and Competition Vulnerable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E Low Switching Cost and Competition Disliked</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Competitor</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>CE_ShareofWallet_Currency_Consistency_Ch</fullName>
+        <active>true</active>
+        <description>Share of Wallets should be in the currency of the account</description>
+        <errorConditionFormula>AND(text(Type__c) != &apos;SoWSumComp&apos;, Text(Type__c) != &apos;SoWSum&apos;, 
+text(CurrencyIsoCode) !=  text(Account__r.CurrencyIsoCode))</errorConditionFormula>
+        <errorMessage>Share of Wallets should be in the same currency as the account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CE_SoW_CANNOT_CHANGE_PRODUCTLINE</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED( Product_Line__c )</errorConditionFormula>
+        <errorMessage>You cannot change Product Line once the record is saved, as this affects the un-allocated amount functionality</errorMessage>
+    </validationRules>
+</CustomObject>

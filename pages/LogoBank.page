@@ -1,0 +1,194 @@
+<apex:page sidebar="true" showHeader="true" controller="LogoBankCtrl" standardStylesheets="false" id="page1">
+
+<head>  
+  <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, '/js/jquery.min.js')}"/>
+  <apex:includeScript value="{!URLFOR($Resource.MktgToolboxResource, '/js/jquery-ui.min.js')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/main.css')}"/>
+  <apex:stylesheet value="{!URLFOR($Resource.MktgToolboxResource, 'css/jquery-ui.css')}"/>
+    <style>
+        #phSearchForm {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+    $j(document).ready(function () {
+       prepareDialog();
+       
+       $j("input:file").change(function() {
+          $j("#filename").text($j(this).val().replace(/.*(\/|\\)/, ''));
+          if(hasText($j('#box'))&&hasText($j(this))){
+            $j(":button:contains('{!$Label.Submit}')").button('enable');
+          } else {
+            $j(":button:contains('{!$Label.Submit}')").button('disable');
+          }
+       });
+
+      $j('#box').on('keyup keydown change', function() {
+        if(hasText($j(this))&&hasText($j("input:file"))){
+          $j(":button:contains('{!$Label.Submit}')").button('enable');
+        } else {
+          $j(":button:contains('{!$Label.Submit}')").button('disable');
+        }
+      });
+   });
+    
+    function prepareDialog(){
+      $j(function() {
+          $j( "#image-submit-confirm" ).dialog({
+              resizable: false,
+              height:"250px", 
+              width:"550px",
+              maxWidth:800,
+              autoOpen:false,
+              modal: true,
+              buttons: {
+                  "{!$Label.Submit}": function() {
+                      $j( this ).dialog( "close" ); 
+                      $j( "#question-submit-post" ).dialog( "open" );
+                      generateTaskJS();                       
+                      return false;
+                  },
+                  "{!$Label.CancelButton}": function() {
+                      $j( this ).dialog( "close" );
+                      return false;
+                  }
+              }
+          });
+          $j( "#question-submit-post" ).dialog({
+          resizable: false,
+          height:"250px", 
+          width:"550px",
+          maxWidth:800,
+          autoOpen:false,
+          modal: true,
+         
+        });
+          $j(":button:contains('{!$Label.Submit}')").button('disable');
+      });
+  }
+
+  function hasText(obj) {
+    return obj.val().replace(/^\s+|\s+$/g, '').length > 0;
+  }
+
+  function openImageConfirmBox(){
+      $j( "#image-submit-confirm" ).dialog( "open");
+  }
+
+function generateTaskJS(){
+  var commentString = $j('#box').val();
+  $j('#commentString :input:first').val(commentString);
+  generateTaskAF();
+}
+
+function inputFile() {
+    $j( "input:file" ).click();
+}
+
+$j(function() {
+  $j( "button" )
+    .button()
+    .click(function( event ) {
+      event.preventDefault();
+    });
+});
+</script> 
+
+<div  class="modal" id="question-submit-post" title="Thanks"> 
+    <br />
+    <div class="modalText">
+      <p>Thank you for your question!</p>
+    </div>
+    <br />
+</div>
+
+<apex:form id="form1">  
+
+<div style="display: none;"> 
+<apex:inputFile value="{!attachment}" filename="{!filename}" contentType="{!contentType}"/>
+<div id="commentString">
+  <apex:inputTextArea value="{!commentBox}" />
+</div>
+</div>
+
+<div  class="modal" id="image-submit-confirm" title="{!$Label.RequestTitle}">
+  <div class="modalText"> 
+    <textarea  id="box" value="" placeholder="{!$Label.RequestPlaceholder}"/>
+  </div>
+  <div style="margin-top: 10px;">
+    <div style="margin: 15px 15px 0 10px;">
+      <button type="button" id="fakeBrowse" onclick="inputFile();"><span>{!$Label.SelectFile}</span></button>
+      <label id="filename" readonly="true"/>
+    </div>
+  </div>
+  <br />
+</div>
+
+<div class="container bottommargin">
+  <div class="greeting">
+    <span class="name" style="float: left;">
+      <ol class="breadcrumb">
+        <li><a href="{!IF($Site.Prefix!=null,$Site.Prefix,'')}{!'/apex/MarketingToolbox?sfdc.tabName='&$CurrentPage.parameters.sfdc.tabName}">{!$Label.Marketing_Toolbox}</a></li>
+        <li>{!$Label.Logos}</li>
+      </ol>
+    </span> 
+    <div style="float: right;">
+      <a href="{!IF($Site.Prefix!=null,$Site.Prefix,'')}{!'/apex/MarketingToolbox?sfdc.tabName='&$CurrentPage.parameters.sfdc.tabName}">{!$Label.Back}</a>
+    </div>
+  </div>
+
+<apex:pageMessages id="msgs"/>
+
+<div class="pageSummary">
+    <p><apex:outputText escape="false" value="{!portalBanner.Summary__c}" /></p>
+</div>
+
+<div>
+  <div class="submitLink" style="float:left;margin-left:22px;">
+      <a class="arrow" href="#" onclick="openImageConfirmBox(); return false;">
+        <span>{!$Label.LogoBankSubmitButton}</span>
+    </a>    
+</div>
+</div>
+
+<div class="topBorder"></div>
+
+<div>
+  <table class="imageTable">
+    <tbody>
+      <tr>
+        <apex:variable value="{!1}" var="panelCount"/>
+        <apex:variable value="{!1}" var="rowCount"/>
+        <apex:repeat value="{!conWrapList}" var="conWrap">
+        <td class="imagePanel {!IF(panelCount==5,'imagePanelLast','')}">
+            <div style="position:relative;">
+              <div class="{!IF(rowCount > 1, 'panelTopBorder','')}"></div>
+              <div class="bottommargin">
+                <img src="{!IF($Site.Prefix!=null,$Site.Prefix,'')}/sfc/servlet.shepherd/version/download/{!conWrap.converid}" style="width: 180px; height: 90px;"/>
+            </div>
+            <div class="bottommargin">{!conWrap.description}</div>
+            <div class="title">
+                <apex:outputText value="{!conWrap.title}" styleClass="productTitle"/>
+            </div>
+            <a class="download-link" href="{!IF($Site.Prefix!=null,$Site.Prefix,'')}/sfc/servlet.shepherd/version/download/{!conWrap.converid}">{!$Label.Download}</a>
+        </div>
+    </td>
+    <apex:outputText value="</tr><tr>" escape="false" rendered="{!panelCount==5}" />
+    <apex:variable var="rowCount" value="{!IF(panelCount==5, rowCount +1, rowCount)}"/>
+    <apex:variable var="panelCount" value="{!IF(panelCount==5, 1, panelCount + 1)}"/>
+</apex:repeat>
+</tr>
+</tbody>
+</table> 
+</div>
+<div class="panelTopBorder"></div>
+</div>
+
+<apex:actionFunction name="generateTaskAF" action="{!generateCase}" >
+</apex:actionFunction> 
+
+</apex:form>
+</apex:page>

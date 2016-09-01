@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case created - Service Reuest - Commissioning - Mail to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>CASE CREATED - SERVICE REQUEST - COMMISSIONING - MAIL TO CUSTOMER</name>
+    <style>formalLetter</style>
+    <subject>Case Number: {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear {!Case.Contact},
+
+Thank you for contacting Danfoss Customer Service center. Your request is registered with us and the case no is {!Case.CaseNumber}.
+
+Please fill the attached commissioning check list and send it back to us at the earliest. We will arrange for service Engineer on receipt of commissioning checklist.
+
+In order to check the status of your case, please call us on 0008001009289.
+
+
+Best regards,
+Danfoss Customer Service Center
+
+N.B - Please reply back to this email for any further correspondence.
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

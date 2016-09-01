@@ -1,0 +1,3 @@
+<apex:page standardController="Account" extensions="AccountTeamDivisionsExtension">  
+    <apex:outputText value="{!udivs}"/>
+</apex:page>

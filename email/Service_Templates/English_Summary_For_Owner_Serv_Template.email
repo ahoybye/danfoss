@@ -1,0 +1,8 @@
+<messaging:emailTemplate subject="Acknowledgement of Service Bulletin sent to Customer" recipientType="User" relatedToType="Bulletin_Accounts__c">
+<messaging:htmlEmailBody >
+Dear {!recipient.name},
+<br/>
+<br/>
+<c:EmailSummaryForAccountOwner bulletinAcctId="{!relatedTo.Id}" accountId="{!relatedTo.Account__c}" notificationType="Service Bulletin" busArea="{!relatedTo.Bulletin_Delivery_Job__r.Business_Area__c}" bulletinDelJobId="{!relatedTo.Bulletin_Delivery_Job__r.Id}" bulletinDelJobName="{!relatedTo.Bulletin_Delivery_Job__r.Name}"/>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

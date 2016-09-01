@@ -1,0 +1,18 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><font class="Apple-style-span" face="arial">The block on {!Account.Name} - SAP Account ID {!Account.SAP_Account_ID__c}&nbsp;has been removed.</font></p>
+<p>&nbsp;</p>
+<p>Click <a href="{!Account.Link}">here</a> to view the account in Salesforce.com.</p>
+<div><font class="Apple-style-span" face="arial"><br></font></div>
+<div><font class="Apple-style-span" face="arial"><br></font></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

@@ -1,0 +1,54 @@
+<apex:page controller="InitQuoteController" showHeader="false" sidebar="false">
+    <apex:includeScript value="/support/console/22.0/integration.js"/>
+    <apex:form >        
+        <script type='text/javascript'>
+        function closeThisTab() {
+	        //First find the ID of the current tab to close it
+	    	sforce.console.getEnclosingTabId(closeSubtab);
+		}
+        var closeSubtab = function closeSubtab(result) {
+            //Now that we have the tab ID, we can close it
+            var tabId = result.id;
+            sforce.console.closeTab(tabId, callback);
+		};
+        var callback = function () {
+			if (result.error) {
+				alert("Error message is " + result.error);
+			}
+		};
+        
+        function handleResult(result) {
+        	
+            var configitUrl = result; 
+                        
+            if(sforce.console.isInConsole()) 
+			{ 
+              	
+                //sforce.console.openPrimaryTab(null,configitUrl,true,'Configit Quote');                
+                
+                window.open(configitUrl, 'Configit');
+                sforce.console.openPrimaryTab(null,'/{!objectId}',true);
+                closeThisTab();                                
+                                
+                //window.top.location = configitUrl;
+                //testCloseTab();
+                //var iframe = document.getElementById('configitFrame');
+                //iframe.src = configitUrl;
+                //iframe.src = 'http://www.salesforce.com'; 
+                //https://danfoss--ebusiquote.cs51.my.salesforce.com/ui/support/servicedesk/ServiceDeskPage#/5004B000000xUxw
+                	    
+                
+			} else {                
+				window.top.location = configitUrl;
+			}            
+		}
+     	            	
+        //Visualforce.remoting.timeout = 120000; // Set timeout at page level
+        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.InitQuoteController.createOpptyAndRedirect}','{!objectType}','{!objectId}', handleResult);			                                                                                                                                                                      				
+            
+        </script>
+        <apex:outputPanel id="infopanel">
+            Redirecting to Configit...
+        </apex:outputPanel>        
+    </apex:form>
+</apex:page>

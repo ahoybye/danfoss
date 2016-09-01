@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Rücknahmebedigungen: Ware nicht älter wie 6 Monate, Überprüfung der Ware von der Servicewerkstatt, Rücknahmegebühren = induviduell anpassbar</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_Letterhead_Logo_Only</letterhead>
+    <name>Rücknamebedingungen allgemein</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>W E R K S R Ü C K G A B E
+
+Ihre Anfrage Nr.
+vom
+
+Gerne teilen wir Ihnen unsere Rücknahmebedingungen mit.
+
+Eine Rücknahme kann unter folgenden Voraussetzungen erfolgen:
+* die Ware muss im Originalzustand sein / die Ware darf nicht Eingebaut gewesen sein.
+
+* die Ware darf nicht älter als max. 6 Monate ab dem Rechnungsdatum sein.
+
+* Rücknahme erfolgt vorbehaltlich einer Überprüfung in unserer Servicewerkstatt.
+
+* Rücknahmegebühren betragen XXX vom Warenwert, mind. XXX
+
+Bitte legen Sie einen Liefernachweis bei oder geben Sie eine Rechnungsnummer an.
+
+Mit freundlichen Grüßen
+
+
+{!Case.OwnerFirstName} {!Case.OwnerLastName}
+Customer Service Central European Region
+
+Danfoss GmbH
+Carl-Legien-Straße 8, 63073 Offenbach/Main, Germany
+_______________________________________________
+Achtung, neue Kontaktdaten!!!
+Tel.:     +49 69 97533	044
+E-Mail: CS@danfoss.de
+_______________________________________________
+http://www.danfoss.de
+............
+Geschäftsführer: Ole Møller-Jensen
+Amtsgericht Offenbach am Main, Handelsregister HRB 41812
+Steuer-Nr. 035 225 07148, USt-ID. DE811179653
+............
+P   Go green - keep it on the screen   J
+
+Please consider the environment before printing this e-mail.
+*****
+This message and any files transmitted with it may be confidential and are intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system.
+*****
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen {!Case.Thread_Id}</textOnly>
+    <type>html</type>
+</EmailTemplate>

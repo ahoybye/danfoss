@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Partner Assignment details - Mail to customer</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>PARNTER - ASSIGNMENT NEW</name>
+    <style>formalLetter</style>
+    <subject>Case Number:  {!Case.CaseNumber} – {!Case.Subject} [{!Case.Thread_Id}]</subject>
+    <textOnly>Dear Sir/Madam,
+We have a request from {!Account.Name} ,  company. This request is being forwarded to you. Please find the case details below
+
+
+
+Customer Details:
+
+
+Contact Name: {!Case.Contact} 
+
+Contact Details : {!Case.ContactMobile} /{!Case.ContactPhone}
+
+Contact Email : {!Case.ContactEmail}
+
+
+Case Details:
+
+Request Type: {!Case.RecordType}
+Description: {!Case.Description}
+Danfoss Sales Person:{!Case.OwnerFullName}
+
+
+
+
+Please reply back on the same email, with copy of quotation submitted to customer for our own records.
+
+
+Thanks and best regards,
+Danfoss Customer Service Center
+
+
+
+
+
+N.B - Please reply back to this email for any further correspondence.
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Machine Model</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Machine Models</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Machine Models --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- 2013 --></label>
+        <name>Annual_Production_Volume_Plus1__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2014 --></label>
+        <name>Annual_Production_Volume_Plus2__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2015 --></label>
+        <name>Annual_Production_Volume_Plus3__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2016 --></label>
+        <name>Annual_Production_Volume_Plus4__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2017 --></label>
+        <name>Annual_Production_Volume_Plus5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Production Volume - 2012 --></label>
+        <name>Annual_Production_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Machine Models --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Average Content per Machine --></label>
+        <name>Average_Content_per_Machine__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compelling Event - Reason --></label>
+        <name>Compelling_Event_Reason__c</name>
+    </fields>
+    <fields>
+        <help><!-- A compelling event could be eg. Machine Redesign --></help>
+        <label><!-- Compelling Event --></label>
+        <name>Compelling_Event__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select all that apply --></help>
+        <label><!-- Software - Details --></label>
+        <name>Electronics_Software_Details__c</name>
+        <picklistValues>
+            <masterLabel>BODAS (Bosch Rexroth)</masterLabel>
+            <translation><!-- BODAS (Bosch Rexroth) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C/C++</masterLabel>
+            <translation><!-- C/C++ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CoDeSys</masterLabel>
+            <translation><!-- CoDeSys --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Control F(x) (Eaton)</masterLabel>
+            <translation><!-- Control F(x) (Eaton) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IQAN (Parker)</masterLabel>
+            <translation><!-- IQAN (Parker) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LabView</masterLabel>
+            <translation><!-- LabView --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM programmed</masterLabel>
+            <translation><!-- OEM programmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Software</masterLabel>
+            <translation><!-- Other Software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1</masterLabel>
+            <translation><!-- PLUS+1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD programmed</masterLabel>
+            <translation><!-- SD programmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third party programmed</masterLabel>
+            <translation><!-- Third party programmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown Software</masterLabel>
+            <translation><!-- Unknown Software --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is software used for above functions? --></label>
+        <name>Electronics_Software__c</name>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Engine Power --></label>
+        <name>Engine_Power__c</name>
+        <picklistValues>
+            <masterLabel>131-200 kW (178-272 hp)</masterLabel>
+            <translation><!-- 131-200 kW (178-272 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18-37 kW (24-50 hp)</masterLabel>
+            <translation><!-- 18-37 kW (24-50 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>201-300 kW (273-408 hp)</masterLabel>
+            <translation><!-- 201-300 kW (273-408 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>301-400 kW (409-544 hp)</masterLabel>
+            <translation><!-- 301-400 kW (409-544 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>38-56 kW (51-76 hp)</masterLabel>
+            <translation><!-- 38-56 kW (51-76 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>401-560 kW (545-761 hp)</masterLabel>
+            <translation><!-- 401-560 kW (545-761 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>57-75 kW (77-102 hp)</masterLabel>
+            <translation><!-- 57-75 kW (77-102 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>76-130 kW (103-177 hp)</masterLabel>
+            <translation><!-- 76-130 kW (103-177 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt;18 kW (&lt;24 hp)</masterLabel>
+            <translation><!-- &lt;18 kW (&lt;24 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt;560 kW (&gt;761 hp)</masterLabel>
+            <translation><!-- &gt;560 kW (&gt;761 hp) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Engine</masterLabel>
+            <translation><!-- No Engine --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select all that apply --></help>
+        <label><!-- Fan Drive - Details --></label>
+        <name>Fan_Drive_Details__c</name>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric</masterLabel>
+            <translation><!-- Electric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic control</masterLabel>
+            <translation><!-- Electronic control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan non-reversing</masterLabel>
+            <translation><!-- Fan non-reversing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan pitch control</masterLabel>
+            <translation><!-- Fan pitch control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan reversing</masterLabel>
+            <translation><!-- Fan reversing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan stand-still</masterLabel>
+            <translation><!-- Fan stand-still --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fixed ratio</masterLabel>
+            <translation><!-- Fixed ratio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic</masterLabel>
+            <translation><!-- Hydraulic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical</masterLabel>
+            <translation><!-- Mechanical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shared Pump</masterLabel>
+            <translation><!-- Shared Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable ratio belt</masterLabel>
+            <translation><!-- Variable ratio belt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Viscous Clutch</masterLabel>
+            <translation><!-- Viscous Clutch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Fan Drive --></label>
+        <name>Fan_Drive__c</name>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric</masterLabel>
+            <translation><!-- Electric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic</masterLabel>
+            <translation><!-- Hydraulic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical/Belt Drive</masterLabel>
+            <translation><!-- Mechanical/Belt Drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Engine</masterLabel>
+            <translation><!-- No Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Viscous clutch</masterLabel>
+            <translation><!-- Viscous clutch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Machine Model Status --></label>
+        <name>Machine_Model_Status__c</name>
+        <picklistValues>
+            <masterLabel>In development</masterLabel>
+            <translation><!-- In development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In production</masterLabel>
+            <translation><!-- In production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Obsolete</masterLabel>
+            <translation><!-- Obsolete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service only</masterLabel>
+            <translation><!-- Service only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Maximum Machine Speed --></label>
+        <name>Maximum_Machine_Speed__c</name>
+        <picklistValues>
+            <masterLabel>10-24 km/h (6-15 mph)</masterLabel>
+            <translation><!-- 10-24 km/h (6-15 mph) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25-40 km/h (16-25 mph)</masterLabel>
+            <translation><!-- 25-40 km/h (16-25 mph) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>41-60 km/h (26-38 mph)</masterLabel>
+            <translation><!-- 41-60 km/h (26-38 mph) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt;10 km/h (&lt;6 mph)</masterLabel>
+            <translation><!-- &lt;10 km/h (&lt;6 mph) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt;60 km/h (&gt;38 mph)</masterLabel>
+            <translation><!-- &gt;60 km/h (&gt;38 mph) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not self-propelled</masterLabel>
+            <translation><!-- Not self-propelled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Production End Date --></label>
+        <name>Production_End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please type in the date manually if it is prior to those available in the drop down selection --></help>
+        <label><!-- Production Start Date --></label>
+        <name>Production_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transmission --></label>
+        <name>Propel_Function__c</name>
+        <picklistValues>
+            <masterLabel>Dont&apos; know</masterLabel>
+            <translation><!-- Dont&apos; know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric Drive</masterLabel>
+            <translation><!-- Electric Drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hybrid Drive</masterLabel>
+            <translation><!-- Hybrid Drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrostatic transmission</masterLabel>
+            <translation><!-- Hydrostatic transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical transmission</masterLabel>
+            <translation><!-- Mechanical transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not self-propelled</masterLabel>
+            <translation><!-- Not self-propelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powersplit transmission</masterLabel>
+            <translation><!-- Powersplit transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Torque converter transmission</masterLabel>
+            <translation><!-- Torque converter transmission --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select all that apply --></help>
+        <label><!-- Transmission - Details --></label>
+        <name>Propel_Function_details__c</name>
+        <picklistValues>
+            <masterLabel>1 axle drive</masterLabel>
+            <translation><!-- 1 axle drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 motor gearbox control</masterLabel>
+            <translation><!-- 2 motor gearbox control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automatic transmission</masterLabel>
+            <translation><!-- Automatic transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Axle drive</masterLabel>
+            <translation><!-- Axle drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Battery powered</masterLabel>
+            <translation><!-- Battery powered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Capacitor</masterLabel>
+            <translation><!-- Capacitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed circuit</masterLabel>
+            <translation><!-- Closed circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct wheel drive</masterLabel>
+            <translation><!-- Direct wheel drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual Path</masterLabel>
+            <translation><!-- Dual Path --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric accumulator (battery)</masterLabel>
+            <translation><!-- Electric accumulator (battery) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engine with generator</masterLabel>
+            <translation><!-- Engine with generator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic accumulator</masterLabel>
+            <translation><!-- Hydraulic accumulator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrostatic wheel assist drive</masterLabel>
+            <translation><!-- Hydrostatic wheel assist drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual transmission</masterLabel>
+            <translation><!-- Manual transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi axle drive</masterLabel>
+            <translation><!-- Multi axle drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open circuit</masterLabel>
+            <translation><!-- Open circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Powershift transmission</masterLabel>
+            <translation><!-- Powershift transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speed shift control</masterLabel>
+            <translation><!-- Speed shift control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stationary</masterLabel>
+            <translation><!-- Stationary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Track drive</masterLabel>
+            <translation><!-- Track drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trailer mounted</masterLabel>
+            <translation><!-- Trailer mounted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Truck/vehicle mounted</masterLabel>
+            <translation><!-- Truck/vehicle mounted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Share of Wallet (in %) --></label>
+        <name>Share_of_Wallet__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select all that apply --></help>
+        <label><!-- Steering Function - Details --></label>
+        <name>Steering_Function_Details__c</name>
+        <picklistValues>
+            <masterLabel>2-axis steer</masterLabel>
+            <translation><!-- 2-axis steer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Allwheel steering</masterLabel>
+            <translation><!-- Allwheel steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Articulated steering</masterLabel>
+            <translation><!-- Articulated steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Automatic guidance</masterLabel>
+            <translation><!-- Automatic guidance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dual path</masterLabel>
+            <translation><!-- Dual path --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Front steering</masterLabel>
+            <translation><!-- Front steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPS Guidance</masterLabel>
+            <translation><!-- GPS Guidance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joystick Steering</masterLabel>
+            <translation><!-- Joystick Steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Joystick/mini wheel steering</masterLabel>
+            <translation><!-- Joystick/mini wheel steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mini steering wheel</masterLabel>
+            <translation><!-- Mini steering wheel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quick Steer</masterLabel>
+            <translation><!-- Quick Steer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rear steering</masterLabel>
+            <translation><!-- Rear steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Row Crop Guidance</masterLabel>
+            <translation><!-- Row Crop Guidance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shared Pump</masterLabel>
+            <translation><!-- Shared Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steer by wire</masterLabel>
+            <translation><!-- Steer by wire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Torque amplified</masterLabel>
+            <translation><!-- Torque amplified --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traditional steer</masterLabel>
+            <translation><!-- Traditional steer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Steering Function --></label>
+        <name>Steering_Function__c</name>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric(-mechanical) steering</masterLabel>
+            <translation><!-- Electric(-mechanical) steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electrohydraulic steering</masterLabel>
+            <translation><!-- Electrohydraulic steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic steering</masterLabel>
+            <translation><!-- Hydraulic steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mechanical steering</masterLabel>
+            <translation><!-- Mechanical steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Steering Function</masterLabel>
+            <translation><!-- No Steering Function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Based on 2015 volume --></help>
+        <label><!-- Total Annual Machine Potential --></label>
+        <name>Total_Machine_Potential__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select all that apply --></help>
+        <label><!-- Working Function - Details --></label>
+        <name>Work_Function_Details__c</name>
+        <picklistValues>
+            <masterLabel>120-300 l/m main function flow</masterLabel>
+            <translation><!-- 120-300 l/m main function flow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60-120 l/m main function flow</masterLabel>
+            <translation><!-- 60-120 l/m main function flow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt;60 l/m main function flow</masterLabel>
+            <translation><!-- &lt;60 l/m main function flow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt;300 l/m main function flow</masterLabel>
+            <translation><!-- &gt;300 l/m main function flow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto tool leveling</masterLabel>
+            <translation><!-- Auto tool leveling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aux (valves for implements)</masterLabel>
+            <translation><!-- Aux (valves for implements) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cabin control</masterLabel>
+            <translation><!-- Cabin control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chassis control(leveling, side shift)</masterLabel>
+            <translation><!-- Chassis control(leveling, side shift) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed circuit</masterLabel>
+            <translation><!-- Closed circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Don&apos;t know</masterLabel>
+            <translation><!-- Don&apos;t know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Front hitch control</masterLabel>
+            <translation><!-- Front hitch control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hybrid</masterLabel>
+            <translation><!-- Hybrid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic Master-slave leveling</masterLabel>
+            <translation><!-- Hydraulic Master-slave leveling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linear function</masterLabel>
+            <translation><!-- Linear function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Loader control</masterLabel>
+            <translation><!-- Loader control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open circuit</masterLabel>
+            <translation><!-- Open circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parallel-Kinematic</masterLabel>
+            <translation><!-- Parallel-Kinematic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power brake</masterLabel>
+            <translation><!-- Power brake --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quick shift implement</masterLabel>
+            <translation><!-- Quick shift implement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rear hitch control</masterLabel>
+            <translation><!-- Rear hitch control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ride control(boom active damping)</masterLabel>
+            <translation><!-- Ride control(boom active damping) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rotary</masterLabel>
+            <translation><!-- Rotary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rotary function</masterLabel>
+            <translation><!-- Rotary function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special-Kinematic</masterLabel>
+            <translation><!-- Special-Kinematic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stabilizer control</masterLabel>
+            <translation><!-- Stabilizer control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strawwalker</masterLabel>
+            <translation><!-- Strawwalker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspension</masterLabel>
+            <translation><!-- Suspension --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telescope control</masterLabel>
+            <translation><!-- Telescope control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twin Rotor</masterLabel>
+            <translation><!-- Twin Rotor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Z-Kinematic</masterLabel>
+            <translation><!-- Z-Kinematic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Working Function --></label>
+        <name>Work_Function__c</name>
+        <picklistValues>
+            <masterLabel>Dont&apos; know</masterLabel>
+            <translation><!-- Dont&apos; know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electric work function</masterLabel>
+            <translation><!-- Electric work function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraulic work function</masterLabel>
+            <translation><!-- Hydraulic work function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Working Function</masterLabel>
+            <translation><!-- No Working Function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

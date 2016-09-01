@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Benefits Schedule --></label>
+        <name>ccpe_ppm__Benefits_Schedule__c</name>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total Weighted Benefits of the investment --></help>
+        <label><!-- Benefits Weighted Impact --></label>
+        <name>ccpe_ppm__Benefits_Weighted_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- The amount of man days estimated for the business to implement this investment --></help>
+        <label><!-- Business Effort (Man Days) --></label>
+        <name>ccpe_ppm__Business_Effort_Man_Days__c</name>
+        <picklistValues>
+            <masterLabel>100 to 250</masterLabel>
+            <translation><!-- 100 to 250 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 to 50</masterLabel>
+            <translation><!-- 25 to 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>250 to 500</masterLabel>
+            <translation><!-- 250 to 500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 to 100</masterLabel>
+            <translation><!-- 50 to 100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt; 25</masterLabel>
+            <translation><!-- &lt; 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt; 500</masterLabel>
+            <translation><!-- &gt; 500 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance --></help>
+        <label><!-- Cost Overrun - Likelihood --></label>
+        <name>ccpe_ppm__Cost_Overrun_Likelihood__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier --></help>
+        <label><!-- Cost Overrun - Risk --></label>
+        <name>ccpe_ppm__Cost_Overrun_Risk__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to cost overruns determined from risk and likelihood --></help>
+        <label><!-- Cost Overrun - Score --></label>
+        <name>ccpe_ppm__Cost_Overrun_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Costs Schedule --></label>
+        <name>ccpe_ppm__Costs_Schedule__c</name>
+        <picklistValues>
+            <masterLabel>Annual</masterLabel>
+            <translation><!-- Annual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total weighted impact of costs --></help>
+        <label><!-- Costs Weighted Impact --></label>
+        <name>ccpe_ppm__Costs_Weighted_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Effect on attracting more customers, growing customer loyalty, improving speed to market, improving customer satisfaction, increasing flexibility to react, improving company and brand reputation --></help>
+        <label><!-- Customer Perspective - Effect --></label>
+        <name>ccpe_ppm__Customer_Perspective_Effect__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to customer perspective determined from effect and users --></help>
+        <label><!-- Customer Perspective - Score --></label>
+        <name>ccpe_ppm__Customer_Perspective_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors --></help>
+        <label><!-- Customer Perspective - Users --></label>
+        <name>ccpe_ppm__Customer_Perspective_Users__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Provide any supporting information here for justifying the direct financial benefit numbers entered --></help>
+        <label><!-- Direct Financial Benefit - Justification --></label>
+        <name>ccpe_ppm__Direct_Financial_Benefit_Justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide any supporting information here for justifying the direct financial benefit numbers entered --></help>
+        <label><!-- Direct Financial Cost - Justification --></label>
+        <name>ccpe_ppm__Direct_Financial_cost_Justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- The impact score of financial benefits calculated from the total amount of benefits input against this investment --></help>
+        <label><!-- Financial Benefit - Impact --></label>
+        <name>ccpe_ppm__Financial_Benefit_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- The weighting of Direct Financial benefits to the overall investment (Value is drawn from the company standard values) --></help>
+        <label><!-- Financial Benefit - Weight --></label>
+        <name>ccpe_ppm__Financial_Benefit_Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- The calculated impact of Direct Financial Benefits to the overall investment --></help>
+        <label><!-- Financial Benefit - Weighted Impact --></label>
+        <name>ccpe_ppm__Financial_Benefit_Weighted_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- The impact score of financial costs calculated from the total amount of costs input against this investment --></help>
+        <label><!-- Financial Cost - Impact --></label>
+        <name>ccpe_ppm__Financial_Cost_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- The weighting of Direct Financial Costs to the overall investment (Value is drawn from the company standard values) --></help>
+        <label><!-- Financial Cost - Weight --></label>
+        <name>ccpe_ppm__Financial_Cost_Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- The calculated impact of Direct Financial Costs to the overall investment --></help>
+        <label><!-- Financial Cost - Weighted Impact --></label>
+        <name>ccpe_ppm__Financial_Cost_Weighted_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- The high level description of the investment, this is typically populated by the initial request from the business --></help>
+        <label><!-- High Level Description --></label>
+        <name>ccpe_ppm__High_Level_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Greater talent acquisition, improving employee retention, increasing employee satisfaction, improving knowledge management, improving leadership development --></help>
+        <label><!-- Human Capital - Effect --></label>
+        <name>ccpe_ppm__Human_Capital_Effect__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to human captial determined from effect and users --></help>
+        <label><!-- Human Capital - Score --></label>
+        <name>ccpe_ppm__Human_Capital_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors --></help>
+        <label><!-- Human Capital - Users --></label>
+        <name>ccpe_ppm__Human_Capital_Users__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The amount of man days for IT needed to implement this investment --></help>
+        <label><!-- IT Effort (Man Days) --></label>
+        <name>ccpe_ppm__IT_Effort__c</name>
+        <picklistValues>
+            <masterLabel>100 to 250</masterLabel>
+            <translation><!-- 100 to 250 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25 to 50</masterLabel>
+            <translation><!-- 25 to 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>250 to 500</masterLabel>
+            <translation><!-- 250 to 500 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 to 100</masterLabel>
+            <translation><!-- 50 to 100 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt; 25</masterLabel>
+            <translation><!-- &lt; 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&gt; 500</masterLabel>
+            <translation><!-- &gt; 500 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Improving product development, greater innovation and R&amp;D, improving data accuracy, increasing efficiency, reducing risk, increasing reliability --></help>
+        <label><!-- Internal Process - Effect --></label>
+        <name>ccpe_ppm__Internal_Process_Effect__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to customer perspective determined from effect and users --></help>
+        <label><!-- Internal Process - Score --></label>
+        <name>ccpe_ppm__Internal_Process_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors --></help>
+        <label><!-- Internal Process - Users --></label>
+        <name>ccpe_ppm__Internal_Process_Users__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The summation of the investment risk scores (Cost Overrun, Management &amp; User Buy In, Timeline Delays and Technical Competence) --></help>
+        <label><!-- Investment Risks - Impact --></label>
+        <name>ccpe_ppm__Investment_Risks_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- The weighting of Investment Risk Costs to the overall investment (Value is drawn from the company standard values) --></help>
+        <label><!-- Investment Risks - Weight --></label>
+        <name>ccpe_ppm__Investment_Risks_Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- The calculated impact of Investment Risks to the overall investment --></help>
+        <label><!-- Investment Risks - Weighted Impact --></label>
+        <name>ccpe_ppm__Investment_Risks_Weighted_impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide justification for the investment risk values selected --></help>
+        <label><!-- Investment Risks - Justification --></label>
+        <name>ccpe_ppm__Investment_Risks_justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- The impact score of Level of Effort drawn from the IT and Business Effort value&apos;s selected --></help>
+        <label><!-- Level of Effort - Impact --></label>
+        <name>ccpe_ppm__Level_of_Effort_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide justification for the level of effort values selected --></help>
+        <label><!-- Level of Effort - Justification --></label>
+        <name>ccpe_ppm__Level_of_Effort_Justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- The weighting of Level of Effort Costs to the overall investment (Value is drawn from the company standard values) --></help>
+        <label><!-- Level of Effort - Weight --></label>
+        <name>ccpe_ppm__Level_of_Effort_Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- The calculated impact of the Level of Effort cost to the overall investment --></help>
+        <label><!-- Level of Effort - Weighted_ Impact --></label>
+        <name>ccpe_ppm__Level_of_Effort_weighted_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance --></help>
+        <label><!-- Management &amp; User Buy In - Likelihood --></label>
+        <name>ccpe_ppm__Management_User_Buy_In_Likelyhood__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier --></help>
+        <label><!-- Management &amp; User Buy In - Risk --></label>
+        <name>ccpe_ppm__Management_User_Buy_In_Risk__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to management and user buy in determined from risk and likelihood --></help>
+        <label><!-- Management &amp; User Buy In - Score --></label>
+        <name>ccpe_ppm__Management_User_Buy_In_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked this indicates that the request has been approved to move into the execution phase of the investment --></help>
+        <label><!-- Planning Approved --></label>
+        <name>ccpe_ppm__Planning_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- The portfolio that this investment object belongs to --></help>
+        <label><!-- Portfolio --></label>
+        <name>ccpe_ppm__Portfolio__c</name>
+        <relationshipLabel><!-- Investments --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The weighting of Qualitative Benefits to the overall investment (Value is drawn from the company standard values) --></help>
+        <label><!-- Qualitative Benefit - Weight --></label>
+        <name>ccpe_ppm__Qualitative_Benefit_Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- The summation of the qualitative benefits scores (Customer, Human Capital, Internal Process, &amp; Supplier) --></help>
+        <label><!-- Qualitative Benefits - Impact --></label>
+        <name>ccpe_ppm__Qualitative_Benefits_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide justification for the qualitative values selected --></help>
+        <label><!-- Qualitative Benefits - Justification --></label>
+        <name>ccpe_ppm__Qualitative_Benefits_Justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- The calculated impact of Qualitative Benefits to the overall investment --></help>
+        <label><!-- Qualitative Benefits - Weighted Impact --></label>
+        <name>ccpe_ppm__Qualitative_Benefits_Weighted_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked this indicates that the request has been approved to move into the planning phase of the investment --></help>
+        <label><!-- Request Approved --></label>
+        <name>ccpe_ppm__Request_Approved__c</name>
+    </fields>
+    <fields>
+        <help><!-- The impact score of Strategic Fit drawn from the Strategic Fit  value selected --></help>
+        <label><!-- Strategic Fit - Impact --></label>
+        <name>ccpe_ppm__Strategic_Fit_Impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide justification for the strategic fit value selected --></help>
+        <label><!-- Strategic Fit - Justification --></label>
+        <name>ccpe_ppm__Strategic_Fit_Justification__c</name>
+    </fields>
+    <fields>
+        <help><!-- The weighting of Strategic Fit to the overall investment (Value is drawn from the company standard values) --></help>
+        <label><!-- Strategic Fit - Weight --></label>
+        <name>ccpe_ppm__Strategic_Fit_Weight__c</name>
+    </fields>
+    <fields>
+        <help><!-- The calculated impact of Strategic Fit to the overall investment --></help>
+        <label><!-- Strategic Fit - Weighted Impact --></label>
+        <name>ccpe_ppm__Strategic_Fit_Weighted_impact__c</name>
+    </fields>
+    <fields>
+        <help><!-- How well would this investment help meet overall business strategy and strategic goals --></help>
+        <label><!-- Strategic Fit --></label>
+        <name>ccpe_ppm__Strategic_Fit__c</name>
+        <picklistValues>
+            <masterLabel>Critical Benefits</masterLabel>
+            <translation><!-- Critical Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Major Benefits</masterLabel>
+            <translation><!-- Major Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor Benefits</masterLabel>
+            <translation><!-- Minor Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Measurable Benefits</masterLabel>
+            <translation><!-- No Measurable Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Strategic Benefits</masterLabel>
+            <translation><!-- No Strategic Benefits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Improving order accuracy, speed, accuracy, simplicity of payments, improving inventory handling, order lead time, forecasting, and quality improvements --></help>
+        <label><!-- Supplier Perspective - Effect --></label>
+        <name>ccpe_ppm__Supplier_Perspective_Effect__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to supplier perspective determined from effect and users --></help>
+        <label><!-- Supplier Perspective - Score --></label>
+        <name>ccpe_ppm__Supplier_Perspective_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25 internal users AND no major customers AND no major vendors 
+Medium: 26-100 internal users OR some major customers OR some major vendors 
+2 points: Over 100 internal users OR many majors customers OR many major vendors --></help>
+        <label><!-- Supplier Perspective - Users --></label>
+        <name>ccpe_ppm__Supplier_Perspective_Users__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance --></help>
+        <label><!-- Technical Competence - Likelihood --></label>
+        <name>ccpe_ppm__Technical_Competence_Likelihood__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier --></help>
+        <label><!-- Technical Competence - Risk --></label>
+        <name>ccpe_ppm__Technical_Competence_Risk__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to technical competence determined from risk and likelihood --></help>
+        <label><!-- Technical Competence - Score --></label>
+        <name>ccpe_ppm__Technical_Competence_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Low: &lt; 25% Chance
+Medium: 25%-50% Chance
+High: Over 50% Chance --></help>
+        <label><!-- Timeline Delays - Likelihood --></label>
+        <name>ccpe_ppm__Timeline_Delays_Likelihood__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- None - no effect
+Low - minimal impact, with little or no effect to the Business
+Medium - significant but manageable impact on the Business
+High - potential for critical disruption of the business or customer/supplier --></help>
+        <label><!-- Timeline Delays - Risk --></label>
+        <name>ccpe_ppm__Timeline_Delays_Risk__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The calculated score with relation to timeline delays determined from risk and likelihood --></help>
+        <label><!-- Timeline Delays - Score --></label>
+        <name>ccpe_ppm__Timeline_Delays_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Actual Costs --></label>
+        <name>ccpe_ppm__Total_Actual_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summary total of the amount of expected benefits for this investment --></help>
+        <label><!-- Total Benefits --></label>
+        <name>ccpe_ppm__Total_Benefits__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of direct costs for all items to spend on the investment --></help>
+        <label><!-- Total Costs --></label>
+        <name>ccpe_ppm__Total_Costs__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total calculated score for the investment after factoring in all the costs and benefits --></help>
+        <label><!-- Total Investment Score --></label>
+        <name>ccpe_ppm__Total_Investment_Score__c</name>
+    </fields>
+    <fields>
+        <help><!-- Outline the alternative solutions that have been considered. --></help>
+        <label><!-- What alternative solutions considered? --></label>
+        <name>ccpe_ppm__What_alternative_solutions_considered__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe how the problem has come about? How long have we been aware of the problem and any impacts. --></help>
+        <label><!-- What is causing the problem? --></label>
+        <name>ccpe_ppm__What_is_causing_the_problem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Briefly outline the current situation that needs to be changed. --></help>
+        <label><!-- What is happening today? --></label>
+        <name>ccpe_ppm__What_is_happening_today__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe the preferred solution targeted to address the problem / opportunity. --></help>
+        <label><!-- What is the preferred solution? --></label>
+        <name>ccpe_ppm__What_is_the_preferred_solution__c</name>
+    </fields>
+    <fields>
+        <help><!-- Explain why it is the preferred solution and reference supporting evidence. --></help>
+        <label><!-- Why is this preferred? --></label>
+        <name>ccpe_ppm__Why_is_this_preferred__c</name>
+    </fields>
+    <fields>
+        <help><!-- Briefly describe why this is a problem to the business --></help>
+        <label><!-- Why is this a problem? --></label>
+        <name>ccpe_ppm__Why_is_this_problem__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Execution --></label>
+        <name>Execution</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Maintenance --></label>
+        <name>Maintenance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Planning --></label>
+        <name>Planning</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Request --></label>
+        <name>Request</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Investment schedules cannot be changed once the execution stage has begun. --></errorMessage>
+        <name>ccpe_ppm__Cannot_Change_Schedule_After_Planning</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please fill in Strategic Fit Justification when Strategic Fit Impact is greater than 2. --></errorMessage>
+        <name>ccpe_ppm__Strategic_Fit_Impact_over_2</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- View_Benefits --></label>
+        <name>ccpe_ppm__View_Benefits</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_Costs --></label>
+        <name>ccpe_ppm__View_Costs</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Save the Date email for Agritechnica for registration and sign up</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Agritechnica 2015 STD #2</name>
+    <style>none</style>
+    <subject>Sign up for the Sales Partner reception at Agritechnica</subject>
+    <textOnly>Agritechnica 2015
+
+Join us for a Sales Partner Reception
+
+As out valued EMEA Sales Partner, you are invited to join us for an informal reception at the Danfoss Power Solutions booth in Hall 17, booth F14 on Tuesday, November 10th at 18:00.
+
+To register: http://www2.powersolutions.danfoss.com/l/38972/2015-09-28/2zf4tm
+
+Please register by October 23, 2015. You are welcome to bring guests from your company, bul all guests must be registered. 
+
+Questions? 
+Please contact Marco De Jong
+Email: mdejong@danfoss.com
+
+powersolutions.danfoss.com
+
+
+Copyright © 2015 , All rights reserved.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

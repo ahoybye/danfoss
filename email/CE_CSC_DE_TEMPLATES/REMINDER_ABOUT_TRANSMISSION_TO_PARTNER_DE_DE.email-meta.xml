@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>REMINDER ABOUT TRANSMISSION TO PARTNER_DE_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>REMINDER ABOUT TRANSMISSION TO PARTNER_DE_DE</name>
+    <style>formalLetter</style>
+    <subject>Ihre Anfrage Vorgang {!Case.CaseNumber}</subject>
+    <textOnly>Der Vorgang {!Case.CaseNumber} wurde Ihnen zugeordnet am {!Case.CreatedDate} und es liegt keine Information vor, ob der Vorgang an einen Partner übertragen wurde. Sollten Sie noch keine Übertragung zu einem Partner vorgenommen haben, nehmen Sie diese bitte gemäß Ablauf Innerhalb von 8 Stunden nach Vorgangs-Eröffnung vor. Hat die Ûbertragung an den Partner bereits stattgefunden, ist aber noch nicht sichtbar, aktualisieren Sie bitte das System.
+
+
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen
+!Case.Thread_Id}
+
+Wichtiger Hinweis! Wir haben eine neue, zentrale Telefonnummer und E-Mail-Adresse:
+Tel.: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DPS_Letterhead</letterhead>
+    <name>SPO CSR 2015 Communication</name>
+    <style>freeForm</style>
+    <subject>Comunicado de Alteração Contato CSR da Valmova e DPS</subject>
+    <textOnly>Assunto: Transferência de “Atendimento ao Cliente” da Planta Danfoss PS Caxias do Sul- RS (Valmova-CDS) para o Escritório de Vendas da Danfoss PS Osasco – SP (SPO).
+
+Prezado Cliente;
+
+Considerando nosso plano de produzir já em 2015 as válvulas PVG na planta de Caxias do Sul-Rio Grande do Sul, juntamente com uma nova estratégia para o Mercado da América Central &amp; Sul estamos revendo nossa estrutura comercial Danfoss:
+
+A operação VALMOVA vai passar a se chamar Danfoss-Unidade de Negócio de Válvulas de Controle (BU-DCV) e será integrada com a Unidade de Negócios PVG (BU-PVG).
+
+A Danfoss vai continuar a produzir os comandos CDS 60 e CDS 100. Uma nova ênfase está sendo tomada para concluirmos o desenvolvimento da plataforma ECO. Os comandos ECO são parte importante do nosso futuro portfolio global da BU-DCV e preenchem uma lacuna entre as válvulas convencionais e nossas válvulas mais sofisticadas, como o PVG.
+
+Nosso Escritório de Vendas Osasco-SP (SPO) passa a coordenar todas as atividades Técnico/Comercias dos produtos da Planta Danfoss PS Caxias do Sul- RS (Valmova – CDS).
+
+Isto implica que todos os nossos Clientes passam a se comunicar com o seu contato habitual do Escritório de Vendas da Danfoss PS Osasco – SP (SPO) para qualquer necessidade técnico/comercial, como por exemplo, colocação de Pedidos de Compra. Quanto às dúvidas relacionadas ao transporte, coletas de mercadoria Caxias, favor continuar contatando nossa expedição da Planta Caxias do Sul- RS (Valmova – CDS), telefone (54) 3025 9781 contato Srs Leonir ou Michael.
+
+Esta alteração passa a ter efeito a partir de 01 de Julho de 2015 e o e-mail
+“comercial@valmova.com “ , que era usado para envio das vossas Ordens de Compras, não estará mais disponível a partir de 01 de Julho.
+
+Caso tenham duvidas, podem enviar e-mail para ffukumaru@danfoss.com ou ligar para (11) 3658 6805 que o Sr. Flávio Fukumaru estará pronto a lhes auxiliar.
+
+Continuamos focando nas melhorias dos nossos canais de comunicação e, na certeza de que essa nova estratégia vai nos proporcionar uma maior interação com nossos clientes, ficamos a disposição para demais esclarecimentos que se façam necessários.
+
+Atenciosamente;
+
+Antonio Datti
+Gerente Geral
+adatti@danfoss.com
+
+Fabian Beims
+Diretor Global BU-DCV
+Vendas/Desenvolvimento
+fbeims@valmova.com
+
+Luiz Rocha
+Diretor de Vendas
+Lrocha@danfoss.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

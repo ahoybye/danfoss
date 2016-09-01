@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invoice copy mails to customer – Local</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_INDIA_LETTERHEAD</letterhead>
+    <name>BO_Invoice_Customer_Local</name>
+    <style>formalLetter</style>
+    <subject>Invoice details</subject>
+    <textOnly>Dear Sir,
+Kindly find attached invoice copy with LR details for the materials dispatched from our Chennai Warehouse against your order.
+
+
+
+Invoice Number:
+
+Invoice Date:
+
+
+
+
+
+Thanking you and assuring our best services always.
+
+
+Best regards,
+
+
+Danfoss Customer Service Center
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

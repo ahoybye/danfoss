@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is confirmation that the contract has been approved by all required approvers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contract - Fully Approved</name>
+    <style>none</style>
+    <subject>Approved: {!Contract__c.Name} for {!Contract__c.Customer__c} has been fully approved</subject>
+    <type>text</type>
+</EmailTemplate>

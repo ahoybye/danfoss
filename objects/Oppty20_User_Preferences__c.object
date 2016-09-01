@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>Json string with selected countries.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Json string with selected countries.</inlineHelpText>
+        <label>Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency__c</fullName>
+        <description>Id of the record in the CurrencyType object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Id of the record in the CurrencyType object.</inlineHelpText>
+        <label>Currency</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>Json string with selected regions.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Json string with selected regions.</inlineHelpText>
+        <label>Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <description>Json string with selected segments.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Json string with selected segments.</inlineHelpText>
+        <label>Segment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <description>Team member user id.</description>
+        <externalId>false</externalId>
+        <label>Team</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Period__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Period</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Catégorie</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Catégories</value>
+    </caseValues>
+    <fields>
+        <help>Utilisez ce champ pour renseigner un court intitulé que vous souhaitez affecter à la catégorie. Vous pouvez afficher ce champ dans un graphique ou rapport que vous avez créé pour représenter un enregistrement de catégorie.</help>
+        <label><!-- Abbreviation --></label>
+        <name>BMCServiceDesk__Abbreviation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available for Chat --></label>
+        <name>BMCServiceDesk__AvailableForChat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incidents --></label>
+        <name>BMCServiceDesk__AvailableForIncidents__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Requests --></label>
+        <name>BMCServiceDesk__AvailableForServiceCatalog__c</name>
+    </fields>
+    <fields>
+        <help>Utilisez ce champ pour saisir une description de catégorie qui n&apos;excède pas 1 000 caractères. Lorsque les utilisateurs passent la souris au-dessus de cette catégorie dans l&apos;Arborescence de catégorie, la description prend la forme d&apos;une info-bulle.</help>
+        <label><!-- Category Description --></label>
+        <name>BMCServiceDesk__Category_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contains Incident children categories --></label>
+        <name>BMCServiceDesk__Contains_Incident_children_categories__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contains SR children categories --></label>
+        <name>BMCServiceDesk__Contains_SR_children_categories__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display In SelfService --></label>
+        <name>BMCServiceDesk__Display_In_SelfService__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez ce champ pour permettre d&apos;exporter l&apos;enregistrement à partir du package PRF Category Migration Pentaho.</help>
+        <label><!-- Tag for Export --></label>
+        <name>BMCServiceDesk__Export__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez le type de catégorie depuis la liste des options. Le type de catégorie permet de regrouper les catégories apparentées qui sont généralement utilisées en vue de la création de rapports.</help>
+        <label><!-- Category Type --></label>
+        <name>BMCServiceDesk__FKCategoryType__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Content Import --></label>
+        <name>BMCServiceDesk__FKContentImport__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Depuis la liste des options, sélectionnez la catégorie à désigner comme catégorie parent. Une fois la catégorie parent sélectionnée, la catégorie actuelle devient automatiquement une catégorie enfant de la catégorie parent sélectionnée.</help>
+        <label><!-- Parent Category --></label>
+        <name>BMCServiceDesk__FKParentCategory__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Depuis la liste des options, sélectionnez le niveau d&apos;urgence que vous souhaitez affecter lorsque vous créez un incident avec la catégorie. L&apos;administrateur système assignera un niveau d&apos;urgence à la catégorie selon l&apos;importance de celle-ci.</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Categories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Has Children --></label>
+        <name>BMCServiceDesk__HasChildren__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sequence Id --></label>
+        <name>BMCServiceDesk__Sequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Requests --></label>
+        <name>BMCServiceDesk__UnAvailableForChangeRequests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problems --></label>
+        <name>BMCServiceDesk__UnAvailableForProblems__c</name>
+    </fields>
+    <fields>
+        <label><!-- Releases --></label>
+        <name>BMCServiceDesk__UnAvailableForReleases__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tasks --></label>
+        <name>BMCServiceDesk__UnAvailableForTasks__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broadcasts --></label>
+        <name>BMCServiceDesk__UnAvailableforBroadcasts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Under Review --></label>
+        <name>BMCServiceDesk__UnderReview__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez le type de catégorie depuis la liste des options. Le type de catégorie permet de regrouper les catégories apparentées qui sont généralement utilisées en vue de la création de rapports.</help>
+        <label><!-- Category Type~ --></label>
+        <name>BMCServiceDesk__categoryType_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Children --></label>
+        <name>BMCServiceDesk__children__c</name>
+    </fields>
+    <fields>
+        <help>Utilisez ce champ pour indiquer l&apos;intervalle, en heures, entre la fermeture d&apos;un incident et le début d&apos;un suivi. Cette information est automatiquement ajoutée aux données de fermeture d&apos;un incident affecté à la catégorie actuelle.</help>
+        <label><!-- After --></label>
+        <name>BMCServiceDesk__followUpAfter__c</name>
+    </fields>
+    <fields>
+        <help>Sélectionnez ce champ si l&apos;enregistrement de catégorie n&apos;est plus valide, mais que l&apos;enregistrement doit être conservé conformément à la politique de rétention des enregistrements.</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__inactive__c</name>
+    </fields>
+    <fields>
+        <help>Depuis la liste des options, sélectionnez la catégorie à désigner comme catégorie parent. Une fois la catégorie parent sélectionnée, la catégorie actuelle devient automatiquement une catégorie enfant de la catégorie parent sélectionnée.</help>
+        <label><!-- Parent Category~ --></label>
+        <name>BMCServiceDesk__parentCategory_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Tree --></label>
+        <name>BMCServiceDesk__parentTree__c</name>
+    </fields>
+    <fields>
+        <help>Sélect. ce champ pour désigner les incid. devant faire l&apos;objet d&apos;un suivi lorsque la catégorie actuelle est affectée à un incid. Ces incid. feront l&apos;objet d&apos;un suivi à la fermeture de l&apos;incident. La durée de suivi est indiquée dans le champ Après Heures.</help>
+        <label><!-- Follow Up --></label>
+        <name>BMCServiceDesk__requireFollowUp__c</name>
+    </fields>
+    <fields>
+        <help>Depuis la liste des options, sélectionnez le niveau d&apos;urgence que vous souhaitez affecter lorsque vous créez un incident avec la catégorie. L&apos;administrateur système assignera un niveau d&apos;urgence à la catégorie selon l&apos;importance de celle-ci.</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__urgency_Id__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Catégorie</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter Category. --></errorMessage>
+        <name>BMCServiceDesk__CategoryId_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A record with this Category already exists. Enter a unique Category. --></errorMessage>
+        <name>BMCServiceDesk__Unique_Category_Id</name>
+    </validationRules>
+</CustomObjectTranslation>

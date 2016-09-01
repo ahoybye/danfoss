@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to record Customer Needs and Benefits</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Benefit_Classification__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefit Classification</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Functional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Customer Needs - Benefits Identification</relationshipLabel>
+        <relationshipName>Customer_Needs_Benefits_Identification</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Needs__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What does customer need?  What is Customer&apos;s Pain Point?  Use SIIS to describe customer need:
+Start your sentence by: To save cost in …, To increase productivity of …
+Enter One Need at a time</inlineHelpText>
+        <label>Customer Need</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Formulated_Difference_in_BENEFITS_betwee__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Formulated Difference in Benefits between Danfoss and NBA
+Description of the calculation PRINCIPLE for what is the Danfoss&apos; value created 
+(i.e.what is the basis for calculation the economical value created by Danfoss over the NBA?)</inlineHelpText>
+        <label>Formulated Difference in BENEFITS</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>General_basis_for_Benefits__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>General basis for benefits (Basis for total EVC)
+Denominator for calulation of EVC on the general basis, i.e. per year, per unit, per lifetime</inlineHelpText>
+        <label>General Basis for Benefits</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Key_Buying_Factors__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Why does customer need it?
+Use SIIS to describe customer need.</inlineHelpText>
+        <label>Key Buying Factors</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Monetizing_of_Benefits__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Monetizing of Benefits (Input to Waterfall)
+Total EVC quantification in currency</inlineHelpText>
+        <label>Monetizing of Benefits</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Need_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Need Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Explicit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Implicit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hidden</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Need_Verified__c</fullName>
+        <description>This fields indicates if the customer has verified the need.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose Assumed Need if you have yet to verify the need with the customer. Choose Customer Verified Need - Yes if customer agrees this is a need. Choose Customer Verified Need - No if customer says this is not a need.</inlineHelpText>
+        <label>Need Verified</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Assumed Need</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Verified Need - Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Verified Need - No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Customer Needs - Benefits Identification</relationshipLabel>
+        <relationshipName>Customer_Needs_Benefits_Identification</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Role_in_Buying_Center__c</fullName>
+        <externalId>false</externalId>
+        <label>Role in Buying Center</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ultimate Approver</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Screener</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Operator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>What_does_Danfoss_do_to_solve_the_need__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the feature and advantage of Danfoss offering that leads to customer benefit?</inlineHelpText>
+        <label>What does Danfoss do to solve the need?</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>What_does_NBA_do_to_solve_the_need__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>NBA is Next Best Alternative  
+What is the feature and/or advantage of NBA offering that may to customer benefit?</inlineHelpText>
+        <label>What does NBA do to solve the need?</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>What_is_the_NBA_s_Product__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the product, if known, that the NBA is proposing as a solution</inlineHelpText>
+        <label>What is the NBA&apos;s Product?</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Who_is_the_Next_Best_Alternative_NBA__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name Next Best Alternative into this field</inlineHelpText>
+        <label>Who is the Next Best Alternative (NBA)?</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Customer Needs - Benefits Identification</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Contact__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>CNB-{0000}</displayFormat>
+        <label>Customer Needs - Benefits Identification</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Customer Needs - Benefits Identification</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

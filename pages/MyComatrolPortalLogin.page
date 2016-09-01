@@ -1,0 +1,47 @@
+<apex:page controller="PortalLoginController" 
+            showHeader="false"
+            sidebar="false"  
+            standardStylesheets="false"          
+            CACHE="FALSE"
+            id="page">      
+    <apex:composition template="MyComatrolPortalTemplate">            
+        <apex:define name="middle-content">
+        <center>
+        <table style="vertical-align: text-top;" >
+          <tr>
+            <td>
+                <apex:image value="{!URLFOR($Resource.ComatrolHomePageResource, '/img/loginImage.jpg')}"/>
+                
+            </td>
+            <td>
+                <apex:image value="{!URLFOR($Resource.ComatrolHomePageResource, '/img/verticalLine.jpg')}" style="margin-left: 1.5em;"/>
+            </td>
+            <td style="vertical-align:top;">
+            <div id="login">
+                    <apex:form forceSSL="true">     
+                        <div class="home-heading" style="font-family: Myriad;font-weight: bold">Secure Login</div>
+                        <fieldset id="inputs">
+                            <apex:inputText id="username" styleClass="username" value="{!loginEmail}" required="true"/>
+                            <apex:inputSecret value="{!loginPassword}" styleClass="password" id="password" required="true"/>                    
+                        </fieldset>         
+                        <fieldset id="actions">
+                            <a href="{!$Page.PortalForgotPassword}" class="forgot-password">Forgot your password?</a>
+                            &nbsp;&nbsp;<apex:commandButton value="Log in" action="{!login}" styleClass="button large blue login-button" />     
+                        </fieldset>
+                        <apex:outputPanel rendered="{!IF(errorMsg != '', true, false)}" style="font-size: 13px;font-weight: 300;color: red; font: normal normal 1em/100% Helvetica, Arial, 'Lucida Grande', sans-serif;">
+                            {!errorMsg}
+                        </apex:outputPanel>                 
+                  </apex:form>
+                  <div style="font-family: Verdana;font-size: 11px;color: gray;">
+                    <br/>
+                    If your company is an existing Comatrol partner,
+                    please contact your Account or Customer Service Representative to access MyComatrol.
+                  </div>
+                  </div> 
+            </td>
+          </tr>
+        </table>
+        </center>
+      </apex:define>
+    </apex:composition>      
+</apex:page>

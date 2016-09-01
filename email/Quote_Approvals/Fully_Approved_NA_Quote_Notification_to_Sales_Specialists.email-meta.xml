@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Fully Approved NA Quote Notification to Sales Specialists</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Fully Approved and Price Loaded NA Quote Notification to Sales Specialists</name>
+    <style>none</style>
+    <subject>The Quote {!Quote.QuoteNumber} for {!Quote.Merge_Formula_Account_Name__c} has been fully Approved and the price has been loaded in SAP</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpe_ppm__Direct_Financial_Benefit__c</fullName>
+        <defaultValue>50</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used in formula calculations on the investment object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall weight that direct financial benefit applies to an investment (typically between 1% and 99%)</inlineHelpText>
+        <label>Weighting - Direct Financial Benefit</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Direct_Financial_Cost__c</fullName>
+        <defaultValue>-50</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used in formula calculations on the investment object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall weight that direct financial cost applies to an investment (typically between -1% and -99%)</inlineHelpText>
+        <label>Weighting - Direct Financial Cost</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Benefit_Impact_High__c</fullName>
+        <defaultValue>3000000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Benefit Impact - High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Benefit_Impact_Low__c</fullName>
+        <defaultValue>250000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Benefit Impact - Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Benefit_Impact_Medium__c</fullName>
+        <defaultValue>1000000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Benefit Impact - Medium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Benefit_Impact_Very_Low__c</fullName>
+        <defaultValue>50000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Benefit Impact - Very Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Cost_Impact_High__c</fullName>
+        <defaultValue>3000000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Cost Impact - High</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Cost_Impact_Low__c</fullName>
+        <defaultValue>250000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Cost Impact - Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Cost_Impact_Medium__c</fullName>
+        <defaultValue>1000000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Cost Impact - Medium</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Financial_Cost_Impact_Very_Low__c</fullName>
+        <defaultValue>50000</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Financial Cost Impact - Very Low</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Level_of_Effort__c</fullName>
+        <defaultValue>-15</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used in formula calculations on the investment object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall weight that level of effort applies to an investment (typically between -1% and -99%)</inlineHelpText>
+        <label>Weighting - Level of Effort</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Qualitative_Benefits__c</fullName>
+        <defaultValue>15</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used in formula calculations on the investment object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall weight that strategic fit applies to an investment (typically between 1% and 99%)</inlineHelpText>
+        <label>Weighting - Qualitative Benefits</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Strategic_Fit__c</fullName>
+        <defaultValue>35</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used in formula calculations on the investment object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall weight that strategic fit applies to an investment (typically between 1% and 99%)</inlineHelpText>
+        <label>Weighting - Strategic Fit</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__investment_risks__c</fullName>
+        <defaultValue>-35</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used in formula calculations on the investment object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The overall weight that risk &amp; impact applies to an investment (typically between -1% and -99%)</inlineHelpText>
+        <label>Weighting - Investment Risks</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+</CustomObject>

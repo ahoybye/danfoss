@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Return_Request_DEN_DE_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>Return_Request_DEN_DE_EN</name>
+    <style>formalLetter</style>
+    <subject>{!Case.Subject}</subject>
+    <textOnly>To: {!Case.Account}
+
+Attn: {!Case.Contact}
+
+Return
+
+Your inquiry
+from
+Our invoice
+from
+
+A withdrawal is possible.
+
+According to our terms and conditions we will charge you for returned goods withdrawal costs amounting to 25 % of the invoice value. The prerequisite is that product is original and in unopened packaging.
+
+If the products have been damaged or the packaging opened, Danfoss will retain 50 % of the invoice price or a minimum of 100 EUR.
+
+Please send the goods immediately back to:
+
+Danfoss GmbH
+z. Hd. Herrn Yigit
+Carl-Legien-Str. 8
+63073 Offenbach
+
+Please include a copy of this email.
+*
+Upon receipt and examination of the goods you will receive a credit note.
+
+Sincerely yours
+
+Customer Service Central Europe Region
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>AMER_Dist_to_OEM_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>AMER Dist to OEM Share</label>
+        <sharedTo>
+            <role>CRM_Sales_Dctr_OEM_AMER_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_PS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Agco_Global</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Agco Global</label>
+        <sharedTo>
+            <group>PS_Contracts_Agco_Global</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_Contracts_Agco_Global</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CNH_Global</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CNH Global</label>
+        <sharedTo>
+            <group>PS_Contracts_CNH_Global</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_Contracts_CNH_Global</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Acct_Mgr_Dist_CHINA_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Acct Mgr Dist CHINA PS</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_DIST_CHINA_PS</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_AM_Dist_ChinaPS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Acct_Mgr_Dist_EU_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Acct Mgr Dist EU PS</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_DIST_EU_PS</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_AMDistEuropePS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Acct_Mgr_OEM_CHINA_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Acct Mgr OEM CHINA PS</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_OEM_CHINA_PS</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_AM_OEM_ChinaPS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Acct_Mgr_OEM_EU_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Acct Mgr OEM EU PS</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_OEM_EU_PS</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_AMOEMEurope_PS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_BA_Sales_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Sharing BA Sales PS with BA Sales PS and internal subordinates</description>
+        <label>CRM_BA Sales PS</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_BusUnitPS</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_BusUnitPS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Sales_Director_Dist_CHINA_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Sales Director Dist CHINA PS</label>
+        <sharedTo>
+            <role>CRM_Sales_Director_OEM_CHINA_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_DIST_CHINA_PS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Sales_Director_Dist_EU_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Sales Director Dist EU PS</label>
+        <sharedTo>
+            <role>CRM_Sales_Director_OEM_EU_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_DIST_EU_PS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Sales_Director_OEM_AMER_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Sales Director OEM AMER PS</label>
+        <sharedTo>
+            <role>CRM_Sales_Director_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_Sales_Dctr_OEM_AMER_PS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Sales_Director_OEM_CHINA_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Sales Director OEM CHINA PS</label>
+        <sharedTo>
+            <role>CRM_Sales_Director_DIST_CHINA_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_OEM_CHINA_PS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Sales_Director_OEM_EU_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CRM_Sales Director OEM EU PS</label>
+        <sharedTo>
+            <role>CRM_Sales_Director_DIST_EU_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_OEM_EU_PS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>CRM_Service_Team_Mgr_APAC_PS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Across Service Team manager APAC role</description>
+        <label>CRM_Service Team Mgr APAC PS</label>
+        <sharedTo>
+            <role>CRM_Service_Team_Mgr_APAC_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_Service_Team_Mgr_APAC_PS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Caterpillar_Global</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Caterpillar Global</label>
+        <sharedTo>
+            <group>PS_Contracts_Caterpillar_Global</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_Contracts_Caterpillar_Global</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Contract_AMER_Dist</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contract - AMER Dist</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_PS</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_AMDistAmerPS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Contract_AMER_OEM</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contract - AMER OEM</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_Sales_Dctr_OEM_AMER_PS</roleAndSubordinatesInternal>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_AMOEMAmerPS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Contract_PSLT_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contract - PSLT Share</label>
+        <sharedTo>
+            <role>CRM_PSLT</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_PSLT</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Contract_VP_Share</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Contract - VP Share</label>
+        <sharedTo>
+            <role>CRM_VP_PS</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>CRM_VP_PS</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>John_Deere_Global</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>John Deere Global</label>
+        <sharedTo>
+            <group>PS_Contracts_John_Deere_Global</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>PS_Contracts_John_Deere_Global</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

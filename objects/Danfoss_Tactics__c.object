@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fields>
+        <fullName>Account_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan__c</referenceTo>
+        <relationshipLabel>Strategy and Tactics</relationshipLabel>
+        <relationshipName>Strategy_and_Tactics</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Actions__c</fullName>
+        <description>Acount Plan Actions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Acount Plan Actions</inlineHelpText>
+        <label>Actions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Back_to_Account_Plan__c</fullName>
+        <externalId>false</externalId>
+        <formula>null</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Back to Account Plan</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Strategy__c</fullName>
+        <description>Customer Strategy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Strategy</inlineHelpText>
+        <label>Customer Strategy</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Strategy__c</fullName>
+        <description>Danfoss Strategy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Danfoss Strategy</inlineHelpText>
+        <label>Danfoss Strategy</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <description>Not Used</description>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Not Used</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tactics__c</fullName>
+        <description>Tactics</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tactics</inlineHelpText>
+        <label>Tactics</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+</CustomObject>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to enter a description of the FAQ category.</inlineHelpText>
+        <label>Description</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FAQ_Category_Name__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to enter the name of the FAQ category.</inlineHelpText>
+        <label>FAQ Category</label>
+        <length>128</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this field if this record is no longer valid, but the record has to be retained for compliance with the records retention policy.</inlineHelpText>
+        <label>Inactive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <validationRules>
+        <fullName>BMCServiceDesk__FAQ_Category_Name_Required_Rule</fullName>
+        <active>true</active>
+        <description>checking wheather FAQ Category Name is null</description>
+        <errorConditionFormula>OR( ISNULL(BMCServiceDesk__FAQ_Category_Name__c) , ISBLANK(BMCServiceDesk__FAQ_Category_Name__c))</errorConditionFormula>
+        <errorMessage>Please enter FAQ Category.</errorMessage>
+    </validationRules>
+</CustomObject>

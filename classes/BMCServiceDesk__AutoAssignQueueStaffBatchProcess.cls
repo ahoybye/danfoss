@@ -1,0 +1,27 @@
+/*
+This file is generated and isn't the actual source code for this
+managed global class.
+This read-only file shows the class's global constructors,
+methods, variables, and properties.
+To enable code to compile, all methods return null.
+*/
+global class AutoAssignQueueStaffBatchProcess implements Database.Batchable<SObject> {
+    global AutoAssignQueueStaffBatchProcess(String JobQuery) {
+
+    }
+    global AutoAssignQueueStaffBatchProcess(Datetime st) {
+
+    }
+    global AutoAssignQueueStaffBatchProcess(Datetime st, String SSDefaultQueue, String EmailDefaultQueue, Boolean TktLayoutEnabled, Map<String,String> profileTktQueueMap, Set<String> QueueIds) {
+
+    }
+    global void execute(Database.Batchable<sObject>Context BC, List<SObject> scope) {
+
+    }
+    global void finish(Database.Batchable<sObject>Context info) {
+
+    }
+    global Database.QueryLocator start(Database.Batchable<sObject>Context bc) {
+        return null;
+    }
+}

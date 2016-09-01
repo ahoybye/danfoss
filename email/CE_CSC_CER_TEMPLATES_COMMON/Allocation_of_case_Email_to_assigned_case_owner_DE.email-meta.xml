@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Allocation of case - Email to assigned case owner_DE</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_LetterHead</letterhead>
+    <name>Allocation of case - Email to assigned case owner_DE</name>
+    <style>formalLetter</style>
+    <subject>Ein neuer Vorgang {!Case.CaseNumber} wurde Ihnen zugeordnet</subject>
+    <textOnly>Sehr geerhte(r) {!Case.OwnerFullName},
+
+Ein nuer Vogang {!Case.CaseNumber} wurde Ihnen zugeordnet.
+Die Einzelheiten dazu finde Sie hier:
+
+Fall-Information:
+Record type: {!Case.RecordType}
+Case reason: {!Case.Reason}
+Case sub reason: {!Case.Case_Sub_Reason__c}
+Subject: {!Case.Subject}
+Description: {!Case.Description}
+
+Kunden-information:
+Konto-Name: {!Case.Account}
+Kontaktperson: {!Case.Contact}
+Mobil: {!Contact.MobilePhone}
+E-Mail: {!Contact.Email}
+
+Bitte bearbeiten Sie den Vorgang schnellstmöglich und informieren Sie den Kunden.
+Für weitere Informationen klicken sie auf den untenstehenden Link:
+{!Case.Link}
+
+Mit freundlichen Grüßen,
+Danfoss Customer Service Center
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+[{!Case.Thread_Id}]</textOnly>
+    <type>html</type>
+</EmailTemplate>

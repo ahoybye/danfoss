@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Author__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastModifiedBy.LastName + &apos;, &apos; +  LastModifiedBy.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Author</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Danfoss_image__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(&quot;/servlet/servlet.FileDownload?file=015M0000000bcMZ&quot;, &quot;Logo&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Danfoss image</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>E_mail__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter e-mail address if relevant</inlineHelpText>
+        <label>E-mail</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>General__c</fullName>
+        <externalId>false</externalId>
+        <label>General</label>
+        <length>131072</length>
+        <type>Html</type>
+        <visibleLines>50</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Links__c</fullName>
+        <externalId>false</externalId>
+        <label>Links</label>
+        <length>32768</length>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Topic__c</fullName>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+</CustomObject>

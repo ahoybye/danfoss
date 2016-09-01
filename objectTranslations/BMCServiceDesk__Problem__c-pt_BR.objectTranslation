@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Problema</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Problemas</value>
+    </caseValues>
+    <fields>
+        <help>Utilize este campo para adicionar informações ao e-mail, mesmo depois de selecionar o modelo de e-mail.</help>
+        <label><!-- Additional email information --></label>
+        <name>BMCServiceDesk__Additional_email_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Tasks Closed Controller --></label>
+        <name>BMCServiceDesk__AllTaskCloseController__c</name>
+    </fields>
+    <fields>
+        <label><!-- &lt;BLANK&gt; --></label>
+        <name>BMCServiceDesk__BLANK__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a categoria de problema. As categorias permitem que você classifique o problema usando classificações padrão, que podem ser facilmente rastreadas para fins de relatório.</help>
+        <label><!-- Category~ --></label>
+        <name>BMCServiceDesk__Category__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para selecionar a data em que o problema foi fechado.</help>
+        <label><!-- Closed Date --></label>
+        <name>BMCServiceDesk__Closed_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closure Category --></label>
+        <name>BMCServiceDesk__ClosureCategory__c</name>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation>Duplicar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved/Fixed</masterLabel>
+            <translation>Resolvido/Corrigido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to resolve</masterLabel>
+            <translation>Não foi possível resolver</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workaround created</masterLabel>
+            <translation>Solução alternativa criada</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Compliant --></label>
+        <name>BMCServiceDesk__Compliant__c</name>
+    </fields>
+    <fields>
+        <label><!-- SmartView (Beta) --></label>
+        <name>BMCServiceDesk__Deep_View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>BMCServiceDesk__Due_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broadcast --></label>
+        <name>BMCServiceDesk__FKBroadcast__c</name>
+        <relationshipLabel><!-- Problems --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a categoria de problema. As categorias permitem que você classifique o problema usando classificações padrão, que podem ser facilmente rastreadas para fins de relatório.</help>
+        <label><!-- Category --></label>
+        <name>BMCServiceDesk__FKCategory__c</name>
+        <relationshipLabel><!-- Problems --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a ID de equipe da equipe conectada no momento. Se necessário, você pode usar este campo para selecionar uma equipe diferente da equipe conectada no momento.</help>
+        <label><!-- Staff ID Closed By --></label>
+        <name>BMCServiceDesk__FKClosed_By__c</name>
+        <relationshipLabel><!-- Problems (Staff ID Closed By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o nível de impacto do problema. O nível de impacto e a urgência são usados​para calcular a prioridade do problema.</help>
+        <label><!-- Impact --></label>
+        <name>BMCServiceDesk__FKImpact__c</name>
+        <relationshipLabel><!-- Problems --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>A prioridade é calculada em função dos valores de urgência e impacto que você selecionou.</help>
+        <label><!-- Priority --></label>
+        <name>BMCServiceDesk__FKPriority__c</name>
+        <relationshipLabel><!-- Problems --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Staff --></label>
+        <name>BMCServiceDesk__FKStaff__c</name>
+        <relationshipLabel><!-- Problems (Staff) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o status adequado para o problema.</help>
+        <label><!-- Status --></label>
+        <lookupFilter>
+            <errorMessage><!-- Select an active status that applies to problems. --></errorMessage>
+        </lookupFilter>
+        <name>BMCServiceDesk__FKStatus__c</name>
+        <relationshipLabel><!-- Problems --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a rapidez com que o problema precisa ser resolvido. A urgência e o nível de impacto são usados para calcular a prioridade do problema.</help>
+        <label><!-- Urgency --></label>
+        <name>BMCServiceDesk__FKUrgency__c</name>
+        <relationshipLabel><!-- Problems --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o nível de impacto do problema. O nível de impacto e a urgência são usados​para calcular a prioridade do problema.</help>
+        <label><!-- Impact~ --></label>
+        <name>BMCServiceDesk__Impact__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se o problema não for mais válido, mas precisar ser mantido para o conformidade com a política de retenção de registros.</help>
+        <label><!-- Inactive --></label>
+        <name>BMCServiceDesk__Inactive__c</name>
+    </fields>
+    <fields>
+        <help>Selecione este campo se desejar indicar que o problema é um erro conhecido. Um erro conhecido é um problema para o qual a causa raiz é identificada.</help>
+        <label><!-- Known Error --></label>
+        <name>BMCServiceDesk__Known_Error__c</name>
+    </fields>
+    <fields>
+        <help>O registro será aberto no Console de problema ou na guia Console do Remedyforce</help>
+        <label><!-- Launch Console --></label>
+        <name>BMCServiceDesk__Launch_Console__c</name>
+    </fields>
+    <fields>
+        <label><!-- LockedRecordTimestamp --></label>
+        <name>BMCServiceDesk__LockedRecordTimestamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of linked Changes --></label>
+        <name>BMCServiceDesk__Number_of_linked_Changes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of linked Incidents --></label>
+        <name>BMCServiceDesk__Number_of_linked_Incidents__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a data e hora em que o problema foi criado.</help>
+        <label><!-- Opened Date --></label>
+        <name>BMCServiceDesk__Open_Date_Time__c</name>
+    </fields>
+    <fields>
+        <help>A prioridade é calculada em função dos valores de urgência e impacto que você selecionou.</help>
+        <label><!-- Priority~ --></label>
+        <name>BMCServiceDesk__Priority__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir uma descrição do problema.</help>
+        <label><!-- Description --></label>
+        <name>BMCServiceDesk__Problem_Description__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para especificar o que foi feito para corrigir o problema. Forneça instruções detalhadas da solução. Por exemplo, descreva a definição que deve ser aplicada a um item de configuração durante sua instalação.</help>
+        <label><!-- Resolution --></label>
+        <name>BMCServiceDesk__Problem_Resolution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problem Source --></label>
+        <name>BMCServiceDesk__Problem_Source__c</name>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation>Cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Event Trigger</masterLabel>
+            <translation>Gatilho de evento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incident</masterLabel>
+            <translation>Incidente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff</masterLabel>
+            <translation>Equipe</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Problem #+ --></label>
+        <name>BMCServiceDesk__Problem_console_detail_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>BMCServiceDesk__Queue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show DueDate Dialog --></label>
+        <name>BMCServiceDesk__ShowDueDateDialog__c</name>
+    </fields>
+    <fields>
+        <help>Este campo é automaticamente definido para a ID de equipe da equipe conectada no momento. Se necessário, você pode usar este campo para selecionar uma equipe diferente da equipe conectada no momento.</help>
+        <label><!-- Staff ID Closed By~ --></label>
+        <name>BMCServiceDesk__Staff_ID_Closed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>BMCServiceDesk__State__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione o status adequado para o problema.</help>
+        <label><!-- Status~ --></label>
+        <name>BMCServiceDesk__Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Closed Controller --></label>
+        <name>BMCServiceDesk__Task_Closed_Controller__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Duration (minutes) --></label>
+        <name>BMCServiceDesk__Total_Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Update Count --></label>
+        <name>BMCServiceDesk__UpdateCount__c</name>
+    </fields>
+    <fields>
+        <help>Na lista de opções, selecione a rapidez com que o problema precisa ser resolvido. A urgência e o nível de impacto são usados para calcular a prioridade do problema.</help>
+        <label><!-- Urgency~ --></label>
+        <name>BMCServiceDesk__Urgency__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir a alternativa temporária ou permanente para corrigir o problema atual, se a alternativa estiver disponível.</help>
+        <label><!-- Workaround --></label>
+        <name>BMCServiceDesk__Work_Around__c</name>
+    </fields>
+    <fields>
+        <help>Utilize este campo para inserir a alternativa temporária ou permanente para corrigir o problema atual, se a alternativa estiver disponível.</help>
+        <label><!-- Workaround Details --></label>
+        <name>BMCServiceDesk__Workaround_details__c</name>
+    </fields>
+    <fields>
+        <help>Exibe o nome da fila à qual o problema foi atribuído por último.</help>
+        <label><!-- Last Queue --></label>
+        <name>BMCServiceDesk__queueName__c</name>
+    </fields>
+    <fields>
+        <help>Este campo conterá o valor dos primeiros 255 caracteres do campo de descrição.</help>
+        <label><!-- Short Description --></label>
+        <name>BMCServiceDesk__shortDescription__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Problema #</nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- This problem is closed. Reopen the problem to modify it. --></errorMessage>
+        <name>BMCServiceDesk__Cannot_Update_Closed_Problem</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Select the Known Error field to save the workaround --></errorMessage>
+        <name>BMCServiceDesk__KnownErrorMustBeCheckedForWorkaround</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Due Date must be later than the Opened Date --></errorMessage>
+        <name>BMCServiceDesk__dueDateMustBeAfterOpenedDate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Back_to_list --></label>
+        <name>BMCServiceDesk__Back_to_list</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Category_Tree --></label>
+        <name>BMCServiceDesk__Category_Tree</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close --></label>
+        <name>BMCServiceDesk__Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Knowledge_Article --></label>
+        <name>BMCServiceDesk__Create_Knowledge_Article</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Knowledge_Articles --></label>
+        <name>BMCServiceDesk__Knowledge_Articles</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Launch_CI_Explorer --></label>
+        <name>BMCServiceDesk__Launch_CI_Explorer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>BMCServiceDesk__New</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Problem_Record --></label>
+        <name>BMCServiceDesk__New_Problem_Record</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Problem_Management_Process --></label>
+        <name>BMCServiceDesk__Problem_Management_Process</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Problem_Manifest --></label>
+        <name>BMCServiceDesk__Problem_Manifest</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reopen_Problem --></label>
+        <name>BMCServiceDesk__Reopen_Problem</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>BMCServiceDesk__Send_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Service_Targets --></label>
+        <name>BMCServiceDesk__Service_Targets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Standard_Description_and_Resolution --></label>
+        <name>BMCServiceDesk__Standard_Description_and_Resolution</name>
+    </webLinks>
+</CustomObjectTranslation>

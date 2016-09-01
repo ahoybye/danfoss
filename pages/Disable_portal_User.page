@@ -1,0 +1,15 @@
+<apex:page standardController="Contact" extensions="Disable_portal_user" action="{!triggerApproval}">
+<apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlockButtons rendered="{!NOT(isSubmitted)}" location="both">
+		 <apex:commandButton action="{!cancel}" value="Back" />
+</apex:pageBlockButtons>
+<apex:outputPanel rendered="{!isSubmitted}">
+<script type="text/javascript">
+	window.location = "{!URLFOR($Action.Contact.view,contact.id)}"
+</script>	
+</apex:outputPanel>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

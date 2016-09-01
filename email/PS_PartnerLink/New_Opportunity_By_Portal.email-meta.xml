@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification from Danfoss PartnerLink</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>New Opportunity from PartnerLink</name>
+    <style>formalLetter</style>
+    <subject>URGENT: {!Opportunity.Name} is created By {!Contact.Name}</subject>
+    <textOnly>NEW OPPORTUNITY CREATED:
+
+The following Opportunity for {!Opportunity.Account} has been created.  Please take a moment to ensure the information entered by your Distribution partner is correct and familiarize yourself with this new opportunity.
+
+
+Please review this opportunity immediately and:
+1) Change the opportunity owner to you, the Account Manager.  This will impact the quotation process and notifications if not changed.
+2) After making the above change, ensure your partner user is listed on the Account team so they can see this opportunity.
+3) Ensure your Partner has filled out the information correctly, including:
+- Opportunity Type - Please review Existing or New Business.
+- Has product been added to the opportunity?
+- Is the production start date correct based on your knowledge?
+- Is there a campaign associated with the opportunity?
+
+Opportunity Owner: {!Opportunity.OwnerFullName}
+Opportunity Name: {!Opportunity.Name}
+Production Start Date: {!Opportunity.CloseDate}
+
+Notes:
+{!Opportunity.Description}
+
+
+Click here to view the record.</textOnly>
+    <type>html</type>
+</EmailTemplate>

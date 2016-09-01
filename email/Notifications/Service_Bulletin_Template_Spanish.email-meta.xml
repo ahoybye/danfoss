@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Service Bulletin Template</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Service Bulletin Template (Spanish)</name>
+    <style>formalLetter</style>
+    <subject>Service Bulletin Notification</subject>
+    <textOnly>Estimado/a:
+
+Adjuntamos el Boletín de Servicio (SB). Enviamos este boletín, para informarles de los cambios o mejoras en las piezas de servicio o componentes que usted ha comprado.
+
+Si tiene alguna duda, rogamos contacte con el responsable de su cuenta.
+
+Gracias y que tenga un buen día!</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif" size="2">Sehr geehrte(r) Frau/Herr,</font></p><p><font face="Verdana,Helvetica,Sans-Serif"><br><font size="2"></font></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Hiermit möchte ich Sie darüber informieren, dass der obengenannte Vorgang nicht in der vorgegebenen Zeit bearbeitet wurde. Vorgang {!Case.CaseNumber}, er am {!Case.CreatedDate} mit {!Case.CaseNumber},&nbsp; eröffnet wurde. Der Vorgang wurde {!Case.OwnerFullName} zugeordnet und befindet sich in Eskalationslevel 1.</font></p><p><br><font face="Verdana,Helvetica,Sans-Serif" size="2"></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Bitte unternehmen Sie die erforderlichein Schritte.</font></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

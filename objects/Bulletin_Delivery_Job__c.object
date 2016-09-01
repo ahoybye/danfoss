@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Business_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Unit</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts &amp; Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Business_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Org</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Integrated</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Schwarzmuller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Corrective_Bulletin_Delivery_Job__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>link to BDJ correcting a defective BDJ</description>
+        <externalId>false</externalId>
+        <label>Correction Bulletin Delivery Job</label>
+        <referenceTo>Bulletin_Delivery_Job__c</referenceTo>
+        <relationshipLabel>Bulletin Delivery Jobs (Corrective Bulletin Delivery Job)</relationshipLabel>
+        <relationshipName>Bulletin_Delivery_Jobs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Defect_Correction__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Defect Correction</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Defect_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Defect_Correction__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Defect Correction</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Defective_Bulletin_Delivery_Job__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Defective Bulletin Delivery Job</label>
+        <referenceTo>Bulletin_Delivery_Job__c</referenceTo>
+        <relationshipLabel>Defective Bulletin Delivery Jobs</relationshipLabel>
+        <relationshipName>Defective_Bulletin_Delivery_Jobs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PIB_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>PIB Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status_Formula__c</fullName>
+        <description>This field is used in Batch class because picklist does order by based on order defined in picklist not alphabetically.</description>
+        <externalId>false</externalId>
+        <formula>TEXT(Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This field is used in Batch class because picklist does order by based on order defined in picklist not alphabetically.</inlineHelpText>
+        <label>Status (Text)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Bulletin Delivery Job</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Business_Area__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>In_Queue</fullName>
+        <columns>NAME</columns>
+        <columns>Business_Org__c</columns>
+        <columns>Business_Area__c</columns>
+        <columns>Due_Date__c</columns>
+        <columns>PIB_Number__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Status__c</columns>
+        <columns>Status_Formula__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Ready,In Progress</value>
+        </filters>
+        <label>In Queue</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Bulletin Number</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Bulletin Delivery Jobs</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Defect_Correction</fullName>
+        <active>true</active>
+        <description>Used for a BDJ that is a DEFECT CORRECTION job</description>
+        <label>Defect Correction</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ready</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Business_Area__c</picklist>
+            <values>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Motors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Parts %26 Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steering</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Business_Org__c</picklist>
+            <values>
+                <fullName>Integrated</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Ready</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Defective_Bulletin_Delivery_Job_Required</fullName>
+        <active>true</active>
+        <description>Defective Bulletin Delivery Job is required if Defect Correction&quot; is set to &quot;true&quot;.</description>
+        <errorConditionFormula>AND(ISBLANK(Defective_Bulletin_Delivery_Job__c), Defect_Correction__c )</errorConditionFormula>
+        <errorDisplayField>Defective_Bulletin_Delivery_Job__c</errorDisplayField>
+        <errorMessage>Please select Defective Bulletin Delivery Job.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Execute</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Execute</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/apex.js&quot;)} 
+
+try { 
+if(&apos;{!Bulletin_Delivery_Job__c.Status__c}&apos; == &apos;Completed&apos;){
+alert(&apos;This job is already processed&apos;); 
+}else{
+sforce.apex.execute(&quot;PibUtility&quot;,&quot;executeBatchJobForBDJ&quot;, {bdjId:&apos;{!Bulletin_Delivery_Job__c.Id}&apos;}); 
+alert(&apos;{!$Label.Bulletin_Delivery_Job_Processed}&apos;); 
+location.reload(); 
+}
+} catch(e) { 
+alert(&apos;Unable to process request. Please retry.\n&apos; + e); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Defective_Job</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit Defective Job</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/apex.js&quot;)}
+
+try {
+sforce.apex.execute(&quot;BulletinDeliveryJobUtility&quot;,&quot;RemoveInCompleteTasks&quot;, {bdjId:&apos;{!Bulletin_Delivery_Job__c.Id}&apos;});
+alert(&apos;{!$Label.Bulletin_Delivery_Job_Processed}&apos;);
+location.reload(); 
+} catch(e) {
+  alert(&apos;Unable to process request. Please retry.\n&apos; + e);
+}</url>
+    </webLinks>
+</CustomObject>

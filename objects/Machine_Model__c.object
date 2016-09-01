@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Machine Models</relationshipLabel>
+        <relationshipName>Machine_Models</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_Volume_Plus1__c</fullName>
+        <externalId>false</externalId>
+        <label>2013</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_Volume_Plus2__c</fullName>
+        <externalId>false</externalId>
+        <label>2014</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_Volume_Plus3__c</fullName>
+        <externalId>false</externalId>
+        <label>2015</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_Volume_Plus4__c</fullName>
+        <externalId>false</externalId>
+        <label>2016</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_Volume_Plus5__c</fullName>
+        <externalId>false</externalId>
+        <label>2017</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Annual_Production_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>Production Volume - 2012</label>
+        <precision>8</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Machine Models</relationshipLabel>
+        <relationshipName>Machine_Models</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Average_Content_per_Machine__c</fullName>
+        <externalId>false</externalId>
+        <label>Average Content per Machine</label>
+        <precision>13</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Compelling_Event_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Compelling Event - Reason</label>
+        <length>144</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Compelling_Event__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>A compelling event could be eg. Machine Redesign</inlineHelpText>
+        <label>Compelling Event</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Electronics_Software_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select all that apply</inlineHelpText>
+        <label>Software - Details</label>
+        <picklist>
+            <controllingField>Electronics_Software__c</controllingField>
+            <picklistValues>
+                <fullName>PLUS+1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LabView</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CoDeSys</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C/C++</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Control F(x) (Eaton)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IQAN (Parker)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BODAS (Bosch Rexroth)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Software</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM programmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Third party programmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SD programmed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown Software</fullName>
+                <default>false</default>
+                <controllingFieldValues>Yes</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Electronics_Software__c</fullName>
+        <description>Is software used to control above functions?</description>
+        <externalId>false</externalId>
+        <label>Is software used for above functions?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Engine_Power__c</fullName>
+        <externalId>false</externalId>
+        <label>Engine Power</label>
+        <picklist>
+            <picklistValues>
+                <fullName>&lt;18 kW (&lt;24 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18-37 kW (24-50 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>38-56 kW (51-76 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>57-75 kW (77-102 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>76-130 kW (103-177 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>131-200 kW (178-272 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>201-300 kW (273-408 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>301-400 kW (409-544 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>401-560 kW (545-761 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt;560 kW (&gt;761 hp)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fan_Drive_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select all that apply</inlineHelpText>
+        <label>Fan Drive - Details</label>
+        <picklist>
+            <controllingField>Fan_Drive__c</controllingField>
+            <picklistValues>
+                <fullName>Fixed ratio</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical/Belt Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variable ratio belt</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical/Belt Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan pitch control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical/Belt Drive</controllingFieldValues>
+                <controllingFieldValues>Viscous clutch</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan non-reversing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric</controllingFieldValues>
+                <controllingFieldValues>Hydraulic</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan reversing</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric</controllingFieldValues>
+                <controllingFieldValues>Hydraulic</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan stand-still</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric</controllingFieldValues>
+                <controllingFieldValues>Hydraulic</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronic control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Viscous clutch</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric</controllingFieldValues>
+                <controllingFieldValues>Hydraulic</controllingFieldValues>
+                <controllingFieldValues>Mechanical/Belt Drive</controllingFieldValues>
+                <controllingFieldValues>Viscous clutch</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric</controllingFieldValues>
+                <controllingFieldValues>Hydraulic</controllingFieldValues>
+                <controllingFieldValues>Mechanical/Belt Drive</controllingFieldValues>
+                <controllingFieldValues>Viscous clutch</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mechanical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Viscous Clutch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shared Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fan_Drive__c</fullName>
+        <externalId>false</externalId>
+        <label>Fan Drive</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mechanical/Belt Drive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Viscous clutch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Machine_Model_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Machine Model Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In production</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Obsolete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Maximum_Machine_Speed__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximum Machine Speed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>&lt;10 km/h (&lt;6 mph)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10-24 km/h (6-15 mph)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25-40 km/h (16-25 mph)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>41-60 km/h (26-38 mph)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt;60 km/h (&gt;38 mph)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not self-propelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Production_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Production End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Production_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please type in the date manually if it is prior to those available in the drop down selection</inlineHelpText>
+        <label>Production Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Propel_Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Transmission</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mechanical transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Torque converter transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrostatic transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Powersplit transmission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric Drive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hybrid Drive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not self-propelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dont&apos; know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Propel_Function_details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select all that apply</inlineHelpText>
+        <label>Transmission - Details</label>
+        <picklist>
+            <controllingField>Propel_Function__c</controllingField>
+            <picklistValues>
+                <fullName>1 axle drive</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Powersplit transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi axle drive</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manual transmission</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Powershift transmission</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Automatic transmission</fullName>
+                <default>false</default>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct wheel drive</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Axle drive</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dual Path</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Track drive</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Powersplit transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrostatic wheel assist drive</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Speed shift control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 motor gearbox control</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open circuit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed circuit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Battery powered</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engine with generator</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic accumulator</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric accumulator (battery)</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Capacitor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stationary</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not self-propelled</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trailer mounted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not self-propelled</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Truck/vehicle mounted</fullName>
+                <default>false</default>
+                <controllingFieldValues>Not self-propelled</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Not self-propelled</controllingFieldValues>
+                <controllingFieldValues>Powersplit transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric Drive</controllingFieldValues>
+                <controllingFieldValues>Hybrid Drive</controllingFieldValues>
+                <controllingFieldValues>Hydrostatic transmission</controllingFieldValues>
+                <controllingFieldValues>Mechanical transmission</controllingFieldValues>
+                <controllingFieldValues>Not self-propelled</controllingFieldValues>
+                <controllingFieldValues>Powersplit transmission</controllingFieldValues>
+                <controllingFieldValues>Torque converter transmission</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Share_of_Wallet__c</fullName>
+        <externalId>false</externalId>
+        <label>Danfoss Share of Wallet (in %)</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Steering_Function_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select all that apply</inlineHelpText>
+        <label>Steering Function - Details</label>
+        <picklist>
+            <controllingField>Steering_Function__c</controllingField>
+            <picklistValues>
+                <fullName>Front steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Hydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Mechanical steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rear steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Hydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Mechanical steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Allwheel steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Hydraulic steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Torque amplified</fullName>
+                <default>false</default>
+                <controllingFieldValues>Mechanical steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dual path</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Hydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Mechanical steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Articulated steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Hydraulic steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steer by wire</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Automatic guidance</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joystick/mini wheel steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Hydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Mechanical steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric(-mechanical) steering</controllingFieldValues>
+                <controllingFieldValues>Electrohydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Hydraulic steering</controllingFieldValues>
+                <controllingFieldValues>Mechanical steering</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Traditional steer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2-axis steer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quick Steer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GPS Guidance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Row Crop Guidance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shared Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Joystick Steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mini steering wheel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Steering_Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Steering Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mechanical steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electrohydraulic steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric(-mechanical) steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Steering Function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Machine_Potential__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Based on 2015 volume</inlineHelpText>
+        <label>Total Annual Machine Potential</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Work_Function_Details__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select all that apply</inlineHelpText>
+        <label>Working Function - Details</label>
+        <picklist>
+            <controllingField>Work_Function__c</controllingField>
+            <picklistValues>
+                <fullName>Open circuit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed circuit</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&lt;60 l/m main function flow</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>60-120 l/m main function flow</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>120-300 l/m main function flow</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt;300 l/m main function flow</fullName>
+                <default>false</default>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Linear function</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rotary function</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric work function</controllingFieldValues>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Don&apos;t know</fullName>
+                <default>false</default>
+                <controllingFieldValues>Electric work function</controllingFieldValues>
+                <controllingFieldValues>Hydraulic work function</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rotary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strawwalker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twin Rotor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hybrid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Z-Kinematic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parallel-Kinematic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special-Kinematic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Front hitch control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rear hitch control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aux (valves for implements)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspension</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power brake</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Loader control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telescope control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quick shift implement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraulic Master-slave leveling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto tool leveling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stabilizer control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chassis control(leveling, side shift)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cabin control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ride control(boom active damping)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Work_Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Working Function</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Hydraulic work function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electric work function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Working Function</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dont&apos; know</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Current Hours --></label>
+        <name>ccpe_r__Current_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Spend --></label>
+        <name>ccpe_r__Current_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours Balance Remaining --></label>
+        <name>ccpe_r__Hours_Balance_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours From Criteria --></label>
+        <name>ccpe_r__Hours_From_Criteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item Criteria --></label>
+        <name>ccpe_r__Line_Item_Criteria__c</name>
+        <relationshipLabel><!-- Retainer Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Line Item Total Hours --></label>
+        <name>ccpe_r__Line_Item_Total_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item Total Spend --></label>
+        <name>ccpe_r__Line_Item_Total_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Line Item --></label>
+        <name>ccpe_r__Previous_Line_Item__c</name>
+        <relationshipLabel><!-- Retainer Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Retainer --></label>
+        <name>ccpe_r__Retainer__c</name>
+        <relationshipLabel><!-- Retainer Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rolled Over Hours --></label>
+        <name>ccpe_r__Rolled_Over_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rolled Over Spend --></label>
+        <name>ccpe_r__Rolled_Over_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spend Balance Remaining --></label>
+        <name>ccpe_r__Spend_Balance_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Spend From Criteria --></label>
+        <name>ccpe_r__Spend_From_Criteria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>ccpe_r__Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>ccpe_r__isActive__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Cannot reference a newer Line Item --></errorMessage>
+        <name>ccpe_r__Cannot_Reference_Newer_Line_Item</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Line Item cannot reference itself as the previous Line Item --></errorMessage>
+        <name>ccpe_r__Cannot_Reference_Self</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only the parent Retainer of the Line Item Criteria may be selected --></errorMessage>
+        <name>ccpe_r__Retainer_Must_Be_Parent_Of_Criteria</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contract to be Sent</name>
+    <style>none</style>
+    <subject>{!Contract__c.Name} for {!Contract__c.Customer__c} is ready to be sent to customer</subject>
+    <textOnly>The subject Customer Contract has been approved and signed. You will soon receive two original signed paper copies. If it is agreed with the customer to use digital signed documents, you can find the scanned copy of the Danfoss signed contract in the Contract Documents section of the Contract Record   Please complete the following tasks:   1) If using paper documents, please forward both Danfoss signed originals  to the customer for their signature and return   2) If using digital documents, please download the file from the &quot;Signed Contract&quot; section of the Contract Record then email it to the customer contact indicated in the Contract.   3) be sure to mark this task complete in order to advance the workflow process.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

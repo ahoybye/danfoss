@@ -1,0 +1,7 @@
+The Business Area(s) is not able to accept the price you requested. Please use the link below to see approver’s comments regarding counter proposal.
+
+Please discuss with the Business Area as needed.
+
+Link to the Quote: {!Quote.Link}
+
+Note: The customer has requested a finalized quote by {!Quote.Customer_Request_Date__c}

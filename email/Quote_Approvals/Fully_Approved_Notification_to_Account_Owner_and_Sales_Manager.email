@@ -1,0 +1,3 @@
+The Quote {!Quote.QuoteNumber} for {!Quote.Merge_Formula_Account_Name__c} has been fully Approved. You can now send this Quote to the customer. To generate a Quote, press the “Create PDF” button.
+
+Link to the Quote: {!Quote.Link}

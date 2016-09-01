@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Account Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Account Relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Related to --></label>
+        <name>Account_Is__c</name>
+        <relationshipLabel><!-- Account Relationships - Related To --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related to --></label>
+        <name>Account_Of__c</name>
+        <relationshipLabel><!-- Account Relationships - Related From --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Go Back --></label>
+        <name>Back_to_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship Type --></label>
+        <name>RelationshipType__c</name>
+        <picklistValues>
+            <masterLabel>is Bill–to Party of</masterLabel>
+            <translation><!-- is Bill–to Party of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is Consultant of</masterLabel>
+            <translation><!-- is Consultant of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is Customer of</masterLabel>
+            <translation><!-- is Customer of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is End User of</masterLabel>
+            <translation><!-- is End User of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is OEM of</masterLabel>
+            <translation><!-- is OEM of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is Payer of</masterLabel>
+            <translation><!-- is Payer of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is Responsible Partner for</masterLabel>
+            <translation><!-- is Responsible Partner for --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is Subsidiary of</masterLabel>
+            <translation><!-- is Subsidiary of --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>is Supplied by</masterLabel>
+            <translation><!-- is Supplied by --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>uses Competitor</masterLabel>
+            <translation><!-- uses Competitor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>Relationship__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

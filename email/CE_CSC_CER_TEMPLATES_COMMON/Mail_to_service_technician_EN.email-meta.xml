@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Mail to service technician_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_LetterHead</letterhead>
+    <name>Mail to service technician_EN</name>
+    <style>formalLetter</style>
+    <subject>Your inquiry case {!Case.CaseNumber}</subject>
+    <textOnly>Dear Mr./Ms.:
+
+We hereby wish to inform you that case {!Case.Subject} with case number {!Case.CaseNumber} created on {!Case.CreatedDate}, has been assigned to you. Please contact the customer and arrange for the necessary steps.
+
+Please do not hesitate to contact us if you have any questions.
+
+Customer information:
+Account Name: {!Case.Account}
+Contact Name: {!Case.Contact}
+Contact: {!Contact.Phone}/ {!Contact.MobilePhone}
+Email: {!Contact.Email}
+
+Kind regards,
+Danfoss Customer Service Center
+
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}</textOnly>
+    <type>html</type>
+</EmailTemplate>

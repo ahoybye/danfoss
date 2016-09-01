@@ -1,0 +1,3114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Address</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>AnnualRevenue</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ApplicationPS__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <referenceTo>Application__c</referenceTo>
+        <relationshipLabel>Leads</relationshipLabel>
+        <relationshipName>Leads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Application</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Air compressor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Air Conveyor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Arator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aseptic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ball Mill</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Batch dyeing machinery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blender/blow-room (Fan)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blower</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Calender</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Centrifugal Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Centrifuge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clean Drive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clean room (fan)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compressor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conveyor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooling compressor (Screw)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooling compresssor (Piston)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Crane</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Crawler cranes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Crushers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decanter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Displacement Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drilling, boring</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Earth moving machines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Elevator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extruder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Filling machine (liquid)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fluff suction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flying saw (cut on the fly)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gantry cranes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gas compressor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grinder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hoist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ID Fan (Induced Draft)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiln</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marine propulsion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marine thrusters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Maritime cranes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Material handling equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Milling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mixer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motion Control (sync, pos, CAM)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Packing machine (non liquid)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Palletizer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paper treatment machine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Positive Displacement Blower</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Positive Displacement Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Printing machine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Processing machine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Progressive Cavity Pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reverse Osmosis Unit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ringspinner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roller Table</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rotational ovens</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Smoke Extract Fan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spindle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Textile machine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thruster</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacuum pump</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Washing machine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Winder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Residential</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agricultural</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Air Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Air Dryers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Air to Water Heat Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Autoclaves/ Sterilizers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Back Bar Equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bakery Equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beer &amp; Wine Cellar Coolers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beverage Dispensers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blast Freezers &amp; Chillers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Boiler Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brewery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bus &amp; Train Air Conditioning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car Washing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Catering Equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chillers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cleaning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Close Control Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold Rooms</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold Storage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Ice Making Machines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Refrigerators &amp; Freezers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Condensing Units</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooling Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dairy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dishwashing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>District Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ducted Split Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electrical System</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronic Cabinet Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaporator Coils</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fishery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forestry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR Contractors &amp; Installers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR End Users</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Frozen Food</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gas Turbines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gearbox</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Generators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Geothermal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Glass Door Merchandisers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hot Water Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Humidification</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - WS Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - WS Headquarter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ice Cream &amp; Frozen Beverage Machines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ice Cream Cabinets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ice Merchandisers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Laundry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integral Display Cases</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lab &amp; Medical Refrigeration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Leak Protection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Material Handling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium/ Heavy Vehicles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Milk Coolers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Milk Tank Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mini Split Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Air Conditioning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Coolers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mortuary Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oil &amp; Gas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oil/ Fuel Treatment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Split Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Unitary Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Packaged Units</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plastic Processing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power Generation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Power Packs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process Chillers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Process Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pump Control/ Ballast Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pump/ Ballast Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RAC - WS Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RAC - WS Headquarter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rack/ Pack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Railway</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reefer Containers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Remote Display Cases</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rooftops</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sea Water Reverse Osmosis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ships</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Slaughtering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specialty Pumping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Truck/ Trailer/ Van</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turbine Manufacturers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variable Refrigerant Flow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vending Machines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Marketing Team</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner Manager Queue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Authorized_Product_Lines__c</fullName>
+        <externalId>false</externalId>
+        <label>Products of Interest</label>
+        <picklist>
+            <picklistValues>
+                <fullName>200 - Small Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>201 - Large Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>070 - Steering Units</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>073 - Steering Valve Blocks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>078 - PVG32</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>088 - PVG 100 VALVES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A01 - Controllers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A20 - Series 45</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A30 - Light Duty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A31 - Series 20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A33 - M46</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A34 - Series 42</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A36 - Series 51</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A37 - Series 90</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A58 - Other Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A75 - LV / KV Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A81 - Electrohydraulic Power Steering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A85 - PCS Controllers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A86 - PCS Other Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A87 - PCS Positioning Sensors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A88 - PCS Displays</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>A89 - PCS System Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B01 - Displays</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B03 - Joystick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B83 - OSK S10/S15/S16/S18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C06 - Custom Controllers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C26 - M35/44</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C31 - LPV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C44 - LDU32/ 3232</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C51 - AS and EOS Software Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C67 - US Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C70 - H1-MP Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C71 - H1-MP Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C73 - H1-HP Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C74 - H1-HP Motors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C77 - System Development Tools</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C82 - PVG Hybrid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C86 - PVG 16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Area</label>
+        <picklist>
+            <controllingField>Business_Org__c</controllingField>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+                <controllingFieldValues>Comatrol</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss Power Solutions</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronic Components</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+                <controllingFieldValues>Turolla</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drives</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Power CC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>High Power OC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrogear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low Power</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium Power CC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium Power OC</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motors</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts &amp; Service</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plus +1</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PVG Valves</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Steering</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telematics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Integrated</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+                <controllingFieldValues>Turolla</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Valmova</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Business_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Org</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Integrated</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Climate and Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CERegion__c</fullName>
+        <description>C&amp;E field
+Same as on user record</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Attributes__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Add description of indirect lead</inlineHelpText>
+        <label>Channel Attributes</label>
+        <picklist>
+            <controllingField>Channel__c</controllingField>
+            <picklistValues>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Press</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service &amp; Repair</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vendor</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Indirect</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indirect</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <referenceTo>Region__c</referenceTo>
+        <relationshipLabel>Leads</relationshipLabel>
+        <relationshipName>Leads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Current_supplier__c</fullName>
+        <externalId>false</externalId>
+        <label>Current supplier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bosch Rexroth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brevini</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bucher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Casappa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Command Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Concentric</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danaher</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dinamic Oil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dynamatic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eaton</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hawe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Horde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HPI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Husco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydac</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hyde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydraforce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HydroControl</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hydrocontrols</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integrated Hydraulics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Iskra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kawasaki</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kayaba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kersen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lifan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LiKe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lord</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>M+S</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marzocchi Pompe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nimco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nishina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ognibene</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oldsbergs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poclain (Axial Pump)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roquet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salami</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sam Hydraulic (Brevini)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shimadzu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sinjin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sun</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ventury</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Walvoil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>White</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zhenjiang</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Integrated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Comatrol</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turolla</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sauer-Danfoss</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Segment__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Danfoss Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Data_Quality_Score__c =100,&quot;All Lead Details Captured&quot;, &quot;Missing: &quot;&amp;IF( LEN( FirstName)=0,&quot;First Name, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF(LEN(LastName)=0, &quot;Last Name, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(Company)=0, &quot;Company, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(Phone)=0, &quot;Phone, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( ISPICKVAL(Salutation,&quot;&quot;), &quot;Salutation, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( ISPICKVAL(Rating,&quot;&quot;), &quot;Rating, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(City)=0, &quot;Complete Address, &quot;,&quot;&quot;)&amp;&quot;&quot;&amp;IF( LEN(Email)=0, &quot;Email&quot;,&quot;&quot;))</formula>
+        <label>Data Quality Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Data_Quality_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(LEN( FirstName ) = 0, 0,15) + IF(LEN( LastName ) = 0, 0,15) + IF(LEN( Company ) = 0, 0,15) + IF(LEN( Phone ) = 0, 0,15) + IF( ISPICKVAL( Salutation,&quot;&quot;), 0,10) + IF( ISPICKVAL(Rating,&quot;&quot;), 0,10) + IF( LEN( City ) = 0, 0,10) + IF( LEN( Email ) = 0, 0,10)</formula>
+        <label>Data Quality Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Distributor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Distributor</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Leads1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Follow_up__c</fullName>
+        <externalId>false</externalId>
+        <label>Follow-up</label>
+        <picklist>
+            <picklistValues>
+                <fullName>General Interest</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Send Catalog/Literature</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account Owner to Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor to Contact</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitive Info for Mktg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Industry</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Banking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Biotechnology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemicals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Engineering</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food &amp; Beverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Machinery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not For Profit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recreation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telecommunications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Utilities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Jigsaw</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Language__c</fullName>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Chinese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>French</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>German</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Italian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Japanese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portuguese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>App</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ads/Editoral/Press Release</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner/Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Network</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Market_Segment__c</fullName>
+        <externalId>false</externalId>
+        <formula>ApplicationPS__r.Market_Segment__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Market Segment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marketing_Validation__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Validated__c,&apos;Validated&apos;, 
+HYPERLINK(&apos;../apex/ValidateLead?id=&apos;+ Id,&apos;Validate&apos;,&apos;_self&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Marketing Validation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Mobile__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Mobile Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( MobilePhone  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(MobilePhone , &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=Lead&quot;, 
+                   MobilePhone  , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Mobile Phone</inlineHelpText>
+        <label>NVM Mobile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__NVM_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NewVoiceMedia click to dial Phone</description>
+        <externalId>false</externalId>
+        <formula>IF( 
+        LEN( Phone  )&gt;0 , 
+        HYPERLINK( &quot;/apex/NVMContactWorld__NVM_AgentUI_ClickToDialInitiator?number=&quot; &amp; 
+                   SUBSTITUTE(Phone , &quot;+&quot;, &quot;%2B&quot;) &amp; 
+                   &quot;&amp;oid=&quot; &amp; Id &amp; 
+                   &quot;&amp;name=&quot; &amp; FirstName &amp; &quot;%20&quot; &amp;  LastName &amp; 
+                   &quot;&amp;type=Lead&quot;, 
+                   Phone  , &quot;nvm-clicktodial&quot;) 
+                   &amp; &quot; &quot; &amp; IMAGE( &quot;../servlet/servlet.FileDownload?file=015A0000000FU0f&quot;, &quot;Dial&quot;), &quot;&quot;)</formula>
+        <inlineHelpText>Click to dial Phone</inlineHelpText>
+        <label>NVM Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>NumberOfEmployees</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Attribute__c</fullName>
+        <description>C&amp;E field
+Affects CSC (Cases) and Core CRM (Lead and Opportunity Management)</description>
+        <externalId>false</externalId>
+        <label>Opportunity Attribute</label>
+        <picklist>
+            <picklistValues>
+                <fullName>APR Leads</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold Chain India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RC Product Launch Plan China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value Selling Opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Comments__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For Distribution Partners to add comments.</inlineHelpText>
+        <label>Partner Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Html</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Project_Stage__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Customer&apos;s Project Stage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Conceptual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Planning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Execution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Question_Comment_Request__c</fullName>
+        <description>This field is used to capture data from Web to Lead form or scanned booth data</description>
+        <externalId>false</externalId>
+        <label>Comment/Request</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RDC__c</fullName>
+        <description>Type of RDC customer is interested in.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Type of RDC customer is interested in.</inlineHelpText>
+        <label>RDC</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Series 45 RDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>H1B Motors RDC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Rating</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Interest__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Interest</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Emissions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fan Drive Demo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Functional Safety</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interested in Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interested in Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead Times</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Markets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No follow up needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parts &amp; Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regulatory Changes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship Building</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Country__r.Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFGA__CorrelationID__c</fullName>
+        <defaultValue>&quot;none&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The Correlation ID Field is used by Salesforce for Google AdWords for automatic correlation of web information with new leads created through a standard web-to-lead form</description>
+        <externalId>false</externalId>
+        <label>CorrelationID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SFGA__Correlation_Data__c</fullName>
+        <defaultValue>&quot;none&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The Correlation Data field is designed for use by Salesforce for Google AdWords to store all relevant lead tracking information about a web generated lead</description>
+        <externalId>false</externalId>
+        <label>Correlation Data</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SFGA__Web_Source__c</fullName>
+        <defaultValue>&quot;none&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field is designed for future use by Salesforce for Google AdWords as an alternative to the Lead Source field for web generated leads.</description>
+        <externalId>false</externalId>
+        <label>Web Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SLA_Age__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() -  Assigned_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SLA Age(In days)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <description>C&amp;E field</description>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>DD - Air comp &amp; vac pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Automotive &amp; other transport equipment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Basic Metal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Beverage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Cement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Chemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Cranes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Distributors not assigned to SBA’s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Electric &amp; Electronics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Food</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - HVAC exc. Pump OEM’s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - HVAC Pump OEM’s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Lifts and escalators</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Machinery not elsewhere included</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Marine &amp; Off Shore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Material Handling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Metal Products</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Mining &amp; Quarrying</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Oil &amp; Gas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Packaging</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Paper &amp; Print</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Refrigeration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Stone, Clay &amp; Glass</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Sugar &amp; Alcohol (Ethanol)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Textile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Wash &amp; Cleaning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Water &amp; WW ex. Pump OEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Water Pump OEM’s</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Wind Power Generation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DD - Wood</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Automotive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Industries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Medical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Power Stack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Power supplies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Renewable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DSP - Welding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - 1P Solution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - DEN Stations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Developer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Hotel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Industry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Multi family houses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Non-residential</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Office building</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - One family houses</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Public building</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Social building</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HE - Trade Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AC - Commercial AC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AC - Heat Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AC - Residential AC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CR - Food Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CR - Refrigeration Subsystem Manufacturing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CR - Speciality Cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CR - Transport</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR - Products &amp; Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HP - Oil &amp; Gas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HP - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HP - Reverse Osmosis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HP - Ultra Pure Water</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Air Compressor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Heating</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Industrial Engines</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Industrial Hydraulics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Marine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Mobile Hydraulics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Water Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA - Wind Power</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Air Conditioning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Commercial Refrigeration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Direct Served - Distributors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Direct Served - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Direct Served - Premium Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Food Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Indirect Served - Independent Retailers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Indirect Served - Wholesaler</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Industrial Automation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IC - Industrial Refrigeration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IR - Chemical/Petrochemical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IR - Food Processing &amp; Storage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IR - Industrial Heat Pumps</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IR - Marine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State_Province__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>State/Province</label>
+        <referenceTo>State_Province__c</referenceTo>
+        <relationshipLabel>Leads</relationshipLabel>
+        <relationshipName>Leads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Contacted</fullName>
+                <default>false</default>
+                <converted>false</converted>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+                <converted>false</converted>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qualified</fullName>
+                <default>false</default>
+                <converted>false</converted>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unqualified</fullName>
+                <default>false</default>
+                <converted>false</converted>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Converted</fullName>
+                <default>false</default>
+                <converted>true</converted>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_By__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For Tradeshow Use</inlineHelpText>
+        <label>Submitted By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Validated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Validate leads to ensure there are no duplicate contacts in the system before applying lead assignment rules.</inlineHelpText>
+        <label>Validated</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Website</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>15</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__Needs_Score_Synced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used for Pardot Scoring Categories. Indicates that new scores will soon be synced from Pardot for this lead.
+
+Scoring Categories are used for multi-product engagement scoring in Pardot and are available to customers using Pardot Pro Edition and Pardot Ultimate Edition. Please visit this page for more information on this feature and how to set up Salesforce to view these scores: http://help.pardot.com/customer/portal/articles/2396977-scoring-categories-overview</description>
+        <externalId>false</externalId>
+        <label>Needs Score Synced</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pi__Pardot_Last_Scored_At__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used for Pardot Scoring Categories. Indicates the last time a Scoring Category score was updated for this lead.
+
+Scoring Categories are used for multi-product engagement scoring in Pardot and are available to customers using Pardot Pro Edition and Pardot Ultimate Edition. Please visit this page for more information on this feature and how to set up Salesforce to view these scores: http://help.pardot.com/customer/portal/articles/2396977-scoring-categories-overview</description>
+        <externalId>false</externalId>
+        <label>Pardot Last Scored At</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>pi__campaign__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Pardot Campaign represents the first marketing touch with a prospect. It may be a campaign associated with your web site, landing page, paid search initiative, or any other marketing effort. Prospects may only be associated with one Pardot campaign. This value can later be changed manually or via an Automation Rule.</description>
+        <externalId>false</externalId>
+        <label>Pardot Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__comments__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pardot Comments</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>pi__conversion_date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date and time of the form, form handler, or landing page submission when a Pardot tracked anonymous visitor first became a known prospect.</description>
+        <externalId>false</externalId>
+        <label>Pardot Conversion Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>pi__conversion_object_name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the name of the object (form, form handler, landing page, or video form) that converted an anonymous visitor into a named prospect.</description>
+        <externalId>false</externalId>
+        <label>Pardot Conversion Object Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__conversion_object_type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of object which converted an anonymous visitor into a named prospect (form, form handler, landing page, or video form).</description>
+        <externalId>false</externalId>
+        <label>Pardot Conversion Object Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__created_date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Pardot created date represents the date and time at which the Prospect record was created in Pardot. This will often differ from your Salesforce.com created date.</description>
+        <externalId>false</externalId>
+        <label>Pardot Created Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>pi__first_activity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pardot First Activity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>pi__first_search_term__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If a Prospects first touch was the result of a search, the field holds the term that was searched on.</description>
+        <externalId>false</externalId>
+        <label>Pardot First Referrer Query</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__first_search_type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If a Prospects first touch was the result of a search, this field contains the type of search conducted.</description>
+        <externalId>false</externalId>
+        <label>Pardot First Referrer Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__first_touch_url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The value of the referrer for the first tracked request made by a Prospect.</description>
+        <externalId>false</externalId>
+        <label>Pardot First Referrer</label>
+        <length>1024</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>pi__grade__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Pardot grade is based on how well a prospect fits your organization&apos;s ideal customer profile. Explicit factors such as company size, industry, job title and more help determine this value. A combination of grade (explicit) and score (implicit) can be used to very effectively optimize the sales team&apos;s time. Grade, like score, is calculated within the Pardot system and cannot be edited in Salesforce.com.</description>
+        <externalId>false</externalId>
+        <label>Pardot Grade</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__last_activity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pardot Last Activity</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>pi__notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Pardot Notes</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>pi__pardot_hard_bounced__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Boolean that determines whether lead hard bounced.</description>
+        <externalId>false</externalId>
+        <label>Pardot Hard Bounced</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pi__score__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Pardot score is based on implicit buying signals a lead demonstrates through his or her activities and responses to your marketing efforts. The higher the score, the more active the lead has been. A combination of score (implicit buying signals) and grade (explicit factors) helps you prioritize your prospects. Score, like grade, is calculated within the Pardot system and cannot be edited in Salesforce.com.</description>
+        <externalId>false</externalId>
+        <label>Pardot Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This link takes you directly into the relevant prospect&apos;s profile within Pardot. From there you can view his or her complete activity history. This URL is generated within the Pardot system and cannot be edited in Salesforce.com.</description>
+        <externalId>false</externalId>
+        <label>Pardot URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>pi__utm_campaign__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Google Analytics Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__utm_content__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Google Analytics Content</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__utm_medium__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Google Analytics Medium</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__utm_source__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Google Analytics Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pi__utm_term__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Google Analytics Term</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <validationRules>
+        <fullName>AssignToFieldRule</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(  ISPICKVAL( Assigned_To__c,&quot;Distributor&quot;), ISBLANK(Account_Manager__c))</errorConditionFormula>
+        <errorDisplayField>Assigned_To__c</errorDisplayField>
+        <errorMessage>Assign To cannot be distributor unless Parnter Manager is populated</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_State_Province_if_USA_or_Canada</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( OR(Country__r.Country_Code__c = &quot;CA&quot;, Country__r.Country_Code__c =&quot;US&quot;) ,ISBLANK( State_Province__c ))</errorConditionFormula>
+        <errorDisplayField>State_Province__c</errorDisplayField>
+        <errorMessage>You must enter a state/province</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>AltavistaNews</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Altavista News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://news.altavista.com/search?nc=0&amp;q={!Lead_Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Convert</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Convert</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/lead/leadconvert.jsp?retURL=%2F{!Lead.Id}&amp;id={!Lead.Id}&amp;&amp;nooppti=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Lead_Street}+{!Lead_City}+{!Lead_State}&amp;om=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleNews</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google News</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/news?&amp;q={!Lead_Company}&amp;btnG=Search+News</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GoogleSearch</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Google Search</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://www.google.com/search?q={!Lead_Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>HooversProfile</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Hoovers Profile</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://search.hoovers.com/cgi-bin/hol_search?which=company&amp;query_string={!Lead_Company}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendGmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Send Gmail</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Lead_Email}&lt;{!Lead_LastName}, {!Lead_FirstName}&gt;&amp;tf=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Validate</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Validate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>/*******************************************************
+Developed By : Shailendra Singh (Appirio Offshore)
+Date 		 : 01/08/2012
+Related Task : T-66469
+Purpose 	 : set Lead.Validate__C = true and fire validation rules.
+*******************************************************/
+{!REQUIRESCRIPT(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js&quot;)}
+{!REQUIRESCRIPT(&quot;/resource/1343813865000/Custom_JSConfirm&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/18.0/apex.js&quot;)}
+$.alerts.okButton = &apos; Yes &apos;;
+$.alerts.cancelButton = &apos; No &apos;; 
+ jConfirm(&apos;Are you sure you want to validate this lead?&apos;, &apos;&apos;, function(r) {
+	if(r == true){ 
+		var lead = new sforce.SObject(&quot;Lead&quot;);
+		lead.id = &apos;{!Lead.Id}&apos;;
+		lead.Validated__c = true;
+		sforce.connection.assignmentRuleHeader = {};
+		sforce.connection.assignmentRuleHeader.useDefaultRule = true;	
+		result = sforce.connection.update([lead]);
+		alert(&apos;Lead has been validated&apos;);
+		window.location.href =&apos;/{!Lead.Id}&apos;;
+	}
+}
+);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>YahooMaps</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Yahoo Maps</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Lead_Country}&amp;csz={!Lead_City}+{!Lead_State}+{!Lead_PostalCode}+&amp;addr={!Lead_Address}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>pi__Send_Pardot_Email</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send Pardot Email</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://pi.pardot.com/email/create/prospect_email/{!Lead.Email}?sessionid={!$Api.Session_ID}&amp;serverurl={!$Api.Partner_Server_URL_90}&amp;lead_id={!Lead.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>pi__Send_Pardot_Emails</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Send Engage Email</masterLabel>
+        <openType>sidebar</openType>
+        <page>pi__MicroCampaignLead</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>pi__Send_Single_Pardot_Email</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Send Engage Email</masterLabel>
+        <openType>sidebar</openType>
+        <page>pi__MicroCampaignSingleLead</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>pi__Send_to_Prospect_Insight</fullName>
+        <availability>online</availability>
+        <description>Send this Lead to Pardot</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send to Pardot</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.location = &apos;https://pi.pardot.com/prospect/sync/email/{!URLENCODE(Lead.Email)}?lead_id={!Lead.Id}&amp;sessionid={!$Api.Session_ID}&amp;serverurl={!$Api.Partner_Server_URL_90}&amp;redirect_location=&apos;+window.location</url>
+    </webLinks>
+</CustomObject>

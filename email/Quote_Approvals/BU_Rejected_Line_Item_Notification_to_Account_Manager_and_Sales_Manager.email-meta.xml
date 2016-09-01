@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>BU Rejected Line Item Notification to Account Manager and Sales Manager</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>BU Rejected Line Item Notification to Account Manager and Sales Manager</name>
+    <style>none</style>
+    <subject>{!Quote.Merge_Formula_Region__c} Region Quote {!Quote.QuoteNumber} for {!Quote.Merge_Formula_Account_Name__c} contains Line Items that have been declined by a Business Unit.</subject>
+    <type>text</type>
+</EmailTemplate>

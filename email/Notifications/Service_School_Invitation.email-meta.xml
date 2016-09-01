@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Service School Invitation Fall 2013</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Service School Invitation Fall 2013</name>
+    <style>formalLetter</style>
+    <subject>Service School Invitation Fall 2013</subject>
+    <textOnly>Dear {!Contact.FirstName},
+3You Are Invited!
+SAUER-DANFOSS (soon to be Danfoss Power Solutions)
+Fall Service School 2013
+
+We’ve got all kinds of exciting plans for this fall’s Service School. We’re making some changes (besides our name) that we think you and your technicians will really like.
+
+Service School will be held October 14-18, 2013, at the Sauer-Danfoss plant in Ames, Iowa. We’re looking forward to meeting your technicians and training them on our products.
+
+Tuition and What You Get For It!
+
+Cost of the five-day Service School will remain at $695.  Tuition includes an electronic tablet (an Apple Ipad 3); a CD set of manuals; continental breakfast each morning; all noon meals, two evening meals and a certificate of completion. 
+
+Because of increased printing and shipping costs, we decided to provide each Service School participant with an electronic tablet connected to PartnerLink instead of the printed manuals as we have in the past. This will give each technician 24/7 access to our current literature and documents. During Service School the technicians will be trained and drilled on how to use the tablets and PartnerLink. If printed documents are still desired, they can be printed from PartnerLink or ordered from PubZone. 
+
+Mark Your Calendars for Monday, October 14 through Friday, October 18! 
+
+This training is designed for Authorized Service Center technicians who are involved in the day-to-day hands-on repair and service of Sauer-Danfoss (soon to be Danfoss Power Solutions) products. Service School classes, conducted by our Field Service Representatives, will be partly classroom, partly hands-on with tools and hardware.  Hydrostatics will be at the core of Service School classes; the agenda includes Series 90, H1, Series 45, Series 51, M46, LV/LK Motors, Failure Analysis, PVG and Controls training.  
+
+Our end goal is to make sure your technicians learn how to troubleshoot, tear down, analyze, repair and test our products – in general, be able to capably service a customer who brings his Sauer-Danfoss product to your Authorized Service Center. 
+
+HOW TO REGISTER 
+	By Thursday, August 22, 2013, the Service or Branch Manager should submit technician names for attendance at this Service School to Mary Bryan (mbryan@sauer-danfoss.com).  
+	By Friday, August 23, the Service/Branch Manager will be notified which technicians have been chosen to attend. Note:  A purchase order will be asked for upon acceptance into the program. 
+	Upon acceptance into the program, details about the trainings and arrangements will be sent out to the Service/Branch Manager and the attendees.
+
+Please let me know if you have any questions,
+
+Mary Bryan
+Sauer-Danfoss, Inc. / Americas Sales &amp; Marketing
+2800 E. 13th Street / Ames, IA 50010 / 515-239-6507 / mbryan@sauer-danfoss.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

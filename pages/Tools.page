@@ -1,0 +1,73 @@
+<apex:page controller="ToolsController">
+    <style type="text/css">
+        .df {padding:4px 10px 50px;box-sizing:border-box;}
+        .df *, .df *:before, .df *:after {box-sizing:inherit;}
+        .df .head-content {width:100%;margin:0 0 10px;padding:0;background:#E2000F;padding:10px 20px;color:white;border-radius:5px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}
+        .df .head-content h1 {font-size:14px;text-transform:uppercase;margin:0;padding:0;}
+        .df .head-content .right {margin-left:auto;}
+        .df .link-list {list-style:none;margin:0;padding:0;}
+        .df .link-list > li {margin:0 0 10px;border:1px solid #ddd;padding:10px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}
+        .df .link-list li > a {display:block;text-decoration:none;}
+        .df .link-list li img {width:100%;max-width:50px;height:50px;padding:0;margin:0;}
+        .df .link-list li > a:hover {background:#eee}
+        .df .link-list li p {margin:0;padding:0 15px 10px;}
+        .df .link-list li .title {display:block;padding:0 15px 5px;font-weight:bold;font-size:16px;text-decoration:underline;}
+        .df .link-list li .date {width:100%;margin-left:auto;font-size:13px;max-width:215px;color:#999;}
+        .df .link-list li .detail {width:100%;margin-right:40px}
+        @media (min-width:1140px) {
+            .df h1 {margin-bottom:20px;}
+            .df .link-list > li {margin-bottom:20px;}
+            /*  Use ths for two columns or more
+            .df .link-list {
+                display:-webkit-box;
+                display:-webkit-flex;
+                display:-ms-flexbox;
+                display:flex;
+                -webkit-flex-wrap:wrap;
+                    -ms-flex-wrap:wrap;
+                        flex-wrap:wrap;
+                -webkit-justify-content:space-around;
+                    -ms-flex-pack:distribute;
+                        justify-content:space-around;
+            }
+            */
+            /* Use this to adjust number of columns. (ex:33% for 3 columns, 25% for 4 columns)
+            .df .link-list > li {width:50%;}
+            */
+        }
+    </style>
+
+    <div class="df">
+
+        <div class="head-content">
+            <h1>Interactive Content</h1>
+            <span class="right">Last Modified Date</span>
+        </div><!-- /.head-content -->
+
+        <ul class="link-list">
+            <!--
+            <li>
+                <img src="//placehold.it/50x50/E2000F/FFFFFF/&text=D" />
+                <div class="detail">
+                    <a href="#" class="title">Lorem ipsum dolor sit amet.</a>
+                    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut molestiae fugit veniam tenetur ad nostrum doloribus, amet earum eveniet totam nulla corporis in deserunt.</p>
+                </div>
+                <div class="date">12/18/2015</div>
+            </li>
+            -->
+            <apex:repeat value="{!lstConVer}" var="link">
+            <li>
+                <apex:image url="/servlet/servlet.FileDownload?file={!conAttMap[link.Expert_Tool__c]}" />
+                <div class="detail">
+                    <apex:outputLink value="/{!link.Expert_Tool__c}" styleClass="title">{!link.title}</apex:outputLink><!-- /.title -->
+                    <p class="description">{!link.Description}</p>
+                </div>
+                <div class="date">
+                    <apex:outputText value="{0,date,MMMM d, yyyy h:mm a z}"> <apex:param value="{!link.LastModifiedDate}" /></apex:outputText>
+                </div><!-- /.date -->
+            </li>
+            </apex:repeat>
+        </ul><!-- /.link-list -->
+    </div><!-- /.df -->
+
+</apex:page>

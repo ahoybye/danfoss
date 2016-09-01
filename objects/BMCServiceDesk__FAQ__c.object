@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__Answer__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to enter the answer to the frequently asked question.</inlineHelpText>
+        <label>Answer</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKFAQ_Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>FAQ Category</label>
+        <referenceTo>BMCServiceDesk__FAQ_Category__c</referenceTo>
+        <relationshipLabel>FAQs</relationshipLabel>
+        <relationshipName>FAQs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this field if this record is no longer valid, but the record has to be retained for compliance with the records retention policy.</inlineHelpText>
+        <label>Inactive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Question__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to enter the frequently asked question.</inlineHelpText>
+        <label>Question</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__RatingSum__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Sum of rating through rollup summary field</description>
+        <externalId>false</externalId>
+        <label>RatingSum</label>
+        <summarizedField>BMCServiceDesk__FAQ_Feedback__c.BMCServiceDesk__Rating__c</summarizedField>
+        <summaryForeignKey>BMCServiceDesk__FAQ_Feedback__c.BMCServiceDesk__FKFAQ__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Rating__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Average of Rating</description>
+        <externalId>false</externalId>
+        <formula>IF(BMCServiceDesk__Total_Feedback__c == 0, 0 , BMCServiceDesk__RatingSum__c  /  BMCServiceDesk__Total_Feedback__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__SelfService_Display_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SelfService Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Total_Feedback__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total number of feedback</description>
+        <externalId>false</externalId>
+        <label>Total Feedback</label>
+        <summaryForeignKey>BMCServiceDesk__FAQ_Feedback__c.BMCServiceDesk__FKFAQ__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <validationRules>
+        <fullName>BMCServiceDesk__FAQRule1</fullName>
+        <active>true</active>
+        <description>Rule for checking if Category not equal to null</description>
+        <errorConditionFormula>OR( ISNULL(BMCServiceDesk__FKFAQ_Category__c) , ISBLANK(BMCServiceDesk__FKFAQ_Category__c))</errorConditionFormula>
+        <errorMessage>Please select a FAQ Category.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__FAQRule2</fullName>
+        <active>true</active>
+        <description>Rule for checking if Question not equal to null</description>
+        <errorConditionFormula>OR( ISNULL(BMCServiceDesk__Question__c) , ISBLANK(BMCServiceDesk__Question__c))</errorConditionFormula>
+        <errorMessage>Please enter a Question.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BMCServiceDesk__FAQRule3</fullName>
+        <active>true</active>
+        <description>Rule for checking if Answer not equal to null</description>
+        <errorConditionFormula>OR( ISNULL(BMCServiceDesk__Answer__c) , ISBLANK(BMCServiceDesk__Answer__c))</errorConditionFormula>
+        <errorMessage>Please enter an Answer.</errorMessage>
+    </validationRules>
+</CustomObject>

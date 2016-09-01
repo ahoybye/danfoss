@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Mass Email: Dist Training Council Announcement</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Distributor Training Council</name>
+    <style>formalLetter</style>
+    <subject>Distributor Training Council Announcement</subject>
+    <textOnly>{!Today}
+Subject: Distributor Training Council Announcement
+
+
+Dear Customer,
+
+
+Attached is an update from the November Distributor Training Council meeting held in Neumunster, Germany and Nordborg, Denmark.
+
+
+Sincerely,
+
+
+Les Mosteller
+
+
+Cc: Twila Brafford</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpt__IsArchived__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Archived</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccpt__Last_Activity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Determines the last time that this topic or its events were updated</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(ccpt__Last_Updated__c), LastModifiedDate, IF(ccpt__Last_Updated__c &gt; LastModifiedDate, ccpt__Last_Updated__c, LastModifiedDate))</formula>
+        <label>Last Activity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ccpt__Last_Updated__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Updated</label>
+        <summarizedField>ccpt__Topic_Event__c.LastModifiedDate</summarizedField>
+        <summaryForeignKey>ccpt__Topic_Event__c.ccpt__Topic__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccpt__Topic__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Topic</label>
+        <referenceTo>ccpt__Topic__c</referenceTo>
+        <relationshipLabel>Topics</relationshipLabel>
+        <relationshipName>Topics</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+</CustomObject>

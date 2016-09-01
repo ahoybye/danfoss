@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SignOffLevel</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SignOffLevel</value>
+    </caseValues>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Director? --></label>
+        <name>Sales_Director__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Executive? --></label>
+        <name>Sales_Executive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager? --></label>
+        <name>Sales_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales VP? --></label>
+        <name>Sales_VP__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Approval Request Email - To SM</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Approval Request Email - To SM</name>
+    <style>none</style>
+    <subject>Account Owner Approval Request for {!Quote.Merge_Formula_Account_Name__c} for Quote {!Quote.QuoteNumber}</subject>
+    <type>text</type>
+</EmailTemplate>

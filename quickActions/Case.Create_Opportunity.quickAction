@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldOverrides>
+        <field>AccountId</field>
+        <formula>Case.AccountId</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>CE_Phase__c</field>
+        <literalValue>Identification</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>CE_Status__c</field>
+        <literalValue>Open</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>CloseDate</field>
+        <formula>TODAY() + 15</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Contact__c</field>
+        <formula>Case.ContactId</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Description</field>
+        <formula>&quot;Originating Case Number = &quot; +  Case.CaseNumber 
++
+&quot;Originating Case Descrtipion = &quot; +  Case.Description</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>&quot;Opportunity from Case &quot; +  Case.CaseNumber</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Origin__c</field>
+        <literalValue>Case</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Originating_Case__c</field>
+        <formula>Case.Id</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Production_Start_Date__c</field>
+        <formula>TODAY() + 30</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>StageName</field>
+        <literalValue>Open</literalValue>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Type</field>
+        <literalValue>New Business</literalValue>
+    </fieldOverrides>
+    <label>Convert to Opportunity</label>
+    <optionsCreateFeedItem>true</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Name</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>CloseDate</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Production_Start_Date__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>CurrencyIsoCode</field>
+                <uiBehavior>Required</uiBehavior>
+            </quickActionLayoutItems>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Amount</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <targetObject>Opportunity</targetObject>
+    <targetParentField>Originating_Case__c</targetParentField>
+    <targetRecordType>Opportunity.CE_Opportunity</targetRecordType>
+    <type>Create</type>
+</QuickAction>

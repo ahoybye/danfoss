@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email Initiator when ownership changes</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Customer_Requests</letterhead>
+    <name>Ownership Change</name>
+    <style>freeForm</style>
+    <subject>{!PS_Customer_Request__c.Type__c} Customer Request {!PS_Customer_Request__c.Name} for {!PS_Customer_Request__c.Account__c} - Ownership has changed</subject>
+    <textOnly>Current Owner: {!PS_Customer_Request__c.OwnerFirstName} {!PS_Customer_Request__c.OwnerLastName}
+
+Current Status: {!PS_Customer_Request__c.Status__c}
+
+
+
+Customer Requested Date: {!PS_Customer_Request__c.Customer_Requested_Date__c}
+
+
+
+
+Link to Customer Request: {!PS_Customer_Request__c.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

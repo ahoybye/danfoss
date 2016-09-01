@@ -1,0 +1,11 @@
+<apex:page standardController="Event" extensions="NewEventExtension">
+    <script>
+    addEventListener('load', function() {
+        if (window.sforce) {
+            sforce.one.createRecord("Event");
+        } else {
+            location = "{!eventURL}";
+        }
+    });
+    </script>
+</apex:page>

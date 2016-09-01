@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2013 Dist Price Update</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>2013 Sauer-Danfoss Price DEC Update</name>
+    <style>formalLetter</style>
+    <subject>2013 Sauer-Danfoss December Price Updates</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+Subject: 2013 Sauer-Danfoss Price Updates
+
+
+Dear {!Contact.FirstName},
+
+
+
+In October, we shared our 2013 price documents including a master upload file, price books and Offline Product Configurator.  We are providing an updated revision to all pricing files for 2013 - Revision BA - which includes changes to 237 part numbers.  These changes will be effective on January 1, 2013.
+
+
+Please see the attached document for more information.
+
+
+We appreciate your business and will continue to strive to provide the best products and services for your company.
+Best regards,
+
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+
+
+
+Linda Eidemiller
+
+Distribution Specialist
+
+Sauer-Danfoss, Inc.
+
+leidemiller@sauer-danfoss.com
+
+
+
+
+
+
+
+
+Tim Erickson
+
+Distribution Specialist
+
+Sauer-Danfoss, Inc.
+
+terickson@sauer-danfoss.com</textOnly>
+    <type>html</type>
+</EmailTemplate>

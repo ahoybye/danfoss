@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Agreed Hours --></label>
+        <name>ccpe_r__Agreed_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agreed Spend --></label>
+        <name>ccpe_r__Agreed_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-Skill Line Item --></label>
+        <name>ccpe_r__Global_Line_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retainer --></label>
+        <name>ccpe_r__Retainer__c</name>
+        <relationshipLabel><!-- Line Item Criteria --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Work Type --></label>
+        <name>ccpe_r__Work_Type__c</name>
+        <relationshipLabel><!-- Line Item Criteria --></relationshipLabel>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Global Line Items cannot have a Work Type --></errorMessage>
+        <name>ccpe_r__Global_Line_Item_cannot_have_Work_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Line Item cannot be added if the specified Retainer has a Global Line Item --></errorMessage>
+        <name>ccpe_r__Only_1_Global_Line_Item_Allowed</name>
+    </validationRules>
+</CustomObjectTranslation>

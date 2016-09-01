@@ -1,0 +1,10 @@
+<apex:page standardController="Account_Plan__c">  
+    <div>
+        <div style="display: inline-block; vertical-align: top; align: center;">
+            <analytics:reportChart cacheAge="3600000" cacheResults="true" size="small" showRefreshButton="true" hideOnError="true" reportId="{!$Setup.FieldID__c.AccountPlanGraphID4__c}" filter="[{column:'ACCOUNT.NAME',operator:'equals',value:'{!Account_Plan__c.Account__r.Name}'}]"   ></analytics:reportChart> 
+        </div>
+        <div style="display: inline-block; vertical-align: top; align: center;">
+            <analytics:reportChart cacheAge="3600000" cacheResults="true" size="small" showRefreshButton="true" hideOnError="true" reportId="{!$Setup.FieldID__c.AccountPlanGraphID5__c}" filter="[{column:'ACCOUNT.NAME',operator:'equals',value:'{!Account_Plan__c.Account__r.Name}'}]"   ></analytics:reportChart> 
+        </div>
+    </div>
+</apex:page>

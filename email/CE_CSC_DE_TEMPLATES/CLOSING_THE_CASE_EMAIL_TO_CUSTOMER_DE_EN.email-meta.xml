@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>CLOSING THE CASE - EMAIL TO CUSTOMER_DE_EN</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_DE_LETTERHEAD</letterhead>
+    <name>CLOSING THE CASE - EMAIL TO CUSTOMER_DE_EN</name>
+    <style>formalLetter</style>
+    <subject>Case {!Case.CaseNumber} has been closed</subject>
+    <textOnly>Dear Mr./Ms.:
+
+Your case {!Case.CaseNumber} with the subject {!Case.Subject} has been closed.
+
+We hope that we have dealt with your request to your satisfaction.
+Please do not hesitate to contact us if you have any further questins.
+
+Kind regards,
+Danfoss Customer Service Center
+{!Case.OwnerFullName}
+
+
+
+*********Please Do Not Delete or Type below this Line*********
+{!Case.Thread_Id}
+
+Important note! We have a new central phone number and e-mail address
+Phone: 069 97533 044
+E-Mail: CS@danfoss.de</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>DLR Customer notification that premium was not checked on request</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>DPS_Letterhead</letterhead>
+    <name>*PS: DLR No Premium</name>
+    <style>formalLetter</style>
+    <subject>Request not approved: Missing required premium</subject>
+    <textOnly>Dear {!Deviated_Lead_time_Request__c.CreatedBy},
+
+The following request has not been reviewed by our production department.
+
+Deviated Lead-time Request: {!Deviated_Lead_time_Request__c.Name}
+
+Purchase Order Number: {!Deviated_Lead_time_Request__c.PO_Number__c}
+Account: {!Deviated_Lead_time_Request__c.Account__c}
+Reason: Premium required, but missing.
+
+The current standard lead-time for the product requested will apply after receipt of purchase order.
+
+We have not investigated expedited delivery dates because the expedite premium was not included with this request.  If the commercial conditions for early shipment change, please submit a new request for best availability from Danfoss Power Solutions.
+
+{!Deviated_Lead_time_Request__c.Link}
+
+
+If further information is required, please contact your Danfoss Account Manager, {!Deviated_Lead_time_Request__c.Account_Owner__c}
+
+Thank you!</textOnly>
+    <type>html</type>
+</EmailTemplate>

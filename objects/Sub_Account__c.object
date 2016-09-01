@@ -1,0 +1,1608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fieldSets>
+        <fullName>AccountFilterFields</fullName>
+        <description>Used for &quot;Division View&quot; / &quot;Division Account Filter&quot;</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Division__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Country_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Street__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>City__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Postal_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>AccountFilterFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>SapQuoteFields</fullName>
+        <description>Used when calling Sap CRM (columns in the popup when choosing subaccount)</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SAP_Account_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Division__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SapQuoteFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>SubAccountFields</fullName>
+        <description>Account Page</description>
+        <displayedFields>
+            <field>Account__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Account_Group__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Billing_Block__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Business_Org__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Channel__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>City__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Country_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CurrencyIsoCode</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Customer_Segment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsDeleted</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Delivery_Block__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Division__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Fax__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Inactive__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SubAccountFields</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Group</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Relation to a SFDC account</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sub Accounts</relationshipLabel>
+        <relationshipName>Sub_Accounts</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Address_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Street__c != &quot;&quot;,  Street__c, &quot;&quot;)
++  
+IF( Street_2__c != &quot;&quot;, &quot;, &quot; + Street_2__c , &quot;&quot;)
++
+IF(House_No__c != &quot;&quot;,  &quot; &quot; + House_No__c, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Address Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BI_Links__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/apex/BusinessWarehouseReport?id=&apos; &amp; Id, &apos;Show Salesman Report&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Show Salesman Report</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Block__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Billing Block</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Business_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>Business Org</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Country Code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>if (isblank(Country_Text__c), Country_Code__c, Country_Code__c  &amp; &quot;: &quot; &amp;  Country_Text__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Country Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Currency__c</fullName>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ADK: Kwanza</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ADP: Peseta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AED: UAE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AFA: Afghani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ALL: Lek</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AMD: Dram</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ANG: W.Ind.Guilders</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARS: Pesos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ATS: Schillings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AUD: Austr. dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZM: Manat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BAD: Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BAM: Bosnian Mark</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BBD: Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BDT: Taka</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BEC: Belgian francs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BEF: Belgian francs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BGL: Leva</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BGN: Bulgarian Leva</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BHD: Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BIF: Burundi Francs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BMD: Bermudan dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BND: Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BOP: Pesos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BRC: Real</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BRL: Real</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BSD: Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BWP: Pula</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BYB: Beloruss.Ruble</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BYR: Beloruss.rubles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BZD: Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAD: Canad.dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHF: Swiss francs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CLP: Pesos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CNY: Renminbi Yuan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COP: Pesos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRC: Cost.Rica colon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CSD: Serbia Monteneg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CUP: Cuban pesos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CVE: Escudos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CYL: Cyprus pounds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CZK: Krona</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEM: German marks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEM3: (Int.) DEM 3 DP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DJF: Djibouti francs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DKK: Danish krone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DOP: East Carr.doll.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DZD: Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ECS: Sucre</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EEK: Krona</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EGP: Pounds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ERB: Birr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ESP: Pesetas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ETB: Birr</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EUR: Euro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FIM: Finnish mark</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FJD: Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FRF: French franc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GBL: Falkland Pounds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GBP: Pounds sterling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GEK: Kupon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GHC: Cedi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GMD: Dalasi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GNF: Guinea Franc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GRD: Drachma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GTQ: Quetzal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GWP: Guinea Peso</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GYD: Guyana Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HKD: H.K.dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HNL: Lempira</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HRK: Kuna</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HTG: Gourde</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HUF: Forint</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IDR: Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IEP: Irish Pounds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ILS: Scheckel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INR: Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IQD: Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IRR: Rial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISK: Krona</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ITL: Lire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JMD: Jamaican Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JOD: Jordanian Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JPY: Yen</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KES: Shilling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KHR: Riel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KIS: Som</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KMF: Comoros Franc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KPW: N. Korean Won</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KRW: S.Korean Won</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KWD: Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KYD: Cayman Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KZT: Tenge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LAK: Kip</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LBP: Lebanese Pounds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LKR: Sri Lanka Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LRD: Liberian Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LSL: Loti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LTL: Lita</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LUF: Luxembourg Fr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LVL: Lat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LYD: Libyan Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MAD: Dirham</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MDL: Lei</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MGF: Madagascan Fr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MRO: Ouguiya</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MTL: Lira</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MUR: Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MVR: Rufiyaa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MWK: Malawi Kwacha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MXN: Pesos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MXP: Pesos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MYK: Kyat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MYR: Ringgit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MZM: Metical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NGN: Naira</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NIC: Cordoba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NLG: Guilders</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOK: Norwegian krone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NPR: Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NZD: N.Zeal.Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMR: Omani Rial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAB: Balboa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PEI: Inti</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PEN: Soles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PGK: Kina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PHP: Peso</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PKR: Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLN: Zloty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLZ: Zloty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PTE: Escudos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PYG: Guarani</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QAR: Riyal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RMB: Renminbi Yuan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ROL: Lei</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RON: New Leu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RSD: Serb. Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RUB: Rouble</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RUE: y.e.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RUR: Rouble</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RWF: Rwanda Francs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SAR: Riyal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SBD: Sol.Isl.Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SCR: Rupee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SDP: Pounds</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SEK: Swedish krona</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SGD: Sing.dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SIT: Tolar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SKK: Krona</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SLL: Leone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SOS: Shilling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SRG: Surinam Guilder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>STD: Dobra</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SUR: Rouble</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SVC: Colon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SYP: Syrian Pound</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SZL: Lilangeni</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>THB: Baht</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TJR: Rouble</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TMM: Manat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TND: Dinar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TOP: Pa&apos;anga</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TPE: Timor Escudo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TRL: Lira</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TRY: Lira</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTD: T.+ T. Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TWD: Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TZS: Shilling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UAH: Ukraine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UAK: Karbowanez</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UGS: Uganda Shilling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UGX: Shilling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USD: US dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USDN: US Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UYP: New Peso</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UYU: Uruguay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VEB: Bolivar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VEF: Bs.F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VND: Dong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VUV: Vatu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WST: Tala</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XAF: C.f.A. Franc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XCD: Dollars</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XEU: ECU</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XOF: Franc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XPF: Franc</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YER: Yemeni Ryal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YUM: Yugoslavia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZAR: Rand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZMK: Kwacha</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZRZ: Zaire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZWD: Zimbabwe Dollar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Segment__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Segment</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Danfoss_Customer_Group__c</fullName>
+        <description>C&amp;E field 
+Read only field in Salesforce. 
+To pull in MDM Customer Group</description>
+        <externalId>false</externalId>
+        <label>Danfoss Customer Group</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Block__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Delivery Block</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <externalId>false</externalId>
+        <label>Division</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Commercial Compressors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>District Energy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Heating Solutions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Danfoss Drives</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Refrigeration Controls</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>SMTP_ADDR</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Responsible__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee Responsible</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exchange_Rate_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Exchange Rate Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>001D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>002D</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CZKE Sales Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DIR Aftalt Kurs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DIR Phillips Aftalt Kurs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Drives Exchange Rate IPC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Type for York</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro-2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro-3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Euro for B Exchange Rates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate China CNCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Denmark CNCO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Production</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Type AC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exchange Rate Type Fixed GM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fixed Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HPP Specific Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India Customs Rates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal Bank Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intrastat Exchange Rate Type</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCFDDK Actual Trans. Rate for Valuation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCFDGB Customer Specific Exchange Rates</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MXCO Investments Exch. Rate Type</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RUCO Internal Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russian Budget Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Std. Translation at Local Average Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UACO Indicative External Exchange Rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kobskurs (Aktuel)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Salgskurs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <externalId>false</externalId>
+        <label>Fax</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>House_No__c</fullName>
+        <externalId>false</externalId>
+        <label>House No</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Language__c</fullName>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_Account_Name_SubAccount__c</fullName>
+        <description>C&amp;E Field - Sub Account Name</description>
+        <externalId>false</externalId>
+        <label>Local Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_Address_SubAccount__c</fullName>
+        <description>C&amp;E field - Local Address 
+Localization details</description>
+        <externalId>false</externalId>
+        <label>Local Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_City_SubAccount__c</fullName>
+        <description>C&amp;E field - Local City 
+Localization details</description>
+        <externalId>false</externalId>
+        <label>Local City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_Region_SubAccount__c</fullName>
+        <description>C&amp;E field - Local Region 
+Localization detail</description>
+        <externalId>false</externalId>
+        <label>Local Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDM_PE_CUSTOMER_GRP_1__c</fullName>
+        <externalId>false</externalId>
+        <label>DDS Global Customer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDM_PE_CUSTOMER_GRP_2__c</fullName>
+        <externalId>false</externalId>
+        <label>DDS Global Sub Customer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDM_PE_CUSTOMER_GRP_3__c</fullName>
+        <externalId>false</externalId>
+        <label>DDS Global Customer Company</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDM_RA_CUSTOMER_GRP_1__c</fullName>
+        <externalId>false</externalId>
+        <label>DCS Customer Grp. (Level 1)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDM_RA_CUSTOMER_GRP_2__c</fullName>
+        <externalId>false</externalId>
+        <label>DCS Customer Grp. (Level 2)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MDM_RA_SELLING_ORG__c</fullName>
+        <externalId>false</externalId>
+        <label>DCS Selling Org</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Name 2</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Name 3</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Name 4</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Order_Block__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Order Block</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PO_Box__c</fullName>
+        <description>PFACH</description>
+        <externalId>false</externalId>
+        <label>PO Box</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_City__c</fullName>
+        <externalId>false</externalId>
+        <label>PO City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PO_Postal_Code_City__c</fullName>
+        <description>PFORT</description>
+        <externalId>false</externalId>
+        <label>PO Postal Code City</label>
+        <length>35</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region_Text__c</fullName>
+        <description>BEZEI</description>
+        <externalId>false</externalId>
+        <label>Region Text</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>REGIO</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Account_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>SAP Account ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Search_Term__c</fullName>
+        <externalId>false</externalId>
+        <label>Search Term</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Country_Code__c=&apos;US&apos;, Region__c ,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Street 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tran_Block_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Tran Block Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transportation_Zone__c</fullName>
+        <externalId>false</externalId>
+        <label>Transportation Zone</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Url__c</fullName>
+        <description>KNURL</description>
+        <externalId>false</externalId>
+        <label>Url</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>is_Master__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.Master_Sub_Account__c =  Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>is Master</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

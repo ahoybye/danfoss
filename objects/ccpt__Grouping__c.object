@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordTypes>
+        <fullName>ccpt__board</fullName>
+        <active>true</active>
+        <label>Board</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ccpt__notepad</fullName>
+        <active>true</active>
+        <label>Notepad</label>
+    </recordTypes>
+</CustomObject>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__DeviceIPAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store IP address of the scanner device.</description>
+        <externalId>false</externalId>
+        <label>Device IP Address</label>
+        <length>64</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__DeviceId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store Id of the scanner device.</description>
+        <externalId>false</externalId>
+        <label>Device Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__DeviceLocation__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store location of the scanner device.</description>
+        <externalId>false</externalId>
+        <label>Device Location</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__DeviceName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store name of the scanner device.</description>
+        <externalId>false</externalId>
+        <label>Device Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__DeviceOperatingSystem__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To store the Operating System of the scanner device.</description>
+        <externalId>false</externalId>
+        <label>Device Operating System</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__MarkAsDeleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>To check if the scanner device is deleted or not.</description>
+        <externalId>false</externalId>
+        <label>Mark As Deleted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

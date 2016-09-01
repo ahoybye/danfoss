@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Activity ID (case sensitive) --></label>
+        <name>Activity_ID_case_sensitive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Finish Date --></label>
+        <name>Actual_Finish_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Start Date --></label>
+        <name>Actual_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bulletin Delivery Job --></label>
+        <name>Bulletin_Delivery_Job__c</name>
+    </fields>
+    <fields>
+        <label>业务范围</label>
+        <name>Business_Area__c</name>
+        <picklistValues>
+            <masterLabel>Building Societies</masterLabel>
+            <translation><!-- Building Societies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burner Components</masterLabel>
+            <translation><!-- Burner Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Climate Controls</masterLabel>
+            <translation><!-- Climate Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Compressors</masterLabel>
+            <translation><!-- Commercial Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compressors</masterLabel>
+            <translation><!-- Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condensing Units</masterLabel>
+            <translation><!-- Condensing Units --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting Engineer</masterLabel>
+            <translation><!-- Consulting Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contactors &amp; Motor Starters</masterLabel>
+            <translation><!-- Contactors &amp; Motor Starters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor/Installer</masterLabel>
+            <translation><!-- Contractor/Installer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DHU</masterLabel>
+            <translation><!-- DHU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss Drives</masterLabel>
+            <translation><!-- Danfoss Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss Link™</masterLabel>
+            <translation><!-- Danfoss Link™ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Decentral Products</masterLabel>
+            <translation><!-- Decentral Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Differential P and F Controllers</masterLabel>
+            <translation><!-- Differential P and F Controllers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Domestic Hot Water Systems</masterLabel>
+            <translation><!-- Domestic Hot Water Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Components</masterLabel>
+            <translation><!-- Electronic Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Controls</masterLabel>
+            <translation><!-- Electronic Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Filter Driers</masterLabel>
+            <translation><!-- Filter Driers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Floor Heating</masterLabel>
+            <translation><!-- Floor Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frequency Converters</masterLabel>
+            <translation><!-- Frequency Converters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heat Exchangers</masterLabel>
+            <translation><!-- Heat Exchangers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heat Pumps and Water Heater</masterLabel>
+            <translation><!-- Heat Pumps and Water Heater --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power CC</masterLabel>
+            <translation><!-- High Power CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power OC</masterLabel>
+            <translation><!-- High Power OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrogear</masterLabel>
+            <translation><!-- Hydrogear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Servo Drives</masterLabel>
+            <translation><!-- Integrated Servo Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investor/ Developer</masterLabel>
+            <translation><!-- Investor/ Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low Power</masterLabel>
+            <translation><!-- Low Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power CC</masterLabel>
+            <translation><!-- Medium Power CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power OC</masterLabel>
+            <translation><!-- Medium Power OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motors</masterLabel>
+            <translation><!-- Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM</masterLabel>
+            <translation><!-- OEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Valves</masterLabel>
+            <translation><!-- Other Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL02 - Burner Components</masterLabel>
+            <translation><!-- PL02 - Burner Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL03 - Residential Heating</masterLabel>
+            <translation><!-- PL03 - Residential Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL08 - District Energy Controls</masterLabel>
+            <translation><!-- PL08 - District Energy Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL20 - ‪Heat Recovery Vent &amp; Solutions</masterLabel>
+            <translation><!-- PL20 - ‪Heat Recovery Vent &amp; Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL21 - Electric Heating Systems</masterLabel>
+            <translation><!-- PL21 - Electric Heating Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL22 - Heat Pumps</masterLabel>
+            <translation><!-- PL22 - Heat Pumps --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL28 - Hydronic Balancing &amp; Control</masterLabel>
+            <translation><!-- PL28 - Hydronic Balancing &amp; Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL31 - DEN Heat Exchangers</masterLabel>
+            <translation><!-- PL31 - DEN Heat Exchangers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL32 - DEN Heavy Duty Stations</masterLabel>
+            <translation><!-- PL32 - DEN Heavy Duty Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL33 - DEN Light Duty Stations</masterLabel>
+            <translation><!-- PL33 - DEN Light Duty Stations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL34 - Floor Heating Hydronics</masterLabel>
+            <translation><!-- PL34 - Floor Heating Hydronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PL35 - Energy Metering</masterLabel>
+            <translation><!-- PL35 - Energy Metering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Valves</masterLabel>
+            <translation><!-- PVG Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parts &amp; Service</masterLabel>
+            <translation><!-- Parts &amp; Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Options</masterLabel>
+            <translation><!-- Power Options --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pressure Controls</masterLabel>
+            <translation><!-- Pressure Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Institutions</masterLabel>
+            <translation><!-- Public Institutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality</masterLabel>
+            <translation><!-- Quality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radiator Thermostats</masterLabel>
+            <translation><!-- Radiator Thermostats --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrigeration Controls</masterLabel>
+            <translation><!-- Refrigeration Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Room Thermostats</masterLabel>
+            <translation><!-- Room Thermostats --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soft Starters</masterLabel>
+            <translation><!-- Soft Starters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering</masterLabel>
+            <translation><!-- Steering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Integr/Designer</masterLabel>
+            <translation><!-- System Integr/Designer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temperature Controls</masterLabel>
+            <translation><!-- Temperature Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valves</masterLabel>
+            <translation><!-- Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesaler/Distributer</masterLabel>
+            <translation><!-- Wholesaler/Distributer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Explanation of Completed Task --></help>
+        <label>小结</label>
+        <name>Closing_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed By --></label>
+        <name>Completed_By__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- set in TaskTriggerHandler for non- Contract PS tasks --></help>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Approved Time --></label>
+        <name>Contract_Approved_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Action --></label>
+        <name>Contract_Expiration_Action__c</name>
+        <picklistValues>
+            <masterLabel>Do Not Renew</masterLabel>
+            <translation><!-- Do Not Renew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extend</masterLabel>
+            <translation><!-- Extend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renew</masterLabel>
+            <translation><!-- Renew --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Extension End Date --></label>
+        <name>Contract_Extension_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instructions --></label>
+        <name>Contract_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Previous --></label>
+        <name>Contract_Previous__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Stage --></label>
+        <name>Contract_Stage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Segment --></label>
+        <name>Danfoss_Division__c</name>
+        <picklistValues>
+            <masterLabel>Cooling</masterLabel>
+            <translation><!-- Cooling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drives</masterLabel>
+            <translation><!-- Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating</masterLabel>
+            <translation><!-- Heating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Power Solutions</masterLabel>
+            <translation><!-- Power Solutions --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Description --></label>
+        <name>Data_Quality_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Quality Score --></label>
+        <name>Data_Quality_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Before Today in Month --></label>
+        <name>Date_Before_Today_in_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date before Today in Quarter --></label>
+        <name>Date_before_Today_in_Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date before Today in Year --></label>
+        <name>Date_before_Today_in_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Segment --></label>
+        <name>Division_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Est. Start Date --></label>
+        <name>Est_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Events Notes --></label>
+        <name>Events_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Include in Comatrol Weekly --></label>
+        <name>Include_in_Comatrol_Weekly__c</name>
+    </fields>
+    <fields>
+        <label>收录到DOW</label>
+        <name>Include_in_DOW__c</name>
+    </fields>
+    <fields>
+        <label><!-- ACD --></label>
+        <name>NVMContactWorld__ACD__c</name>
+    </fields>
+    <fields>
+        <label><!-- CW Call End Time --></label>
+        <name>NVMContactWorld__CW_Call_End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- CW Call Start Time --></label>
+        <name>NVMContactWorld__CW_Call_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- ContactWorld Number --></label>
+        <name>NVMContactWorld__ContactWorld_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Number --></label>
+        <name>NVMContactWorld__Customer_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>NVMContactWorld__Service_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- HS Only - Number of Participants trained or at a Group Meeting --></help>
+        <label><!-- Number of Participants --></label>
+        <name>Number_of_Participants__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reviewer Order --></help>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17</masterLabel>
+            <translation><!-- 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18</masterLabel>
+            <translation><!-- 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19</masterLabel>
+            <translation><!-- 19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Enter any relevant comments prior to closing this activity. --></help>
+        <label><!-- Partner Closing Comments --></label>
+        <name>Partner_Closing_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Comments --></label>
+        <name>Partner_Comments__c</name>
+    </fields>
+    <fields>
+        <name>Priority</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Same as &quot;Date&quot;. To be able to use same field twice in reporting. Once for close quarter, and one for exact date --></help>
+        <label><!-- Reporting Date --></label>
+        <name>Reporting_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Activity ID --></label>
+        <name>SAP_Activity_ID__c</name>
+    </fields>
+    <fields>
+        <name>Status</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on someone else</masterLabel>
+            <translation><!-- Waiting on someone else --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type Category --></label>
+        <name>Type_Category__c</name>
+        <picklistValues>
+            <masterLabel>Commercial/Logistical</masterLabel>
+            <translation><!-- Commercial/Logistical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exhibition/Seminar</masterLabel>
+            <translation><!-- Exhibition/Seminar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F2F Training</masterLabel>
+            <translation><!-- F2F Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F2F Training - Consultant</masterLabel>
+            <translation><!-- F2F Training - Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F2F Training - Installer</masterLabel>
+            <translation><!-- F2F Training - Installer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>F2F Training - Wholesaler</masterLabel>
+            <translation><!-- F2F Training - Wholesaler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group Meeting</masterLabel>
+            <translation><!-- Group Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Time</masterLabel>
+            <translation><!-- Office Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Call inbound</masterLabel>
+            <translation><!-- Phone Call inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Call outbound</masterLabel>
+            <translation><!-- Phone Call outbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation><!-- Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation><!-- Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Meeting</masterLabel>
+            <translation><!-- Sales Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Survey</masterLabel>
+            <translation><!-- Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team Meeting</masterLabel>
+            <translation><!-- Team Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical</masterLabel>
+            <translation><!-- Technical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virtual Training</masterLabel>
+            <translation><!-- Virtual Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Communication</masterLabel>
+            <translation><!-- Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complaint</masterLabel>
+            <translation><!-- Complaint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow-Up</masterLabel>
+            <translation><!-- Follow-Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal</masterLabel>
+            <translation><!-- Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quote</masterLabel>
+            <translation><!-- Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Visit</masterLabel>
+            <translation><!-- Sales Visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Visit</masterLabel>
+            <translation><!-- Service Visit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VIP Trip</masterLabel>
+            <translation><!-- VIP Trip --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Uploaded --></label>
+        <name>Uploaded__c</name>
+    </fields>
+    <fields>
+        <label>用户名</label>
+        <name>UserID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select &apos;Yes&apos; if the information contains AllMID relevant details that are not already covered in relation to an opportunity --></help>
+        <label><!-- AllMID Relevant --></label>
+        <name>allMID_relevant_information__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pardot Source Id --></label>
+        <name>pi__pardot_source_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hours --></label>
+        <name>project_cloud__Hours__c</name>
+    </fields>
+</CustomObjectTranslation>

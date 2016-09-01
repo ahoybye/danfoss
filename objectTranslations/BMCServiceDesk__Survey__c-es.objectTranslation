@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Encuesta</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Encuestas</value>
+    </caseValues>
+    <fields>
+        <help>¿Algún otro comentario que quiera compartir con nosotros?</help>
+        <label><!-- Comments --></label>
+        <name>BMCServiceDesk__Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Incident --></label>
+        <name>BMCServiceDesk__FKIncident__c</name>
+        <relationshipLabel><!-- Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Incident # --></label>
+        <name>BMCServiceDesk__Incident__c</name>
+    </fields>
+    <fields>
+        <help>¿Ha sido rápida la respuesta del Servicio de asistencia?</help>
+        <label><!-- Response Timeliness --></label>
+        <name>BMCServiceDesk__Response_Timeliness__c</name>
+        <picklistValues>
+            <masterLabel>Extremely responsive</masterLabel>
+            <translation>Sumamente rápido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderately responsive</masterLabel>
+            <translation>Moderadamente rápido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not responsive at all</masterLabel>
+            <translation>Nada rápido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slightly responsive</masterLabel>
+            <translation>No muy rápido</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very responsive</masterLabel>
+            <translation>Muy rápido</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>En general, ¿considera satisfactoria la resolución del problema?</help>
+        <label><!-- Satisfaction --></label>
+        <name>BMCServiceDesk__Satisfaction__c</name>
+        <picklistValues>
+            <masterLabel>Extremely satisfied</masterLabel>
+            <translation>Sumamente satisfecho</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderately satisfied</masterLabel>
+            <translation>Bastante satisfecho</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not satisfied at all</masterLabel>
+            <translation>No satisfecho</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slightly satisfied</masterLabel>
+            <translation>No muy satisfecho</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very satisfied</masterLabel>
+            <translation>Muy satisfecho</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>¿Qué opina de la gestión de su petición por parte del Servicio de asistencia?</help>
+        <label><!-- Service Desk Performance --></label>
+        <name>BMCServiceDesk__Service_Desk_Performance__c</name>
+        <picklistValues>
+            <masterLabel>Extremely well</masterLabel>
+            <translation>Sumamente bien</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderately well</masterLabel>
+            <translation>Moderadamente bien</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not well at all</masterLabel>
+            <translation>Nada bien</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slightly well</masterLabel>
+            <translation>No muy bien</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very well</masterLabel>
+            <translation>Muy bien</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>¿Cómo calificaría los conocimientos y la disposición del analista? (1=Deficiente, 5 Sobresaliente)</help>
+        <label><!-- Staff Effectiveness --></label>
+        <name>BMCServiceDesk__Staff_Effectiveness__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Survey For --></label>
+        <name>BMCServiceDesk__SurveyFor__c</name>
+    </fields>
+    <fields>
+        <label><!-- ToBeDeleted --></label>
+        <name>BMCServiceDesk__ToBeDeleted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please rate your dialogue/communication with IT personnel involved in resolving your incident (Both in writing and verbally). --></help>
+        <label><!-- Dialogue Quality --></label>
+        <name>Dialogue_Quality__c</name>
+        <picklistValues>
+            <masterLabel>Average</masterLabel>
+            <translation><!-- Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Good</masterLabel>
+            <translation><!-- Very Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Poor</masterLabel>
+            <translation><!-- Very Poor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please rate the quality of the resolution for your Incident (i.e. - was it professional and correct). --></help>
+        <label><!-- Resolution Quality --></label>
+        <name>Resolution_Quality__c</name>
+        <picklistValues>
+            <masterLabel>Average</masterLabel>
+            <translation><!-- Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Good</masterLabel>
+            <translation><!-- Very Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Poor</masterLabel>
+            <translation><!-- Very Poor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please rate the time it took to resolve your Incident. --></help>
+        <label><!-- Resolution Time --></label>
+        <name>Resolution_Time__c</name>
+        <picklistValues>
+            <masterLabel>Average</masterLabel>
+            <translation><!-- Average --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Good</masterLabel>
+            <translation><!-- Very Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Very Poor</masterLabel>
+            <translation><!-- Very Poor --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>N.º de respuesta</nameFieldLabel>
+</CustomObjectTranslation>

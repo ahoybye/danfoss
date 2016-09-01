@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account --></label>
+        <name>ccpe_r__Account__c</name>
+        <relationshipLabel><!-- Rate Cards --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This setting is only used for assigning rate cards, time can still be billed on an inactive rate card if it is assigned to the project --></help>
+        <label><!-- Active --></label>
+        <name>ccpe_r__Active__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Clone --></label>
+        <name>ccpe_r__Clone</name>
+    </webLinks>
+</CustomObjectTranslation>

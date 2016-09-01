@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder for Re-branding German Survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Re-Brand E-mail (Germany)</name>
+    <style>freeForm</style>
+    <subject>Erinnerung: Teilen Sie uns bitte Ihre fachkundige Meinung mit</subject>
+    <textOnly>&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+Sehr geehrter Kunde,
+
+
+Kürzlich haben wir Sie eingeladen, an einer Umfrage von Danfoss über die Zukunft der Kommunikation teilzunehmen.
+
+
+Da Sauer-Danfoss im September dieses Jahres seinen Namen in Danfoss umändert und als Danfoss Power Solutions Teil der Danfoss-Gruppe wird, wären wir für Ihren Beitrag dankbar und erinnern Sie daran, dass Ihr Feedback sehr wichtig für uns ist. Auch wenn Sie nur über begrenzte oder keinerlei Kenntnisse der Marke Danfoss verfügen, sind Ihre Antworten dennoch sehr wertvoll für uns, da sie Aufschluss über die allgemeinen Erwartungen an ein Unternehmen in Ihrer Branche geben.
+
+
+Die Umfrage finden Sie unter diesem Link:
+
+http://new.kunde.dk/cgi-bin/ciwweb.pl?studyname=Storydf_DEmedie&amp;clt=4
+
+
+Sollte sich das Browserfenster für die Umfrage nicht öffnen, kopieren Sie den Link bitte in die Adresszeile des Browsers.
+
+
+Bitte lassen Sie uns Ihr Feedback bis zum 2013-08-21 zukommen.
+
+
+Vielen Dank im Voraus für Ihre Teilnahme.
+
+
+Mit freundlichen Grüßen
+
+Sauer-Danfoss</textOnly>
+    <type>html</type>
+</EmailTemplate>

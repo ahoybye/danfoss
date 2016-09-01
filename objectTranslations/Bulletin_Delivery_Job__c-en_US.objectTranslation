@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Bulletin Delivery Job</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Bulletin Delivery Jobs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Area__c</name>
+        <picklistValues>
+            <masterLabel>Corporate</masterLabel>
+            <translation><!-- Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronic Components</masterLabel>
+            <translation><!-- Electronic Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power CC</masterLabel>
+            <translation><!-- High Power CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power OC</masterLabel>
+            <translation><!-- High Power OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low Power</masterLabel>
+            <translation><!-- Low Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power CC</masterLabel>
+            <translation><!-- Medium Power CC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power OC</masterLabel>
+            <translation><!-- Medium Power OC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motors</masterLabel>
+            <translation><!-- Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Valves</masterLabel>
+            <translation><!-- PVG Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parts &amp; Service</masterLabel>
+            <translation><!-- Parts &amp; Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering</masterLabel>
+            <translation><!-- Steering --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schwarzmuller</masterLabel>
+            <translation><!-- Schwarzmuller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valmova</masterLabel>
+            <translation><!-- Valmova --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Correction Bulletin Delivery Job --></label>
+        <name>Corrective_Bulletin_Delivery_Job__c</name>
+        <relationshipLabel><!-- Bulletin Delivery Jobs (Corrective Bulletin Delivery Job) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Defect Correction --></label>
+        <name>Defect_Correction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Defect Correction --></label>
+        <name>Defect_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Defective Bulletin Delivery Job --></label>
+        <name>Defective_Bulletin_Delivery_Job__c</name>
+        <relationshipLabel><!-- Defective Bulletin Delivery Jobs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PIB Number --></label>
+        <name>PIB_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field is used in Batch class because picklist does order by based on order defined in picklist not alphabetically. --></help>
+        <label><!-- Status (Text) --></label>
+        <name>Status_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fail</masterLabel>
+            <translation><!-- Fail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready</masterLabel>
+            <translation><!-- Ready --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Defect Correction --></label>
+        <name>Defect_Correction</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please select Defective Bulletin Delivery Job. --></errorMessage>
+        <name>Defective_Bulletin_Delivery_Job_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Execute --></label>
+        <name>Execute</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_Defective_Job --></label>
+        <name>Submit_Defective_Job</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contract - Regional Role Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contract - Regional Role Groups</value>
+    </caseValues>
+    <fields>
+        <label><!-- Finance --></label>
+        <name>Finance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legal Counsel --></label>
+        <name>Legal_Counsel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Librarian --></label>
+        <name>Librarian__c</name>
+        <relationshipLabel><!-- Contract - Regional Role Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Director DIST --></label>
+        <name>Sales_Director_DIST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Director OEM --></label>
+        <name>Sales_Director_OEM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Executive --></label>
+        <name>Sales_Executive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales VP --></label>
+        <name>Sales_VP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Technical Director --></label>
+        <name>Technical_Director__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

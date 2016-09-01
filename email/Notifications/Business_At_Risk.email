@@ -1,0 +1,22 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<BR>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><strong><font style="BACKGROUND-COLOR: #ffffff" color="#000099" size="5">Notice:</font></strong></p>
+<p>&nbsp;</p>
+<p>{!UserLicense.Name},</p>
+<p>&nbsp;</p>
+<p>{!Opportunity.Name} has been identified as Type =&nbsp;{!Opportunity.Type} and Stage =&nbsp;{!Opportunity.StageName} </p><p><br></p><p>Opportunity Owner -&nbsp;{!Opportunity.OwnerFullName}</p><p>Description -&nbsp;{!Opportunity.Description}</p>
+<div><br></div>
+<div>Click&nbsp;<a href="{!Opportunity.Link}">here</a> to review the Opportunity.</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

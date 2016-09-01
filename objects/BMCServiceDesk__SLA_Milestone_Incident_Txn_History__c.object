@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__Action_Performed__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Action Performed by the milestone transaction.
+Example: Sent Email notification to: TO / CC values
+&lt;Actual Email&gt;</description>
+        <externalId>false</externalId>
+        <label>Action Performed</label>
+        <length>1500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Created_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Created Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Error__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Error</label>
+        <length>1024</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKIncident_Service_Target__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Incident Service Target</label>
+        <referenceTo>BMCServiceDesk__Incident_Service_Target__c</referenceTo>
+        <relationshipName>SLA_Milestone_Incident_Transact_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKIncident__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Incident</label>
+        <referenceTo>BMCServiceDesk__Incident__c</referenceTo>
+        <relationshipName>SLA_Milestone_Incident_Transact_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__SLA_Milestone_Condition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SLA Milestone conditions picklist</description>
+        <externalId>false</externalId>
+        <label>SLA Milestone Condition</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Percentage of Time Elapsed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Percentage of Time Remaining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Target is Canceled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Target is Met</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Target is Missed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Target Warning Occurs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Time Elapsed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Time Remaining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__SLA_Milestone_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SLA Milestone Value</description>
+        <externalId>false</externalId>
+        <label>SLA Milestone Value</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>SLA Milestone transaction status. Whether successfully executed - &quot;PASS&quot; or exception occured &quot;FAIL&quot;.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pass</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+</CustomObject>

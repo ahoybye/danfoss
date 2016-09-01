@@ -1,0 +1,43 @@
+<apex:page controller="WeeklyReportDOWFilterController">
+<apex:form >
+    <apex:sectionHeader title="Weekly Report Filter"/>
+    <apex:pageblock >
+        <apex:pageblockButtons >
+            <apex:commandButton value="Next" action="{!runReport}"/>
+        </apex:pageblockButtons>
+        <font color="red"><b><apex:messages /></b></font>
+        <apex:pageblockSection >
+            <apex:pageblockSectionItem >
+                <apex:outputLabel value="Account region"/>
+                <apex:selectList value="{!accountRegion}" size="1">
+                    <apex:selectOptions value="{!RegionList}"/>
+                </apex:selectList>
+            </apex:pageblockSectionItem>
+            <apex:pageblockSectionItem >
+                <apex:outputLabel value="Business Org"/>
+                <apex:outputPanel >
+                    <div class="requiredInput">
+                    <div class="requiredBlock"></div>
+                    <apex:selectList value="{!BusinessOrg}" size="1">
+                        <apex:selectOptions value="{!BusinessOrgList}"/>
+                    </apex:selectList>
+                    </div>
+                </apex:outputPanel>
+            </apex:pageblockSectionItem>
+            <!--
+             <apex:pageblockSectionItem >
+                <apex:outputLabel value="Business Area"/>
+                    <apex:selectList value="{!BusinessArea}" size="1">
+                        <apex:selectOptions value="{!BusinessAreaList}"/>
+                    </apex:selectList>
+            </apex:pageblockSectionItem>
+            -->
+            <apex:pageblockSectionItem >
+                <apex:outputLabel value="Business Area"/>
+                <apex:inputField value="{!taskForBusinessArea.Business_Area__c}"/>
+            </apex:pageblockSectionItem>
+        </apex:pageblockSection>
+    </apex:pageblock>
+    <div style="color:red">*Please do not copy or print this document.  This is company confidential information.</div>
+</apex:form>
+</apex:page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>ccpt__Campaign__c</name>
+        <relationshipLabel><!-- Boards --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Department --></label>
+        <name>ccpt__Owner_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percent Complete --></label>
+        <name>ccpt__Percent_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related To --></label>
+        <name>ccpt__RelatedTo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tags --></label>
+        <name>ccpt__Tags__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Active --></label>
+        <name>ccpt__Total_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Incomplete --></label>
+        <name>ccpt__Total_Incomplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>ccpt_ccpx__Project__c</name>
+        <relationshipLabel><!-- Boards --></relationshipLabel>
+    </fields>
+    <sharingReasons>
+        <label><!-- Manage --></label>
+        <name>ccpt__Manage</name>
+    </sharingReasons>
+    <sharingReasons>
+        <label><!-- View --></label>
+        <name>ccpt__View</name>
+    </sharingReasons>
+</CustomObjectTranslation>

@@ -1,0 +1,18 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Verdana,Helvetica,Sans-Serif">Dear Sir/Madam:</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif">Please find the attached Master Quote effective January 1, 2016.&nbsp;&nbsp;</font></p>
+<p><font face="Verdana"></font>&nbsp;&nbsp;</p>
+<p><font face="Verdana,Helvetica,Sans-Serif">If you have questions, please contact your account manager.</font></p>
+<p><font face="Verdana,Helvetica,Sans-Serif">&nbsp;</font></p>
+<p><font face="Verdana,Helvetica,Sans-Serif">Thank you and have a great day!</font></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<FONT face=Verdana,Helvetica,Sans-Serif>{!Today}</FONT>]]></td>
+</tr>
+</table>

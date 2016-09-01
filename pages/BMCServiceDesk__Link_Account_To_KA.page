@@ -1,0 +1,42 @@
+<apex:page standardController="BMCServiceDesk__KM_KnowledgeArticle__c" extensions="BMCServiceDesk.StdKnowledgeManagementController" showHeader="false" sidebar="false">
+
+<link rel="stylesheet" type="text/css" href="{!$Resource.ExtJS4_1_3}/resources/css/ext-all.css" />
+
+<apex:form id="KAform">
+<apex:outputPanel >
+    <apex:actionFunction name="save" action="{!saveAccount}" rerender="KAIdPanel" oncomplete="reloadData()">
+        <apex:param assignTo="{!chkBoxValue}" name="idSetString" value=""/>
+        <apex:param assignTo="{!csvAccountID}" name="csvAccount" value="AllAccounts"/>    
+    </apex:actionFunction>
+     <apex:outputLabel value="{!$Label.BMCServiceDesk__DisplayKA}:" style="vertical-align:top;font-weight:bold;color:rgb(74, 74, 86);font-size:91%"/>
+     <br></br>  
+     <br></br>  
+         <table>
+           <tr>
+            <td id="multiSelectBox"></td>
+            <td style="vertical-align:top">
+              <input type="button" id="AccountSelectBtn" class="btn" value="{!$Label.CMDBEdit}" onClick="window.open('/apex/AccountSelector?stdForm=true&KAId=&isForKA=true','window','width=500,height=550,left=200px,top=150px');" style="vertical-align:top;margin-left:10px;cursor:pointer;cursor:hand;" title="{!$Label.SelectAccounts}"/>
+            </td>
+        </tr>
+        </table>    
+ </apex:outputPanel>
+  
+<apex:outputPanel id="KAIdPanel">
+<script>
+      if({!NOT($ObjectType.KM_KnowledgeArticle__c.updateable)}){
+          var accountSelectBtn = document.getElementById("AccountSelectBtn");
+          accountSelectBtn.disabled = true;
+          accountSelectBtn.setAttribute("class","btnDisabled");
+     }     
+      var csvAccountListparam = '{!JSENCODE(accountStr)}';
+  </script> 
+</apex:outputPanel>
+  
+ <script>
+   var allAccounts = '{!JSENCODE($Label.AllAccountsEntitlement)}'; 
+   var listData = {!accountJSON};
+</script>  
+ </apex:form>
+ <script type="text/javascript" src="{!$Resource.ExtJS4_1_3}/ext-all.js"></script>
+ <script type="text/javascript" src="{!$Resource.SDEFCommonJS}/LinkAccountToKA.js"/>
+</apex:page>

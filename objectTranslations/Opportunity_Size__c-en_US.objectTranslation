@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity Size</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Sizes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Year Number --></label>
+        <name>Current_Year_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Year Size --></label>
+        <name>Current_Year_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Index --></label>
+        <name>Index_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Index Size --></label>
+        <name>Index_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>OwnerId__c</name>
+        <relationshipLabel><!-- Opportunity Sizes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Segment --></label>
+        <name>Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Number --></label>
+        <name>Total_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Size --></label>
+        <name>Total_Size__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

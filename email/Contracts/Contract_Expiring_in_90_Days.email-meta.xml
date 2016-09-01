@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contract Expiring in 90 Days</name>
+    <style>none</style>
+    <subject>Contract expiring soon: {!Contract__c.Name} for {!Contract__c.Customer__c}</subject>
+    <textOnly>The subject contract will expire within 90 days. Please take the following actions immediately:   1) in the field &quot;Expiration Action&quot; select from the drop down list which action needs to be taken.   2) communicate the next actions with the customer and document the agreed upon course of action in the contract record comments.   NOTICE: taking no action will result in the contract Expiring without notice to the customer. It is very important to specify the next actions even if the action is to let the contract expire.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

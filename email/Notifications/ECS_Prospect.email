@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p style="font-size: 12pt;"><b style="font-size: 12pt; background-color: rgb(255, 255, 255);"><font color="#ff0000" size="5">NEW ECS ACCOUNT CREATED:</font></b></p><p style="font-size: 12pt;"><font class="Apple-style-span" face="arial" style="font-size: 12pt; background-color: rgb(255, 255, 255);"><br></font></p><p><font class="Apple-style-span" face="arial" style="background-color: rgb(255, 255, 255);">Prospect account&nbsp;</font><span style="font-family: Verdana, Helvetica, sans-serif;">{!Account.Name}&nbsp;</span><font class="Apple-style-span" face="arial" style="background-color: rgb(255, 255, 255);">has been created as an ECS account</font><font face="arial" style="background-color: rgb(255, 255, 255);">.&nbsp; Please take a moment to ensure the information entered by our Distribution partner is correct and familiarize yourself with this new account.</font></p><div><font style="font-family: Verdana, Helvetica, sans-serif;"><br>Account Name:&nbsp;{!Account.Name}</font><p class="MsoNormal"><font style="background-color: rgb(255, 255, 255);">Created By:&nbsp;</font><font face="Verdana, Helvetica, sans-serif">{!Account.CreatedBy}</font></p><p class="MsoNormal"><font face="Verdana, Helvetica, sans-serif" style="background-color: rgb(255, 255, 255);"><font face="arial">Parent Account:&nbsp;</font>{!Account.Parent}</font></p><p class="MsoNormal"><font face="Verdana, Helvetica, sans-serif" style="background-color: rgb(255, 255, 255);"><br></font><span style="background-color: rgb(255, 255, 255);">Click <a href="https://danfoss.my.salesforce.com/{!Account.Id}">here</a>&nbsp;to view the record</span><span style="background-color: rgb(255, 255, 255);">.</span></p><div><span style="font-family: Verdana, Helvetica, sans-serif; background-color: rgb(255, 255, 255);"><br>Thank you!</span></div></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

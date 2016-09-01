@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>UploadUser</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>UploadUser</value>
+    </caseValues>
+    <fields>
+        <label><!-- BMCServiceDesk__Account_Name --></label>
+        <name>BMCServiceDesk_Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- BusinessOrg --></label>
+        <name>BusinessOrg__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- EmailEncodingKey --></label>
+        <name>EmailEncodingKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extension --></label>
+        <name>Extension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- FederationIdentifier --></label>
+        <name>FederationIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- FirstName --></label>
+        <name>FirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- LanguageLocalKey --></label>
+        <name>LanguageLocalKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- LastName --></label>
+        <name>LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- LocaleSidKey --></label>
+        <name>LocaleSidKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- ManagerEmail --></label>
+        <name>ManagerEmail__c</name>
+    </fields>
+    <fields>
+        <label><!-- ManagerFirstName --></label>
+        <name>ManagerFirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ManagerLastName --></label>
+        <name>ManagerLastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- MobilePhone --></label>
+        <name>MobilePhone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PersNo --></label>
+        <name>PersNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- PostalCode --></label>
+        <name>PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- StreetAddress --></label>
+        <name>StreetAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeZoneSidKey --></label>
+        <name>TimeZoneSidKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- User_ID --></label>
+        <name>User_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Username --></label>
+        <name>Username__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

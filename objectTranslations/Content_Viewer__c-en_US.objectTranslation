@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Content Viewer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Content Viewers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Content Viewers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Content Id --></label>
+        <name>Content_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Content Library --></label>
+        <name>Content_Library__c</name>
+    </fields>
+    <fields>
+        <label><!-- Content Title --></label>
+        <name>Content_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Content Version Id --></label>
+        <name>Content_Version_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Content Viewers --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

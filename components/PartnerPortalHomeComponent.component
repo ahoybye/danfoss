@@ -1,0 +1,61 @@
+<apex:component controller="PartnerPortalHomeComponentCtrl">
+    <apex:attribute name="Position" type="String" assignTo="{!pos}" description="" required="true"/>
+    
+    <apex:outputPanel rendered="{!NOT(ISNULL(errorMsg))}">
+      <div class="message errorM3" role="alert">
+            <table border="0" cellpadding="0" cellspacing="0" class="messageTable" style="padding:0px;margin:0px;">
+                <tbody>
+                   <tr valign="top">
+                    <td>
+                        <img alt="ERROR" class="msgIcon" src="/s.gif" title="ERROR"/>
+                    </td>
+                    <td class="messageCell"><div class="messageText"><span style="color:#cc0000">
+                      <h4>Error:</h4></span>{!errorMsg}<br/></div>
+                    </td>
+                </tr>
+                <tr>
+              <td></td>
+              <td>
+              </td>
+                </tr>
+            </tbody></table>
+        </div>
+       </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!LOWER(portalBanner.Object__c) == 'idea'}">
+    <div class="right-content" style="margin-top:0px;">
+      <div class="heading">
+          <span><apex:outputField value="{!portalBanner.Component_Type__c}"/></span>
+          <apex:outputLink styleClass="view-button" value="{!URLFOR('/ideas/ideaList.apexp')}">{!$Label.Partner_Portal_Button_View_All} </apex:outputLink>
+          <br class="clear"/>
+      </div>
+        <ul class="articles">
+        <apex:outputText value="{!$Label.Partner_Portal_Ideas_Not_Available}" rendered="{!IF(ideaList.size = 0 , true, false)}"/>
+        <apex:repeat value="{!ideaList}" var="idea">
+          <li>
+            <apex:outputLink value="{!URLFOR('/ideas/viewIdea.apexp')}?id={!idea.id}">{!idea.Title}</apex:outputLink>
+          </li>
+          </apex:repeat>
+        </ul> 
+      </div>
+    </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!LOWER(portalBanner.Object__c) == 'content'}">
+      <div class="right-content" style="margin-top:0px;">
+      <div class="heading">
+        <span><apex:outputField value="{!portalBanner.Component_Type__c}"/></span>
+        <apex:outputLink styleClass="view-button" value="{!URLFOR('/sfc/#search')}?searchProperties={!ContentFilterString}">{!$Label.Partner_Portal_Button_View_All}  </apex:outputLink>
+        <br class="clear"/>
+      </div>
+      <ul class="articles">
+        <apex:outputText value="{!$Label.Partner_Portal_Content_Not_Available}" rendered="{!IF(contentList.size = 0 , true, false)}"/>
+        <apex:repeat value="{!contentList}" var="content">
+          <li>
+            <apex:outputLink value="{!URLFOR('/sfc/#version?selectedDocumentId=')}{!content.ContentDocumentId}">{!content.Title}</apex:outputLink>
+          </li>
+        </apex:repeat>  
+      </ul>
+      </div>
+    </apex:outputPanel>
+    
+</apex:component>

@@ -1,0 +1,139 @@
+<apex:page standardController="Opportunity" extensions="OpportunityProductEntryExtension" sidebar="false" action="{!init}" title="{!$ObjectType.Product2.LabelPlural} for {!$ObjectType.Opportunity.Label}: {!Opportunity.Name}">
+    <apex:sectionHeader Title="Manage {!searchTypeText}" subtitle="{!Opportunity.Name}"/>
+    <apex:form id="form"> 
+        <apex:pageMessages id="msgs"/>
+        <apex:outputPanel >
+            <apex:pageBlock mode="mainDetail">
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Opportunity.RecordTypeId}"/>
+                    <apex:outputField value="{!Opportunity.Pricebook2Id}"/>
+                    <apex:outputField value="{!Opportunity.CurrencyIsoCode}"/>
+                    <apex:outputField label="Total opportunity value" value="{!myOppTotal.VF_dummy_currency__c}"/>                    
+                    <apex:outputField value="{!Opportunity.Sales_Area__c}"/>
+                    <apex:outputText label="Search for">                    
+                        {!searchTypeText}&nbsp;
+                        (
+                        <apex:outputLink value="/apex/opportunityProductEntry?id={!Opportunity.Id}&searchType=PRODUCTS" rendered="{!SearchType=='GROUPS'}" id="productLink">switch to Products</apex:outputLink>
+                        <apex:outputLink value="/apex/opportunityProductEntry?id={!Opportunity.Id}&searchType=GROUPS" rendered="{!SearchType=='PRODUCTS'}" id="productGroupLink">switch to Product Groups</apex:outputLink>)
+                    </apex:outputText>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <apex:pageBlock title="Get Prices: Select Sub Account and Sales Area" rendered="{!AvailableSalesAreas != null}">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!cancelSalesAreaSelect}" value="Cancel"/>
+                </apex:pageBlockButtons>
+                <apex:pageBlockTable value="{!AvailableSalesAreas}" var="sa">
+                    <apex:column >
+                        <apex:commandLink value="Select" action="{!selectSalesArea}" reRender="form" status="saleareaStatus">
+                            <apex:param name="saleareaid" assignTo="{!selectedSalesArea}" value="{!sa.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:repeat value="{!$ObjectType.Sales_Area__c.FieldSets.PricesForOpportunityColumns}" var="field">
+                        <apex:column value="{!sa[field.FieldPath]}"/>
+                    </apex:repeat>
+                </apex:pageBlockTable>
+                <apex:actionStatus id="saleareaStatus" startText="Loading..."/>
+            </apex:pageBlock>
+            <apex:pageBlock title="Selected {!searchTypeText}" id="selected" rendered="{!AvailableSalesAreas = null}">
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!onSave}" value="Save"/>
+                    <apex:commandButton action="{!fetchPrices}" value="Get Prices" rerender="form" status="sapPriceStatus" rendered="{!searchType != 'GROUPS'}"/>
+                    <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"/>
+                    <apex:actionStatus id="sapPriceStatus" startText="Getting prices from SAP..." stopText=" "/>
+                </apex:pageBlockButtons>
+                <apex:pageblockTable value="{!shoppingCart}" var="s">                   
+                    <apex:column >
+                        <apex:commandLink value="Remove" action="{!removeFromShoppingCart}" reRender="form">
+                            <apex:param value="{!s.oppLine.PriceBookEntryId}" assignTo="{!toUnselect}" name="toUnselect"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.Product2.Label}" value="{!s.oppLine.PriceBookEntry.Product2.Name}"/>
+                    <apex:column headerValue="{!$ObjectType.Product2.Fields.Business_Unit__c.Label}" value="{!s.oppLine.PriceBookEntry.Product2.Business_Unit__c}"/>
+                    <apex:column headerValue="{!$ObjectType.Product2.Fields.ProductCode.Label}" value="{!s.oppLine.PriceBookEntry.Product2.SAP_Material_Code_CE__c}"/>
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Quantity.Label}">
+                        <apex:inputField value="{!s.oppLine.Quantity}" style="width:70px" required="true">
+                            <apex:actionSupport event="onchange" action="{!refreshTotals}" rerender="msgs, totalpricecol, grandTotal"/>
+                        </apex:inputField>
+                    </apex:column>
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.UnitPrice.Label}" id="unitpricecol">
+                        <apex:inputField value="{!s.oppLine.UnitPrice}" style="width:70px">
+                            <apex:actionSupport event="onchange" action="{!refreshTotals}" rerender="msgs, totalpricecol, grandTotal"/>
+                        </apex:inputField>
+                        </apex:column>
+                    <!---5th Feb An option for using a shadow field for a blank currency field for Unit Price
+                        <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.UnitPrice.Label}" id="unitpricecol2">
+                        <apex:inputField value="{!s.DELETEME__c}" style="width:70px" required="true">
+                            <apex:actionSupport event="onchange" action="{!refreshTotals}" rerender="msgs, totalpricecol, grandTotal"/>
+                        </apex:inputField>
+                    </apex:column>
+                    --->
+                    <apex:column headerValue="{!$ObjectType.OpportunityLineItem.Fields.Proposed_Price__c.Label}" id="totalpricecol" value="{!s.TotalLinePrice.VF_dummy_currency__c}"/>
+                </apex:pageblockTable>
+            </apex:pageBlock>
+            <apex:pageBlock id="searchParams" title="Search for {!searchTypeText}" rendered="{!AvailableSalesAreas = null}">
+                <apex:pageBlockSection >
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.Danfoss_segment}" for="divisionvalues"></apex:outputLabel>
+                        <apex:selectList value="{!Division}" size="1" id="divisionvalues" rendered="true" style="width:175px">
+                            <apex:actionSupport event="onchange" reRender="msgs, PLvalues" status="searchStatus" />
+                            <apex:selectOptions value="{!Divisions}"/>                               
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Product2.Fields.Business_Unit__c.Label}" for="PLvalues"></apex:outputLabel>
+                        <apex:selectList value="{!ProductLine}" size="1" id="PLvalues" rendered="true" style="width:175px">
+                            <apex:selectOptions value="{!ProductLines}"/>                               
+                        </apex:selectList>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Product2.Fields.Name.Label}" for="ProductDesc"></apex:outputLabel>
+                        <apex:inputText id="ProductDesc" value="{!searchString}" style="width:170px" rendered="true"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Product2.Fields.Product_Line__c.Label}" for="ProductClass"></apex:outputLabel>
+                        <apex:inputText id="ProductClass" value="{!searchClass}" style="width:170px" rendered="true"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Product2.Fields.Product_Set__c.Label}" for="ProductStat"></apex:outputLabel>
+                        <apex:inputText id="ProductStat" value="{!searchStatNo}" style="width:170px" rendered="true"/>  
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$ObjectType.Product2.Fields.ProductCode.Label}" for="ProductCode"></apex:outputLabel>
+                        <apex:inputText id="ProductCode" value="{!searchMaterialNo}" style="width:170px" rendered="true"/>        
+                    </apex:pageBlockSectionItem>                        
+                    <apex:pageBlockSectionItem >
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel />
+                        <apex:outputPanel >             
+                          <apex:commandButton value="Search" action="{!search}" reRender="msgs, searchResults, searchParams" status="searchStatus"/>                                                    
+                          &nbsp;&nbsp;
+                            <i>
+                                <apex:actionStatus id="searchStatus" startText="searching..." stopText=" "/>
+                            </i>
+                        </apex:outputPanel> 
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:outputPanel id="searchResults">
+                    <apex:outputPanel rendered="{!AvailableProductsCon != null}">
+                        <apex:pageBlockTable value="{!AvailableProducts}" var="a">
+                            <apex:column >
+                                <apex:commandButton value="Select" action="{!addToShoppingCart}" reRender="form">
+                                    <apex:param value="{!a.Id}" assignTo="{!toSelect}" name="toSelect"/>
+                                </apex:commandButton>
+                            </apex:column>
+                            <apex:column headerValue="{!$ObjectType.Product2.Fields.Name.Label}" value="{!a.Product2.Name}" />
+                            <apex:column headerValue="{!$ObjectType.Product2.Fields.Business_Unit__c.Label}" value="{!a.Product2.Business_Unit__c}"/>
+                            <apex:column headerValue="{!$ObjectType.Product2.Fields.Product_Line__c.Label}" value="{!a.Product2.Product_Line__c}"/>
+                            <apex:column headerValue="{!$ObjectType.Product2.Fields.Product_Set__c.Label}" value="{!a.Product2.Product_Set__c}"/>
+                            <apex:column headerValue="{!$ObjectType.Product2.Fields.ProductCode.Label}" value="{!a.Product2.SAP_Material_Code_CE__c}" />                        
+                        </apex:pageBlockTable>
+                        <c:PrevNextLinks setCon="{!AvailableProductsCon}" rerender="msgs, searchResults" status="searchStatus"/>
+                        <c:PageNumber setCon="{!AvailableProductsCon}"/>
+                        <apex:pageMessage severity="info" strength="1" rendered="{!AvailableProducts.Empty}" summary="Your search returned no results for products with {!Opportunity.CurrencyIsoCode} prices in the price book {!Opportunity.Pricebook2.Name}."/>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

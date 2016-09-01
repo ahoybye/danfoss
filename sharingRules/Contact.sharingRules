@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Comatrol</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Comatrol</label>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Comatrol</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Integrated</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Integrated</label>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Danfoss_PS</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Turolla</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Turolla</label>
+        <sharedTo>
+            <group>Turolla</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Turolla</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2013 Dist Price Update</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>2013 Sauer-Danfoss Discount Schedule Update</name>
+    <style>formalLetter</style>
+    <subject>2013 Sauer-Danfoss Discount Schedule Update</subject>
+    <textOnly>{!Account.Name}                                                               {!Today}
+Subject: Discount Schedule Update and Lead Time Changes
+
+
+Dear Sauer-Danfoss Distributor,
+
+
+With the introduction of new products during our LAUNCH sessions in March, we are updating the 2013 Discount Schedules. As part of the update, we reviewed production lead times and quantity breaks with manufacturing.
+
+
+Attached is the updated 2013 Discount Schedule
+
+
+
+
+The new Discount Schedule will be posted on PartnerLink today. Please update your business system to avoid delays with new purchase orders. We would like to thank you for your business as we will continue to strive to be your strongest partner in mobile hydraulics.
+Sincerely,
+
+
+&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+
+
+
+
+Thomas A. Rosskopf
+
+Director-Distribution and Aftermarket</textOnly>
+    <type>html</type>
+</EmailTemplate>

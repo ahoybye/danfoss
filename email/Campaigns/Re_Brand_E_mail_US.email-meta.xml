@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder for Re-branding English_India Survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Re-Brand E-mail (US)</name>
+    <style>freeForm</style>
+    <subject>Reminder: Please tell us your professional opinion</subject>
+    <textOnly>Dear {!Contact.FirstName},&lt;?xml:namespace prefix = o ns = &quot;urn:schemas-microsoft-com:office:office&quot; /&gt;
+
+
+Recently we sent you an invitation to participate in a survey on the future communication from Danfoss.
+
+
+With Sauer-Danfoss changing name to Danfoss in September this year and becoming Danfoss Power Solutions as part of the Danfoss Group we would be grateful for your input. Even though you have limited or no knowledge of the Danfoss brand your answers are still highly valuable to us based on the general expectations you have towards a company within your industry.
+
+Please find the survey on this link:
+
+http://new.kunde.dk/cgi-bin/ciwweb.pl?studyname=Storydf_USmedie&amp;clt=4
+
+
+If the browser window for the survey does not open, copy the link into the address bar of the browser.
+
+
+Please provide us with your feedback before 21st August 2013
+
+
+Thank you in advance for your participation.
+
+
+Kind regards,
+
+Sauer-Danfoss</textOnly>
+    <type>html</type>
+</EmailTemplate>

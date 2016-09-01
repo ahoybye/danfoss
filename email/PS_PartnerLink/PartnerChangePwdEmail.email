@@ -1,0 +1,9 @@
+Dear {!Contact.FirstName},
+
+Thank you for contacting customer support.  Your new Danfoss Power Solutions: PartnerLink portal password can be found below.
+
+http://mydanfoss.force.com/PartnerLink
+
+Thank you,
+
+{!Organization.Name} Customer Support

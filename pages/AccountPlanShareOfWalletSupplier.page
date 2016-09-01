@@ -1,0 +1,40 @@
+<apex:page standardController="Account_Plan__c" extensions="AccountPlanShareOfWalletSupExtension" action="{!init}">  
+        <apex:form id="form">
+        <apex:pageMessages />
+        <apex:pageBlock title="Share of Wallet Supplier">
+            <apex:pageblockTable value="{!sowSums}" var="sc" columns="7">
+                <apex:column value="{!sc.sow.Product_Line__c}"/>
+                <apex:column >
+                    <apex:facet name="header">Supplier</apex:facet>
+                    {!sc.sow.SoW_for__c}
+                </apex:column>
+                <apex:column value="{!sc.sow.Total_Potential_TO__c}">
+                    <apex:facet name="footer">
+                        {!sc.summary.sumTotalPotentialTurnover}
+                    </apex:facet>
+                </apex:column>
+                <apex:column value="{!sc.sow.LY_TO_Baseline__c}"/>
+                <apex:column value="{!sc.sow.Supplier_Position__c}"/>
+                <apex:column value="{!sc.totalPotentialTurnoverFraction} %">
+                    <apex:facet name="header">SoW/Total Pot. TO</apex:facet>
+                </apex:column>                
+                <apex:column value="{!sc.totalAddressableTurnoverFraction} %">
+                    <apex:facet name="header">SoW/Total Addr. TO</apex:facet>
+                </apex:column>                
+            </apex:pageblockTable>
+            <apex:panelGrid columns="7">
+                <c:PrevNextLinks setCon="{!setConComp}" rerender="form" status="setConCompStatus"/>
+                <c:PageNumber setCon="{!setConComp}"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="setConCompStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:pageBlock>
+        <!--<apex:panelGrid columns="4">
+            <apex:commandLink action="{!first}">First </apex:commandLink>
+            <apex:commandLink action="{!previous}" rendered="{!hasPrevious}">Previous</apex:commandLink>
+            <apex:commandLink action="{!next}" rendered="{!hasNext}">Next</apex:commandLink>
+            <apex:commandLink action="{!last}">Last</apex:commandLink>
+        </apex:panelGrid>-->
+    </apex:form>
+</apex:page>

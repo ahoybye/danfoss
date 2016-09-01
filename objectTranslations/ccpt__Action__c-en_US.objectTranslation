@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account --></label>
+        <name>ccpt__Account__c</name>
+        <relationshipLabel><!-- Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Checklist --></label>
+        <name>ccpt__Checklist__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>ccpt__Contact__c</name>
+        <relationshipLabel><!-- Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Creator Department --></label>
+        <name>ccpt__Creator_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>ccpt__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>ccpt__Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Complete --></label>
+        <name>ccpt__IsComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>ccpt__Opportunity__c</name>
+        <relationshipLabel><!-- Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- System - Related To --></label>
+        <name>ccpt__RelatedTo__c</name>
+    </fields>
+    <fields>
+        <label><!-- System - Send Update Email --></label>
+        <name>ccpt__Send_Update_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Department --></label>
+        <name>ccpt__User_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Task --></label>
+        <name>ccpt_ccpx__Project_Task__c</name>
+        <relationshipLabel><!-- Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>ccpt_ccpx__Project__c</name>
+        <relationshipLabel><!-- Actions --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

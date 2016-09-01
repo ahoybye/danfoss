@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ServerHost__c</fullName>
+        <defaultValue>&quot;10.3.29.212&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Server Host</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ServerProtocol__c</fullName>
+        <defaultValue>&quot;http&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>ServerProtocol</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

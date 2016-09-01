@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Portal Banner</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Portal Banners</value>
+    </caseValues>
+    <fields>
+        <help><!-- Alt text will be used for the Spots images. --></help>
+        <label><!-- Alt --></label>
+        <name>Alt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Banner Type --></label>
+        <name>Banner_Type__c</name>
+        <picklistValues>
+            <masterLabel>MarComm</masterLabel>
+            <translation><!-- MarComm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top Banner</masterLabel>
+            <translation><!-- Top Banner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valmova</masterLabel>
+            <translation><!-- Valmova --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Component Type --></label>
+        <name>Component_Type__c</name>
+        <picklistValues>
+            <masterLabel>Announcement</masterLabel>
+            <translation><!-- Announcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Presentation Archives</masterLabel>
+            <translation><!-- Customer Presentation Archives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Design Kit</masterLabel>
+            <translation><!-- Design Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Explore Ideas</masterLabel>
+            <translation><!-- Explore Ideas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Image Bank</masterLabel>
+            <translation><!-- Image Bank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Hub</masterLabel>
+            <translation><!-- Information Hub --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Literature</masterLabel>
+            <translation><!-- Literature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing Handbook</masterLabel>
+            <translation><!-- Marketing Handbook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Need A Logo?</masterLabel>
+            <translation><!-- Need A Logo? --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press Releases</masterLabel>
+            <translation><!-- Press Releases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing &amp; Tools</masterLabel>
+            <translation><!-- Pricing &amp; Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Information Bulletin</masterLabel>
+            <translation><!-- Product Information Bulletin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promotional Items</masterLabel>
+            <translation><!-- Promotional Items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Literature</masterLabel>
+            <translation><!-- Technical Literature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unique Selling Points Handbooks</masterLabel>
+            <translation><!-- Unique Selling Points Handbooks --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>e-Signature Guidelines</masterLabel>
+            <translation><!-- e-Signature Guidelines --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Content Type to Query --></label>
+        <name>Content_Type_to_Query__c</name>
+        <picklistValues>
+            <masterLabel>Announcement</masterLabel>
+            <translation><!-- Announcement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assembly Specification</masterLabel>
+            <translation><!-- Assembly Specification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Presentations</masterLabel>
+            <translation><!-- Customer Presentations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interactive Content</masterLabel>
+            <translation><!-- Interactive Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Let&apos;s Torque</masterLabel>
+            <translation><!-- Let&apos;s Torque --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press Release</masterLabel>
+            <translation><!-- Press Release --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price Book</masterLabel>
+            <translation><!-- Price Book --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price File</masterLabel>
+            <translation><!-- Price File --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing Tool</masterLabel>
+            <translation><!-- Pricing Tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Information Bulletin</masterLabel>
+            <translation><!-- Product Information Bulletin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Bulletin</masterLabel>
+            <translation><!-- Service Bulletin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Literature</masterLabel>
+            <translation><!-- Technical Literature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Specification</masterLabel>
+            <translation><!-- Test Specification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tools</masterLabel>
+            <translation><!-- Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unique Selling Points Handbook</masterLabel>
+            <translation><!-- Unique Selling Points Handbook --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Link --></label>
+        <name>Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object__c</name>
+        <picklistValues>
+            <masterLabel>Content</masterLabel>
+            <translation><!-- Content --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idea</masterLabel>
+            <translation><!-- Idea --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Static</masterLabel>
+            <translation><!-- Static --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Page --></label>
+        <name>Page__c</name>
+        <picklistValues>
+            <masterLabel>ImageBank</masterLabel>
+            <translation><!-- ImageBank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>InformationHub</masterLabel>
+            <translation><!-- InformationHub --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LogoBank</masterLabel>
+            <translation><!-- LogoBank --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MarketingToolbox</masterLabel>
+            <translation><!-- MarketingToolbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PartnerPortalHome</masterLabel>
+            <translation><!-- PartnerPortalHome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tools</masterLabel>
+            <translation><!-- Tools --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bottom Left</masterLabel>
+            <translation><!-- Bottom Left --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bottom Right</masterLabel>
+            <translation><!-- Bottom Right --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Left</masterLabel>
+            <translation><!-- Left --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Middle</masterLabel>
+            <translation><!-- Middle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Right</masterLabel>
+            <translation><!-- Right --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top Left</masterLabel>
+            <translation><!-- Top Left --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top Right</masterLabel>
+            <translation><!-- Top Right --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Products --></label>
+        <name>Products__c</name>
+        <picklistValues>
+            <masterLabel>24 PIN Transparent Microcontrollers</masterLabel>
+            <translation><!-- 24 PIN Transparent Microcontrollers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50 PIN Transparent Microcontrollers</masterLabel>
+            <translation><!-- 50 PIN Transparent Microcontrollers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CG150 CAN/USB gateway interface communicator</masterLabel>
+            <translation><!-- CG150 CAN/USB gateway interface communicator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CS1000 Slope Sensor</masterLabel>
+            <translation><!-- CS1000 Slope Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DDC20 20cm3 Pump</masterLabel>
+            <translation><!-- DDC20 20cm3 Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DH 80cm3 Orbital Motor</masterLabel>
+            <translation><!-- DH 80cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DS 160cm3 Orbital Motor</masterLabel>
+            <translation><!-- DS 160cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DSW Orbital Motor</masterLabel>
+            <translation><!-- DSW Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss Reverse Displacement Motor</masterLabel>
+            <translation><!-- Danfoss Reverse Displacement Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EH Steering Valve</masterLabel>
+            <translation><!-- EH Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EHF Electrohydraulic Boxes</masterLabel>
+            <translation><!-- EHF Electrohydraulic Boxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EHPS OLS320 Steering Valve</masterLabel>
+            <translation><!-- EHPS OLS320 Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EHPS Steering Valve</masterLabel>
+            <translation><!-- EHPS Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EHPS-2 Steering Valve</masterLabel>
+            <translation><!-- EHPS-2 Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EHS Electrohydraulic Boxes</masterLabel>
+            <translation><!-- EHS Electrohydraulic Boxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EHSC Electrohydraulic Boxes</masterLabel>
+            <translation><!-- EHSC Electrohydraulic Boxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMD Speed Sensor</masterLabel>
+            <translation><!-- EMD Speed Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Drive Controller</masterLabel>
+            <translation><!-- Fan Drive Controller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fan Drive Controller - mounted</masterLabel>
+            <translation><!-- Fan Drive Controller - mounted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GPS</masterLabel>
+            <translation><!-- GPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 110cm3 Bent Axis Motor</masterLabel>
+            <translation><!-- H1 110cm3 Bent Axis Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 115cm3 Pump AC with wire</masterLabel>
+            <translation><!-- H1 115cm3 Pump AC with wire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 115cm3 Pump with EDC</masterLabel>
+            <translation><!-- H1 115cm3 Pump with EDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 147/165cm3 Pump</masterLabel>
+            <translation><!-- H1 147/165cm3 Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 147/165cm3 Pump with EDC</masterLabel>
+            <translation><!-- H1 147/165cm3 Pump with EDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 147/165cm3 Pump with ISL</masterLabel>
+            <translation><!-- H1 147/165cm3 Pump with ISL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 160cm3 Bent Axis Motor</masterLabel>
+            <translation><!-- H1 160cm3 Bent Axis Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 250cm3 Bent Axis Motor</masterLabel>
+            <translation><!-- H1 250cm3 Bent Axis Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 250cm3 Pump</masterLabel>
+            <translation><!-- H1 250cm3 Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 45/53cm3 Pump</masterLabel>
+            <translation><!-- H1 45/53cm3 Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 45/53cm3 Pump with FDC</masterLabel>
+            <translation><!-- H1 45/53cm3 Pump with FDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 45/53cm3 Tandem Pump</masterLabel>
+            <translation><!-- H1 45/53cm3 Tandem Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 45/53cm3 and 69/78cm3 Pump with EDC</masterLabel>
+            <translation><!-- H1 45/53cm3 and 69/78cm3 Pump with EDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 45cm3 Pump with AC</masterLabel>
+            <translation><!-- H1 45cm3 Pump with AC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 45cm3 Pump with FDC</masterLabel>
+            <translation><!-- H1 45cm3 Pump with FDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 45cm3 and 53cm3 Tandem Pump</masterLabel>
+            <translation><!-- H1 45cm3 and 53cm3 Tandem Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 53cm3 Tandem Pump</masterLabel>
+            <translation><!-- H1 53cm3 Tandem Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 60cm3 Bent Axis Motor</masterLabel>
+            <translation><!-- H1 60cm3 Bent Axis Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 60cm3 Pump with AC</masterLabel>
+            <translation><!-- H1 60cm3 Pump with AC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 78cm3 Pump</masterLabel>
+            <translation><!-- H1 78cm3 Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 78cm3 Pump with AC</masterLabel>
+            <translation><!-- H1 78cm3 Pump with AC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 78cm3 Pump with AC and wire</masterLabel>
+            <translation><!-- H1 78cm3 Pump with AC and wire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 78cm3 Pump with EDC</masterLabel>
+            <translation><!-- H1 78cm3 Pump with EDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 80cm3 Bent Axis Motor DIN Housing</masterLabel>
+            <translation><!-- H1 80cm3 Bent Axis Motor DIN Housing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 89cm3 Pump AC with wire</masterLabel>
+            <translation><!-- H1 89cm3 Pump AC with wire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 89cm3 Pump with AC and Extra Connector</masterLabel>
+            <translation><!-- H1 89cm3 Pump with AC and Extra Connector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 89cm3 Pump with AC and Speed Sensor</masterLabel>
+            <translation><!-- H1 89cm3 Pump with AC and Speed Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 89cm3 Pump with AC wire - Close-up</masterLabel>
+            <translation><!-- H1 89cm3 Pump with AC wire - Close-up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 89cm³ Pump</masterLabel>
+            <translation><!-- H1 89cm³ Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 Remote Filter</masterLabel>
+            <translation><!-- H1 Remote Filter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H1 Tandem Charge Pump</masterLabel>
+            <translation><!-- H1 Tandem Charge Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J1939 PROF 1 Joystick - 3 Proportional 6 CAN Left Hand</masterLabel>
+            <translation><!-- J1939 PROF 1 Joystick - 3 Proportional 6 CAN Left Hand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS100 Joystick Progrip XY</masterLabel>
+            <translation><!-- JS100 Joystick Progrip XY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS1000 Joystck Ball-Grip</masterLabel>
+            <translation><!-- JS1000 Joystck Ball-Grip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS1000 Joystick</masterLabel>
+            <translation><!-- JS1000 Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS1000 Joystick Progrip</masterLabel>
+            <translation><!-- JS1000 Joystick Progrip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS1000 Joystick Progrip XY</masterLabel>
+            <translation><!-- JS1000 Joystick Progrip XY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS1000 Joystick Rocker Switch Grip</masterLabel>
+            <translation><!-- JS1000 Joystick Rocker Switch Grip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS1000 L Joystick</masterLabel>
+            <translation><!-- JS1000 L Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS120 Joystick</masterLabel>
+            <translation><!-- JS120 Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS2000 Joystick</masterLabel>
+            <translation><!-- JS2000 Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS2000 Joystick E1-E5</masterLabel>
+            <translation><!-- JS2000 Joystick E1-E5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS6000 Joystick</masterLabel>
+            <translation><!-- JS6000 Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS6000 Joystick A Grip</masterLabel>
+            <translation><!-- JS6000 Joystick A Grip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS6000 Joystick MG-Grip</masterLabel>
+            <translation><!-- JS6000 Joystick MG-Grip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JS7000 Joystick</masterLabel>
+            <translation><!-- JS7000 Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KEP Foot Pedal</masterLabel>
+            <translation><!-- KEP Foot Pedal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L Frame Motor</masterLabel>
+            <translation><!-- L Frame Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LDU20 20cm3 U Style Transmission</masterLabel>
+            <translation><!-- LDU20 20cm3 U Style Transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LK Frame Motor with Speed Sensor</masterLabel>
+            <translation><!-- LK Frame Motor with Speed Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LPV Pump</masterLabel>
+            <translation><!-- LPV Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LV/KV Frame Motor</masterLabel>
+            <translation><!-- LV/KV Frame Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MBS2250 Sensor</masterLabel>
+            <translation><!-- MBS2250 Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCH Joystick</masterLabel>
+            <translation><!-- MCH Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCX103 400 Slope Sensor</masterLabel>
+            <translation><!-- MCX103 400 Slope Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCX104-CAN Slope Sensor</masterLabel>
+            <translation><!-- MCX104-CAN Slope Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSS100 Multi Sonic Sensor</masterLabel>
+            <translation><!-- MSS100 Multi Sonic Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSS100 Multi Sonic Sensor - Ceramic</masterLabel>
+            <translation><!-- MSS100 Multi Sonic Sensor - Ceramic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLS 120 l/m Steering Valve</masterLabel>
+            <translation><!-- OLS 120 l/m Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLS 160 l/m Steering Valve</masterLabel>
+            <translation><!-- OLS 160 l/m Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLS 320 l/m Steering Valve</masterLabel>
+            <translation><!-- OLS 320 l/m Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLS 320 l/m Steering Valve with EHPS</masterLabel>
+            <translation><!-- OLS 320 l/m Steering Valve with EHPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLS 80 l/m Steering Valve</masterLabel>
+            <translation><!-- OLS 80 l/m Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLSA 80 l/m Steering Valve</masterLabel>
+            <translation><!-- OLSA 80 l/m Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OLSP 80 l/m Steering Valve</masterLabel>
+            <translation><!-- OLSP 80 l/m Steering Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMEW 200cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMEW 200cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMH 315 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMH 315 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OML 8cm3 Orbital Motor</masterLabel>
+            <translation><!-- OML 8cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMM 20cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMM 20cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMM 32cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMM 32cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMM 32cm3 Orbital Motor (end ports)</masterLabel>
+            <translation><!-- OMM 32cm3 Orbital Motor (end ports) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMM 50cm3 Orbital Motor with EMD Speed Sensor</masterLabel>
+            <translation><!-- OMM 50cm3 Orbital Motor with EMD Speed Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMM 50cm3 Orbital Motor with EMD Speed Sensor (back view)</masterLabel>
+            <translation><!-- OMM 50cm3 Orbital Motor with EMD Speed Sensor (back view) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMP 100 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMP 100 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMP 160 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMP 160 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMP 315cm3 EMD Orbital Motor</masterLabel>
+            <translation><!-- OMP 315cm3 EMD Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMP 315cm3 EMD-2 Orbital Motor</masterLabel>
+            <translation><!-- OMP 315cm3 EMD-2 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMP 50cm3 EMD Orbital Motor</masterLabel>
+            <translation><!-- OMP 50cm3 EMD Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMPV 160 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMPV 160 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMR 160 cm3 FL Orbital Motor</masterLabel>
+            <translation><!-- OMR 160 cm3 FL Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMR 200 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMR 200 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMR 200 cm3 Orbital Motor Sectional View</masterLabel>
+            <translation><!-- OMR 200 cm3 Orbital Motor Sectional View --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMR Orbital Motor</masterLabel>
+            <translation><!-- OMR Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMR-WN50 Orbital Motor</masterLabel>
+            <translation><!-- OMR-WN50 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMRS 200cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMRS 200cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMS 200cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMS 200cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMS 500cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMS 500cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMS 80 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMS 80 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMS Orbital Motor</masterLabel>
+            <translation><!-- OMS Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMSH Orbital Motor</masterLabel>
+            <translation><!-- OMSH Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMSS 250 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMSS 250 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMSW 160 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMSW 160 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMSW 250cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMSW 250cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMT 160 cm3 Orbital Motor Sectional View</masterLabel>
+            <translation><!-- OMT 160 cm3 Orbital Motor Sectional View --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMT 200 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMT 200 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMT 315 cm3 EMD Orbital Motor</masterLabel>
+            <translation><!-- OMT 315 cm3 EMD Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMTS 500 cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMTS 500 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMV 315cm3 Orbital Motor</masterLabel>
+            <translation><!-- OMV 315cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OMV Orbital Motor</masterLabel>
+            <translation><!-- OMV Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSP EH Steering Unit</masterLabel>
+            <translation><!-- OSP EH Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSP SASA x Steering Unit</masterLabel>
+            <translation><!-- OSP SASA x Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPC 315cm3 LS Steering Unit</masterLabel>
+            <translation><!-- OSPC 315cm3 LS Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPC 50cm3 OLSA40 Steering Unit</masterLabel>
+            <translation><!-- OSPC 50cm3 OLSA40 Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPD 100-200cm3 Steering unit</masterLabel>
+            <translation><!-- OSPD 100-200cm3 Steering unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPDF EHA Steering Unit</masterLabel>
+            <translation><!-- OSPDF EHA Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPE EH Steering Unit</masterLabel>
+            <translation><!-- OSPE EH Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPE Steering Unit</masterLabel>
+            <translation><!-- OSPE Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPF 230cm3 LS Steering Unit</masterLabel>
+            <translation><!-- OSPF 230cm3 LS Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPF 250cm3 LS Steering Unit</masterLabel>
+            <translation><!-- OSPF 250cm3 LS Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPF EH PVED SASA Steering Unit</masterLabel>
+            <translation><!-- OSPF EH PVED SASA Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPF SASA Steering Sensor</masterLabel>
+            <translation><!-- OSPF SASA Steering Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPL 1000cm3 Steering Unit</masterLabel>
+            <translation><!-- OSPL 1000cm3 Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPM 100cm3 Steering Unit</masterLabel>
+            <translation><!-- OSPM 100cm3 Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPM 320N Steering Unit</masterLabel>
+            <translation><!-- OSPM 320N Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPMS Steering Unit</masterLabel>
+            <translation><!-- OSPMS Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPQ 160-320 LS Steering Unit</masterLabel>
+            <translation><!-- OSPQ 160-320 LS Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSPU 70-200 LS Steering Unit</masterLabel>
+            <translation><!-- OSPU 70-200 LS Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OSQA OLSQ 80 Steering Unit</masterLabel>
+            <translation><!-- OSQA OLSQ 80 Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OVPL 240 Steering Valve Block</masterLabel>
+            <translation><!-- OVPL 240 Steering Valve Block --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP200 Display</masterLabel>
+            <translation><!-- PLUS+1 DP200 Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP200 Display with color screen on</masterLabel>
+            <translation><!-- PLUS+1 DP200 Display with color screen on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP200 Display with screen on</masterLabel>
+            <translation><!-- PLUS+1 DP200 Display with screen on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP210 Display</masterLabel>
+            <translation><!-- PLUS+1 DP210 Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP250 Display</masterLabel>
+            <translation><!-- PLUS+1 DP250 Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP570 display front view with color screen on</masterLabel>
+            <translation><!-- PLUS+1 DP570 display front view with color screen on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP600 Display</masterLabel>
+            <translation><!-- PLUS+1 DP600 Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP600 Display with color screen on</masterLabel>
+            <translation><!-- PLUS+1 DP600 Display with color screen on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP600 Display with screen on</masterLabel>
+            <translation><!-- PLUS+1 DP600 Display with screen on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 DP700 Display front view with color screen on</masterLabel>
+            <translation><!-- PLUS+1 DP700 Display front view with color screen on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC Controller 12 PIN</masterLabel>
+            <translation><!-- PLUS+1 MC Controller 12 PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC Controller 24 PIN</masterLabel>
+            <translation><!-- PLUS+1 MC Controller 24 PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC Controller 50 PIN</masterLabel>
+            <translation><!-- PLUS+1 MC Controller 50 PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC Controller 88 PIN</masterLabel>
+            <translation><!-- PLUS+1 MC Controller 88 PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC24 Microcontrollers</masterLabel>
+            <translation><!-- PLUS+1 MC24 Microcontrollers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC50 24 PIN Microcontrollers</masterLabel>
+            <translation><!-- PLUS+1 MC50 24 PIN Microcontrollers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC50 Microcontrollers</masterLabel>
+            <translation><!-- PLUS+1 MC50 Microcontrollers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC88 Microcontrollers</masterLabel>
+            <translation><!-- PLUS+1 MC88 Microcontrollers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 MC90 Microcontrollers</masterLabel>
+            <translation><!-- PLUS+1 MC90 Microcontrollers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 SC Controller 24 PIN</masterLabel>
+            <translation><!-- PLUS+1 SC Controller 24 PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 SC Controller 50 PIN</masterLabel>
+            <translation><!-- PLUS+1 SC Controller 50 PIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PLUS+1 SC Controller 50 PIN 055</masterLabel>
+            <translation><!-- PLUS+1 SC Controller 50 PIN 055 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROF 1 Joystick</masterLabel>
+            <translation><!-- PROF 1 Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROF 1 Joystick Right Hand</masterLabel>
+            <translation><!-- PROF 1 Joystick Right Hand --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVBM Valve</masterLabel>
+            <translation><!-- PVBM Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVBZ 32-2 SEC Valve</masterLabel>
+            <translation><!-- PVBZ 32-2 SEC Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVBZ M22x15 Valve</masterLabel>
+            <translation><!-- PVBZ M22x15 Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVBZ Manifold</masterLabel>
+            <translation><!-- PVBZ Manifold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVBZ-HD Valve</masterLabel>
+            <translation><!-- PVBZ-HD Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVBZ-HS Valve</masterLabel>
+            <translation><!-- PVBZ-HS Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVE-NP Electrohydraulic Actuator Cable</masterLabel>
+            <translation><!-- PVE-NP Electrohydraulic Actuator Cable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVED-CX Back</masterLabel>
+            <translation><!-- PVED-CX Back --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVED-CX Front</masterLabel>
+            <translation><!-- PVED-CX Front --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVEP Electrohydraulic Actuator</masterLabel>
+            <translation><!-- PVEP Electrohydraulic Actuator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 100 Valve</masterLabel>
+            <translation><!-- PVG 100 Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 100 Valve High Flow</masterLabel>
+            <translation><!-- PVG 100 Valve High Flow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 100-32 Backhoe Valve</masterLabel>
+            <translation><!-- PVG 100-32 Backhoe Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 120 Valve</masterLabel>
+            <translation><!-- PVG 120 Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 120-32 Valve</masterLabel>
+            <translation><!-- PVG 120-32 Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 16 Valve</masterLabel>
+            <translation><!-- PVG 16 Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32 2x2 SEC-PVBZ Valve</masterLabel>
+            <translation><!-- PVG 32 2x2 SEC-PVBZ Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32 Hitch Group</masterLabel>
+            <translation><!-- PVG 32 Hitch Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32 Hitch Group 4 SEC Valve</masterLabel>
+            <translation><!-- PVG 32 Hitch Group 4 SEC Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32 Valve</masterLabel>
+            <translation><!-- PVG 32 Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32-100 Valve</masterLabel>
+            <translation><!-- PVG 32-100 Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32-4 SEC Valve</masterLabel>
+            <translation><!-- PVG 32-4 SEC Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32-5 SEC-PVB Valve</masterLabel>
+            <translation><!-- PVG 32-5 SEC-PVB Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32-5 SEC-Series Valve</masterLabel>
+            <translation><!-- PVG 32-5 SEC-Series Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32-8 SEC Valve</masterLabel>
+            <translation><!-- PVG 32-8 SEC Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG 32-PVBZZ-6 SEC Valve</masterLabel>
+            <translation><!-- PVG 32-PVBZZ-6 SEC Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG H1C 5-Function</masterLabel>
+            <translation><!-- PVG H1C 5-Function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG and HIC Combination</masterLabel>
+            <translation><!-- PVG and HIC Combination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG-32-4 SEC PVBZ Valve</masterLabel>
+            <translation><!-- PVG-32-4 SEC PVBZ Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG-32-6 SEC Valve</masterLabel>
+            <translation><!-- PVG-32-6 SEC Valve --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVHC Electrohydraulic Actuator</masterLabel>
+            <translation><!-- PVHC Electrohydraulic Actuator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVRE Joystick Series 2</masterLabel>
+            <translation><!-- PVRE Joystick Series 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVREL Joystick</masterLabel>
+            <translation><!-- PVREL Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVRES Joystick</masterLabel>
+            <translation><!-- PVRES Joystick --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVRET Joystick Series 2</masterLabel>
+            <translation><!-- PVRET Joystick Series 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVRHH Joystick 155N0001</masterLabel>
+            <translation><!-- PVRHH Joystick 155N0001 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVRHH Joystick 155N0005</masterLabel>
+            <translation><!-- PVRHH Joystick 155N0005 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pressure Transmitter</masterLabel>
+            <translation><!-- Pressure Transmitter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reverse Displacement Motor update</masterLabel>
+            <translation><!-- Reverse Displacement Motor update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S42 28cm³ HC-EDC Motor</masterLabel>
+            <translation><!-- S42 28cm³ HC-EDC Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S45 Pump Frame E</masterLabel>
+            <translation><!-- S45 Pump Frame E --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S45 Pump Frame F</masterLabel>
+            <translation><!-- S45 Pump Frame F --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S45 Pump Frame G</masterLabel>
+            <translation><!-- S45 Pump Frame G --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S45 Pump Frame J</masterLabel>
+            <translation><!-- S45 Pump Frame J --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S45 Pump Frame J with EPC</masterLabel>
+            <translation><!-- S45 Pump Frame J with EPC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S45 Pump Frame K</masterLabel>
+            <translation><!-- S45 Pump Frame K --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51 110cm3 Motor with P7P7</masterLabel>
+            <translation><!-- S51 110cm3 Motor with P7P7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51 160cm3 Motor</masterLabel>
+            <translation><!-- S51 160cm3 Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51 80cm3 Motor with ADA</masterLabel>
+            <translation><!-- S51 80cm3 Motor with ADA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51 Motor DAM4 or DAM6 Control</masterLabel>
+            <translation><!-- S51 Motor DAM4 or DAM6 Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51 Motor THD7 Controls</masterLabel>
+            <translation><!-- S51 Motor THD7 Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51-1 Motor E1-E1-F1-F2 Controls</masterLabel>
+            <translation><!-- S51-1 Motor E1-E1-F1-F2 Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51-1 Motor L1-L2-L3-L7 Controls</masterLabel>
+            <translation><!-- S51-1 Motor L1-L2-L3-L7 Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S51-1 Motor P7-P7-P8-P8 Controls</masterLabel>
+            <translation><!-- S51-1 Motor P7-P7-P8-P8 Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 100cm3 Motor</masterLabel>
+            <translation><!-- S90 100cm3 Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 130cm3 Pump BF</masterLabel>
+            <translation><!-- S90 130cm3 Pump BF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 130cm3 Pump KAI</masterLabel>
+            <translation><!-- S90 130cm3 Pump KAI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 75cm3 Motor</masterLabel>
+            <translation><!-- S90 75cm3 Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 75cm3 Pump</masterLabel>
+            <translation><!-- S90 75cm3 Pump --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 75cm3 Pump KA2</masterLabel>
+            <translation><!-- S90 75cm3 Pump KA2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 75cm3 Pump NFPE</masterLabel>
+            <translation><!-- S90 75cm3 Pump NFPE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S90 DC-DD Controls</masterLabel>
+            <translation><!-- S90 DC-DD Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SASA Steering Sensor</masterLabel>
+            <translation><!-- SASA Steering Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speed Sensor</masterLabel>
+            <translation><!-- Speed Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speedsensor</masterLabel>
+            <translation><!-- Speedsensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering Sensor</masterLabel>
+            <translation><!-- Steering Sensor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TME Electronic Remote Station</masterLabel>
+            <translation><!-- TME Electronic Remote Station --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMG Gear Box</masterLabel>
+            <translation><!-- TMG Gear Box --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMG Gear Box 61.2kNm</masterLabel>
+            <translation><!-- TMG Gear Box 61.2kNm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMK 160 cm3 FL Orbital Motor</masterLabel>
+            <translation><!-- TMK 160 cm3 FL Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMK 400 cm3 FL Orbital Motor</masterLabel>
+            <translation><!-- TMK 400 cm3 FL Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMKW 160 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMKW 160 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMKW 400 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMKW 400 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMM 89cm3 Motor</masterLabel>
+            <translation><!-- TMM 89cm3 Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMP 89cm3 Pump EDC</masterLabel>
+            <translation><!-- TMP 89cm3 Pump EDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMP 89cm3 Pump MDC</masterLabel>
+            <translation><!-- TMP 89cm3 Pump MDC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMP 89cm3 Pump NFPE 24-02</masterLabel>
+            <translation><!-- TMP 89cm3 Pump NFPE 24-02 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMT 315 cm3 EMD Orbital Motor</masterLabel>
+            <translation><!-- TMT 315 cm3 EMD Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMT 315 cm3 EMD-2 Orbital Motor</masterLabel>
+            <translation><!-- TMT 315 cm3 EMD-2 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMT 470 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMT 470 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMT 500 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMT 500 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMT315 cm3 FLV2 Orbital Motor</masterLabel>
+            <translation><!-- TMT315 cm3 FLV2 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMTH 570 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMTH 570 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMTHW 500 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMTHW 500 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMTU 470 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMTU 470 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TMVW 500 cm3 Orbital Motor</masterLabel>
+            <translation><!-- TMVW 500 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telematics WS403 Remote Solution</masterLabel>
+            <translation><!-- Telematics WS403 Remote Solution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tracker</masterLabel>
+            <translation><!-- Tracker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transit Mixer Controller</masterLabel>
+            <translation><!-- Transit Mixer Controller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultrasonic Auger Feeder</masterLabel>
+            <translation><!-- Ultrasonic Auger Feeder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VMR 160 cm3 Orbital Motor</masterLabel>
+            <translation><!-- VMR 160 cm3 Orbital Motor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VSP 100cm3 ON 1 Steering Unit</masterLabel>
+            <translation><!-- VSP 100cm3 ON 1 Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VSP 100cm3 ON 2 Steering Unit</masterLabel>
+            <translation><!-- VSP 100cm3 ON 2 Steering Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yoyo 388</masterLabel>
+            <translation><!-- Yoyo 388 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Americas</masterLabel>
+            <translation><!-- Americas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europe</masterLabel>
+            <translation><!-- Europe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>default</masterLabel>
+            <translation><!-- default --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Summary --></label>
+        <name>Summary__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Marketing Panel --></label>
+        <name>Marketing_Panel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Page Information --></label>
+        <name>Page_Information</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Panel --></label>
+        <name>Panel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Spots --></label>
+        <name>Spots</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Tools --></label>
+        <name>Tools</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Top Banner --></label>
+        <name>Top_Banner</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please specify Content Type to Query. --></errorMessage>
+        <name>Must_Select_one_or_more_values</name>
+    </validationRules>
+</CustomObjectTranslation>

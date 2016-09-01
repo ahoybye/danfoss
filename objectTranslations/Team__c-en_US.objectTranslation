@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Team</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Teams</value>
+    </caseValues>
+    <fields>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>Commercial Compressors</masterLabel>
+            <translation><!-- Commercial Compressors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danfoss Drives</masterLabel>
+            <translation><!-- Danfoss Drives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District Energy</masterLabel>
+            <translation><!-- District Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heating Solutions</masterLabel>
+            <translation><!-- Heating Solutions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refrigeration Controls</masterLabel>
+            <translation><!-- Refrigeration Controls --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Used to help data migration from SAP --></help>
+        <label><!-- Ext ID --></label>
+        <name>Ext_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SBA Team --></label>
+        <name>SBA_Team__c</name>
+        <picklistValues>
+            <masterLabel>No auto. Determination</masterLabel>
+            <translation><!-- No auto. Determination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_F&amp;B</masterLabel>
+            <translation><!-- PE_F&amp;B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_F&amp;B, other</masterLabel>
+            <translation><!-- PE_F&amp;B, other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_HVAC</masterLabel>
+            <translation><!-- PE_HVAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_HVAC, Consultants</masterLabel>
+            <translation><!-- PE_HVAC, Consultants --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_HVAC, Refrigeration</masterLabel>
+            <translation><!-- PE_HVAC, Refrigeration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_HVAC_FKR</masterLabel>
+            <translation><!-- PE_HVAC_FKR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Industry</masterLabel>
+            <translation><!-- PE_Industry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Industry, Application</masterLabel>
+            <translation><!-- PE_Industry, Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Industry, Chemical</masterLabel>
+            <translation><!-- PE_Industry, Chemical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Industry, Water</masterLabel>
+            <translation><!-- PE_Industry, Water --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Marketing</masterLabel>
+            <translation><!-- PE_Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Operations</masterLabel>
+            <translation><!-- PE_Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Partner</masterLabel>
+            <translation><!-- PE_Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Partner_HVAC</masterLabel>
+            <translation><!-- PE_Partner_HVAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Partner_Industry</masterLabel>
+            <translation><!-- PE_Partner_Industry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PE_Training</masterLabel>
+            <translation><!-- PE_Training --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

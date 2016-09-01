@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Billable Hours --></label>
+        <name>ccpe_r__Billable_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- End --></label>
+        <name>ccpe_r__End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exempt Hours --></label>
+        <name>ccpe_r__Exempt_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hash --></label>
+        <name>ccpe_r__Hash__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Billable Hours --></label>
+        <name>ccpe_r__Non_Billable_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start --></label>
+        <name>ccpe_r__Start__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denotes the utilization rate of a user for a particular week or month (NOTE this field should not be used for reporting across multiple utilization periods) --></help>
+        <label><!-- Utilization Rate --></label>
+        <name>ccpe_r__Utilization_rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Entered Hours --></label>
+        <name>ccpe_r__Worked_Hours__c</name>
+    </fields>
+    <fields>
+        <label><!-- Working Days --></label>
+        <name>ccpe_r__Working_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Hours --></label>
+        <name>ccpe_r__Working_Hours__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Monthly --></label>
+        <name>Monthly</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Weekly --></label>
+        <name>Weekly</name>
+    </recordTypes>
+</CustomObjectTranslation>

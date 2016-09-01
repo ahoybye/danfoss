@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>For Power Solutions Users</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Create an Idea</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>https://danfoss.my.salesforce.com/ideas/editIdea.apexp?c=09aC000000017uX&amp;retURL=%2Fideas%2FideaList.apexp</url>
+</CustomPageWebLink>

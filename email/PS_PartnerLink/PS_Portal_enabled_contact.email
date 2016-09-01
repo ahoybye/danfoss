@@ -1,0 +1,8 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[{!Contact.Name} of {!Account.Name} was inactivated.&nbsp;&nbsp;<div><br></div><div>{!Account.Name} is 
+portal enabled - please confirm portal access is disabled for 
+{!Contact.Name} if applicable.<br><br>Here is the link to the Contact record.<br><br>{!Contact.Link}</div>]]></td>
+</tr>
+</table>

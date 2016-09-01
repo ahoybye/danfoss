@@ -1,0 +1,1986 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PS Customer Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PS Customer Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- ADC Areas of Interest --></label>
+        <name>ADCAreasofInterest__c</name>
+    </fields>
+    <fields>
+        <label><!-- ADCTourEmailSent --></label>
+        <name>ADCTourEmailSent__c</name>
+    </fields>
+    <fields>
+        <label><!-- ADC Contact --></label>
+        <name>ADC_Contact__c</name>
+        <relationshipLabel><!-- PS Customer Requests (ADC Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ADC Objective --></label>
+        <name>ADC_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- ADC Tour Date --></label>
+        <name>ADC_Tour_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- For AMS, NMS and NOR only; if checked an email will be sent to plant&apos;s ADC contact
+If checked fill in the following three fields --></help>
+        <label><!-- ADC Tour Requested --></label>
+        <name>ADC_Tour_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- ADC Tour Time --></label>
+        <name>ADC_Tour_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Region --></label>
+        <name>Account_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- PS Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Additional_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- AmsVisitorNotificationGroup --></label>
+        <name>AmsVisitorNotificationGroup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- PS Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BUReviewComplete --></label>
+        <name>BUReviewComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Sizes and Packing Pattern --></label>
+        <name>Batch_Sizes_and_Packing_Pattern__c</name>
+    </fields>
+    <fields>
+        <label><!-- Build Process --></label>
+        <name>Build_Process__c</name>
+        <picklistValues>
+            <masterLabel>Bench build</masterLabel>
+            <translation><!-- Bench build --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production tooling and process</masterLabel>
+            <translation><!-- Production tooling and process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Org --></label>
+        <name>Business_Org__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit_Second__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- CSR --></label>
+        <name>CSR__c</name>
+        <relationshipLabel><!-- PS Customer Requests (CSR) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Type &quot;None&quot; if catering is not needed --></help>
+        <label><!-- Catering Requests --></label>
+        <name>Catering_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details if Other --></label>
+        <name>Certificates_Requested_Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name Posted on Welcome Board? --></label>
+        <name>Company_Name_Posted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitor --></label>
+        <name>Competitor__c</name>
+        <picklistValues>
+            <masterLabel>3B6</masterLabel>
+            <translation><!-- 3B6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Actia</masterLabel>
+            <translation><!-- Actia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amca</masterLabel>
+            <translation><!-- Amca --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arens</masterLabel>
+            <translation><!-- Arens --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Axiomatic</masterLabel>
+            <translation><!-- Axiomatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bauser</masterLabel>
+            <translation><!-- Bauser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bondioli &amp; Pavesi</masterLabel>
+            <translation><!-- Bondioli &amp; Pavesi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bosch Rexroth</masterLabel>
+            <translation><!-- Bosch Rexroth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brevini</masterLabel>
+            <translation><!-- Brevini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brosa</masterLabel>
+            <translation><!-- Brosa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bucher</masterLabel>
+            <translation><!-- Bucher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CH Products</masterLabel>
+            <translation><!-- CH Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caldaro</masterLabel>
+            <translation><!-- Caldaro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Captive</masterLabel>
+            <translation><!-- Captive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Casappa</masterLabel>
+            <translation><!-- Casappa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comatrol</masterLabel>
+            <translation><!-- Comatrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Command Controls</masterLabel>
+            <translation><!-- Command Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concentric</masterLabel>
+            <translation><!-- Concentric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CrossControl</masterLabel>
+            <translation><!-- CrossControl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Curtis Instruments</masterLabel>
+            <translation><!-- Curtis Instruments --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danaher</masterLabel>
+            <translation><!-- Danaher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>David Brown</masterLabel>
+            <translation><!-- David Brown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta</masterLabel>
+            <translation><!-- Delta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DeltaTech Controls</masterLabel>
+            <translation><!-- DeltaTech Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinamic Oil</masterLabel>
+            <translation><!-- Dinamic Oil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dynamatic</masterLabel>
+            <translation><!-- Dynamatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EIA Electronics</masterLabel>
+            <translation><!-- EIA Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Easy Control</masterLabel>
+            <translation><!-- Easy Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eaton</masterLabel>
+            <translation><!-- Eaton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elobau</masterLabel>
+            <translation><!-- Elobau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FW Murphy</masterLabel>
+            <translation><!-- FW Murphy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flucom</masterLabel>
+            <translation><!-- Flucom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FluidPress</masterLabel>
+            <translation><!-- FluidPress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Galtech</masterLabel>
+            <translation><!-- Galtech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gessmann</masterLabel>
+            <translation><!-- Gessmann --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gidroprivod</masterLabel>
+            <translation><!-- Gidroprivod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gomel Hydroprivod</masterLabel>
+            <translation><!-- Gomel Hydroprivod --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Graf-Syteco</masterLabel>
+            <translation><!-- Graf-Syteco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grayhill</masterLabel>
+            <translation><!-- Grayhill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guizhou Fengyang</masterLabel>
+            <translation><!-- Guizhou Fengyang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guorui Hydraulic Control (GRH)</masterLabel>
+            <translation><!-- Guorui Hydraulic Control (GRH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HED</masterLabel>
+            <translation><!-- HED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HPI</masterLabel>
+            <translation><!-- HPI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hansa TMP</masterLabel>
+            <translation><!-- Hansa TMP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawe</masterLabel>
+            <translation><!-- Hawe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hefei Changyuan (HCHC)</masterLabel>
+            <translation><!-- Hefei Changyuan (HCHC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hefei SJ Hydraulic</masterLabel>
+            <translation><!-- Hefei SJ Hydraulic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hema</masterLabel>
+            <translation><!-- Hema --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hesmor</masterLabel>
+            <translation><!-- Hesmor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Country Tek</masterLabel>
+            <translation><!-- High Country Tek --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High-Tech Fluid Power</masterLabel>
+            <translation><!-- High-Tech Fluid Power --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hirschmann</masterLabel>
+            <translation><!-- Hirschmann --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Horde</masterLabel>
+            <translation><!-- Horde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Huade</masterLabel>
+            <translation><!-- Huade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Huai’an Guoye</masterLabel>
+            <translation><!-- Huai’an Guoye --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Husco</masterLabel>
+            <translation><!-- Husco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydac</masterLabel>
+            <translation><!-- Hydac --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyde</masterLabel>
+            <translation><!-- Hyde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydraforce</masterLabel>
+            <translation><!-- Hydraforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydreco</masterLabel>
+            <translation><!-- Hydreco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HydroControl</masterLabel>
+            <translation><!-- HydroControl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrocontrols</masterLabel>
+            <translation><!-- Hydrocontrols --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hydrosila</masterLabel>
+            <translation><!-- Hydrosila --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hyest Corporation</masterLabel>
+            <translation><!-- Hyest Corporation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated</masterLabel>
+            <translation><!-- Integrated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integrated Hydraulics</masterLabel>
+            <translation><!-- Integrated Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inter Control</masterLabel>
+            <translation><!-- Inter Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intermot (NHM)</masterLabel>
+            <translation><!-- Intermot (NHM) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iskra</masterLabel>
+            <translation><!-- Iskra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>J.R. Merritt</masterLabel>
+            <translation><!-- J.R. Merritt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jeil Hydraulics (Eaton)</masterLabel>
+            <translation><!-- Jeil Hydraulics (Eaton) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jetter</masterLabel>
+            <translation><!-- Jetter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jihostroj</masterLabel>
+            <translation><!-- Jihostroj --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jinjiang Huayuan</masterLabel>
+            <translation><!-- Jinjiang Huayuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kar-Tech</masterLabel>
+            <translation><!-- Kar-Tech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kawasaki</masterLabel>
+            <translation><!-- Kawasaki --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kayaba</masterLabel>
+            <translation><!-- Kayaba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kersen</masterLabel>
+            <translation><!-- Kersen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kersen Hydraulic</masterLabel>
+            <translation><!-- Kersen Hydraulic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kongsberg</masterLabel>
+            <translation><!-- Kongsberg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kovrov KMZ</masterLabel>
+            <translation><!-- Kovrov KMZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOG</masterLabel>
+            <translation><!-- LOG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leica</masterLabel>
+            <translation><!-- Leica --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LiKe</masterLabel>
+            <translation><!-- LiKe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liebherr</masterLabel>
+            <translation><!-- Liebherr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifan</masterLabel>
+            <translation><!-- Lifan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linde</masterLabel>
+            <translation><!-- Linde --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liyuan</masterLabel>
+            <translation><!-- Liyuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lord</masterLabel>
+            <translation><!-- Lord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M+S</masterLabel>
+            <translation><!-- M+S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marchesini</masterLabel>
+            <translation><!-- Marchesini --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marzocchi Pompe</masterLabel>
+            <translation><!-- Marzocchi Pompe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitron</masterLabel>
+            <translation><!-- Mitron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moba</masterLabel>
+            <translation><!-- Moba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morey</masterLabel>
+            <translation><!-- Morey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Müller Elektronik</masterLabel>
+            <translation><!-- Müller Elektronik --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nabtesco</masterLabel>
+            <translation><!-- Nabtesco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nachi-Fujikoshi</masterLabel>
+            <translation><!-- Nachi-Fujikoshi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nimco</masterLabel>
+            <translation><!-- Nimco --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ningbo Donghai</masterLabel>
+            <translation><!-- Ningbo Donghai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ningbo Yuzhou</masterLabel>
+            <translation><!-- Ningbo Yuzhou --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nishina</masterLabel>
+            <translation><!-- Nishina --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEM Controls</masterLabel>
+            <translation><!-- OEM Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ognibene</masterLabel>
+            <translation><!-- Ognibene --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oilgear</masterLabel>
+            <translation><!-- Oilgear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oldsbergs</masterLabel>
+            <translation><!-- Oldsbergs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Olsbergs</masterLabel>
+            <translation><!-- Olsbergs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Supplier</masterLabel>
+            <translation><!-- Other Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Otto</masterLabel>
+            <translation><!-- Otto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>P-Q Controls</masterLabel>
+            <translation><!-- P-Q Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMP Industries</masterLabel>
+            <translation><!-- PMP Industries --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSM Hydraulics</masterLabel>
+            <translation><!-- PSM Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pal-FIn</masterLabel>
+            <translation><!-- Pal-FIn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parker</masterLabel>
+            <translation><!-- Parker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Penny+Giles</masterLabel>
+            <translation><!-- Penny+Giles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phoenix International</masterLabel>
+            <translation><!-- Phoenix International --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poclain</masterLabel>
+            <translation><!-- Poclain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poclain (Axial Pump)</masterLabel>
+            <translation><!-- Poclain (Axial Pump) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QT Fluid</masterLabel>
+            <translation><!-- QT Fluid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RM Michaelides</masterLabel>
+            <translation><!-- RM Michaelides --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radk-Tech</masterLabel>
+            <translation><!-- Radk-Tech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roquet</masterLabel>
+            <translation><!-- Roquet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SKF</masterLabel>
+            <translation><!-- SKF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SPN</masterLabel>
+            <translation><!-- SPN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STW Technic</masterLabel>
+            <translation><!-- STW Technic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salami</masterLabel>
+            <translation><!-- Salami --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sam Hydraulic (Brevini)</masterLabel>
+            <translation><!-- Sam Hydraulic (Brevini) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sauer-Danfoss</masterLabel>
+            <translation><!-- Sauer-Danfoss --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shimadzu</masterLabel>
+            <translation><!-- Shimadzu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sichuan Changyuan</masterLabel>
+            <translation><!-- Sichuan Changyuan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sinjin</masterLabel>
+            <translation><!-- Sinjin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smart Control</masterLabel>
+            <translation><!-- Smart Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun</masterLabel>
+            <translation><!-- Sun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sun Hydraulics</masterLabel>
+            <translation><!-- Sun Hydraulics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SunBun</masterLabel>
+            <translation><!-- SunBun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sunsource</masterLabel>
+            <translation><!-- Sunsource --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sure Grip</masterLabel>
+            <translation><!-- Sure Grip --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TTCONTROL</masterLabel>
+            <translation><!-- TTCONTROL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tecnord</masterLabel>
+            <translation><!-- Tecnord --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teleflex</masterLabel>
+            <translation><!-- Teleflex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Topcon</masterLabel>
+            <translation><!-- Topcon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trimble</masterLabel>
+            <translation><!-- Trimble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turolla</masterLabel>
+            <translation><!-- Turolla --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultra-MSI</masterLabel>
+            <translation><!-- Ultra-MSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown Supplier</masterLabel>
+            <translation><!-- Unknown Supplier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valmova</masterLabel>
+            <translation><!-- Valmova --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ventury</masterLabel>
+            <translation><!-- Ventury --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wachendorff</masterLabel>
+            <translation><!-- Wachendorff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walvoil</masterLabel>
+            <translation><!-- Walvoil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White</masterLabel>
+            <translation><!-- White --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Williams Controls</masterLabel>
+            <translation><!-- Williams Controls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xiangtan Ruilong</masterLabel>
+            <translation><!-- Xiangtan Ruilong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yongquing</masterLabel>
+            <translation><!-- Yongquing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zhenjiang</masterLabel>
+            <translation><!-- Zhenjiang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ifm</masterLabel>
+            <translation><!-- ifm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ziHYD (Thoth)</masterLabel>
+            <translation><!-- ziHYD (Thoth) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Competitor product --></label>
+        <name>Competitor_product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Date --></label>
+        <name>Completed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance Standard --></label>
+        <name>Compliance_Standard__c</name>
+        <picklistValues>
+            <masterLabel>Customer Proprietary Standards</masterLabel>
+            <translation><!-- Customer Proprietary Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declaration of Conformity</masterLabel>
+            <translation><!-- Declaration of Conformity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental Regulation (e.g. REACH)</masterLabel>
+            <translation><!-- Environmental Regulation (e.g. REACH) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health &amp; Safety Regulation (OHSAS, OSHA)</masterLabel>
+            <translation><!-- Health &amp; Safety Regulation (OHSAS, OSHA) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISO, SAE, SIL, CE</masterLabel>
+            <translation><!-- ISO, SAE, SIL, CE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Standards (e.g. GSXXX)</masterLabel>
+            <translation><!-- Internal Standards (e.g. GSXXX) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International Standards</masterLabel>
+            <translation><!-- International Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Restrictions, Trade Compliance</masterLabel>
+            <translation><!-- Trade Restrictions, Trade Compliance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Confirmed Prototype Build Date --></label>
+        <name>Confirmed_Build_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Customer Requested Date cannot be met, please enter the earliest date you can fulfill this request --></help>
+        <label><!-- Confirmed Date --></label>
+        <name>Confirmed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Consolidation Requests --></label>
+        <name>Consolidation_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- PS Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Approval Needed Before Shipment --></label>
+        <name>Customer_Approval_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Please list all customer attendees spelled correctly. --></help>
+        <label><!-- Customer Attendees --></label>
+        <name>Customer_Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Drawing --></label>
+        <name>Customer_Drawing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Exclusive? --></label>
+        <name>Customer_Exclusive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Logistic Performance Scorecard --></label>
+        <name>Customer_Logistic_Performance_Scorecard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Material Number --></label>
+        <name>Customer_Material_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Requested Date --></label>
+        <name>Customer_Requested_Date_Prototype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Requested Date --></label>
+        <name>Customer_Requested_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Response --></label>
+        <name>Customer_Response__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved with Deviation</masterLabel>
+            <translation><!-- Approved with Deviation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Returnable Packaging --></label>
+        <name>Customer_Returnable_Packaging__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Visit In Date --></label>
+        <name>Customer_Visit_In_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Visit Out Date --></label>
+        <name>Customer_Visit_Out_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Visit in Time --></label>
+        <name>Customer_Visit_in_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Visit out Time --></label>
+        <name>Customer_Visit_out_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, all fields in this section except Purchase Order need to be completed. --></help>
+        <label><!-- Customer is Requesting Prototype --></label>
+        <name>Customer_is_Requesting_Prototype__c</name>
+    </fields>
+    <fields>
+        <help><!-- BU Fulfillment Cycle Time is calculated for New Material Number, New Product Feature and System Model.  The formula is the date the Submit To SAE For Review button was clicked minus the date the BU took ownership. --></help>
+        <label><!-- BU Fulfillment --></label>
+        <name>Cycle_Time_BU_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fulfillment Cycle Time is calculated for all request types except New Material Number, New Product Feature and System Model.  The formula is Completion Date minus the date the Take Ownership button was clicked. --></help>
+        <label><!-- Fulfillment --></label>
+        <name>Cycle_Time_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <help><!-- SAE Review Cycle Time is calculated for New Material Number, New Product Feature and System Model.  The formula is Completion Date minus the date the Submit To SAE For Review button was clicked. --></help>
+        <label><!-- SAE Review --></label>
+        <name>Cycle_Time_SAE_Review__c</name>
+    </fields>
+    <fields>
+        <help><!-- Submission Cycle Time is calculated for all request types.  The formula is the date the Submit Request button was clicked minus Created Date. --></help>
+        <label><!-- Submission --></label>
+        <name>Cycle_Time_Submission__c</name>
+    </fields>
+    <fields>
+        <help><!-- Total Cycle Time is calculated for all request types.  The formula is Completed Date minus Created Date. --></help>
+        <label><!-- Total Cycle Time --></label>
+        <name>Cycle_Time_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Waiting for Customer Cycle Time is calculated for the PPAP request type.  The formula is Completed Date minus the date the Set Status button was clicked. --></help>
+        <label><!-- Waiting for Customer --></label>
+        <name>Cycle_Time_Waiting_for_Customer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cycle Time to take ownership is calculated on all request types.  The formula is the date the Take Ownership button was clicked minus the date the Submit Request button was clicked. --></help>
+        <label><!-- Take Ownership --></label>
+        <name>Cycle_Time_to_Take_Ownership__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Attendees --></label>
+        <name>Danfoss_Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Danfoss Returnable Packaging --></label>
+        <name>Danfoss_Returnable_Packaging__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateAwaitingCustomerResponse --></label>
+        <name>DateAwaitingCustomerResponse__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateInSAEReview --></label>
+        <name>DateInSAEReview__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateSubmitted --></label>
+        <name>DateSubmitted__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTookOwnership --></label>
+        <name>DateTookOwnership__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision Date --></label>
+        <name>Decision_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deviation/Rejection Reason --></label>
+        <name>Deviation_Rejection_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drawing Attached --></label>
+        <name>Drawing_Attached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drawing Identification Number --></label>
+        <name>Drawing_Identification_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recommend that for 2D use pdf or dxf 
+Recommend that for 3D use stp --></help>
+        <label><!-- Format --></label>
+        <name>Drawing_format__c</name>
+        <picklistValues>
+            <masterLabel>DWG 2D DXF + PDF + Model 3D .STP</masterLabel>
+            <translation><!-- DWG 2D DXF + PDF + Model 3D .STP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DWG 2D DXF + PDF + Model 3D .jt</masterLabel>
+            <translation><!-- DWG 2D DXF + PDF + Model 3D .jt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DWG 2D DXF + PDF + Model 3D .stl</masterLabel>
+            <translation><!-- DWG 2D DXF + PDF + Model 3D .stl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DWG 2D DXF + PDF + Model 3D IGES</masterLabel>
+            <translation><!-- DWG 2D DXF + PDF + Model 3D IGES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DWG 2D DXF + PDF + Model 3D Parasolid</masterLabel>
+            <translation><!-- DWG 2D DXF + PDF + Model 3D Parasolid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model 3D IGES</masterLabel>
+            <translation><!-- Model 3D IGES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model 3D JT</masterLabel>
+            <translation><!-- Model 3D JT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model 3D parasolid</masterLabel>
+            <translation><!-- Model 3D parasolid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model 3D step</masterLabel>
+            <translation><!-- Model 3D step --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model 3D stl</masterLabel>
+            <translation><!-- Model 3D stl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print 2D IGES</masterLabel>
+            <translation><!-- Print 2D IGES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print 2D PDF</masterLabel>
+            <translation><!-- Print 2D PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print 2D dxf</masterLabel>
+            <translation><!-- Print 2D dxf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print 2D tiff</masterLabel>
+            <translation><!-- Print 2D tiff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schematics &amp; Diagrams 2D IGES</masterLabel>
+            <translation><!-- Schematics &amp; Diagrams 2D IGES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schematics &amp; Diagrams 2D PDF</masterLabel>
+            <translation><!-- Schematics &amp; Diagrams 2D PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schematics &amp; Diagrams 2D dxf</masterLabel>
+            <translation><!-- Schematics &amp; Diagrams 2D dxf --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schematics &amp; Diagrams 2D tiff</masterLabel>
+            <translation><!-- Schematics &amp; Diagrams 2D tiff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare Parts &amp; Exploded Views 2D Excel</masterLabel>
+            <translation><!-- Spare Parts &amp; Exploded Views 2D Excel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare Parts &amp; Exploded Views 2D PDF</masterLabel>
+            <translation><!-- Spare Parts &amp; Exploded Views 2D PDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare Parts &amp; Exploded Views 2D Word</masterLabel>
+            <translation><!-- Spare Parts &amp; Exploded Views 2D Word --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare Parts &amp; Exploded Views 2D dxf</masterLabel>
+            <translation><!-- Spare Parts &amp; Exploded Views 2D dxf --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End of Line Test Results Required --></label>
+        <name>End_of_Line_Test_Results_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Estimated annual usage --></label>
+        <name>Estimated_annual_usage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expected Ship Date --></label>
+        <name>Expected_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Areas of Interest --></label>
+        <name>Factory_Areas_of_Interest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Factory Tour Date --></label>
+        <name>Factory_Tour_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter name of Tour Guide or indicate if tour guide is needed. --></help>
+        <label><!-- Factory Tour Guide --></label>
+        <name>Factory_Tour_Guide__c</name>
+    </fields>
+    <fields>
+        <label><!-- Factory Tour Requested --></label>
+        <name>Factory_Tour_Requested__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Factory Tour Time --></label>
+        <name>Factory_Tour_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling of Partial Shipments --></label>
+        <name>Handling_of_Partial_Shipments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select Standard for Danfoss hardware; select Custom for cusomer-specific hardware --></help>
+        <label><!-- Hardware Platform --></label>
+        <name>Hardware_Platform__c</name>
+        <picklistValues>
+            <masterLabel>Custom</masterLabel>
+            <translation><!-- Custom --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Implement Changes? --></label>
+        <name>Implement_Changes__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Incoterms Changes --></label>
+        <name>Incoterms_Changes__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, Doug McCoy (Quality Deployment Director) and Martin Smith (VP Global Quality) will be notified of this customer visit --></help>
+        <label><!-- Is Quality part of the agenda? --></label>
+        <name>Is_Quality_part_of_the_agenda__c</name>
+    </fields>
+    <fields>
+        <help><!-- Summary to share with attendees --></help>
+        <label><!-- Key Agenda Points &amp; Expected Outcome --></label>
+        <name>Key_Agenda_Points_Expected_Outcome__c</name>
+    </fields>
+    <fields>
+        <help><!-- Send-Thru Drawing Link --></help>
+        <label><!-- Link to Drawing --></label>
+        <name>Link_to_Drawing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Market Segment --></label>
+        <name>Market_Segment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material Number --></label>
+        <name>Material_Number_Second__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material Number --></label>
+        <name>Material_Number_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material Number --></label>
+        <name>Material_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting Host --></label>
+        <name>Meeting_Host__c</name>
+        <relationshipLabel><!-- PS Customer Requests (Meeting Host) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicate a room is needed; or enter name and number of  reserved meeting room --></help>
+        <label><!-- Meeting Room Reserved --></label>
+        <name>Meeting_Room_Reserved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Code --></label>
+        <name>Model_Code_Second__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Code --></label>
+        <name>Model_Code_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Model Code --></label>
+        <name>Model_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Simulink 32-bit or 64-bit or other software file format --></help>
+        <label><!-- Model Software Version --></label>
+        <name>Model_Software_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-standard Shipment Packaging --></label>
+        <name>Non_standard_Shipment_Packaging__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-Time Engineering Costs --></label>
+        <name>One_Time_Engineering_Costs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Product --></label>
+        <name>Opportunity_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- PS Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OpptyLineItemID --></label>
+        <name>OpptyLineItemID__c</name>
+    </fields>
+    <fields>
+        <help><!-- For example, Clausen Museum, Mads Clausen&apos;s Office, Tour of Universe, View Point of A Building --></help>
+        <label><!-- Other Tour Requests --></label>
+        <name>Other_Tour_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- PPAP Elements --></label>
+        <name>PPAP_Elements__c</name>
+        <picklistValues>
+            <masterLabel>Appearance Approval Report (Pictures)</masterLabel>
+            <translation><!-- Appearance Approval Report (Pictures) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Control Plan</masterLabel>
+            <translation><!-- Control Plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Label</masterLabel>
+            <translation><!-- Customer Label --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dimensional Results (ISIR)</masterLabel>
+            <translation><!-- Dimensional Results (ISIR) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering Change Document</masterLabel>
+            <translation><!-- Engineering Change Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material Performance Test Results</masterLabel>
+            <translation><!-- Material Performance Test Results --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PSW</masterLabel>
+            <translation><!-- PSW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process FMEA</masterLabel>
+            <translation><!-- Process FMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Flow Diagram</masterLabel>
+            <translation><!-- Process Flow Diagram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Product</masterLabel>
+            <translation><!-- Sample Product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plant of Visit --></label>
+        <name>Plant_of_Visit__c</name>
+        <picklistValues>
+            <masterLabel>AMS</masterLabel>
+            <translation><!-- AMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOL</masterLabel>
+            <translation><!-- BOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DCA</masterLabel>
+            <translation><!-- DCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESL</masterLabel>
+            <translation><!-- ESL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MPS</masterLabel>
+            <translation><!-- MPS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NMS</masterLabel>
+            <translation><!-- NMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NOR</masterLabel>
+            <translation><!-- NOR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OFF</masterLabel>
+            <translation><!-- OFF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PX</masterLabel>
+            <translation><!-- PX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHA</masterLabel>
+            <translation><!-- SHA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the Business Unit that has primary decision making responsibility --></help>
+        <label><!-- Primary Business Unit --></label>
+        <name>Primary_BU__c</name>
+        <picklistValues>
+            <masterLabel>Electronic Components</masterLabel>
+            <translation><!-- Electronic Components --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power Closed Circuit</masterLabel>
+            <translation><!-- High Power Closed Circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>High Power Open Circuit</masterLabel>
+            <translation><!-- High Power Open Circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power Closed Circuit</masterLabel>
+            <translation><!-- Medium Power Closed Circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium Power Open Circuit</masterLabel>
+            <translation><!-- Medium Power Open Circuit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motors</masterLabel>
+            <translation><!-- Motors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PVG Valves</masterLabel>
+            <translation><!-- PVG Valves --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering</masterLabel>
+            <translation><!-- Steering --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Second Product --></label>
+        <name>Product_Second__c</name>
+        <relationshipLabel><!-- PS Customer Requests (Second Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Set --></label>
+        <name>Product_Set__c</name>
+    </fields>
+    <fields>
+        <help><!-- The material number of the new system model --></help>
+        <label><!-- System Product --></label>
+        <name>Product_System__c</name>
+        <relationshipLabel><!-- PS Customer Requests (System Product) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Weights and Packaging Dimension --></label>
+        <name>Product_Weights_and_Packaging_Dimension__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- PS Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Programming Language --></label>
+        <name>Programming_Language__c</name>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Codesys</masterLabel>
+            <translation><!-- Codesys --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (include in specification)</masterLabel>
+            <translation><!-- Other (include in specification) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plus+1 Guide</masterLabel>
+            <translation><!-- Plus+1 Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simulink</masterLabel>
+            <translation><!-- Simulink --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Proposal for Testing --></label>
+        <name>Proposal_for_Testing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase order --></label>
+        <name>Purchase_order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purpose of Visit --></label>
+        <name>Purpose_of_Visit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if this request is for a Quality Manual review --></help>
+        <label><!-- Quality Manual? --></label>
+        <name>Quality_Manual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Date Change --></label>
+        <name>Reason_for_Date_Change__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Exclusivity --></label>
+        <name>Reason_for_Exclusivity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the regions in which this customer could place an order --></help>
+        <label><!-- Customer Ordering Region(s) --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Americas</masterLabel>
+            <translation><!-- Americas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rejected Reason --></label>
+        <name>Rejected_Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release Date --></label>
+        <name>Release_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Release of Prototype --></label>
+        <name>Release_of_Prototype__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Release to Production --></label>
+        <name>Release_to_Production__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request for 3rd Party Freight Management --></label>
+        <name>Request_for_3rd_Party_Freight_Management__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, please attach --></help>
+        <label><!-- Request for Capacity Plan --></label>
+        <name>Request_for_Capacity_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request for Consignment Stock/SMI --></label>
+        <name>Request_for_Consignment_Stock_SMI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request for a Pull/Kanban System --></label>
+        <name>Request_for_a_Pull_Kanban_System__c</name>
+    </fields>
+    <fields>
+        <help><!-- Request to ship direct for a Danfoss plant overseas customer location --></help>
+        <label><!-- Request to Ship Direct for Overseas --></label>
+        <name>Request_to_Ship_Direct_for_Overseas__c</name>
+    </fields>
+    <fields>
+        <help><!-- Hydrostatics: Enter model code
+Work Function &amp; Electronic Components: Enter specification
+PVG: Attach Spec Sheet Below in Notes and Attachments Section After Saving Request --></help>
+        <label><!-- Requested Material Specification --></label>
+        <name>Requested_Model_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires Confirmed Date --></label>
+        <name>Requires_Confirmed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires SAE Review --></label>
+        <name>Requires_SAE_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAE --></label>
+        <name>SAE__c</name>
+        <relationshipLabel><!-- PS Customer Requests (SAE) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Manager --></label>
+        <name>Sales_Manager__c</name>
+        <relationshipLabel><!-- PS Customer Requests (Sales Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SAP Sales Order Number --></label>
+        <name>Sales_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Org --></label>
+        <name>Sales_Org__c</name>
+        <relationshipLabel><!-- PS Customer Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sales Specialist --></label>
+        <name>Sales_Specialist__c</name>
+        <relationshipLabel><!-- PS Customer Requests (Sales Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SentToBU --></label>
+        <name>SentToBU__c</name>
+    </fields>
+    <fields>
+        <label><!-- SentToSAE --></label>
+        <name>SentToSAE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Certificates Requested --></label>
+        <name>Special_Certificates__c</name>
+        <picklistValues>
+            <masterLabel>2.2 Test Certificate</masterLabel>
+            <translation><!-- 2.2 Test Certificate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.1 Inspection Certificates</masterLabel>
+            <translation><!-- 3.1 Inspection Certificates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3.2 Inspection Certificates</masterLabel>
+            <translation><!-- 3.2 Inspection Certificates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATEX</masterLabel>
+            <translation><!-- ATEX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ATR</masterLabel>
+            <translation><!-- ATR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CE marking</masterLabel>
+            <translation><!-- CE marking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certificate of origin</masterLabel>
+            <translation><!-- Certificate of origin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Proprietary Standards</masterLabel>
+            <translation><!-- Customer Proprietary Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declaration of Conformity</masterLabel>
+            <translation><!-- Declaration of Conformity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EUR.1</masterLabel>
+            <translation><!-- EUR.1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GOST certificate</masterLabel>
+            <translation><!-- GOST certificate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Standards (e.g. GSXXX)</masterLabel>
+            <translation><!-- Internal Standards (e.g. GSXXX) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplier&apos;s declaration of conformity</masterLabel>
+            <translation><!-- Supplier&apos;s declaration of conformity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suppliers declaration</masterLabel>
+            <translation><!-- Suppliers declaration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Restrictions, Trade Compliance</masterLabel>
+            <translation><!-- Trade Restrictions, Trade Compliance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Special request for action related to logistic performance --></help>
+        <label><!-- Special Request for Action --></label>
+        <name>Special_Request_for_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Shipment Arrangements --></label>
+        <name>Special_Shipment_Arrangements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Shipment Labeling --></label>
+        <name>Special_Shipment_Labeling__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Shipment Paperwork --></label>
+        <name>Special_Shipment_Paperwork__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specification --></label>
+        <name>Specification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Awaiting Customer Approval</masterLabel>
+            <translation><!-- Awaiting Customer Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In SAE Review</masterLabel>
+            <translation><!-- In SAE Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting for Ownership</masterLabel>
+            <translation><!-- Waiting for Ownership --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Submit To --></label>
+        <name>Submit_To__c</name>
+        <picklistValues>
+            <masterLabel>Business Unit</masterLabel>
+            <translation><!-- Business Unit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Specialist/CSR</masterLabel>
+            <translation><!-- Sales Specialist/CSR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SubmittedInitially --></label>
+        <name>SubmittedInitially__c</name>
+    </fields>
+    <fields>
+        <label><!-- Machine Function --></label>
+        <name>Subsystem__c</name>
+        <picklistValues>
+            <masterLabel>Fan Drive</masterLabel>
+            <translation><!-- Fan Drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HMI &amp; Electronics</masterLabel>
+            <translation><!-- HMI &amp; Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Steering Function</masterLabel>
+            <translation><!-- Steering Function --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transmission</masterLabel>
+            <translation><!-- Transmission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Working Function</masterLabel>
+            <translation><!-- Working Function --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TookOwnership --></label>
+        <name>TookOwnership__c</name>
+        <relationshipLabel><!-- PS Customer Requests (TookOwnership) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Drawing</masterLabel>
+            <translation><!-- Drawing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logistics Setup</masterLabel>
+            <translation><!-- Logistics Setup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Material Number</masterLabel>
+            <translation><!-- New Material Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Product</masterLabel>
+            <translation><!-- New Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Product Feature</masterLabel>
+            <translation><!-- New Product Feature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Request</masterLabel>
+            <translation><!-- Other Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PPAP</masterLabel>
+            <translation><!-- PPAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simulation Models</masterLabel>
+            <translation><!-- Simulation Models --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software Proposal</masterLabel>
+            <translation><!-- Software Proposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Tests &amp; Certificates</masterLabel>
+            <translation><!-- Special Tests &amp; Certificates --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplier Questionnaire</masterLabel>
+            <translation><!-- Supplier Questionnaire --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Model</masterLabel>
+            <translation><!-- System Model --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visitor Notification</masterLabel>
+            <translation><!-- Visitor Notification --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Drawing --></label>
+        <name>Type_of_Drawing__c</name>
+        <picklistValues>
+            <masterLabel>Customer Specific 2D</masterLabel>
+            <translation><!-- Customer Specific 2D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Specific 2D &amp; 3D</masterLabel>
+            <translation><!-- Customer Specific 2D &amp; 3D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model 3D</masterLabel>
+            <translation><!-- Model 3D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model Specific 2D</masterLabel>
+            <translation><!-- Model Specific 2D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Model Specific 2D &amp; 3D</masterLabel>
+            <translation><!-- Model Specific 2D &amp; 3D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parts &amp; Service / Explode View 2D</masterLabel>
+            <translation><!-- Parts &amp; Service / Explode View 2D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procurement</masterLabel>
+            <translation><!-- Procurement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User changeable parameters --></label>
+        <name>User_changeable_parameters__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate vehicles that will need to be scheduled for demo or test drive --></help>
+        <label><!-- Vehicles to Demo/Test Drive --></label>
+        <name>Vehicles_to_Demo__c</name>
+    </fields>
+    <fields>
+        <help><!-- If guests will need wireless internet access --></help>
+        <label><!-- Wireless Needed --></label>
+        <name>Wireless_Needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Z6 Block --></label>
+        <name>Z6_Block__c</name>
+        <picklistValues>
+            <masterLabel>Applied</masterLabel>
+            <translation><!-- Applied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lifted</masterLabel>
+            <translation><!-- Lifted --></translation>
+        </picklistValues>
+    </fields>
+    <recordTypes>
+        <label><!-- Visitor Notification --></label>
+        <name>Customer_Visit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Drawing --></label>
+        <name>Drawing</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Logistics Setup --></label>
+        <name>Logistics_Setup</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- New Material Number --></label>
+        <name>New_Material_Number</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- New Product --></label>
+        <name>New_Product</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- New Product Feature --></label>
+        <name>New_Product_Feature</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PPAP --></label>
+        <name>PPAP</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Simulation Models --></label>
+        <name>Simulation_Models</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Software Proposal --></label>
+        <name>Software_Proposal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Other Request --></label>
+        <name>Special_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Special Tests &amp; Certificates --></label>
+        <name>Special_Tests_Certificates</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Supplier Questionnaire --></label>
+        <name>Supplier_Questionnaire</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- System Model --></label>
+        <name>System_Model</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- ADC Tour can only be requested for a visit to AMS, NMS or NOR --></errorMessage>
+        <name>ADC_Tour_for_AMS_NMS_NOR_only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Confirmed Date cannot be initially set to a date in the past. --></errorMessage>
+        <name>Confirmed_Date_Cannot_be_set_in_the_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A rejected reason is required --></errorMessage>
+        <name>Logistics_Implement_No</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Requested Material Specification does not match the new Model Code. --></errorMessage>
+        <name>New_Product_Feature_Model_Code_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A decision date is required --></errorMessage>
+        <name>New_Product_Feature_Release_Yes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A rejected reason is required --></errorMessage>
+        <name>New_Product_Feature_System_Release_No</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t select a Contact from an Indirect Account. --></errorMessage>
+        <name>No_Contact_from_Indirect_Account</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Quantity and Build Process are required if customer is requesting a prototype. --></errorMessage>
+        <name>Prototype_Fields_Required_NMN_SM</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Customer Requested Date, Quantity and Build Process are required if customer is requesting a prototype. --></errorMessage>
+        <name>Prototype_Fields_Required_NPF</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Primary Business Unit must match the product business unit --></errorMessage>
+        <name>Special_Tests_Certs_BU_Match_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Primary Business Unit must match one of the product business units --></errorMessage>
+        <name>System_Model_BU_Match_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A rejected reason is required --></errorMessage>
+        <name>System_Model_Release_No</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A confirmed date is required --></errorMessage>
+        <name>System_Model_Release_Yes</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Customer Requested Date cannot initially set to a date in the past. --></errorMessage>
+        <name>Upon_Creation_Date_Cannot_be_in_the_Past</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Cancel_Request --></label>
+        <name>Cancel_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Complete_Request --></label>
+        <name>Complete_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit --></label>
+        <name>Edit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Filter_Customer_Requests_Acct --></label>
+        <name>Filter_Customer_Requests_Acct</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Filter_Customer_Requests_Oppty --></label>
+        <name>Filter_Customer_Requests_Oppty</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Drawing_Request --></label>
+        <name>New_Drawing_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Request --></label>
+        <name>New_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_To_SAE_For_Review --></label>
+        <name>Send_To_SAE_For_Review</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Set_Status --></label>
+        <name>Set_Status</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit_Request --></label>
+        <name>Submit_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Take_Ownership --></label>
+        <name>Take_Ownership</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- The overall weight that direct financial benefit applies to an investment (typically between 1% and 99%) --></help>
+        <label><!-- Weighting - Direct Financial Benefit --></label>
+        <name>ccpe_ppm__Direct_Financial_Benefit__c</name>
+    </fields>
+    <fields>
+        <help><!-- The overall weight that direct financial cost applies to an investment (typically between -1% and -99%) --></help>
+        <label><!-- Weighting - Direct Financial Cost --></label>
+        <name>ccpe_ppm__Direct_Financial_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Benefit Impact - High --></label>
+        <name>ccpe_ppm__Financial_Benefit_Impact_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Benefit Impact - Low --></label>
+        <name>ccpe_ppm__Financial_Benefit_Impact_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Benefit Impact - Medium --></label>
+        <name>ccpe_ppm__Financial_Benefit_Impact_Medium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Benefit Impact - Very Low --></label>
+        <name>ccpe_ppm__Financial_Benefit_Impact_Very_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Cost Impact - High --></label>
+        <name>ccpe_ppm__Financial_Cost_Impact_High__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Cost Impact - Low --></label>
+        <name>ccpe_ppm__Financial_Cost_Impact_Low__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Cost Impact - Medium --></label>
+        <name>ccpe_ppm__Financial_Cost_Impact_Medium__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Cost Impact - Very Low --></label>
+        <name>ccpe_ppm__Financial_Cost_Impact_Very_Low__c</name>
+    </fields>
+    <fields>
+        <help><!-- The overall weight that level of effort applies to an investment (typically between -1% and -99%) --></help>
+        <label><!-- Weighting - Level of Effort --></label>
+        <name>ccpe_ppm__Level_of_Effort__c</name>
+    </fields>
+    <fields>
+        <help><!-- The overall weight that strategic fit applies to an investment (typically between 1% and 99%) --></help>
+        <label><!-- Weighting - Qualitative Benefits --></label>
+        <name>ccpe_ppm__Qualitative_Benefits__c</name>
+    </fields>
+    <fields>
+        <help><!-- The overall weight that strategic fit applies to an investment (typically between 1% and 99%) --></help>
+        <label><!-- Weighting - Strategic Fit --></label>
+        <name>ccpe_ppm__Strategic_Fit__c</name>
+    </fields>
+    <fields>
+        <help><!-- The overall weight that risk &amp; impact applies to an investment (typically between -1% and -99%) --></help>
+        <label><!-- Weighting - Investment Risks --></label>
+        <name>ccpe_ppm__investment_risks__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,12 @@
+<apex:page standardController="ccpe_ppm__Program__c">
+
+	<apex:includeScript value="{!$Resource.project_cloud__jquery_js}" />
+	<c:tree parentId="{!ccpe_ppm__Program__c.Id}" parentName="{!ccpe_ppm__Program__c.Name}" />
+
+	<apex:pageMessages />
+
+	<apex:form id="form">
+		<apex:detail subject="{!ccpe_ppm__Program__c}" relatedList="true" showChatter="true" inlineEdit="true" />
+	</apex:form>
+
+</apex:page>

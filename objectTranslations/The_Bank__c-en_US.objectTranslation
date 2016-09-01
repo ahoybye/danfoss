@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>The Bank</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>The Bank</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Actual --></label>
+        <name>Current_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Daily Self Limit --></label>
+        <name>Daily_Self_Limit__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is used for check is current actual is reached to daily limit --></help>
+        <label><!-- Is Limit Reached --></label>
+        <name>Is_Limit_Reached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Modified --></label>
+        <name>Last_Modified__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,7 @@
+<apex:page id="page" standardController="project_cloud__Project__c" extensions="project_cloud.ProjectRemoting" sidebar="false" title="{!project_cloud__Project__c.Name} - Project Tasks">
+	<script>
+		window.location.hash = '/project/{!Project__c}/tasks/view';
+	</script>
+
+	<c:ng_module app="projects" />
+</apex:page>

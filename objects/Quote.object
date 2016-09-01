@@ -1,0 +1,2046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CreatePdf</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailQuote</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewQuote</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SyncQuote</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>AdditionalName</fullName>
+    </fields>
+    <fields>
+        <fullName>Additional_Contacts__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Contacts</label>
+        <picklist>
+            <picklistValues>
+                <fullName>x</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Approval Stage</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Preliminary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BillingName</fullName>
+    </fields>
+    <fields>
+        <fullName>CE_HS_Sub_reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Reason (DHS)</label>
+        <picklist>
+            <controllingField>Reason__c</controllingField>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Funding</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regulation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specifications</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Better Price</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CE_PE_Sub_reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Reason (DDS)</label>
+        <picklist>
+            <controllingField>Reason__c</controllingField>
+            <picklistValues>
+                <fullName>Customer application requires Liquid cooling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Funding</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regulation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specifications</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Better Price</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Liquid cooling</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active Front End</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Size</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Harmonic solution</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Safety requirements</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overload capability</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EC technique</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System supplier/Package deals</fullName>
+                <default>false</default>
+                <controllingFieldValues>Technology</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CE_RC_Sub_reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Reason (DCS)</label>
+        <picklist>
+            <controllingField>Reason__c</controllingField>
+            <picklistValues>
+                <fullName>Better Price</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Commercial terms</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Funding</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regulation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specifications</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Stopped by customer</controllingFieldValues>
+                <controllingFieldValues>Stopped by third party</controllingFieldValues>
+                <controllingFieldValues>Stopped by us</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cloned_Quote_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Cloned Quote Number</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitQuoteId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The quote id/number assigned by Configit</description>
+        <externalId>true</externalId>
+        <label>Configit Quote Id</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitQuoteRef__c</fullName>
+        <externalId>false</externalId>
+        <label>Quick Reference Id</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitQuoteRevDisplay__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;R&quot; + Text(Value(ConfigitQuoteRev__c)+1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quote Revision</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitQuoteRev__c</fullName>
+        <externalId>false</externalId>
+        <label>Configit Revision Number</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitSyncMessage__c</fullName>
+        <defaultValue>&quot;OK&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Configit Sync Message</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ConfigitSyncStatus__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AND(ConfigitSyncMessage__c !=&apos;OK&apos;,ConfigitSyncMessage__c !=&apos;&apos;),
+( IMAGE(&quot;/img/msg_icons/warning16.png&quot;, &quot;warning&quot;, 16, 16) + &quot; &quot; + ConfigitSyncMessage__c ) ,
+(IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;ok&quot;) +&quot; OK&quot; ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Configit Sync Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Address__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Address</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Email</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Phone</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Country_Specific_Template__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>country used to determine the footer text on the PDF</description>
+        <externalId>false</externalId>
+        <label>Country Specific Footer</label>
+        <referenceTo>Region__c</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CreatedBy_Configit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Created By (Configit)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Quotes_Created</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CreatedDate_Configit__c</fullName>
+        <externalId>false</externalId>
+        <label>Created Date (Configit)</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Account_Lookup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This lookup relationship is created to make Quotes visible in a related list on Account. This field is to be populated by configit.</description>
+        <externalId>false</externalId>
+        <label>Account (Quote)</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes_Visible_On_Account</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Hierarchy_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Hierarchy Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Hierarchy__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Hierarchy</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Request_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If left blank will default to +5 days</inlineHelpText>
+        <label>Customer Request Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>ExpirationDate</fullName>
+    </fields>
+    <fields>
+        <fullName>External_Sales_Org__c</fullName>
+        <externalId>false</externalId>
+        <label>External Sales Org</label>
+        <length>10</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+    </fields>
+    <fields>
+        <fullName>Footer_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Footer Comments</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>GrandTotal</fullName>
+    </fields>
+    <fields>
+        <fullName>Incoterms__c</fullName>
+        <externalId>false</externalId>
+        <label>Incoterms</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsSyncing</fullName>
+    </fields>
+    <fields>
+        <fullName>Last_ModifiedBy_Configit__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Last Modified By (Configit)</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Quotes_LastModifiedBy</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_ModifiedDate_Configit__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Modified Date (Configit)</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_By_Me__c</fullName>
+        <externalId>false</externalId>
+        <formula>if( $User.Username =  Last_ModifiedBy_Configit__r.Username , true, false)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Last Modified By Me?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LineItemCount</fullName>
+    </fields>
+    <fields>
+        <fullName>Lines_Approved__c</fullName>
+        <externalId>false</externalId>
+        <formula>LineItemCount - (Lines_Cancelled__c + Lines_Countered_by_Business_Area__c + Lines_Countered_by_Pricing__c + Lines_Countered_by_Sales_Manager__c + Lines_Declined_by_BA__c + Lines_Pending_Business_Area_Approval__c + Lines_Pending_Pricing_Approval__c + Lines_Pending_Sales_Manager_Approval__c + Lines_Undefined_Approver__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lines Approved</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lines_Cancelled__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Cancelled</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Cancelled by Account Owner</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Countered_by_Business_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Countered by BU</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Business Unit - Countered</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Countered_by_Pricing__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Countered by Pricing</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Pricing Team - Countered</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Countered_by_Sales_Manager__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Countered by Sales Mgr</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Sales Manager - Countered</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Declined_by_BA__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Declined by BU</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Business Unit - Declined</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Pending_Business_Area_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Pending with BU</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Business Unit - Requires Review</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Pending_Pricing_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Pending with Pricing</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Pricing Team - Requires Review</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Pending_Sales_Manager_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines Pending with Sales Mgr</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Sales Manager - Requires Review</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Lines_Undefined_Approver__c</fullName>
+        <externalId>false</externalId>
+        <label>Lines With Undefined Approver</label>
+        <summaryFilterItems>
+            <field>QuoteLineItem.Line_Item_Approval_Stage__c</field>
+            <operation>equals</operation>
+            <value>Select Approval Routing</value>
+        </summaryFilterItems>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>MergeFormulaParentAccount__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Opportunity.Account.Parent.Name != &apos;&apos;, &apos;The parent is &apos; &amp; Opportunity.Account.Parent.Name, &apos;(No parent account)&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merge_Formula_Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Merge Formula - Account Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merge_Formula_BusOrg__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity.Account.Business_Org__c)</formula>
+        <label>Merge Formula - BusOrg</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merge_Formula_Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Account.Country__r.Country_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Merge Formula - Country</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merge_Formula_Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Account.Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merge_Formula_SAP_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Account.SAP_Account_ID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Merge Formula - SAP ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+    </fields>
+    <fields>
+        <fullName>Now__c</fullName>
+        <externalId>false</externalId>
+        <formula>Now()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Now</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>On_Time_Quote__c</fullName>
+        <externalId>false</externalId>
+        <formula>Approval_Date__c  &lt;=   Customer_Request_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ratio On Time v Total</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Quote_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+AND( Opportunity.RecordType.DeveloperName!=&apos;Shadow_Opportunity&apos;,  Text(Opportunity.Account.Business_Org__c) ==&apos;Climate and Energy&apos;, Text(Status) == &apos;Accepted&apos;,  Text(Opportunity.StageName) != &apos;Closed-Won&apos;),
+( IMAGE(&quot;/img/msg_icons/error16.png&quot;, &quot;warning&quot;, 16, 16) + &quot; Warning - Opportunity is not marked as won. Please update and close your opportunity&quot;) , 
+(IMAGE(&quot;/img/msg_icons/confirm16.png&quot;, &quot;Requirement met&quot;) +&quot; OK&quot; ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity/Quote Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Quote_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(Cloned_Quote_Number__c ),  QuoteNumber ,Cloned_Quote_Number__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Original Quote Number</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Quote__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Original Quote</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Originating_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Case</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Terms__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Terms</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Price_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP Price Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Price loaded into SAP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No SAP Material ID_Proposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Creating SAP Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wrong SAP Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Price_Valid_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Valid From</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Price_Valid_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Valid To</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pricing_Team_Group_Email__c</fullName>
+        <defaultValue>&quot;globalpricing@danfoss.com&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Pricing Team Group Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pricing_Updated_in_SAP__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP Price Review Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>QLInumbers__c</fullName>
+        <externalId>false</externalId>
+        <label>QLInumbers</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>QuoteToName</fullName>
+    </fields>
+    <fields>
+        <fullName>Quote_Turn_Around_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>Approval_Date__c - DATEVALUE(CreatedDate)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quote Turn Around Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RFQ_Number__c</fullName>
+        <description>RFQ Number from Configit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>RFQ Number</inlineHelpText>
+        <label>Customer Request Number</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <picklist>
+            <controllingField>Status</controllingField>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accepted</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stopped by us</fullName>
+                <default>false</default>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <controllingFieldValues>Stopped</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stopped by customer</fullName>
+                <default>false</default>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <controllingFieldValues>Stopped</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stopped by third party</fullName>
+                <default>false</default>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+                <controllingFieldValues>Stopped</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accepted</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value Proposition</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accepted</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accepted</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accepted</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+                <controllingFieldValues>Accepted</controllingFieldValues>
+                <controllingFieldValues>Rejected</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Responsible__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Responsible</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>My_Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Price_Update_Cycle_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pricing_Updated_in_SAP__c - Approval_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SAP Price Update Cycle Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Quote_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>SAP Quote ID</label>
+        <length>30</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Manager_of_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Mgr of Account</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SalesManagerofQuoteAccount</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Org__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Sales_Org__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sales Org</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShippingHandling</fullName>
+    </fields>
+    <fields>
+        <fullName>ShippingName</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>In progress</fullName>
+                <default>true</default>
+                <allowEmail>true</allowEmail>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal approval</fullName>
+                <default>false</default>
+                <allowEmail>true</allowEmail>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent</fullName>
+                <default>false</default>
+                <allowEmail>true</allowEmail>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <allowEmail>true</allowEmail>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+                <allowEmail>true</allowEmail>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stopped</fullName>
+                <default>false</default>
+                <allowEmail>true</allowEmail>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sub Account</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The Sub Account must belong to the selected account</errorMessage>
+            <filterItems>
+                <field>Sub_Account__c.Account__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Custom_Account_Lookup__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Sub_Account__c</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Account_formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Custom_Account_Lookup__c = Opportunity.AccountId, Opportunity.Sub_Account__r.SAP_Account_ID__c,  Sub_Account__r.SAP_Account_ID__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sub Account</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>Surcharge_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Surcharge Description</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Task_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Task due date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tax</fullName>
+    </fields>
+    <fields>
+        <fullName>Time_Sent_to_Business_Area_for_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Sent to Business Area for Approval</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Time_Sent_to_Pricing_Team_for_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Sent to Pricing Team for Approval</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Time_Sent_to_Sales_Manager_Approval__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Sent to Sales Manager Approval</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>Valid_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Valid From</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Valid_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Valid To</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Manual assigned opportunity</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>You cannot only select Climate and Energy opportunities 
+- which are not shadow opportunities</errorMessage>
+            <filterItems>
+                <field>Opportunity.RecordType.DeveloperName</field>
+                <operation>notEqual</operation>
+                <value>Shadow_Opportunity</value>
+            </filterItems>
+            <filterItems>
+                <field>Opportunity.Account.Business_Org__c</field>
+                <operation>equals</operation>
+                <value>Climate and Energy</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Manual Re-assigned Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <recordTypes>
+        <fullName>Approved_Quote</fullName>
+        <active>true</active>
+        <label>Approved Quote</label>
+        <picklistValues>
+            <picklist>Additional_Contacts__c</picklist>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Price_Status__c</picklist>
+            <values>
+                <fullName>Creating SAP Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No SAP Material ID_Proposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price loaded into SAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong SAP Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Auto_Approved_Quote</fullName>
+        <active>true</active>
+        <label>Auto-Approved Quote</label>
+        <picklistValues>
+            <picklist>Additional_Contacts__c</picklist>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Price_Status__c</picklist>
+            <values>
+                <fullName>Creating SAP Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No SAP Material ID_Proposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price loaded into SAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong SAP Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CE_Quote</fullName>
+        <active>true</active>
+        <label>CE Quote</label>
+        <picklistValues>
+            <picklist>Additional_Contacts__c</picklist>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Preliminary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CE_HS_Sub_reason__c</picklist>
+            <values>
+                <fullName>Better Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specifications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CE_PE_Sub_reason__c</picklist>
+            <values>
+                <fullName>Active Front End</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Better Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer application requires Liquid cooling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EC technique</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Harmonic solution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liquid cooling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overload capability</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safety requirements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Size</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specifications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System supplier%2FPackage deals</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CE_RC_Sub_reason__c</picklist>
+            <values>
+                <fullName>Better Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regulation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Specifications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Price_Status__c</picklist>
+            <values>
+                <fullName>Creating SAP Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No SAP Material ID_Proposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price loaded into SAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong SAP Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason__c</picklist>
+            <values>
+                <fullName>Commercial terms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stopped by customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stopped by third party</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stopped by us</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Value Proposition</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In progress</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Internal approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stopped</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New_Quote</fullName>
+        <active>true</active>
+        <label>New Quote</label>
+        <picklistValues>
+            <picklist>Additional_Contacts__c</picklist>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Price_Status__c</picklist>
+            <values>
+                <fullName>Creating SAP Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No SAP Material ID_Proposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price loaded into SAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong SAP Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Not_Routed_Quote</fullName>
+        <active>true</active>
+        <label>Not Routed Quote</label>
+        <picklistValues>
+            <picklist>Additional_Contacts__c</picklist>
+            <values>
+                <fullName>x</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Preliminary</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Price_Status__c</picklist>
+            <values>
+                <fullName>Creating SAP Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No SAP Material ID_Proposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Price loaded into SAP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong SAP Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>QUOTE.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTACT.FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Discount</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>GrandTotal</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>QUOTE.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OPPORTUNITY.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTACT.FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Discount</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>GrandTotal</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>QUOTE.PHONE</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Merge_Formula_Region__c</searchFilterFields>
+        <searchFilterFields>Account_Owner__c</searchFilterFields>
+        <searchFilterFields>Approval_Stage__c</searchFilterFields>
+        <searchFilterFields>ACCOUNT.NAME</searchFilterFields>
+        <searchFilterFields>Sales_Org__c</searchFilterFields>
+        <searchFilterFields>SAP_Price_Update_Cycle_Time__c</searchFilterFields>
+        <searchFilterFields>Pricing_Updated_in_SAP__c</searchFilterFields>
+        <searchFilterFields>CreatedBy</searchFilterFields>
+        <searchFilterFields>LastModifiedBy</searchFilterFields>
+        <searchResultsAdditionalFields>QUOTE.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>QUOTE.QUOTENUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Merge_Formula_Region__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Merge_Formula_Country__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Approval_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Pricing_Updated_in_SAP__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Approval_Stage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTACT.FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CreatedBy</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>No_Contact_from_Indirect_Account</fullName>
+        <active>true</active>
+        <errorConditionFormula>Text(Opportunity.Account.Business_Org__c) &lt;&gt; &quot;Climate and Energy&quot; &amp;&amp;
+TEXT(Contact.Account.Channel__c) =  &quot;Indirect&quot;</errorConditionFormula>
+        <errorMessage>You can&apos;t select a Contact from an Indirect Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Prevent_Price_Status_Change</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+ $Profile.Name !=&apos;System Administrator&apos;, 
+ $Profile.Name !=&apos;CRM_System Administrator PS&apos;, 
+ISCHANGED(Price_Status__c), 
+NOT(ISPICKVAL(PRIORVALUE(Price_Status__c ), &quot;&quot;)) 
+)</errorConditionFormula>
+        <errorDisplayField>Price_Status__c</errorDisplayField>
+        <errorMessage>SAP Price Status cannot be changed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Total_can_only_be_changed_by_Configit</fullName>
+        <active>true</active>
+        <errorConditionFormula>(
+$Profile.Name &lt;&gt; &quot;API Only User (CE)&quot;
+)
+&amp;&amp;
+PRIORVALUE(TotalPrice) &lt;&gt; TotalPrice &amp;&amp;
+PRIORVALUE(TotalPrice)&lt;&gt;0
+&amp;&amp; ISPICKVAL(Opportunity.Account.Business_Org__c,&quot;Climate and Energy&quot;)</errorConditionFormula>
+        <errorMessage>Quote Line Items can only be changed from Configit</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Clone</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>newWindow</openType>
+        <page>QuoteClonePage</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Configit_Quote</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit Configit Quote</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>top.location.href=&apos;http://{!$Setup.ConfigitQuoteSettings__c.ServerHost__c}/Configit/Quote/api/ext/Opportunity/update/{!CASESAFEID(User.Id)}/{!Quote.ConfigitQuoteId__c}/{!Quote.ConfigitQuoteRev__c}&apos;;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_PDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create PDF</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/resource/1377014048000/QuoteCustomWS&quot;)}
+
+var pdfOverlay = QuotePDFPreview.quotePDFObjs[&apos;quotePDFOverlay&apos;];
+pdfOverlay.dialog.buttonContents = &apos;&lt;input value=\&quot;Save Quote\&quot; class=\&quot;btn\&quot; name=\&quot;save\&quot; onclick=\&quot;SaveQuotePDF(\&apos;{!Quote.Id}\&apos;);\&quot; title=\&quot;Save Quote\&quot; type=\&quot;button\&quot; /&gt;&lt;input value=\&quot;Save &amp; Email Quote\&quot; class=\&quot;btn\&quot; name=\&quot;emailQuote\&quot; onclick=\&quot;SaveandEmailPDF(\&apos;{!Quote.Id}\&apos;);\&quot; title=\&quot;Email Quote\&quot; type=\&quot;button\&quot;&gt;&lt;input value=\&quot;Cancel\&quot;  class=\&quot;btn\&quot; name=\&quot;cancel\&quot; onclick=\&quot;QuotePDFPreview.getQuotePDFObject(\&apos;quotePDFOverlay\&apos;).close();\&quot; title=\&quot;Cancel\&quot; type=\&quot;button\&quot; /&gt;&apos;;
+
+pdfOverlay.setSavable(true); 
+pdfOverlay.setPDFContents(&apos;/apex/QuotePDF?id={!Quote.Id}&apos;,null,null); 
+pdfOverlay.display();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Custom_Create_PDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Quote Preview</masterLabel>
+        <openType>newWindow</openType>
+        <page>QuotePDF</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Email_Quote</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Email Quote</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/customSendEmail?id={!Quote.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generic_Code_Master_List</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Generic Code Master List</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://danfoss.my.salesforce.com/069C00000008Mfg</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Configit_Quote_Account</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Configit Quote</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>top.location.href=&apos;http://{!$Setup.ConfigitQuoteSettings__c.ServerHost__c}/Configit/Quote/api/ext/Opportunity/create/{!CASESAFEID($User.Id)}/{!CASESAFEID(  Account.Id  )}&apos;;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Configit_Quote_Contact</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Configit Quote</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/InitQuote?type=CONTACT&amp;oid={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Configit_Quote_Opportunity</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Configit Quote</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>top.location.href=&apos;http://{!$Setup.ConfigitQuoteSettings__c.ServerHost__c}/Configit/Quote/api/ext/Opportunity/create/{!CASESAFEID($User.Id)}/{!CASESAFEID(Opportunity.AccountId )}/{!CASESAFEID(Opportunity.Id)}&apos;;</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,52 @@
+<apex:component controller="EmailSummaryForAccountOwnerCtrl" access="global">
+<apex:attribute name="bulletinAcctId" description="Account ID" type="String" assignTo="{!bullAcctId}"/>
+<apex:attribute name="notificationType" description="Notification Type of bulletin account" type="String" assignTo="{!notifiType}"/>
+<apex:attribute name="accountId" description="Account ID" type="String" assignTo="{!accId}"/>
+<apex:attribute name="busArea" description="Business Area of Bulletin Delivery Job" type="String" assignTo="{!area}"/>
+<apex:attribute name="bulletinDelJobId" description="Bulletin Delivery Job Id" type="String" assignTo="{!BDJId}"/>
+<apex:attribute name="bulletinDelJobName" description="Bulletin Delivery Job Name" type="String" assignTo="{!BDJName}"/>
+<style>
+.content td, th {
+    border: 1px solid black;
+}
+
+.content table {
+    border-collapse: collapse;
+}
+.alignCenter {
+    text-align: center;
+}
+</style>
+	<div class="content">
+         The following contacts at {!acctName} received this {!jobTypeFull}:&nbsp;
+        <apex:outputLink value="{!fullURL}">{!BDJName}</apex:outputLink>
+    <br/><br/>
+            <apex:dataTable styleclass="content" value="{!lstContact}" var="contact" cellpadding="5" rendered="{!lstContact.size > 0}" columnClasses="alignCenter">
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Contact.fields.Name.Label}</apex:facet>
+                    <apex:outputField value="{!contact.Name}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Contact.fields.Title.Label}</apex:facet>
+                    <apex:outputField value="{!contact.Title}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Contact.fields.Role__c.Label}</apex:facet>
+                    <apex:outputField value="{!contact.Role__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Contact.fields.Department__c.Label}</apex:facet>
+                    <apex:outputField value="{!contact.Department__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">{!$ObjectType.Contact.fields.Email.Label}</apex:facet>
+                    <apex:outputField value="{!contact.Email}"/>
+                </apex:column>
+        </apex:dataTable>
+        <br/>
+        These contacts received this {!jobTypeFull} because the {!jobType} box was checked and the business area {!area} was selected.    
+            <apex:outputPanel rendered="{!lstContact.size == 0}">
+                {!$Label.No_Contacts_Found}
+            </apex:outputPanel>
+    </div>
+</apex:component>

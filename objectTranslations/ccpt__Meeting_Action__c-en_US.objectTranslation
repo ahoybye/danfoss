@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Action --></label>
+        <name>ccpt__Action__c</name>
+        <relationshipLabel><!-- Meeting Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Agenda Item --></label>
+        <name>ccpt__Agenda_Item__c</name>
+        <relationshipLabel><!-- Meeting Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>ccpt__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>ccpt__Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed --></label>
+        <name>ccpt__IsComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting --></label>
+        <name>ccpt__Meeting__c</name>
+        <relationshipLabel><!-- Meeting Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Owner Department --></label>
+        <name>ccpt__Owner_Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Name --></label>
+        <name>ccpt__Owner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner --></label>
+        <name>ccpt__Owner__c</name>
+        <relationshipLabel><!-- Meeting Actions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related To --></label>
+        <name>ccpt__RelatedTo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether this action is visible to all meeting attendees --></help>
+        <label><!-- isPublic --></label>
+        <name>ccpt__isPublic__c</name>
+    </fields>
+</CustomObjectTranslation>

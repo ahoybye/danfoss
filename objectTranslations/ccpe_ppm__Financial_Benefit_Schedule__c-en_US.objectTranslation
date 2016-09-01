@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- How much is this benefit worth on this date to the business --></help>
+        <label><!-- Amount --></label>
+        <name>ccpe_ppm__Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- The benefit this schedule item relates to --></help>
+        <label><!-- Benefit --></label>
+        <name>ccpe_ppm__Benefit__c</name>
+        <relationshipLabel><!-- Financial Benefit Schedule --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The date of the expected benefit to be realized --></help>
+        <label><!-- Date --></label>
+        <name>ccpe_ppm__Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this is a planned or a realized benefit from the investment --></help>
+        <label><!-- Status --></label>
+        <name>ccpe_ppm__Status__c</name>
+        <picklistValues>
+            <masterLabel>Actual</masterLabel>
+            <translation><!-- Actual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planned</masterLabel>
+            <translation><!-- Planned --></translation>
+        </picklistValues>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Actual Benefits cannot be changed during the Planning Stage. --></errorMessage>
+        <name>ccpe_ppm__Actuals_Must_Be_Changed_After_Planning</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Date does not match the Benefit Schedule set on the Investment. --></errorMessage>
+        <name>ccpe_ppm__Date_Must_Match_Schedule_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot change a planned benefit once the Planning Stage has concluded. --></errorMessage>
+        <name>ccpe_ppm__Planned_Must_Be_Changed_During_Planning</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Area --></label>
+        <name>ccpe_ppm__Area__c</name>
+        <relationshipLabel><!-- Costs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The investment that the cost is related to --></help>
+        <label><!-- Investment --></label>
+        <name>ccpe_ppm__Investment__c</name>
+        <relationshipLabel><!-- Costs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The total amount of actual costs for this item of spend on the investment --></help>
+        <label><!-- Total Actual Cost --></label>
+        <name>ccpe_ppm__Total_Actual_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- The total amount of planned costs for this item of spend on the investment --></help>
+        <label><!-- Total Planned Cost --></label>
+        <name>ccpe_ppm__Total_Planned_Cost__c</name>
+    </fields>
+    <validationRules>
+        <errorMessage><!-- Costs cannot be associated with parent areas. --></errorMessage>
+        <name>ccpe_ppm__Cannot_associate_with_parent_area</name>
+    </validationRules>
+</CustomObjectTranslation>

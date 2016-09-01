@@ -1,0 +1,14 @@
+We have the following resolution for your Incident
+
+Description: {!BMCServiceDesk__Incident__c.BMCServiceDesk__incidentDescription__c} 
+
+Resolution: {!BMCServiceDesk__Incident__c.BMCServiceDesk__incidentResolution__c}
+
+Best regards
+
+{!BMCServiceDesk__Incident__c.BMCServiceDesk__FKClosedBy__c}
+
+Danfoss Group IT
+
+Please take a moment to provide DGIT some feedback on this incident.
+http://danfoss.force.com/DGIT/apex/BMCServiceDesk__SurveyPage?i={!BMCServiceDesk__Incident__c.Id}

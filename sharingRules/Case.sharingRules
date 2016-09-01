@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CSC_CER_CASE_WITHOU_ACCOUNT_SHARE</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>CSC_CER_CASE_WITHOU_ACCOUNT_SHARE</label>
+        <sharedTo>
+            <group>CSC_CER_All_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>AccountId</field>
+            <operation>equals</operation>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Complaint,Support Case,Transactional Request,Product Inquiry,Service Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CSC_Owner_Region__c</field>
+            <operation>equals</operation>
+            <value>CER</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Comatrol_Cases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Comatrol Cases</label>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Comatrol</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>INDIA_CASE_SHARING_RULE</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>INDIA CASE SHARING RULE</description>
+        <label>INDIA CASE SHARING RULE</label>
+        <sharedTo>
+            <group>India_CSC_Agent</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Complaint,Support Case,Transactional Request,Product Inquiry,Service Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CSC_Owner_Region__c</field>
+            <operation>equals</operation>
+            <value>India</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>PS_Cases</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>PS Cases</label>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Power Solutions</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Sharing_Global_Account_Case_with_SS</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Cases with Sales Specialist for Global Accounts</description>
+        <label>Sharing Global Account Case with SS</label>
+        <sharedTo>
+            <role>CRM_SalesSpecOEMAmerPS</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>CRM_Sales_Dctr_Global_PS</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

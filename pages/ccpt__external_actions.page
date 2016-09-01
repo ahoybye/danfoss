@@ -1,0 +1,377 @@
+<apex:page showHeader="false" sidebar="false" standardController="Contact" extensions="ccpt.AngularExtension,ccpt.ActionFormComponentController">
+    <apex:includeScript value="{!URLFOR($Resource.ccpt__jquery_zip, '/jquery.min.js')}" />
+	<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/font-awesome-4.2.0/css/font-awesome.min.css')}" />
+	<link rel="stylesheet" href="{!URLFOR($Resource.productivity_frameworks,'/css/fonts/raleway/raleway.css')}" />
+	<script>
+		var js_ns = '{!jsNamespace}';
+		var ns = '{!fieldNamespace}';
+		var completedOffset = 0;
+		var completedLimit = 10;
+		var actions = {};
+		var today;
+
+		/**
+		 * Sets the completion status of an action
+		 *
+		 */
+		function setCompletion(actionId) {
+			var action = actions[actionId];
+			Visualforce.remoting.Manager.invokeAction(
+				js_ns + 'ActionFormComponentController.setCompletion',
+				actionId,
+				!action.isComplete,
+				function(result, event){
+					if(event.status) {
+						action.lastMod = result;
+						action.isComplete = !action.isComplete;
+						var list = $('#' + (action.isComplete ? 'complete' : 'incomplete') + '-actions');
+						completedOffset += (action.isComplete ? 1 : -1);
+						sortActions(createActionElement(actionId));
+						hasActions();
+					} else {
+						//What happens when save fails?
+					}
+				},
+				{ escape : false}
+			);
+		}
+
+		function hasActions() {
+			$('#external-contact-actions > div').each(function() {
+				$(this).toggle($('.action-item', $(this)).length > 0);
+			})
+		}
+
+		/**
+		 * Retrieves all the incomplete Actions assigned to a contact as well as the last X complete Actions
+		 */
+		function getActions(contactId) {
+			Visualforce.remoting.Manager.invokeAction(
+				js_ns + 'ActionFormComponentController.getContactActions',
+				contactId,
+				completedLimit,
+				completedOffset,
+				function(result, event){ 
+					if(event.status) {
+						var completedCount = 0;
+						for(var i = 0; i < result.length; i++) {
+							//Create reference object (Eliminates need for constant namespace references)
+							actions[result[i].Id] = {
+								name : result[i].Name,
+								isComplete : result[i][ns + 'IsComplete__c'],
+								description : result[i][ns + 'Description__c'],
+								due : result[i][ns + 'Due_Date__c'],
+								lastMod : result[i].LastModifiedDate
+							}
+							//If action is completed, increment counter
+							if(result[i][ns + 'IsComplete__c']) {
+								completedCount++;
+							}
+							//Create the DOM element
+							createActionElement(result[i].Id);
+						}
+						completedOffset += completedCount;
+						if(completedCount < completedLimit || completedOffset >= 100) {
+							$('.loadMore').hide();
+						}
+						//Sort all the action lists
+						var sortable = $('.action-item:first-child', '.action-item-list');
+						for(var i = 0; i < sortable.length; i++) {
+							sortActions($(sortable[i]));
+						}
+						hasActions();
+					} else {
+						//What happens if there is an error?
+					}
+				},
+				{ escape : false}
+			);
+		}
+
+		/**
+		 * Sorts a list of actions
+		 */
+		function sortActions(action) {
+			var list = action.parent();
+			var isComplete = list.parent().attr('id') == 'complete-actions';
+			var elements = action.siblings().andSelf();
+			//sort actions based on 'data-date', then by name if date equal
+			elements.sort(function(a, b) {
+				a = actions[$(a).attr('id')];
+				b = actions[$(b).attr('id')];
+				var order = (isComplete ? (b.lastMod - a.lastMod) : (b.due - a.due));
+				//var order = parseInt(b.attr('data-date')) - parseInt(a.attr('data-date'));
+				if(order != 0) {
+					return order;
+				}
+				a = a.name.toLowerCase();
+				b = b.name.toLowerCase();
+				return a < b ? -1 : (a > b ? 1 : 0);
+			});
+			//Detach and re-attach to correct order
+			elements.detach().appendTo(list);
+		}
+
+		/**
+		 * Creates a DOM element from an Action
+		 */
+		function createActionElement(actionId) {
+			var action = actions[actionId];
+			var exists = $('#' + actionId).length;
+			//If the element exists (if changes polled, which currently do not happen) remove old DOM element
+			if(exists) {
+				$('#' + actionId).remove();
+			}
+			//Create the DOM element
+			var element = $(
+				'<div class="action-item" id="' + actionId + '" data-date="' + (action.isComplete ? action.lastMod : action.due) + '" data-name="' + action.name + '">' +
+						'<div class="action-status ' + (action.isComplete ? 'complete' : (action.due < today ? 'late' : 'incomplete')) + '"></div>' +
+						'<div class="action-actions ' + (action.isComplete ? 'checked' : '') + '">' +
+							//'<input class="action-completion" type="button" value="' + (action.isComplete ? 'Open' : 'Close') + '" />' +
+							'<i class="fa fa-check-square-o"></i>' +
+							'<i class="fa fa-square-o"></i>' +
+						'</div>' +
+						'<div class="action-label">' +
+							'<div class="action-date">' + new Date(action.due).toLocaleDateString() + '</div>' +
+							'<div class="action-name">' + action.name + '</div>' +
+						'</div>' +
+						(action.description ? '<div class="action-details" style="display: none;">' + action.description + '</div>' +
+						'<i class="fa fa-angle-double-down details-toggle"></i><div class="tooltip"><div></div></div>' : '') +
+				'</div>'
+			);
+			$('.action-item-list', '#' + (action.isComplete ? 'complete' : 'incomplete') + '-actions').append(element);
+			//Bind click events
+			$('.details-toggle', element).bind('click', function(event) {
+				$(this).prev('.action-details').slideToggle();
+				$(this).toggleClass('open');
+
+			})
+			$('.action-completion, .action-actions > i', element).bind('click', function(event) {
+				event.stopPropagation();
+				setCompletion(element.attr('id'));
+			})
+			//Return new DOM element for sorting (currently only used for sorting after completion status changes)
+			return element;
+		}
+
+		$(document).ready(function() {
+			var contactId = '{!$CurrentPage.parameters.id}';
+			if(contactId == '') {
+				$('.ccpt-header > .name').text('Invalid Contact Id');
+			} else {
+				getActions(contactId);
+				$('.ccpt-header > .name').text('Actions for {!contact.Name}');
+				today = new Date();
+				today.setHours(0, 0, 0, 0);
+				today = today.getTime();
+				$('.loadMore').text('Load ' + completedLimit + ' more').bind('click', function(event) {
+					getActions();
+				});
+			}
+		});
+	</script>
+	<style>
+		body {
+			font-family: "Raleway",sans-serif;
+			font-weight: 400;
+			font-size: 14px;
+			color: #777;
+			background: #f1f1f1;
+		}
+		.ccpt-header {
+			background-color: #3d3d3d;
+			height: 50px;
+		}
+		.ccpt-header > .name {
+			color: white;
+			line-height: 50px;
+			font-size: 20px;
+			padding-left: 80px;
+		}
+		#external-contact-actions {
+			padding: 10px;
+			margin: 0 auto;
+			max-width: 900px;
+		}
+		#contact-info {
+			padding: 10px;
+			border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+			margin-bottom: 10px;
+		}
+		#contact-info > .name {
+			font-size: 18px;
+		}
+		#incomplete-actions, #complete-actions {
+			padding: 10px;
+			display: none;
+		}
+		
+		.title {
+			color: rgba(0,0,0,0.4);
+			font-weight: 300;
+			font-size: 16px;
+			padding-bottom: 10px;
+		}
+
+		.action-item-list {
+			background: white;
+			padding: 10px;
+		}
+		.action-item {
+			line-height: 32px;
+			padding: 5px;
+			text-align: center;
+		}
+		.action-item:not(:first-child) {
+			border-top: solid 1px rgba(0, 0, 0, 0.1);
+		}
+
+		.action-item > div {
+			text-align: left;
+		}
+
+		.action-status {
+			float: left;
+			width: 1em;
+			height: 1em;
+			margin: 9px 5px;
+		}
+		.action-status.complete {
+			background: #008150;
+		}
+		.action-status.incomplete {
+			background: #E9B546;
+		}
+		.action-status.late {
+			background: #A50505;
+		}
+
+
+		.action-actions, .action-date {
+			float: right;
+		}
+		.action-completion {
+			font-family: "Raleway",sans-serif;
+			cursor: pointer;
+			background-color: #444;
+			outline: none;
+			padding: 8px 15px;
+			color: white;
+			border: none;
+			border-radius: 0;
+			margin-left: 8px;
+		}
+		.action-actions > i {
+			line-height: 14px;
+			cursor: pointer;
+			margin: 9px 5px;
+			min-width: 13px;
+		}
+		.action-actions:hover > i {
+			color: #222;
+		}
+		.action-actions > i.fa-check-square-o, .action-actions.checked > i.fa-square-o {
+			display: none;
+		}
+		.action-actions.checked > i.fa-check-square-o, .action-actions > i.fa-square-o {
+			display: inline-block;
+		}
+
+		.action-completion:hover {
+			background-color: #222;
+		}
+
+		.action-details {
+			white-space: pre-wrap;
+			padding: 5px;
+			line-height: normal;
+		}
+		.details-toggle {
+			cursor: pointer;
+			width: 2em;
+		}
+		.details-toggle{
+			-webkit-transition: 0.4s ease-in-out transform;
+			transition: 0.4s ease-in-out transform;
+			-webkit-transform: rotateX(0deg);
+			transform: rotateX(0deg);
+		}
+		.details-toggle.open {
+			-webkit-transform: rotateX(180deg);
+			transform: rotateX(180deg);
+		}
+		.details-toggle:before {
+			display: inline-block;
+			transform: scaleX(2);
+			-webkit-transform: scaleX(2);
+		}
+
+		.tooltip {
+			display: none;
+			position: relative;
+		}
+		.details-toggle:hover ~ .tooltip {
+			display: inline-block;
+		}
+		.tooltip > div {
+			position: absolute;
+		    top: 10px;
+		    left: -71px;
+		    z-index: 100;
+		    width: 98px;
+		    background: #222;
+		    border-radius: 5px;
+		    padding: 3px 8px;
+		    color: #fff;
+			font-size: 12px;
+		    line-height: 1.4em;
+			text-align: center;
+		}
+		.details-toggle.open ~ .tooltip > div {
+			left: -69px;
+			width: 94px;
+		}
+		.tooltip > div:after {
+			content: " ";
+			position: absolute;
+			top: -5px;
+			left: 50%;
+			margin-left: -5px;
+			border-color: transparent;
+			border-width: 0 5px 5px;
+			border-style: solid;
+			border-bottom-color: #222;
+		}
+		.tooltip > div:before {
+		    content: 'Show Description';
+		}
+		.details-toggle.open ~ .tooltip > div:before {
+			content: 'Hide Description';
+		}
+		.loadMore {
+			text-align: center;
+			padding: 5px;
+			cursor: pointer;
+		}
+		.loadMore:hover {
+			background: rgba(0, 0, 0, 0.1);
+		}
+	</style>
+	<body>
+		<div class="ccpt-header">
+			<apex:image url="{!URLFOR($Resource.ccpt__productivity_frameworks, '/img/cc-logo-gray.png')}" width="50" height="50" style="float: left" />
+			<div class="name"></div>
+		</div>
+		<div id="external-contact-actions">
+			<div id="incomplete-actions">
+				<div class="title">Incomplete Actions</div>
+				<div class="action-item-list"></div>
+			</div>
+			<div id="complete-actions">
+				<div class="title">Recently Completed Actions</div>
+				<div class="action-item-list"></div>
+				<div class="loadMore"></div>
+			</div>
+		</div>
+	</body>
+</apex:page>

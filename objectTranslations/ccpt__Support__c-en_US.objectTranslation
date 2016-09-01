@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Company --></label>
+        <name>ccpt__Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>ccpt__Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>ccpt__Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>ccpt__Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- I Need To... --></label>
+        <name>ccpt__Support_I_Need_To__c</name>
+        <picklistValues>
+            <masterLabel>Ask a Billing Question</masterLabel>
+            <translation><!-- Ask a Billing Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ask a Question about Product Functionality</masterLabel>
+            <translation><!-- Ask a Question about Product Functionality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ask a Sales Question</masterLabel>
+            <translation><!-- Ask a Sales Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Report a Bug / Issue</masterLabel>
+            <translation><!-- Report a Bug / Issue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suggest a New Feature</masterLabel>
+            <translation><!-- Suggest a New Feature --></translation>
+        </picklistValues>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,26 @@
+<apex:page showHeader="true" sidebar="true" standardController="Contract_Attachment__c" extensions="ContractAttachController">
+     <apex:form style="width:50%;">
+		<br/>
+		<apex:pageMessages />
+		<br/><br/>
+		<div style="text-align:left; margin-left:25px; padding-bottom:5px;">
+	        <apex:pageBlock title="Upload Contract Document" rendered="{!Attachments.size=0}">
+				<apex:inputField required="true" value="{!contAtt.Type__c}"></apex:inputField><br/>
+				<apex:inputFile style="text-align:center" value="{!attach.body}" filename="{!attach.name}"></apex:inputFile><br/><br/>
+	            <apex:commandLink value="Upload" action="{!upload}" styleClass="btn" style="padding: 4px 3px;text-decoration: none;"/> &nbsp;&nbsp;
+	            <apex:commandLink value="Cancel" action="{!cancel}" styleClass="btn" style="padding: 4px 3px;text-decoration: none;"/>   
+	        </apex:pageBlock>
+		 </div> 
+        <div style="text-align:left; margin-left:25px; padding-bottom:5px;">
+	        <apex:pageBlock title="Contract Document Detail" rendered="{!Attachments!=null && Attachments.size>0}">
+                <apex:outputField value="{!contAtt.Title__c}"/>   
+		<br/> <br/>
+                <apex:inputField required="true" value="{!contAtt.Type__c}"></apex:inputField>
+		<br/>
+		<br/>
+	            <apex:commandLink value="Save" action="{!saveandReturn}" styleClass="btn" style="padding: 4px 3px;text-decoration: none;"/> &nbsp;&nbsp;
+	            <apex:commandLink value="Cancel" action="{!cancel}" styleClass="btn" style="padding: 4px 3px;text-decoration: none;"/>   
+	        </apex:pageBlock>  
+		</div> 
+    </apex:form>
+</apex:page>

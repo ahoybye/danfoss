@@ -1,0 +1,634 @@
+<apex:page standardController="Influencer_Grid__c" extensions="InfluencerExtension" title="{!IF(ISNULL(Influencer_Grid__c.Name), 'New Influencer Grid', 'Influencer Grid: ' + Influencer_Grid__c.Contact__r.Name)}" tabStyle="Influencer_Grid__c" id="pg">
+    <apex:sectionHeader title="Influencer Edit" subtitle="{!IF(ISNULL(Influencer_Grid__c.Name), 'New Influencer',Influencer_Grid__c.Name)}"/>
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="EDISC__c" jsShorthand="disc" fields="Primary_Profile__c,Secondary_Profile__c,Q1O1__c,Q1O2__c,Q1O3__c,Q1O4__c,Q2O1__c,Q2O2__c,Q2O3__c,Q2O4__c,Q3O1__c,Q3O2__c,Q3O3__c,Q3O4__c,Q4O1__c,Q4O2__c,Q4O3__c,Q4O4__c,Q5O1__c,Q5O2__c,Q5O3__c,Q5O4__c,Q6O1__c,Q6O2__c,Q6O3__c,Q6O4__c,Q7O1__c,Q7O2__c,Q7O3__c,Q7O4__c,Q8O1__c,Q8O2__c,Q8O3__c,Q8O4__c">
+        </apex:remoteObjectModel>
+    </apex:remoteObjects>
+    <head>
+        <style type="text/css">
+            .question{
+                font-weight: bold;
+                text-decoration: underline;
+                color: #333435;
+            }
+            .fldLabel{
+                font-family: Arial; 
+                font-size: 8.5pt; 
+                color: #4a4a56; 
+                font-weight:bold;
+            }
+            table#t01{
+                width:375px;
+            } 
+            table#t02{
+                width:500px;
+            }
+            table#t01 td:nth-child(odd), table#t02 td:nth-child(odd){
+                vertical-align:middle;
+            }
+            table#t01 td:nth-child(even), table#t02 td:nth-child(even){
+                vertical-align:middle;
+            }
+            table#t03 td{
+                text-align:right;
+                vertical-align:middle;
+                padding:5px 0px 5px 0px;
+            }
+            .checkboxes{
+                 border-collapse:collapse;
+            }
+        </style>
+        <script type="text/javascript">         
+            function calcDISC(q1o1,q1o2,q1o3,q1o4, q2o1,q2o2,q2o3,q2o4, q3o1,q3o2,q3o3,q3o4, q4o1,q4o2,q4o3,q4o4, q5o1,q5o2,q5o3,q5o4, q6o1,q6o2,q6o3,q6o4, q7o1,q7o2,q7o3,q7o4, q8o1,q8o2,q8o3,q8o4, Dispdominance,Dispinfluence,Dispsteadiness,Dispcompliance){
+                var dominance=0;
+                var influence=0;
+                var steadiness=0;
+                var compliance=0;
+                if(document.getElementById(q1o3).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q1o1).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q2o4).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q2o1).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q3o1).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q3o2).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q4o2).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q4o4).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q5o1).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q5o4).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q6o3).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q6o2).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q7o3).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q7o1).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q8o2).value=='Most'){ dominance += 1; }
+                if(document.getElementById(q8o4).value=='Least'){ dominance += 1; }
+                if(document.getElementById(q1o2).value=='Most'){ influence += 1; }
+                if(document.getElementById(q1o4).value=='Least'){ influence += 1; }
+                if(document.getElementById(q2o2).value=='Most'){ influence += 1; }
+                if(document.getElementById(q2o3).value=='Least'){ influence += 1; }
+                if(document.getElementById(q3o3).value=='Most'){ influence += 1; }
+                if(document.getElementById(q3o4).value=='Least'){ influence += 1; }
+                if(document.getElementById(q4o1).value=='Most'){ influence += 1; }
+                if(document.getElementById(q4o2).value=='Least'){ influence += 1; }
+                if(document.getElementById(q5o2).value=='Most'){ influence += 1; }
+                if(document.getElementById(q5o3).value=='Least'){ influence += 1; }
+                if(document.getElementById(q6o1).value=='Most'){ influence += 1; }
+                if(document.getElementById(q6o4).value=='Least'){ influence += 1; }
+                if(document.getElementById(q7o4).value=='Most'){ influence += 1; }
+                if(document.getElementById(q7o2).value=='Least'){ influence += 1; }
+                if(document.getElementById(q8o1).value=='Most'){ influence += 1; }
+                if(document.getElementById(q8o3).value=='Least'){ influence += 1; }
+                if(document.getElementById(q1o1).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q1o3).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q2o1).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q2o2).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q3o2).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q3o1).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q4o4).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q4o3).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q5o4).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q5o1).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q6o2).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q6o3).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q7o1).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q7o3).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q8o4).value=='Most'){ steadiness += 1; }
+                if(document.getElementById(q8o2).value=='Least'){ steadiness += 1; }
+                if(document.getElementById(q1o4).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q1o2).value=='Least'){ compliance += 1; }
+                if(document.getElementById(q2o3).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q2o4).value=='Least'){ compliance += 1; }
+                if(document.getElementById(q3o4).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q3o3).value=='Least'){ compliance += 1; }
+                if(document.getElementById(q4o3).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q4o1).value=='Least'){ compliance += 1; }
+                if(document.getElementById(q5o3).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q5o2).value=='Least'){ compliance += 1; }
+                if(document.getElementById(q6o4).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q6o1).value=='Least'){ compliance += 1; }
+                if(document.getElementById(q7o2).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q7o4).value=='Least'){ compliance += 1; }
+                if(document.getElementById(q8o3).value=='Most'){ compliance += 1; }
+                if(document.getElementById(q8o1).value=='Least'){ compliance += 1; }
+            
+                document.getElementById(Dispdominance).innerText = dominance;
+                document.getElementById(Dispinfluence).innerText = influence;
+                document.getElementById(Dispsteadiness).innerText = steadiness;
+                document.getElementById(Dispcompliance).innerText = compliance;
+            }
+            
+            function createEDISC(contId, opptyId, primary,secondary, q1o1,q1o2,q1o3,q1o4, q2o1,q2o2,q2o3,q2o4, q3o1,q3o2,q3o3,q3o4, q4o1,q4o2,q4o3,q4o4, q5o1,q5o2,q5o3,q5o4, q6o1,q6o2,q6o3,q6o4, q7o1,q7o2,q7o3,q7o4, q8o1,q8o2,q8o3,q8o4){
+                var edID;
+                var i;
+                var j;
+                var most;
+                var least;
+                for(i=1; i<=8; i++){
+                    most = 0;
+                    least = 0;
+                    for(j=1; j<=4; j++){
+                        var fldname = 'pg:theForm:' + 'q' + String(i) + 'o' + String(j);
+                        var fld = document.getElementById(fldname);
+                        var selopt = fld.options[fld.selectedIndex].value;
+                        if(selopt == 'Most'){
+                            most += 1;
+                        }
+                        if(selopt == 'Least'){
+                            least += 1;
+                        }
+                        if(most > 1 || least > 1){
+                            alert('Only one Most and one Least selection for each question.');
+                            return;
+                        }
+                    }
+                }
+                var prim = document.getElementById(primary).value;
+                var sec = document.getElementById(secondary).value;
+                var n;
+                if(prim == '' || sec == ''){
+                    n = 'Not Completed';
+                }else{
+                    n = prim + '/' + sec;
+                }
+                var ed = new SObjectModel.disc();
+                var fields = {
+                    Name: n,
+                    Contact__c: document.getElementById(contId+'_lkid').value,
+                    Opportunity__c: document.getElementById(opptyId).innerHTML.split('.com/')[1].substring(0, 15),
+                    Primary_Profile__c: document.getElementById(primary).value,
+                    Secondary_Profile__c: document.getElementById(secondary).value,
+                    Q1O1__c: document.getElementById(q1o1).value,
+                    Q1O2__c: document.getElementById(q1o2).value,
+                    Q1O3__c: document.getElementById(q1o3).value,
+                    Q1O4__c: document.getElementById(q1o4).value,
+                    Q2O1__c: document.getElementById(q2o1).value,
+                    Q2O2__c: document.getElementById(q2o2).value,
+                    Q2O3__c: document.getElementById(q2o3).value,
+                    Q2O4__c: document.getElementById(q2o4).value,
+                    Q3O1__c: document.getElementById(q3o1).value,
+                    Q3O2__c: document.getElementById(q3o2).value,
+                    Q3O3__c: document.getElementById(q3o3).value,
+                    Q3O4__c: document.getElementById(q3o4).value,
+                    Q4O1__c: document.getElementById(q4o1).value,
+                    Q4O2__c: document.getElementById(q4o2).value,
+                    Q4O3__c: document.getElementById(q4o3).value,
+                    Q4O4__c: document.getElementById(q4o4).value,
+                    Q5O1__c: document.getElementById(q5o1).value,
+                    Q5O2__c: document.getElementById(q5o2).value,
+                    Q5O3__c: document.getElementById(q5o3).value,
+                    Q5O4__c: document.getElementById(q5o4).value,
+                    Q6O1__c: document.getElementById(q6o1).value,
+                    Q6O2__c: document.getElementById(q6o2).value,
+                    Q6O3__c: document.getElementById(q6o3).value,
+                    Q6O4__c: document.getElementById(q6o4).value,
+                    Q7O1__c: document.getElementById(q7o1).value,
+                    Q7O2__c: document.getElementById(q7o2).value,
+                    Q7O3__c: document.getElementById(q7o3).value,
+                    Q7O4__c: document.getElementById(q7o4).value,
+                    Q8O1__c: document.getElementById(q8o1).value,
+                    Q8O2__c: document.getElementById(q8o2).value,
+                    Q8O3__c: document.getElementById(q8o3).value,
+                    Q8O4__c: document.getElementById(q8o4).value};
+                ed.create(fields,function(err) { 
+                    edID = ed.get('Id');
+                    SaveGrid(edID);
+                });
+            }
+                    function checkForError(){//msgs, contId){
+                        //if(document.getElementById(msgs).innerText != ''){
+                        //  document.getElementById(contId).value = null;
+                        //}
+                    }
+                    //function clearMsgs(){
+                    //  clearMsgs();
+                    //}
+        </script>
+    </head>
+    <apex:pageMessages id="msgs"/>          
+    <apex:form id="theForm">
+    <apex:pageBlock mode="edit" title="Influencer Edit" id="pb">
+        <apex:actionFunction name="SaveGrid" action="{!SaveGrid}" reRender="msgs">
+            <apex:param name="edID" value="" assignTo="{!edID}"/>
+        </apex:actionFunction>
+        <!-- <apex:actionFunction name="clearMsgs" action="{!clearMsgs}" reRender="msgs"/> -->
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!Save}" rendered="{!NOT(ISNULL(Influencer_Grid__c.Id))}"/>
+                <apex:commandButton value="Save"  rendered="{!ISNULL(Influencer_Grid__c.Id)}" onclick="createEDISC('{!$Component.pg.theForm.pb.pbs.pbsi.contId}', '{!$Component.pg.theForm.pb.pbs.opptyId}', '{!$Component.primary}','{!$Component.secondary}', '{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}'); return false;"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+            </apex:pageBlockButtons>
+                <apex:pageBlockSection title="Information" showHeader="true" columns="2" id="pbs">
+                    <apex:pageBlockSectionItem rendered="{!ISNULL(Influencer_Grid__c.Contact__c)}" id="pbsi">
+                        <apex:outputLabel value="Contact" for="contId" styleClass="fldLabel"/>
+                        <apex:inputField value="{!Influencer_Grid__c.Contact__c}" id="contId">
+                            <apex:actionSupport event="onchange" action="{!findDiscs}" rerender="role,edisc,opDisc,outerpanel,msgs,typ"/>
+                        </apex:inputField>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem rendered="{!NOT(ISNULL(Influencer_Grid__c.Contact__c))}">
+                        <apex:outputLabel value="Contact" for="contName" styleClass="fldLabel"/>
+                        <apex:outputLink value="/{!Influencer_Grid__c.Contact__c}" id="contName" target="_blank">{!Influencer_Grid__c.Contact__r.Name}</apex:outputLink>
+                    </apex:pageBlockSectionItem>
+                    <apex:outputField value="{!Influencer_Grid__c.Opportunity__c}" id="opptyId"/>
+                    <apex:outputField value="{!Influencer_Grid__c.Title__c}" id="title"/>
+                    <apex:pageBlockSectionItem />
+                    <apex:pageBlockSectionItem id="pbsi2">
+                        <apex:outputLabel value="E-DISC" for="edisc" styleClass="fldLabel"/>
+                        <apex:outputLink value="/apex/EDISCpage?id={!Influencer_Grid__c.EDISC__c}" id="edisc" target="_blank">{!Influencer_Grid__c.EDISC__r.Name}</apex:outputLink>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputHidden value="{!newTypicalEdisc}" id="typ"/>
+                    <apex:inputField value="{!Influencer_Grid__c.Role_In_The_Buying_Center__c}" id="role"/>
+                    <apex:pageBlockSectionItem />
+                    <apex:inputField value="{!Influencer_Grid__c.Influence_on_purchasing_decision__c}"/>
+                    <apex:pageBlockSectionItem />
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Customer Needs" showHeader="true" columns="2">
+                    <apex:inputField value="{!Influencer_Grid__c.Key_Message_Value_Prop__c}"/>
+                    <apex:inputField value="{!Influencer_Grid__c.Influencers_KPIs__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Customer Views" showHeader="true" columns="2">
+                    <apex:inputField value="{!Influencer_Grid__c.Urgency__c}"/>
+                    <apex:inputField value="{!Influencer_Grid__c.Danfoss__c}"/>
+                    <apex:inputField value="{!Influencer_Grid__c.NBA__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageblocksection title="System Information" showheader="false" collapsible="false" columns="2">
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Created By"/>
+                        <apex:outputpanel >
+                            <apex:outputfield value="{!Influencer_Grid__c.CreatedById}"/>&nbsp;, 
+                            <apex:outputfield value="{!Influencer_Grid__c.CreatedDate}"/>
+                        </apex:outputpanel>
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem >
+                        <apex:outputlabel value="Last Modified By"/>
+                        <apex:outputpanel >
+                            <apex:outputfield value="{!Influencer_Grid__c.LastModifiedById}"/>&nbsp;, 
+                            <apex:outputfield value="{!Influencer_Grid__c.LastModifiedDate}"/>
+                        </apex:outputpanel>
+                    </apex:pageblocksectionitem>
+                </apex:pageblocksection>
+        </apex:pageBlock>
+        <apex:outputPanel id="outerpanel">
+            <apex:outputPanel id="opDisc" rendered="{!discSelected}">
+                <table>
+                    <td>
+                        <table id="t01">
+                            <td>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="1) When speaking, this person ..."/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q1O1__c.Label}" for="q1o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q1O1__c}" id="q1o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q1O2__c.Label}" for="q1o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q1O2__c}" id="q1o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>    
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q1O3__c.Label}" for="q1o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q1O3__c}" id="q1o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q1O4__c.Label}" for="q1o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q1O4__c}" id="q1o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="2) When speaking, this person ..."/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q2O1__c.Label}" for="q2o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q2O1__c}" id="q2o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q2O2__c.Label}" for="q2o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q2O2__c}" id="q2o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q2O3__c.Label}" for="q2o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q2O3__c}" id="q2o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q2O4__c.Label}" for="q2o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q2O4__c}" id="q2o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="3) When listening, this person..."/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q3O1__c.Label}" for="q3o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q3O1__c}" id="q3o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q3O2__c.Label}" for="q3o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q3O2__c}" id="q3o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q3O3__c.Label}" for="q3o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q3O3__c}" id="q3o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q3O4__c.Label}" for="q3o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q3O4__c}" id="q3o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="4) When questioning, this person …"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q4O1__c.Label}" for="q4o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q4O1__c}" id="q4o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q4O2__c.Label}" for="q4o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q4O2__c}" id="q4o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q4O3__c.Label}" for="q4o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q4O3__c}" id="q4o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q4O4__c.Label}" for="q4o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q4O4__c}" id="q4o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                        </td>
+                        </table>
+                    </td>
+                    <td>
+                        <table id="t02">
+                            <td>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="5) When observing this person's physical behavior, you notice that he or she …"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q5O1__c.Label}" for="q5o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q5O1__c}" id="q5o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q5O2__c.Label}" for="q5o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q5O2__c}" id="q5o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q5O3__c.Label}" for="q5o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q5O3__c}" id="q5o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q5O4__c.Label}" for="q5o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q5O4__c}" id="q5o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="6) When this person responds to people and events, he or she …"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q6O1__c.Label}" for="q6o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q6O1__c}" id="q6o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q6O2__c.Label}" for="q6o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q6O2__c}" id="q6o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q6O3__c.Label}" for="q6o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q6O3__c}" id="q6o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q6O4__c.Label}" for="q6o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q6O4__c}" id="q6o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="7) When observing this person's interaction with others, you notice that he or she ..."/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q7O1__c.Label}" for="q7o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q7O1__c}" id="q7o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q7O2__c.Label}" for="q7o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q7O2__c}" id="q7o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q7O3__c.Label}" for="q7o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q7O3__c}" id="q7o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q7O4__c.Label}" for="q7o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q7O4__c}" id="q7o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <apex:outputText styleClass="question" value="8) When this person responds to tasks or relationships, he or she …"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q8O1__c.Label}" for="q8o1"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q8O1__c}" id="q8o1" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q8O2__c.Label}" for="q8o2"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q8O2__c}" id="q8o2" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q8O3__c.Label}" for="q8o3"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q8O3__c}" id="q8o3" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>                        
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Q8O4__c.Label}" for="q8o4"/>
+                                </td>
+                                <td>
+                                    <apex:inputfield value="{!disc.Q8O4__c}" id="q8o4" onchange="calcDISC('{!$Component.q1o1}','{!$Component.q1o2}','{!$Component.q1o3}','{!$Component.q1o4}','{!$Component.q2o1}','{!$Component.q2o2}','{!$Component.q2o3}','{!$Component.q2o4}','{!$Component.q3o1}','{!$Component.q3o2}','{!$Component.q3o3}','{!$Component.q3o4}','{!$Component.q4o1}','{!$Component.q4o2}','{!$Component.q4o3}','{!$Component.q4o4}','{!$Component.q5o1}','{!$Component.q5o2}','{!$Component.q5o3}','{!$Component.q5o4}','{!$Component.q6o1}','{!$Component.q6o2}','{!$Component.q6o3}','{!$Component.q6o4}','{!$Component.q7o1}','{!$Component.q7o2}','{!$Component.q7o3}','{!$Component.q7o4}','{!$Component.q8o1}','{!$Component.q8o2}','{!$Component.q8o3}','{!$Component.q8o4}','{!$Component.pg.theForm.Dispdominance}','{!$Component.pg.theForm.Dispinfluence}','{!$Component.pg.theForm.Dispsteadiness}','{!$Component.pg.theForm.Dispcompliance}');"/>
+                                </td>
+                            </tr>
+                        </td>
+                        </table>
+                    </td>
+                    <td width="33%">
+                        <table id="t03">
+                            <tr>
+                                <td style="vertical-align:middle;">
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Primary_Profile__c.Label}" for="primary"/>
+                                </td>
+                                <td>
+                                    &nbsp;<apex:inputfield value="{!disc.Primary_Profile__c}" id="primary"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="{!$ObjectType.EDISC__c.fields.Secondary_Profile__c.Label}" for="secondary"/>
+                                </td>
+                                <td>
+                                    &nbsp;<apex:inputfield value="{!disc.Secondary_Profile__c}" id="secondary"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >
+                                    <apex:outputLabel styleClass="fldLabel" value="Dominance" for="Dispdominance"/>
+                                </td>
+                                <td style="text-align:left;">
+                                    &nbsp;&nbsp;<apex:outputText value="{!dominance}" id="Dispdominance"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="Influence" for="Dispinfluence"/>
+                                </td>
+                                <td style="text-align:left;">
+                                    &nbsp;&nbsp;<apex:outputText value="{!influence}" id="Dispinfluence"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td >
+                                    <apex:outputLabel styleClass="fldLabel" value="Steadiness" for="Dispsteadiness"/>
+                                </td>
+                                <td style="text-align:left;">
+                                    &nbsp;&nbsp;<apex:outputText value="{!steadiness}" id="Dispsteadiness"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <apex:outputLabel styleClass="fldLabel" value="Compliance" for="Dispcompliance"/>
+                                </td>
+                                <td style="text-align:left;">
+                                    &nbsp;&nbsp;<apex:outputText value="{!compliance}" id="Dispcompliance"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </table>
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

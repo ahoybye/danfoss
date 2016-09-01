@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__BaseElementField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field of Base Element object to which data will be stored.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field of Base Element object to which data will be stored.</inlineHelpText>
+        <label>Base Element Field</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__DiscoveredDataField__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field of the discovered object from which data is being imported.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field of the discovered object from which data is being imported.</inlineHelpText>
+        <label>Discovered Data Field</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKCMDBClass__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Id of CMDB class of mapped field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Id of CMDB class of mapped field.</inlineHelpText>
+        <label>CMDB Class</label>
+        <referenceTo>BMCServiceDesk__CMDB_Class__c</referenceTo>
+        <relationshipName>DiscoveryMappings</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__IsEnabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If CMDB class is selected for data import.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If CMDB class is selected for data import.</inlineHelpText>
+        <label>IsEnabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__LastImport__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies date and time of last successful discovered devices import</description>
+        <externalId>false</externalId>
+        <label>Last Import</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+</CustomObject>

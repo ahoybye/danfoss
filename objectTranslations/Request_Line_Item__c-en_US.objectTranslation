@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Deviated Request Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deviated Request Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Danfoss Material Number --></label>
+        <name>Danfoss_Material_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- All expedited deliveries are approximate, and based on manufacturing capacity at time of order/change order. --></help>
+        <label><!-- Estimated Ship Date --></label>
+        <name>Estimated_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Click on the &quot;Lookup&quot; icon to the right to find the appropriate part number you would like expedited, including generic product codes. --></help>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+        <relationshipLabel><!-- Deviated Request Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the quantity of items you would like expedited. --></help>
+        <label><!-- Quantity Expediting --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request --></label>
+        <name>Request__c</name>
+        <relationshipLabel><!-- Deviated Request Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Enter the date you would like to receive these goods. --></help>
+        <label><!-- Requested Ship Date --></label>
+        <name>Requested_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Standard lead time of this item in weeks --></help>
+        <label><!-- Standard Lead Time --></label>
+        <name>Standard_Lead_Time__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

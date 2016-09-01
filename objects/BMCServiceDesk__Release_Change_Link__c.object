@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>BMCServiceDesk__StdFormHelpCommonLink</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Stores linking data between releases and change requests.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>BMCServiceDesk__FKChange_Request__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Change Request</label>
+        <referenceTo>BMCServiceDesk__Change_Request__c</referenceTo>
+        <relationshipLabel>Linked Releases</relationshipLabel>
+        <relationshipName>Release_Change_Links</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__FKRelease__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Release</label>
+        <referenceTo>BMCServiceDesk__Release__c</referenceTo>
+        <relationshipLabel>Linked Change Requests</relationshipLabel>
+        <relationshipName>Release_Change_Links</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Release Change Link</label>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Release Change Links</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>BMCServiceDesk__Link_Change_to_Release</fullName>
+        <availability>online</availability>
+        <description>Link Change Request to Release</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Select and Link Change Requests to Release</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 671;
+var stdLayoutScreenHeight = 500;
+function stdScreenLeft(){
+	return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2));
+}
+
+function stdScreenTop(){
+	return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2));
+}
+var isCalledFromConsole = false;
+if( typeof consoleDetailElements != &apos;undefined&apos; ) isCalledFromConsole = true;
+
+if({!BMCServiceDesk__Release__c.BMCServiceDesk__State__c}) { 
+window.open(&quot;/apex/BMCServiceDesk__SearchAndLink?filterObjectId={!BMCServiceDesk__Release__c.Id}&amp;parentName=Release__c&amp;childName=Change_Request__c&amp;isCalledFromConsole=&quot;+isCalledFromConsole+&quot;&amp;filterClause=Inactive__c=false AND State__c=true&quot;,null,&quot;status = 1,height =&quot;+ stdLayoutScreenHeight+&quot;, width = &quot;+ stdLayoutScreenWidth+&quot;,left= &quot;+stdScreenLeft()+&quot;,top=&quot;+ stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+} 
+else { 
+     var label =&apos;{!JSENCODE($Label.BMCServiceDesk__ReleaseClosed)}&apos;; 
+     alert(label); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>BMCServiceDesk__Link_Release_to_Change</fullName>
+        <availability>online</availability>
+        <description>Link Release to Change Request</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Select and Link Release to Change Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var stdLayoutScreenWidth = 671; 
+var stdLayoutScreenHeight = 500; 
+
+function stdScreenLeft(){ 
+return parseInt((screen.availWidth/2) - (stdLayoutScreenWidth/2)); 
+} 
+
+function stdScreenTop(){ 
+return parseInt((screen.availHeight/2) - (stdLayoutScreenHeight/2)); 
+} 
+var isCalledFromConsole = false;
+if( typeof consoleDetailElements != &apos;undefined&apos; ) isCalledFromConsole = true;
+if({!BMCServiceDesk__Change_Request__c.BMCServiceDesk__State__c}) {window.open(&quot;/apex/BMCServiceDesk__SearchAndLink?filterObjectId={!BMCServiceDesk__Change_Request__c.Id}&amp;parentName=Change_Request__c&amp;childName=Release__c&amp;isCalledFromConsole=&quot;+isCalledFromConsole+&quot;&amp;filterClause=Inactive__c=false AND State__c=true&quot;,null,&quot;status = 1,height =&quot;+ stdLayoutScreenHeight+&quot;, width = &quot;+ stdLayoutScreenWidth+&quot;,left= &quot;+stdScreenLeft()+&quot;,top=&quot;+ stdScreenTop()+&quot;, resizable = 0,scrollbars=no&quot;);
+
+
+}
+else {
+var label =&apos;{!JSENCODE($Label.BMCServiceDesk__CrClosed)}&apos;;
+alert(label);
+}</url>
+    </webLinks>
+</CustomObject>

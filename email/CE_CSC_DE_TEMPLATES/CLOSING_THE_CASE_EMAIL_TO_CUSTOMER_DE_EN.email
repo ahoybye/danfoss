@@ -1,0 +1,23 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p><font face="Verdana,Helvetica,Sans-Serif" size="2">Dear Mr./Ms.:</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Your case {!Case.CaseNumber} with the subject {!Case.Subject} has been closed.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">We hope that we have dealt with your request to your satisfaction.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Please do not hesitate to contact us if you have any further questins.</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Kind regards,</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">Danfoss Customer Service Center</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">{!Case.OwnerFullName}</font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2"><br></font></p><p><font face="Verdana,Helvetica,Sans-Serif" size="2">*********Please Do Not Delete or Type below this Line*</font><font face="Verdana,Helvetica,Sans-Serif" size="2">********<br>{!Case.Thread_Id}</font></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>Important note! We have a new central phone number and
+e-mail address</span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE;'>Phone: </span><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE; mso-fareast-language: EN-GB;'>069 97533 044 </span></p><font face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 0pt;"><span lang="DE" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: DE; mso-fareast-language: EN-GB;'>E-Mail: </span><span lang="EN-US" style='font-family: "Verdana","sans-serif"; font-size: 9pt; mso-ansi-language: EN-US;'><a href="mailto:CS@danfoss.de"><span lang="DE" style="color: windowtext; mso-ansi-language: DE;">CS@danfoss.de</span></a></span></p><font face="Times New Roman">
+
+</font>]]></td>
+</tr>
+</table>

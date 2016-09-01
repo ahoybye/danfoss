@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__Assigned_Queue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the ID of the queue that is automatically assigned to a record based on the defined conditions.</description>
+        <externalId>false</externalId>
+        <label>Assigned Queue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Criteria_Advanced_Expression__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Criteria Advanced Expression</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Active / Inactive Criteria</description>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Postfix_Criteria_Advanced_Expression__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This captures post fix expression for criteria for owner mapping</description>
+        <externalId>false</externalId>
+        <label>Postfix Criteria Advanced Expression</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Suggested_Queue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Comma separated SF Id&apos;s for selected queues</description>
+        <externalId>false</externalId>
+        <label>Suggested Queue</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Suggested_Staff__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Comma separated SFId&apos;s for selected users</description>
+        <externalId>false</externalId>
+        <label>Suggested Staff</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <validationRules>
+        <fullName>BMCServiceDesk__NameUniqueCheck</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISNEW(),
+NOT(ISBLANK(VLOOKUP( $ObjectType.BMCServiceDesk__Suggested_Owner_Mapping__c.Fields.Name, $ObjectType.BMCServiceDesk__Suggested_Owner_Mapping__c.Fields.Name,NULLVALUE(Name, Name)))),
+IF(ISCHANGED(Name),
+IF((LOWER(Name) = LOWER(VLOOKUP($ObjectType.BMCServiceDesk__Suggested_Owner_Mapping__c.Fields.Name, $ObjectType.BMCServiceDesk__Suggested_Owner_Mapping__c.Fields.Name,Name))&amp;&amp;LOWER(PRIORVALUE(Name)) != Lower(Name)), TRUE, FALSE),
+FALSE))</errorConditionFormula>
+        <errorMessage>A record with this Suggestion Title already exists. Enter unique Suggestion Title.</errorMessage>
+    </validationRules>
+</CustomObject>

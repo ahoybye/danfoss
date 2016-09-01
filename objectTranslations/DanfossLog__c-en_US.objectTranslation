@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DanfossLog</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DanfossLogs</value>
+    </caseValues>
+    <fields>
+        <label><!-- LogText --></label>
+        <name>LogText__c</name>
+    </fields>
+    <fields>
+        <label><!-- LogTime --></label>
+        <name>LogTime__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

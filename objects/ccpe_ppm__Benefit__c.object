@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ccpe_ppm__Area__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Area</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>project_cloud__Area__c.project_cloud__Area__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <filterItems>
+                <field>project_cloud__Area__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Benefit</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>project_cloud__Area__c</referenceTo>
+        <relationshipLabel>Benefits</relationshipLabel>
+        <relationshipName>Benefits</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Investment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used for capturing what investment the benefit belongs to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field used for capturing what investment the benefit belongs to</inlineHelpText>
+        <label>Investment</label>
+        <referenceTo>ccpe_ppm__Investment__c</referenceTo>
+        <relationshipLabel>Benefits</relationshipLabel>
+        <relationshipName>Benefits</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Total_Planned_Benefit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Roll up summary of total planned benefits for this benefit</inlineHelpText>
+        <label>Total Planned Benefit</label>
+        <summarizedField>ccpe_ppm__Financial_Benefit_Schedule__c.ccpe_ppm__Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>ccpe_ppm__Financial_Benefit_Schedule__c.ccpe_ppm__Status__c</field>
+            <operation>equals</operation>
+            <value>Planned</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ccpe_ppm__Financial_Benefit_Schedule__c.ccpe_ppm__Benefit__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ccpe_ppm__Total_Realized_Benefit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How much benefit have we realized so far against the investment</inlineHelpText>
+        <label>Total Realized Benefit</label>
+        <summarizedField>ccpe_ppm__Financial_Benefit_Schedule__c.ccpe_ppm__Amount__c</summarizedField>
+        <summaryFilterItems>
+            <field>ccpe_ppm__Financial_Benefit_Schedule__c.ccpe_ppm__Status__c</field>
+            <operation>equals</operation>
+            <value>Actual</value>
+        </summaryFilterItems>
+        <summaryForeignKey>ccpe_ppm__Financial_Benefit_Schedule__c.ccpe_ppm__Benefit__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <validationRules>
+        <fullName>ccpe_ppm__Cannot_associate_with_parent_area</fullName>
+        <active>true</active>
+        <description>Only sub-areas can be associated with a benefit</description>
+        <errorConditionFormula>ISBLANK(ccpe_ppm__Area__r.project_cloud__Area__c)</errorConditionFormula>
+        <errorDisplayField>ccpe_ppm__Area__c</errorDisplayField>
+        <errorMessage>Benefits cannot be associated with parent areas.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,43 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<P>&nbsp;</P>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<P><FONT class=Apple-style-span color=#3333ff size=5 face=arial><STRONG>Congratulations!</STRONG></FONT></P>
+<P><FONT class=Apple-style-span size=3 face=arial></FONT>&nbsp;</P>
+<P><FONT class=Apple-style-span size=3 face=arial>The following <STRONG>{!Opportunity.Type}</STRONG> Opportunity for&nbsp;<B>{!Opportunity.Account}</B> has been Closed Won:</FONT> </P>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><BR></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><B>Opportunity Owner:</B>&nbsp;{!Opportunity.OwnerFullName}</DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><B>Parent Account:</B>&nbsp;{!Opportunity.Parent_Account__c}</DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><B>Opportunity Name:</B>&nbsp;{!Opportunity.Name}</DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><B>Production Start Date:</B>&nbsp;{!Opportunity.Production_Start_Date__c}</DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><B>Application(s):</B>&nbsp;{!Opportunity.00NC0000005M0j9}</DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><BR></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><B>Notes:</B></DIV>
+<DIV><FONT class=Apple-style-span face=arial>{!Opportunity.Description}</FONT></DIV>
+<P><FONT class=Apple-style-span face=arial></FONT>&nbsp;</P>
+<P><FONT class=Apple-style-span face=arial>As a reminder please verify the following are complete (if needed) prior to the receipt of the order:</FONT></P>
+<P>&nbsp;</P>
+<UL>
+<LI>Cross reference file updated 
+<LI>Material determination 
+<LI>ISIR inquiry 
+<LI>Drawing(s) sent to customer 
+<LI>Master quote updated</LI></UL>
+<P><FONT class=Apple-style-span color=#3366ff face=arial><SPAN style="FONT-FAMILY: 'Calibri','sans-serif'; FONT-SIZE: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><SPAN style="FONT-FAMILY: 'Calibri','sans-serif'; FONT-SIZE: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><SPAN style="FONT-FAMILY: 'Calibri','sans-serif'; FONT-SIZE: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"></SPAN></SPAN></SPAN></FONT>&nbsp;</P>
+<DIV><FONT class=Apple-style-span face=arial>Click <A href="{!Opportunity.Link}">here</A> to view the record.</FONT></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><BR></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><BR></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><BR></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><BR></DIV>
+<DIV style="FONT-FAMILY: arial; COLOR: rgb(0,0,0); FONT-SIZE: 12pt"><BR>
+<DIV><BR></DIV>
+<DIV><BR></DIV></DIV>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

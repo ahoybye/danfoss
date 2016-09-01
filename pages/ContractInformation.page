@@ -1,0 +1,62 @@
+<apex:page standardController="Contract__c">
+ <style type="text/css">
+        * {
+          font-family: Roboto;
+        }
+
+        div.message {
+          position: relative;
+          padding: 7px 0px 0px 15px;
+          margin: 3px 30px 0px 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+          background: #BBB;
+          color: #FFF;
+        }
+
+        div.message.lost {
+            color: #5A4A65;
+            background: #FFFFCC;
+        }
+	 	ul {padding-left:20px;}
+	 	ul li {
+	 		margin-left: -2px;	 
+	 	}
+        
+        div.message.won {
+            color: white;
+            background: green;
+        }
+    </style>
+
+    <link href="//fonts.googleapis.com/css?family=Roboto:300italic,400italic,400,300,600,700" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+   <!-- <div class="lost message" style="display: {!IF(Opportunity.Stagename = 'Closed Lost', '', 'none')}" >
+      <h2>Opportunity: This Opportunity is Closed Lost</h2>
+    </div> -->
+    <table width="100%">
+		<tr>
+			<td width="60%" style="vertical-align:top;">
+				 <div class="lost message" >
+			      <h3>Review and approval requirements:</h3>
+				  <ul>
+				  <li >Legal review is required anytime a contract must be approved by PS CEO or EC, or if the template is not an <b><u>unmodified</u></b> Danfoss Approved Template.</li>
+				  <li>PS CEO approval is required if the contact amount is 15M - 17M, depending on the contract type.</li>
+				  <li>EC approval is required if the contract amount is greater than 17M, depending on the contract type; or if the contract duration is greater than 3 years without a cancellation clause, the customer is a competitor, the application is high risk or the market is dominated by Danfoss Group.</li>
+				  </ul>
+			    </div>	
+			</td>
+			<td width="40%" style="vertical-align:top;">
+				 <div class="lost message" >
+			      <h3>Risk assessment requirements to submit for approval:</h3>
+				  <ul>
+				  <li>Contract must be reviewed with Legal if the Legal Review Required field has a green checkmark</li>
+				  <li>Business Impact must be reviewed</li>
+				  <li>Contract type and template must match the contract content</li>
+				  </ul>
+			    </div>	
+			</td>
+		</tr>
+	</table>
+   
+</apex:page>

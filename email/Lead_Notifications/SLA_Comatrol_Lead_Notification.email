@@ -1,0 +1,19 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<P style="FONT-SIZE: 12pt">Hello {!Receiving_User.Name}</P>
+<P style="FONT-SIZE: 12pt"><BR></P>
+<P><FONT face=arial>Leads:&nbsp;</FONT><FONT style="FONT-SIZE: 12pt" face=arial>{!Lead.Name}&nbsp;</FONT><FONT style="FONT-SIZE: 12pt" size=3 face=arial>&nbsp;requires your attention to</FONT><FONT style="FONT-SIZE: 12pt" face=arial>&nbsp;advance in the lead qualification process.</FONT></P>
+<P style="FONT-SIZE: 12pt"><BR></P>
+<P style="FONT-SIZE: 12pt">Click following link or copy into browser address bar to directly access Lead in salesforce.</P>
+<DIV style="FONT-SIZE: 12pt"><SPAN style="FONT-SIZE: 12pt">{!Lead.Link}</SPAN></DIV>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

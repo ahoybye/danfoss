@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>BMCServiceDesk__ActionName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to enter a unique alphanumeric identifier that you want to assign to the custom action.</inlineHelpText>
+        <label>Action Name</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to enter a description of the custom action. For example, you can create a custom action to open the Google website in a new browser window.</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__DisplayAs__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Display As</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Menu Item In Action Menu</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Icon Button on Toolbar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Form__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>From the list of options, select the form where this custom action is displayed as a menu command of the Actions menu.</inlineHelpText>
+        <label>Form</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__LaunchIn__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Launch In</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Remedyforce tab</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Browser tab</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Browser window</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__LaunchUrl__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field to enter URL of the external system or the Salesforce page that you want to access when you run this custom action.URL must begin with http:// or https://.</inlineHelpText>
+        <label>Launch URL</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Parameters__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parameters</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__ProfileAccess__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Profile Access</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This will identify that it is action or agent tool</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will identify that it is action or agent tool</inlineHelpText>
+        <label>Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Select this field if the custom action record is no longer valid, but the record has to be retained for compliance with the records retention policy.</inlineHelpText>
+        <label>Inactive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+</CustomObject>

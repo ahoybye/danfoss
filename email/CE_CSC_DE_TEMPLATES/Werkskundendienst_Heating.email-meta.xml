@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Anforderung des Werkskundendienstes - PDF-Formular zum Ausfüllen an den Kunden</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>CE_CSC_CER_Letterhead_Logo_Only</letterhead>
+    <name>Werkskundendienst Heating</name>
+    <style>formalLetter</style>
+    <subject>Ihre Anfrage Vorgang {!Case.CaseNumber}</subject>
+    <textOnly>Sehr geehrte(r) Frau  Herr,
+
+Sie möchten den Werkskundendienst anfordern?
+
+Bitte klicken Sie auf den Link und öffnen Sie das Formular mit einem Doppelklick, dann speichern Sie das Formular bitte ab.
+
+Bitte füllen Sie die erforderlichen Felder aus und senden uns das Formular per E-Mail an:
+
+Folgende E-Mail-Adresse:
+
+(E-Mail-Adresse)
+
+Möchten Sie das Formular per Fax schicken? Dann benötigen wir bitte Ihre Unterschrift.
+
+Hier finden Sie die Preisliste und das Formular zur Serviceanforderung.
+
+Weitere Informationen über unsere Produkte und Dienstleistungen finden Sie unter www.fernwaerme.danfoss.de
+
+Vielen Dank
+
+
+
+{!Case.OwnerFirstName} {!Case.OwnerLastName}
+Customer Service Central European Region
+
+Danfoss GmbH
+Carl-Legien-Straße 8, 63073 Offenbach/Main, Germany
+_______________________________________________
+Achtung, neue Kontaktdaten!!!
+Tel.:     +49 69 97533																														044
+E-Mail:  CS@danfoss.de
+_______________________________________________
+http://www.danfoss.de
+............
+Geschäftsführer: Ole Møller-Jensen
+Amtsgericht Offenbach am Main, Handelsregister HRB 41812
+Steuer-Nr. 035 225 07148, USt-ID. DE811179653
+............
+P    Go green - keep it on the screen     J
+
+Please consider the environment before printing this e-mail.
+*****
+This message and any files transmitted with it may be confidential and are intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system.
+*****
+
+Bitte diese Linie nicht löschen oder Text unterhalb dieser Linie einfügen {!Case.Thread_Id}</textOnly>
+    <type>html</type>
+</EmailTemplate>

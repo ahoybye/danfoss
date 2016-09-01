@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>ccpt__Access_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Access Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Manage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>View</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ccpt__Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ccpt__Cost__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Hourly Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ccpt__IsAttended__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Attended</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ccpt__Meeting__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Meeting</label>
+        <referenceTo>ccpt__Meeting__c</referenceTo>
+        <relationshipName>Attendees</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ccpt__User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Attendees</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <validationRules>
+        <fullName>ccpt__Access_Level_User_Only</fullName>
+        <active>true</active>
+        <description>When the attendee is a user an access level is required. If the attendee is a contact the access level must be blank.</description>
+        <errorConditionFormula>IF(ISBLANK(ccpt__User__c),
+	NOT(ISBLANK(ccpt__Access_Level__c)),
+/*ELSE*/
+	ISBLANK(ccpt__Access_Level__c)
+)</errorConditionFormula>
+        <errorDisplayField>ccpt__Access_Level__c</errorDisplayField>
+        <errorMessage>User attendees require an access level. Contact attendees must not have an access level defined.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ccpt__Attendee_Required</fullName>
+        <active>true</active>
+        <description>A Meeting Attendee requires a person t o be selected, either a Contact or User</description>
+        <errorConditionFormula>IF(ISBLANK(ccpt__User__c), 0, 1) + IF(ISBLANK(ccpt__Contact__c), 0, 1) != 1</errorConditionFormula>
+        <errorMessage>A Meeting Attendee requires a single User or Contact to be specified.</errorMessage>
+    </validationRules>
+</CustomObject>

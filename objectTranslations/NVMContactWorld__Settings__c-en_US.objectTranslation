@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <help><!-- Optional control flags --></help>
+        <label><!-- Flags --></label>
+        <name>NVMContactWorld__Flags__c</name>
+    </fields>
+    <fields>
+        <help><!-- URL used to access ContactWorld API.  Please ensure that it is in the list of allowed Remote Sites. --></help>
+        <label><!-- Base URL --></label>
+        <name>NVMContactWorld__baseURL__c</name>
+    </fields>
+    <fields>
+        <help><!-- API call time out time in milliseconds --></help>
+        <label><!-- Call Time Out (ms) --></label>
+        <name>NVMContactWorld__callTimeOutMS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client Id --></help>
+        <label><!-- Client Id --></label>
+        <name>NVMContactWorld__clientId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Secret --></label>
+        <name>NVMContactWorld__clientSecret__c</name>
+    </fields>
+</CustomObjectTranslation>

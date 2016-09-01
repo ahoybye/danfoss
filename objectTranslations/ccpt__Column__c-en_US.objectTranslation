@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Board --></label>
+        <name>ccpt__Board__c</name>
+        <relationshipLabel><!-- Columns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Card Count --></label>
+        <name>ccpt__Card_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsComplete --></label>
+        <name>ccpt__IsComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Hold --></label>
+        <name>ccpt__OnHold__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>ccpt__Position__c</name>
+    </fields>
+</CustomObjectTranslation>

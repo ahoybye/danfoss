@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>34.0</apiVersion>
+    <available>true</available>
+    <description>Assign case to Partner – Mail to Partner</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ASSIGN CASE TO PARTNER - MAIL TO PARTNER</name>
+    <style>none</style>
+    <type>visualforce</type>
+</EmailTemplate>

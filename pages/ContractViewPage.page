@@ -1,0 +1,92 @@
+<apex:page standardcontroller="Contract__c" extensions="ContractAttachmentsExtension,ContractApprovalsExtension">
+    <apex:messages />
+    <apex:detail subject="{!Contract__c.Id}" relatedList="true" showChatter="true" inlineEdit="true"/>    
+    <apex:form >                    
+        <apex:pageBlock tabStyle="Contract__c" title="Approval / Hard Copy Tasks" rendered="{!!legacy}">
+            <apex:pageBlockTable value="{!Tasks}" var="rec">
+                <apex:column width="130px" headerValue="Action"> 
+                    <apex:outputLink rendered="{!AND(rec.Status=='Pending', rec.OwnerId == $User.Id)}" style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Close, rec.Id, [retURL='/'+rec.WhatId])}">Approve</apex:outputLink>
+                    <apex:outputText rendered="{!rec.Status!='Pending'}" value=" "/>
+                </apex:column>
+                <apex:column width="120px"> 
+                    <apex:facet name="header">Role</apex:facet>
+                    <apex:outputtext value="{!SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(rec.Contract_Stage__c, ' DIST', ''), ' OEM', ''), '__c', ''), '_', ' '), 'Apl', '')}"/>               
+                </apex:column>
+                <apex:column width="200px" headerValue="Approver">
+                    <apex:outputText value="{!rec.Owner.Name}" rendered="{!contains(rec.Subject,'CNT-')}"/>
+                    <apex:outputText value="{!rec.Subject}" rendered="{!NOT(contains(rec.Subject,'CNT-'))}"/>
+                </apex:column>
+                <apex:column width="125px">
+                    <apex:facet name="header">Status</apex:facet>
+                    <apex:outputtext value="{!SUBSTITUTE(rec.Status, 'Cancelled', '')}"/> 
+                </apex:column> 
+                <apex:column width="120px" headerValue="Date">
+                    <apex:outputText value="{0,date,MM/dd/yyyy HH:mm}">
+                        <apex:param value="{!rec.Contract_Approved_Time__c}"/>
+                    </apex:outputText>
+                </apex:column>
+                <apex:column value="{!rec.Description}" headerValue="Comments"/> 
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Contract Documents">
+            <apex:pageblockButtons location="top">
+                <apex:commandLink action="{!AddAttachment}" value="Attach Contract Document" target="_parent" styleClass="btn" style="padding: 2px 3px;text-decoration: none;" rendered="{!hasPermission || hasFullPermission}"/>
+           </apex:pageblockButtons>   
+           
+           <apex:pageblocktable rendered="{!Attachments.size > 0}" value="{!Attachments}" var="rec" id="rough">
+                <apex:column headerValue="Action" width="150" > 
+                    <apex:outputLink style="color:#015ba7;text-decoration:none;" value="/apex/ContractAttach?Id={!rec.contAttId}" target="_parent" rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+                    Edit Type
+                    </apex:outputLink>
+                    
+                    <apex:outputpanel rendered="{!Contract.CreatedById==$User.Id || Contract.OwnerId==$User.Id || hasFullPermission}">
+                    &nbsp;|&nbsp;
+                    </apex:outputpanel>
+                                    
+                    <apex:outputLink style="color:#015ba7;text-decoration:none;" value="/servlet/servlet.FileDownload?file={!rec.attach.id}" target="_blank">
+                    View
+                    </apex:outputLink>
+                                    
+                    <apex:outputpanel rendered="{!hasDeletePermission || hasFullPermission}">
+                    &nbsp;|&nbsp;
+                    </apex:outputpanel>
+                                    
+                    <apex:commandLink style="color:#015ba7;text-decoration:none;" value="Del" action="{!deleteAttachment}" onclick="if(!confirm('Are you sure?')){return};" rerender="rough" rendered="{!hasDeletePermission || hasFullPermission}">
+                         <apex:param name="attachmentToDel" value="{!rec.attach.id}" assignTo="{!attachmentToDel}" /> 
+                         <apex:param name="contAttToDel" value="{!rec.contAttId}" assignTo="{!contAttToDel}" /> 
+                    </apex:commandLink>                 
+                </apex:column> 
+                <apex:column value="{!rec.contAttachment.Type__c}" headerValue="Type"/>
+                <apex:column value="{!rec.attach.Name}" headerValue="Title"/>
+                <apex:column value="{!rec.contAttachment.CreatedDate}" headerValue="Created"/>
+            </apex:pageblocktable>
+        </apex:pageBlock>
+            
+        <apex:pageBlock title="Collaboration Tasks" rendered="{!!legacy}">
+            <apex:pageBlockButtons location="Top">
+                <apex:commandLink value="New Task" action="{!createTask}" styleClass="btn" style="padding: 2px 3px;text-decoration: none;" title="New Task"/>
+            </apex:pageBlockButtons>
+            <apex:outputLabel rendered="{!CollabTasks==null || CollabTasks.size<1}">No records to display</apex:outputLabel>
+            <apex:pageBlockTable value="{!CollabTasks}" var="task" rendered="{!CollabTasks.size > 0}">
+                <apex:column headerValue="Action">                              
+                    <apex:outputPanel rendered="{!task.Status=='Completed'}">
+                        <apex:image value="/img/func_icons/util/checkmark16.gif"></apex:image>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!task.Status!='Completed' && task.OwnerId == $User.Id}">
+                        <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Edit, task.Id, [retURL='/'+task.WhatId])}">Edit</apex:outputLink>
+                        &nbsp;|&nbsp;
+                        <apex:outputLink style="color:#015ba7;text-decoration:none;" value="{!URLFOR($Action.Task.Close, task.Id, [retURL='/'+task.WhatId])}">Complete</apex:outputLink>
+                    </apex:outputPanel>         
+                </apex:column>
+                <apex:column value="{!task.OwnerId}"/>
+                <apex:column headerValue="Subject">
+                    <apex:outputLink value="{!URLFOR($Action.Task.View,task.id)}" target="_parent">{!task.Subject}</apex:outputLink>
+                </apex:column>      
+                <apex:column value="{!task.Description}"/>
+                <apex:column value="{!task.Status}"/>
+                <apex:column value="{!task.ActivityDate}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

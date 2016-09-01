@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>BMCServiceDesk__FKFilter_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores name of the advanced search filter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores name of the advanced search filter.</inlineHelpText>
+        <label>Filter Name</label>
+        <referenceTo>BMCServiceDesk__Advanced_Search_Filter__c</referenceTo>
+        <relationshipLabel>Advanced Search Filter Criteria</relationshipLabel>
+        <relationshipName>Advanced_Search_Filter_Criteria</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Field_Info__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores API name of the fields used in the filter criteria along with the namespace.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores API name of the fields used in the filter criteria along with the namespace.</inlineHelpText>
+        <label>Field Info</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Grouping_Operator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the value for grouping operator. For example, the value stored for the AND condition is 1.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the value for grouping operator. For example, the value stored for the AND condition is 1.</inlineHelpText>
+        <label>Grouping Operator</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Operand__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the value of filter condition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the value of filter condition.</inlineHelpText>
+        <label>Operand</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Operator__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores operators used in the filter criteria. For example, = and LIKE.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores operators used in the filter criteria. For example, = and LIKE.</inlineHelpText>
+        <label>Operator</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BMCServiceDesk__Order_Index__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the order in which the filter criteria are applied.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the order in which the filter criteria are applied.</inlineHelpText>
+        <label>Order Index</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

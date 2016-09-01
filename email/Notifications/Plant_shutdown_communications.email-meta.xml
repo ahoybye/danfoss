@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Plant Information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Danfoss_Power_Solutions</letterhead>
+    <name>Plant Shutdown Communications</name>
+    <style>formalLetter</style>
+    <subject>Plant Closure Due to Inclement Weather 13Feb2014</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+
+The Danfoss Power Solutions Plant in Easley South Carolina has been closed today due to inclement weather.
+
+
+There will be no receiving or shipping activities today.
+
+
+Your Danfoss Customer Service Representative is available to answer any questions or urgent needs you may have.
+
+
+We are sorry for the inconvenience.
+
+
+Best regards,
+
+
+Danfoss Power Solutions
+Danfoss Power Solutions (US)  2800 East 13th Street, Ames, IA 50010</textOnly>
+    <type>html</type>
+</EmailTemplate>

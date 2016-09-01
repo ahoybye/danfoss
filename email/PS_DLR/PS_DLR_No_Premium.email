@@ -1,0 +1,24 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<font face="Verdana, Helvetica, sans-serif" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Dear&nbsp;</font><font face="Verdana, Helvetica, sans-serif">{!Deviated_Lead_time_Request__c.CreatedBy},</font><div style="color: rgb(0, 0, 0);"><font face="Verdana, Helvetica, sans-serif" style="background-color: rgb(255, 255, 255);"><br></font></div><div><font face="Verdana, Helvetica, sans-serif" style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">The following request has not been reviewed by our production
+department.<br></font><font style="font-family: Verdana, Helvetica, sans-serif; font-size: 12pt;"><br>Deviated Lead-time Request:&nbsp;</font><span style="font-family: Verdana, Helvetica, sans-serif; font-size: 12pt;">{!Deviated_Lead_time_Request__c.Name}</span><p class="MsoNormal"><font style="background-color: rgb(255, 255, 255);" face="Verdana, Helvetica, sans-serif"><font style="color: rgb(0, 0, 0);">Purchase Order Number:&nbsp;</font>{!Deviated_Lead_time_Request__c.PO_Number__c}<br><font style="color: rgb(0, 0, 0);">
+Account:&nbsp;</font>{!Deviated_Lead_time_Request__c.Account__c}<br><font style="color: rgb(0, 0, 0);">
+Reason: </font><b style="color: rgb(0, 0, 0);">Premium
+required, but missing. <o:p></o:p></b></font></p>
+
+<p class="MsoNormal"><font face="Verdana, Helvetica, sans-serif" style="background-color: rgb(255, 255, 255);">The current standard lead-time for the product requested will apply<b>&nbsp;</b>after receipt of
+purchase order.<br></font><span style="background-color: rgb(255, 255, 255); font-family: Verdana, Helvetica, sans-serif; font-size: 12pt;"><br>We have not investigated expedited delivery dates because
+the expedite premium was not included with this request. &nbsp;If the commercial conditions for early
+shipment change, please submit a new request for best availability from Danfoss
+Power Solutions.<br></span><span style="font-family: Verdana, Helvetica, sans-serif; font-size: 12pt;"><br></span><span style="background-color: rgb(255, 255, 255);">https://danfoss.secure.force.com/PartnerLink/{!Deviated_Lead_time_Request__c.Id}</span></p><div><font face="Verdana, Helvetica, sans-serif"><br></font></div><div><font face="Verdana, Helvetica, sans-serif">If further information is required, please contact your Danfoss Account Manager,&nbsp;{!Deviated_Lead_time_Request__c.Account_Owner__c}<br></font><span style="background-color: rgb(255, 255, 255); font-family: Verdana, Helvetica, sans-serif; font-size: 12pt;"><br>Thank you!</span></div></div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <fields>
+        <fullName>Account_Is__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related to</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Relationships - Related To</relationshipLabel>
+        <relationshipName>Account_Relationships</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Of__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related to</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Relationships - Related From</relationshipLabel>
+        <relationshipName>Account_Relationships_Of</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Back_to_Account__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK((&apos;/&apos; +  Account_Is__r.Id ),&apos;Back to Account&apos;, &apos;_top&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Go Back</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RelationshipType__c</fullName>
+        <externalId>false</externalId>
+        <label>Relationship Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>is Responsible Partner for</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is Supplied by</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is Bill–to Party of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is Payer of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is Subsidiary of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is Customer of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>uses Competitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is End User of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is OEM of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is Consultant of</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Relationship__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account_Is__r.Name + &quot; &quot; + Text(RelationshipType__c) + &quot; &quot; + Account_Of__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Relationship</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

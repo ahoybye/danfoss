@@ -1,0 +1,113 @@
+<messaging:emailTemplate subject="Case Assigned to you: {!relatedTo.CaseNumber} – {!relatedTo.Subject} [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]" 
+                         recipientType="Contact" 
+                         relatedToType="Case">
+
+<messaging:htmlEmailBody >
+    <html>
+        <apex:image id="Logo" value="https://danfoss--c.na8.content.force.com/servlet/servlet.ImageServer?id=015C0000001583h&oid=00DC0000000Qm80"/>
+        
+        <body>
+            <font face="verdana" size="3px">
+            <p>Dear Mr./Ms. {!relatedTo.Assigned_To_Channel_Partner__r.Name},</p>
+            <p/>
+            <p>We have received an inquiry from {!relatedTo.Contact.Name}, {!relatedTo.Account.Name} company. We hereby forward this inquiry to you. For more details about the case, please see here:</p>
+            <p/>
+            <p><B>Customer Information:</B></p>
+            <p>Name of contact person: {!relatedTo.Contact.Name}<br/>
+            Contact Details: {!relatedTo.Contact.Phone}/ {!relatedTo.Contact.MobilePhone}<br/>
+            Contact Email: {!relatedTo.Contact.Email}</p>
+            <p></p>
+            <p/>
+            <p><B>Case information:</B></p>
+            <p>Request Type: {!relatedTo.Subject}<br/>
+            Description: {!relatedTo.Description}<br/>
+            Danfoss Sales Person: {!relatedTo.Owner.Name}</p>
+            <p></p>
+            <p/>
+            <p><B>Product Details:</B></p>
+            <P/>
+            <table border="1" >
+                <tr>
+                    <th>Article number</th>
+                    <th>Material description</th>
+                    <th>Quantity ordered</th>
+                </tr>
+                <apex:repeat var="cp" value="{!relatedTo.Case_Products__r}">
+                <tr>
+                    <td>{!cp.Product__r.Name}</td>
+                    <td>{!cp.Product__r.Product_Line__c}</td>
+                    <td>{!cp.Quantity__c}</td>
+                </tr>
+                </apex:repeat> 
+            </table>
+            <p/>
+            <p>Please reply to us with this same email and inform usabout the steps you have taken to close the case. </p>
+            <p/>
+            <p>NB: Please do not change the subject in your reply to us. </p>
+            <p>Thank you and kind regards,<br/>
+            Danfoss Customer Service Center</p>
+            <br/><br/><br/><br/><br/>                  
+            <p>Important note! We have a new central phonenumber and e-mail address: <br/>
+            Phone.: +43 1253 022 322<br/>
+            E-mail: CS@danfoss.at </p>
+            <P/>
+            <P/>
+            <p>*********Please Do Not Delete or Type below this Line*********<br/>
+            [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]</p>
+            Danfoss GesmbH<br/>
+            Danfoss Straße 8, 2353 Guntramsdorf, Austria<br/>
+            Firma: Danfoss Gesellschaft m. b. H., Rechtsform: Gesellschaft mit<br/>
+            beschränkter Haftung, Sitz: Guntramsdorf, Firmenbuchnummer: FN 62804 i,<br/>
+            Firmenbuchgericht: Landesgericht Wiener Neustadt, DVR-Nr. 0586773 
+
+
+            </font>
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+    <messaging:plainTextEmailBody >
+    Dear {!relatedTo.Assigned_To_Channel_Partner__r.Name},
+    
+    We have a request from {!relatedTo.Contact.Name}, {!relatedTo.Account.Name} company. This request is being forwarded to you. Please find the case details below
+    
+    Customer details:
+    Contact Name: {!relatedTo.Contact.Name}
+    Contact Details: {!relatedTo.Contact.Phone}/ {!relatedTo.Contact.MobilePhone}
+    Contact Email: {!relatedTo.Contact.Email}
+    
+    Case details:
+    Request Type: {!relatedTo.RecordType.Name}
+    Description: {!relatedTo.Description}
+    Danfoss Sales Person: {!relatedTo.Owner.Name}
+    
+    Product Details:
+    [Product Code]  -  [Product Description]  -  [Requested Quantity]
+    <apex:repeat var="cp" value="{!relatedTo.Case_Products__r}">
+      [ {!cp.Product__r.Name} ] - [ {!cp.Product__r.Product_Line__c} ] - [ {!cp.Quantity__c} ]
+    </apex:repeat>
+    
+    Please reply to us with this same email and inform us about the steps you have taken to close the case. 
+    
+    NB: Please do not change the subject in your reply to us.
+    
+    Thanks and best regards,
+    Danfoss Customer Service Center
+    
+    Important note! We have a new central phone number and e-mail address
+    Phone: +43 1253 022 322
+    E-Mail Austria: CS@danfoss.at
+
+
+    *********Please Do Not Delete or Type below this Line*********
+    [ref:_{!LEFT($Organization.Id,4)}{!MID($Organization.Id,10,6)}._{!LEFT(relatedTo.Id,4)}{!MID(relatedTo.Id,10,6)}:ref]
+    
+    Danfoss GesmbH
+    Danfoss Straße 8, 2353 Guntramsdorf, Austria
+    Firma: Danfoss Gesellschaft m. b. H., Rechtsform: Gesellschaft mit
+    beschränkter Haftung, Sitz: Guntramsdorf, Firmenbuchnummer: FN 62804 i,
+    Firmenbuchgericht: Landesgericht Wiener Neustadt, DVR-Nr. 0586773 
+
+
+
+    </messaging:plainTextEmailBody>
+</messaging:emailTemplate>
