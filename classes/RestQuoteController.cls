@@ -2,24 +2,24 @@
 global with sharing class RestQuoteController {
     
     @HttpGet
-	global static serviceResult getQuoteData() {
+    global static serviceResult getQuoteData() {
         RestContext.response.addHeader('Content-Type', 'text/plain');
          
         serviceResult result =  new serviceResult();
         String configitQuoteId = RestContext.request.params.get('configitQuoteId');
          
         try {
-         	// Get the configitQuoteId from the parameterlist in the REST call         	
+            // Get the configitQuoteId from the parameterlist in the REST call          
             Quote q = [SELECT Id, Name, ConfigitQuoteId__c, Status, QuoteNumber, ConfigitQuoteRef__c, ConfigitQuoteRev__c, opportunityId, Requested_Quote_Delivery_Date__c FROM Quote WHERE ConfigitQuoteId__c=:configitQuoteId LIMIT 1];
             result.status='OK';
-        	result.message='';
+            result.message='';
                
             result.return_url = URL.getSalesforceBaseUrl().toExternalForm() + '/' + q.id;            
             result.quote = q;
             
         } catch (Exception ex) {
-        	result.status='ERROR';
-        	result.message='Unable to find quote (' + ConfigitQuoteId + ')';
+            result.status='ERROR';
+            result.message='Unable to find quote (' + ConfigitQuoteId + ')';
         }        
         
         return result;
@@ -27,7 +27,7 @@ global with sharing class RestQuoteController {
     }
     
     @HttpPost   
-    global static serviceResult createQuote(String configitQuoteId, String configitQuoteRev, String configitQuickRefId, String quoteName, String accountId, String opportunityId, String contactId, String sapAccountId, String sapQuoteId, String salesOrg, String distribChannel, String salesDivision, String currencyCode, Date validFrom, Date validTo, Date priceValidFrom, Date priceValidTo, Date customerRequestDate, String customerRequestNumber, string userId, String sapDocNum, List<QLI> quoteLineItems) {
+    global static serviceResult createQuote(String configitQuoteId, String configitQuoteRev, String configitQuickRefId, String quoteName, String accountId, String opportunityId, String contactId, String sapAccountId, String sapQuoteId, String salesOrg, String distribChannel, String salesDivision, String currencyCode, Date validFrom, Date validTo, Date priceValidFrom, Date priceValidTo, Date customerRequestDate, String customerRequestNumber, string userId, String sapDocNum, List<QLI> quoteLineItems, Date quoteDeliveryDate) {
         serviceResult result =  new serviceResult();
         result.message='';
         result.status='OK';
@@ -112,23 +112,23 @@ global with sharing class RestQuoteController {
                         /* - DO NOT UPDATE STAKEHOLDER -
                         if (stakeholderMapping!=null) {
                             try { 
-                            	stakeholderMapping.Associated_Account__c = AccountId;
-                            	stakeholderMapping.SubAccount__c = sa.Sub_Account__c;
-								upsert stakeholderMapping;
+                                stakeholderMapping.Associated_Account__c = AccountId;
+                                stakeholderMapping.SubAccount__c = sa.Sub_Account__c;
+                                upsert stakeholderMapping;
                             } catch (exception ex) {
                                 result.status='Warning';
-                				result.message='Not possible to update stakeholder mapping ' + ex.getMessage();
+                                result.message='Not possible to update stakeholder mapping ' + ex.getMessage();
                             }
                                 
                         }
-						*/
+                        */
                     }                                        
                 } catch (exception ex) {                    
                     result.status='OK';
                     result.message='Unable to find Sales Area (' + salesArea + ') for SAP# ' + sapAccountId;
                     //return result;
                 }
-                				                
+                                                
                 // only update contact to the opportunity - if it is related to an opportunity
                 if (accountId == o.AccountId && contactId!=null && contactId!='') {
                     o.Contact__c=contactId;
@@ -150,7 +150,7 @@ global with sharing class RestQuoteController {
             }
             try {
                 // Create stakeholder mapping - if the opportunity is just created            
-                if (newOpportunity) {				
+                if (newOpportunity) {               
                     Associated_Account__c aa = new Associated_Account__c(
                         Associated_Account__c = o.AccountId,
                         Contact__c = o.Contact__c,
@@ -174,8 +174,8 @@ global with sharing class RestQuoteController {
                             aa.SubAccount__c = o.Sub_Account__c;
                             aa.Type_of_Association__c = 'Main Account';
                             update aa;    
-                        }                                        	
-                    }				                
+                        }                                           
+                    }                               
                 }
             } catch (exception ex) {
                 result.status='WARNING'; // to be changed to Warning
@@ -184,10 +184,10 @@ global with sharing class RestQuoteController {
             }
             
             if (createQuote) {
-                q = new Quote(ConfigitQuoteId__c = configitQuoteId, OpportunityId=opportunityId, Status='In Progress');
+                q = new Quote(ConfigitQuoteId__c = configitQuoteId, OpportunityId=opportunityId, Status='In Progress', Requested_Quote_Delivery_Date__c = quoteDeliveryDate);
                 q.RecordTypeId = [SELECT Id FROM RecordType WHERE SObjectType='Quote' AND developername='CE_Quote' LIMIT 1].Id;
                 if (currentUserid!=null)  {
-                	q.CreatedBy_Configit__c = currentUserid;
+                    q.CreatedBy_Configit__c = currentUserid;
                     q.CreatedDate_Configit__c = System.now();
                     q.Responsible__c = currentUserid;
                 }
@@ -203,6 +203,10 @@ global with sharing class RestQuoteController {
                 q.Status='In Progress';
             }
             
+            if(q.Requested_Quote_Delivery_Date__c == null && quoteDeliveryDate != null){
+                q.Requested_Quote_Delivery_Date__c = quoteDeliveryDate;
+            }
+            
             q.ConfigitQuoteRev__c = configitQuoteRev;
             q.ConfigitQuoteRef__c = configitQuickRefId;
             q.Valid_From__c = ValidFrom;
@@ -212,7 +216,7 @@ global with sharing class RestQuoteController {
             q.Price_Valid_From__c = priceValidFrom;                
             q.Price_Valid_To__c = priceValidTo;    
             q.Customer_Request_Date__c = customerRequestDate;    
-			// Added February 23 2016 - Allan Hoybye
+            // Added February 23 2016 - Allan Hoybye
             q.ConfigitSyncMessage__c = 'OK';            
             if (!String.isEmpty(customerRequestNumber) && customerRequestNumber.length()>255) {
                 result.status='Warning';
@@ -226,14 +230,14 @@ global with sharing class RestQuoteController {
             q.External_Sales_Org__c = salesOrg;
             
             if (sapDocNum != null) {            
-            	q.SAP_Quote_ID__c = sapDocNum;
+                q.SAP_Quote_ID__c = sapDocNum;
                 if (sapDocNum.length()>1)  {
-                	q.Status='Accepted';    
+                    q.Status='Accepted';    
                 }                
             }
                 
             if (o.Originating_Case__c!=null) {
-            	q.Originating_Case__c=o.Originating_Case__c;          
+                q.Originating_Case__c=o.Originating_Case__c;          
             }
             
             //q.Stakeholder__c = stakeholderMappingId;
@@ -247,7 +251,7 @@ global with sharing class RestQuoteController {
             q.Pricebook2Id = pb2Id;
             
             if (currentUserid!=null)  {
-            	q.Last_ModifiedBy_Configit__c = currentUserid;				
+                q.Last_ModifiedBy_Configit__c = currentUserid;              
             } else {
                 q.Last_ModifiedBy_Configit__c = null;
             }
@@ -268,10 +272,10 @@ global with sharing class RestQuoteController {
             List<QuoteLineItem> qliList = [SELECT Id FROM QuoteLineItem WHERE QuoteId=:q.Id];
             
             if (qliList.size()>0) {
-            	delete qliList;
+                delete qliList;
             
-            	//List<QuoteLineItem> qliList = new List<QuoteLineItem>();
-            	qliList.clear();
+                //List<QuoteLineItem> qliList = new List<QuoteLineItem>();
+                qliList.clear();
             } else {
                 qliList = new List<QuoteLineItem>();
             }
@@ -287,15 +291,15 @@ global with sharing class RestQuoteController {
             Map<String, Id> pbeMap = new Map<String, Id>();
             // put all pb entries into map - for use when creating quote line items
             for (PricebookEntry pbe : PBEs) {
-            	  pbeMap.put(pbe.Product2.SAP_Material_Code_CE__c, pbe.Id);
+                  pbeMap.put(pbe.Product2.SAP_Material_Code_CE__c, pbe.Id);
             }
             
             for (QLI cqli : quoteLineItems ) {
                 string test;
                 
                 if (String.isEmpty(cqli.optAltStatus) || cqli.optAltStatus.equalsIgnoreCase('standard') ) {
-                	//QuoteLineItem qli = new QuoteLineItem(ConfigitQuoteLineId__c = cqli.configitLineId);
-                	QuoteLineItem qli = new QuoteLineItem();
+                    //QuoteLineItem qli = new QuoteLineItem(ConfigitQuoteLineId__c = cqli.configitLineId);
+                    QuoteLineItem qli = new QuoteLineItem();
                     //qli.sortOrder=cqli.sortOrder;
                     //qli.CurrencyIsoCode=cqli.currencyCode;
                     qli.ConfigitQuoteLineId__c = cqli.configitLineId;
@@ -305,23 +309,23 @@ global with sharing class RestQuoteController {
                     qli.Quantity = cqli.quantity;
                     qli.QuoteId = q.Id;
                     
-                	//Id pId=[SELECT Id FROM Product2 WHERE SAP_Material_Code_CE__c=:cqli.materialID].Id;
-                	try {
+                    //Id pId=[SELECT Id FROM Product2 WHERE SAP_Material_Code_CE__c=:cqli.materialID].Id;
+                    try {
                         // Id pbeId=[SELECT Id FROM PricebookEntry WHERE Pricebook2Id=:pb2Id and Product2.SAP_Material_Code_CE__c=:cqli.materialID and CurrencyIsoCode=:currencyCode].Id;
                         if (pbeMap.containsKey(cqli.materialID)) {
-                        	qli.PricebookEntryId=pbeMap.get(cqli.materialID);
-                    		qliList.add(qli);
+                            qli.PricebookEntryId=pbeMap.get(cqli.materialID);
+                            qliList.add(qli);
                         } else {
                             result.status='Warning';   // to be changed to Warning                                     
-                    		result.message += 'Invalid material code or currency for ' + cqli.description + ' (material Id: ' + cqli.materialID + ')\n';
+                            result.message += 'Invalid material code or currency for ' + cqli.description + ' (material Id: ' + cqli.materialID + ')\n';
                         }
-                    	//qli.Product2Id = pId;
-                    	
-                	} catch (exception e) {  // might not be needed - after putting it into a map              
-                    	result.status='Warning';   // to be changed to Warning                                     
-                    	result.message += 'Invalid material code or currency for ' + cqli.description + ' (material Id: ' + cqli.materialID + ')\n';
-                    	//return result;
-                	}    
+                        //qli.Product2Id = pId;
+                        
+                    } catch (exception e) {  // might not be needed - after putting it into a map              
+                        result.status='Warning';   // to be changed to Warning                                     
+                        result.message += 'Invalid material code or currency for ' + cqli.description + ' (material Id: ' + cqli.materialID + ')\n';
+                        //return result;
+                    }    
                 } else {
                     containsAltOptMaterials = true;
                 }
@@ -329,7 +333,7 @@ global with sharing class RestQuoteController {
             //Schema.SObjectField f = QuoteLineItem.ConfigitQuoteLineId__c;
             //Database.UpsertResult [] cr = Database.upsert(qliList, f, false);
             //for (Database.UpsertResult ur : cr) {
-            //	system.debug('$$ ' +  ur);
+            //  system.debug('$$ ' +  ur);
             //}
             insert qliList;
             
@@ -361,18 +365,18 @@ global with sharing class RestQuoteController {
         String type = req.params.get('type');
         String extension = req.params.get('extension');
         if (extension==null || extension=='') {
-        	extension='pdf';
+            extension='pdf';
         }
         Quote q = [ Select ID, Name, status, quotenumber, Requested_Quote_Delivery_Date__c from Quote where ConfigitQuoteId__c = :configitQuoteId];
         /*
         if (extension=='pdf') {
-        	QuoteDocument qd = new QuoteDocument();
-        	qd.document = req.requestBody;
-			qd.quoteId = q.Id;
+            QuoteDocument qd = new QuoteDocument();
+            qd.document = req.requestBody;
+            qd.quoteId = q.Id;
             insert qd;
-        	//qd.Name=q.name + '_' + configitRevisionId + '.' + extension;
-       	}
-		*/
+            //qd.Name=q.name + '_' + configitRevisionId + '.' + extension;
+        }
+        */
         string filename = q.name + '_R' + (integer.valueof(configitRevisionId)+1) + '.' + extension;
         List<Attachment> attchs = [select Id from attachment where parentid=:q.id and (description = 'print' or name=:filename)];
         if (attchs!=null) {
@@ -380,12 +384,12 @@ global with sharing class RestQuoteController {
         }
             
         Attachment a = new Attachment();
-		a.ParentId = q.Id;
-		a.Name = filename;
-		a.Body = req.requestBody;
+        a.ParentId = q.Id;
+        a.Name = filename;
+        a.Body = req.requestBody;
         a.Description=type;
-    	insert a;
-    	return q;        
+        insert a;
+        return q;        
     }
   /*                            
     public static Id getRecordTypeId(SObjectType entity, String recordTypeName) {
@@ -398,7 +402,7 @@ global with sharing class RestQuoteController {
         } catch(Exception e) {
             return null;
         }
-	}
+    }
 */    
     
     global class QLI {

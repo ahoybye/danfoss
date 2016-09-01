@@ -4,19 +4,10 @@ global class Oppty30Controller {
 
     public String sReportHint {get;set;} // Report hint
     public String sReportUrl {get;set;} // Report url
-
-    //public List<String> qcheck_data {get;set;} // Data for the Q Check component
+        
     public List<qcheckData> qcheck_data_slds {get;set;} // Data for the Q Check component
-    //public List<String> qindex_data {get;set;} // Data for the Q Index component
-    //public List<String> netwin_data {get;set;} // Data for the Net Win component    
     public List<trendData> netwin_trend_data_slds {get;set;} // Data for the Net Win Trend component - new SLDS design
-    //public List<String> size_data {get;set;} // Data for the Size component
-    //public List<String> stage_data {get;set;} // Data for the Stages component
-    //public List<String> flow_data {get;set;} // Data for the Flow component
-    //public List<String> shapeflow_data {get;set;} // Data for the Shape & Flow component
     public List<shapeFlowData> shapeflow_data_slds {get;set;} // Data for the Shape & Flow component - new SLDS design
-    
-    //public List<String> winrate_data {get;set;} // Data for the Win Rate component    
     public List<winrateData> winrate_data_slds {get;set;} // Data for the Win Rate component component - new SLDS design
     
     public List<SelectOption> segmentOptions {get;set;}
