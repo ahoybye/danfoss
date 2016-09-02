@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>The options here, enable expermental or beta options in the application. Please modify them with caution.</description>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>project_cloud__Allow_Duplicate_Time_Entries__c</fullName>
         <defaultValue>true</defaultValue>
@@ -142,4 +145,6 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <label>Configuration Options</label>
+    <visibility>Public</visibility>
 </CustomObject>

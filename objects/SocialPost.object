@@ -1,93 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CreateCase</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Ignore</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassApprovePosts</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassCreateCase</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassIgnore</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>MassRejectPosts</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
     <fields>
         <fullName>AnalyzerScore</fullName>
-    </fields>
-    <fields>
-        <fullName>AssignedTo</fullName>
     </fields>
     <fields>
         <fullName>AttachmentType</fullName>
     </fields>
     <fields>
         <fullName>AttachmentUrl</fullName>
-    </fields>
-    <fields>
-        <fullName>Classification</fullName>
-        <picklist>
-            <sorted>false</sorted>
-        </picklist>
-        <type>Picklist</type>
-    </fields>
-    <fields>
-        <fullName>CommentCount</fullName>
     </fields>
     <fields>
         <fullName>Content</fullName>
@@ -97,41 +17,19 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>EngagementLevel</fullName>
-        <picklist>
-            <sorted>false</sorted>
-        </picklist>
-        <type>Picklist</type>
-    </fields>
-    <fields>
         <fullName>ExternalPostId</fullName>
     </fields>
     <fields>
         <fullName>Handle</fullName>
     </fields>
     <fields>
-        <fullName>HarvestDate</fullName>
-    </fields>
-    <fields>
         <fullName>Headline</fullName>
-    </fields>
-    <fields>
-        <fullName>InboundLinkCount</fullName>
-    </fields>
-    <fields>
-        <fullName>IsOutbound</fullName>
-    </fields>
-    <fields>
-        <fullName>KeywordGroupName</fullName>
     </fields>
     <fields>
         <fullName>Language</fullName>
     </fields>
     <fields>
         <fullName>LikedBy</fullName>
-    </fields>
-    <fields>
-        <fullName>LikesAndVotes</fullName>
     </fields>
     <fields>
         <fullName>MediaProvider</fullName>
@@ -144,10 +42,6 @@
     </fields>
     <fields>
         <fullName>Name</fullName>
-    </fields>
-    <fields>
-        <fullName>OutboundSocialAccountId</fullName>
-        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
@@ -163,9 +57,6 @@
     </fields>
     <fields>
         <fullName>PostPriority</fullName>
-    </fields>
-    <fields>
-        <fullName>PostTags</fullName>
     </fields>
     <fields>
         <fullName>PostUrl</fullName>
@@ -199,20 +90,7 @@
         <fullName>ResponseContextExternalId</fullName>
     </fields>
     <fields>
-        <fullName>ReviewedStatus</fullName>
-        <picklist>
-            <sorted>false</sorted>
-        </picklist>
-        <type>Picklist</type>
-    </fields>
-    <fields>
         <fullName>Sentiment</fullName>
-    </fields>
-    <fields>
-        <fullName>Shares</fullName>
-    </fields>
-    <fields>
-        <fullName>SourceTags</fullName>
     </fields>
     <fields>
         <fullName>SpamRating</fullName>
@@ -224,35 +102,10 @@
         <fullName>StatusMessage</fullName>
     </fields>
     <fields>
-        <fullName>ThreadSize</fullName>
-    </fields>
-    <fields>
-        <fullName>TopicProfileName</fullName>
-    </fields>
-    <fields>
         <fullName>TopicType</fullName>
-    </fields>
-    <fields>
-        <fullName>UniqueCommentors</fullName>
-    </fields>
-    <fields>
-        <fullName>ViewCount</fullName>
     </fields>
     <fields>
         <fullName>WhoId</fullName>
         <type>Lookup</type>
     </fields>
-    <searchLayouts>
-        <customTabListAdditionalFields>Persona</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Content</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Posted</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Parent</customTabListAdditionalFields>
-        <customTabListAdditionalFields>ReviewedStatus</customTabListAdditionalFields>
-        <searchResultsAdditionalFields>Persona</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Content</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Posted</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Parent</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>ReviewedStatus</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
