@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <articleTypeChannelDisplay>
-        <articleTypeTemplates>
-            <channel>App</channel>
-            <template>Tab</template>
-        </articleTypeTemplates>
-        <articleTypeTemplates>
-            <channel>Prm</channel>
-            <template>Tab</template>
-        </articleTypeTemplates>
-        <articleTypeTemplates>
-            <channel>Csp</channel>
-            <template>Tab</template>
-        </articleTypeTemplates>
-        <articleTypeTemplates>
-            <channel>Pkb</channel>
-            <template>Toc</template>
-        </articleTypeTemplates>
-    </articleTypeChannelDisplay>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <description>Generic article template, excluding FAQ&apos;s, Guidelines . Allows free text, pictures, videos, etc. to be included</description>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
     <fields>
         <fullName>Author__c</fullName>
         <externalId>false</externalId>
@@ -48,6 +25,4 @@
         <required>false</required>
         <type>Url</type>
     </fields>
-    <label>C&amp;E Generic Article</label>
-    <pluralLabel>C&amp;E Generic Article</pluralLabel>
 </CustomObject>
