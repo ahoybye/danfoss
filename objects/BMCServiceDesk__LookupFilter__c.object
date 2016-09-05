@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object allows you to store data for lookup filters.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>BMCServiceDesk__ApplyToSelfService__c</fullName>
         <defaultValue>false</defaultValue>
@@ -99,6 +157,29 @@
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
+    <label>Lookup Filter</label>
+    <listViews>
+        <fullName>BMCServiceDesk__All</fullName>
+        <columns>NAME</columns>
+        <columns>BMCServiceDesk__Console__c</columns>
+        <columns>BMCServiceDesk__FilterFor__c</columns>
+        <columns>BMCServiceDesk__FilterLogic__c</columns>
+        <columns>BMCServiceDesk__FilterType__c</columns>
+        <columns>BMCServiceDesk__Inactive__c</columns>
+        <columns>BMCServiceDesk__ApplyToSelfService__c</columns>
+        <columns>BMCServiceDesk__QueryCondition__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Lookup Filter Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Lookup Filters</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>BMCServiceDesk__UniqueLookupFilterNameCheck</fullName>
         <active>true</active>

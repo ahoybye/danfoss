@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>List</customSettingsType>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Email_Template_ID__c</fullName>
         <defaultValue>&quot;00X&quot;</defaultValue>
@@ -23,6 +21,4 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Approval Email Template Mapping</label>
-    <visibility>Public</visibility>
 </CustomObject>
