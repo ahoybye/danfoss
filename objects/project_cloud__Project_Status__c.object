@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>Hierarchy</customSettingsType>
-    <description>This custom setting has been deprecated, the status&apos; are now implemented using custom labels</description>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>project_cloud__Completed__c</fullName>
         <defaultValue>&quot;Completed&quot;</defaultValue>
@@ -51,6 +48,4 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Deprecated (Project Status&apos;)</label>
-    <visibility>Public</visibility>
 </CustomObject>

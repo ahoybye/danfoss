@@ -23,7 +23,4 @@
         <type>Text</type>
         <unique>true</unique>
     </fields>
-    <label>QuoteEmailLanguage</label>
-    <pluralLabel>QuoteEmailLanguages</pluralLabel>
-    <visibility>Public</visibility>
 </CustomObject>
