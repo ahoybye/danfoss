@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>This Custom Metadata object is used to store the Change Type color settings.</description>
     <fields>
         <fullName>BMCServiceDesk__ColorCode__c</fullName>
         <deprecated>false</deprecated>
@@ -21,7 +20,4 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>ChangeTypeColorSetting</label>
-    <pluralLabel>ChangeTypeColorSettings</pluralLabel>
-    <visibility>Public</visibility>
 </CustomObject>

@@ -2737,7 +2737,7 @@ Scoring Categories are used for multi-product engagement scoring in Pardot and a
         <description>The value of the referrer for the first tracked request made by a Prospect.</description>
         <externalId>false</externalId>
         <label>Pardot First Referrer</label>
-        <length>1024</length>
+        <length>65000</length>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
