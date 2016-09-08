@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to store the association between SAP Business Area, Division and Product Line</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>BU_Code__c</fullName>
         <externalId>false</externalId>
@@ -95,4 +152,41 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <label>Product Line</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product_Line_Description__c</columns>
+        <columns>Family__c</columns>
+        <columns>Business_Unit_Description__c</columns>
+        <columns>Division__c</columns>
+        <columns>Business_Org__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>PL_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Product Line Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Lines</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product_Line_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Family__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Business_Unit_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Division__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Business_Org__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Line_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BU_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Business_Org__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Business_Unit_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Division__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Family__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PL_Code__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

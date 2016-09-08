@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>Hierarchy</customSettingsType>
-    <description>Define the hours in a day a User works
-Currently this is only used by the Profitability &amp; Utilization Extension. It is not used by the Project Cloud package</description>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>project_cloud__Availability_Hourspan__c</fullName>
         <defaultValue>&quot;0-2,2-4,4-8,8-*&quot;</defaultValue>
@@ -136,6 +132,4 @@ Currently this is only used by the Profitability &amp; Utilization Extension. It
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>Working Hours</label>
-    <visibility>Public</visibility>
 </CustomObject>

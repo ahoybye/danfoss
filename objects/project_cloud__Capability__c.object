@@ -1,64 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <description>The capabilities of your resources to perform a given work type</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>project_cloud__Active__c</fullName>
         <defaultValue>true</defaultValue>
@@ -180,32 +122,6 @@
         <type>MasterDetail</type>
         <writeRequiresMasterRead>true</writeRequiresMasterRead>
     </fields>
-    <label>Capability</label>
-    <nameField>
-        <displayFormat>C-{0000000000}</displayFormat>
-        <label>Capability Number</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Capabilities</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>project_cloud__Description__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>project_cloud__Work_Type__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>project_cloud__Active__c</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>project_cloud__Description__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>project_cloud__Work_Type__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>project_cloud__Active__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>project_cloud__Description__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>project_cloud__Work_Type__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>project_cloud__Active__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>NAME</searchFilterFields>
-        <searchFilterFields>project_cloud__Description__c</searchFilterFields>
-        <searchFilterFields>project_cloud__Work_Type__c</searchFilterFields>
-        <searchFilterFields>project_cloud__Active__c</searchFilterFields>
-        <searchResultsAdditionalFields>project_cloud__Description__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__Work_Type__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__Active__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>project_cloud__Capability_Project_Task_Duplicates</fullName>
         <active>true</active>
