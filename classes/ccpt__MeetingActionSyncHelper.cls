@@ -9,13 +9,13 @@ global class MeetingActionSyncHelper implements Database.Batchable<SObject> {
     global MeetingActionSyncHelper() {
 
     }
-    global void execute(Database.Batchable<sObject>Context context, List<ccpt__Meeting_Action__c> links) {
+    global void execute(Database.BatchableContext context, List<ccpt__Meeting_Action__c> links) {
 
     }
-    global void finish(Database.Batchable<sObject>Context context) {
+    global void finish(Database.BatchableContext context) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context context) {
+    global Database.QueryLocator start(Database.BatchableContext context) {
         return null;
     }
 }

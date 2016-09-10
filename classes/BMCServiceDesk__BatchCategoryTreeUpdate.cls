@@ -14,13 +14,13 @@ global class BatchCategoryTreeUpdate implements Database.Batchable<BMCServiceDes
     global BatchCategoryTreeUpdate(List<BMCServiceDesk__Category__c> lstOfCateogry, Map<String,String> mapOfIdName, String operation) {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<BMCServiceDesk__Category__c> scope) {
+    global void execute(Database.BatchableContext BC, List<BMCServiceDesk__Category__c> scope) {
 
     }
-    global void finish(Database.Batchable<sObject>Context BC) {
+    global void finish(Database.BatchableContext BC) {
 
     }
-    global System.Iterable start(Database.Batchable<sObject>Context BC) {
+    global System.Iterable start(Database.BatchableContext BC) {
         return null;
     }
 }

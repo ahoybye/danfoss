@@ -21,16 +21,16 @@ global class BatchJobToSyncInstances implements Database.Batchable<SObject>, Dat
     global BatchJobToSyncInstances(List<String> clsIds, Integer offset) {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<SObject> lst) {
+    global void execute(Database.BatchableContext BC, List<SObject> lst) {
 
     }
-    global void finish(Database.Batchable<sObject>Context BC) {
+    global void finish(Database.BatchableContext BC) {
 
     }
-    global void sendMail(Database.Batchable<sObject>Context BC) {
+    global void sendMail(Database.BatchableContext BC) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context BC) {
+    global Database.QueryLocator start(Database.BatchableContext BC) {
         return null;
     }
 }

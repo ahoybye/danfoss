@@ -9,13 +9,13 @@ global class WebAPIJobsBatchProcess implements Database.AllowsCallouts, Database
     global WebAPIJobsBatchProcess(String JobQuery) {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<SObject> scope) {
+    global void execute(Database.BatchableContext BC, List<SObject> scope) {
 
     }
-    global void finish(Database.Batchable<sObject>Context info) {
+    global void finish(Database.BatchableContext info) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context bc) {
+    global Database.QueryLocator start(Database.BatchableContext bc) {
         return null;
     }
 }

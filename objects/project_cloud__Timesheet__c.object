@@ -1,64 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <description>Timesheets of users in your system</description>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
     <fieldSets>
         <fullName>project_cloud__Record_Details</fullName>
         <availableFields>
@@ -158,6 +100,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
@@ -175,48 +118,6 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>Timesheet</label>
-    <listViews>
-        <fullName>project_cloud__All_Timesheets</fullName>
-        <columns>OWNER.FIRST_NAME</columns>
-        <columns>OWNER.LAST_NAME</columns>
-        <columns>NAME</columns>
-        <columns>project_cloud__Start__c</columns>
-        <columns>project_cloud__End__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
-    <nameField>
-        <displayFormat>TS-{00000000}</displayFormat>
-        <label>Timesheet Number</label>
-        <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Timesheets</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>project_cloud__Start__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>project_cloud__End__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>OWNER.FIRST_NAME</customTabListAdditionalFields>
-        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
-        <lookupDialogsAdditionalFields>project_cloud__Start__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>project_cloud__End__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>OWNER.FIRST_NAME</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>OWNER.LAST_NAME</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>project_cloud__Start__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>project_cloud__End__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>OWNER.FIRST_NAME</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>OWNER.LAST_NAME</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>NAME</searchFilterFields>
-        <searchFilterFields>project_cloud__Start__c</searchFilterFields>
-        <searchFilterFields>project_cloud__End__c</searchFilterFields>
-        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
-        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
-        <searchResultsAdditionalFields>project_cloud__Start__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__End__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>project_cloud__Start_Date_Read_Only</fullName>
         <active>true</active>

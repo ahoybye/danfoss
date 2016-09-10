@@ -12,16 +12,16 @@ global class CMDBMigrator implements Database.Batchable<SObject>, Database.State
     global static void UnlockCMDB() {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<BMCServiceDesk__BMC_BaseElement__c> scope) {
+    global void execute(Database.BatchableContext BC, List<BMCServiceDesk__BMC_BaseElement__c> scope) {
 
     }
-    global void finish(Database.Batchable<sObject>Context BC) {
+    global void finish(Database.BatchableContext BC) {
 
     }
     global static Boolean isCMDBLocked() {
         return null;
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context BC) {
+    global Database.QueryLocator start(Database.BatchableContext BC) {
         return null;
     }
     global static void startBatch() {

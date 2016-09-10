@@ -13,13 +13,13 @@ global class GenerateReportOnIncident implements Database.Batchable<SObject>, Da
     global GenerateReportOnIncident(Map<String,String> parameterValMap) {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<BMCServiceDesk__Incident__History> scope) {
+    global void execute(Database.BatchableContext BC, List<BMCServiceDesk__Incident__History> scope) {
 
     }
-    global void finish(Database.Batchable<sObject>Context BC) {
+    global void finish(Database.BatchableContext BC) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context BC) {
+    global Database.QueryLocator start(Database.BatchableContext BC) {
         return null;
     }
 }

@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AddToCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Convert</actionName>
+        <content>LeadConvertOverride</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>FindDup</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ListClean</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
     <fields>
         <fullName>Account_Manager__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -699,6 +772,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -735,6 +809,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -898,6 +973,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
@@ -1000,6 +1076,7 @@
             </picklistValues>
             <sorted>true</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
@@ -1028,6 +1105,7 @@
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -1089,9 +1167,14 @@ Same as on user record</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>Channel_Attributes__c</fullName>
@@ -1142,6 +1225,7 @@ Same as on user record</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
@@ -1170,6 +1254,7 @@ Same as on user record</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -1419,6 +1504,7 @@ Same as on user record</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -1443,6 +1529,7 @@ Same as on user record</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -1487,7 +1574,17 @@ Same as on user record</description>
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>DoNotCall</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>Email</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
     </fields>
@@ -1522,10 +1619,21 @@ Same as on user record</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Industry</fullName>
@@ -1716,10 +1824,14 @@ Same as on user record</description>
             </picklistValues>
             <sorted>true</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
         <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>LastTransferDate</fullName>
     </fields>
     <fields>
         <fullName>LeadSource</fullName>
@@ -1895,6 +2007,7 @@ Affects CSC (Cases) and Core CRM (Lead and Opportunity Management)</description>
             </picklistValues>
             <sorted>true</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -1903,6 +2016,10 @@ Affects CSC (Cases) and Core CRM (Lead and Opportunity Management)</description>
         <fullName>OwnerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PartnerAccountId</fullName>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -1941,6 +2058,7 @@ Affects CSC (Cases) and Core CRM (Lead and Opportunity Management)</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -1973,6 +2091,7 @@ Affects CSC (Cases) and Core CRM (Lead and Opportunity Management)</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
@@ -2054,6 +2173,7 @@ Affects CSC (Cases) and Core CRM (Lead and Opportunity Management)</description>
             </picklistValues>
             <sorted>true</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>MultiselectPicklist</type>
@@ -2492,6 +2612,7 @@ Affects CSC (Cases) and Core CRM (Lead and Opportunity Management)</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
@@ -2873,6 +2994,883 @@ Scoring Categories are used for multi-product engagement scoring in Pardot and a
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <listViews>
+        <fullName>Agconnect_2013</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <label>Agconnect 2013</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AllOpenLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.COUNTRY</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Integrated</value>
+        </filters>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>equals</operation>
+            <value>Contacted,Open,Qualified</value>
+        </filters>
+        <label>PS: All Open Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Climate_Energy_Lead_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Climate &amp; Energy Lead</label>
+        <language>en_US</language>
+        <queue>Climate_Energy_Lead</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>Climate_Energy</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_AGCO</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - AGCO</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_AGCO</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_All</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Comatrol</value>
+        </filters>
+        <label>*Comatrol Lead - All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Australia</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Australia</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Australia</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Benelux</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Benelux</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Benelux</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_CAT</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - CAT</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_CAT</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_CNH</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - CNH</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_CNH</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Caribbean</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Caribbean</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Caribbean</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_China</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - China</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_China</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Eastern_APAC</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Eastern APAC</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Eastern_APAC</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Eastern_NA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Eastern NA</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Eastern_NA</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Germany</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Germany</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Germany</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Italy</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Italy</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Italy</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_JD</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - JD</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_JD</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Marketing</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Marketing</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Marketing</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Mid_NA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Mid NA</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Mid_NA</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Misc_EU</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Misc EU</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Misc_EU</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Nordic</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Nordic</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Nordic</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Pacific_Islds</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Pacific Islds</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Pacific_Islds</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_S_America</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - S America</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_S_America</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Southern_NA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Southern NA</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Southern_NA</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_W_Europe</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - W Europe</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_W_Europe</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Lead_Western_NA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Comatrol Lead - Western NA</label>
+        <language>en_US</language>
+        <queue>Comatrol_Lead_Western_NA</queue>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Integrated_Account_Manager_Overdue_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Integrated</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>Account Manager</value>
+        </filters>
+        <filters>
+            <field>SLA_Age__c</field>
+            <operation>greaterThan</operation>
+            <value>2</value>
+        </filters>
+        <label>Integrated Account Manager Overdue Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Integrated_Marketing_Overdue_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>SLA_Age__c</field>
+            <operation>greaterThan</operation>
+            <value>2</value>
+        </filters>
+        <filters>
+            <field>Validated__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Integrated</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>Marketing Team</value>
+        </filters>
+        <label>Integrated Marketing Overdue Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Integrated_Partner_Manage_Overdue_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Integrated</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>Partner Manager Queue</value>
+        </filters>
+        <filters>
+            <field>SLA_Age__c</field>
+            <operation>greaterThan</operation>
+            <value>5</value>
+        </filters>
+        <label>Integrated Partner Manage Overdue Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Integrated_Partner_Overdue_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Integrated</value>
+        </filters>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>Distributor</value>
+        </filters>
+        <filters>
+            <field>SLA_Age__c</field>
+            <operation>greaterThan</operation>
+            <value>21</value>
+        </filters>
+        <label>Integrated Partner Overdue Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Lead_Default_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Lead - Default Queue</label>
+        <language>en_US</language>
+        <queue>Lead_Default_Queue</queue>
+        <sharedTo>
+            <group>PlatformAdmin</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Mine</filterScope>
+        <label>PS: My Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>PS_Acct_Mgrs_AMER</group>
+            <group>PS_Acct_Mgrs_APAC</group>
+            <group>PS_Acct_Mgrs_CHINA</group>
+            <group>PS_Acct_Mgrs_EU</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>PS_Lead_South_Central_Lead</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - South Central</label>
+        <queue>PS_Lead_South_Central</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>PartnerOpenLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.COUNTRY</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Integrated</value>
+        </filters>
+        <filters>
+            <field>LEAD.STATUS</field>
+            <operation>equals</operation>
+            <value>Contacted,Open,Qualified</value>
+        </filters>
+        <label>Partner: All Open Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allPartnerUsers></allPartnerUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_ASEAN</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - ASEAN</label>
+        <language>en_US</language>
+        <queue>PS_Lead_ASEAN</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Alberta_CA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA CA-Albert, Sask, BC Fortin</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_CA_Albert_Sask_BC_Fortin</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Australia</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - Australia</label>
+        <language>en_US</language>
+        <queue>PS_Lead_Australia</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Central_CA_NY</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA Central CA + NY Sellers</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_Central_CA_NY_Sellers</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Central_US</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA Barkus</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_Barkus</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_China</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - China</label>
+        <language>en_US</language>
+        <queue>PS_Lead_China</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Dakotas_US</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA Wilson</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_Wilson</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_EU_Region_Central</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - EU Region Central</label>
+        <language>en_US</language>
+        <queue>PS_Lead_EU_Region_Central</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_EU_Region_East</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - EU Region East</label>
+        <language>en_US</language>
+        <queue>PS_Lead_EU_Region_East</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_EU_Region_Nordic</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - EU Region Nordic</label>
+        <language>en_US</language>
+        <queue>PS_Lead_EU_Region_Nordic</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_EU_Region_SW</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - EU Region SW</label>
+        <language>en_US</language>
+        <queue>PS_Lead_EU_Region_SW</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_EU_Region_South</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - EU Region South</label>
+        <language>en_US</language>
+        <queue>PS_Lead_EU_Region_South</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_EU_Region_West</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - EU Region West</label>
+        <language>en_US</language>
+        <queue>PS_Lead_EU_Region_West</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Eastern_CA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA Eastern CA Dufour</label>
+        <language>en_US</language>
+        <queue>PS_Lead_Eastern_CA</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_India</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - India</label>
+        <language>en_US</language>
+        <queue>PS_Lead_India</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Japan</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - Japan</label>
+        <language>en_US</language>
+        <queue>PS_Lead_Japan</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Korea</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - Korea</label>
+        <language>en_US</language>
+        <queue>PS_Lead_Korea</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_MX_CA_HI</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA SW Crowley</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_SW_Crowley</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Marketing</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.COUNTRY</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - Marketing</label>
+        <language>en_US</language>
+        <queue>PS_Lead_Marketing</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Mid_Atlantic_US</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA Mid Atl Shultz</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_Mid_Atl_Shultz</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Midwest_US</fullName>
+        <columns>LEAD.LEAD_SOURCE</columns>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA Kline</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_Kline</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Northeast_US</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA USNE DuFour</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_USNE_DuFour</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Northwest_US</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA NW Powell</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_NW_Powell_NW</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Russia_CIS</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - Russia CIS</label>
+        <language>en_US</language>
+        <queue>PS_Lead_Russia_CIS</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Southeast_US</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA SE Mosteller</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_SE_Mosteller</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_Southern_US</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA South Steelhammer</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_South_Steelhammer</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_TMEA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - TMEA</label>
+        <language>en_US</language>
+        <queue>PS_Lead_TMEA</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Lead_TN_GA</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - NA Mendoza</label>
+        <language>en_US</language>
+        <queue>PS_Lead_NA_Mendoza</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>SD_Region_Other_APAC</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*PS Lead - APAC Other</label>
+        <language>en_US</language>
+        <queue>PS_Lead_Other_APAC</queue>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Tatro_s_Leads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>Tatro</value>
+        </filters>
+        <label>Tatro&apos;s Leads</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CRM_Sales_Mgr_DIST_AMERPS</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TodaysLeads</fullName>
+        <columns>FULL_NAME</columns>
+        <columns>LEAD.COMPANY</columns>
+        <columns>LEAD.STATE</columns>
+        <columns>LEAD.EMAIL</columns>
+        <columns>LEAD.STATUS</columns>
+        <columns>LEAD.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>LEAD.UNREAD</columns>
+        <columns>LEAD.LEAD_SOURCE</columns>
+        <columns>Assigned_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LEAD.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today&apos;s Leads</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Turolla_Lead_All</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Turolla Lead - All</label>
+        <language>en_US</language>
+        <queue>Turolla_Lead_All</queue>
+        <sharedTo>
+            <group>Turolla</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Turolla_Lead_Marketing</fullName>
+        <filterScope>Queue</filterScope>
+        <label>*Turolla Lead - Marketing</label>
+        <language>en_US</language>
+        <queue>Turolla_Lead_Marketing</queue>
+        <sharedTo>
+            <group>Turolla</group>
+        </sharedTo>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LEAD.COMPANY</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LEAD.PHONE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LEAD.COMPANY</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>FULL_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LEAD.COMPANY</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LEAD.PHONE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LEAD.MOBILE_PHONE</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>FULL_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LEAD.TITLE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LEAD.PHONE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LEAD.COMPANY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LEAD.EMAIL</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LEAD.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Marketing_Validation__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
     <validationRules>
         <fullName>AssignToFieldRule</fullName>
         <active>true</active>

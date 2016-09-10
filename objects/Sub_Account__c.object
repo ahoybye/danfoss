@@ -1034,6 +1034,7 @@ IF(House_No__c != &quot;&quot;,  &quot; &quot; + House_No__c, &quot;&quot;)</for
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
@@ -1095,6 +1096,7 @@ To pull in MDM Customer Group</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
@@ -1250,6 +1252,7 @@ To pull in MDM Customer Group</description>
             </picklistValues>
             <sorted>false</sorted>
         </picklist>
+        <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>

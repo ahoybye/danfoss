@@ -8,15 +8,23 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Required</behavior>
+                <field>ParentId</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
                 <field>Name</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ProfileUrl</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ExternalPictureURL</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Provider</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>ParentId</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -32,9 +40,11 @@
         <style>CustomLinks</style>
     </layoutSections>
     <miniLayout>
-        <fields>Name</fields>
-        <fields>Provider</fields>
         <fields>ParentId</fields>
+        <fields>Name</fields>
+        <fields>ProfileUrl</fields>
+        <fields>ExternalPictureURL</fields>
+        <fields>Provider</fields>
     </miniLayout>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>

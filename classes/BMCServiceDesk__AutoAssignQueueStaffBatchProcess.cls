@@ -15,13 +15,13 @@ global class AutoAssignQueueStaffBatchProcess implements Database.Batchable<SObj
     global AutoAssignQueueStaffBatchProcess(Datetime st, String SSDefaultQueue, String EmailDefaultQueue, Boolean TktLayoutEnabled, Map<String,String> profileTktQueueMap, Set<String> QueueIds) {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<SObject> scope) {
+    global void execute(Database.BatchableContext BC, List<SObject> scope) {
 
     }
-    global void finish(Database.Batchable<sObject>Context info) {
+    global void finish(Database.BatchableContext info) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context bc) {
+    global Database.QueryLocator start(Database.BatchableContext bc) {
         return null;
     }
 }

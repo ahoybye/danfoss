@@ -9,13 +9,13 @@ global class LicenseMetricsReportBatch implements Database.Batchable<SObject> {
     global LicenseMetricsReportBatch() {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<SObject> scope) {
+    global void execute(Database.BatchableContext BC, List<SObject> scope) {
 
     }
-    global void finish(Database.Batchable<sObject>Context BC) {
+    global void finish(Database.BatchableContext BC) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context BC) {
+    global Database.QueryLocator start(Database.BatchableContext BC) {
         return null;
     }
 }

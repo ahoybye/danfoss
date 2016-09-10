@@ -9,13 +9,13 @@ global class ActionProcessor implements Database.Batchable<SObject> {
     global ActionProcessor() {
 
     }
-    global void execute(Database.Batchable<sObject>Context BC, List<NVMContactWorld__Background_Action__c> scope) {
+    global void execute(Database.BatchableContext BC, List<NVMContactWorld__Background_Action__c> scope) {
 
     }
-    global void finish(Database.Batchable<sObject>Context BC) {
+    global void finish(Database.BatchableContext BC) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context BC) {
+    global Database.QueryLocator start(Database.BatchableContext BC) {
         return null;
     }
 global interface IActionHandler {

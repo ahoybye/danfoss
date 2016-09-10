@@ -9,13 +9,13 @@ global class ActionOrphanHelper implements Database.Batchable<SObject> {
     global ActionOrphanHelper() {
 
     }
-    global void execute(Database.Batchable<sObject>Context context, List<SObject> actionSObjects) {
+    global void execute(Database.BatchableContext context, List<SObject> actionSObjects) {
 
     }
-    global void finish(Database.Batchable<sObject>Context context) {
+    global void finish(Database.BatchableContext context) {
 
     }
-    global Database.QueryLocator start(Database.Batchable<sObject>Context context) {
+    global Database.QueryLocator start(Database.BatchableContext context) {
         return null;
     }
 }
