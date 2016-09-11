@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <description>Stores the incident milestones that are achieved or canceled for a service transaction.</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>BMCServiceDesk__Action_Performed__c</fullName>
         <deprecated>false</deprecated>
@@ -192,26 +138,4 @@ Example: Sent Email notification to: TO / CC values
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
-    <label>SLA Milestone Incident History</label>
-    <listViews>
-        <fullName>BMCServiceDesk__All</fullName>
-        <columns>BMCServiceDesk__Action_Performed__c</columns>
-        <columns>BMCServiceDesk__Error__c</columns>
-        <columns>BMCServiceDesk__FKIncident__c</columns>
-        <columns>BMCServiceDesk__FKIncident_Service_Target__c</columns>
-        <columns>BMCServiceDesk__SLA_Milestone_Condition__c</columns>
-        <columns>BMCServiceDesk__SLA_Milestone_Value__c</columns>
-        <columns>BMCServiceDesk__Status__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-        <language>en_US</language>
-    </listViews>
-    <nameField>
-        <displayFormat>{00000000}</displayFormat>
-        <label>History #</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>SLA Milestone Incident History</pluralLabel>
-    <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
