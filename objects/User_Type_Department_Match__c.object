@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Type__c</fullName>
         <externalId>false</externalId>
@@ -11,4 +13,6 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <label>User Type Department Match</label>
+    <visibility>Public</visibility>
 </CustomObject>

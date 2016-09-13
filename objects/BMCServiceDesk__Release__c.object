@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>BMCServiceDesk__StdFormHelpRelease</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object allows you to store data for Release.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fieldSets>
         <fullName>BMCServiceDesk__ChangeSchedule_Tooltip</fullName>
         <availableFields>
@@ -2744,6 +2799,384 @@
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
     </fields>
+    <label>Release</label>
+    <listViews>
+        <fullName>BMCServiceDesk__All</fullName>
+        <columns>NAME</columns>
+        <columns>BMCServiceDesk__FKPriority__c</columns>
+        <columns>BMCServiceDesk__Description__c</columns>
+        <columns>BMCServiceDesk__Release_Type__c</columns>
+        <columns>BMCServiceDesk__Release_Subtype__c</columns>
+        <columns>BMCServiceDesk__FKStatus__c</columns>
+        <columns>BMCServiceDesk__FKReleaseCoordinator__c</columns>
+        <columns>BMCServiceDesk__OpenDateTime__c</columns>
+        <columns>BMCServiceDesk__DueDate__c</columns>
+        <columns>BMCServiceDesk__CloseDateTime__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>RF_All_Releases_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-All Releases</label>
+        <queue>RF_All_Releases</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_ApplicationSupport_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Application Support</label>
+        <queue>RF_ApplicationSupport</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_BusinessIntelligence_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Business Intelligence</label>
+        <queue>RF_BusinessIntelligence</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_CustomerRelationshipManagement_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-CRM / User Experience</label>
+        <queue>RF_CustomerRelationshipManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Desktop_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Desktop</label>
+        <queue>RF_Desktop</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnterpriseBasis_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Enterprise Basis</label>
+        <queue>RF_EnterpriseBasis</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnterpriseEnablingElements_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Enterprise Enabling Elements</label>
+        <queue>RF_EnterpriseEnablingElements</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnterprisePlatforms_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Enterprise Platforms</label>
+        <queue>RF_EnterprisePlatforms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnvironmentHealthandSafety_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Environment, Health and Safety</label>
+        <queue>RF_EnvironmentHealthandSafety</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_FicoAndGrc_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-FICO &amp; GRC</label>
+        <queue>RF_FicoAndGrc</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_HumanResourceManagement_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Human Resource Management</label>
+        <queue>RF_HumanResourceManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_InformationSecurity_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-IT Security</label>
+        <queue>RF_InformationSecurity</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_ManufacturingOperations_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Manufacturing Operations</label>
+        <queue>RF_ManufacturingOperations</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Mobile_Development_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-IT Innovation</label>
+        <queue>RF_IT_Innovation</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Monitoring_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Monitoring</label>
+        <queue>RF_Monitoring</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Network_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Network</label>
+        <queue>RF_Network</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Plan_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Plan</label>
+        <queue>RF_Plan</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_ProductLifecycleManagement_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Product Lifecycle Management</label>
+        <queue>RF_ProductLifecycleManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SAP_Authorizations_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-SAP Authorizations</label>
+        <queue>RF_SAP_Authorizations</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Server_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Server</label>
+        <queue>RF_Server</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SharedServiceManagement_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Shared Service Management</label>
+        <queue>RF_SharedServiceManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAPACAPA_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - APAC APA</label>
+        <queue>RF_SiteServiceAPACAPA</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAPACCN_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - APAC CN</label>
+        <queue>RF_SiteServiceAPACCN</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAPACIN_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - APAC IN</label>
+        <queue>RF_SiteServiceAPACIN</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAmericas_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - Americas</label>
+        <queue>RF_SiteServiceAmericas</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceCEE_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - CEE</label>
+        <queue>RF_SiteServiceCEE</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceCIS_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - CIS</label>
+        <queue>RF_SiteServiceCIS</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceDACH_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - DACH</label>
+        <queue>RF_SiteServiceDACH</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceNordic_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - Nordic</label>
+        <queue>RF_SiteServiceNordic</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceSWEMEA_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - SWEMEA</label>
+        <queue>RF_SiteServiceSWEMEA</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Site_Service_Denmark_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - Denmark</label>
+        <queue>RF_SiteServiceDenmark</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SupplierRelationshipManagement_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Supplier Relationship Management</label>
+        <queue>RF_SupplierRelationshipManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SupplyChainManagement_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Supply Chain Management</label>
+        <queue>RF_SupplyChainManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_UnifiedCommunications_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Unified Communications</label>
+        <queue>RF_UnifiedCommunications</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_UserAdministration_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-User Administration AD</label>
+        <queue>RF_UserAdministration_AD</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_X1stLineServicedesk_Release</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-1st Line Servicedesk</label>
+        <queue>RF_X1stLineServicedesk</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>RM{00000000}</displayFormat>
+        <label>Release #</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Releases</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>BMCServiceDesk__FKPriority__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__Release_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__Release_Subtype__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__FKStatus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__FKReleaseCoordinator__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__OpenDateTime__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__DueDate__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__CloseDateTime__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__FKPriority__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__Release_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__Release_Subtype__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__FKStatus__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__FKReleaseCoordinator__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__OpenDateTime__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__DueDate__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__CloseDateTime__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__FKPriority__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__Release_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__Release_Subtype__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__FKStatus__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__FKReleaseCoordinator__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__OpenDateTime__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__DueDate__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>BMCServiceDesk__CloseDateTime__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>BMCServiceDesk__ActualDeploymentDateValidation</fullName>
         <active>true</active>

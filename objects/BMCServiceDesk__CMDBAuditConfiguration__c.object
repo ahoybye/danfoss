@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>List</customSettingsType>
-    <description>Stores the CMDB fields that are selected for tracking old and new values.</description>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>BMCServiceDesk__Custom_Field__c</fullName>
         <defaultValue>false</defaultValue>
@@ -12,6 +9,4 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
-    <label>CMDB Audit Configuration</label>
-    <visibility>Public</visibility>
 </CustomObject>
