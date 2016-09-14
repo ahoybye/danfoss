@@ -1,58 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
     <fieldSets>
         <fullName>ccpe_r__Retainer_Page_View</fullName>
         <description>Used on the Retainer view/edit page to isolate pre-defined fields.</description>
@@ -313,24 +260,6 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
-    <label>Retainer</label>
-    <listViews>
-        <fullName>ccpe_r__All</fullName>
-        <columns>NAME</columns>
-        <columns>OBJECT_ID</columns>
-        <columns>ccpe_r__Start_Date__c</columns>
-        <columns>ccpe_r__End_Date__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
-    <nameField>
-        <displayFormat>Ret{00000000}</displayFormat>
-        <label>Ref</label>
-        <trackHistory>true</trackHistory>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Retainers</pluralLabel>
-    <recordTypeTrackHistory>true</recordTypeTrackHistory>
     <recordTypes>
         <fullName>ccpe_r__Non_Skill_Based</fullName>
         <active>true</active>
@@ -405,8 +334,6 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>ccpe_r__One_Time_Retainers_Do_Not_Roll_Over</fullName>
         <active>true</active>
