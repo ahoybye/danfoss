@@ -1,59 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <description>Stores the Web API Job records that are created after applying the web API configuration on the Task object.</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <enableReports>false</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>BMCServiceDesk__FailedResponse__c</fullName>
         <deprecated>false</deprecated>
@@ -143,28 +89,6 @@
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
     </fields>
-    <label>Web API Job</label>
-    <listViews>
-        <fullName>BMCServiceDesk__All</fullName>
-        <columns>NAME</columns>
-        <columns>BMCServiceDesk__WebAPIConfiguration__c</columns>
-        <columns>BMCServiceDesk__Status__c</columns>
-        <columns>BMCServiceDesk__FailedResponse__c</columns>
-        <columns>BMCServiceDesk__SuccessResponse__c</columns>
-        <columns>BMCServiceDesk__RetryCount__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
-    <nameField>
-        <displayFormat>WebAPI Job-{0000}</displayFormat>
-        <label>Web API Job Name</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Web API Jobs</pluralLabel>
-    <searchLayouts>
-        <listViewButtons>BMCServiceDesk__Schedule</listViewButtons>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
     <webLinks>
         <fullName>BMCServiceDesk__Schedule</fullName>
         <availability>online</availability>
