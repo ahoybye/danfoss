@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Tasks that form the individual work effort components of the project. Each task can be assigned, managed and collaborated on with you team.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fieldSets>
         <fullName>project_cloud__Gantt</fullName>
         <description>This fieldset was added to the package in error. The correct fieldset to use is the &quot;Mouseover&quot; Fieldset</description>
@@ -1559,6 +1613,63 @@ IF(project_cloud__IsWorking_Sunday__c, 1, 0)</formula>
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <label>Project Task</label>
+    <listViews>
+        <fullName>project_cloud__All_Project_Tasks</fullName>
+        <columns>NAME</columns>
+        <columns>project_cloud__Work_Type__c</columns>
+        <columns>project_cloud__Estimated_Hours__c</columns>
+        <columns>project_cloud__Status__c</columns>
+        <columns>project_cloud__Completed_Percent__c</columns>
+        <columns>project_cloud__IsComplete__c</columns>
+        <columns>project_cloud__Autonomous_Start__c</columns>
+        <columns>project_cloud__Directs__c</columns>
+        <columns>project_cloud__Start__c</columns>
+        <columns>project_cloud__End__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Project Task Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Project Tasks</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>project_cloud__Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__Project_Phase__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__Completed_Percent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__Start__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__End__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Project_Phase__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Completed_Percent__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Start__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__End__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Project__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Project_Phase__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Completed_Percent__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Start__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__End__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>project_cloud__Project__c</searchFilterFields>
+        <searchFilterFields>project_cloud__Project_Phase__c</searchFilterFields>
+        <searchFilterFields>project_cloud__Status__c</searchFilterFields>
+        <searchFilterFields>project_cloud__Completed_Percent__c</searchFilterFields>
+        <searchFilterFields>project_cloud__Start__c</searchFilterFields>
+        <searchFilterFields>project_cloud__End__c</searchFilterFields>
+        <searchResultsAdditionalFields>project_cloud__Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Project_Phase__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Completed_Percent__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Start__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__End__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
     <validationRules>
         <fullName>project_cloud__Completed_Task_Locked</fullName>
         <active>true</active>
