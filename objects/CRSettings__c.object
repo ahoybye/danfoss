@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Settings for PS customer requests by request type</description>
+    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Account__c</fullName>
         <defaultValue>false</defaultValue>
@@ -72,4 +75,6 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <label>Customer Request Settings</label>
+    <visibility>Public</visibility>
 </CustomObject>
