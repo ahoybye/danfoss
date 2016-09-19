@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>List</customSettingsType>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Base_URL__c</fullName>
         <externalId>false</externalId>
@@ -11,6 +9,4 @@
         <trackTrending>false</trackTrending>
         <type>Url</type>
     </fields>
-    <label>Org Base URL</label>
-    <visibility>Public</visibility>
 </CustomObject>

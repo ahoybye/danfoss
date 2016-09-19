@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <customHelpPage>BMCServiceDesk__StdFormHelpChange</customHelpPage>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object allows you to store data for Changes.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fieldSets>
         <fullName>BMCServiceDesk__ChangeSchedule_Tooltip</fullName>
         <availableFields>
@@ -3789,6 +3844,391 @@ IMAGE(&quot;/resource/BMCServiceDesk__SDEFStyles/SDEFbuttons/status-16-warning-r
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
     </fields>
+    <label>Change Request</label>
+    <listViews>
+        <fullName>BMCServiceDesk__RemedyforceChangeRequestView</fullName>
+        <columns>NAME</columns>
+        <columns>BMCServiceDesk__FKPriority__c</columns>
+        <columns>BMCServiceDesk__Change_Description__c</columns>
+        <columns>BMCServiceDesk__Initiator_ID__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>BMCServiceDesk__Change_Flag__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>BMCServiceDesk__State__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BMCServiceDesk__Inactive__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Remedyforce ChangeRequest View</label>
+    </listViews>
+    <listViews>
+        <fullName>RF_All_Changes_Change_Request</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BMCServiceDesk__State__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>BMCServiceDesk__Inactive__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>RF-All Changes</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_ApplicationSupport_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Application Support</label>
+        <queue>RF_ApplicationSupport</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_BusinessIntelligence_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Business Intelligence</label>
+        <queue>RF_BusinessIntelligence</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_CustomerRelationshipManagement_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-CRM / User Experience</label>
+        <queue>RF_CustomerRelationshipManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Desktop_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Desktop</label>
+        <queue>RF_Desktop</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnterpriseBasis_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Enterprise Basis</label>
+        <queue>RF_EnterpriseBasis</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnterpriseEnablingElements_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Enterprise Enabling Elements</label>
+        <queue>RF_EnterpriseEnablingElements</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnterprisePlatforms_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Enterprise Platforms</label>
+        <queue>RF_EnterprisePlatforms</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_EnvironmentHealthandSafety_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Environment, Health and Safety</label>
+        <queue>RF_EnvironmentHealthandSafety</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_FicoAndGrc_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-FICO &amp; GRC</label>
+        <queue>RF_FicoAndGrc</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_HumanResourceManagement_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Human Resource Management</label>
+        <queue>RF_HumanResourceManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_InformationSecurity_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-IT Security</label>
+        <queue>RF_InformationSecurity</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_ManufacturingOperations_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Manufacturing Operations</label>
+        <queue>RF_ManufacturingOperations</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Mobile_Development_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-IT Innovation</label>
+        <queue>RF_IT_Innovation</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Monitoring_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Monitoring</label>
+        <queue>RF_Monitoring</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Network_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Network</label>
+        <queue>RF_Network</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Plan_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Plan</label>
+        <queue>RF_Plan</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_ProductLifecycleManagement_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Product Lifecycle Management</label>
+        <queue>RF_ProductLifecycleManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SAP_Authorizations_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-SAP Authorizations</label>
+        <queue>RF_SAP_Authorizations</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Server_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Server</label>
+        <queue>RF_Server</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SharedServiceManagement_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Shared Service Management</label>
+        <queue>RF_SharedServiceManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAPACAPA_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - APAC APA</label>
+        <queue>RF_SiteServiceAPACAPA</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAPACCN_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - APAC CN</label>
+        <queue>RF_SiteServiceAPACCN</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAPACIN_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - APAC IN</label>
+        <queue>RF_SiteServiceAPACIN</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceAmericas_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - Americas</label>
+        <queue>RF_SiteServiceAmericas</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceCEE_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - CEE</label>
+        <queue>RF_SiteServiceCEE</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceCIS_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - CIS</label>
+        <queue>RF_SiteServiceCIS</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceDACH_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - DACH</label>
+        <queue>RF_SiteServiceDACH</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceNordic_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - Nordic</label>
+        <queue>RF_SiteServiceNordic</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SiteServiceSWEMEA_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - SWEMEA</label>
+        <queue>RF_SiteServiceSWEMEA</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_Site_Service_Denmark_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Site Service - Denmark</label>
+        <queue>RF_SiteServiceDenmark</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SupplierRelationshipManagement_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Supplier Relationship Management</label>
+        <queue>RF_SupplierRelationshipManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_SupplyChainManagement_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Supply Chain Management</label>
+        <queue>RF_SupplyChainManagement</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_UnifiedCommunications_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-Unified Communications</label>
+        <queue>RF_UnifiedCommunications</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_UserAdministration_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-User Administration AD</label>
+        <queue>RF_UserAdministration_AD</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_User_Administration_SAP_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-User Administration SAP</label>
+        <queue>RF_User_Administration_SAP</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>RF_X1stLineServicedesk_Change_Request</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RF-1st Line Servicedesk</label>
+        <queue>RF_X1stLineServicedesk</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>CR{00000000}</displayFormat>
+        <label>Change #</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Change Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>BMCServiceDesk__FKPriority__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__Change_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>BMCServiceDesk__Initiator_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__FKPriority__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__Change_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__FKInitiator__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>BMCServiceDesk__Inactive__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>BMCServiceDesk__Cannot_Update_Closed_Change_Request</fullName>
         <active>true</active>
