@@ -1,58 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <description>Machine Model Products</description>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>Adoption_Rate__c</fullName>
         <defaultValue>1</defaultValue>
@@ -707,29 +654,6 @@
         <trackTrending>false</trackTrending>
         <type>Currency</type>
     </fields>
-    <label>Machine Model Product</label>
-    <listViews>
-        <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>Supplier__c</columns>
-        <columns>Machine_Model_Product__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All with supplier</label>
-        <language>en_US</language>
-    </listViews>
-    <nameField>
-        <label>Machine Model Material</label>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-    </nameField>
-    <pluralLabel>Machine Model Products</pluralLabel>
-    <searchLayouts>
-        <searchResultsAdditionalFields>Machine_Model_Product__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Number_per_machine__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Price__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Machine_Model__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
     <webLinks>
         <fullName>Refresh_SAP_Price</fullName>
         <availability>online</availability>

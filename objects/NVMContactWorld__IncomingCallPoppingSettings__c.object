@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings for customising the popping for an incoming call from ContactWorld</description>
+    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>NVMContactWorld__AdditionalFields__c</fullName>
         <deprecated>false</deprecated>
@@ -58,4 +61,6 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
+    <label>Incoming Call Popping</label>
+    <visibility>Public</visibility>
 </CustomObject>

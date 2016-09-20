@@ -1,58 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <description>Daily, weekly and monthly snapshots of business metrics.  Used to build dashboard reports</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>Business_Org__c</fullName>
         <externalId>false</externalId>
@@ -570,18 +517,4 @@
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>Business Metrics</label>
-    <nameField>
-        <displayFormat>{yyyy}.{mm}.{dd} - {0}</displayFormat>
-        <label>Business Metrics</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Business Metrics</pluralLabel>
-    <searchLayouts>
-        <searchResultsAdditionalFields>Business_Org__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Plant__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Date__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

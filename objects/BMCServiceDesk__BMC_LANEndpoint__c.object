@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>BMC_LANEndpoint: CMDB Class that stores information about communication endpoints that, when their related interface device is connected to a LAN, can send and receive dataframes. LAN endpoints include MAC addresses, and Ethernet, token ring, and FDDI interfaces.  The BMC_InSegment class is used to relate instances of the BMC_ConnectivitySegment class to instances of BMC_LANEndpoint. To represent individual Large Area Networks (LNs), use the BMC_LANEndpoint class. To relate individual LNs to an instance of BMC_LNsCollection, use the BMC_LNsInCollection class.  This class corresponds to the DMTF class CIM_LANEndpoint.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>BMCServiceDesk__AliasAddresses__c</fullName>
         <deprecated>false</deprecated>
@@ -61,4 +115,18 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <label>LAN Endpoint</label>
+    <listViews>
+        <fullName>BMCServiceDesk__All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>BMC_LANEndpoint Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>LAN Endpoints</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
