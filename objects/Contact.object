@@ -7676,6 +7676,18 @@ ISBLANK( MailingStreet ) &amp;&amp; ISBLANK(  MailingPostalCode ) &amp;&amp; ISB
         <masterLabel>Send to Pardot</masterLabel>
         <openType>onClickJavaScript</openType>
         <protected>false</protected>
-        <url>window.location = &apos;https://pi.pardot.com/prospect/sync/email/{!URLENCODE(Contact.Email)}?contact_id={!Contact.Id}&amp;sessionid={!$Api.Session_ID}&amp;serverurl={!$Api.Partner_Server_URL_90}&amp;redirect_location=&apos;+window.location</url>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+var result = sforce.apex.execute(&quot;pi/SendToPardotController&quot;,&quot;sendToPardot&quot;,{sessionId:&quot;{!
+$Api.Session_ID}&quot;, serverUrl:&quot;{!
+$Api.Partner_Server_URL_90}&quot;, type:&quot;{!
+&apos;contact&apos;}&quot;, id:&quot;{!
+Contact.Id}&quot;});
+if (result == &quot;error&quot;) {
+    alert(&quot;An error occurred sending this Contact to Pardot.&quot;);
+} else if (result == &quot;email_missing&quot;) {
+    alert(&quot;Cannot sync this Contact to Pardot because this Contact does not have an email address.&quot;);
+} 
+window.location.reload();</url>
     </webLinks>
 </CustomObject>

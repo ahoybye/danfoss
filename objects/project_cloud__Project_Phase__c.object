@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Phases that exist within a project, each phase consists of a series of project tasks grouping them together.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fieldSets>
         <fullName>project_cloud__New_Phase</fullName>
         <availableFields>
@@ -327,6 +381,48 @@ IF($Setup.project_cloud__Configuration_Options__c.project_cloud__Sort_Projects_A
         <type>Number</type>
         <unique>false</unique>
     </fields>
+    <label>Project Phase</label>
+    <listViews>
+        <fullName>project_cloud__All_Project_Phases</fullName>
+        <columns>NAME</columns>
+        <columns>project_cloud__Project__c</columns>
+        <columns>project_cloud__Status__c</columns>
+        <columns>project_cloud__Start__c</columns>
+        <columns>project_cloud__End__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Project Phase Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Project Phases</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>project_cloud__Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__Start__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>project_cloud__End__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Project__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__Start__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>project_cloud__End__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Project__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__Start__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>project_cloud__End__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>project_cloud__Project__c</searchFilterFields>
+        <searchFilterFields>project_cloud__Status__c</searchFilterFields>
+        <searchFilterFields>project_cloud__Start__c</searchFilterFields>
+        <searchFilterFields>project_cloud__End__c</searchFilterFields>
+        <searchResultsAdditionalFields>project_cloud__Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__Start__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>project_cloud__End__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
     <webLinks>
         <fullName>project_cloud__Create_Time_Entry</fullName>
         <availability>online</availability>
