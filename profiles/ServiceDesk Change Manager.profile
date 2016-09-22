@@ -7666,6 +7666,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>pi__PardotResourceBaseByUserExtension</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>pi__PardotResourceBaseControllerByUser</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -45107,6 +45111,10 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>pi__Pardot</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>pi__PardotAccountListMembership</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
@@ -45208,6 +45216,14 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>pi__SalespackLicenseError</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>pi__SendPardotEmailContact</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>pi__SendPardotEmailLead</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>List</customSettingsType>
-    <description>Map custom quote fields that sync with opportunity fields</description>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>quotesync__OppSyncField__c</fullName>
         <deprecated>false</deprecated>
@@ -16,6 +13,4 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Quote Sync Fields</label>
-    <visibility>Public</visibility>
 </CustomObject>

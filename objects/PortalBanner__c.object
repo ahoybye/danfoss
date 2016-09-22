@@ -1,58 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>Alt__c</fullName>
         <externalId>false</externalId>
@@ -1521,106 +1469,6 @@
         <type>Html</type>
         <visibleLines>10</visibleLines>
     </fields>
-    <label>Portal Banner</label>
-    <listViews>
-        <fullName>All</fullName>
-        <columns>Business_Org__c</columns>
-        <columns>NAME</columns>
-        <columns>Position__c</columns>
-        <columns>Region__c</columns>
-        <columns>Link__c</columns>
-        <columns>RECORDTYPE</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-        <language>en_US</language>
-    </listViews>
-    <listViews>
-        <fullName>All_Banners</fullName>
-        <columns>NAME</columns>
-        <columns>RECORDTYPE</columns>
-        <columns>Position__c</columns>
-        <columns>Link__c</columns>
-        <columns>Business_Org__c</columns>
-        <columns>Region__c</columns>
-        <columns>LAST_UPDATE</columns>
-        <columns>Component_Type__c</columns>
-        <columns>Page__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All Portal Banner Types</label>
-        <language>en_US</language>
-    </listViews>
-    <listViews>
-        <fullName>Americas_and_Default_PartnerLink</fullName>
-        <columns>NAME</columns>
-        <columns>Banner_Type__c</columns>
-        <columns>Component_Type__c</columns>
-        <columns>Position__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Region__c</field>
-            <operation>equals</operation>
-            <value>Americas,default</value>
-        </filters>
-        <filters>
-            <field>Business_Org__c</field>
-            <operation>notEqual</operation>
-            <value>Comatrol,Turolla,Valmova</value>
-        </filters>
-        <filters>
-            <field>NAME</field>
-            <operation>notContain</operation>
-            <value>Spot</value>
-        </filters>
-        <label>Americas and Default PartnerLink</label>
-        <language>en_US</language>
-    </listViews>
-    <listViews>
-        <fullName>Integrated_Only</fullName>
-        <columns>NAME</columns>
-        <columns>RECORDTYPE</columns>
-        <columns>Component_Type__c</columns>
-        <columns>Content_Type_to_Query__c</columns>
-        <columns>Position__c</columns>
-        <columns>Region__c</columns>
-        <columns>Business_Org__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Business_Org__c</field>
-            <operation>equals</operation>
-            <value>Integrated</value>
-        </filters>
-        <label>Integrated Only</label>
-        <language>en_US</language>
-        <sharedTo>
-            <group>Danfoss_PS</group>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>MarketingToolbox</fullName>
-        <columns>NAME</columns>
-        <columns>Component_Type__c</columns>
-        <columns>Position__c</columns>
-        <columns>Link__c</columns>
-        <columns>RECORDTYPE</columns>
-        <columns>Region__c</columns>
-        <columns>Page__c</columns>
-        <columns>Object__c</columns>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>Page__c</field>
-            <operation>equals</operation>
-            <value>MarketingToolbox,ImageBank,InformationHub,LogoBank,PartnerPortalHome</value>
-        </filters>
-        <label>Marketing Toolbox</label>
-        <language>en_US</language>
-    </listViews>
-    <nameField>
-        <label>Banner Name</label>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-    </nameField>
-    <pluralLabel>Portal Banners</pluralLabel>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Marketing_Panel</fullName>
         <active>true</active>
@@ -3983,8 +3831,6 @@
             </values>
         </picklistValues>
     </recordTypes>
-    <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>Must_Select_one_or_more_values</fullName>
         <active>true</active>
