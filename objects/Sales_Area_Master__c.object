@@ -1,5 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>Channel_Description__c</fullName>
         <externalId>false</externalId>
@@ -1089,4 +1141,76 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <label>Sales Area Master</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Sales_Area__c</columns>
+        <columns>Sales_Area_ID__c</columns>
+        <columns>Sales_Org__c</columns>
+        <columns>Channel__c</columns>
+        <columns>Division__c</columns>
+        <columns>CURRENCY_ISO_CODE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Sales_Area_master</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Channel__c</columns>
+        <columns>Channel_Description__c</columns>
+        <columns>Division__c</columns>
+        <columns>Division_Description__c</columns>
+        <columns>Sales_Area__c</columns>
+        <columns>Sales_Area_ID__c</columns>
+        <columns>Sales_Org__c</columns>
+        <columns>Sales_Org_Description__c</columns>
+        <columns>CURRENCY_ISO_CODE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sales_Area_ID__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>JUN</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Search</fullName>
+        <columns>NAME</columns>
+        <columns>Sales_Area__c</columns>
+        <columns>Sales_Area_ID__c</columns>
+        <columns>Sales_Org__c</columns>
+        <columns>Channel__c</columns>
+        <columns>Division__c</columns>
+        <columns>CURRENCY_ISO_CODE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>contains</operation>
+            <value>Allan</value>
+        </filters>
+        <label>Search</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Sales Area Master Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Sales Area Master Data</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Sales_Area__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sales_Org__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Channel__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Division__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Sales_Area__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Sales_Org__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Channel__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Division__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>

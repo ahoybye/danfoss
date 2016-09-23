@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction Object to Relate Project Opps to Many Accounts</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>Associated_Account__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -423,6 +476,13 @@ HYPERLINK(&quot;/apex/SetAsMainAccount?id=&quot; &amp; Id, &quot;Set as Main&quo
         <type>Text</type>
         <unique>false</unique>
     </fields>
+    <label>Stakeholder Mapping</label>
+    <nameField>
+        <displayFormat>AA-{0000}</displayFormat>
+        <label>.</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Stakeholder Mapping</pluralLabel>
     <recordTypes>
         <fullName>Account</fullName>
         <active>true</active>
@@ -839,6 +899,8 @@ HYPERLINK(&quot;/apex/SetAsMainAccount?id=&quot; &amp; Id, &quot;Set as Main&quo
             </values>
         </picklistValues>
     </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
     <webLinks>
         <fullName>Set_Contacts</fullName>
         <availability>online</availability>
