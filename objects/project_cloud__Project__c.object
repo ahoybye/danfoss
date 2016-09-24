@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
-    <description>Top level information about the project such as the name of the project, project manager, and project start and end dates.</description>
-    <enableActivities>true</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>true</enableFeeds>
-    <enableHistory>true</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>ccpe_ppm__Program_Project_List</fullName>
         <availableFields>
@@ -1253,64 +1199,6 @@ Don&apos;t include the Name field, it is always on the table</description>
         <type>Number</type>
         <unique>false</unique>
     </fields>
-    <label>Project</label>
-    <listViews>
-        <fullName>RF_SAP_Authorizations_Project</fullName>
-        <filterScope>Queue</filterScope>
-        <label>RF-SAP Authorizations</label>
-        <queue>RF_SAP_Authorizations</queue>
-        <sharedTo>
-            <allInternalUsers></allInternalUsers>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>RF_Site_Service_Denmark_Project</fullName>
-        <filterScope>Queue</filterScope>
-        <label>RF-Site Service - Denmark</label>
-        <queue>RF_SiteServiceDenmark</queue>
-        <sharedTo>
-            <allInternalUsers></allInternalUsers>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>RF_User_Administration_SAP_Project</fullName>
-        <filterScope>Queue</filterScope>
-        <label>RF-User Administration SAP</label>
-        <queue>RF_User_Administration_SAP</queue>
-        <sharedTo>
-            <allInternalUsers></allInternalUsers>
-        </sharedTo>
-    </listViews>
-    <listViews>
-        <fullName>project_cloud__All_Projects</fullName>
-        <columns>NAME</columns>
-        <columns>project_cloud__Start__c</columns>
-        <columns>project_cloud__End__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-    </listViews>
-    <nameField>
-        <label>Project Name</label>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>true</trackHistory>
-        <type>Text</type>
-    </nameField>
-    <pluralLabel>Projects</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>project_cloud__Start__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>project_cloud__End__c</customTabListAdditionalFields>
-        <listViewButtons>project_cloud__Show_Gantt</listViewButtons>
-        <lookupDialogsAdditionalFields>project_cloud__Start__c</lookupDialogsAdditionalFields>
-        <lookupDialogsAdditionalFields>project_cloud__End__c</lookupDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>project_cloud__Start__c</lookupPhoneDialogsAdditionalFields>
-        <lookupPhoneDialogsAdditionalFields>project_cloud__End__c</lookupPhoneDialogsAdditionalFields>
-        <searchFilterFields>NAME</searchFilterFields>
-        <searchFilterFields>project_cloud__Start__c</searchFilterFields>
-        <searchFilterFields>project_cloud__End__c</searchFilterFields>
-        <searchResultsAdditionalFields>project_cloud__Start__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>project_cloud__End__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>Private</sharingModel>
     <sharingReasons>
         <fullName>project_cloud__Allocation__c</fullName>
         <label>Allocation</label>
