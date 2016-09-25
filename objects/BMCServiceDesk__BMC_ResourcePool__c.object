@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>BMC_ResourcePool. Class that serves as a logical entity (with associated controls) provided by the host system to allocate and assign resources. A given ResourcePool may be used to allocate resources of a specific type. Hierarchies of ResourcePools may be created to provide administrative control over allocations. In cases where resources are subdivided, multiple resource pools may exist (for example, nodal boundaries in NUMA-like systems). In systems that support over-commitment, pools represent the reservable capacity, not an upper bound or limit on the maximum amount that can be allocated. Admission control during power-on may detect and prevent systems from powering due to resource exhaustion. For example, over-commitment on a ResourcePool with ResourceType=Memory would require that sufficient space be available in a backing store that might be managed through a storage ResourcePool.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
     <fields>
         <fullName>BMCServiceDesk__Allocation_Units__c</fullName>
         <deprecated>false</deprecated>
@@ -307,4 +361,13 @@
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
     </fields>
+    <label>Resource Pool</label>
+    <nameField>
+        <label>Resource Pool Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Resource Pools</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
 </CustomObject>
