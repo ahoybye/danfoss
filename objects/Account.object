@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CallHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EmailHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EnableCustomerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ListClean</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>newAccountredirect</content>
+        <skipRecordTypeSelect>true</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewCustomerPortalUser</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>WebsiteHighlightAction</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
         <fullName>BMCServiceDesk__LinkRecords</fullName>
         <availableFields>
@@ -770,6 +837,11 @@
         </displayedFields>
         <label>Merge fields for CE Prospects</label>
     </fieldSets>
+    <fields>
+        <fullName>AccountNumber</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
     <fields>
         <fullName>AccountSource</fullName>
         <picklist>
@@ -8855,6 +8927,31 @@ TEXT( Open_Opptys__c ) + &apos;,&apos; + TEXT(Closed_Lost_Opptys__c + Closed_Won
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Ownership</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Public</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Private</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>P02_Account__c</fullName>
         <description>C&amp;E field
 Core CRM</description>
@@ -9146,6 +9243,27 @@ Address</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Hot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warm</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Rating_Indicator__c</fullName>
@@ -9717,6 +9835,11 @@ Controls Sub Segment</description>
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>Sic</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>SicDesc</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
@@ -9731,6 +9854,11 @@ Used for system used by Vacon for ERP</description>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Site</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Special_Conditions__c</fullName>
@@ -10082,6 +10210,11 @@ Controlled by Segment</description>
         <trackHistory>false</trackHistory>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TickerSymbol</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Tran_Block_Reason__c</fullName>
@@ -11570,6 +11703,499 @@ Used for identifying 3rd oarty numbers</description>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
+    <listViews>
+        <fullName>Accounts_by_Alias</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Account_Alias__c</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Account_Alias__c</field>
+            <operation>greaterThan</operation>
+            <value>1</value>
+        </filters>
+        <label>My Accounts by Alias</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Comatrol</group>
+            <group>Danfoss_PS</group>
+            <group>Turolla</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>AllAccounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_STATE</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>Business_Org__c</columns>
+        <columns>Inactive__c</columns>
+        <columns>Aggregate_Wallet_Share__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>All_Inactive_View</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Account_Alias__c</columns>
+        <columns>Inactive__c</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Inactive__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>All Inactive</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>CM_SysAdmin</group>
+            <group>PS_SysAdmin</group>
+            <group>PlatformAdmin</group>
+            <group>TR_SysAdmin</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CEAccounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.ADDRESS2_STREET</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>Inactive__c</columns>
+        <columns>CE_SAP_Account_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Account.Customer_CE,Account.Prospect_CE</value>
+        </filters>
+        <filters>
+            <field>Country_MainAddress__c</field>
+            <operation>equals</operation>
+            <value>CN</value>
+        </filters>
+        <label>Climate and Energy Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Climate_Energy</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>CECustomers</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.ADDRESS2_STREET</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>Inactive__c</columns>
+        <columns>CE_SAP_Account_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Account.Customer_CE</value>
+        </filters>
+        <label>Climate and Energy Customers</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Climate_Energy</group>
+            <group>PlatformAdmin</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_Accounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Business_Org__c</columns>
+        <columns>Sales_Org__c</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>Sales_Manager__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Comatrol</value>
+        </filters>
+        <label>Comatrol Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Comatrol_distributors</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Comatrol_Channel__c</columns>
+        <columns>Business_Org__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Comatrol_Channel__c</field>
+            <operation>equals</operation>
+            <value>Distributor</value>
+        </filters>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Comatrol</value>
+        </filters>
+        <label>Comatrol Europe Distributors</label>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>ECS_Customer</fullName>
+        <columns>PARENT_NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <columns>ACCOUNT.ADDRESS2_STATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Channel_Attributes__c</field>
+            <operation>includes</operation>
+            <value>ECS</value>
+        </filters>
+        <label>PS: ECS Customer</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Inactive</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Inactive__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Inactive</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>SFDC_Platform_Administrator</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamCEAll</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>Business_Org__c</columns>
+        <columns>Inactive__c</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>ACCOUNT.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Account.Customer_CE,Account.Prospect_CE</value>
+        </filters>
+        <label>My Team Climate and Energy All Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Climate_Energy</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamCECustomers</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>Business_Org__c</columns>
+        <columns>Inactive__c</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Customer</value>
+        </filters>
+        <label>My Team Climate and Energy Customers</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Climate_Energy</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamCEProspects</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>Business_Org__c</columns>
+        <columns>Inactive__c</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Prospect</value>
+        </filters>
+        <label>My Team Climate and Energy Prospects</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Climate_Energy</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Accounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS2_STREET</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_STATE</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>Account_Type__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Climate_Energy</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>My_Accounts_Integrated</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <columns>Account_Alias__c</columns>
+        <columns>Channel__c</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_STATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>Inactive__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Accounts Power Solutions</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NA_Work_Function_Distributors</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Account_Alias__c</columns>
+        <columns>ACCOUNT.ADDRESS2_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Channel_Attributes__c</field>
+            <operation>includes</operation>
+            <value>Work Function</value>
+        </filters>
+        <label>NA Work Function Distributors</label>
+        <language>en_US</language>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CRM_Sales_Director_PS</roleAndSubordinatesInternal>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>SAP_Account_ID__c</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_STATE</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+        <language>en_US</language>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>PS_Caterpillar_Account</fullName>
+        <booleanFilter>1 or 2</booleanFilter>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>ACCOUNT.CREATED_DATE</columns>
+        <columns>ACCOUNT.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+            <value>Caterpillar</value>
+        </filters>
+        <filters>
+            <field>ACCOUNT.NAME</field>
+            <operation>contains</operation>
+            <value>John Deere</value>
+        </filters>
+        <label>PS: Caterpillar Account</label>
+        <language>en_US</language>
+        <sharedTo>
+            <role>CRM_CSRAmer_PS</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>PartnerLink_My_Accounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.ADDRESS2_STREET</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <columns>ACCOUNT.ADDRESS2_CITY</columns>
+        <columns>ACCOUNT.ADDRESS2_ZIP</columns>
+        <filterScope>Team</filterScope>
+        <filters>
+            <field>Inactive__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>PartnerLink: My Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Danfoss_PS</group>
+            <group>PS_Partner_Users_AMER</group>
+            <group>PS_Partner_Users_APAC</group>
+            <group>PS_Partner_Users_CHINA</group>
+            <group>PS_Partner_Users_EU</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Turolla_Accounts</fullName>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Business_Org__c</columns>
+        <columns>ACCOUNT.ADDRESS2_COUNTRY</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Business_Org__c</field>
+            <operation>equals</operation>
+            <value>Turolla</value>
+        </filters>
+        <label>Turolla Accounts</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>Turolla</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>owner</fullName>
+        <booleanFilter>1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9</booleanFilter>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>ACCOUNT.ADDRESS1_STATE</columns>
+        <columns>ACCOUNT.PHONE1</columns>
+        <columns>ACCOUNT.TYPE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <columns>Country__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>RMar</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>FCol</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>UMau</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>EVez</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>MMas</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>RMul</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>MMaq</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>KLer</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.ALIAS</field>
+            <operation>equals</operation>
+            <value>GFag</value>
+        </filters>
+        <label>Comatrol Europe owners</label>
+        <sharedTo>
+            <group>Comatrol</group>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
     <recordTypes>
         <fullName>Customer</fullName>
         <active>true</active>
@@ -36904,6 +37530,58 @@ Used for identifying 3rd oarty numbers</description>
             </values>
         </picklistValues>
     </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account_Alias__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SAP_Account_ID__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.PHONE1</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Business_Org__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.RECORDTYPE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Alias__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SAP_Account_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.ADDRESS2_STREET</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.ADDRESS2_CITY</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.ADDRESS2_COUNTRY</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.TYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Business_Org__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USERS.ALIAS</lookupDialogsAdditionalFields>
+        <lookupFilterFields>ACCOUNT.NAME</lookupFilterFields>
+        <lookupFilterFields>00NC0000005M1l6</lookupFilterFields>
+        <lookupFilterFields>00NC0000005M0Dn</lookupFilterFields>
+        <lookupFilterFields>ACCOUNT.ADDRESS2_STREET</lookupFilterFields>
+        <lookupFilterFields>ACCOUNT.ADDRESS2_CITY</lookupFilterFields>
+        <lookupFilterFields>ACCOUNT.ADDRESS2_COUNTRY</lookupFilterFields>
+        <lookupFilterFields>ACCOUNT.TYPE</lookupFilterFields>
+        <lookupFilterFields>00NC0000005M0DD</lookupFilterFields>
+        <lookupFilterFields>CORE.USERS.ALIAS</lookupFilterFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account_Alias__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>SAP_Account_ID__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.PHONE1</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.TYPE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.ALIAS</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>ACCOUNT.NAME</searchFilterFields>
+        <searchFilterFields>Account_Alias__c</searchFilterFields>
+        <searchFilterFields>SAP_Account_ID__c</searchFilterFields>
+        <searchFilterFields>ACCOUNT.ADDRESS2_STREET</searchFilterFields>
+        <searchFilterFields>ACCOUNT.ADDRESS2_CITY</searchFilterFields>
+        <searchFilterFields>ACCOUNT.ADDRESS2_COUNTRY</searchFilterFields>
+        <searchFilterFields>ACCOUNT.ADDRESS2_STATE</searchFilterFields>
+        <searchFilterFields>Business_Org__c</searchFilterFields>
+        <searchFilterFields>Inactive__c</searchFilterFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SAP_Account_ID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PARENT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.ADDRESS2_STREET</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.ADDRESS2_CITY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.ADDRESS2_STATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.ADDRESS2_COUNTRY</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Business_Org__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Inactive__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
     <validationRules>
         <fullName>CSC_CANNOT_ASSIGN_OWNERSHIP_OUTSIDE_CE</fullName>
         <active>true</active>
