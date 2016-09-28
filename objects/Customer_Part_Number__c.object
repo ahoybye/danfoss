@@ -1,59 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <description>List of Customer specific part numbers for each Product.</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>Account__c</fullName>
         <externalId>false</externalId>
@@ -133,28 +80,4 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
-    <label>Customer Part Number</label>
-    <listViews>
-        <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>Product__c</columns>
-        <columns>SAP_Customer_Material_Id__c</columns>
-        <columns>Sales_Org__c</columns>
-        <columns>Account__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-        <language>en_US</language>
-    </listViews>
-    <nameField>
-        <displayFormat>CPR-{0000000}</displayFormat>
-        <label>Customer Part Number Name</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Customer Part Numbers</pluralLabel>
-    <searchLayouts>
-        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Material_Number__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Danfoss_Material_Number__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
