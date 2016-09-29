@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <customSettingsType>Hierarchy</customSettingsType>
-    <description>Referenced by process builder CE CSC Primary CSC Contact on Case Process 1, 2 and 3 to populate the Primary CSC Contact field Case object</description>
-    <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Cooling_Commercial__c</fullName>
         <externalId>false</externalId>
@@ -63,6 +60,4 @@
         <type>Text</type>
         <unique>false</unique>
     </fields>
-    <label>Primary CSC Queue Ids</label>
-    <visibility>Public</visibility>
 </CustomObject>

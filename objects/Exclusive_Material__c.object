@@ -1,59 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
-    <actionOverrides>
-        <actionName>Accept</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>CancelEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Clone</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Delete</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Edit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>List</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>New</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>SaveEdit</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>Tab</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
-    <deploymentStatus>Deployed</deploymentStatus>
-    <description>This will serve as a junction object between Account and Product2.</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableEnhancedLookup>false</enableEnhancedLookup>
-    <enableFeeds>false</enableFeeds>
-    <enableHistory>false</enableHistory>
-    <enableReports>true</enableReports>
-    <enableSearch>true</enableSearch>
-    <enableSharing>true</enableSharing>
-    <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ControlledByParent</externalSharingModel>
     <fields>
         <fullName>Account__c</fullName>
         <externalId>false</externalId>
@@ -131,47 +78,4 @@
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
-    <label>Exclusive Material</label>
-    <listViews>
-        <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>SAP_Exclusive_Material_Id__c</columns>
-        <columns>Product__c</columns>
-        <columns>Account__c</columns>
-        <columns>isDeleted__c</columns>
-        <filterScope>Everything</filterScope>
-        <label>All</label>
-        <language>en_US</language>
-    </listViews>
-    <listViews>
-        <fullName>All1</fullName>
-        <filterScope>Everything</filterScope>
-        <filters>
-            <field>SAP_Material_Number__c</field>
-            <operation>equals</operation>
-            <value>83047960</value>
-        </filters>
-        <label>All</label>
-        <language>en_US</language>
-    </listViews>
-    <nameField>
-        <displayFormat>EPR-{0000000}</displayFormat>
-        <label>Exclusive Material Number</label>
-        <type>AutoNumber</type>
-    </nameField>
-    <pluralLabel>Exclusive Materials</pluralLabel>
-    <searchLayouts>
-        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SAP_Customer_ID__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>SAP_Material_Number__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Product__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>Model_Code__c</customTabListAdditionalFields>
-        <searchResultsAdditionalFields>isDeleted__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>SAP_Customer_ID__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>SAP_Material_Number__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Product__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Model_Code__c</searchResultsAdditionalFields>
-    </searchLayouts>
-    <sharingModel>ControlledByParent</sharingModel>
 </CustomObject>
